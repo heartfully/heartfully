@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   belongs_to :organization
 
   validates_presence_of :first_name
-  validates_associated :couple, :organization
+  validates_associated :couple
 end
 
 # == Schema Information
