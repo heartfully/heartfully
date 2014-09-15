@@ -1,0 +1,31 @@
+class Project < ActiveRecord::Base
+  belongs_to :organization
+  has_many :registry_projects
+  has_many :registries, :through => :registry_projects
+  has_many :item_types, :dependent => :destroy
+  has_many :items, :through => :item_types
+  has_many :purchases, :through => :items
+
+  validates_presence_of :name, :country, :public?, :organization_id
+  validates_associated :organization
+end
+
+# == Schema Information
+#
+# Table name: projects
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)      not null
+#  headline        :string(255)
+#  description     :text
+#  banner_img      :string(255)
+#  city            :string(255)
+#  state           :string(255)
+#  country         :string(255)      not null
+#  funding_goal    :decimal(11, 2)
+#  closed_at       :datetime
+#  public?         :boolean          default(TRUE), not null
+#  organization_id :integer          not null
+#  created_at      :datetime
+#  updated_at      :datetime
+#
