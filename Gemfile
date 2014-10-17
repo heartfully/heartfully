@@ -35,7 +35,5 @@ group :production do
   gem 'unicorn'
 end
 
-gem 'rename'
-
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
