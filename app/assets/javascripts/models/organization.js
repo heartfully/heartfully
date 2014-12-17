@@ -1,3 +1,3 @@
-LovelyApp.Models.Organization = Backbone.Model.extend({
+HeartfullyApp.Models.Organization = Backbone.Model.extend({
 
 });

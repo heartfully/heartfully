@@ -1,3 +1,3 @@
-LovelyApp.Models.Couple = Backbone.Model.extend({
+HeartfullyApp.Models.Couple = Backbone.Model.extend({
 
 });

@@ -1,3 +1,3 @@
-LovelyApp.Models.Project = Backbone.Model.extend({
+HeartfullyApp.Models.Project = Backbone.Model.extend({
 
 });

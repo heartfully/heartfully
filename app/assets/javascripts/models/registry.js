@@ -1,3 +1,3 @@
-LovelyApp.Models.Registry = Backbone.Model.extend({
+HeartfullyApp.Models.Registry = Backbone.Model.extend({
 
 });

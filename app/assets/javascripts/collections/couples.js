@@ -1,5 +1,5 @@
-LovelyApp.Collections.Couples = Backbone.Collection.extend({
-  model: LovelyApp.Models.Couple,
+HeartfullyApp.Collections.Couples = Backbone.Collection.extend({
+  model: HeartfullyApp.Models.Couple,
 
   url: '/api/v1/couples.json',
 

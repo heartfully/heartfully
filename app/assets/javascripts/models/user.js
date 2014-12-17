@@ -1,3 +1,3 @@
-LovelyApp.Models.User = Backbone.Model.extend({
+HeartfullyApp.Models.User = Backbone.Model.extend({
 
 });

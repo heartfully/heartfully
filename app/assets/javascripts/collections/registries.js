@@ -1,5 +1,5 @@
-LovelyApp.Collections.Registries = Backbone.Collection.extend({
-  model: LovelyApp.Models.Registry,
+HeartfullyApp.Collections.Registries = Backbone.Collection.extend({
+  model: HeartfullyApp.Models.Registry,
 
   url: '/api/v1/registries.json',
 

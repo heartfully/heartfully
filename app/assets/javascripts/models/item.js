@@ -1,3 +1,3 @@
-LovelyApp.Models.Item = Backbone.Model.extend({
+HeartfullyApp.Models.Item = Backbone.Model.extend({
 
 });

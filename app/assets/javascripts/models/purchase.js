@@ -1,3 +1,3 @@
-LovelyApp.Models.Purchase = Backbone.Model.extend({
+HeartfullyApp.Models.Purchase = Backbone.Model.extend({
 
 });

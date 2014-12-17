@@ -1,5 +1,5 @@
-LovelyApp.Collections.Projects = Backbone.Collection.extend({
-  model: LovelyApp.Models.Project,
+HeartfullyApp.Collections.Projects = Backbone.Collection.extend({
+  model: HeartfullyApp.Models.Project,
 
   url: '/api/v1/projects.json',
 

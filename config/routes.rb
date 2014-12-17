@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
+
   devise_for :users
 
   root 'marketing#index'
 
-  resource :user do
-    resource :registry
-    resources :purchases
-  end
+  get '/registry/:couple_slug', to: 'registries#show'
 
-  resources :organizations do
-    resources :projects
-  end
+  resources :projects
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do

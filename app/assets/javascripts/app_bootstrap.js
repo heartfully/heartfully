@@ -1,4 +1,4 @@
-var LovelyApp = LovelyApp || {
+var HeartfullyApp = HeartfullyApp || {
   Models: {},
   Collections: {},
   Views: {},
