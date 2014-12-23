@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'marketing#index'
 
-  get '/registry/:couple_slug', to: 'registries#show'
+  get '/registry/:url_slug', to: 'registries#show'
 
   resources :projects
 

@@ -1,14 +1,15 @@
 class RegistriesController < ApplicationController
   before_action :authenticate_user!, :except => [:show]
-  before_action :set_registry, :only => [:show, :edit, :update, :destroy]
+  before_action :set_registry, :only => [:edit, :update, :destroy]
 
   # GET /registries
   def index
     @registries = Registry.all
   end
 
-  # GET /registries/1
+  # GET /registries/:url_slug
   def show
+    @registry = Registry.find_by(:url_slug => params[:url_slug])
   end
 
   # GET /registries/new

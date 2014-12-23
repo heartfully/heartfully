@@ -103,6 +103,8 @@ ActiveRecord::Schema.define(version: 20140914023345) do
 
   create_table "registries", force: true do |t|
     t.string   "name"
+    t.string   "url_slug",    null: false
+    t.string   "banner_img"
     t.text     "description"
     t.integer  "couple_id",   null: false
     t.datetime "created_at"
@@ -110,6 +112,7 @@ ActiveRecord::Schema.define(version: 20140914023345) do
   end
 
   add_index "registries", ["couple_id"], name: "index_registries_on_couple_id", using: :btree
+  add_index "registries", ["url_slug"], name: "index_registries_on_url_slug", unique: true, using: :btree
 
   create_table "registry_projects", force: true do |t|
     t.integer  "registry_id", null: false
