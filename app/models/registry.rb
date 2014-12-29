@@ -16,6 +16,8 @@ end
 #
 #  id          :integer          not null, primary key
 #  name        :string(255)
+#  url_slug    :string(255)      not null
+#  banner_img  :string(255)
 #  description :text
 #  couple_id   :integer          not null
 #  created_at  :datetime

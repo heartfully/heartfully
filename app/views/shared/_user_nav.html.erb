@@ -1,0 +1,15 @@
+<nav>
+  <div><img class="profile-img" src="<%= current_user.profile_img %>" ></div>
+  <ul>
+    <li><%= link_to "Our Profile", user_path(current_user) %></li>
+    <% if current_user.project %>
+    <li><%= link_to "Our Project", project_path(current_user.project) %></li>
+    <% else %>
+    <li><%= link_to "Favorites", "#" %></li>
+    <% end %>
+    <% if current_user.registry %>
+    <li><%= link_to "Our Registry", registry_path(current_user.registry) %></li>
+    <li><%= link_to "Settings", "#" %></li>
+    <% end %>
+  </ul>
+</nav>

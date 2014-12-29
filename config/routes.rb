@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  # Auth routes
+  resources :passwords, only: [:create, :new, :edit, :update]
+  resource :session, only: [:create]
+  resources :users
 
+  get '/sign_up' => "users#new"
+  get '/sign_in' => "sessions#new"
+  delete '/sign_out' => "sessions#destroy"
+  get '/users/:confirmation_token/confirm' => "users#confirm", :as => "user_confirmation"
+
+  # Heartful.ly routes
   root 'marketing#index'
 
   get '/registry/:url_slug', to: 'registries#show'

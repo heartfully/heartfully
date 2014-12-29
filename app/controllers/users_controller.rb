@@ -1,12 +1,10 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users/1
   def show
   end
 
-  # GET /users/new
   def new
     @user = User.new
   end
@@ -15,12 +13,13 @@ class UsersController < ApplicationController
   def edit
   end
 
-  # POST /users
   def create
     @user = User.new(user_params)
-
     if @user.save
-      redirect_to @user, notice: 'User was successfully created.'
+      sign_in @user
+      UserMailer.user_confirmation(@user).deliver!
+      flash[:notice] = "Please check your email to activate your account."
+      redirect_to projects_path
     else
       render :new
     end
@@ -41,14 +40,35 @@ class UsersController < ApplicationController
     redirect_to users_url, notice: 'User was successfully destroyed.'
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(current_user.id)
-    end
+  # GET /users/:confirmation_token/confirm?email=:email
+  def confirm
+    @user = User.find_by(:email => params[:email])
 
-    # Only allow a trusted parameter "white list" through.
-    def user_params
-      params[:user]
+    if @user && !@user.confirmed? && @user.authenticate_by(:confirmation, params[:confirmation_token])
+      @user.confirm
+      sign_in @user
+      flash[:success] = "Account confirmed!"
+      redirect_to projects_path
+    else
+      flash[:error] = "Invalid confirmation link"
+      redirect_to root_url
     end
+  end
+
+  private
+
+  def set_user
+    @user = User.find(current_user.id)
+  end
+
+  def user_params
+    params.require(:user).permit(
+      :email,
+      :password,
+      :password_confirmation,
+      :first_name,
+      :last_name,
+      :profile_img
+    )
+  end
 end

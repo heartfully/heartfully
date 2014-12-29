@@ -1,0 +1,5 @@
+Hi <%= @user.first_name %>,
+
+Welcome to Heartful.ly! Click on the link below to activate your account:
+
+<%= user_confirmation_url(@user.confirmation_token, email: @user.email) %>
