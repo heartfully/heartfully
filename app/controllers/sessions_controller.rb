@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(session_params[:password])
       sign_in @user
+      session_params[:remember_me] == '1' ? remember(@user) : forget(@user)
       redirect_to '/projects'
     else
       flash.now.notice = "Invalid email or password"
@@ -17,13 +18,13 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    sign_out
+    sign_out if signed_in?
     redirect_to sign_in_path
   end
 
   private
 
   def session_params
-    params.require(:session).permit(:email, :password)
+    params.require(:session).permit(:email, :password, :remember_me)
   end
 end
