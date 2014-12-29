@@ -11,23 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140914023345) do
+ActiveRecord::Schema.define(version: 20141229205210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "couples", force: true do |t|
-    t.string   "name",        null: false
-    t.string   "profile_img"
-    t.string   "address_1"
-    t.string   "address_2"
-    t.string   "city"
-    t.string   "state"
-    t.string   "postal_code", null: false
-    t.string   "country"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "guests_registries", id: false, force: true do |t|
     t.integer "guest_id",    null: false
@@ -72,6 +59,15 @@ ActiveRecord::Schema.define(version: 20140914023345) do
 
   add_index "organizations", ["admin_id"], name: "index_organizations_on_admin_id", using: :btree
 
+  create_table "partner_invites", force: true do |t|
+    t.string   "email"
+    t.integer  "registry_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "partner_invites", ["registry_id"], name: "index_partner_invites_on_registry_id", using: :btree
+
   create_table "projects", force: true do |t|
     t.string   "name",                                                    null: false
     t.string   "headline"
@@ -102,16 +98,21 @@ ActiveRecord::Schema.define(version: 20140914023345) do
   add_index "purchases", ["user_id"], name: "index_purchases_on_user_id", using: :btree
 
   create_table "registries", force: true do |t|
-    t.string   "name"
+    t.string   "name",        null: false
     t.string   "url_slug",    null: false
     t.string   "banner_img"
+    t.string   "profile_img"
     t.text     "description"
-    t.integer  "couple_id",   null: false
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "postal_code", null: false
+    t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "registries", ["couple_id"], name: "index_registries_on_couple_id", using: :btree
   add_index "registries", ["url_slug"], name: "index_registries_on_url_slug", unique: true, using: :btree
 
   create_table "registry_projects", force: true do |t|
@@ -135,15 +136,15 @@ ActiveRecord::Schema.define(version: 20140914023345) do
     t.string   "first_name",                                      null: false
     t.string   "last_name"
     t.string   "profile_img"
-    t.integer  "couple_id"
+    t.integer  "registry_id"
     t.integer  "organization_id"
     t.boolean  "system_admin",                    default: false, null: false
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
   end
 
-  add_index "users", ["couple_id"], name: "index_users_on_couple_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["organization_id"], name: "index_users_on_organization_id", using: :btree
+  add_index "users", ["registry_id"], name: "index_users_on_registry_id", using: :btree
 
 end

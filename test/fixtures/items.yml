@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: items
+#
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  item_type_id :integer          not null
+#  purchase_id  :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:

@@ -54,6 +54,15 @@ class RegistriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def registry_params
-      params[:registry]
+      params.require(:registry).permit(
+        :name,
+        :profile_img,
+        :address_1,
+        :address_2,
+        :city,
+        :state,
+        :postal_code,
+        :country
+      )
     end
 end

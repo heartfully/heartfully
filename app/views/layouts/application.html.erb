@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Heartful.ly</title>
+  <title><%= "#{yield(:title)} | " if content_for?(:title) %> Heartful.ly</title>
   <%= stylesheet_link_tag('application', media: 'all') %>
   <%= javascript_include_tag "vendor/modernizr" %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if signed_in? %>
-    Signed in as: <%= current_user.email %>
-    <%= button_to 'Sign out', sign_out_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Sign in', sign_in_path %>
+
+  <% if signed_in?  %>
+    <%= render 'shared/user_nav' %>
+  <% else  %>
+    <%= render 'shared/guest_nav' %>
   <% end %>
 
   <div id="flash">
@@ -22,6 +22,7 @@
   </div>
 
   <%= yield %>
+
   <%=
     javascript_include_tag('http://fb.me/react-with-addons-0.11.2.min.js')
     javascript_include_tag('http://fb.me/JSXTransformer-0.11.2.js')

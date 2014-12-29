@@ -12,7 +12,6 @@ class Ability
       can :manage, :all
     else
       can :read, [Item, ItemType, Organization, Project]
-      can :crud, [Couple], :id => user.couple_id
       can :crud, [User], :id => user.id
       can :crud, [Registry], :couple_id => user.couple_id
     end

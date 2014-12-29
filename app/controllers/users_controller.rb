@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       sign_in @user
       UserMailer.user_confirmation(@user).deliver!
       flash[:notice] = "Please check your email to activate your account."
-      redirect_to projects_path
+      redirect_to new_registry_path
     else
       render :new
     end

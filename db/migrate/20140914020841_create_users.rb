@@ -19,7 +19,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :first_name, null: false
       t.string :last_name
       t.string :profile_img
-      t.references :couple, index: true
+      t.references :registry, index: true
       t.references :organization, index: true
       t.boolean :system_admin, null: false, default: false, index: true
 

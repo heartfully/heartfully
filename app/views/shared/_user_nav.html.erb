@@ -1,15 +1,25 @@
 <nav>
-  <div><img class="profile-img" src="<%= current_user.profile_img %>" ></div>
+  <div>
+    <img class="profile-img" src="<%= user_avatar(current_user) %>">
+    </div>
   <ul>
-    <li><%= link_to "Our Profile", user_path(current_user) %></li>
-    <% if current_user.project %>
-    <li><%= link_to "Our Project", project_path(current_user.project) %></li>
-    <% else %>
-    <li><%= link_to "Favorites", "#" %></li>
-    <% end %>
     <% if current_user.registry %>
-    <li><%= link_to "Our Registry", registry_path(current_user.registry) %></li>
-    <li><%= link_to "Settings", "#" %></li>
+    <li>
+      <%= link_to "Our Registry", registry_path(current_user.registry_id) %>
+    </li>
+    <li>
+      <%= link_to "Registry Settings", "#" %>
+    </li>
+    <% else %>
+    <li>
+      <%= link_to "Create Registry", new_registry_path %>
+    </li>
     <% end %>
+    <li>
+      <%= link_to "Favorite Projects", "#" %>
+    </li>
+    <li>
+      <%= link_to 'Sign out', sign_out_path, :method => :delete %>
+    </li>
   </ul>
 </nav>

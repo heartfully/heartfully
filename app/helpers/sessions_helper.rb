@@ -1,4 +1,5 @@
 module SessionsHelper
+
   def sign_in(user)
     session[:user_id] = user.id
   end
@@ -44,7 +45,19 @@ module SessionsHelper
   end
 
   def require_auth
-    redirect_to sign_in_path unless signed_in?
+    unless signed_in?
+      store_return_to
+      redirect_to sign_in_path
+    end
+  end
+
+  def store_return_to
+    session[:return_to] = request.fullpath
+  end
+
+  def return_to_url(default_url = nil)
+    return_to_url = session.delete(:return_to)
+    return_to_url || default_url || root_path
   end
 
 end

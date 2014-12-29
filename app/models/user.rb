@@ -23,8 +23,7 @@ class User < ActiveRecord::Base
   ## RELATIONSHIPS ##
   ###################
 
-  belongs_to :couple
-  has_one :registry, :through => :couple
+  belongs_to :registry
   has_and_belongs_to_many :guest_registries, :class_name => "Registry", :join_table => "guests_registries", :foreign_key => "guest_id"
   belongs_to :organization
 
@@ -118,14 +117,15 @@ end
 #  password_digest     :string(128)      not null
 #  remember_digest     :string(128)
 #  reset_digest        :string(128)
+#  reset_sent_at       :datetime
 #  confirmation_digest :string(128)
 #  confirmed_at        :datetime
 #  first_name          :string(255)      not null
 #  last_name           :string(255)
 #  profile_img         :string(255)
-#  couple_id           :integer
+#  registry_id         :integer
 #  organization_id     :integer
-#  system_admin?       :boolean          default(FALSE), not null
+#  system_admin        :boolean          default(FALSE), not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #
