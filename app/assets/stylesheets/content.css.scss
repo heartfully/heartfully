@@ -1,0 +1,111 @@
+.date-select-container {
+
+  label, select {
+    display: inline-block;
+    width: 24%;
+    padding: 0 2%;
+  }
+}
+
+.file-upload-container {
+  label, input {
+    display: inline-block;
+    width: auto;
+    padding: 0 2%;
+  }
+}
+
+.projects-list {
+
+  .project-glimpse {
+    padding: 15px 30px;
+    @include radius(10px);
+
+    .name {
+      text-align: center;
+    }
+  }
+
+  img {
+    min-height: 200px;
+    vertical-align: middle;
+  }
+}
+
+/*PROJECT SHOW PAGE*/
+#project-wrapper {
+  padding: 10px;
+}
+
+.project-details-wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.polaroid {
+  background: white;
+  display: inline-block;
+  margin: 0 15px 30px;
+  padding: 10px 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  -moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
+  box-shadow: 0 4px 6px rgba(0,0,0,.3);
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear;
+  z-index:0;
+        position:relative;
+}
+
+.polaroid-images img {
+  display: block;
+  width: inherit;
+}
+
+#registry-list {
+  width: 100%;
+  text-align: center;
+
+  input[type=text], a.button {
+    margin: 0;
+  }
+
+  .product-img-cell {
+    width: 20%;
+  }
+  .product-name-cell {
+    width: 20%;
+  }
+  .product-price-cell {
+    width: 20%;
+  }
+  .product-avail-cell {
+    width: 15%;
+  }
+  .product-buy-cell {
+    width: 25%;
+  }
+
+}
+
+.thank-you-modal {
+  text-align: center;
+
+  #thank-you {
+    font-family: 'Pacifico', cursive;
+    font-size: 4em;
+  }
+
+  .share-icons {
+    font-size: 2.5em;
+
+    &.fa-twitter {
+      color: #55acee;
+    }
+    &.fa-facebook {
+      color: #3b5998;
+    }
+  }
+}

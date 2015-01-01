@@ -1,0 +1,36 @@
+h1, h2, h3, h4, h5, h6 { color: $primary-color; }
+
+.centered { text-align: center; }
+
+.zebra { background-color: #f2f2f2; }
+
+.hidden { display: none; }
+
+.alert-box {
+  position: fixed;
+  top: 10px;
+  width: 50%;
+  left: 25%;
+  z-index: 99999;
+}
+
+@mixin truncate($width) {
+  width: $width or auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ul.pagination {
+  margin-top: 20px;
+
+  li {
+    font-size: 1.2em;
+  }
+}
