@@ -7,6 +7,9 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+
+    # For invited users, we need to add the invitation token
+    @invitation_token = params[:invitation_token]
   end
 
   # GET /users/1/edit
@@ -15,8 +18,18 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
+    # If the user is signing up with an invite token, authenticate it and set their registry appropriately
+    unless params[:invitation_token].nil?
+      partner_invite = PartnerInvite.find_by(:email => user_params[:email])
+      if partner_invite && partner_invite.authenticate_by(:invitation, params[:invitation_token])
+        @user.registry_id = partner_invite.registry_id
+      end
+    end
+
     if @user.save
       sign_in @user
+      partner_invite.update(:accepted_at => Time.zone.now) if partner_invite
       UserMailer.user_confirmation(@user).deliver!
       flash[:notice] = "Please check your email to activate your account."
       redirect_to new_registry_path

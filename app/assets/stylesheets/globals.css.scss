@@ -1,10 +1,26 @@
-h1, h2, h3, h4, h5, h6 { color: $primary-color; }
+h1, h2, h3, h4, h5, h6 { text-transform: uppercase; }
 
-.centered { text-align: center; }
+ul {
+  list-style: none;
+}
 
-.zebra { background-color: #f2f2f2; }
+section { padding: 3em 0px; }
 
-.hidden { display: none; }
+.accent-bg { background-color: $secondary-color; }
+.zebra-bg { background-color: $gainsboro; }
+.white-bg { background-color: $white; }
+
+section.accent-bg {
+
+  h2 { color: #fff; }
+}
+
+.no-margin { margin: 0px; }
+.no-padding { padding: 0px; }
+
+.row.padded { margin: 1em 0px; }
+.row.padded-bottom { margin-bottom: 1em; }
+.row.padded-top { margin-top: 1em; }
 
 .alert-box {
   position: fixed;
@@ -14,10 +30,19 @@ h1, h2, h3, h4, h5, h6 { color: $primary-color; }
   z-index: 99999;
 }
 
-@mixin truncate($width) {
-  width: $width or auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.hero-banner {
+  @include bg-size(cover);
+  background-color: #a3adb6;
+  background-position: center top;
+  height: 600px;
+  text-align: center;
+}
+
+.profile-circular {
+  width: 50px;
+  height: 50px;
+  display: block;
+  border-radius: 50%;
 }
 
 .truncate {

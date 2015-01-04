@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229205210) do
+ActiveRecord::Schema.define(version: 20150103003114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: true do |t|
+    t.integer  "registry_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "favorites", ["registry_id"], name: "index_favorites_on_registry_id", using: :btree
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "guests_registries", id: false, force: true do |t|
     t.integer "guest_id",    null: false
@@ -60,8 +70,13 @@ ActiveRecord::Schema.define(version: 20141229205210) do
   add_index "organizations", ["admin_id"], name: "index_organizations_on_admin_id", using: :btree
 
   create_table "partner_invites", force: true do |t|
-    t.string   "email"
-    t.integer  "registry_id", null: false
+    t.string   "first_name",                    null: false
+    t.string   "last_name",                     null: false
+    t.string   "email",                         null: false
+    t.integer  "registry_id",                   null: false
+    t.string   "invitation_digest", limit: 128
+    t.datetime "accepted_at"
+    t.datetime "invalidated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -134,7 +149,7 @@ ActiveRecord::Schema.define(version: 20141229205210) do
     t.string   "confirmation_digest", limit: 128
     t.datetime "confirmed_at"
     t.string   "first_name",                                      null: false
-    t.string   "last_name"
+    t.string   "last_name",                                       null: false
     t.string   "profile_img"
     t.integer  "registry_id"
     t.integer  "organization_id"

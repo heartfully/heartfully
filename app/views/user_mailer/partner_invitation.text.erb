@@ -1,0 +1,5 @@
+Hi <%= @partner_invite.first_name %>,
+
+Welcome to Heartful.ly! Click on the link below to accept your invitation:
+
+<%= sign_up_url(:invitation_token => @partner_invite.invitation_token) %>

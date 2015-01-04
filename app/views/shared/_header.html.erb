@@ -2,11 +2,19 @@
   <div class="small-12 medium-6 large-4 columns">
     <h1 id="logo"><a href="/">Heartful.ly</a></h1>
   </div>
-  <div class="small-12 medium-6 large-8 columns">
+  <div id="main-nav-container" class="small-12 medium-6 large-8 columns">
+    <nav class="top-bar-section">
     <% if signed_in?  %>
       <%= render 'shared/user_nav' %>
     <% else  %>
       <%= render 'shared/guest_nav' %>
     <% end %>
+    </nav>
   </div>
 </header>
+
+<div id="flash">
+  <% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+  <% end %>
+</div>

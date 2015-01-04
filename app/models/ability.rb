@@ -13,7 +13,7 @@ class Ability
     else
       can :read, [Item, ItemType, Organization, Project]
       can :crud, [User], :id => user.id
-      can :crud, [Registry], :couple_id => user.couple_id
+      can :crud, [Registry], :id => user.registry_id
     end
   end
 end

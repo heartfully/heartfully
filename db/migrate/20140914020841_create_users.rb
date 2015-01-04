@@ -17,7 +17,7 @@ class CreateUsers < ActiveRecord::Migration
 
       #### Heartful.ly specific attributes
       t.string :first_name, null: false
-      t.string :last_name
+      t.string :last_name, null: false
       t.string :profile_img
       t.references :registry, index: true
       t.references :organization, index: true

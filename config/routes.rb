@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  # Rails Admin for backend project creation/approval
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   root 'marketing#index'
@@ -16,11 +17,13 @@ Rails.application.routes.draw do
   # User confirmation
   get '/users/:confirmation_token/confirm' => "users#confirm", :as => "user_confirmation"
 
-  # Main registry page
-  get '/registry/:url_slug', to: 'registries#show'
-
-  resource :couple, :except => [:destroy]
   resources :projects
+  resources :favorites
+  resource :registry
+  resource :partner_invite, :only => [:create, :destroy]
+
+  # Main registry page, this must be after `resource :registry`
+  get '/registry/:url_slug', to: 'registries#show'
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
@@ -30,9 +33,7 @@ Rails.application.routes.draw do
           api.resources :purchases
         end
 
-        api.resources :couples do
-          api.resource :registry
-        end
+        api.resource :registry
 
         api.resources :organizations do
           api.resources :projects do

@@ -10,4 +10,10 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail to: user.email, subject: "Password reset"
   end
+
+  def partner_invitation(partner_invite)
+    @partner_invite = partner_invite
+    mail to: @partner_invite.email, subject: "You've been invited to use Heartful.ly!"
+  end
+
 end

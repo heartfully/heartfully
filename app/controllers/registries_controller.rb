@@ -1,10 +1,6 @@
 class RegistriesController < ApplicationController
+  before_action :require_auth, :only => [:create, :edit, :update, :destroy]
   before_action :set_registry, :only => [:edit, :update, :destroy]
-
-  # GET /registries
-  def index
-    @registries = Registry.all
-  end
 
   # GET /registries/:url_slug
   def show
@@ -18,6 +14,7 @@ class RegistriesController < ApplicationController
 
   # GET /registries/1/edit
   def edit
+    @partner_invite = PartnerInvite.find_or_initialize_by(:registry_id => @registry.id)
   end
 
   # POST /registries
@@ -25,7 +22,8 @@ class RegistriesController < ApplicationController
     @registry = Registry.new(registry_params)
 
     if @registry.save
-      redirect_to @registry, notice: 'Registry was successfully created.'
+      current_user.update(:registry_id => @registry.id)
+      redirect_to edit_registry_path, notice: 'Registry was successfully created.'
     else
       render :new
     end
@@ -49,14 +47,18 @@ class RegistriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_registry
-      @registry = Registry.find(params[:id])
+      @registry = current_user.registry
+      redirect_to new_registry_path unless @registry.present?
     end
 
     # Only allow a trusted parameter "white list" through.
     def registry_params
       params.require(:registry).permit(
         :name,
+        :url_slug,
+        :banner_img,
         :profile_img,
+        :description,
         :address_1,
         :address_2,
         :city,

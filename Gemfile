@@ -16,6 +16,7 @@ gem 'active_model_serializers'
 gem 'foundation-rails'
 gem 'rails_admin'
 gem 'cancan'
+gem 'bourbon'
 
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

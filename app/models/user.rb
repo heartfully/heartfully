@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   ################
 
   attr_accessor :confirmation_token, :reset_token, :remember_token
+  include TokenAuthenticatable
 
   ####################
   ## AUTHENTICATION ##
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
   ## CALLBACKS ##
   ###############
 
-  before_create :create_confirmation_digest
+  before_create :set_confirmation_digest
   before_save :downcase_email, :if => Proc.new { |user| user.email_changed? }
 
   ###################
@@ -31,28 +32,14 @@ class User < ActiveRecord::Base
   ## VALIDATIONS ##
   #################
 
-  validates_presence_of :email, :password_digest, :first_name, :last_name
+  validates_presence_of :password_digest
   validates :password, length: { minimum: 8 }, :allow_nil => true
-  validates :first_name, length: { maximum: 50 }
-  validates :first_name, length: { maximum: 50 }
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, length: { maximum: 255 },
-                    format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
+  # first name, last name, email validation is in a reusable concern
+  include Personable
 
   ###################
   ## CLASS METHODS ##
   ###################
-
-  def self.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
-  end
-
-  # Returns a random token.
-  def self.new_token
-    SecureRandom.urlsafe_base64
-  end
 
   ######################
   ## INSTANCE METHODS ##
@@ -63,7 +50,7 @@ class User < ActiveRecord::Base
   end
 
   def confirmed?
-    self.confirmed_at?.present?
+    self.confirmed_at?
   end
 
   def remember
@@ -74,14 +61,6 @@ class User < ActiveRecord::Base
   # Drop the remember digest
   def forget
     update_attribute(:remember_digest, nil)
-  end
-
-  def authenticate_by(auth_type, token)
-    digest = self.send("#{auth_type}_digest")
-    return false if digest.nil?
-    BCrypt::Password.new(digest).is_password?(token)
-  rescue
-    false
   end
 
   # Sets the password reset attributes.
@@ -101,7 +80,7 @@ class User < ActiveRecord::Base
     self.email.downcase!
   end
 
-  def create_confirmation_digest
+  def set_confirmation_digest
     self.confirmation_token  = User.new_token
     self.confirmation_digest = User.digest(confirmation_token)
   end
@@ -121,7 +100,7 @@ end
 #  confirmation_digest :string(128)
 #  confirmed_at        :datetime
 #  first_name          :string(255)      not null
-#  last_name           :string(255)
+#  last_name           :string(255)      not null
 #  profile_img         :string(255)
 #  registry_id         :integer
 #  organization_id     :integer

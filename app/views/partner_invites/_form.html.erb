@@ -1,0 +1,23 @@
+<%= form_for @partner_invite, :url => partner_invite_path do |f| %>
+
+  <%= render 'shared/error_messages', :obj => @partner_invite %>
+
+  <div class="text-field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="text-field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="text-field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

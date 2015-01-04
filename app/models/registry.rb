@@ -6,7 +6,7 @@ class Registry < ActiveRecord::Base
   has_many :items, :through => :item_types
   has_and_belongs_to_many :guests, :class_name => "User", :join_table => "guests_registries", :association_foreign_key => "guest_id"
 
-  validates_presence_of :name
+  validates_presence_of :name, :url_slug, :postal_code
 end
 
 # == Schema Information
