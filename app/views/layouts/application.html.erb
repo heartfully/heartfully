@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render 'shared/meta' %>
+</head>
+<body>
+
+  <div id="wrapper">
+    <%= render 'shared/header' %>
+
+    <div class="small-12 small-centered medium-10 large-8 columns">
+
+      <%= yield %>
+
+    </div>
+
+    <div id="push"></div>
+  </div>
+
+  <%= render 'shared/footer' %>
+
+
+  <%= javascript_include_tag('application') %>
+</body>
+</html>
