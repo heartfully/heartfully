@@ -58,6 +58,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "#{@registry.new_record? ? "Create" : "Edit"} Registry", :class => "button" %>
   </div>
 <% end %>
