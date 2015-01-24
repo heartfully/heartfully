@@ -13,8 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require underscore
-//= require backbone
+//= require underscore/underscore
+//= require backbone/backbone
+//= require react/react-with-addons
+//= require react/JSXTransformer
 //= require ./app_bootstrap
 //= require_tree ./models
 //= require_tree ./collections
