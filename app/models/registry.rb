@@ -1,12 +1,25 @@
 class Registry < ActiveRecord::Base
+
+  ###################
+  ## RELATIONSHIPS ##
+  ###################
+
   has_many :partners, :class_name => "User"
+  has_many :partner_invites
   has_many :registry_projects
   has_many :projects, :through => :registry_projects
   has_many :item_types, :through => :projects
   has_many :items, :through => :item_types
   has_and_belongs_to_many :guests, :class_name => "User", :join_table => "guests_registries", :association_foreign_key => "guest_id"
 
+  #################
+  ## VALIDATIONS ##
+  #################
+
   validates_presence_of :name, :url_slug, :postal_code
+  validates_uniqueness_of :url_slug
+  # TODO a format validation on URL slug
+
 end
 
 # == Schema Information

@@ -24,6 +24,8 @@ class UsersController < ApplicationController
       partner_invite = PartnerInvite.find_by(:email => user_params[:email])
       if partner_invite && partner_invite.authenticate_by(:invitation, params[:invitation_token])
         @user.registry_id = partner_invite.registry_id
+      else
+        flash[:error] = "Invalid email or invitation token. Your account was created, but your invitation seems to be invalid."
       end
     end
 

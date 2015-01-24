@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :favorites
   resource :registry
-  resource :partner_invite, :only => [:create, :destroy]
+  resources :partner_invites, :only => [:create, :destroy]
 
   # Main registry page, this must be after `resource :registry`
   get '/registry/:url_slug', to: 'registries#show'

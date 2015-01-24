@@ -1,0 +1,3 @@
+<p>
+  You invited <%= @partner_invite.first_name %> <%= @partner_invite.last_name %> at <%= @partner_invite.email %>. <%= link_to "&times;".html_safe, @partner_invite, :method => "delete", data: { :confirm => "Are you sure you want to rescind this invitation?" } %>
+</p>

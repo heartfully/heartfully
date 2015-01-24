@@ -1,16 +1,29 @@
 class PartnerInvite < ActiveRecord::Base
 
+  ################
+  ## ATTRIBUTES ##
+  ################
+
   attr_accessor :invitation_token
+
+  ####################
+  ## AUTHENTICATION ##
+  ####################
+
+  # Methods to authenticate a model by a hashed token value
   include TokenAuthenticatable
+
+  ###############
+  ## CALLBACKS ##
+  ###############
 
   before_create :set_invitation_digest
 
+  ###################
+  ## RELATIONSHIPS ##
+  ###################
+
   belongs_to :registry
-
-  validates_presence_of :registry_id
-
-  # first name, last name, email validation is in a reusable concern
-  include Personable
 
   ############
   ## SCOPES ##
@@ -19,6 +32,15 @@ class PartnerInvite < ActiveRecord::Base
   default_scope ->{ where(:accepted_at => nil, :invalidated_at => nil) }
   scope :accepted, ->{ unscoped.where.not(:accepted_at => nil) }
   scope :invalidated, ->{ unscoped.where.not(:invalidated_at => nil) }
+
+  #################
+  ## VALIDATIONS ##
+  #################
+
+  validates_presence_of :registry_id
+
+  # first name, last name, email validation is in a reusable concern
+  include Personable
 
   ###################
   ## CLASS METHODS ##

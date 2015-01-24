@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   ################
 
   attr_accessor :confirmation_token, :reset_token, :remember_token
+  # Methods to authenticate a model by a hashed token value
   include TokenAuthenticatable
 
   ####################
@@ -28,6 +29,10 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :guest_registries, :class_name => "Registry", :join_table => "guests_registries", :foreign_key => "guest_id"
   belongs_to :organization
 
+  ############
+  ## SCOPES ##
+  ############
+
   #################
   ## VALIDATIONS ##
   #################
@@ -44,6 +49,14 @@ class User < ActiveRecord::Base
   ######################
   ## INSTANCE METHODS ##
   ######################
+
+  def partner
+    if self.registry_id
+      User.where(:registry_id => self.registry_id).where.not(:id => self.id).first
+    else
+      User.none
+    end
+  end
 
   def confirm
     update_attribute(:confirmed_at, Time.zone.now) if !confirmed?

@@ -14,7 +14,11 @@ class RegistriesController < ApplicationController
 
   # GET /registries/1/edit
   def edit
-    @partner_invite = PartnerInvite.find_or_initialize_by(:registry_id => @registry.id)
+    if current_user.partner
+      @partner = current_user.partner
+    else
+      @partner_invite = PartnerInvite.find_or_initialize_by(:registry_id => @registry.id)
+    end
   end
 
   # POST /registries

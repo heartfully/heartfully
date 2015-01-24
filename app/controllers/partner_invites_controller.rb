@@ -11,7 +11,7 @@ class PartnerInvitesController < ApplicationController
 
     if @partner_invite.save
       @partner_invite.send_invite_email
-      redirect_to @partner_invite.registry, notice: 'Project was successfully created.'
+      redirect_to registry_path, notice: 'Project was successfully created.'
     else
       render 'registries/edit'
     end
@@ -19,9 +19,8 @@ class PartnerInvitesController < ApplicationController
 
   # DELETE /partner_invites/1
   def destroy
-    registry_id = @partner_invite.registry_id
     @partner_invite.invalidate
-    redirect_to registry_path(registry_id), notice: 'Invitation was successfully destroyed.'
+    redirect_to registry_path, notice: 'Invitation was successfully destroyed.'
   end
 
   private
