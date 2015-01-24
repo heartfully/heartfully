@@ -1,7 +1,3 @@
-couples = Couple.create([
-  { :name => "Megan and Mike Fink", :postal_code => "11768", :country => "USA"}
-])
-
 users = User.create([
   { :email => "mike@fink.com", :password => "jetsrule", :first_name => "Mike", :last_name => "Fink", :couple_id => couples.first.id },
   { :email => "megan@fink.com", :password => "lilabeast", :first_name => "Megan", :last_name => "Fink", :couple_id => couples.first.id },
