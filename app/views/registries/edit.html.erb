@@ -1,7 +1,16 @@
-<h1>Editing registry</h1>
+<% if @partner_invite %>
+  <% if @partner_invite.new_record? %>
+    <h2>Invite a Partner</h2>
+    <%= render 'partner_invites/form' %>
+  <% else %>
+    <%= render 'partner_invites/show' %>
+  <% end %>
+<% end %>
 
-<%= render 'partner_invites/form' %>
+<% if @partner %>
+  Your partner is <%= @partner.email %>
+<% end %>
+
+<h2>Editing registry</h2>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', registry_path %> |
