@@ -1,6 +1,6 @@
 class ItemType < ActiveRecord::Base
   belongs_to :project
-  has_many :items
+  has_many :items, :dependent => :destroy
   has_many :purchases, :through => :items
 
   validates_presence_of :name, :price, :project_id
