@@ -4,6 +4,8 @@ class CreateProjects < ActiveRecord::Migration
       t.string :name, null: false
       t.string :headline
       t.text :description
+      t.string :project_url
+      t.string :profile_img
       t.string :banner_img
       t.string :city
       t.string :state

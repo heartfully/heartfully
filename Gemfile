@@ -12,12 +12,13 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'bcrypt'
-gem 'active_model_serializers'
-gem 'foundation-rails'
+gem 'active_model_serializers', '0.9.0'
+gem 'foundation-rails', '5.4.5'
 gem 'rails_admin'
 gem 'cancan'
 gem 'bower-rails'
 gem 'will_paginate'
+gem 'draper', '1.4.0'
 
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

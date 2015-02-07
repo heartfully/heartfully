@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20150103003114) do
     t.string   "name",        null: false
     t.text     "description"
     t.string   "profile_img"
+    t.string   "org_url"
     t.integer  "admin_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -87,6 +88,8 @@ ActiveRecord::Schema.define(version: 20150103003114) do
     t.string   "name",                                                    null: false
     t.string   "headline"
     t.text     "description"
+    t.string   "project_url"
+    t.string   "profile_img"
     t.string   "banner_img"
     t.string   "city"
     t.string   "state"

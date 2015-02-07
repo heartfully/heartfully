@@ -4,6 +4,7 @@ class CreateOrganizations < ActiveRecord::Migration
       t.string :name, null: false
       t.text :description
       t.string :profile_img
+      t.string :org_url
       t.references :admin, index: true, null: false
 
       t.timestamps

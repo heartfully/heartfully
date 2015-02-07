@@ -1,14 +1,15 @@
 class ProjectsController < ApplicationController
-  before_action :require_auth
+  before_action :require_auth, :except => [:index, :show]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /projects
   def index
-    @projects = Project.all
+    @projects = PaginatingDecorator.new(Project.paginate(:page => params[:page], :per_page => 30))
   end
 
   # GET /projects/1
   def show
+    @project = @project.decorate
   end
 
   # GET /projects/new
