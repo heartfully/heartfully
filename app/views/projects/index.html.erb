@@ -1,3 +1,13 @@
+<% content_for(:page_title, "Pick Your Project!") %>
+
+<% content_for :backbone_bootstrap do %>
+  <% tag(:meta, :class => "bootstrapped-json", :id => "projects-json", :data => { projects: @projects }) %>
+<% end %>
+
+<% content_for :load_js do %>
+  <%= javascript_include_tag('projects') %>
+<% end %>
+
 <div class="row">
   <div class="small-12 columns">
     <h2>Pick Your Project!</h2>
@@ -17,7 +27,7 @@
         <h3 class='name'><%= project.name %></h1>
 
         <div>
-          <strong>Organization:</strong> <a target="_blank" href="<%= project.org_link %>"><%= project.org_name %></a>
+          <strong>Organization:</strong> <a target="_blank" href="<%= project.organization.org_url %>"><%= project.organization.name %></a>
         </div>
 
         <div>
@@ -25,14 +35,14 @@
         </div>
 
         <div>
-          <strong>Goal:</strong> $<%= project.fundraising_goal %>
+          <strong>Goal:</strong> $<%= project.funding_goal %>
         </div>
         <br />
         <p class='description truncate'><%= project.description %></p>
 
         <div class='actions row'>
           <div class="small-5 columns">
-            <%= link_to "View Details", "#", :class => "button expand view-details" %>
+            <%= link_to "View Details", project, :class => "button expand view-details" %>
           </div>
           <div class="small-5 columns">
             <%= link_to "Select Project", "/registry/sarah-and-jake", :class => "button expand" %>
@@ -46,14 +56,6 @@
 
 <div class="row">
   <ul class="pagination small-12 columns">
-    <li class="arrow unavailable"><a href="">&#9664;</a></li>
-    <li class="current"><a href="">1</a></li>
-    <li><a href="">2</a></li>
-    <li><a href="">3</a></li>
-    <li><a href="">4</a></li>
-    <li class="unavailable"><a href="">&hellip;</a></li>
-    <li><a href="">12</a></li>
-    <li><a href="">13</a></li>
-    <li class="arrow"><a href="">&#9654;</a></li>
+    <%= will_paginate @projects %>
   </ul>
 </div>

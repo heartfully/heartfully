@@ -18,9 +18,5 @@
 //= require react/react-with-addons
 //= require react/JSXTransformer
 //= require ./app_bootstrap
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
 
 $(function(){ $(document).foundation(); });

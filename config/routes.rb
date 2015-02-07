@@ -35,11 +35,11 @@ Rails.application.routes.draw do
 
         api.resource :registry
 
-        api.resources :organizations do
-          api.resources :projects do
-            api.resources :items
-          end
+        api.resources :projects do
+          api.resources :items
         end
+
+        api.resources :organizations
       end
 
     end

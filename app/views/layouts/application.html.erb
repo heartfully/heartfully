@@ -2,6 +2,7 @@
 <html>
 <head>
   <%= render 'shared/meta' %>
+  <%= yield :backbone_bootstrap %>
 </head>
 <body>
 
@@ -19,7 +20,7 @@
 
   <%= render 'shared/footer' %>
 
-
   <%= javascript_include_tag('application') %>
+  <%= yield :load_js %>
 </body>
 </html>
