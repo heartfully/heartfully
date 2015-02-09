@@ -14,48 +14,4 @@
   </div>
 </div>
 
-<% @projects.each_slice(3) do |row| %>
-  <div class='row projects-list'>
-    <% row.each_with_index do |project, idx|  %>
-
-      <div class='large-4 columns project-glimpse <% if (idx % 2 == 0) %>zebra<% end %>'>
-
-        <span class="polaroid">
-          <%= image_tag project.profile_photo, :class => 'img-circle'  %>
-        </span>
-
-        <h3 class='name'><%= project.name %></h1>
-
-        <div>
-          <strong>Organization:</strong> <a target="_blank" href="<%= project.organization.org_url %>"><%= project.organization.name %></a>
-        </div>
-
-        <div>
-          <strong>Location:</strong> <%= project.country %>
-        </div>
-
-        <div>
-          <strong>Goal:</strong> $<%= project.funding_goal %>
-        </div>
-        <br />
-        <p class='description truncate'><%= project.description %></p>
-
-        <div class='actions row'>
-          <div class="small-5 columns">
-            <%= link_to "View Details", project, :class => "button expand view-details" %>
-          </div>
-          <div class="small-5 columns">
-            <%= link_to "Select Project", "/registry/sarah-and-jake", :class => "button expand" %>
-          </div>
-        </div>
-
-      </div>
-    <% end %>
-  </div>
-<% end %>
-
-<div class="row">
-  <ul class="pagination small-12 columns">
-    <%= will_paginate @projects %>
-  </ul>
-</div>
+<div id="js-projects-list" class="row projects-list" data-react-class="ProjectList" />
