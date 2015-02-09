@@ -3,4 +3,3 @@
 
 asset 'backbone'
 asset 'underscore'
-asset 'react'

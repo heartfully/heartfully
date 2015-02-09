@@ -15,8 +15,8 @@
 //= require foundation
 //= require underscore/underscore
 //= require backbone/backbone
-//= require react/react-with-addons
-//= require react/JSXTransformer
+//= require react
+//= require react_ujs
 //= require ./app_bootstrap
 
 $(function(){ $(document).foundation(); });
