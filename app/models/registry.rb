@@ -19,7 +19,10 @@ class Registry < ActiveRecord::Base
   validates_presence_of :name, :url_slug, :postal_code
   validates_uniqueness_of :url_slug
   # TODO a format validation on URL slug
-
+  
+  def approved_projects
+    projects.joins(:registry_projects).where(:registry_projects => {:status => 'approved'})
+  end
 end
 
 # == Schema Information
