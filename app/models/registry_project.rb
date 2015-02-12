@@ -7,8 +7,8 @@ class RegistryProject < ActiveRecord::Base
   validates_presence_of :registry_id, :project_id
   validates_associated :registry, :project
 
-  def approve
-    self.status = 'approved'
+  def approve!
+    self.update_attributes(:status => 'approved')
   end
 
   private

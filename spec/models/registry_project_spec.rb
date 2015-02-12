@@ -10,8 +10,7 @@ RSpec.describe RegistryProject, :type => :model do
     end
 
     it "sets status to approve" do
-      registry_project.approve
-      registry_project.save
+      registry_project.approve!
       expect(registry_project.status).to eq('approved')
     end
   end

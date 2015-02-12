@@ -10,7 +10,7 @@ RSpec.describe Registry, type: :model do
 
     it 'returns the approved project if registry_project status is set' do
       rp = RegistryProject.find(registry.registry_projects.first.id)
-      rp.update(:status => 'approved')
+      rp.approve!
       expect(registry.approved_projects).to eq([registry.projects.first])
     end
   end
