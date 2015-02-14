@@ -2,20 +2,13 @@ class RegistryProject < ActiveRecord::Base
   belongs_to :registry
   belongs_to :project
 
-  before_create :set_status
-
   validates_presence_of :registry_id, :project_id
   validates_associated :registry, :project
 
   def approve!
-    self.update_attributes(:status => 'approved')
+    self.update_attributes(:approved? => true)
   end
 
-  private
-
-  def set_status
-    self.status = 'pending'
-  end
 end
 
 # == Schema Information
@@ -27,4 +20,5 @@ end
 #  project_id  :integer          not null
 #  created_at  :datetime
 #  updated_at  :datetime
+#  status      :string(255)
 #

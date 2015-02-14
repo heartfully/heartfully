@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   # Main registry page, this must be after `resource :registry`
   get '/registry/:url_slug', to: 'registries#show'
+  get '/registry/:url_slug/projects', to: 'registries#projects'
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do

@@ -15,6 +15,7 @@ end
 #  name        :string(255)      not null
 #  description :text
 #  profile_img :string(255)
+#  org_url     :string(255)
 #  admin_id    :integer          not null
 #  created_at  :datetime
 #  updated_at  :datetime

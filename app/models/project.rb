@@ -18,6 +18,8 @@ end
 #  name            :string(255)      not null
 #  headline        :string(255)
 #  description     :text
+#  project_url     :string(255)
+#  profile_img     :string(255)
 #  banner_img      :string(255)
 #  city            :string(255)
 #  state           :string(255)
