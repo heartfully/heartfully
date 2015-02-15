@@ -1,4 +1,8 @@
 class Project < ActiveRecord::Base
+  include Filterable #allows for easy model filtering
+
+  scope :in_category, -> (category_id = nil) { joins(:project_categories).where(:project_categories => { :category_id => category_id }) }
+
   belongs_to :organization
   has_many :registry_projects
   has_many :registries, :through => :registry_projects
