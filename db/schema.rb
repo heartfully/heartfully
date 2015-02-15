@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20150103003114) do
     t.string   "country",                                                 null: false
     t.decimal  "funding_goal",    precision: 11, scale: 2
     t.datetime "closed_at"
-    t.boolean  "public?",                                  default: true, null: false
+    t.boolean  "public",                                   default: true, null: false
     t.integer  "organization_id",                                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"

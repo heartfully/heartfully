@@ -12,7 +12,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :country, null: false, index: true
       t.decimal :funding_goal, index: true, precision: 11, scale: 2
       t.datetime :closed_at
-      t.boolean :public?, null: false, default: true, index: true
+      t.boolean :public, null: false, default: true, index: true
       t.references :organization, index: true, null: false
 
       t.timestamps
