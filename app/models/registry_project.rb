@@ -20,5 +20,5 @@ end
 #  project_id  :integer          not null
 #  created_at  :datetime
 #  updated_at  :datetime
-#  status      :string(255)
+#  approved    :boolean          default(FALSE)
 #
