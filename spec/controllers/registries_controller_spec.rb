@@ -169,7 +169,7 @@ RSpec.describe RegistriesController, :type => :controller do
       @user = FactoryGirl.create(:user)
       session[:user_id] = @user.id
       get :projects, {:url_slug => registry.url_slug}
-      expect(response).to redirect_to("/registry/new")
+      expect(response).to redirect_to("/registry/#{registry.url_slug}")
     end
 
     it "renders the registry's project page if user is admin" do

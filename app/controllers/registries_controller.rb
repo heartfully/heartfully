@@ -49,10 +49,12 @@ class RegistriesController < ApplicationController
   end
 
   def projects
-    if current_user.system_admin 
-      @projects = @registry.approved_projects.empty? ? @registry.projects : @registry.approved_projects
+    if request.post?
+      RegistryProject.where(registry_id: @registry.id, project_id: params[:project_id].to_i).first.approve!
+      redirect_to "/registry/#{@registry.url_slug}"
     else
-      redirect_to new_registry_path
+      redirect_to "/registry/#{@registry.url_slug}" if current_user.nil? || !current_user.system_admin
+      @projects = @registry.approved_projects.empty? ? @registry.projects : @registry.approved_projects
     end
   end
 

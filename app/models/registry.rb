@@ -21,7 +21,7 @@ class Registry < ActiveRecord::Base
   # TODO a format validation on URL slug
   
   def approved_projects
-    projects.joins(:registry_projects).where(:registry_projects => {:approved? => true})
+    projects.joins(:registry_projects).where(:registry_projects => {:approved => true})
   end
 end
 

@@ -19,7 +19,7 @@ section.accent-bg {
 .no-padding { padding: 0px; }
 
 .row.padded { margin: 1em 0px; }
-.row.padded-bottom { margin-bottom: 1em; }
+.row.padded-bottom, .base-margin-bottom { margin-bottom: 1em; }
 .row.padded-top { margin-top: 1em; }
 
 .alert-box {

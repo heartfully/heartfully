@@ -6,7 +6,7 @@ class RegistryProject < ActiveRecord::Base
   validates_associated :registry, :project
 
   def approve!
-    self.update_attributes(:approved? => true)
+    self.update_attributes(:approved => true)
   end
 
 end

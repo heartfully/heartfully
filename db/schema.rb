@@ -138,7 +138,7 @@ ActiveRecord::Schema.define(version: 20150212015853) do
     t.integer  "project_id",                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "approved?",   default: false
+    t.boolean  "approved",    default: false
   end
 
   add_index "registry_projects", ["project_id"], name: "index_registry_projects_on_project_id", using: :btree

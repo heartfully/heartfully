@@ -42,6 +42,8 @@ module Api
         end
       end
 
+      def projects
+      end
       private
 
       # Use callbacks to share common setup or constraints between actions.

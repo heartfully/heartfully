@@ -23,7 +23,16 @@
 
         <p class="large-12 small-6 columns"><strong>Organization:</strong> <a href="http://www.mufindiorphans.org/" target="_blank">Mufindi Orphans Project</a></p>
       </div>
+
     </div>
+
+    <% if current_user && current_user.system_admin %>
+      <% if @registry.approved_projects.empty? %>
+        <%= link_to "Pending Projects", registry_project_path(:url_slug => @registry.url_slug), :class => 'button expand radius alert' %>
+      <% else %>
+        <%= link_to "Approved Project", registry_project_path(:url_slug => @registry.url_slug), :class => 'button expand radius success' %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="large-8 small-12 columns">

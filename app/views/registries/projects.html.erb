@@ -1,1 +1,24 @@
-Projects
+<h1>Projects</h1>
+
+<% @projects.each do |project| %>
+  <div class="row">
+    <div class="panel  clearfix">
+      <div class="medium-9  small-12  columns  base-margin-bottom"> 
+        <h3><%= project.name %></h3>
+        <div>Fill this section with the summary when field gets populated</div>
+      </div>
+      <div class="medium-3  small-12  columns">
+
+        <% if approved_project?(@registry, project) %>
+          <button class="button expand radius success disabled">Approved</button>
+        <% else %>
+          <%= form_tag(action: 'projects') do %>
+            <%= hidden_field_tag(:project_id, project.id) %>
+            <button type="submit" class="button  expand alert radius"> Pending... </button>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+<% end %>
