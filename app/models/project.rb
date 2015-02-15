@@ -5,6 +5,8 @@ class Project < ActiveRecord::Base
   has_many :item_types, :dependent => :destroy
   has_many :items, :through => :item_types
   has_many :purchases, :through => :items
+  has_many :project_categories
+  has_many :categories, :through => :project_categories
 
   validates_presence_of :name, :country, :public?, :organization_id
   validates_associated :organization
