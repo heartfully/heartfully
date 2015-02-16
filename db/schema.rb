@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212015853) do
+ActiveRecord::Schema.define(version: 20150215192748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 20150212015853) do
     t.string   "country",                                                 null: false
     t.decimal  "funding_goal",    precision: 11, scale: 2
     t.datetime "closed_at"
-    t.boolean  "public",                                   default: true, null: false
+    t.boolean  "public?",                                  default: true, null: false
     t.integer  "organization_id",                                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
