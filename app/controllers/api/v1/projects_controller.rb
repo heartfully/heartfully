@@ -4,7 +4,7 @@ module Api
       before_action :set_project, :only => [:show, :update, :destroy]
 
       def index
-        @projects = Project.all
+        @projects = Project.filter(filterable_params).paginate(:page => params[:page], :per_page => 30)
         render_success @projects
       end
 
@@ -44,19 +44,23 @@ module Api
 
       private
 
-      # Use callbacks to share common setup or constraints between actions.
-      def set_project
-        @project = Project.find_by_id(params[:id])
-        if @project.blank?
-          render_non_existent
-          return false
+        # Use callbacks to share common setup or constraints between actions.
+        def set_project
+          @project = Project.find_by_id(params[:id])
+          if @project.blank?
+            render_non_existent
+            return false
+          end
         end
-      end
 
-      # Only allow a trusted parameter "white list" through.
-      def project_params
-        params.require(:project).permit(:name, :headline, :description, :banner_img, :city, :state, :country, :funding_goal, :public?)
-      end
+        # Only allow a trusted parameter "white list" through.
+        def project_params
+          params.require(:project).permit(:name, :headline, :description, :banner_img, :city, :state, :country, :funding_goal, :public?)
+        end
+
+        def filterable_params
+          { :in_category => params[:category_id] }
+        end
 
     end
   end

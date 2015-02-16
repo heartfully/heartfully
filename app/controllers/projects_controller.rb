@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    @projects = PaginatingDecorator.new(Project.paginate(:page => params[:page], :per_page => 30))
+    @projects = Project.filter(filterable_params).paginate(:page => params[:page], :per_page => 30)
   end
 
   # GET /projects/1
@@ -55,6 +55,10 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params[:project]
+      params.require(:project).permit(:name, :headline, :description, :project_url, :profile_img, :banner_img, :city, :state, :country, :funding_goal)
+    end
+
+    def filterable_params
+      { :in_category => params[:category_id] }
     end
 end

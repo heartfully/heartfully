@@ -1,10 +1,16 @@
 class Project < ActiveRecord::Base
+  include Filterable #allows for easy model filtering
+
+  scope :in_category, -> (category_id = nil) { joins(:project_categories).where(:project_categories => { :category_id => category_id }) }
+
   belongs_to :organization
   has_many :registry_projects
   has_many :registries, :through => :registry_projects
   has_many :item_types, :dependent => :destroy
   has_many :items, :through => :item_types
   has_many :purchases, :through => :items
+  has_many :project_categories
+  has_many :categories, :through => :project_categories
 
   validates_presence_of :name, :country, :public?, :organization_id
   validates_associated :organization
@@ -26,7 +32,7 @@ end
 #  country         :string(255)      not null
 #  funding_goal    :decimal(11, 2)
 #  closed_at       :datetime
-#  public?         :boolean          default(TRUE), not null
+#  public          :boolean          default(TRUE), not null
 #  organization_id :integer          not null
 #  created_at      :datetime
 #  updated_at      :datetime

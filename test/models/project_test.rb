@@ -14,7 +14,7 @@
 #  country         :string(255)      not null
 #  funding_goal    :decimal(11, 2)
 #  closed_at       :datetime
-#  public?         :boolean          default(TRUE), not null
+#  public          :boolean          default(TRUE), not null
 #  organization_id :integer          not null
 #  created_at      :datetime
 #  updated_at      :datetime
