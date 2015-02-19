@@ -1,10 +1,10 @@
 class RegistriesController < ApplicationController
   before_action :require_auth, :only => [:create, :edit, :update, :destroy]
   before_action :set_registry, :only => [:edit, :update, :destroy]
-
+  before_action :find_by_slug, :only => [:show, :projects]
+  
   # GET /registries/:url_slug
   def show
-    @registry = Registry.find_by(:url_slug => params[:url_slug])
   end
 
   # GET /registries/new
@@ -48,11 +48,25 @@ class RegistriesController < ApplicationController
     redirect_to registries_url, notice: 'Registry was successfully destroyed.'
   end
 
+  def projects
+    if request.post?
+      RegistryProject.where(registry_id: @registry.id, project_id: params[:project_id].to_i).first.approve!
+      redirect_to "/registry/#{@registry.url_slug}"
+    else
+      redirect_to "/registry/#{@registry.url_slug}" if current_user.nil? || !current_user.system_admin
+      @projects = @registry.approved_projects.empty? ? @registry.projects : @registry.approved_projects
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_registry
       @registry = current_user.registry
-      redirect_to new_registry_path unless @registry.present?
+      redirect_to new_registry_path unless @registry.present? 
+    end
+
+    def find_by_slug
+      @registry = Registry.find_by(:url_slug => params[:url_slug])
     end
 
     # Only allow a trusted parameter "white list" through.

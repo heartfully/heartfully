@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 20150215192748) do
     t.string   "country",                                                 null: false
     t.decimal  "funding_goal",    precision: 11, scale: 2
     t.datetime "closed_at"
-    t.boolean  "public",                                   default: true, null: false
+    t.boolean  "public?",                                  default: true, null: false
     t.integer  "organization_id",                                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -149,10 +149,11 @@ ActiveRecord::Schema.define(version: 20150215192748) do
   add_index "registries", ["url_slug"], name: "index_registries_on_url_slug", unique: true, using: :btree
 
   create_table "registry_projects", force: true do |t|
-    t.integer  "registry_id", null: false
-    t.integer  "project_id",  null: false
+    t.integer  "registry_id",                 null: false
+    t.integer  "project_id",                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "approved",    default: false
   end
 
   add_index "registry_projects", ["project_id"], name: "index_registry_projects_on_project_id", using: :btree

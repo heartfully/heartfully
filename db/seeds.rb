@@ -1,13 +1,15 @@
 Registry.destroy_all
 registries = Registry.create([
-  { :name => "Megan and Mike's Wedding Registry", :url_slug => "megan-and-mike", :postal_code => "11733" }
+  { :name => "Megan and Mike's Wedding Registry", :url_slug => "megan-and-mike", :postal_code => "11733" },
+  { :name => "Coreys Registry", :url_slug => "coreys-registry", :postal_code => "20005" }
 ])
 
 User.destroy_all
 users = User.create([
   { :email => "mike@fink.com", :password => "jetsrule", :first_name => "Mike", :last_name => "Fink", :registry_id => registries.first.id },
   { :email => "megan@fink.com", :password => "lilabeast", :first_name => "Megan", :last_name => "Fink", :registry_id => registries.first.id },
-  { :email => "seans887@gmail.com", :password => "password", :first_name => "Sean", :last_name => "Shannon" }
+  { :email => "seans887@gmail.com", :password => "password", :first_name => "Sean", :last_name => "Shannon" },
+  { :email => "cspeisman@gmail.com", :password => "password", :first_name => "Corey", :last_name => "Speisman", :system_admin => true }
 ])
 
 Organization.destroy_all
@@ -26,6 +28,11 @@ projects = Project.create([
   { :name => "Build a Well in 6", :country => "Ghana", :organization_id => orgs.first.id  },
   { :name => "Build a Well in 7", :country => "Ghana", :organization_id => orgs.first.id  }
 ])
+
+registry = Registry.find_by_url_slug('coreys-registry')
+User.find_by_email('cspeisman@gmail.com').registry = registry
+
+registry.projects = Project.all
 
 Category.destroy_all
 categories = Category.create([

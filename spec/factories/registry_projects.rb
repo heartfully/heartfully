@@ -1,16 +1,3 @@
-class RegistryProject < ActiveRecord::Base
-  belongs_to :registry
-  belongs_to :project
-
-  validates_presence_of :registry_id, :project_id
-  validates_associated :registry, :project
-
-  def approve!
-    self.update_attributes(:approved => true)
-  end
-
-end
-
 # == Schema Information
 #
 # Table name: registry_projects
@@ -22,3 +9,11 @@ end
 #  updated_at  :datetime
 #  approved    :boolean          default(FALSE)
 #
+
+FactoryGirl.define do
+  factory :registry_project do
+    association :registry, :factory => :coreys_registry
+    project
+  end
+
+end
