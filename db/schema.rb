@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20150215192748) do
   enable_extension "plpgsql"
 
   create_table "categories", force: true do |t|
-    t.string "name"
-    t.string "cat_type"
+    t.string "name",     null: false
+    t.string "cat_type", null: false
   end
 
   create_table "favorites", force: true do |t|
@@ -90,8 +90,8 @@ ActiveRecord::Schema.define(version: 20150215192748) do
   add_index "partner_invites", ["registry_id"], name: "index_partner_invites_on_registry_id", using: :btree
 
   create_table "project_categories", force: true do |t|
-    t.integer  "project_id"
-    t.integer  "category_id"
+    t.integer  "project_id",  null: false
+    t.integer  "category_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
