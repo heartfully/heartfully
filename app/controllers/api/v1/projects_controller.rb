@@ -59,7 +59,7 @@ module Api
         end
 
         def filterable_params
-          { :in_category => params[:category_id] }
+          { :in_category => params[:categories] }
         end
 
     end

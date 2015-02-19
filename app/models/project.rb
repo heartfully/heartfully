@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
   include Filterable #allows for easy model filtering
 
-  scope :in_category, -> (category_id = nil) { joins(:project_categories).where(:project_categories => { :category_id => category_id }) }
+  scope :in_category, -> (category_id = nil) { joins(:project_categories).where("project_categories.category_id" => category_id).group("projects.id").having('count(*) = ?', (category_id.is_a?(Array) ? category_id.length : 1)) }
 
   belongs_to :organization
   has_many :registry_projects
