@@ -1,7 +1,7 @@
 var HeartfullyApp = HeartfullyApp || {
   Models: {},
   Collections: {},
-  Views: {},
+  Components: {},
   Routers: {},
   Data: {}
 };

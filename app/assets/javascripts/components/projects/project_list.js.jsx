@@ -1,13 +1,9 @@
-var ProjectList = React.createClass({
-  getInitialState: function() {
-    return { data: HeartfullyApp.Data.projects };
-  },
-
+HeartfullyApp.Components.ProjectList = React.createBackboneClass({
   render: function() {
-    var projectNodes = this.state.data.map(function(project, index) {
+    var projectNodes = this.props.projects.map(function(project, index) {
       return (
-        <ProjectItem {...project} key={index}>
-        </ProjectItem>
+        <HeartfullyApp.Components.ProjectItem model={project} key={index}>
+        </HeartfullyApp.Components.ProjectItem>
       );
     });
     return (

@@ -1,7 +1,7 @@
 <% content_for(:page_title, "Pick Your Project!") %>
 
 <% content_for :backbone_bootstrap do %>
-  <% tag(:meta, :class => "bootstrapped-json", :id => "projects-json", :data => { projects: @projects }) %>
+  <% tag(:meta, :class => "bootstrapped-json", :id => "projects-json", :data => { projects: @projects, categories: @categories }) %>
 <% end %>
 
 <% content_for :load_js do %>
@@ -14,4 +14,4 @@
   </div>
 </div>
 
-<div id="js-projects-list" class="row projects-list" data-react-class="ProjectList" />
+<div id="js-projects-list" class="row projects-list" />
