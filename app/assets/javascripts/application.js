@@ -18,6 +18,7 @@
 //= require react
 //= require react_ujs
 //= require react.backbone/react.backbone
+//= require ./utils
 //= require ./app_bootstrap
 
 $(function(){ $(document).foundation(); });
