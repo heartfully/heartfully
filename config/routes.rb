@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   resource :registry
   resources :partner_invites, :only => [:create, :destroy]
 
+	resources :charges
+
   # Main registry page, this must be after `resource :registry`
   get '/registry/:url_slug', to: 'registries#show'
   match '/registry/:url_slug/projects', to: 'registries#projects', via: [:get, :post], as: 'registry_project'
