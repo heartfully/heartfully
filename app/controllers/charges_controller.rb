@@ -10,6 +10,7 @@ class ChargesController < ApplicationController
 			:card => params[:stripeToken]
 		)
 
+    debugger
 		charge = Stripe::Charge.create(
 			:customer 	 => customer.id,
 			:amount 		 => @amount,
@@ -19,6 +20,8 @@ class ChargesController < ApplicationController
 
 	rescue
 		flash[:error] = e.message
+    p "I WAS HIT YOLO"
+    debugger
 		redirect_to charges_path
 	end
 end
