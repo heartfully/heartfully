@@ -5,12 +5,14 @@ $footer_height_small : 36em;
 * {
   margin: 0;
 }
-html, body {
+
+html,
+body {
   height: 100%;
 }
+
 #wrapper {
-  min-height: 100%;
-  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+  height: auto !important; // This line and the next line are not necessary unless you need IE6 support
   height: 100%;
   margin: 0 auto;
   margin-bottom: -$footer_height;
@@ -18,12 +20,13 @@ html, body {
 
 footer, #push { height: $footer_height; }
 
-/*
+footer,
+#push {
+  height: $footer-height;
+}
 
-Sticky Footer by Ryan Fait
-http://ryanfait.com/
-
-*/
+// Sticky Footer by Ryan Fait
+// http://ryanfait.com/
 
 footer {
   @extend section;

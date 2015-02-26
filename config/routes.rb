@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   resource :session, only: [:create]
   resources :users
 
-  get '/sign_up' => "users#new"
-  get '/sign_in' => "sessions#new"
-  delete '/sign_out' => "sessions#destroy"
+  get '/sign_up' => 'users#new'
+  get '/sign_in' => 'sessions#new'
+  delete '/sign_out' => 'sessions#destroy'
 
   # User confirmation
-  get '/users/:confirmation_token/confirm' => "users#confirm", :as => "user_confirmation"
+  get '/users/:confirmation_token/confirm' => 'users#confirm', :as => 'user_confirmation'
 
   resources :projects
   resources :favorites
@@ -38,7 +38,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-
       with_options :except => [:new, :edit] do |api|
         api.resources :users do
           api.resources :purchases
@@ -52,7 +51,6 @@ Rails.application.routes.draw do
 
         api.resources :organizations
       end
-
     end
   end
 end
