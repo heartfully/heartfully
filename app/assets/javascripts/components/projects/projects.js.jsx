@@ -6,31 +6,50 @@ HeartfullyApp.Components.Projects = React.createBackboneClass({
   ],
 
   getInitialState: function() {
-    return { selectedRegionId: null, selectedVerticalId: null }
+    return { categoryIds: [] }
   },
 
   handleUserInput: function(data) {
     var self = this;
 
-    this.setState({
-      selectedRegionId: data.regionId,
-      selectedVerticalId: data.verticalId
-    });
+    // Start loading gif
+    $(this.refs.projectList.getDOMNode()).startLoading();
+
+    // Filter out blank inputs, check if any input was entered
+    var catIds = _.filter(data, function(val){ return !!val; });
+
+    this.setState({categoryIds: catIds});
 
     this.props.projects.fetch({
-      data: { categories: [data.regionId, data.verticalId] },
-      reset: true
+      data: { categories: catIds },
+      reset: true,
+      success: function() {
+        $(self.refs.projectList.getDOMNode()).stopLoading();
+      }
     });
   },
 
   render: function() {
+    var self = this;
+
+    // Get the category objects to display on the page
+    var cats = this.props.categories.filter(function(cat) {
+      return self.state.categoryIds.indexOf(cat.get("id")) >= 0;
+    });
+    var catText = "All Projects";
+    if (cats.length) {
+      catText = "Projects in "+cats[0].get("name");
+      if (cats.length == 2) { catText += " and " + cats[1].get("name"); }
+    }
+
     return (
       <div>
         <HeartfullyApp.Components.ProjectFilter
           categories={this.props.categories}
           onUserInput={this.handleUserInput}
         />
-        <HeartfullyApp.Components.ProjectList projects={this.props.projects} />
+        <h2>{catText}</h2>
+        <HeartfullyApp.Components.ProjectList ref="projectList" projects={this.props.projects} />
       </div>
     );
   }

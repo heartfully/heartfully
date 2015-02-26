@@ -14,3 +14,11 @@ $.fn.serializeObject = function()
   });
   return o;
 };
+
+$.fn.startLoading = function() {
+  this.append("<div class='loading-overlay'><div class='loading-gif'></div></div>");
+}
+
+$.fn.stopLoading = function() {
+  this.find('.loading-overlay').remove();
+}
