@@ -32,15 +32,15 @@ projects = Project.create([
 #   { :name => "Build a Well in 7", :country => "Ghana", :organization_id => orgs.first.id  }
 ])
 registries[2].projects << projects.first
-RegistryProject.where(registry_id: registries[2].id, project_id: projects.first.id).first.approve!	
+RegistryProject.where(registry_id: registries[2].id, project_id: projects.first.id).first.approve!
 item_types = projects.first.item_types.create([
-  {:name => 'Meeting logistics', :description => '', :price => 60.00, :thumbnail_img => "marissa_and_travis/meeting_logistics.jpg"}, 
-  {:name => 'Full participation package for a principal', :description => '' , :price => 100.00, :thumbnail_img => 'marissa_and_travis/full_participation_package.jpg'}, 
-  {:name => 'Transportation of SolarAid trainers to rural communities', :description => '' , :price => 35.00, :thumbnail_img => "marissa_and_travis/transportation_of_sa_trainers.jpg"}, 
-  {:name => 'Principal stipend for leading the school’s solar campaign', :description => '' , :price => 50.00, :thumbnail_img => 'marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'}, 
-  {:name => 'Marketing bundle', :description => 'contains all of the supplies needed to highlight and promote solar lights. This includes sample lights, banners, flyers, radio airtime, etc' , :price => 65.00, :thumbnail_img => 'marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'}, 
-  {:name => 'Driver to transport solar lights', :description => '' , :price => 50.00, :thumbnail_img => 'marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'}, 
-  {:name => 'Vehicle repare maintenance, and fuel', :description => '' , :price => 25.00, :thumbnail_img => 'marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'}, 
+  {:name => 'Meeting logistics', :description => '', :price => 60.00, :thumbnail_img => "marissa_and_travis/meeting_logistics.jpg"},
+  {:name => 'Full participation package for a principal', :description => '' , :price => 100.00, :thumbnail_img => 'marissa_and_travis/full_participation_package.jpg'},
+  {:name => 'Transportation of SolarAid trainers to rural communities', :description => '' , :price => 35.00, :thumbnail_img => "marissa_and_travis/transportation_of_sa_trainers.jpg"},
+  {:name => 'Principal stipend for leading the school’s solar campaign', :description => '' , :price => 50.00, :thumbnail_img => 'marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'},
+  {:name => 'Marketing bundle', :description => 'contains all of the supplies needed to highlight and promote solar lights. This includes sample lights, banners, flyers, radio airtime, etc' , :price => 65.00, :thumbnail_img => 'marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'},
+  {:name => 'Driver to transport solar lights', :description => '' , :price => 50.00, :thumbnail_img => 'marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'},
+  {:name => 'Vehicle repare maintenance, and fuel', :description => '' , :price => 25.00, :thumbnail_img => 'marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'},
   {:name => 'Room and board for teachers and assitants delivering lights', :description => '' , :price => 50.00 },
   {:name => 'Follow-up interviews and community analysis to assess financial and health benefits following solar light purchase', :description => '' , :price => 7.00 }
 ])
