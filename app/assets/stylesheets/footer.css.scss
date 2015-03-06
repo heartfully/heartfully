@@ -59,5 +59,89 @@ footer {
     position: relative;
     top: 15%;
     transform: translateY(-50%);
+    font-family: 'Quicksand', sans-serif;
+    color: $white;
+    font-kerning: 130px;
+    line-height: 17px;
+  }
+}
+
+.about-us-footer {
+  height: 6.9em;
+  li {
+    margin: auto;
+    width: 60%;
+    &:first-child {
+      margin-top: 0.8em;
+    }
+    a {
+      font-family: 'Quicksand', sans-serif;
+      color: $white;
+      line-height: 24px;
+    }
+  }
+}
+
+.contact-footer {
+  height: 6.9em;
+  li {
+    margin: auto;
+    &:first-child {
+      margin-top: 0.9em;
+    }
+    a {
+      font-family: 'Quicksand', sans-serif;
+      color: $white;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.nav-footer {
+  float: left!important;
+  height: 6.9em;
+  li {
+    margin: auto;
+    &:first-child {
+      margin-top: 0.9em;
+    }
+    a {
+      font-family: 'Quicksand', sans-serif;
+      color: $white;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.terms-and-rights {
+  margin-top: 1em;
+  div {
+    padding: 0;
+    margin: 0;
+    .line-center{
+      margin:0;
+      padding:0 10px;
+      background: $tuatara;
+      display:inline-block;
+      padding: 0 1.5em;
+    }
+    h6 {
+      text-align:center;
+      position:relative;
+      z-index:2;
+    }
+    h6:after {
+      content:"";
+      position:absolute;
+      top:35%;
+      left:0;
+      right:0;
+      border-top:solid 0.15em $white;
+      z-index:-1;
+      font-family: 'Quicksand', sans-serif;
+      line-height: 24px;
+    }
   }
 }
