@@ -1,10 +1,10 @@
 <header class="row">
-  <div class="small-10 medium-3 large-4 columns">
+  <div class="small-2 medium-3 large-4 columns">
     <h1 id="logo"><a href="/">Heartful.ly</a></h1>
   </div>
-  <div id="main-nav-container" class="small-2 medium-9 large-8 columns">
+  <div id="main-nav-container" class="small-10 medium-9 large-8 columns">
+    <a id="hamburger-menu" href="#">&#9776;</a>
     <nav class="top-bar-section">
-      <a id="menu" class="right" href="#">&#9776;</a>
     <% if signed_in?  %>
       <%= render 'shared/user_nav' %>
     <% else  %>
