@@ -1,4 +1,5 @@
 #banner-container {
+  position:relative;
   background-image: image-url("homepage_image.jpg");
   background-size: cover;
   background-position: center center;
@@ -24,10 +25,9 @@
       font-family: $secondary_font;
       color: $white;
       border-radius: 1em;
-    }
-
-    #cta-button:hover + img {
-      opacity: 0.55;
+      &:hover {
+        background: rgba($main-font-color, 1);
+      }
     }
   }
   i {
@@ -36,5 +36,28 @@
     left: 50%;
     color: $white;
     font-size: 7em;
+    opacity: 0.75;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media all and (max-width: 1120px) {
+  #banner-container div h1 {
+    font-size: 4em;
+  }
+}
+@media all and (max-width: 900px) {
+  #banner-container div h1 {
+    font-size: 3em;
+  }
+}
+@media all and (max-width: 680px) {
+  #banner-container div h1 {
+    font-size: 2em;
+  }
+  #cta-button {
+    font-size: 1.1em;
   }
 }
