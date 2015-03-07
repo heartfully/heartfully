@@ -4,22 +4,37 @@
   background-position: center center;
   width: 100vw;
   height: 100vh;
-  h1 {
-    font-family: $main_font;
-  }
 
-  #cta-button {
-    background: $main-font-color;
-    font-family: $main_font;
+  div {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translateX(-50%) translateY(-100%);
     outline: none;
     z-index: 1;
-  }
+    h1 {
+      font-family: $main_font;
+      font-size: 5em;
+      color: $white;
+      font-weight: bold;
+    }
 
-  #cta-button:hover + img {
-    opacity: 0.55;
+    #cta-button {
+      background: rgba($main-font-color, 0.75);
+      font-family: $secondary_font;
+      color: $white;
+      border-radius: 1em;
+    }
+
+    #cta-button:hover + img {
+      opacity: 0.55;
+    }
+  }
+  i {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    color: $white;
+    font-size: 7em;
   }
 }
