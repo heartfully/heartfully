@@ -1,0 +1,25 @@
+#banner-container {
+  background-image: image-url("homepage_image.jpg");
+  background-size: cover;
+  background-position: center center;
+  width: 100vw;
+  height: 100vh;
+  h1 {
+    font-family: $main_font;
+  }
+
+  #cta-button {
+    background: $main-font-color;
+    font-family: $main_font;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    outline: none;
+    z-index: 1;
+  }
+
+  #cta-button:hover + img {
+    opacity: 0.55;
+  }
+}
