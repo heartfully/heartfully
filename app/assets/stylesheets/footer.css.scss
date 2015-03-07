@@ -1,4 +1,5 @@
 $footer_height : 15em;
+$footer_font : 'Quicksand', sans-serif;
 
 * {
   margin: 0;
@@ -36,16 +37,16 @@ footer {
   }
 }
 
-#logo-footer {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.5em;
-  text-transform: none;
-  a {
-    color: $white;
+.logo-footer {
+  line-height: 0;
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    text-transform: none;
+    a {
+      color: $white;
+    }
   }
-}
-
-.social-links {
   i {
     font-size: 2.5em;
     color: $white;
@@ -53,76 +54,42 @@ footer {
   }
 }
 
-.company-address {
-  height: 6.9em;
+.mailing-address {
+    padding: 1.2em 0;
   a {
-    position: relative;
-    top: 15%;
-    transform: translateY(-50%);
-    font-family: 'Quicksand', sans-serif;
     color: $white;
+    font-family: $footer_font;
     font-kerning: 130px;
     line-height: 17px;
+    text-transform: uppercase;
+  }
+}
+
+.about-us-footer, .company-info, .contact-us {
+  padding: 1em 0 0 0;
+  li {
+    a {
+      color: $white;
+      font-family: $footer_font;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
   }
 }
 
 .about-us-footer {
-  height: 6.9em;
-  li {
-    margin: auto;
-    width: 60%;
-    &:first-child {
-      margin-top: 0.8em;
-    }
-    a {
-      font-family: 'Quicksand', sans-serif;
-      color: $white;
-      line-height: 24px;
-    }
-  }
+  padding-left: 3em;
 }
 
-.contact-footer {
-  height: 6.9em;
-  li {
-    margin: auto;
-    &:first-child {
-      margin-top: 0.9em;
-    }
-    a {
-      font-family: 'Quicksand', sans-serif;
-      color: $white;
-      line-height: 24px;
-      text-transform: uppercase;
-    }
-  }
-}
-
-.nav-footer {
+.contact-us {
   float: left!important;
-  height: 6.9em;
-  li {
-    margin: auto;
-    &:first-child {
-      margin-top: 0.9em;
-    }
-    a {
-      font-family: 'Quicksand', sans-serif;
-      color: $white;
-      line-height: 24px;
-      text-transform: uppercase;
-    }
-  }
 }
 
 .terms-and-rights {
   margin-top: 1em;
   div {
     padding: 0;
-    margin: 0;
     .line-center{
-      margin:0;
-      padding:0 10px;
       background: $tuatara;
       display:inline-block;
       padding: 0 1.5em;
@@ -135,7 +102,7 @@ footer {
     h6:after {
       content:"";
       position:absolute;
-      top:35%;
+      top:40%;
       left:0;
       right:0;
       border-top:solid 0.15em $white;
