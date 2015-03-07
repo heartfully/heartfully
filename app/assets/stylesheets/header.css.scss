@@ -74,13 +74,13 @@ header {
     display: none;
     clear: both;
     float: right;
+    li:last-child { padding: 0; }
   }
   header #main-nav-container .top-bar-section .show-menu-js {
     display: block;
     width: 100%;
     li {
       text-align: right;
-      padding: 0;
       display: block;
       float: right;
       width: 100%;
@@ -93,4 +93,8 @@ header {
       }
     }
   }
+}
+
+@media all and (max-width: 300px) {
+  #logo { padding-top: 0.4em; font-size: 1.8em; }
 }
