@@ -1,5 +1,8 @@
 $footer_height : 15em;
+$footer_height_small : 36em;
 $footer_font : 'Quicksand', sans-serif;
+
+
 
 * {
   margin: 0;
@@ -14,9 +17,7 @@ html, body {
   margin: 0 auto;
   margin-bottom: -$footer_height;
 }
-footer, #push {
-  height: $footer_height;
-}
+footer, #push { height: $footer_height; }
 
 /*
 
@@ -54,7 +55,8 @@ footer {
 }
 
 .mailing-address {
-    padding: 1.2em 0;
+    padding: 1.4em 0 1em 0;
+    display: inline-block;
   a {
     color: $white;
     font-family: $footer_font;
@@ -66,21 +68,16 @@ footer {
 
 .about-us-footer, .company-info, .contact-us {
   padding: 1em 0 0 0;
-  li {
-    a {
-      color: $white;
-      font-family: $footer_font;
-      line-height: 24px;
-      text-transform: uppercase;
-    }
-  }
-}
-
-.about-us-footer, .company-info, .contact-us {
   .footer-links {
     display: inline-block;
     li {
       clear: both;
+      a {
+        color: $white;
+        font-family: $footer_font;
+        line-height: 24px;
+        text-transform: uppercase;
+      }
     }
   }
 }
@@ -114,6 +111,53 @@ footer {
       z-index:-1;
       font-family: 'Quicksand', sans-serif;
       line-height: 24px;
+    }
+  }
+}
+
+@media all and (max-width: 1025px) {
+  .logo-footer { h1, i {font-size: 2.2em;}}
+  .mailing-address { font-size: 0.8em; padding-right: 0; }
+  .about-us-footer, .company-info, .contact-us {
+    .footer-links {
+      margin: 0;
+      li {
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 780px) {
+  .logo-footer { h1, i {font-size: 1.6em;} h1 { padding-top: 0.3em;}}
+  .mailing-address { font-size: 0.7em; padding-top: 1.8em; }
+  .about-us-footer, .company-info, .contact-us {
+    .footer-links {
+      li {
+        font-size: 0.7em;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 641px) {
+  #wrapper { margin-bottom: -$footer_height_small }
+  footer, #push { height: $footer_height_small; }
+  footer { padding-top: 1em;}
+  .logo-footer { h1, i {font-size: 2.2em;}}
+  .mailing-address { font-size: 0.9em; padding-right: 0; }
+  .about-us-footer, .company-info, .contact-us {
+    .footer-links {
+      margin: 0;
+      text-align: center;
+      li {
+        font-size: 0.9em;float: none!important;
+      }
+    }
+  }
+  .terms-and-rights {
+    h6 {
+      font-size: 0.8em;
     }
   }
 }
