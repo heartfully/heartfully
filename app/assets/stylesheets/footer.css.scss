@@ -2,8 +2,6 @@ $footer_height : 15em;
 $footer_height_small : 36em;
 $footer_font : 'Quicksand', sans-serif;
 
-
-
 * {
   margin: 0;
 }
@@ -17,6 +15,7 @@ html, body {
   margin: 0 auto;
   margin-bottom: -$footer_height;
 }
+
 footer, #push { height: $footer_height; }
 
 /*
@@ -29,7 +28,7 @@ http://ryanfait.com/
 footer {
   @extend section;
   color: $white;
-  background-color: $tuatara;
+  background-color: $main-font-color;
 
   h1, h2, h3, h4, h5, h6 { color: $white; }
   // remove below later most likely? 
@@ -91,7 +90,7 @@ footer {
   div {
     padding: 0;
     .line-center{
-      background: $tuatara;
+      background: $main-font-color;
       display:inline-block;
       padding: 0 1.5em;
       text-transform: none;
