@@ -41,6 +41,12 @@ header {
   }
 }
 
+
+#menu {
+  display: none;
+  color: white;
+}
+
 @media all and (max-width: 780px) {
   header #main-nav-container .top-bar-section .inline-list li {
     &:last-child {
@@ -49,5 +55,16 @@ header {
     a {
       padding: 0.6em 0 0 1.6em;
     }
+  }
+}
+
+@media all and (max-width: 680px) {
+  #menu {
+    display: inline;
+    font-size: 2.4em;
+    padding: 0.2em 0.2em 0 0;
+  }
+  header #main-nav-container .top-bar-section .inline-list {
+    display: none;
   }
 }
