@@ -41,7 +41,6 @@ footer {
   line-height: 0;
   h1 {
     font-family: 'Pacifico', cursive;
-    font-size: 2.5em;
     text-transform: none;
     a {
       color: $white;
@@ -77,8 +76,13 @@ footer {
   }
 }
 
-.about-us-footer {
-  padding-left: 3em;
+.about-us-footer, .company-info, .contact-us {
+  .footer-links {
+    display: inline-block;
+    li {
+      clear: both;
+    }
+  }
 }
 
 .contact-us {
@@ -93,6 +97,7 @@ footer {
       background: $tuatara;
       display:inline-block;
       padding: 0 1.5em;
+      text-transform: none;
     }
     h6 {
       text-align:center;
