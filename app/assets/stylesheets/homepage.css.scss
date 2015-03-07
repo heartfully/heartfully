@@ -25,6 +25,7 @@
       font-family: $secondary_font;
       color: $white;
       border-radius: 1em;
+      font-kerning: 130px;
       &:hover {
         background: rgba($main-font-color, 1);
       }
