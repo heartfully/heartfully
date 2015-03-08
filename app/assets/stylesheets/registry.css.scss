@@ -13,9 +13,13 @@
     i {
       position: absolute;
       bottom: 0;
-      left: 50%;
+      left: 25%;
+      right: 25%;
       font-size: 6em;
       color: $white;
+      opacity: 0.8;
+      z-index: 2;
+      &:hover { opacity: 1; }
     }
     div {
       background-color: $banner-color;
@@ -66,6 +70,24 @@
           margin-left: 2em;
         }
       }
+    }
+  }
+}
+
+@media all and (max-width: 580px) {
+  .registry #registry-banner-container {
+    div {
+      h1 { font-size: 4em;}
+      h3 { font-size: 1.2em; & span:before,& span:after {height: 1.2em;}}
+    }
+  }
+}
+
+@media all and (max-width: 440px) {
+  .registry #registry-banner-container {
+    div {
+      h1 { font-size: 3.2em;}
+      h3 { font-size: 1em; & span:before,& span:after {height: 1.5em;}}
     }
   }
 }
