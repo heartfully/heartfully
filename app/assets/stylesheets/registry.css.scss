@@ -1,4 +1,5 @@
 .registry {
+  div:first-child { margin: 0;}
   h1,h3 { font-kerning: 130px; }
   padding: 0;
   #registry-banner-container {
@@ -110,7 +111,6 @@
 }
 
 .registry-list-container {
-  width: 80%;
   h2 {
     padding: 1em 0 0 0;
     text-align: center;
