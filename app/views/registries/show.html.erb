@@ -31,3 +31,146 @@
     <%= image_tag "eva_and_peter_project_photo.jpg", alt: "Peter & Eva's Project Photo" %>
   </div>
 </div>
+
+<div class="row registry-list-container">
+  <h2>HELP US EMPOWER WOMEN ENTREPRENEURS IN SENEGAL</h2>
+  <table id="registry-list">
+    <tr class="zebra">
+      <td colspan="2">
+        <strong>Item</strong>
+      </td>
+      <td>
+        <strong>Price</strong>
+      </td>
+      <td>
+        <strong>Available</strong>
+      </td>
+      <td>
+        <strong>Quantity</strong>
+      </td>
+    </tr>
+    <tr>
+      <td class="product-img-cell">
+        <%= image_tag "stones.jpg", :class => "product-img" %>
+      </td>
+      <td class="product-name-cell">
+        <strong>Stones</strong>
+      </td>
+      <td class="product-price-cell">
+        $20 / Set of 10
+      </td>
+      <td class="product-avail-cell">
+        54 Sets
+      </td>
+      <td class="product-buy-cell">
+        <input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="product-img-cell">
+        <%= image_tag "bricks.jpg", :class => "product-img" %>
+      </td>
+      <td class="product-name-cell">
+        <strong>Bricks</strong>
+      </td>
+      <td class="product-price-cell">
+        $10 / Box of 20
+      </td>
+      <td class="product-avail-cell">
+        50 Boxes
+      </td>
+      <td class="product-buy-cell">
+        <input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="product-img-cell">
+        <%= image_tag "timber.jpg", :class => "product-img" %>
+      </td>
+      <td class="product-name-cell">
+        <strong>Lumber</strong>
+      </td>
+      <td class="product-price-cell">
+        $20 / Bundle of 10
+      </td>
+      <td class="product-avail-cell">
+        90 Bundles
+      </td>
+      <td class="product-buy-cell">
+        <input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="product-img-cell">
+        <%= image_tag "cement.jpg", :class => "product-img" %>
+      </td>
+      <td class="product-name-cell">
+        <strong>Cement</strong>
+      </td>
+      <td class="product-price-cell">
+        $8 / Bag
+      </td>
+      <td class="product-avail-cell">
+        64 Bags
+      </td>
+      <td class="product-buy-cell">
+        <input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="product-img-cell">
+        <%= image_tag "doors.jpg", :class => "product-img" %>
+      </td>
+      <td class="product-name-cell">
+        <strong>Doors</strong>
+      </td>
+      <td class="product-price-cell">
+        $150 per door
+      </td>
+      <td class="product-avail-cell">
+        10
+      </td>
+      <td class="product-buy-cell">
+        <input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="product-img-cell">
+        <%= image_tag "windows.jpg", :class => "product-img" %>
+      </td>
+      <td class="product-name-cell">
+        <strong>Windows</strong>
+      </td>
+      <td class="product-price-cell">
+        $75 per window
+      </td>
+      <td class="product-avail-cell">
+        24
+      </td>
+      <td class="product-buy-cell">
+        <input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a>
+      </td>
+    </tr>
+  </table>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <a class="expand button" data-reveal-id="js-thank-you-modal" href="">All Set? Checkout</a>
+    </div>
+  </div>
+</div>
+
+<div id="js-thank-you-modal" class="reveal-modal small thank-you-modal" data-reveal>
+  <h2 id="thank-you">Thank You!</h2>
+  <a href="#" class="close-reveal-modal">&times;</a>
+
+  <div class="row">
+    <p>Thanks so much for contributing to our special day by supporting the <strong>Mufindi Orphan Project</strong>! We can't wait to see you at the wedding!</p>
+  </div>
+</div>
