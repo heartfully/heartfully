@@ -90,6 +90,33 @@
       }
     }
   }
+  .couple-project {
+    background: #F5F5F5;
+    padding: 4em 5em;
+    div:first-child {
+      h2 {
+        text-align: center;
+        font-family: $secondary_font;
+        font-Kerning: 130;
+      }
+      p {
+        font-family: $main_font;
+        span {
+          color: $main-font-color;
+          font-weight: bold;
+        }
+      }
+      h3 {
+        text-align: center;
+      }
+    }
+    div:last-child {
+      img {
+        width: 65%;
+        float: right;
+      }
+    }
+  }
 }
 
 @media all and (max-width: 580px) {
