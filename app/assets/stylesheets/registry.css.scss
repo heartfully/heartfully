@@ -57,7 +57,7 @@
           height: 1em;
           border-bottom: 0.2em solid white;
           top: 0;
-          width: 200px;
+          width: 50%;
         }
         & span:before {
           right: 100%;
@@ -192,6 +192,7 @@
     }
   }
   div {
+    margin: 0!important;
     a {
       border-radius: 1em;
       text-transform: uppercase;
