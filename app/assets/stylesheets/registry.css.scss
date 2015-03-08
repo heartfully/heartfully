@@ -2,9 +2,10 @@
   div:first-child { margin: 0;}
   h1,h3 { font-kerning: 130px; }
   padding: 0;
+  .eva-and-peter { background: image-url("peter_and_eva_banner_photo.jpg"); }
+  .katelyn-and-brandon { background: image-url("katelyn_and_brandon_banner_photo.png");}
   #registry-banner-container {
     position:relative;
-    background-image: image-url("peter_and_eva_banner_photo.jpg");
     background-size: cover;
     background-position: center center;
     width: 100vw;
@@ -200,7 +201,7 @@
       font-kerning: 130px;
       font-weight: bold;
     }
-    margin-bottom: 5em;
+    margin-bottom: 5em!important;
   }
 }
 

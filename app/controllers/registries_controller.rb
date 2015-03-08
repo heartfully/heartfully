@@ -6,6 +6,11 @@ class RegistriesController < ApplicationController
   layout 'registry_layout'
   # GET /registries/:url_slug
   def show
+    if(params[:url_slug] == "evaandpeter")
+      render :show
+    elsif(params[:url_slug] == "katelynandbrandon")
+      render :show_katelyn_and_brandon
+    end
   end
 
   # GET /registries/new
