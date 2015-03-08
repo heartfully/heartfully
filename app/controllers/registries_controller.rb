@@ -3,6 +3,7 @@ class RegistriesController < ApplicationController
   before_action :set_registry, :only => [:edit, :update, :destroy]
   before_action :find_by_slug, :only => [:show, :projects]
   
+  layout 'registry_layout'
   # GET /registries/:url_slug
   def show
   end
