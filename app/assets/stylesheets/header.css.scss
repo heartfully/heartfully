@@ -16,7 +16,7 @@ header {
   a {
     color: $white;
     &:hover {
-      color: $secondary-font-color;
+      color: rgba($secondary-color, 0.8);
     }
   }
 }
@@ -41,7 +41,7 @@ header {
           font-kerning: 130px;
           font-weight: bold;
           &:hover {
-            color: $secondary-font-color;
+            color: rgba($secondary-color, 0.8);
           }
         }
       }
@@ -85,7 +85,7 @@ header {
       a {
         font-size: 1em;
         &:hover {
-          color: $secondary-font-color;
+          color: rgba($secondary-color, 0.8);
         }
       }
     }

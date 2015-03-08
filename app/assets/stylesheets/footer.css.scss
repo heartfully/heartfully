@@ -27,7 +27,7 @@ http://ryanfait.com/
 footer {
   @extend section;
   color: $white;
-  background-color: $main-font-color;
+  background-color: $primary-color;
 
   h1, h2, h3, h4, h5, h6 { color: $white; }
   // remove below later most likely? 
@@ -89,7 +89,7 @@ footer {
   div {
     padding: 0;
     .line-center{
-      background: $main-font-color;
+      background: $primary-color;
       display:inline-block;
       padding: 0 1.5em;
       text-transform: none;
