@@ -12,6 +12,8 @@ class RegistriesController < ApplicationController
       render :show_katelyn_and_brandon
     elsif(params[:url_slug] == "marissaandtravis") 
       render :show_marissa_and_travis
+    elsif(params[:url_slug])
+      render :show_lindsey_and_matt  
     end
   end
 
