@@ -72,6 +72,24 @@
       }
     }
   }
+  .couple-bio-section {
+    padding: 5em;
+    #couple-profile-photo{
+      img {
+        border: 0.35em solid #C2C2C2;
+        width: 95%;
+      }
+    }
+    div:last-child {
+      h2 {
+        font-family: $secondary_font;
+        font-Kerning: 130;
+      }
+      p {
+        font-family: $main_font;
+      }
+    }
+  }
 }
 
 @media all and (max-width: 580px) {
