@@ -146,9 +146,10 @@
       }
     }
     div {
+        margin-top: 6em;
       div {
         text-align: center;
-        padding: 2em;
+        margin: 0;
         img {
           border: 0.35em solid #C2C2C2;
           width: 80%;
@@ -192,6 +193,34 @@
       }
       p {
         font-size: 0.8em;
+      }
+    }
+  }
+  .heartfully-projects-we-love div.project-container {
+    h2 {
+      font-size: 1.4em;
+    }
+    h3 {
+      font-size: 1em;
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  .heartfully-projects-we-love {
+    padding: 1.2em;
+    div.project-container {
+      h2 {
+        font-size: 1.2em;
+      }
+      h3 {
+        font-size: 0.8em;
+        a.button {
+          padding: 0.8em;
+        }
+      }
+      div div p {
+        font-size: 1em;
       }
     }
   }
