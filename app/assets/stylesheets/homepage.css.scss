@@ -52,13 +52,13 @@
       text-align: center;
       margin: auto;
       font-size: 4em;
-      border-bottom: 0.1em solid #E9C58C;
+      border-bottom: 0.1em solid $quinary-color;
     }
     p {
       padding-top: 1.2em;
       width: 70%;
       margin: auto;
-      color: #959595;
+      color: $quaternary-color;
       text-align: center;
     }
   }
@@ -72,7 +72,7 @@
   padding: 3em;
   background: #F5F5F5;
   h2 { 
-    color: #959595; 
+    color: $quaternary-color; 
     text-align: center;
   }
   .line-center {
@@ -91,7 +91,7 @@
         top:50%;
         left: 1%;
         right: 1%;
-        border-top:solid 0.12em #E9C58C;
+        border-top:solid 0.12em $quinary-color;
         z-index:-1;
         line-height: 24px;
       }
@@ -110,6 +110,9 @@
           width: 10em;
           margin-top: 2em;
         }
+      }
+      p {
+        color: $quaternary-color;
       }
     }
   }
