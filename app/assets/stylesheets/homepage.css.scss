@@ -68,6 +68,46 @@
   }
 }
 
+.heartfully-how-it-works {
+  padding: 3em;
+  background: #F5F5F5;
+  h2 { 
+    color: #959595; 
+    text-align: center;
+  }
+  .line-center {
+    background: #F5F5F5;
+    display:inline-block;
+    padding: 0 2em;
+    text-transform: none;
+  }
+  div:first-child {
+    div h2 {  
+      position:relative;
+      z-index:2;
+      &:after {
+        content:"";
+        position:absolute;
+        top:50%;
+        left: 1%;
+        right: 1%;
+        border-top:solid 0.12em #E9C58C;
+        z-index:-1;
+        line-height: 24px;
+      }
+    }
+  }
+  div:last-child {
+    div {
+      text-align: center;
+      h2 {
+        font-weight: bold;
+        font-size: 1.8em;
+      }
+    }
+  }
+}
+
 @media all and (max-width: 1120px) {
   #banner-container div h1 {
     font-size: 4em;
