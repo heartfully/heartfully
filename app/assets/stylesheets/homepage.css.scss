@@ -43,6 +43,30 @@
   }
 }
 
+.heartfully-summary {
+  padding: 4em;
+  div:first-child {
+    h2 {
+      width: 90%;
+      font-family: $secondary_font;
+      text-align: center;
+      margin: auto;
+      font-size: 4em;
+      border-bottom: 0.1em solid #E9C58C;
+    }
+    p {
+      padding-top: 1.2em;
+      width: 70%;
+      margin: auto;
+      color: #959595;
+      text-align: center;
+    }
+  }
+  div:last-child {
+    padding: 2em 0.2em;
+  }
+}
+
 @media all and (max-width: 1120px) {
   #banner-container div h1 {
     font-size: 4em;
