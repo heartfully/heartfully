@@ -99,10 +99,17 @@
   }
   div:last-child {
     div {
-      text-align: center;
       h2 {
         font-weight: bold;
         font-size: 1.8em;
+      }
+      div {
+        height: 13em;
+        text-align: center;
+        img {
+          width: 10em;
+          margin-top: 2em;
+        }
       }
     }
   }
@@ -116,7 +123,9 @@
 @media all and (max-width: 900px) {
   #banner-container div h1 {
     font-size: 3em;
-  }
+  }position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 @media all and (max-width: 680px) {
   #banner-container div h1 {
