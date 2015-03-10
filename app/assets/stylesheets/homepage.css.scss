@@ -10,7 +10,7 @@
     position: absolute;
     top: 55%;
     left: 50%;
-    transform: translateX(-50%) translateY(-100%);
+    transform: translateX(-50%) translateY(-50%);
     outline: none;
     z-index: 1;
     h1 {
@@ -209,6 +209,7 @@
 @media all and (max-width: 500px) {
   .heartfully-projects-we-love {
     padding: 1.2em;
+    margin-bottom: 4em;
     div.project-container {
       h2 {
         font-size: 1.2em;
@@ -219,9 +220,23 @@
           padding: 0.8em;
         }
       }
-      div div p {
-        font-size: 1em;
+      div {
+        margin-left: 0;
+        margin-right: 0;
+        div p {
+          font-size: 1em;
+        }
       }
     }
+  }
+}
+
+@media all and (max-width: 300px) {
+  .heartfully-summary div:first-child h2 { font-size: 1.2em; }
+  .heartfully-how-it-works {
+    div div h2 .line-center {
+      padding: 0;
+    }
+    div:last-child div h2 { font-size: 1.2em; }
   }
 }
