@@ -20,5 +20,6 @@
 //= require react.backbone/react.backbone
 //= require ./utils
 //= require ./app_bootstrap
+//= require hamburgerIcon
 
 $(function(){ $(document).foundation(); });

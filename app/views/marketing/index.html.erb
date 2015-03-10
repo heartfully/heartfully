@@ -1,67 +1,77 @@
-<div>
+<div class="row">
   <div id="banner-container" class="hero-banner">
-    <%= link_to "Create Your Registry", new_registry_path, :id => "cta-button", :class => "button large" %>
+    <div class=" large-12 columns">
+      <h1>Build Love<br/>Where it's needed most</h1>
+      <%= link_to "Create Your Registry", new_registry_path, :id => "cta-button", :class => "button large" %>
+    </div>
+    <a href="#heartfully-sum"><i class="fa fa-caret-down"></i></a>
   </div>
 </div>
 
-<section class="row">
-
-  <div class="small-12 medium-8 large-6 small-centered columns text-justify">
-
-    <h2 class="text-center">How It Works</h2>
-
-    <div class="row padded-bottom">
-      <div class="small-6 large-3 columns">
-        <img src="http://placekitten.com/g/200/200">
-      </div>
-      <p class="small-6 large-9 columns">
-        Bacon ipsum dolor amet veniam filet mignon bresaola turkey fugiat capicola pancetta corned beef consectetur doner. Bresaola lorem quis alcatra.
-      </p>
-    </div>
-
-    <div class="row padded-bottom">
-      <p class="small-6 large-9 columns">
-        Bacon ipsum dolor amet veniam filet mignon bresaola turkey fugiat capicola pancetta corned beef consectetur doner. Bresaola lorem quis alcatra.
-      </p>
-      <div class="small-6 large-3 columns">
-        <img src="http://placekitten.com/g/200/200">
-      </div>
-    </div>
-
-    <div class="row padded-bottom">
-      <div class="small-6 large-3 columns">
-        <img src="http://placekitten.com/g/200/200">
-      </div>
-      <p class="small-6 large-9 columns">
-        Bacon ipsum dolor amet veniam filet mignon bresaola turkey fugiat capicola pancetta corned beef consectetur doner. Bresaola lorem quis alcatra.
-      </p>
-    </div>
-
+<section class="row heartfully-summary" id="heartfully-sum">
+  <div class="large-6 columns">
+    <h2>Heartful.ly</h2>
+    <p>creates charitable wedding registries that can share your happily ever after with the world. We offer engaged couples a platform to register for small scale, high impact infrastructure and development projects around the world.</p>
+  </div>
+  <div class="large-6 columns small-only-text-center medium-only-text-center large-only-text-right xlarge-only-text-right">
+    <iframe src="https://player.vimeo.com/video/119511358" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
 </section>
 
-<section class="row accent-bg">
+<section class="row heartfully-how-it-works">
+  <div class="row">
+    <div class="large-12 columns"><h2><span class="line-center">How It Works</span></h2></div>
+  </div>
+  <div class="row">
+    <div class="small-12 medium-6 large-3 columns">
+      <h2>Explore</h2>
+      <div class="row"><%= image_tag "homepage/explore_icon.png", alt: "Exlpore Icon" %></div>
+      <p>Whether you're passionate about alternative energy, healthy moms and babies or clean drinking water, we will help you find a registry that reflects your values.</p>
+    </div>
+    <div class="small-12 medium-6 large-3 columns">
+      <h2>Confirm</h2>
+      <div class="row"><%= image_tag "homepage/confirm_icon.png", alt: "Exlpore Icon" %></div>
+      <p>Found "the one?" Let us know the project you'd like to support and we'll set up your registry webpage. We will transform the project into individual gifts like pallets of bricks and buckets of paint. We'll also add an overview of the project to your page.</p>
+    </div>
+    <div class="small-12 medium-6 large-3 columns">
+      <h2>Customize</h2>
+      <div class="row"><%= image_tag "homepage/customize_icon.png", alt: "Exlpore Icon" %></div>
+      <p>We turn the resigns over to you to write a note to your guests, add photos, and even record a video message. When you're ready, share yout one-of-a-kind wedding registry with your guests using our straight forward web tools.</p>
+    </div>
+    <div class="small-12 medium-6 large-3 columns">
+      <h2>Give</h2>
+      <div class="row"><%= image_tag "homepage/build_icon.png", alt: "Exlpore Icon" %></div>
+      <p>On your wedding day, we transfer your guests' donations to the organization implementing the project. You will receive multimedia updates as the work progresses and upon completion of any infrastructure project, a plague will be hung in your name on site.</p>
+    </div>
+  </div>
+</section>
+
+<section class="row heartfully-projects-we-love">
+  <div class="row project-container">
+    <h2>Projects We Love</h2>
+    <h3><a href="#" class="button small">View More Projects</a></h3>
+    <div class="row">
+      <div class="small-12 medium-12 large-4 columns">
+        <%= image_tag "homepage/mufindi-large.jpg", alt: "Mufindi Village Image" %>
+        <p><strong>This Project</strong> will have a brief description, found here, under the photo.</p>
+        <h4><a href="#"><strong>Learn More</strong></a></h4>
+      </div>
+      <div class="small-12 medium-12 large-4 columns">
+        <%= image_tag "homepage/solaraid-large.jpg", alt: "Three boys smiling" %>
+        <p><strong>This Project</strong> will have a brief description, found here, under the photo.</p>
+        <h4><a href="#"><strong>Learn More</strong></a></h4>
+      </div>
+      <div class="small-12 medium-12 large-4 columns">
+        <%= image_tag "marissa_and_travis/marissa_and_travis_project_photo.jpg", alt: "Boy practicing writing his ABC's at night in his room" %>
+        <p><strong>This Project</strong> will have a brief description, found here, under the photo.</p>
+        <h4><a href="#"><strong>Learn More</strong></a></h4>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <section class="row accent-bg">
   <div class="small-12 medium-8 small-centered columns">
 
-    <h2 class="text-center">Featured Projects</h2>
-
-    <div class="small-12 large-4 columns zebra-bg panel">
-      <img src="http://placekitten.com/g/350/250">
-      <h5><a href="#">Awesome Project #1</a></h5>
-      <p class="text-justify">Kielbasa jerky bresaola meatball salami brisket ground round doner frankfurter biltong bacon drumstick short loin. Chuck turducken pastrami, shank short ribs swine sausage shoulder bresaola ham hock bacon spare ribs pork chop short loin.</p>
-    </div>
-
-    <div class="small-12 large-4 columns white-bg panel">
-      <img src="http://placekitten.com/g/350/250">
-      <h5><a href="#">Awesome Project #1</a></h5>
-      <p class="text-justify">Kielbasa jerky bresaola meatball salami brisket ground round doner frankfurter biltong bacon drumstick short loin. Chuck turducken pastrami, shank short ribs swine sausage shoulder bresaola ham hock bacon spare ribs pork chop short loin.</p>
-    </div>
-
-    <div class="small-12 large-4 columns zebra-bg panel">
-      <img src="http://placekitten.com/g/350/250">
-      <h5><a href="#">Awesome Project #1</a></h5>
-      <p class="text-justify">Kielbasa jerky bresaola meatball salami brisket ground round doner frankfurter biltong bacon drumstick short loin. Chuck turducken pastrami, shank short ribs swine sausage shoulder bresaola ham hock bacon spare ribs pork chop short loin.</p>
-    </div>
 
   </div>
-</section>
+</section> -->

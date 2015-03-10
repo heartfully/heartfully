@@ -1,0 +1,257 @@
+.registry {
+  div:first-child { margin: 0;}
+  h1,h3 { font-kerning: 130px; }
+  padding: 0;
+  .eva-and-peter { background: image-url("eva_and_peter/peter_and_eva_banner_photo.jpg"); }
+  .katelyn-and-brandon { background: image-url("katelyn_and_brandon/katelyn_and_brandon_banner_photo.png");}
+  .marissa-and-travis { background: image-url("marissa_and_travis/marissa_and_travis_banner_photo.jpg");}
+  .lindsey-and-matt { background: image-url("matt_and_lindsey/matt_and_lindsey_banner.jpg");}
+  #registry-banner-container {
+    position:relative;
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+
+    i {
+      position: absolute;
+      bottom: 0;
+      left: 25%;
+      right: 25%;
+      font-size: 6em;
+      color: $white;
+      opacity: 0.8;
+      z-index: 2;
+      &:hover { opacity: 1; }
+    }
+    div {
+      background-color: rgba($tertiary-color, 0.75);
+      position: absolute;
+      top: 96%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100%);
+      outline: none;
+      z-index: 1;
+      h1,h3 { padding: 0; margin: 0;}
+      h1 {
+        padding-top: 0.2em;
+        font-size: 5em;
+        color: $white;
+      }
+      h3 {
+        line-height: 44px;
+        font-weight: bold;
+        color: $white;
+        font-size: 1.5em;
+        padding-bottom: 1.2em;
+        & {
+          text-align: center;
+        }
+        & span {
+          display: inline-block;
+          position: relative;  
+        }
+        & span:before,
+        & span:after {
+          content: "";
+          position: absolute;
+          height: 1em;
+          border-bottom: 0.2em solid white;
+          top: 0;
+          width: 50%;
+        }
+        & span:before {
+          right: 100%;
+          margin-right: 2em;
+        }
+        & span:after {
+          left: 100%;
+          margin-left: 2em;
+        }
+      }
+    }
+  }
+  .couple-bio-section {
+    padding: 5em;
+    #couple-profile-photo{
+      img {
+        border: 0.35em solid #C2C2C2;
+        width: 95%;
+      }
+    }
+    div:last-child {
+      h2 {
+        font-family: $secondary_font;
+      }
+    }
+  }
+  .couple-project {
+    background: #F5F5F5;
+    padding: 4em 5em;
+    div:first-child {
+      .learn-more a {
+        border-radius: 0.6em;
+      }
+      p {
+        span {
+          color: $primary-color;
+          font-weight: bold;
+        }
+      }
+      h3 {
+        font-family: $secondary_font;
+        text-align: center;
+        color: black;
+        font-weight: bold;
+        span { color: $primary-color; }
+      }
+    }
+    div:last-child {
+      img {
+        width: 65%;
+      }
+    }
+  }
+}
+
+.registry-list-container {
+  h2 {
+    padding: 1em 0 0 0;
+    text-align: center;
+    font-size: 2.4em;
+    font-kerning: 60px;
+  }
+  #registry-list {
+    margin: auto;
+    text-align: center;
+    border: 0;
+    .zebra {
+      td {
+        background: #959595;
+        color: $white;
+        font-family: $secondary_font;
+        font-kerning: 130px;
+        font-size: 1.2em;
+
+        &:nth-child(1) {
+          padding-left: 1.4em;
+        }
+        &:nth-child(n+2) {
+          text-align: center;
+        }
+      }
+    }
+
+    .table-header {
+      font-kerning: 130px;
+      font-size: 1em;
+      color: $primary-color;
+      text-align: center;
+      font-weight: bold;
+      .registry-headers { font-weight: normal;}
+    }
+    input[type=text], a.button {
+      margin: 0;
+    }
+    .product-img-cell, .product-name-cell, .product-price-cell, .product-avail-cell, .product-buy-cell {
+      font-kerning: 130px;
+      text-align: center;
+      font-size: 1em;
+    }
+    .product-img-cell {
+      padding: 1.2em;
+      width: 15%;
+    }
+    .product-name-cell {
+      width: 20%;
+    }
+    .product-price-cell {
+      width: 20%;
+      .dollar-sign {
+        float: left;
+        padding: 0.2em 0.2em 0 0;
+      }
+      input[type=number] {
+        width:90%;
+      }
+    }
+    .product-avail-cell {
+      width: 15%;
+    }
+    .product-buy-cell {
+      width: 25%;
+      input {
+        margin: auto;
+        border: 2px solid grey;
+        width: 80%;
+      }
+      a {
+        border-radius: 1em;
+        font-family: $secondary_font;
+        font-weight: bold;
+        font-kerning: 130px;
+        font-size: 1em;
+        width: 80%;
+      }
+    }
+  }
+  div {
+    margin: 0!important;
+    a {
+      border-radius: 1em;
+      text-transform: uppercase;
+      font-family: $secondary_font;
+      font-kerning: 130px;
+      font-weight: bold;
+    }
+    margin-bottom: 5em!important;
+  }
+}
+
+
+.learn-more-modal {
+  font-family: $secondary_font;
+  p {
+    font-size: 0.9em;
+  }
+}
+
+@media all and (max-width: 580px) {
+  .registry #registry-banner-container {
+    div {
+      h1 { font-size: 4em;}
+      h3 { font-size: 1.2em; & span:before,& span:after {height: 1.2em;}}
+    }
+  }
+  .registry .registry-list-container {
+    h2 { font-size: 1.5em; padding: 0.5em;}
+  }
+}
+
+@media all and (max-width: 440px) {
+  .registry #registry-banner-container {
+    div {
+      h1 { font-size: 3.2em;}
+      h3 { font-size: 1em; & span:before,& span:after {height: 1.5em;}}
+    }
+  }
+  .registry .couple-bio-section {
+    padding: 1em;
+    div p {
+      font-size: 0.9em;
+    }
+  }
+  .registry .couple-project {
+    padding: 1em;
+    div p {
+      font-size: 0.9em;
+    }
+  }
+  .learn-more-modal {
+    h2 { font-size: 1.2em;}
+    p {font-size: 0.8em;}
+    li { font-size: 0.8em;}
+  }
+}

@@ -1,3 +1,5 @@
+$secondary_font : 'Raleway', sans-serif;
+
 h1, h2, h3, h4, h5, h6 { text-transform: uppercase; }
 
 ul {
@@ -11,7 +13,6 @@ section { padding: 3em 0px; }
 .white-bg { background-color: $white; }
 
 section.accent-bg {
-
   h2 { color: #fff; }
 }
 
