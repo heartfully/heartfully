@@ -208,12 +208,10 @@
 }
 
 
-.thank-you-modal {
-  text-align: center;
-
-  #thank-you {
-    font-family: 'Pacifico', cursive;
-    font-size: 4em;
+.learn-more-modal {
+  font-family: $secondary_font;
+  p {
+    font-size: 0.9em;
   }
 }
 
@@ -224,6 +222,9 @@
       h3 { font-size: 1.2em; & span:before,& span:after {height: 1.2em;}}
     }
   }
+  .registry .registry-list-container {
+    h2 { font-size: 1.5em; padding: 0.5em;}
+  }
 }
 
 @media all and (max-width: 440px) {
@@ -232,5 +233,22 @@
       h1 { font-size: 3.2em;}
       h3 { font-size: 1em; & span:before,& span:after {height: 1.5em;}}
     }
+  }
+  .registry .couple-bio-section {
+    padding: 1em;
+    div p {
+      font-size: 0.9em;
+    }
+  }
+  .registry .couple-project {
+    padding: 1em;
+    div p {
+      font-size: 0.9em;
+    }
+  }
+  .learn-more-modal {
+    h2 { font-size: 1.2em;}
+    p {font-size: 0.8em;}
+    li { font-size: 0.8em;}
   }
 }
