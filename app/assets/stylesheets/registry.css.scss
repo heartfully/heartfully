@@ -91,6 +91,9 @@
     background: #F5F5F5;
     padding: 4em 5em;
     div:first-child {
+      .learn-more a {
+        border-radius: 0.6em;
+      }
       p {
         span {
           color: $primary-color;
