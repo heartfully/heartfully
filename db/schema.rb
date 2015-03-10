@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150215192748) do
+ActiveRecord::Schema.define(version: 20150310224426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: true do |t|
-    t.string "name",     null: false
-    t.string "cat_type", null: false
+    t.string "name"
+    t.string "cat_type"
   end
 
   create_table "favorites", force: true do |t|
@@ -63,6 +63,22 @@ ActiveRecord::Schema.define(version: 20150215192748) do
   add_index "items", ["item_type_id"], name: "index_items_on_item_type_id", using: :btree
   add_index "items", ["purchase_id"], name: "index_items_on_purchase_id", using: :btree
 
+  create_table "items_orders", force: true do |t|
+    t.integer "item_id"
+    t.integer "order_id"
+  end
+
+  add_index "items_orders", ["item_id"], name: "index_items_orders_on_item_id", using: :btree
+  add_index "items_orders", ["order_id"], name: "index_items_orders_on_order_id", using: :btree
+
+  create_table "orders", force: true do |t|
+    t.string   "email"
+    t.integer  "registry"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "organizations", force: true do |t|
     t.string   "name",        null: false
     t.text     "description"
@@ -90,8 +106,8 @@ ActiveRecord::Schema.define(version: 20150215192748) do
   add_index "partner_invites", ["registry_id"], name: "index_partner_invites_on_registry_id", using: :btree
 
   create_table "project_categories", force: true do |t|
-    t.integer  "project_id",  null: false
-    t.integer  "category_id", null: false
+    t.integer  "project_id"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
