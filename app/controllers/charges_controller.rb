@@ -3,25 +3,28 @@ class ChargesController < ApplicationController
 	end
 
 	def create
-		@amount = 500
-		
-		customer = Stripe::Customer.create(
-			:email => 'Example@stripe.com',
-			:card => params[:stripeToken]
-		)
+    @amount = 500
 
-    debugger
-		charge = Stripe::Charge.create(
-			:customer 	 => customer.id,
-			:amount 		 => @amount,
-			:description => 'Rails Stripe customer',
-			:currency		 => 'usd'
-		)
+    begin
+      customer = Stripe::Customer.create(
+        email: params[:email],
+        card: params[:stripe],
+        metadata: {
+          project_name: "foo",
+          price: "spend some money"
+        }
+      )
 
-	rescue
-		flash[:error] = e.message
-    p "I WAS HIT YOLO"
-    debugger
-		redirect_to charges_path
-	end
+      Stripe::Charge.create(
+        customer: customer.id,
+        amount: @amount,
+        currency: 'usd',
+        description: "testing card in customer obj"
+      )
+
+    rescue Exception => e
+      flash[:error] = e.message
+      render 'new'
+    end
+  end
 end
