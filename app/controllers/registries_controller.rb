@@ -7,12 +7,12 @@ class RegistriesController < ApplicationController
   # GET /registries/:url_slug
   def show
     if(params[:url_slug] == "PeterandEva")
-      render :show
+      render :show_peter_and_eva
     elsif(params[:url_slug] == "wangama")
       render :show_katelyn_and_brandon
     elsif(params[:url_slug] == "marissaandtravis") 
       render :show_marissa_and_travis
-    elsif(params[:url_slug])
+    elsif(params[:url_slug] == "LindseyandMatt")
       render :show_lindsey_and_matt  
     end
   end
