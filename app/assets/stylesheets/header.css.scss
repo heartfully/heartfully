@@ -16,7 +16,7 @@ header {
   a {
     color: $white;
     &:hover {
-      color: rgba($secondary-color, 0.8);
+      color: $primary-color;
     }
   }
 }
@@ -41,7 +41,7 @@ header {
           font-kerning: 130px;
           font-weight: bold;
           &:hover {
-            color: rgba($secondary-color, 0.8);
+            color: $primary-color;
           }
         }
       }
@@ -71,6 +71,9 @@ header {
     font-size: 2.4em;
     padding: 0.2em;
     float: right;
+    &:hover {
+      color: $primary-color;
+    }
   }
   header #main-nav-container .top-bar-section .inline-list { display: none; li:last-child { padding: 0; } }
   header #main-nav-container .top-bar-section .show-menu-js {
@@ -85,7 +88,7 @@ header {
       a {
         font-size: 1em;
         &:hover {
-          color: rgba($secondary-color, 0.8);
+          color: $primary-color;
         }
       }
     }
