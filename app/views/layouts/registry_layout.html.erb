@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render 'shared/meta' %>
+  <%= yield :backbone_bootstrap %>
+</head>
+<body>
+
+  <div id="wrapper">
+
+    <div class="small-12 small-centered medium-12 large-12 columns registry">
+      <%= yield %>
+    </div>
+
+    <div id="push"></div>
+  </div>
+
+  <%= render 'shared/footer' %>
+
+  <%= javascript_include_tag('application') %>
+  <%= yield :load_js %>
+</body>
+</html>

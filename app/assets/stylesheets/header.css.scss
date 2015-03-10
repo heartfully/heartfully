@@ -1,4 +1,8 @@
-header { position: relative; }
+header { 
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(#959595, 0.4);
+}
 
 /*#main-nav-container {
   @include vert-center;
@@ -9,21 +13,88 @@ header { position: relative; }
   font-family: 'Pacifico', cursive;
   font-size: 2.5em;
   text-transform: none;
+  a {
+    color: $white;
+    &:hover {
+      color: $primary-color;
+    }
+  }
 }
 
-#banner-container {
-  background-image: image-url("hd-wedding.jpg");
-
-  #cta-button {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-100%);
-    outline: none;
-    z-index: 1;
+header {
+  #main-nav-container {
+    .top-bar-section .inline-list {
+        float: right;
+        clear: both;
+      li {
+        &, a {
+          background: none;
+          border: none;
+        }
+        &:last-child {
+          padding-right: 1.5em;
+        }
+        a {
+          padding: 0.4em 0 0 2.5em;
+          font-family: $secondary-font;
+          font-size: 1.2em;
+          font-kerning: 130px;
+          font-weight: bold;
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
   }
+}
 
-  #cta-button:hover + img {
-    opacity: 0.55;
+#hamburger-menu {
+  display: none;
+  color: white;
+}
+
+@media all and (max-width: 780px) {
+  header #main-nav-container .top-bar-section .inline-list li {
+    &:last-child {
+      padding-right: 0.8em;
+    }
+    a {
+      padding: 0.6em 0 0 1.6em;
+    }
   }
+}
+
+@media all and (max-width: 680px) {
+  header #main-nav-container #hamburger-menu {
+    display: block;
+    font-size: 2.4em;
+    padding: 0.2em;
+    float: right;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  header #main-nav-container .top-bar-section .inline-list { display: none; li:last-child { padding: 0; } }
+  header #main-nav-container .top-bar-section .show-menu-js {
+    display: block;
+    width: 100%;
+    li {
+      text-align: right;
+      display: block;
+      float: right;
+      width: 100%;
+      clear: both;
+      a {
+        font-size: 1em;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 300px) {
+  #logo { padding-top: 0.4em; font-size: 1.8em; }
 }
