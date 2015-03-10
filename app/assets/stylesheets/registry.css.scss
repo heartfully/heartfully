@@ -124,7 +124,6 @@
     margin: auto;
     text-align: center;
     border: 0;
-
     .zebra {
       td {
         background: #959595;
@@ -148,6 +147,7 @@
       color: $primary-color;
       text-align: center;
       font-weight: bold;
+      .registry-headers { font-weight: normal;}
     }
     input[type=text], a.button {
       margin: 0;
