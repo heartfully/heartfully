@@ -134,7 +134,6 @@
         font-family: $secondary_font;
         font-kerning: 130px;
         font-size: 1.2em;
-
         &:nth-child(1) {
           padding-left: 1.4em;
         }
@@ -163,9 +162,19 @@
     .product-img-cell {
       padding: 1.2em;
       width: 15%;
+      img {
+        width: 80%;
+        height: 7em;
+      }
     }
     .product-name-cell {
       width: 20%;
+      p {
+        height: 8em;
+        overflow: scroll;
+        font-size: 0.8em;
+        width: 16em;
+      }
     }
     .product-price-cell {
       width: 20%;
