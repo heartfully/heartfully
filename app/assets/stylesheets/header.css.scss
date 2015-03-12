@@ -1,7 +1,9 @@
-header { 
+header {
+  background-color: rgba(#959595, 0.4);
+}
+.header-home {
   position: absolute;
   z-index: 2;
-  background-color: rgba(#959595, 0.4);
 }
 
 /*#main-nav-container {
