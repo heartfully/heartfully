@@ -59,8 +59,25 @@
         </div>
       </div>
     </div>
+    
+    <%= form_for @order do |f| %>
+      <%= fields_for :items do |foo| %>
+        <% @registry.item_types.each do |item_type| %>
+          <div><%= item_type.name %></div>
+          <div><%= item_type.items.available.count %></div>
+          <%= number_field(item_type.name, 0) %>
+        <% end %>
+      <% end %>
 
-    <table id="registry-list">
+      <%= f.email_field(:email) %>
+      <div class="row">
+        <div class="small-12 columns">
+          <%= submit_tag('Checkout') %>
+        </div>
+      </div>
+    <% end %>
+
+    <!-- <table id="registry-list">
       <tr class="zebra">
         <td colspan="2">
           <strong>Item</strong>
@@ -77,7 +94,7 @@
       </tr>
       <tr>
         <td class="product-img-cell">
-          <%= image_tag "stones.jpg", :class => "product-img" %>
+          <%#= image_tag "stones.jpg", :class => "product-img" %>
         </td>
         <td class="product-name-cell">
           <strong>Stones</strong>
@@ -95,7 +112,7 @@
       </tr>
       <tr>
         <td class="product-img-cell">
-          <%= image_tag "bricks.jpg", :class => "product-img" %>
+          <%#= image_tag "bricks.jpg", :class => "product-img" %>
         </td>
         <td class="product-name-cell">
           <strong>Bricks</strong>
@@ -113,7 +130,7 @@
       </tr>
       <tr>
         <td class="product-img-cell">
-          <%= image_tag "timber.jpg", :class => "product-img" %>
+          <%#= image_tag "timber.jpg", :class => "product-img" %>
         </td>
         <td class="product-name-cell">
           <strong>Lumber</strong>
@@ -131,7 +148,7 @@
       </tr>
       <tr>
         <td class="product-img-cell">
-          <%= image_tag "cement.jpg", :class => "product-img" %>
+          <%#= image_tag "cement.jpg", :class => "product-img" %>
         </td>
         <td class="product-name-cell">
           <strong>Cement</strong>
@@ -149,7 +166,7 @@
       </tr>
       <tr>
         <td class="product-img-cell">
-          <%= image_tag "doors.jpg", :class => "product-img" %>
+          <%#= image_tag "doors.jpg", :class => "product-img" %>
         </td>
         <td class="product-name-cell">
           <strong>Doors</strong>
@@ -167,7 +184,7 @@
       </tr>
       <tr>
         <td class="product-img-cell">
-          <%= image_tag "windows.jpg", :class => "product-img" %>
+          <%#= image_tag "windows.jpg", :class => "product-img" %>
         </td>
         <td class="product-name-cell">
           <strong>Windows</strong>
@@ -183,13 +200,7 @@
           <a href="#" class="button small expand">Add to Cart</a>
         </td>
       </tr>
-    </table>
-
-    <div class="row">
-      <div class="small-12 columns">
-        <a class="expand button" data-reveal-id="js-thank-you-modal" href="">Checkout</a>
-      </div>
-    </div>
+    </table> -->
 
     <div id="js-thank-you-modal" class="reveal-modal small thank-you-modal" data-reveal>
       <h2 id="thank-you">Thank You!</h2>
