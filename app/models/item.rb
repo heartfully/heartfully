@@ -1,10 +1,13 @@
 class Item < ActiveRecord::Base
   belongs_to :item_type
   belongs_to :purchase
-  has_and_belongs_to_many :orders
+  belongs_to :orders
 
   validates_presence_of :name, :item_type_id
   validates_associated :item_type, :purchase
+
+  scope :purchased, -> { where(order_id: !nil) }
+  scope :available, -> { where(order_id: nil) }
 end
 
 # == Schema Information
