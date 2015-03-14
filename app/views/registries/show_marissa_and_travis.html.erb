@@ -23,7 +23,7 @@
 <div class="row couple-project" id="couple-project-div">
   <div class="large-6 columns">
     <h3>Our Project</h3>
-    Through <span class="project-name">SolarAid</span>, this campaign will bring access to solar energy to school children and their families at four schools in Zambia's Central Province.
+    Through <a href="http://www.solar-aid.org" target="_blank"><span class="project-name">SolarAid</span></a>, this campaign will bring access to solar energy to school children and their families at four schools in Zambia's Central Province.
     </p>
 
     <div class="text-center learn-more"><a href="" class="button small" data-reveal-id="js-learn-more-modal">Learn More</a></div>
@@ -31,45 +31,47 @@
       <a href="#" class="close-reveal-modal">&times;</a>
 
       <h3>The Problem</h3>
-      <p>Seven out of ten people in Zambia have no access to electricity. Without it, families are dependent on alternatives like burning kerosene. The black smoke a kerosene lamp emits pollutes the environment and its expensive price keeps families locked in a cycle of poverty
-      <ul>
-        <li>· Give 3,762 people access to solar lights.</li>
-        <li>· Provide 745,670 study hours to children.</li>
-        <li>· Save families $124,350 in fuel costs.</li>
-        <li>· Avert 323 tons of carbon dioxide emissions.</li>
-        <li>· Improve the respiratory health of 2,157 people by transitioning to a clean light source.</li>
-      </ul>
+      <p>
+        Seven out of ten people in Zambia have no access to electricity. Without it, families are dependent on alternatives like burning kerosene. The black smoke a kerosene lamp emits pollutes the environment and its expensive price keeps families locked in a cycle of poverty.
       </p>
 
       <h3>The Opportunity</h3>
-      <p>Light up the night and help bring access to solar energy to school children and their families across eight schools in Zambia’s Central Province. Specifically, this registry has the opportunity to:
+      <p>
+        Light up the night and help bring access to solar energy to school children and their families across eight schools in Zambia’s Central Province. Specifically, this registry has the opportunity to:
+      <ul class="disc">
+        <li>Give 7,519 people access to solar lights.</li>
+        <li>Provide 1,491,335 study hours to children.</li>
+        <li>Save families $248,494 in fuel costs.</li>
+        <li>Avert 646 tons of carbon dioxide emissions.</li>
+        <li>Improve the respiratory health of 4,310 people by transitioning to a clean light source.</li>
+      </ul>
       </p>
 
       <h3>How it Works</h3>
       <p>SolarAid is working to eradicate the kerosene lamp from Africa by 2020 by selling solar lights through its social enterprise, SunnyMoney. By selling lights, not giving them away, they are establishing a solar market which will light up an entire continent and leave a lasting energy legacy.
-      <ul>
-        <li>· Through a unique community distribution model, headteachers are trained and empowered to raise trust and communicate the benefits of solar power to parents.</li>
-        <li>· Parents are able to purchase a solar light at a promotional price and as each light shines in the night, it attracts neighbors and in turn the demand for solar lights grows.</li>
-        <li>· This sparks the market conditions required for local shops and independent agents to sell solar lights, which supports job creation and ensures money stays in the local economy.</li>
+      <ul class="disc">
+        <li>Through a unique community distribution model, headteachers are trained and empowered to raise trust and communicate the benefits of solar power to parents.</li>
+        <li>Parents are able to purchase a solar light at a promotional price and as each light shines in the night, it attracts neighbors and in turn the demand for solar lights grows.</li>
+        <li>This sparks the market conditions required for local shops and independent agents to sell solar lights, which supports job creation and ensures money stays in the local economy.</li>
       </ul>
       </p>
 
       <h3>Why it's Important</h3>
-      <p>Better health: Over 50% of families show signs of improvement in respiratory health after switching from kerosene and paraffin to solar lights.
-      <ul>
-        <li>· Productivity: Solar lights allow students to read without straining their eyes as well as enable work and meal preparation after sunset.</li>
-        <li>· Savings: The money saved in 10 weeks from not having to buy kerosene is enough for families to purchase a Solar Light that can last 5 years.</li>
-        <li>· Environmentally Smart:  Solar lights in the household can reduce CO₂ emissions by up to 440 pounds per year.</li>
+      <ul class="disc">
+        <li>Better health: Over 50% of families show signs of improvement in respiratory health after switching from kerosene and paraffin to solar lights.</li>
+        <li>Productivity: Solar lights allow students to read without straining their eyes as well as enable work and meal preparation after sunset.</li>
+        <li> Savings: Families recover their investment in a solar light, that can last 5 years, in just 10 weeks – allowing for a more prosperous future.</li>
+        <li>Environmentally Smart:  Solar lights in the household can reduce CO₂ emissions by up to 440 pounds per year.</li>
       </ul>
-      </p>
 
       <h3>Sustainability</h3>
-      <p>The SolarAid social enterprise model avoids any reliance on donations and simply introduces solar products into the local market. It also generates jobs, saves money and increases productivity by harnessing the world’s most sustainable form of energy – solar power!
+      <p>
+        The SolarAid social enterprise model is steadily progressing towards sustainability through the creation of long-lasting markets for solar lights. It also generates jobs, saves money and increases productivity by harnessing the world’s most sustainable form of energy – solar power!
       </p>
 
     </div>
 
-    <h3>Thanks To <span>You</span>, This Project:</h3>
+    <h3>Thanks To <span>You</span>, This Project: <%= image_tag "homepage/fund_meter.png", :id => "fund-meter" %></h3>
   </div>
   <div class="large-6 columns small-only-text-center medium-only-text-center large-only-text-right">
     <%= image_tag "marissa_and_travis/marissa_and_travis_project_photo.jpg", alt:"Marissa & Travis' Project Photo" %>
@@ -78,211 +80,172 @@
 
 <div class="row registry-list-container medium-12 large-9">
   <h2>HELP US LIGHT UP  THE NIGHT IN ZAMBIA</h2>
-  <table id="registry-list">
-    <tr class="zebra">
-      <td colspan="2">
-        <strong>Item</strong>
-      </td>
-      <td>
-        <strong>Price</strong>
-      </td>
-      <td>
-        <strong>Available</strong>
-      </td>
-      <td>
-        <strong>Quantity</strong>
-      </td>
-    </tr>
-    <td colspan="5" class="table-header">Regional and district meetings: <span class="registry-headers">SolarAid kicks off each solar campaign with a meeting at the district and regional level of every community it works in. This ensures buy-in at all levels of government and ultimately will help the project scale to new communities in the area.</span>
-    </td>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "marissa_and_travis/meeting_logistics.jpg", :class => "product-img" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Meeting logistics</strong>
-      </td>
-      <td class="product-price-cell">
-        $60
-      </td>
-      <td class="product-avail-cell">
-        1
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <td colspan="5" class="table-header">Campaign launch meetings: <span class="registry-headers">School principals are trained on the benefits of solar energy and how to effectively communicate those benefits to the parents and guardians of students.</span>
-    </td>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "marissa_and_travis/full_participation_package.jpg", :class => "product-img" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Full participation package for a principal</strong>
-      </td>
-      <td class="product-price-cell">
-        $100
-      </td>
-      <td class="product-avail-cell">
-        4
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "marissa_and_travis/transportation_of_sa_trainers.jpg", :class => "product-img" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Transportation of SolarAid trainers to rural communities</strong>
-      </td>
-      <td class="product-price-cell">
-        $35
-      </td>
-      <td class="product-avail-cell">
-        5
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg", :class => "product-img" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Principal stipend for leading the school’s solar campaign</strong>
-      </td>
-      <td class="product-price-cell">
-        $50
-      </td>
-      <td class="product-avail-cell">
-        8
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "marissa_and_travis/marketing_bundle.jpg", :class => "product-img" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Marketing bundle: contains all of the supplies needed to highlight and promote solar lights. This includes sample lights, banners, flyers, radio airtime, etc</strong>
-      </td>
-      <td class="product-price-cell">
-        $65
-      </td>
-      <td class="product-avail-cell">
-        4
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <td colspan="5" class="table-header">Solar light deliveries</td>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "marissa_and_travis/driver_to_deliver solar_lights.jpg", :class => "product-img" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Driver to transport solar lights</strong>
-      </td>
-      <td class="product-price-cell">
-        $50
-      </td>
-      <td class="product-avail-cell">
-        2
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "marissa_and_travis/vehicle_repair_and_maint.jpg", :class => "product-img" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Vehicle repair, maintenance, and fuel</strong>
-      </td>
-      <td class="product-price-cell">
-        $25
-      </td>
-      <td class="product-avail-cell">
-        10
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "marissa_and_travis/communications_coordination.jpg", :class => "product-img" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Communications coordination (phone and internet)</strong>
-      </td>
-      <td class="product-price-cell">
-        $25
-      </td>
-      <td class="product-avail-cell">
-        4
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "marissa_and_travis/room_and_board_for_assistants.jpg", :class => "product-img" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Room and board for teachers and assistants delivering lights </strong>
-      </td>
-      <td class="product-price-cell">
-        $50
-      </td>
-      <td class="product-avail-cell">
-        10
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <td colspan="5" class="table-header">Monitoring and evaluation: <span class="registry-headers">SolarAid conducts interviews with solar light users, school principals, and solar light vendors to assess the changes families experience in their expenditures on lighting, child study, and health status following the purchase of a light.</span>
-    </td>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "marissa_and_travis/follow_up interviews.jpg", :class => "product-img" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Follow-up interviews and community analysis to assess financial and health benefits following solar light purchase </strong>
-      </td>
-      <td class="product-price-cell">
-        $7
-      </td>
-      <td class="product-avail-cell">
-        100
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-  </table>
 
-  <div class="row">
+  <div class="row collapse">
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "marissa_and_travis/meeting_logistics.jpg", :class => "product-img" %>
+        </li>
+        <li class="product-name-cell">
+          <p><strong>Meeting logistics</strong></p>
+        </li>
+        <li class="product-price-cell">
+          <strong>$60</strong>
+        </li>
+        <li class="product-avail-cell">
+          <strong>Available: 1</strong>
+        </li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "marissa_and_travis/full_participation_package.jpg", :class => "product-img" %>
+        </li>
+        <li class="product-name-cell">
+          <p><strong>Full participation package for a principal</strong></p>
+        </li>
+        <li class="product-price-cell"><strong>$100</strong></li>
+        <li class="product-avail-cell"><strong>Available: 4</strong></li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "marissa_and_travis/transportation_of_sa_trainers.jpg", :class => "product-img" %>
+        </li>
+        <li class="product-name-cell">
+          <p><strong>Transportation of SolarAid trainers to rural communities</strong></p>
+        </li>
+        <li class="product-price-cell"><strong>$35</strong></li>
+        <li class="product-avail-cell"><strong>Available: 5</strong></li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg", :class => "product-img" %>
+        </li>
+        <li class="product-name-cell">
+          <p><strong>Principal stipend for leading the school’s solar campaign</strong></p>
+        </li>
+        <li class="product-price-cell"><strong>$50</strong></li>
+        <li class="product-avail-cell"><strong>Available: 8</strong></li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "marissa_and_travis/marketing_bundle.jpg", :class => "product-img" %>
+        </li>
+        <li class="product-name-cell">
+          <p>
+            <strong>Marketing bundle: contains all of the supplies needed to highlight and promote solar lights. This includes sample lights, banners, flyers, radio airtime, etc</strong>
+          </p>
+        </li>
+        <li class="product-price-cell"><strong>$65</strong></li>
+        <li class="product-avail-cell"><strong>Available: 4</strong></li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "marissa_and_travis/driver_to_deliver solar_lights.jpg", :class => "product-img" %>
+        </li>
+        <li class="product-name-cell">
+          <p><strong>Driver to transport solar lights</strong></p>
+        </li>
+        <li class="product-price-cell"><strong>$50</strong></li>
+        <li class="product-avail-cell"><strong>Available: 2</strong></li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "marissa_and_travis/vehicle_repair_and_maint.jpg", :class => "product-img" %>
+        </li>
+        <li class="product-name-cell">
+          <p><strong>Vehicle repair, maintenance, and fuel</strong></p>
+        </li>
+        <li class="product-price-cell"><strong>$25</strong></li>
+        <li class="product-avail-cell"><strong>Available: 10</strong></li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "marissa_and_travis/communications_coordination.jpg", :class => "product-img" %>
+        </li>
+        <li class="product-name-cell">
+          <p><strong>Communications coordination (phone and internet)</strong></p>
+        </li>
+        <li class="product-price-cell"><strong>$25</strong></li>
+        <li class="product-avail-cell"><strong>Available: 4</strong></li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "marissa_and_travis/room_and_board_for_assistants.jpg", :class => "product-img" %>
+        </li>
+        <li class="product-name-cell">
+          <p><strong>Room and board for teachers and assistants delivering lights </strong></p>
+        </li>
+        <li class="product-price-cell"><strong>$50</strong></li>
+        <li class="product-avail-cell"><strong>Available: 10</strong></li>
+        <li class="product-buy-cell"><input type="number" /><br />
+          <a href="#" class="button small expand">Add to Cart</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns end">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "marissa_and_travis/follow_up interviews.jpg", :class => "product-img" %>
+        </li>
+        <li class="product-name-cell">
+          <p>
+            <strong>Follow-up interviews and community analysis to assess financial and health benefits following solar light purchase</strong>
+          </p>
+        </li>
+        <li class="product-price-cell"><strong>$7</strong></li>
+        <li class="product-avail-cell"><strong>Available: 100</strong></li>
+        <li class="product-buy-cell"><input type="number" /><br />
+          <a href="#" class="button small expand">Add to Cart</a>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+
+  <div class="row checkout-button">
     <a class="expand button" data-reveal-id="js-thank-you-modal" href="">All Set? Checkout</a>
   </div>
 </div>

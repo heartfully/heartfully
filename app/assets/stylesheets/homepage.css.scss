@@ -71,6 +71,10 @@
 .heartfully-how-it-works {
   padding: 3em;
   background: #F5F5F5;
+  .how-it-works-paragraph {
+    text-align: center;
+    p {color: $secondary-color;}
+  }
   h2 { 
     color: $quaternary-color; 
     text-align: center;
@@ -155,13 +159,16 @@
           width: 80%;
         }
         p {
+          height: 250px;
           color: $quaternary-color;
           padding: 1em 2em;
           text-align: left;
           font-size: 1.4em;
+          overflow: auto;
         }
         h4 {
-          padding: 1em 0 2em 0;
+          padding: 1em 0.5em 2em 0.5em;
+          font-size: 1em;
         }
       }
     }

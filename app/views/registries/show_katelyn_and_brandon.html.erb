@@ -23,7 +23,7 @@
 <div class="row couple-project" id="couple-project-div">
   <div class="large-6 columns">
     <h3>Our Project</h3>
-    Our registry will support the completion of <span class="project-name">Wangama's clinic!</span> In order for Wangama village to convert its basic health dispensary into a more advanced and equipped clinic, an HIV/AIDS ward must first be built. This ward will specifically treat ill children and enable villagers access to medications more specific to the diseases and illnesses they face, especially people living with HIV/AIDS.
+    <p>Our registry will support the completion of <span class="project-name">Wangama's clinic!</span> In order for Wangama village to convert its basic health dispensary into a more advanced and equipped clinic, an HIV/AIDS ward must first be built. This ward will specifically treat ill children and enable villagers access to medications more specific to the diseases and illnesses they face, especially people living with HIV/AIDS.
     </p>
 
     <div class="text-center learn-more"><a href="" class="button small" data-reveal-id="js-learn-more-modal">Learn More</a></div>
@@ -36,7 +36,7 @@
 
     </div>
 
-    <h3>Thanks To <span>You</span>, This Project:</h3>
+    <h3>Thanks To <span>You</span>, This Project: <%= image_tag "homepage/fund_meter.png", :id => "fund-meter" %></h3>
   </div>
   <div class="large-6 columns small-only-text-center medium-only-text-center large-only-text-right">
     <%= image_tag"katelyn_and_brandon/katelyn_and_brandons_project_photo.png", alt:"Katelyn & Brandon's Project Photo" %>
@@ -45,204 +45,202 @@
 
 <div class="row registry-list-container medium-12 large-9">
   <h2>HELP US BUILD A HEALTHIER FUTURE FOR THE COMMUNITY OF WANGAMA</h2>
-  <table id="registry-list">
-    <tr class="zebra">
-      <td colspan="2">
-        <strong>Item</strong>
-      </td>
-      <td>
-        <strong>Price</strong>
-      </td>
-      <td>
-        <strong>Available</strong>
-      </td>
-      <td>
-        <strong>Quantity</strong>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "katelyn_and_brandon/cement.jpg", :class => "product-img", alt: "Photo of bags of Cement" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Cement</strong>
-      </td>
-      <td class="product-price-cell">
-        $10
-      </td>
-      <td class="product-avail-cell">
-        100 Bags
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "katelyn_and_brandon/building_rods.jpg", :class => "product-img", alt: "Photo of building rods" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Building Rods</strong>
-      </td>
-      <td class="product-price-cell">
-        $25
-      </td>
-      <td class="product-avail-cell">
-        9
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "katelyn_and_brandon/door.jpg", :class => "product-img", alt: "photo of a white door" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Doors and frame</strong>
-      </td>
-      <td class="product-price-cell">
-        $55
-      </td>
-      <td class="product-avail-cell">
-        2
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "katelyn_and_brandon/windows.jpg", :class => "product-img", alt: "photo of a window" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Windows</strong>
-      </td>
-      <td class="product-price-cell">
-        $50
-      </td>
-      <td class="product-avail-cell">
-        7
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "katelyn_and_brandon/shutters.jpg", :class => "product-img", alt: "photo of shutters" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Shutters</strong>
-      </td>
-      <td class="product-price-cell">
-        $25
-      </td>
-      <td class="product-avail-cell">
-        25
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "katelyn_and_brandon/wood_planks.jpg", :class => "product-img", alt: "photo of wood planks" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Boards</strong>
-      </td>
-      <td class="product-price-cell">
-        $30
-      </td>
-      <td class="product-avail-cell">
-        37 Bundles
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "katelyn_and_brandon/tin.jpg", :class => "product-img", alt: "photo of tin" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Tin</strong>
-      </td>
-      <td class="product-price-cell">
-        $20
-      </td>
-      <td class="product-avail-cell">
-        29 Sheets
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "katelyn_and_brandon/nails.jpg", :class => "product-img", alt: "photo of a whole bunch of nails" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Nails</strong>
-      </td>
-      <td class="product-price-cell">
-        $20
-      </td>
-      <td class="product-avail-cell">
-        4/9kg Bag
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "katelyn_and_brandon/plywood.jpg", :class => "product-img", alt: "photo of plywood" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Plywood</strong>
-      </td>
-      <td class="product-price-cell">
-        $75
-      </td>
-      <td class="product-avail-cell">
-        2 Bundles
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-    <tr>
-      <td class="product-img-cell">
-        <%= image_tag "katelyn_and_brandon/glass.jpg", :class => "product-img", alt: "photo of a whole bunch sheets of glass" %>
-      </td>
-      <td class="product-name-cell">
-        <strong>Glass</strong>
-      </td>
-      <td class="product-price-cell">
-        $40
-      </td>
-      <td class="product-avail-cell">
-        7 Panes
-      </td>
-      <td class="product-buy-cell">
-        <input type="number" /><br />
-        <a href="#" class="button small expand">Add to Cart</a>
-      </td>
-    </tr>
-  </table>
 
-  <div class="row">
+  <div class="row collapse">
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "katelyn_and_brandon/cement.jpg", :class => "product-img", alt: "Photo of bags of Cement" %>
+        </li>
+        <li class="product-name-cell">
+          <p>Cement</p>
+        </li>
+        <li class="product-price-cell">
+          $10
+        </li>
+        <li class="product-avail-cell">
+          Available: 100 Bags
+        </li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "katelyn_and_brandon/building_rods.jpg", :class => "product-img", alt: "Photo of building rods" %>
+        </li>
+        <li class="product-name-cell">
+          <p>Building Rods</p>
+        </li>
+        <li class="product-price-cell">
+          $25
+        </li>
+        <li class="product-avail-cell">
+          Available: 9
+        </li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "katelyn_and_brandon/door.jpg", :class => "product-img", alt: "photo of a white door" %>
+        </li>
+        <li class="product-name-cell">
+          <p>Doors and frame</p>
+        </li>
+        <li class="product-price-cell">
+          $55
+        </li>
+        <li class="product-avail-cell">
+          Available: 2
+        </li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "katelyn_and_brandon/windows.jpg", :class => "product-img", alt: "photo of a window" %>
+        </li>
+        <li class="product-name-cell">
+          <p>Windows</p>
+        </li>
+        <li class="product-price-cell">
+          $50
+        </li>
+        <li class="product-avail-cell">
+          Available: 7
+        </li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "katelyn_and_brandon/shutters.jpg", :class => "product-img", alt: "photo of shutters" %>
+        </li>
+        <li class="product-name-cell">
+          <p>Shutters</p>
+        </li>
+        <li class="product-price-cell">
+          $25
+        </li>
+        <li class="product-avail-cell">
+          Available: 25
+        </li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "katelyn_and_brandon/wood_planks.jpg", :class => "product-img", alt: "photo of wood planks" %>
+        </li>
+        <li class="product-name-cell">
+          <p>Boards</p>
+        </li>
+        <li class="product-price-cell">
+          $30
+        </li>
+        <li class="product-avail-cell">
+          Available: 37 Bundles
+        </li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "katelyn_and_brandon/tin.jpg", :class => "product-img", alt: "photo of tin" %>
+        </li>
+        <li class="product-name-cell">
+          <p>Tin</p>
+        </li>
+        <li class="product-price-cell">
+          $20
+        </li>
+        <li class="product-avail-cell">
+          Available: 29 Sheets
+        </li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "katelyn_and_brandon/nails.jpg", :class => "product-img", alt: "photo of a whole bunch of nails" %>
+        </li>
+        <li class="product-name-cell">
+          <p>Nails</p>
+        </li>
+        <li class="product-price-cell">
+          $20
+        </li>
+        <li class="product-avail-cell">
+          4/9kg Bag
+        </li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "katelyn_and_brandon/plywood.jpg", :class => "product-img", alt: "photo of plywood" %>
+        </li>
+        <li class="product-name-cell">
+          <p>Plywood</p>
+        </li>
+        <li class="product-price-cell">
+          $75
+        </li>
+        <li class="product-avail-cell">
+          2 Bundles
+        </li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-4 large-3 columns end">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "katelyn_and_brandon/glass.jpg", :class => "product-img", alt: "photo of a whole bunch sheets of glass" %>
+        </li>
+        <li class="product-name-cell">
+          <p>Glass</p>
+        </li>
+        <li class="product-price-cell">
+          $40
+        </li>
+        <li class="product-avail-cell">
+          7 Panes
+        </li>
+        <li class="product-buy-cell"><input type="number" /><br />
+        <a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="row checkout-button">
     <a class="expand button" data-reveal-id="js-thank-you-modal" href="">All Set? Checkout</a>
   </div>
 </div>
