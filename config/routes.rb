@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   # Authentication routes
   resources :passwords, only: [:create, :new, :edit, :update]
   resource :session, only: [:create]
-  resource :orders, only: [:create]
   resources :users
 
   get '/sign_up' => "users#new"
@@ -20,7 +19,9 @@ Rails.application.routes.draw do
 
   resources :projects
   resources :favorites
-  resource :registry
+  resources :registries do
+    resources :orders, :only => [:show, :create]
+  end
   resources :partner_invites, :only => [:create, :destroy]
 
 	resources :charges

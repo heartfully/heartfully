@@ -60,16 +60,17 @@
       </div>
     </div>
     
-    <%= form_for @order do |f| %>
-      <%= fields_for :items do |foo| %>
+    <%= form_for([@registry, @registry.orders.build]) do |f| %>
+
+      <%= fields_for :items do |ff| %>
         <% @registry.item_types.each do |item_type| %>
           <div><%= item_type.name %></div>
           <div><%= item_type.items.available.count %></div>
-          <%= number_field(item_type.name, 0) %>
+          <%= ff.number_field(item_type.name, in: 0..item_type.items.available.count) %>
         <% end %>
       <% end %>
 
-      <%= f.email_field(:email) %>
+      <%= f.email_field(:email, placeholder: 'joe@joe.com') %>
       <div class="row">
         <div class="small-12 columns">
           <%= submit_tag('Checkout') %>

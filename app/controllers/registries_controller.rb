@@ -6,7 +6,6 @@ class RegistriesController < ApplicationController
   layout 'registry_layout'
   # GET /registries/:url_slug
   def show
-    @order = Order.new
     if(params[:url_slug] == "PeterandEva")
       render :show_peter_and_eva
     elsif(params[:url_slug] == "wangama")
