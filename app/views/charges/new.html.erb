@@ -1,8 +1,7 @@
-<%= form_tag charges_path do %>
-  
-  <%= label_tag(:email, 'Email') %>
-  <%= text_field_tag(:email) %>
-  
+<div>
+  Total comes to <%= @order.total %>
+</div>
+<%= form_tag order_charges_path @order do %>
   <%= fields_for :stripe do |ff| %>
     <%= ff.hidden_field(:object, value: "card") %>
     <div>

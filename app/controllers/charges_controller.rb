@@ -1,25 +1,25 @@
 class ChargesController < ApplicationController
-	def new
-	end
+	before_action :set_order, only: [:new, :create]
+
+  def new
+  end
 
 	def create
-    @amount = 500
-
     begin
       customer = Stripe::Customer.create(
-        email: params[:email],
+        email: @order.email,
         card: params[:stripe],
         metadata: {
-          project_name: "foo",
-          price: "spend some money"
+          project_name: @order.registry.approved_projects.first.name,
+          price: @order.total,
         }
       )
 
       Stripe::Charge.create(
         customer: customer.id,
-        amount: @amount,
+        amount: @order.total.tr('$,.', '').to_i,
         currency: 'usd',
-        description: "testing card in customer obj"
+        description: "This would be incredible if this worked"
       )
 
     rescue Exception => e
@@ -27,4 +27,10 @@ class ChargesController < ApplicationController
       render 'new'
     end
   end
+
+  private
+
+    def set_order
+      @order = Order.find(params[:order_id])
+    end
 end

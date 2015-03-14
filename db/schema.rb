@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20150314010517) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "total"
+    t.string   "total"
   end
 
   create_table "organizations", force: true do |t|

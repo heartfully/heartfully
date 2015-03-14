@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
     @registry = Registry.find(params[:registry_id])
     @order = @registry.orders.create(order_params)
     @order.calc_total(params[:items])
+    redirect_to new_order_charge_path(@order)
   end
 
   private

@@ -2,6 +2,8 @@ class Order < ActiveRecord::Base
   belongs_to :registry
   has_many :items
 
+include ActionView::Helpers::NumberHelper
+
   def calc_total(items)
     total = 0.0
     # iterates through all items passed to it
@@ -17,6 +19,7 @@ class Order < ActiveRecord::Base
       item_type.items.limit(quantity.to_i).update_all(:order_id => self.id)
     end
 
-    total
+    self.total = number_to_currency(total)
+    self.save
   end
 end

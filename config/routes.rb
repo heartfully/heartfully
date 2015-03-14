@@ -22,9 +22,12 @@ Rails.application.routes.draw do
   resources :registries do
     resources :orders, :only => [:show, :create]
   end
-  resources :partner_invites, :only => [:create, :destroy]
 
-	resources :charges
+  resources :orders do
+    resources :charges, :only => [:new, :create]
+  end
+
+  resources :partner_invites, :only => [:create, :destroy]
 
   # Main registry page, this must be after `resource :registry`
   get '/registry/:url_slug', to: 'registries#show'
