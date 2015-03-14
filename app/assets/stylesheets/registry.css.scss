@@ -149,17 +149,20 @@
           border-radius: 0.5em;
         }
         a {
-          // border-radius: 1em;
-          // width: 95%;
-          margin: auto;
+          margin: 0!important;
         }
       }
       .product-price-cell, .product-avail-cell {
         font-weight: 0.4em;
+        font-weight: bold;
+      }
+      .product-price-cell input {
+        margin-top: 3.7em;
+        margin-bottom: 1.1em;
       }
     }
   }
-  div:last-child {
+  .checkout-button {
     margin: 0!important;
     a {
       border-radius: 1em;
@@ -167,7 +170,8 @@
       font-family: $secondary_font;
       font-kerning: 130px;
       font-weight: bold;
-      margin-bottom: 5em!important;
+      margin-top: 2em;
+      margin-bottom: 5em;
     }
   }
 }
