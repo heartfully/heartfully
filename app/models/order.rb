@@ -25,7 +25,7 @@ include ActionView::Helpers::NumberHelper
   def fill_order
     hashed_items = eval(self.summary)
     hashed_items.each do |item, quantity|
-      
+      debugger
       # finds the registry's item type
       item_type = self.registry.item_types.where(name: item).first
 

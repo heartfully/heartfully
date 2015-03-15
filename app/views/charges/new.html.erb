@@ -1,3 +1,9 @@
+<% content_for :load_js do %>
+  $(window).load(function() {
+    $('form').get(0).reset(); //clear form data on page load
+  });
+<% end %>
+
 <% if @order.status.nil? %>
   <div>
     Total comes to <%= @order.total %>
@@ -16,6 +22,26 @@
       <div>
         <%= label_tag(:exp_year, "Exp Year") %>
         <%= ff.text_field(:exp_year) %>
+      </div>
+      <div>
+        <%= label_tag(:cvc_check, "3 digit Security Code") %>
+        <%= ff.text_field(:cvc_check) %>
+      </div>
+      <div>
+        <%= label_tag(:address_line1, "Address line1") %>
+        <%= ff.text_field(:address_line1) %>
+
+        <%= label_tag(:address_line2, "Address line2") %>
+        <%= ff.text_field(:address_line1) %>
+
+        <%= label_tag(:address_city, "City") %>
+        <%= ff.text_field(:address_city) %>
+
+        <%= label_tag(:address_state, "State") %>
+        <%= ff.text_field(:address_state) %>
+
+        <%= label_tag(:address_zip, "Zip") %>
+        <%= ff.text_field(:address_zip) %>
       </div>
     <% end %>
 
