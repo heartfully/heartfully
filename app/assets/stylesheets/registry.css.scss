@@ -179,8 +179,24 @@
   }
 }
 
-#fund-meter {
-  width: 10%;
+#fund-meter-div {
+  position: relative;
+  height: 2.4em;
+  #fund-meter {
+    width: 4em;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 2;
+  }
+  #percentage-funded {
+    margin: auto;
+    position: absolute;
+    top: 0.5em; left: 0; bottom: 0; right: 0;
+    font-size: 0.8em;
+    color:black;
+    z-index: 2;
+  }
 }
 
 .learn-more-modal {

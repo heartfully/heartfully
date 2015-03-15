@@ -38,7 +38,12 @@
 
     </div>
 
-    <h3>Thanks To <span>You</span>, This Project is: <%= image_tag "homepage/fund_meter.png", :id => "fund-meter" %> Funded</h3>
+    <h3>Thanks To <span>You</span>, This Project is: </h3>
+    <div class="text-center" id="fund-meter-div">
+      <%= image_tag "homepage/fund_meter.png", :id => "fund-meter" %>
+      <span id="percentage-funded">0%</span> 
+    </div>
+    <h3>Funded</h3>
   </div>
   <div class="large-6 columns small-only-text-center medium-only-text-center large-only-text-right">
     <%= image_tag"katelyn_and_brandon/katelyn_and_brandons_project_photo.png", alt:"Katelyn & Brandon's Project Photo" %>
