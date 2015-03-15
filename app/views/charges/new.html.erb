@@ -1,23 +1,27 @@
-<div>
-  Total comes to <%= @order.total %>
-</div>
-<%= form_tag order_charges_path @order do %>
-  <%= fields_for :stripe do |ff| %>
-    <%= ff.hidden_field(:object, value: "card") %>
-    <div>
-      <%= label_tag(:number, "Card Number") %>
-      <%= ff.text_field(:number) %>
-    </div>
-    <div>
-      <%= label_tag(:exp_month, "Exp Month") %>
-      <%= ff.text_field(:exp_month) %>
-    </div>
-    <div>
-      <%= label_tag(:exp_year, "Exp Year") %>
-      <%= ff.text_field(:exp_year) %>
-    </div>
-  <% end %>
+<% if @order.status.nil? %>
+  <div>
+    Total comes to <%= @order.total %>
+  </div>
+  <%= form_tag order_charges_path @order do %>
+    <%= fields_for :stripe do |ff| %>
+      <%= ff.hidden_field(:object, value: "card") %>
+      <div>
+        <%= label_tag(:number, "Card Number") %>
+        <%= ff.text_field(:number) %>
+      </div>
+      <div>
+        <%= label_tag(:exp_month, "Exp Month") %>
+        <%= ff.text_field(:exp_month) %>
+      </div>
+      <div>
+        <%= label_tag(:exp_year, "Exp Year") %>
+        <%= ff.text_field(:exp_year) %>
+      </div>
+    <% end %>
 
-  <%= submit_tag("Submit") %>
-  
+    <%= submit_tag("Submit") %>
+    
+  <% end %>
+<% else %>
+  wrong page
 <% end %>

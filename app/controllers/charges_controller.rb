@@ -12,6 +12,8 @@ class ChargesController < ApplicationController
         metadata: {
           project_name: @order.registry.approved_projects.first.name,
           price: @order.total,
+          message: @order.message,
+          overview: @order.summary
         }
       )
 
@@ -19,8 +21,10 @@ class ChargesController < ApplicationController
         customer: customer.id,
         amount: @order.total.tr('$,.', '').to_i,
         currency: 'usd',
-        description: "This would be incredible if this worked"
+        description: "Charge completed"
       )
+
+      @order.complete
 
     rescue Exception => e
       flash[:error] = e.message

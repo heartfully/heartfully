@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   resources :projects
   resources :favorites
+ 
+  post 'orders/:id/finalize' => 'orders#finalize', :as => 'orders_finalize'
+
   resources :registries do
     resources :orders, :only => [:show, :create]
   end
