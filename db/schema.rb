@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150215192748) do
+ActiveRecord::Schema.define(version: 20150315114245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,10 +58,24 @@ ActiveRecord::Schema.define(version: 20150215192748) do
     t.integer  "purchase_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "order_id"
   end
 
   add_index "items", ["item_type_id"], name: "index_items_on_item_type_id", using: :btree
   add_index "items", ["purchase_id"], name: "index_items_on_purchase_id", using: :btree
+
+  create_table "orders", force: true do |t|
+    t.string   "email"
+    t.integer  "registry_id"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "total"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "summary"
+    t.text     "message"
+  end
 
   create_table "organizations", force: true do |t|
     t.string   "name",        null: false
@@ -111,7 +125,7 @@ ActiveRecord::Schema.define(version: 20150215192748) do
     t.string   "country",                                                 null: false
     t.decimal  "funding_goal",    precision: 11, scale: 2
     t.datetime "closed_at"
-    t.boolean  "public?",                                  default: true, null: false
+    t.boolean  "public",                                   default: true, null: false
     t.integer  "organization_id",                                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -19,7 +19,17 @@ Rails.application.routes.draw do
 
   resources :projects
   resources :favorites
-  resource :registry
+ 
+  post 'orders/:id/finalize' => 'orders#finalize', :as => 'orders_finalize'
+
+  resources :registries do
+    resources :orders, :only => [:show, :create]
+  end
+
+  resources :orders do
+    resources :charges, :only => [:new, :create]
+  end
+
   resources :partner_invites, :only => [:create, :destroy]
 
   # Main registry page, this must be after `resource :registry`

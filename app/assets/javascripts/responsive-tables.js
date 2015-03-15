@@ -63,5 +63,4 @@ $(document).ready(function() {
       $(this).height(heights[index]);
     });
   }
-
 });

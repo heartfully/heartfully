@@ -21,6 +21,8 @@ gem 'will_paginate'
 gem 'draper', '1.4.0'
 gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 group :development do
   gem 'annotate'
   gem 'pry'
