@@ -16,31 +16,29 @@
 
     <div class="small-12 medium-2 large-2 columns text-center mailing-address text-center">
      <a href="https://www.google.com/maps/place/123+Washington+Ave+SW,+Washington,+DC+20024/@38.8875589,-77.0139829,17z/data=!3m1!4b1!4m2!3m1!1s0x89b7b78123738b27:0xe7ef9fad2da4d173">
-      123 STREET STREET<br/>
-      P.O BOX 000<br/>
-      Washington, DC 00000
+      <!-- Address Goes here -->
      </a>
     </div>
 
     <div class="small-12 medium-2 large-2 columns about-us-footer text-center">
       <ul class="footer-links">
-        <li class="left"><a href="#">Faq</a></li>
-        <li class="left"><a href="#">Our Mission</a></li>
-        <li class="left"><a href="#">Our Team</a></li>
+        <li class="left"><%= render 'shared/faq' %></li>
+        <li class="left"><a href="#"><%= render 'shared/our_mission' %></a></li>
+        <li class="left"><a href="#" data-reveal-id="js-coming-soon-modal">Our Team</a></li>
       </ul>
     </div>
     <div class="small-12 medium-2 large-2 columns company-info text-center">
       <ul class="footer-links">
-        <li class="left"><a href="#">How It Works</a></li>
-        <li class="left"><a href="#">Partner With Us</a></li>
-        <li class="left"><a href="#">Our Partners</a></li>
+        <li class="left"><a href="#" data-reveal-id="js-coming-soon-modal">How It Works</a></li>
+        <li class="left"><a href="#"><%= render 'shared/partner_with_us' %></a></li>
+        <li class="left"><a href="#" data-reveal-id="js-coming-soon-modal">Our Partners</a></li>
       </ul>
     </div>
     <div class="small-12 medium-3 large-3 columns contact-us text-center">
       <ul class="footer-links">
-        <li class="left"><a href="#">Create Your Registry</a></li>
-        <li class="left"><a href="#">Login</a></li>
-        <li class="left"><a href="#">Contact</a></li>
+        <!-- <li class="left"><a href="#">Create Your Registry</a></li> -->
+        <!-- <li class="left"><a href="#">Login</a></li> -->
+        <li class="left"><a href="mailto:info@heartful.ly">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -52,5 +50,9 @@
         </span>
       </h6>
     </div>
+  </div>
+  <div id="js-coming-soon-modal" class="reveal-modal small medium js-coming-soon-modal" data-reveal>
+    <a href="#" class="close-reveal-modal">&times;</a>
+    <h3 class="text-center"><strong>Coming Soon!</strong></h3>
   </div>
 </footer>

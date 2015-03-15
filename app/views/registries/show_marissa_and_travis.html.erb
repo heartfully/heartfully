@@ -71,7 +71,7 @@
 
     </div>
 
-    <h3>Thanks To <span>You</span>, This Project: <%= image_tag "homepage/fund_meter.png", :id => "fund-meter" %></h3>
+    <h3>Thanks To <span>You</span>, This Project is: <%= image_tag "homepage/fund_meter.png", :id => "fund-meter" %> Funded</h3>
   </div>
   <div class="large-6 columns small-only-text-center medium-only-text-center large-only-text-right">
     <%= image_tag "marissa_and_travis/marissa_and_travis_project_photo.jpg", alt:"Marissa & Travis' Project Photo" %>
@@ -225,7 +225,7 @@
       </ul>
     </div>
 
-    <div class="small-12 medium-4 large-3 columns end">
+    <div class="small-12 medium-4 large-3 columns">
       <ul class="pricing-table">
         <li class="product-img-cell">
           <%= image_tag "marissa_and_travis/follow_up interviews.jpg", :class => "product-img" %>
@@ -242,11 +242,22 @@
         </li>
       </ul>
     </div>
+
+    <div id="standard" class="small-12 medium-4 large-3 columns end">
+      <ul class="pricing-table">
+        <li class="product-img-cell">
+          <%= image_tag "eva_and_peter/wherever_its_needed_most.jpg", :class => "product-img", alt: "Students and teacher gathered around" %>
+        </li>
+        <li class="product-name-cell"><p>Wherever it’s needed most</p></li>
+        <li class="product-price-cell"><input type="number" placeholder="$"/></li>
+        <li class="product-buy-cell"><a href="#" class="button small expand">Add to Cart</a></li>
+      </ul>
+    </div>
     
   </div>
 
   <div class="row checkout-button">
-    <a class="expand button" data-reveal-id="js-thank-you-modal" href="">All Set? Checkout</a>
+    <a class="expand button" data-reveal-id="js-thank-you-modal" href="">All Set? Checkout!</a>
   </div>
 </div>
 

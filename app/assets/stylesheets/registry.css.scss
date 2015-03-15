@@ -155,6 +155,9 @@
       .product-price-cell, .product-avail-cell {
         font-weight: 0.4em;
         font-weight: bold;
+        font-size: 1.1em;
+        padding: 0.3em;
+        border: 0.1em solid $tertiary-color;
       }
       .product-price-cell input {
         margin-top: 3.7em;
