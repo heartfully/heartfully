@@ -3,10 +3,10 @@
   <div class="row full-width">
     <div class="small-12 medium-3 large-3 columns text-center logo-footer">
       <h1><a href="/">Heartful.ly</a></h1><br/>
-      <a href="https://twitter.com/heartful_ly" target="_blank">
+      <!-- <a href="https://twitter.com/heartful_ly" target="_blank">
         <i class="fa fa-facebook"></i>
       </a>
-      <a href="https://instagram.com/heartful.ly/" target="_blank">
+ -->      <a href="https://instagram.com/heartful.ly/" target="_blank">
         <i class="fa fa-instagram"></i>
       </a>
       <a href="https://twitter.com/heartful_ly" target="_blank">
@@ -47,6 +47,10 @@
       <h6>
         <span class="line-center">
           Copyright 2015 Heartful.ly. All rights reserved. Privacy. Terms of Use
+          <br/>
+          <% if(params[:controller] == "marketing") %>
+            Photo credit: <a href="http://www.leppertphoto.com/" target="_blank">Leppert Photography</a>
+          <% end %>
         </span>
       </h6>
     </div>

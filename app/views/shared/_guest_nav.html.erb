@@ -17,12 +17,12 @@
     <%= link_to "Log In", sign_in_path, :class => "" %>
   </li>
   <li>
-    <%= link_to "Explore", projects_path, :class => "" %>
+    <%#= link_to "Explore", projects_path, :class => "" %>
   </li>
   <li>
     <%= link_to "Create", sign_up_path, :class => "" %>
   </li>
   <li>
-    <%= link_to "Search", sign_up_path, :class => "" %>
+    <%= link_to "Search", sign_up_path, 'data-reveal-id' => "js-coming-soon-modal" %>
   </li>
 </ul>
