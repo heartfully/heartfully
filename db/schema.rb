@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20150315114245) do
     t.string   "total"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "summary"
+    t.text     "summary"
     t.text     "message"
   end
 

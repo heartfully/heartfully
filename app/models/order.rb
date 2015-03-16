@@ -19,6 +19,7 @@ include ActionView::Helpers::NumberHelper
 
     self.summary = items.to_s
     self.total = number_to_currency(total)
+		debugger
     self.save
   end
 

@@ -1,7 +1,9 @@
 <% content_for :load_js do %>
-  $(window).load(function() {
-    $('form').get(0).reset(); //clear form data on page load
-  });
+	<script>
+		$(window).load(function() {
+			$('form').get(0).reset();
+		});
+	</script>
 <% end %>
 
 <% if @order.status.nil? %>

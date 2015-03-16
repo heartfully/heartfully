@@ -1,9 +1,9 @@
 Registry.destroy_all
 registries = Registry.create([
-  { :name => "Peter and Eva", :url_slug => "PeterandEva", :banner_img => "eva_and_peter/peter_and_eva_banner_photo.jpg", :profile_img => "eva_and_peter/peter_and_eva_profile_photo.jpg", :description => ''},
-  { :name => "Katelyn and Brandon", :url_slug => "wangama"},
-  { :name => "Marissa and Travis", :url_slug => "marissaandtravis"},
-  { :name => "Lindsey and Matt", :url_slug => "LindseyandMatt"}
+  { :name => "Peter and Eva", :url_slug => "PeterandEva", :postal_code => "20005" },
+  { :name => "Katelyn and Brandon", :url_slug => "wangama", :postal_code => "20005"},
+  { :name => "Marissa and Travis", :url_slug => "marissaandtravis", :postal_code => "20005"},
+  { :name => "Lindsey and Matt", :url_slug => "LindseyandMatt", :postal_code => "20005" }
 ])
 
 User.destroy_all
@@ -31,14 +31,31 @@ projects = Project.create([
 #   { :name => "Build a Well in 6", :country => "Ghana", :organization_id => orgs.first.id  },
 #   { :name => "Build a Well in 7", :country => "Ghana", :organization_id => orgs.first.id  }
 ])
-
-projects.first.item_types.create([
-  {:name => 'Meeting logistics', :description => '', :price => 60.00, :thumbnail_img => "/assets/marissa_and_travis/meeting_logistics.jpg"}, 
-  {:name => 'Full participation package for a principal', :description => '' , :price => 100.00, :thumbnail_img => '/assets/marissa_and_travis/full_participation_package.jpg'}, 
-  {:name => 'Transportation of SolarAid trainers to rural communities', :description => '' , :price => 35.00, :thumbnail_img => "/assets/marissa_and_travis/transportation_of_sa_trainers.jpg"}, 
-  {:name => 'Principal stipend for leading the school’s solar campaign', :description => '' , :price => 50.00, :thumbnail_img => '/assets/marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'}, 
-  
+registries[2].projects << projects.first
+RegistryProject.where(registry_id: registries[2].id, project_id: projects.first.id).first.approve!	
+item_types = projects.first.item_types.create([
+  {:name => 'Meeting logistics', :description => '', :price => 60.00, :thumbnail_img => "marissa_and_travis/meeting_logistics.jpg"}, 
+  {:name => 'Full participation package for a principal', :description => '' , :price => 100.00, :thumbnail_img => 'marissa_and_travis/full_participation_package.jpg'}, 
+  {:name => 'Transportation of SolarAid trainers to rural communities', :description => '' , :price => 35.00, :thumbnail_img => "marissa_and_travis/transportation_of_sa_trainers.jpg"}, 
+  {:name => 'Principal stipend for leading the school’s solar campaign', :description => '' , :price => 50.00, :thumbnail_img => 'marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'}, 
+  {:name => 'Marketing bundle', :description => 'contains all of the supplies needed to highlight and promote solar lights. This includes sample lights, banners, flyers, radio airtime, etc' , :price => 65.00, :thumbnail_img => 'marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'}, 
+  {:name => 'Driver to transport solar lights', :description => '' , :price => 50.00, :thumbnail_img => 'marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'}, 
+  {:name => 'Vehicle repare maintenance, and fuel', :description => '' , :price => 25.00, :thumbnail_img => 'marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'}, 
+  {:name => 'Room and board for teachers and assitants delivering lights', :description => '' , :price => 50.00 },
+  {:name => 'Follow-up interviews and community analysis to assess financial and health benefits following solar light purchase', :description => '' , :price => 7.00 }
 ])
+
+1.times do |count|
+	ItemType.where(name: 'Meeting logistics').first.items.create(:name => "Meeting Logistics #{count}")
+end
+
+4.times do |count|
+	ItemType.where(name: 'Full participation package for a principal').first.items.create(:name => "Full participation package for a principal #{count}")
+end
+
+5.times do |count|
+	ItemType.where(name: 'Transportation of SolarAid trainers to rural communities').first.items.create(:name => "Transportation of SolarAid trainers to rural communities #{count}")
+end
 
 # registry = Registry.find_by_url_slug('coreys-registry')
 # User.find_by_email('cspeisman@gmail.com').registry = registry
