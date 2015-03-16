@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require responsive-tables
 //= require underscore/underscore
 //= require backbone/backbone
 //= require react
