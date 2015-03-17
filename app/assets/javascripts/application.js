@@ -20,6 +20,6 @@
 //= require react.backbone/react.backbone
 //= require ./utils
 //= require ./app_bootstrap
-//= require hamburgerIcon
+//= require global
 
 $(function(){ $(document).foundation(); });

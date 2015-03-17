@@ -44,6 +44,8 @@
     color: $white;
     font-size: 7em;
     opacity: 0.75;
+    width: 64px;
+    margin-left: -32px;
     &:hover {
       opacity: 1;
     }
@@ -83,8 +85,8 @@
     text-align: center;
     p {color: $secondary-color;}
   }
-  h2 { 
-    color: $quaternary-color; 
+  h2 {
+    color: $quaternary-color;
     text-align: center;
   }
   .line-center {
@@ -94,7 +96,7 @@
     text-transform: none;
   }
   div:first-child {
-    div h2 {  
+    div h2 {
       position:relative;
       z-index:2;
       &:after {
