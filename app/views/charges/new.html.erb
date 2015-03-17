@@ -6,10 +6,11 @@
 	</script>
 <% end %>
 
-<% if @order.status.nil? %>
+<% unless @order.status == 'complete' %>
   <div>
     Total comes to <%= @order.total %>
   </div>
+  
   <%= form_tag order_charges_path @order do %>
     <%= fields_for :stripe do |ff| %>
       <%= ff.hidden_field(:object, value: "card") %>
@@ -51,5 +52,5 @@
     
   <% end %>
 <% else %>
-  wrong page
+  There was an error loading this page
 <% end %>

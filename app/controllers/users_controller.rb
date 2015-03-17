@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    redirect_to root_path, :notice => "Already logged in" if current_user
     @user = User.new
 
     # For invited users, we need to add the invitation token
@@ -32,9 +33,9 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       partner_invite.update(:accepted_at => Time.zone.now) if partner_invite
-      UserMailer.user_confirmation(@user).deliver!
-      flash[:notice] = "Please check your email to activate your account."
-      redirect_to new_registry_path
+      # UserMailer.user_confirmation(@user).deliver!
+      flash[:notice] = "Account created. We'll update you when more projects are available!"
+      redirect_to root_path
     else
       render :new
     end

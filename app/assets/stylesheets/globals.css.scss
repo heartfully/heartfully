@@ -31,6 +31,10 @@ section.accent-bg {
   z-index: 99999;
 }
 
+.fa-close {
+  cursor: pointer;
+}
+
 .hero-banner {
   @include bg-size(cover);
   background-color: #a3adb6;
