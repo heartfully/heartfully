@@ -9,5 +9,5 @@ $(document).ready(function() {
     }
   });
   // Adds scroll with animation for deep linking within page
-  $(function(){$(".scroll").click(function(){$("html,body").animate({scrollTop:$("#target").offset().top},"500");return false})})
+  $(function(){$(".scroll").click(function(){$("html,body").animate({scrollTop:$("#target").offset().top},300);return false})})
 });
