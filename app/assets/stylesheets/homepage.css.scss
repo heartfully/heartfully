@@ -11,6 +11,10 @@
     top: 55%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
     outline: none;
     z-index: 1;
     h1 {
@@ -30,10 +34,13 @@
       }
     }
   }
+}
+.caret-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
   i {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
     color: $white;
     font-size: 7em;
     opacity: 0.75;
