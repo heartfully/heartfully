@@ -12,36 +12,41 @@ class ChargesController < ApplicationController
           card: params[:stripe],
           metadata: {
             project_name: @order.registry.approved_projects.first.name,
-            price: @order.total,
-            message: @order.message,
-            overview: @order.summary
+            registry: @order.registry.name,
+            price: @order.total
           }
         )
 
-        Stripe::Charge.create(
+        charge = Stripe::Charge.create(
           customer: customer.id,
           amount: @order.total.tr('$,.', '').to_i,
           currency: 'usd',
           metadata: {
             project_name: @order.registry.approved_projects.first.name,
-            price: @order.total,
-            message: @order.message,
-            overview: @order.summary
+            registry: @order.registry.name,
+            price: @order.total
           },
           receipt_email: @order.email,
           description: "A charge from Heartful.ly"
         )
 
-        @order.complete
+        @order.complete if charge
 
       rescue Exception => e
+        @order.update_attributes(status: "error")
         flash[:error] = e.message
         render 'new'
       end
+
+      send_emails if @order.status == 'complete'
     end
   end
 
   private
+
+    def send_emails
+      OrderMailer.order_confirmation(@order)
+    end
 
     def set_order
       @order = Order.find(params[:order_id])

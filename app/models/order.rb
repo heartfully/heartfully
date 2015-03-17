@@ -19,14 +19,13 @@ include ActionView::Helpers::NumberHelper
 
     self.summary = items.to_s
     self.total = number_to_currency(total)
-		debugger
     self.save
   end
 
   def fill_order
     hashed_items = eval(self.summary)
     hashed_items.each do |item, quantity|
-      debugger
+
       # finds the registry's item type
       item_type = self.registry.item_types.where(name: item).first
 
