@@ -6,7 +6,7 @@
         <div class="small-12 medium-4 large-3 columns">
           <ul class="pricing-table">
             <li class="product-img-cell">
-              <%= image_tag "marissa_and_travis/meeting_logistics.jpg", :class => "product-img" %>
+              <%= image_tag item_type.thumbnail_img, :class => "product-img" %>
             </li>
             <li class="product-name-cell">
               <p><strong><%= item_type.name %></strong></p>
@@ -22,7 +22,7 @@
               </li>
             <% else %>
               <li class="product-avail-cell">
-                No more available
+                None
               </li>
               <li class="product-buy-cell"><%= ff.number_field(item_type.name, in: 0..item_type.items.available.count, :disabled => true) %>
               </li>
