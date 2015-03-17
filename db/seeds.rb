@@ -33,6 +33,9 @@ projects = Project.create([
 ])
 registries[2].projects << projects.first
 RegistryProject.where(registry_id: registries[2].id, project_id: projects.first.id).first.approve!
+
+ItemType.destroy_all
+
 item_types = projects.first.item_types.create([
   {:name => 'Meeting logistics', :description => '', :price => 60.00, :thumbnail_img => "marissa_and_travis/meeting_logistics.jpg"},
   {:name => 'Full participation package for a principal', :description => '' , 
@@ -71,6 +74,8 @@ item_types = projects.first.item_types.create([
     :thumbnail_img => "marissa_and_travis/communications_coordination.jpg"
   }
 ])
+
+Item.destroy_all
 
 1.times do |count|
 	ItemType.where(name: 'Meeting logistics').first.items.create(:name => "Meeting Logistics #{count}")
