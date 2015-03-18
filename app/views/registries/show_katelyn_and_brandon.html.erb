@@ -41,7 +41,7 @@
     <h3>Thanks To <span>You</span>, This Project is: </h3>
     <div class="text-center" id="fund-meter-div">
       <%= image_tag "homepage/fund_meter.png", :id => "fund-meter" %>
-      <span id="percentage-funded">0%</span> 
+      <span id="percentage-funded"><%= calc_percentage(@registry) %>%</span> 
     </div>
     <h3>Funded</h3>
   </div>
@@ -52,16 +52,4 @@
 <div class="row registry-list-container medium-12 large-9">
   <h2>HELP US BUILD A HEALTHIER FUTURE FOR THE COMMUNITY OF WANGAMA</h2>
   <%= render partial: 'purchase_form' %>
-
-  <div class="row checkout-button">
-    <a class="expand button" data-reveal-id="js-thank-you-modal" href="">All Set? Checkout!</a>
-  </div>
-</div>
-<div id="js-thank-you-modal" class="reveal-modal small thank-you-modal" data-reveal>
-  <h2 id="thank-you">Thank You!</h2>
-  <a href="#" class="close-reveal-modal">&times;</a>
-
-  <div class="row">
-    <p>Thanks so much for contributing to our special day by supporting the <strong>Mufindi Orphan Project</strong>! We can't wait to see you at the wedding!</p>
-  </div>
 </div>

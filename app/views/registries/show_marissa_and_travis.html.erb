@@ -74,7 +74,7 @@
     <h3>Thanks To <span>You</span>, This Project is: </h3>
     <div class="text-center" id="fund-meter-div">
       <%= image_tag "homepage/fund_meter.png", :id => "fund-meter" %>
-      <span id="percentage-funded">0%</span>
+      <span id="percentage-funded"><%= calc_percentage(@registry) %>%</span>
     </div>
     <h3>Funded</h3>
   </div>

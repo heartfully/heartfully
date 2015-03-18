@@ -5,52 +5,53 @@
 		});
 	</script>
 <% end %>
-
-<% unless @order.status == 'complete' %>
-  <div>
-    Total comes to <%= @order.total %>
-  </div>
-  
-  <%= form_tag order_charges_path @order do %>
-    <%= fields_for :stripe do |ff| %>
-      <%= ff.hidden_field(:object, value: "card") %>
-      <div>
-        <%= label_tag(:number, "Card Number") %>
-        <%= ff.text_field(:number) %>
-      </div>
-      <div>
-        <%= label_tag(:exp_month, "Exp Month") %>
-        <%= ff.text_field(:exp_month) %>
-      </div>
-      <div>
-        <%= label_tag(:exp_year, "Exp Year") %>
-        <%= ff.text_field(:exp_year) %>
-      </div>
-      <div>
-        <%= label_tag(:cvc_check, "3 digit Security Code") %>
-        <%= ff.text_field(:cvc_check) %>
-      </div>
-      <div>
-        <%= label_tag(:address_line1, "Address line1") %>
-        <%= ff.text_field(:address_line1) %>
-
-        <%= label_tag(:address_line2, "Address line2") %>
-        <%= ff.text_field(:address_line1) %>
-
-        <%= label_tag(:address_city, "City") %>
-        <%= ff.text_field(:address_city) %>
-
-        <%= label_tag(:address_state, "State") %>
-        <%= ff.text_field(:address_state) %>
-
-        <%= label_tag(:address_zip, "Zip") %>
-        <%= ff.text_field(:address_zip) %>
-      </div>
-    <% end %>
-
-    <%= submit_tag("Submit") %>
+<div class='confirmation-card'>
+  <% unless @order.status == 'complete' %>
+    <div>
+      Total comes to <%= @order.total %>
+    </div>
     
+    <%= form_tag order_charges_path @order do %>
+      <%= fields_for :stripe do |ff| %>
+        <%= ff.hidden_field(:object, value: "card") %>
+        <div>
+          <%= label_tag(:number, "Card Number") %>
+          <%= ff.text_field(:number) %>
+        </div>
+        <div>
+          <%= label_tag(:exp_month, "Exp Month") %>
+          <%= ff.text_field(:exp_month) %>
+        </div>
+        <div>
+          <%= label_tag(:exp_year, "Exp Year") %>
+          <%= ff.text_field(:exp_year) %>
+        </div>
+        <div>
+          <%= label_tag(:cvc_check, "3 digit Security Code") %>
+          <%= ff.text_field(:cvc_check) %>
+        </div>
+        <div>
+          <%= label_tag(:address_line1, "Address line1") %>
+          <%= ff.text_field(:address_line1) %>
+
+          <%= label_tag(:address_line2, "Address line2") %>
+          <%= ff.text_field(:address_line1) %>
+
+          <%= label_tag(:address_city, "City") %>
+          <%= ff.text_field(:address_city) %>
+
+          <%= label_tag(:address_state, "State") %>
+          <%= ff.text_field(:address_state) %>
+
+          <%= label_tag(:address_zip, "Zip") %>
+          <%= ff.text_field(:address_zip) %>
+        </div>
+      <% end %>
+
+      <%= submit_tag("Submit", class:'expand  button') %>
+      
+    <% end %>
+  <% else %>
+    There was an error loading this page
   <% end %>
-<% else %>
-  There was an error loading this page
-<% end %>
+</div>

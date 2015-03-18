@@ -116,6 +116,12 @@
   }
 }
 
+.button {
+  &.expand{
+    border-radius: 25px;
+    margin-top: 24px;
+  }
+}
 .registry-list-container {
   h2 {
     padding: 1em 0 0 0;
@@ -143,7 +149,7 @@
         }
         input {
           width: 80%;
-          margin: auto;
+          margin: 16px auto;
           border-radius: 0.5em;
         }
         a {
@@ -240,4 +246,25 @@
     p {font-size: 0.8em;}
     li { font-size: 0.8em;}
   }
+}
+
+.confirmation-card {
+  width: 90%;
+  padding: 24px;
+  border: 1px solid rgb(199, 197, 197);
+  margin: 24px auto;
+  border-radius: 5px;
+  
+  #stripe_cvc_check {
+    width: 30%;
+  }
+}
+
+.order-form {
+  padding: 24px 0;
+  width: 80%;
+  input[type="text"], input[type="email"] {
+    padding: 16px;
+  }
+
 }

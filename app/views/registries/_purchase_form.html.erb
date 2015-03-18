@@ -12,7 +12,7 @@
               <p><strong><%= item_type.name %></strong></p>
             </li>
             <li class="product-price-cell">
-              <strong>$<%= item_type.price %></strong>
+              <strong><%= number_to_currency(item_type.price, :precision => 0) %></strong>
             </li>
             <% unless item_type.items.available.empty? %>
               <li class="product-avail-cell">
