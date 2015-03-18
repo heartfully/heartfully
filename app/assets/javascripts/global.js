@@ -14,7 +14,7 @@ $(document).ready(function() {
     $(".scroll").click(function(){
       $("html,body").animate({
         scrollTop: $("#target").offset().top
-      }, "500");
+      }, 300);
 
       return false;
     });
@@ -24,5 +24,4 @@ $(document).ready(function() {
   $("#flash .fa-close").on("click", function() {
     $(this).parent().fadeOut();
   });
-
 });
