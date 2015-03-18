@@ -27,7 +27,7 @@
     </p>
 
     <div class="text-center learn-more"><a href="" class="button small" data-reveal-id="js-learn-more-modal">Learn More</a></div>
-    <div id="js-learn-more-modal" class="reveal-modal small medium learn-more-modal" data-reveal>
+    <div id="js-learn-more-modal" class="reveal-modal small medium learn-more-modal learn-more-modal-fixed-height" data-reveal>
       <a href="#" class="close-reveal-modal">&times;</a>
 
       <h3>The Problem</h3>
@@ -66,7 +66,7 @@
       <%= image_tag "homepage/fund_meter.png", :id => "fund-meter" %>
       <span id="percentage-funded"><%= calc_percentage(@registry) %>%</span>
     </div>
-    <h3>Funded</h3>
+    <h3 class="toBeFundedOrNot">Funded</h3>
   </div>
   <div class="large-6 columns small-only-text-center medium-only-text-center large-only-text-right">
     <%= image_tag "eva_and_peter/eva_and_peter_project_photo.jpg", alt: "Peter & Eva's Project Photo" %>
