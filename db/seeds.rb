@@ -1,3 +1,8 @@
+require_relative("./item_stuff/marissaandtravis_items")
+require_relative("./item_stuff/peterandeva_items")
+require_relative("./item_stuff/katelynandbrandon_items")
+require_relative("./item_stuff/lyndseyandmatt_items")
+
 Registry.destroy_all
 registries = Registry.create([
   { :name => "Peter and Eva", :url_slug => "PeterandEva", :postal_code => "20005" },
@@ -16,111 +21,34 @@ users = User.create([
 
 Organization.destroy_all
 orgs = Organization.create([
-  { :name => 'Solar Aid', :admin_id => users.first.id }
+  { :name => 'Heartfully', :admin_id => users.first.id }
 ])
 
 Project.destroy_all
 projects = Project.create([
-  { name: 'Solar Aid', headline: "Super Awesome project", :organization_id => orgs.first.id, :country => "Ghana" }
-#   { :name => "EcoSac women’s empowerment training", :description => "The EcoSac women’s empowerment training will support women in Senegal to promote an affordable energy alternative that is not only more efficient and safer for family health, but is also an income generator for women leaders in the community.", },
-#   { :name => "Build a Well in 1", :country => "Ghana", :organization_id => orgs.first.id  },
-#   { :name => "Build a Well in 2", :country => "Ghana", :organization_id => orgs.first.id  },
-#   { :name => "Build a Well in 3", :country => "Ghana", :organization_id => orgs.first.id  },
-#   { :name => "Build a Well in 4", :country => "Ghana", :organization_id => orgs.first.id  },
-#   { :name => "Build a Well in 5", :country => "Ghana", :organization_id => orgs.first.id  },
-#   { :name => "Build a Well in 6", :country => "Ghana", :organization_id => orgs.first.id  },
-#   { :name => "Build a Well in 7", :country => "Ghana", :organization_id => orgs.first.id  }
-])
-registries[2].projects << projects.first
-RegistryProject.where(registry_id: registries[2].id, project_id: projects.first.id).first.approve!
-
-ItemType.destroy_all
-
-item_types = projects.first.item_types.create([
-  {:name => 'Meeting logistics', :description => '', :price => 60.00, :thumbnail_img => "marissa_and_travis/meeting_logistics.jpg"},
-  {:name => 'Full participation package for a principal', :description => '' , 
-    :price => 100.00, 
-    :thumbnail_img => 'marissa_and_travis/full_participation_package.jpg'},
-  {:name => 'Transportation of SolarAid trainers to rural communities', :description => '' , 
-    :price => 35.00, 
-    :thumbnail_img => "marissa_and_travis/transportation_of_sa_trainers.jpg"},
-  {:name => 'Principal stipend for leading the school’s solar campaign', 
-    :description => '' , :price => 50.00, 
-    :thumbnail_img => 'marissa_and_travis/principal_stipend_for_leading_school_campaign.jpg'},
-  {:name => 'Marketing bundle', 
-    :description => 'contains all of the supplies needed to highlight and promote solar lights. This includes sample lights, banners, flyers, radio airtime, etc' , 
-    :price => 65.00, 
-    :thumbnail_img => "marissa_and_travis/marketing_bundle.jpg"},
-  {:name => 'Driver to transport solar lights', 
-    :description => '' , 
-    :price => 50.00, 
-    :thumbnail_img => 'marissa_and_travis/driver_to_deliver solar_lights.jpg'},
-  {
-    :name => 'Vehicle repair, maintenance, and fuel',
-    :price => 25.00,
-    :thumbnail_img => "marissa_and_travis/vehicle_repair_and_maint.jpg"
-  },
-  {:name => 'Room and board for teachers and assistants delivering lights',
-   :description => '', 
-   :price => 50.00,
-   :thumbnail_img => "marissa_and_travis/room_and_board_for_assistants.jpg"},
-  {:name => 'Follow-up interviews and community analysis to assess financial and health benefits following solar light purchase', 
-    :description => '', 
-    :price => 7.00,
-    :thumbnail_img => 'marissa_and_travis/follow_up interviews.jpg' },
-  {
-    :name => 'Communications coordination (phone and internet)',
-    :price => 25.00,
-    :thumbnail_img => "marissa_and_travis/communications_coordination.jpg"
-  }
+  # "Peter and Eva"
+  { name: "EcoSac women’s entrepreneurship training", headline: "EcoSac Women's Entrepreneurship Training", :organization_id => orgs.first.id, :country => "Senegal" },
+  # "Katelyn and Brandon"
+  { name: "Complete Wangama's Clinic", headline: "Build Wangama's Health Clinic", :organization_id => orgs.first.id, :country => "Tanzania" },
+  # "Marissa and Travis"
+  { name: 'Light up the night solar energy campaign', headline: "Light up the Night in Zambia", :organization_id => orgs.first.id, :country => "Zambia" },
+  # "Lindsey and Matt"
+  { name: "Home-Based Care Program", headline: "Healthworker training", :organization_id => orgs.first.id, :country => "Tanzania" }
 ])
 
-Item.destroy_all
 
-1.times do |count|
-	ItemType.where(name: 'Meeting logistics').first.items.create(:name => "Meeting Logistics #{count}")
-end
-
-4.times do |count|
-	ItemType.where(name: 'Full participation package for a principal').first.items.create(:name => "Full participation package for a principal #{count}")
-end
-
-5.times do |count|
-	ItemType.where(name: 'Transportation of SolarAid trainers to rural communities').first.items.create(:name => "Transportation of SolarAid trainers to rural communities #{count}")
-end
-
-8.times do |count|
-  ItemType.where(name: 'Principal stipend for leading the school’s solar campaign').first.items.create(:name => "Principal stipend for leading the school’s solar campaign #{count}")
-end
-
-4.times do |count|
-  ItemType.where(name: 'Marketing bundle').first.items.create(:name => "Marketing bundle #{count}")
-end
-
-2.times do |count|
-  ItemType.where(name: 'Driver to transport solar lights').first.items.create(name: "Driver to transport solar lights #{count}")
-end
-
-10.times do |count|
-  ItemType.find_by_name('Vehicle repair, maintenance, and fuel').items.create(name: "Vehicle repair, maintenance, and fuel #{count}")
-end
-
-4.times do |count|
-  ItemType.find_by_name('Communications coordination (phone and internet)').items.create(name: "Communications coordination (phone and internet) #{count}")
-end
-
-10.times do |count|
-  ItemType.find_by_name('Room and board for teachers and assistants delivering lights').items.create(name: "Room and board for teachers and assistants delivering lights #{count}")
-end
-
-100.times do |count|
-  ItemType.find_by_name('Follow-up interviews and community analysis to assess financial and health benefits following solar light purchase').items.create(name: "Follow-up interviews and community analysis to assess financial and health benefits following solar light purchase #{count}")
+4.times do |num|
+  registries[num].projects << projects[num]
+  RegistryProject.where(registry_id: registries[num].id, project_id: projects[num].id).first.approve!
 end
 
 # registry = Registry.find_by_url_slug('coreys-registry')
 # User.find_by_email('cspeisman@gmail.com').registry = registry
 
 # registry.projects = Project.all
+marrissa_and_travis_items
+peter_and_eva_items
+katelyn_and_brandon_items
 
 Category.destroy_all
 # categories = Category.create([
