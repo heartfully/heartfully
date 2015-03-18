@@ -11,19 +11,19 @@ def peter_and_eva_items
     {:name => 'Marketing and Communications Training', 
       :description => ' An exercise in how to effectively promote and close the deal', 
       :price => 75.00, 
-      :thumbnail_img => 'va_and_peter/marketing_and_comms_training.jpg'},
+      :thumbnail_img => 'eva_and_peter/marketing_and_comms_training.jpg'},
     {:name => 'Business mentoring visits', 
       :description => 'meet with the training graduates once a month for a minimum of six months to check in on their progress,SEM Fund staff  offer encouragement, and provide continued business and marketing support', 
       :price => 50.00, 
-      :thumbnail_img => 'assets/eva_and_peter/mentoring_visit.jpg'},
+      :thumbnail_img => 'eva_and_peter/mentoring_visit.jpg'},
     {:name => 'Promotional events', 
       :description => 'Events are held at each woman’s local market. She is provided with a stall and marketing materials to educate shoppers and sell EcoSacs.', 
       :price => 75.00, 
-      :thumbnail_img => 'assets/eva_and_peter/promotional_events.jpg'},
+      :thumbnail_img => 'eva_and_peter/promotional_events.jpg'},
     {:name => 'Marketing toolkit', 
       :description => 'Toolkits contain visual posters that explain how to use an EcoSac; flyers with information about the benefits of alternative energy, and a professional EcoSac vendor tshirt.', 
       :price => 30.00, 
-      :thumbnail_img => 'assets/eva_and_peter/marketing_toolkit.jpg'}
+      :thumbnail_img => 'eva_and_peter/marketing_toolkit.jpg'}
   ])
 
   10.times do |count|

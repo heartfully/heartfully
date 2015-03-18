@@ -31,44 +31,44 @@ def katelyn_and_brandon_items
      :price => 40.00, 
      :thumbnail_img => 'katelyn_and_brandon/glass.jpg'}
   ])
-end
 
-100.times do |count|
-  ItemType.where(name: 'cement').first.items.create(:name => "cement #{count}")
-end
+  100.times do |count|
+    ItemType.where(name: 'cement').first.items.create(:name => "cement #{count}")
+  end
 
-9.times do |count|
-  ItemType.where(name: 'building rods').first.items.create(:name => "building rods #{count}")
-end
+  9.times do |count|
+    ItemType.where(name: 'building rods').first.items.create(:name => "building rods #{count}")
+  end
 
-2.times do |count|
-  ItemType.where(name: 'doors and frame').first.items.create(:name => "doors and frame #{count}")
-end
+  2.times do |count|
+    ItemType.where(name: 'doors and frame').first.items.create(:name => "doors and frame #{count}")
+  end
 
-7.times do |count|
-  ItemType.where(name: 'windows').first.items.create(:name => "windows #{count}")
-end
+  7.times do |count|
+    ItemType.where(name: 'windows').first.items.create(:name => "windows #{count}")
+  end
 
-25.times do |count|
-  ItemType.where(name: 'shutters').first.items.create(:name => "shutters #{count}")
-end
+  25.times do |count|
+    ItemType.where(name: 'shutters').first.items.create(:name => "shutters #{count}")
+  end
 
-37.times do |count|
-  ItemType.where(name: 'boards').first.items.create(:name => "boards #{count}")
-end
+  37.times do |count|
+    ItemType.where(name: 'boards').first.items.create(:name => "boards #{count}")
+  end
 
-29.times do |count|
-  ItemType.where(name: 'tin').first.items.create(:name => "tin #{count}")
-end
+  29.times do |count|
+    ItemType.where(name: 'tin').first.items.create(:name => "tin #{count}")
+  end
 
-4.times do |count|
-  ItemType.where(name: 'nails').first.items.create(:name => "nails #{count}")
-end
+  4.times do |count|
+    ItemType.where(name: 'nails').first.items.create(:name => "nails #{count}")
+  end
 
-2.times do |count|
-  ItemType.where(name: 'plywood').first.items.create(:name => "plywood #{count}")
-end
+  2.times do |count|
+    ItemType.where(name: 'plywood').first.items.create(:name => "plywood #{count}")
+  end
 
-7.times do |count|
-  ItemType.where(name: 'glass').first.items.create(:name => "glass #{count}")
+  7.times do |count|
+    ItemType.where(name: 'glass').first.items.create(:name => "glass #{count}")
+  end
 end

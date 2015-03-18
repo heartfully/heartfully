@@ -49,6 +49,7 @@ end
 marrissa_and_travis_items
 peter_and_eva_items
 katelyn_and_brandon_items
+lyndsey_and_matt_items
 
 Category.destroy_all
 # categories = Category.create([
