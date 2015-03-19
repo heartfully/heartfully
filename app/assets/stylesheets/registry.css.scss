@@ -137,10 +137,6 @@
         font-kerning: 130px;
         text-align: center;
         font-size: 1em;
-        img {
-          height: 200px;
-          overflow: hidden;
-        }
         p {
           height: 125px;
           padding-top: 1em;
@@ -154,6 +150,14 @@
         }
         a {
           margin: 0!important;
+        }
+      }
+      .product-img-cell .product-img-div {
+        height: 150px;
+        overflow: hidden;
+        img {
+          max-width: 100%;
+          max-height: 100%;
         }
       }
       .product-price-cell, .product-avail-cell {
@@ -185,7 +189,7 @@
 
 #fund-meter-div {
   position: relative;
-  height: 2.4em;
+  height: 2.7em;
   #fund-meter {
     width: 4em;
     margin: auto;
@@ -203,11 +207,20 @@
   }
 }
 
+.toBeFundedOrNot {
+  padding-top: 0.2em;
+}
+
 .learn-more-modal {
   font-family: $secondary_font;
   p {
     font-size: 0.9em;
   }
+}
+
+.learn-more-modal-fixed-height {
+  height: 42em;
+  overflow: auto;
 }
 
 @media all and (max-width: 580px) {

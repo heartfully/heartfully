@@ -185,6 +185,11 @@
   }
 }
 
+#js-learn-more-modal-1, #js-learn-more-modal-2, #js-learn-more-modal-3 {
+  height: 45em;
+  overflow: auto;
+}
+
 @media all and (max-width: 1120px) {
   #banner-container div h1 {
     font-size: 4em;
