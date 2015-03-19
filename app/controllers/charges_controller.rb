@@ -1,5 +1,6 @@
 class ChargesController < ApplicationController
 	before_action :set_order, only: [:new, :create]
+  after_action :fill_order, :send_emails, only: [:create]
 
   def new
   end
@@ -38,14 +39,15 @@ class ChargesController < ApplicationController
         render 'new'
       end
 
-      send_emails if @order.status == 'complete'
     end
   end
 
   private
-
+    def fill_order
+      @order.fill_order if @order.status == 'complete'
+    end
     def send_emails
-      OrderMailer.order_confirmation(@order)
+      OrderMailer.order_confirmation(@order) if @order.status == 'complete'
     end
 
     def set_order

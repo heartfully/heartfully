@@ -9,7 +9,9 @@
               <%= image_tag item_type.thumbnail_img, :class => "product-img" %>
             </li>
             <li class="product-name-cell">
-              <p><strong><%= item_type.name %></strong></p>
+              <p><strong><%= item_type.name %></strong>
+              <%= ": #{item_type.description}" unless item_type.description.blank? %>
+              </p>
             </li>
             <li class="product-price-cell">
               <strong><%= number_to_currency(item_type.price, :precision => 0) %></strong>
