@@ -6,13 +6,13 @@ class RegistriesController < ApplicationController
   layout 'registry_layout'
   # GET /registries/:url_slug
   def show
-    if(params[:url_slug] == "PeterandEva")
+    if(params[:url_slug].downcase == "peterandeva")
       render :show_peter_and_eva
-    elsif(params[:url_slug] == "wangama")
+    elsif(params[:url_slug].downcase == "wangama")
       render :show_katelyn_and_brandon
-    elsif(params[:url_slug] == "marissaandtravis") 
+    elsif(params[:url_slug].downcase == "marissaandtravis") 
       render :show_marissa_and_travis
-    elsif(params[:url_slug] == "LindseyandMatt")
+    elsif(params[:url_slug].downcase == "lindseyandmatt")
       render :show_lindsey_and_matt  
     end
   end
