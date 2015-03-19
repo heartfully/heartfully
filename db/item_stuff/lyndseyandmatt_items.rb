@@ -1,93 +1,123 @@
 def lyndsey_and_matt_items
   item_types = Project.find_by_name("Home-Based Care Program").item_types.create([
-    {:name => 'Training facility', :description => '' , 
+    {:name => 'Training facility',
+         :description => 'This building is where all sessions and workshops are taught and where participants eat and sleep.', 
          :price => 100.00, 
          :thumbnail_img => 'matt_and_lindsey/building_icon.png'},
-    {:name => 'course materials', :description => '' , 
+    {:name => 'Course materials',
+         :description => 'Each participant receives a workbook, counseling job aids and posters, and health promotion packets' , 
          :price => 30.00, 
          :thumbnail_img => 'matt_and_lindsey/pen_and_paper.png'},
-    {:name => 'basic anatomy', :description => '' , 
+    {:name => 'Basic Anatomy',
+         :description => 'Introduces the birds and the bees, including describing what sex is, what body parts are involved, the risks associated with different sexual practices and how to negotiate safe sex.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/heart_icon.png'},
-    {:name => 'facts about HIV/AIDs', :description => '' , 
+    {:name => 'Facts about HIV/AIDS and people living with HIV/AIDS',
+         :description => 'defines HIV and AIDS, how HIV is spread, common myths and misconceptions, and the state of the epidemic in Tanzania.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/health_star_icon.png'},
-    {:name => 'HIV prevention', :description => '' , 
+    {:name => 'HIV prevention',
+         :description => 'Reviews how to prevent infection through the various modes of transmission, including sexual contact, blood, and mother-to-child.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/needle_icon.png'},
-    {:name => 'community health workers and HIV prevention', :description => '' , 
+    {:name => 'Community health workers’ role in community mobilization and HIV prevention',
+         :description => 'describes how community health workers fit into broader HIV/AIDS and sexually transmitted infection efforts and why their work is so important.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/nurse_icon.png'},
-    {:name => 'Managing and treating AIDS-related conditions', :description => '' , 
+    {:name => 'Managing and treating AIDS-related conditions',
+         :description => 'explains what opportunistic infections are, locally available remedies, basic treatment for common conditions, and when to refer clients for clinical care.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/notepad.png'},
-    {:name => 'care in the final stages of life', :description => '' , 
+    {:name => 'Care in the final stages of life',
+         :description => 'how families cope with loss and what the community health worker can do to help both the person dying and families during this difficult time.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/doctor_tool.png'},
-    {:name => 'promoting positive living', :description => '' , 
+    {:name => 'Promoting positive living and emotional well being',
+         :description => 'delves into emotional responses to HIV/AIDS and how to give emotional support to clients and their caregivers.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/heart_icon.png'},
-    {:name => 'Healthy minds', :description => '' , 
+    {:name => 'Healthy minds', 
+         :description => 'recognizes how anxiety and depression are part of the HIV/AIDS experience and enables community health workers identify symptoms and help clients and families overcome them.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/nurse_icon.png'},
-    {:name => 'basic nursing care', :description => '' , 
+    {:name => 'Basic nursing care',
+         :description => 'demonstrates proper use of the community home-based care kit, bedside manner, and methods for assisting clients with daily activities.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/first_aid_kit_icon.png'},
-    {:name => 'Medicines', :description => '' , 
+    {:name => 'Medicines',
+         :description => 'provides general guidelines on taking medicines and information about common drugs taken by people living with HIV/AIDS and how to help them adhere to instructions.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/first_aid_kit_icon.png'},
-    {:name => 'Infection prevention', :description => '' , 
+    {:name => 'Infection prevention',
+         :description => 'critical session that ensures community health workers know how to avoid general infections through simple methods such as proper handwashing techniques and safe waste disposal.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/needle_icon.png'},
-    {:name => 'Assessing needs of clients and caregivers', :description => '' , 
+    {:name => 'Assessing needs of clients and caregivers',
+         :description => 'gives community health workers the tools to build a client care plan by identifying gaps in knowledge and abilities.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/notepad.png'},
-    {:name => 'Basic personal hygiene', :description => '' , 
+    {:name => 'Basic personal hygiene',
+         :description => 'stresses importance of cleanliness on physical and emotional health, and demonstrates how to give a bed bath for extremely ill clients.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/health_star_icon.png'},
-    {:name => 'Role of good nutrition', :description => '' , 
+    {:name => 'The role of good nutrition in positive living',
+         :description => 'describes how the food groups work, health meal preparation, and the relationship between nutrition and HIV/AIDS.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/tomato_icon.png'},
-    {:name => 'Special food and nutrition', :description => '' , 
+    {:name => 'Special food and nutrition considers for people living with HIV',
+         :description => 'discusses common nutrition and eating problems of people living with HIV/AIDS, and what to do when there is not enough food in the house.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/fish_icon.png'},
-    {:name => 'Intro to family planning', :description => '' , 
+    {:name => 'Introduction to family planning',
+         :description => 'how it works, why it’s important, and how to counsel community members on their choices to make sure they get the method they want.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/doctor_tool.png'},
-    {:name => 'Conception, contraception, childbirth', :description => '' , 
+    {:name => 'Conception, contraception and childbearing choices',
+         :description => 'how to inform people living with HIV/AIDS on the risks of childbearing and respect decisions related to having or not having children.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/notepad.png'},
-    {:name => 'Preventing mother to child transmission', :description => '' , 
+    {:name => 'Preventing mother to child transmission of HIV',
+         :description => 'explains the ways HIV can be passed from mother to child during pregnancy, labor and breastfeeding and steps to prevent transmission at each point.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/heart_icon.png'},
-    {:name => 'Types of family planning', :description => '' , 
+    {:name => 'Types and effectiveness of family planning',
+         :description => 'breaks down the risk of getting pregnancy by each method, from the pill to the IUD.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/notepad.png'},
-    {:name => 'Helping clients use family planning', :description => '' , 
+    {:name => 'Helping clients use family planning methods effectively',
+         :description => 'shows how to provide non-clinical methods of family planning, counseling and tools to help clients select the best method for their needs.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/doctor_tool.png'},
-    {:name => 'Mobilizing community support for PLHIV', :description => '' , 
+    {:name => 'Mobilizing community support for PLHIV and their families',
+         :description => 'links clients and caregivers to resources and support and how to advocate on their behalf.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/group_icon.png'},
-    {:name => 'ART', :description => '' , 
+    {:name => 'Antiretroviral therapy (ART)',
+         :description => 'how to help clients and caregivers prepare for and adhere to treatment and identify and manage common side effects of treatment.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/calender_icon.png'},
-    {:name => 'HIV care and treatment', :description => '' , 
+    {:name => 'HIV care and treatment basics', 
+         :description => 'clarifies myths and facts about ART, who needs it, and how it works.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/tube_icon.png'},
-    {:name => 'Mobilizing commnunity around PMTCT', :description => '' , 
+    {:name => 'Mobilizing the community around prevention of mother to child transmission of HIV',
+         :description => 'develops activities to increase awareness of PMTCT services and how to reduce stigma toward women who do not breastfeed.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/3_people_icon.png'},
-    {:name => 'Preventing pressure sores', :description => '' , 
+    {:name => 'Preventing pressure sores',
+         :description => 'shares practical techniques to avoid this painful condition with the most ill, bedridden clients.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/bandaid_icon.png'},
-    {:name => 'Groups needing special prevention', :description => '' , 
+    {:name => 'Groups needing special attention',
+         :description => 'discusses the importance of ensuring all people have access to HIV prevention and treatment services, regardless of age, sexuality or economic status.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/3_people_icon.png'},
-    {:name => 'Teaching others and transferring skills', :description => '' , 
+    {:name => 'Teaching others and transferring skills',
+         :description => 'goes beyond just service delivery and trains community health workers on how to build the capacity of clients and caretakers for better day-to-day care.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/group_icon.png'},
-    {:name => 'Practical skills treating clients', :description => '' , 
+    {:name => 'Practical skills in treating and referring clients',
+         :description => 'focuses on the most need to know skills that are not always common knowledge, including how to make oral rehydration salts and sterilizing and reading a thermometer.' , 
          :price => 50.00, 
          :thumbnail_img => 'matt_and_lindsey/first_aid_kit_icon.png'}
   ])
@@ -97,39 +127,39 @@ def lyndsey_and_matt_items
   end
 
   22.times do |count|
-      ItemType.where(name: 'course materials').first.items.create(:name => "course materials #{count}")
+      ItemType.where(name: 'Course materials').first.items.create(:name => "course materials #{count}")
   end
 
   1.times do |count|
-      ItemType.where(name: 'basic anatomy').first.items.create(:name => "basic anatomy #{count}")
+      ItemType.where(name: 'Basic Anatomy').first.items.create(:name => "basic anatomy #{count}")
   end
 
-  ItemType.where(name: 'facts about HIV/AIDs').first.items.create(:name => "facts about HIV/AIDs 1")
+  ItemType.where(name: 'Facts about HIV/AIDS and people living with HIV/AIDS').first.items.create(:name => "facts about HIV/AIDs 1")
   ItemType.where(name: 'HIV prevention').first.items.create(:name => "HIV prevention 1")
-  ItemType.where(name: 'community health workers and HIV prevention').first.items.create(:name => "community health workers and HIV prevention 1")
+  ItemType.where(name: 'Community health workers’ role in community mobilization and HIV prevention').first.items.create(:name => "community health workers and HIV prevention 1")
   ItemType.where(name: 'Managing and treating AIDS-related conditions').first.items.create(:name => "Managing and treating AIDS-related conditions 1")
-  ItemType.where(name: 'care in the final stages of life').first.items.create(:name => "care in the final stages of life 1")
-  ItemType.where(name: 'promoting positive living').first.items.create(:name => "promoting positive living 1")
+  ItemType.where(name: 'Care in the final stages of life').first.items.create(:name => "care in the final stages of life 1")
+  ItemType.where(name: 'Promoting positive living and emotional well being').first.items.create(:name => "promoting positive living 1")
   ItemType.where(name: 'Healthy minds').first.items.create(:name => "Healthy minds 1")
-  ItemType.where(name: 'basic nursing care').first.items.create(:name => "basic nursing care 1")
+  ItemType.where(name: 'Basic nursing care').first.items.create(:name => "basic nursing care 1")
   ItemType.where(name: 'Medicines').first.items.create(:name => "Medicines 1")
   ItemType.where(name: 'Infection prevention').first.items.create(:name => "Infection prevention 1")
   ItemType.where(name: 'Assessing needs of clients and caregivers').first.items.create(:name => "Assessing needs of clients and caregivers 1")
   ItemType.where(name: 'Basic personal hygiene').first.items.create(:name => "Basic personal hygiene 1")
-  ItemType.where(name: 'Role of good nutrition').first.items.create(:name => "Role of good nutrition 1")
-  ItemType.where(name: 'Special food and nutrition').first.items.create(:name => "Special food and nutrition 1")
-  ItemType.where(name: 'Intro to family planning').first.items.create(:name => "Intro to family planning 1")
-  ItemType.where(name: 'Conception, contraception, childbirth').first.items.create(:name => "Conception, contraception, childbirth 1")
-  ItemType.where(name: 'Preventing mother to child transmission').first.items.create(:name => "Preventing mother to child transmission 1")
-  ItemType.where(name: 'Types of family planning').first.items.create(:name => "Types of family planning 1")
-  ItemType.where(name: 'Helping clients use family planning').first.items.create(:name => "Helping clients use family planning 1")
-  ItemType.where(name: 'Mobilizing community support for PLHIV').first.items.create(:name => "Mobilizing community support for PLHIV 1")
-  ItemType.where(name: 'ART').first.items.create(:name => "ART 1")
-  ItemType.where(name: 'HIV care and treatment').first.items.create(:name => "HIV care and treatment 1")
-  ItemType.where(name: 'Mobilizing commnunity around PMTCT').first.items.create(:name => "Mobilizing commnunity around PMTCT 1")
+  ItemType.where(name: 'The role of good nutrition in positive living').first.items.create(:name => "Role of good nutrition 1")
+  ItemType.where(name: 'Special food and nutrition considers for people living with HIV').first.items.create(:name => "Special food and nutrition 1")
+  ItemType.where(name: 'Introduction to family planning').first.items.create(:name => "Intro to family planning 1")
+  ItemType.where(name: 'Conception, contraception and childbearing choices').first.items.create(:name => "Conception, contraception, childbirth 1")
+  ItemType.where(name: 'Preventing mother to child transmission of HIV').first.items.create(:name => "Preventing mother to child transmission 1")
+  ItemType.where(name: 'Types and effectiveness of family planning').first.items.create(:name => "Types of family planning 1")
+  ItemType.where(name: 'Helping clients use family planning methods effectively').first.items.create(:name => "Helping clients use family planning 1")
+  ItemType.where(name: 'Mobilizing community support for PLHIV and their families').first.items.create(:name => "Mobilizing community support for PLHIV 1")
+  ItemType.where(name: 'Antiretroviral therapy (ART)').first.items.create(:name => "ART 1")
+  ItemType.where(name: 'HIV care and treatment basics').first.items.create(:name => "HIV care and treatment 1")
+  ItemType.where(name: 'Mobilizing the community around prevention of mother to child transmission of HIV').first.items.create(:name => "Mobilizing commnunity around PMTCT 1")
   ItemType.where(name: 'Preventing pressure sores').first.items.create(:name => "Preventing pressure sores 1")
-  ItemType.where(name: 'Groups needing special prevention').first.items.create(:name => "Groups needing special prevention 1")
+  ItemType.where(name: 'Groups needing special attention').first.items.create(:name => "Groups needing special prevention 1")
   ItemType.where(name: 'Teaching others and transferring skills').first.items.create(:name => "Teaching others and transferring skills 1")
-  ItemType.where(name: 'Practical skills treating clients').first.items.create(:name => "Practical skills treating clients 1")
+  ItemType.where(name: 'Practical skills in treating and referring clients').first.items.create(:name => "Practical skills treating clients 1")
 
 end

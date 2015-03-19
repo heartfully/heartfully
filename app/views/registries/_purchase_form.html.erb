@@ -9,8 +9,7 @@
               <div class="product-img-div"><%= image_tag item_type.thumbnail_img, :class => "product-img" %></div>
             </li>
             <li class="product-name-cell">
-              <p><strong><%= item_type.name %></strong>
-              <%= ": #{item_type.description}" unless item_type.description.blank? %>
+              <p><strong><%= item_type.name %></strong><%= ": #{item_type.description}" unless item_type.description.blank? %>
               </p>
             </li>
             <li class="product-price-cell">
