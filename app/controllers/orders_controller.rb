@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
 
   def finalize
     @order = Order.find(params[:id])
-    @order.update_attributes(update_params) && @order.fill_order
+    @order.update_attributes(update_params)
     redirect_to new_order_charge_path(@order)
   end
 

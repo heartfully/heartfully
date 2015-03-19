@@ -30,7 +30,7 @@ include ActionView::Helpers::NumberHelper
       item_type = self.registry.item_types.where(name: item).first
 
       # finds the item_type's items and assigns an order_id
-      item_type.items.limit(quantity.to_i).update_all(:order_id => self.id)
+      item_type.items.available.limit(quantity.to_i).update_all(:order_id => self.id)
     end
   end
 

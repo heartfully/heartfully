@@ -5,10 +5,10 @@ require_relative("./item_stuff/lyndseyandmatt_items")
 
 Registry.destroy_all
 registries = Registry.create([
-  { :name => "Peter and Eva", :url_slug => "PeterandEva", :postal_code => "20005" },
+  { :name => "Peter and Eva", :url_slug => "peterandeva", :postal_code => "20005" },
   { :name => "Katelyn and Brandon", :url_slug => "wangama", :postal_code => "20005"},
   { :name => "Marissa and Travis", :url_slug => "marissaandtravis", :postal_code => "20005"},
-  { :name => "Lindsey and Matt", :url_slug => "LindseyandMatt", :postal_code => "20005" }
+  { :name => "Lindsey and Matt", :url_slug => "lindseyandmatt", :postal_code => "20005" }
 ])
 
 User.destroy_all
