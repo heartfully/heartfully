@@ -76,7 +76,7 @@ class RegistriesController < ApplicationController
     end
 
     def find_by_slug
-      @registry = Registry.find_by(:url_slug => params[:url_slug])
+      @registry = Registry.find_by(:url_slug => params[:url_slug].downcase)
     end
 
     # Only allow a trusted parameter "white list" through.
