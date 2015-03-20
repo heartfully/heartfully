@@ -1,9 +1,14 @@
 header {
   background-color: rgba(#959595, 0.4);
 }
+
 .header-home {
-  position: absolute;
-  z-index: 2;
+  position: fixed;
+  z-index: 3;
+}
+
+.blank-div {
+  padding: 8em;
 }
 
 /*#main-nav-container {
