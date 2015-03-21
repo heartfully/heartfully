@@ -48,7 +48,11 @@ class ChargesController < ApplicationController
     end
 
     def send_emails
-      OrderMailer.order_confirmation(@order).deliver! && OrderMailer.email_kate(@order).deliver! if @order.status == 'complete'
+      if @order.status == 'complete'
+        OrderMailer.order_confirmation(@order).deliver!
+        OrderMailer.email_kate(@order).deliver!
+        OrderMailer.registry_order(@order).deliver!
+      end
     end
 
     def set_order

@@ -7,7 +7,12 @@ Hey Kate,
   Got <%= @order.registry.name %> the following items..
 </div>
 <br>
+<div>
   <%= order_summary(@order.summary) %>
+</div>
+<div>
+  Corey would appreciate it if you made sure that the total of <%= @order.total %> added up correctly.
+</div>
 <br>
 <br>
 <div>
