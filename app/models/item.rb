@@ -6,7 +6,7 @@ class Item < ActiveRecord::Base
   validates_presence_of :name, :item_type_id
   validates_associated :item_type, :purchase
 
-  scope :purchased, -> { where(order_id: !nil) }
+  scope :purchased, -> { where.not(order_id: nil) }
   scope :available, -> { where(order_id: nil) }
 end
 

@@ -6,7 +6,7 @@ class ChargesController < ApplicationController
   end
 
 	def create
-    if @order.status.nil?
+    unless @order.status == 'complete'
       begin
         customer = Stripe::Customer.create(
           email: @order.email,
