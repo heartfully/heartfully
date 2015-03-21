@@ -1,0 +1,17 @@
+Hey Kate,
+<br>
+<div>
+  Just letting you know <%= @order.first_name %> <%= @order.last_name %>
+</div>
+<div>
+  Got <%= @order.registry.name %> the following items..
+</div>
+<br>
+  <%= order_summary(@order.summary) %>
+<br>
+<br>
+<div>
+  Best,
+  <br>
+  Team Heartful.ly
+</div>
