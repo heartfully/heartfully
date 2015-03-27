@@ -1,5 +1,5 @@
 <div class="row first-div">
-  <div id="registry-banner-container" class="hero-banner nicole-and-emery">
+  <div id="registry-banner-container" class="hero-banner nicole-and-emery <%= controller_name %> <%= action_name %>">
     <div class="large-12 columns ">
     <h1>Nicole and Emery</h1>
     <h3><span>Wedding Registry</span></h3>
@@ -24,18 +24,43 @@
 <div class="row couple-project" id="couple-project-div">
   <div class="large-6 columns">
     <h3>Our Project</h3>
-    <p>
-      The Home-Based Care Program is a 21-day seminar to train community health workers in rural Tanzania  on a variety of health topics, with a focus on HIV prevention, care and treatment.
+    <p>The <span class="project-name">Home-Based Care Program</span> is a 21-day seminar to train community health workers in rural Tanzania  on a variety of health topics, with a focus on HIV prevention, care and treatment. 
     </p>
 
     <div class="text-center learn-more"><a href="" class="button small" data-reveal-id="js-learn-more-modal">Learn More</a></div>
-    <div id="js-learn-more-modal" class="reveal-modal small medium learn-more-modal" data-reveal>
+    <div id="js-learn-more-modal" class="reveal-modal small medium learn-more-modal learn-more-modal-fixed-height" data-reveal>
       <a href="#" class="close-reveal-modal">&times;</a>
 
-      <p>The Wangama dispensary is fortunate to have a village doctor, a midwife, and two nurses on staff who are able to support villagers with basic medications and health counseling. Once constructed, the new ward will enable HIV patients to receive antiretroviral medications, have their CD4 count checked, and receive general counseling--including nutrition and sexual health--with a physician.
-      <br />
-      <br />
-      The closest clinic to Wangama is a 5-6 hour round-trip walk from the village, a tiring hike that requires at least one missed day of farming.  As such, many people living with HIV/AIDS  from Wangama opt out of the journey to the nearest clinic.  Let's help bring the clinic to them so they are more likely to get the medical attention they require and deserve!  
+      <h3>The Problem</h3>
+      <p>Although great improvements have been made over the past decade in HIV prevention, care and treatment in Tanzania, Iringa region remains one of the highest affected with an HIV prevalence of 9.1%. 
+      </p>
+
+      <h3>The Opportunity</h3>
+      <p>With proper training, community health workers can become a critical part of curbing new HIV infections, dispelling health myths and misconceptions, and ensuring those living with HIV access and adhere to treatment.
+      </p>
+
+      <h3>How it Works</h3>
+      <ol>
+        <li>22 community volunteers are selected for training on a diverse array of health topics.</li>
+        <li>Following the training, the newly certified community health workers report to their local health center to receive their client list predominantly comprised of people living with HIV/AIDS.
+        </li>
+        <li>Each week, the trained community health workers visit their clients and spreads accurate health knowledge to empower their community.
+        </li>
+        <li>Accurate health knowledge and treatment is brought to people’s homes, thereby reaching the most vulnerable groups who might otherwise not seek help at a health facility. 
+        </li>
+      </ol>
+
+      <h3>Why it's Important</h3>
+      <p> Unlike their facility-based counterparts, community health workers are able to couple their clinical skills with a deep rooted understanding of and respect for local culture and traditions. From wound cleaning, to HIV/AIDS counseling, to educating families about maternal and child health, home- based care volunteers can and are making a real impact in their communities.
+      <ul>
+        <li>· Productivity: Solar lights allow students to read without straining their eyes as well as enable work and meal preparation after sunset.</li>
+        <li>· Savings: The money saved in 10 weeks from not having to buy kerosene is enough for families to purchase a Solar Light that can last 5 years.</li>
+        <li>· Environmentally Smart:  Solar lights in the household can reduce CO₂ emissions by up to 440 pounds per year.</li>
+      </ul>
+      </p>
+
+      <h3>Sustainability</h3>
+      <p>The training is conducted by Tanzanian medical professionals to local Tanzanian community volunteers, allowing for education to spread throughout the community at a grassroots level.  This education ultimately travels to neighbors and friends as the volunteer builds trust within their community.  This leads to healthier parents and children.  In the long term, a healthy household means more food on the table and more opportunities for education and income generation.
       </p>
 
     </div>
@@ -48,7 +73,7 @@
     <h3 class="toBeFundedOrNot">Funded</h3>
   </div>
   <div class="large-6 columns small-only-text-center medium-only-text-center large-only-text-right">
-    <%= image_tag"katelyn_and_brandon/katelyn_and_brandons_project_photo.png", alt:"Katelyn & Brandon's Project Photo" %>
+    <%= image_tag"matt_and_lindsey/matt_and_lindsey_project_photo.jpg", alt:"Matt & Lindsey' Project Photo" %>
   </div>
 </div>
 

@@ -26,6 +26,7 @@ $(document).ready(function() {
     $(this).parent().fadeOut();
   });
 
+  // header opaque adjust for homepage
   $(".marketing.index").ready(function() {
     // adds opaque for viewing splash page only
     addOrRemoveHeaderOpaque("#banner-container");
@@ -33,8 +34,18 @@ $(document).ready(function() {
     $(window).on("scroll", function(){
       addOrRemoveHeaderOpaque("#banner-container");
     });
+  });
 
-    // function to check if an element is visible on screen
+  // header opaque adjust for sample registry page
+  $(".registries.show").ready(function() {
+    addOrRemoveHeaderOpaque("#registry-banner-container");
+
+    $(window).on("scroll", function(){
+      addOrRemoveHeaderOpaque("#registry-banner-container");
+    });
+  });
+
+  // function to check if an element is visible on screen
     function checkVisible( elm, evalType ) {
       evalType = evalType || "visible";
 
@@ -55,5 +66,4 @@ $(document).ready(function() {
         $(".header-home").removeClass("header-opaque");
       }
     }
-  });
 });
