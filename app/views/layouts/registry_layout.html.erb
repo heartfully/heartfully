@@ -5,7 +5,10 @@
   <%= yield :backbone_bootstrap %>
 </head>
 <body>
-
+  <% if(params[:url_slug] == "nicoleandemery") %>
+    <%= render "shared/header" %>
+  <% end %>
+  
   <div id="wrapper">
 
     <div class="small-12 small-centered medium-12 large-12 columns registry">
