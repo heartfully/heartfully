@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   root 'marketing#index'
-
+  resources :marketing, only: [:show]
+  get '/:footer_url', to: 'marketing#show'
   # Authentication routes
   resources :passwords, only: [:create, :new, :edit, :update]
   resource :session, only: [:create]
