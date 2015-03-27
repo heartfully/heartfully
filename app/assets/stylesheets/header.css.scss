@@ -1,10 +1,15 @@
 header {
-  background-color: rgba(#959595, 0.7);
+  background-color: rgba(#959595, 1);
+  transition: 0.4s;
 }
 
 .header-home {
   position: fixed;
   z-index: 3;
+}
+
+.header-opaque {
+  background-color: rgba(#959595, 0.4);
 }
 
 .blank-div {

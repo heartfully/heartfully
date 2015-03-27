@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // opens and closes menu for tablet and mobile version of site
   $("#hamburger-menu").on("click", function(event) {
     event.preventDefault();
     if( $(".menu-ul-js").hasClass('show-menu-js') ) {
@@ -24,4 +25,31 @@ $(document).ready(function() {
   $("#flash .fa-close").on("click", function() {
     $(this).parent().fadeOut();
   });
+
+  // adds opaque for viewing splash page only
+  if(checkVisible("#banner-container")){
+    $(".header-home").addClass("header-opaque");
+  }
+  $(window).on("scroll", function(){
+    console.log(checkVisible("#banner-container"));
+    if(checkVisible("#banner-container")){
+      $(".header-home").addClass("header-opaque");
+    } else {
+      $(".header-home").removeClass("header-opaque");
+    }
+  });
+
+  // function to check if an element is visible on screen
+  function checkVisible( elm, evalType ) {
+    evalType = evalType || "visible";
+
+    var vpH = $(window).height(), // Viewport Height
+        st = $(window).scrollTop(), // Scroll Top
+        y = $(elm).offset().top,
+        elementHeight = $(elm).height();
+
+    if (evalType === "visible") return ((y < (vpH + st)) && (y > (st - elementHeight)));
+    if (evalType === "above") return ((y < (vpH + st)));
+}
+
 });
