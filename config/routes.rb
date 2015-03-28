@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   root 'marketing#index'
   resources :marketing, only: [:show]
-  get '/:footer_url', to: 'marketing#show'
   # Authentication routes
   resources :passwords, only: [:create, :new, :edit, :update]
   resource :session, only: [:create]
@@ -14,6 +13,7 @@ Rails.application.routes.draw do
   get '/sign_up' => 'users#new'
   get '/sign_in' => 'sessions#new'
   delete '/sign_out' => 'sessions#destroy'
+  get '/:footer_url', to: 'marketing#show'
 
   get '/wangama' => 'registries#show', :url_slug => 'wangama'
   # User confirmation
