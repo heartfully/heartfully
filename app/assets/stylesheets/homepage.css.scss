@@ -71,6 +71,9 @@
       color: $quaternary-color;
       text-align: center;
     }
+    a:hover {
+      color: $secondary-color;
+    }
   }
   div:last-child {
     padding: 2em 0.2em;

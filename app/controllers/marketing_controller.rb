@@ -18,6 +18,8 @@ class MarketingController < ApplicationController
       render :show_partner_with_us
     elsif(params[:footer_url].downcase == "our-partners")
       render :show_our_partners
+    elsif(params[:footer_url].downcase == "privacy-policy")
+      render :show_privacy_policy
     end
   end
 end
