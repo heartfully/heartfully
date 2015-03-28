@@ -65,6 +65,10 @@ ul.pagination {
   }
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .loading-overlay {
   background: rgba(0, 0, 0, 0.5); // TODO: change to mixin/variable
   position: absolute;

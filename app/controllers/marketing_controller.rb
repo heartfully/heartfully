@@ -6,20 +6,23 @@ class MarketingController < ApplicationController
   end
 
   def show
-    if(params[:footer_url].downcase == "faq")
+    page_name = params[:footer_url].downcase
+    if(page_name == "faq")
       render :show_faq
-    elsif(params[:footer_url].downcase == "our-mission")
+    elsif(page_name == "our-mission")
       render :show_our_mission
-    elsif(params[:footer_url].downcase == "our-team")
+    elsif(page_name == "our-team")
       render :show_our_team
-    elsif(params[:footer_url].downcase == "how-it-works")
+    elsif(page_name == "how-it-works")
       render :show_how_it_works
-    elsif(params[:footer_url].downcase == "partner-with-us")
+    elsif(page_name == "partner-with-us")
       render :show_partner_with_us
-    elsif(params[:footer_url].downcase == "our-partners")
+    elsif(page_name == "our-partners")
       render :show_our_partners
-    elsif(params[:footer_url].downcase == "privacy-policy")
+    elsif(page_name == "privacy-policy")
       render :show_privacy_policy
+    elsif(page_name == "terms-of-use")
+      render :show_terms_of_use
     end
   end
 end
