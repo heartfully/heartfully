@@ -1,6 +1,6 @@
 class ChargesController < ApplicationController
 	before_action :set_order, only: [:new, :create]
-  after_action :fill_order, :send_emails, only: [:create]
+  after_action :fill_order, only: [:create]
 
   def new
   end
@@ -38,24 +38,16 @@ class ChargesController < ApplicationController
         flash[:error] = e.message
         render 'new'
       end
-
     end
   end
 
   private
-    def fill_order
-      @order.fill_order if @order.status == 'complete'
-    end
+  
+  def fill_order
+    @order.fill_order && @order.send_emails if @order.status == 'complete'
+  end
 
-    def send_emails
-      if @order.status == 'complete'
-        OrderMailer.order_confirmation(@order).deliver!
-        OrderMailer.email_kate(@order).deliver!
-        OrderMailer.registry_order(@order).deliver!
-      end
-    end
-
-    def set_order
-      @order = Order.find(params[:order_id])
-    end
+  def set_order
+    @order = Order.find(params[:order_id])
+  end
 end
