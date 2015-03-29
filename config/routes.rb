@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   get '/sign_up' => 'users#new'
   get '/sign_in' => 'sessions#new'
   delete '/sign_out' => 'sessions#destroy'
-  get '/:footer_url', to: 'marketing#show'
 
   get '/wangama' => 'registries#show', :url_slug => 'wangama'
+  get '/:footer_url', to: 'marketing#show'
   # User confirmation
   get '/users/:confirmation_token/confirm' => 'users#confirm', :as => 'user_confirmation'
 
