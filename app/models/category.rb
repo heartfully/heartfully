@@ -8,6 +8,6 @@ end
 # Table name: categories
 #
 #  id       :integer          not null, primary key
-#  name     :string(255)
-#  cat_type :string(255)
+#  name     :string(255)      not null
+#  cat_type :string(255)      not null
 #
