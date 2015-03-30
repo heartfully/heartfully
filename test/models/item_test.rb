@@ -8,6 +8,7 @@
 #  purchase_id  :integer
 #  created_at   :datetime
 #  updated_at   :datetime
+#  order_id     :integer
 #
 
 require 'test_helper'
