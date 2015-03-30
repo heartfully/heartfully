@@ -13,8 +13,6 @@ class MarketingController < ApplicationController
       render :show_our_mission
     elsif(page_name == "our-team")
       render :show_our_team
-    elsif(page_name == "how-it-works")
-      render :show_how_it_works
     elsif(page_name == "partner-with-us")
       render :show_partner_with_us
     elsif(page_name == "our-partners")
