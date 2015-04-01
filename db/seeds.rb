@@ -52,25 +52,27 @@ katelyn_and_brandon_items
 lyndsey_and_matt_items
 
 Category.destroy_all
-# categories = Category.create([
-#   { :name => "Africa", :cat_type => "region" },
-#   { :name => "Asia", :cat_type => "region" },
-#   { :name => "South America", :cat_type => "region" },
-#   { :name => "Clean Water", :cat_type => "vertical" }, # TODO: figure out what term to use instead of 'vertical'
-#   { :name => "Education", :cat_type => "vertical" },
-#   { :name => "Healthcare", :cat_type => "vertical" },
-#   { :name => "Microlending", :cat_type => "vertical" }
-# ])
+categories = Category.create([
+  { :name => "Africa", :cat_type => "region" },
+  { :name => "Asia", :cat_type => "region" },
+  { :name => "South America", :cat_type => "region" },
+  { :name => "Clean Water", :cat_type => "issue" },
+  { :name => "Education", :cat_type => "issue" },
+  { :name => "Healthcare", :cat_type => "issue" },
+  { :name => "Microlending", :cat_type => "issue" }
+])
 
-# ProjectCategory.destroy_all
-# ProjectCategory.create([
-#   { :project => projects.first, :category => categories.first },
-#   { :project => projects.first, :category => categories.fourth },
-#   { :project => projects.second, :category => categories.second },
-#   { :project => projects.second, :category => categories.fifth },
-#   { :project => projects.third, :category => categories.first },
-#   { :project => projects.third, :category => categories.last }
-# ])
+ProjectCategory.destroy_all
+ProjectCategory.create([
+  { :project => projects.first, :category => categories.first },
+  { :project => projects.first, :category => categories.fourth },
+  { :project => projects.second, :category => categories.second },
+  { :project => projects.second, :category => categories.fifth },
+  { :project => projects.third, :category => categories.first },
+  { :project => projects.third, :category => categories.last },
+  { :project => projects.fourth, :category => categories.third },
+  { :project => projects.fourth, :category => categories.last }
+])
 
 # RegistryProject.create([
 #   { :registry_id => registries.first.id, :project_id => projects.first.id }
