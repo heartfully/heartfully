@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   # Rails Admin for backend project creation/approval
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
+  if Rails.env.production?
+    constraints subdomain: false do
+      get ':any', to: redirect(subdomain: 'www', path: '/%{any}'), any: /.*/
+    end
+  end
+
   root 'marketing#index'
   resources :marketing, only: [:show]
   # Authentication routes
@@ -20,7 +26,7 @@ Rails.application.routes.draw do
 
   resources :projects
   resources :favorites
- 
+
   post 'orders/:id/finalize' => 'orders#finalize', :as => 'orders_finalize'
 
   resources :registries do
@@ -36,7 +42,7 @@ Rails.application.routes.draw do
   # Main registry page, this must be after `resource :registry`
   get '/registry/:url_slug', to: 'registries#show'
   match '/registry/:url_slug/projects', to: 'registries#projects', via: [:get, :post], as: 'registry_project'
-  
+
   # Footer Link Pages
   get '/:footer_url', to: 'marketing#show'
 
