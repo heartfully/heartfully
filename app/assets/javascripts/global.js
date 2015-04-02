@@ -14,7 +14,7 @@ $(document).ready(function() {
   $(function(){
     $(".scroll").click(function(){
       $("html,body").animate({
-        scrollTop: $("#target").offset().top
+        scrollTop: $($(this).attr('href')).offset().top
       }, 300);
 
       return false;

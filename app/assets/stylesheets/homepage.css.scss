@@ -21,6 +21,7 @@
       font-size: 5em;
       color: $white;
       font-weight: bold;
+      text-shadow:  0.5px 0.5px 1px black; 
     }
 
     #cta-button {
@@ -28,7 +29,6 @@
       font-family: $secondary_font;
       color: $white;
       border-radius: 1em;
-      font-kerning: 130px;
       &:hover {
         background: rgba($primary-color, 1);
       }

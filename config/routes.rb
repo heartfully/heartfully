@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   delete '/sign_out' => 'sessions#destroy'
 
   get '/wangama' => 'registries#show', :url_slug => 'wangama'
-  get '/:footer_url', to: 'marketing#show'
   # User confirmation
   get '/users/:confirmation_token/confirm' => 'users#confirm', :as => 'user_confirmation'
 
@@ -37,6 +36,9 @@ Rails.application.routes.draw do
   # Main registry page, this must be after `resource :registry`
   get '/registry/:url_slug', to: 'registries#show'
   match '/registry/:url_slug/projects', to: 'registries#projects', via: [:get, :post], as: 'registry_project'
+  
+  # Footer Link Pages
+  get '/:footer_url', to: 'marketing#show'
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do

@@ -14,7 +14,7 @@ class RegistriesController < ApplicationController
       render :show_marissa_and_travis
     elsif(params[:url_slug].downcase == "lindseyandmatt")
       render :show_lindsey_and_matt  
-    elsif(params[:url_slug].downcase == "nicoleandemery")
+    elsif(params[:url_slug].downcase == "sample")
       @registry = Registry.find_by(:url_slug => "lindseyandmatt")
       render :show
     end

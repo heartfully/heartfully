@@ -29,7 +29,7 @@
     </div>
     <div class="small-12 medium-2 large-2 columns company-info text-center">
       <ul class="footer-links">
-        <li class="left"><a href="/how-it-works">How It Works</a></li>
+        <!-- <li class="left"><a href="/how-it-works">How It Works</a></li> -->
         <li class="left"><a href="/partner-with-us">Partner With Us</a></li>
         <li class="left"><a href="/our-partners">Our Partners</a></li>
       </ul>
@@ -48,8 +48,10 @@
         <span class="line-center">
           Copyright 2015 Heartful.ly. All rights reserved. <a href="/privacy-policy">Privacy</a>. <a href="/terms-of-use">Terms of Use</a>
           <br/>
-          <% if(params[:controller] == "marketing") %>
+          <% if(params[:controller] == "marketing" && action_name == "index") %>
             Photo credit: <a href="http://www.leppertphoto.com/" target="_blank">Leppert Photography</a>
+          <% elsif(params[:url_slug] == "sample") %>
+            Photo credit: <a href="http://venturephotography.us/" target="_blank">Venture Photography</a>
           <% end %>
         </span>
       </h6>

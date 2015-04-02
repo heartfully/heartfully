@@ -4,7 +4,7 @@
     <h1>Nicole and Emery</h1>
     <h3><span>Wedding Registry</span></h3>
     </div>
-    <a href="" class="scroll"><i class="fa fa-caret-down"></i></a>
+    <a href="#target" class="scroll"><i class="fa fa-caret-down"></i></a>
   </div>
 </div>
 <div class="row couple-bio-section" id="target">
@@ -68,7 +68,7 @@
     <h3>Thanks To <span>You</span>, This Project is: </h3>
     <div class="text-center" id="fund-meter-div">
       <%= image_tag "homepage/fund_meter.png", :id => "fund-meter" %>
-      <span id="percentage-funded"><%= calc_percentage(@registry) %>%</span> 
+      <span id="percentage-funded">72%</span> 
     </div>
     <h3 class="toBeFundedOrNot">Funded</h3>
   </div>
@@ -81,7 +81,7 @@
   <h2>HELP US BUILD A HEALTHIER FUTURE FOR THE COMMUNITY OF WANGAMA</h2>
   <%#= render partial: 'purchase_form' %>
   <div class="row collapse">
-    <% @registry.item_types.each do |item_type| %>
+    <% @registry.item_types.first(20).each do |item_type| %>
       <div class="small-12 medium-4 large-3 columns">
         <ul class="pricing-table">
           <li class="product-img-cell">
