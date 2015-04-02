@@ -1,18 +1,21 @@
-Hi <%= @order.registry.name %>!,
+<div>
+  Hi <%= @order.registry.name %>!
+</div>
 <br>
 <div>
-  We are emailing to let you know that <%= @order.first_name %> <%= @order.last_name %>
-  got you the following items off of your heartful.ly registry..
+We wanted to let you know that <%= @order.first_name %> <%= @order.last_name %> just purchased the following items of your Heartful.ly registry:
 </div>
 <br>
 <div>
   <% order_summary(@order.summary).each do |item, quantity| %>
-    <div><%= "#{quantity} #{item}" %></div>
+    <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
   <% end %>
 </div>
+<br>
 <div>
  <% if @order.message != '' %>
-  They also left you the following message:
+  They also left you the following note:
+  <br>
   <%= @order.message %>
  <% end %>
 <br>

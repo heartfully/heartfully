@@ -10,7 +10,7 @@ class OrderMailer < ActionMailer::Base
   def registry_order(order)
     @order = order
     slug = @order.registry.url_slug
-    mail to: find_email(slug), subject: "#{@order.first_name} just ordered you something heartfelt"
+    mail to: find_email(slug), subject: "#{@order.first_name} #{@order.last_name} just purchased a gift off your Heartful.ly registry!"
   end
 
   def email_kate(order)

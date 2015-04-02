@@ -14,6 +14,18 @@ class Project < ActiveRecord::Base
 
   validates_presence_of :name, :country, :public?, :organization_id
   validates_associated :organization
+
+  def total_cost(items = '')
+    total = 0
+    item_types.each do |item_type|
+      if items.empty?
+        total += (item_type.price * item_type.items.count).to_i
+      else
+        total += (item_type.price * item_type.items.purchased.count).to_i
+      end
+    end
+    total
+  end
 end
 
 # == Schema Information
