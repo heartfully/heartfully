@@ -4,7 +4,7 @@ module Api
       before_action :set_project, :only => [:show, :update, :destroy]
 
       def index
-        @projects = Project.filter(filterable_params).paginate(:page => params[:page], :per_page => 30)
+        @projects = Project.filter(filterable_params).paginate(:page => params[:page], :per_page => 5)
         render_success @projects
       end
 

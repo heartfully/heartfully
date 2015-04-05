@@ -12,13 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-readyselector-plugin
 //= require foundation
 //= require underscore/underscore
 //= require backbone/backbone
 //= require react
 //= require react_ujs
 //= require react.backbone/react.backbone
-//= require jquery-readyselector-plugin
 //= require ./utils
 //= require ./app_bootstrap
 //= require global

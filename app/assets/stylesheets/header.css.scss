@@ -80,25 +80,37 @@ header {
 }
 
 @media all and (max-width: 680px) {
-  header #main-nav-container #hamburger-menu {
+  #hamburger-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: block;
     font-size: 2.4em;
-    padding: 0.2em;
-    float: right;
-    &:hover {
+    padding: 0.1em 0.4em 0 0;
+      &:hover {
       color: $primary-color;
     }
   }
-  header #main-nav-container .top-bar-section .inline-list { display: none; li:last-child { padding: 0; } }
+  header #main-nav-container {
+    clear: both;
+  }
+  header #main-nav-container  {
+    width: 100%; 
+    padding: 0;
+    .top-bar-section .inline-list { 
+      display: none; 
+      li:last-child { 
+        padding: 0; 
+      } 
+    } 
+  }
   header #main-nav-container .top-bar-section .show-menu-js {
     display: block;
-    width: 100%;
     li {
-      text-align: right;
+      text-align: center;
+      margin: 0;
       display: block;
-      float: right;
       width: 100%;
-      clear: both;
       a {
         font-size: 1em;
         &:hover {

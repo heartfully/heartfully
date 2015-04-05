@@ -33,7 +33,11 @@ projects = Project.create([
   # "Marissa and Travis"
   { name: 'Light up the night solar energy campaign', headline: "Light up the Night in Zambia", :organization_id => orgs.first.id, :country => "Zambia" },
   # "Lindsey and Matt"
-  { name: "Home-Based Care Program", headline: "Healthworker training", :organization_id => orgs.first.id, :country => "Tanzania" }
+  { name: "Home-Based Care Program", headline: "Healthworker training", :organization_id => orgs.first.id, :country => "Tanzania" },
+  { name: "1 EcoSac women’s entrepreneurship training", headline: "EcoSac Women's Entrepreneurship Training", :organization_id => orgs.first.id, :country => "Senegal" },
+  { name: "1 Complete Wangama's Clinic", headline: "Build Wangama's Health Clinic", :organization_id => orgs.first.id, :country => "Tanzania" },
+  { name: '1 Light up the night solar energy campaign', headline: "Light up the Night in Zambia", :organization_id => orgs.first.id, :country => "Zambia" },
+  { name: "1 Home-Based Care Program", headline: "Healthworker training", :organization_id => orgs.first.id, :country => "Tanzania" }
 ])
 
 
@@ -71,7 +75,15 @@ ProjectCategory.create([
   { :project => projects.third, :category => categories.first },
   { :project => projects.third, :category => categories.last },
   { :project => projects.fourth, :category => categories.third },
-  { :project => projects.fourth, :category => categories.last }
+  { :project => projects.fourth, :category => categories.last },
+  { :project => projects.fifth, :category => categories.first },
+  { :project => projects.fifth, :category => categories.fourth },
+  { :project => projects.sixth, :category => categories.second },
+  { :project => projects.sixth, :category => categories.fifth },
+  { :project => projects.seventh, :category => categories.first },
+  { :project => projects.seventh, :category => categories.last },
+  { :project => projects.eigth, :category => categories.third },
+  { :project => projects.eigth, :category => categories.last }
 ])
 
 # RegistryProject.create([

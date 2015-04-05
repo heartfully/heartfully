@@ -1,9 +1,30 @@
 $secondary_font : 'Raleway', sans-serif;
 
-h1, h2, h3, h4, h5, h6 { -webkit-text-transform: uppercase; -ms-text-transform: uppercase; text-transform: uppercase;}
+h1, h2, h3, h4, h5, h6 { text-transform: uppercase; }
 
 ul {
   list-style: none;
+}
+
+#logo-font {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.4em;
+  color: $primary-color;
+}
+
+.reg-text {
+  -webkit-text-transform: none;
+  -ms-text-transform: none;
+  text-transform: none;
+  color: black;
+}
+
+.primary-color {
+  color: $primary-color;
+}
+
+.secondary-color {
+  color: $secondary-color;
 }
 
 section { padding: 3em 0px; }
