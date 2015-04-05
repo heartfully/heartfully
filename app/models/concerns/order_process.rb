@@ -27,10 +27,8 @@ module OrderProcess
   end
 
   def send_emails
-    if status == 'complete'
-      OrderMailer.order_confirmation(self).deliver!
-      OrderMailer.email_kate(self).deliver!
-      OrderMailer.registry_order(self).deliver!
-    end
+    OrderMailer.order_confirmation(self).deliver!
+    OrderMailer.email_kate(self).deliver!
+    OrderMailer.registry_order(self).deliver!
   end
 end
