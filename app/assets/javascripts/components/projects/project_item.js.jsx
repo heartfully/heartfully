@@ -1,10 +1,10 @@
 HeartfullyApp.Components.ProjectItem = React.createBackboneClass({
   render: function() {
     return (
-      <div className="large-4 columns project-glimpse">
-        <span>
-          <img src={this.getModel().get("profile_photo")} className="img-circle" />
-        </span>
+      <div className="columns large-4 medium-6 small-12 project-glimpse">
+        <div className="text-center image-container">
+          <img src={this.getModel().get("banner_img")} className="img-circle" />
+        </div>
         <h3 className="name">{this.getModel().get("name")}</h3>
         <div>
           <strong>Organization:</strong> <a target="_blank" href=""></a>

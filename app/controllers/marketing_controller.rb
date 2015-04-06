@@ -5,22 +5,21 @@ class MarketingController < ApplicationController
   def index
   end
 
-  def show
-    page_name = params[:footer_url].downcase
-    if(page_name == "faq")
-      render :show_faq
-    elsif(page_name == "our-mission")
-      render :show_our_mission
-    elsif(page_name == "about-us")
-      render :show_about_us
-    elsif(page_name == "partner-with-us")
-      render :show_partner_with_us
-    elsif(page_name == "our-partners")
-      render :show_our_partners
-    elsif(page_name == "privacy-policy")
-      render :show_privacy_policy
-    elsif(page_name == "terms-of-use")
-      render :show_terms_of_use
-    end
+  def about_us
+  end
+  
+  def faq
+  end
+
+  def partner_with_us
+  end
+
+  def our_partners
+  end
+
+  def privacy_policy
+  end
+  
+  def terms_of_use
   end
 end

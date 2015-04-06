@@ -8,7 +8,9 @@ HeartfullyApp.Components.ProjectList = React.createBackboneClass({
     });
     return (
       <div className="js-project-list">
-        {projectNodes}
+        <div className="row">
+          {projectNodes}
+        </div>
       </div>
     );
   }

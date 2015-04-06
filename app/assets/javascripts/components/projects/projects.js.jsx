@@ -48,7 +48,7 @@ HeartfullyApp.Components.Projects = React.createBackboneClass({
           categories={this.props.categories}
           onUserInput={this.handleUserInput}
         />
-        <h2>{catText}</h2>
+        <h2 className="text-center">{catText}</h2>
         <HeartfullyApp.Components.ProjectList ref="projectList" projects={this.props.projects} />
       </div>
     );

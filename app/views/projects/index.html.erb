@@ -1,4 +1,4 @@
-<% content_for(:page_title, "Pick Your Project!") %>
+<% content_for(:page_title, "Browse Projects!") %>
 
 <% content_for :backbone_bootstrap do %>
   <% tag(:meta, :class => "bootstrapped-json", :id => "projects-json", :data => { projects: @projects, categories: @categories }) %>
@@ -8,9 +8,10 @@
   <%= javascript_include_tag('projects') %>
 <% end %>
 
-<div class="row">
-  <div class="small-12 columns">
-    <h2>Pick Your Project!</h2>
+<div class="row projects">
+  <div class="columns large-12 medium-12 small-12">
+    <h2 class="text-center"><span>Browse Projects</span></h2>
+    <p></p>
   </div>
 </div>
 

@@ -146,10 +146,13 @@
       margin: 1.5em 0 8em 0;
     }
   }
+  .questions-section {
+    padding-bottom: 4em;
+  }
 }
 @media all and (max-width: 1220px) { .partner-w-us { h3 { font-size: 1.2em; }}}
 
-.row .our-partners {
+.row .our-partners, .js-project-list {
   .row {
     .columns {
       .image-container {

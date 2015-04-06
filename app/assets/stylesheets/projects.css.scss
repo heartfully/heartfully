@@ -1,0 +1,36 @@
+.projects {
+  padding-top: 8em;
+  div h2 {
+    span {
+      background: white;
+      padding: 30px;
+      text-align : center; 
+    }
+    &+* {
+      border-top: solid 2px $quinary-color;
+      padding-top: 28px;
+      margin-top: -34px;
+    }
+  }
+}
+
+#js-projects-list {
+   .region-btn {
+    padding: 0.4em;
+    margin: 0;
+    border-radius: 0.4em;
+    font-size: 1.2em;
+  }
+}
+
+@media all and (max-width: 641px) {
+  .projects div h2 { font-size: 1.2em; &+* {margin-top: -22px;}}
+}
+
+@media all and (max-width: 345px) {
+  .projects div h2 { font-size: 1em; &+* {margin-top: -20px;}}
+}
+
+@media all and (max-width: 300px) {
+  .projects div h2 { span { background: none; padding: 0;} &+* { border: none;}}
+}

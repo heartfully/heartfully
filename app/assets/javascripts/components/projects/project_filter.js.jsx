@@ -33,14 +33,14 @@ HeartfullyApp.Components.ProjectFilter = React.createClass({
             {regionCatNodes}
           </select>
         </div>
-        <div className="columns small-12 medium-6 large-4">
+        <div className="columns small-12 medium-6 large-6">
           <select name="categories[]" ref="issueCat">
             <option value="">Filter by Issue</option>
             {issueCatNodes}
           </select>
         </div>
-        <div className="columns small-12 medium-6 large-4">
-          <input className="button" type="submit" value="Search"/>
+        <div className="columns small-12 medium-6 medium-offset-3 large-2 large-offset-0 end">
+          <input className="button expand region-btn" type="submit" value="Search"/>
         </div>
       </form>
     );

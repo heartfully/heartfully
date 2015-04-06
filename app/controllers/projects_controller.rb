@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    @projects = Project.filter(filterable_params).paginate(:page => params[:page], :per_page => 30)
+    @projects = Project.filter(filterable_params).paginate(:page => params[:page], :per_page => 12)
     @categories = Category.all
   end
 

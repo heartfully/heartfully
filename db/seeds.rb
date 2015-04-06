@@ -27,17 +27,17 @@ orgs = Organization.create([
 Project.destroy_all
 projects = Project.create([
   # "Peter and Eva"
-  { name: "EcoSac women’s entrepreneurship training", headline: "EcoSac Women's Entrepreneurship Training", :organization_id => orgs.first.id, :country => "Senegal" },
+  { name: "EcoSac women’s entrepreneurship training", headline: "EcoSac Women's Entrepreneurship Training", :organization_id => orgs.first.id, :country => "Senegal", :banner_img => "assets/eva_and_peter/eva_and_peter_project_photo.jpg", :funding_goal => 1234.32 },
   # "Katelyn and Brandon"
-  { name: "Complete Wangama's Clinic", headline: "Build Wangama's Health Clinic", :organization_id => orgs.first.id, :country => "Tanzania" },
+  { name: "Complete Wangama's Clinic", headline: "Build Wangama's Health Clinic", :organization_id => orgs.first.id, :country => "Tanzania", :banner_img => "assets/katelyn_and_brandon/katelyn_and_brandons_project_photo.png", :funding_goal => 1234.32 },
   # "Marissa and Travis"
-  { name: 'Light up the night solar energy campaign', headline: "Light up the Night in Zambia", :organization_id => orgs.first.id, :country => "Zambia" },
+  { name: 'Light up the night solar energy campaign', headline: "Light up the Night in Zambia", :organization_id => orgs.first.id, :country => "Zambia", :banner_img => "assets/marissa_and_travis/marissa_and_travis_project_photo.jpg", :funding_goal => 2304.02 },
   # "Lindsey and Matt"
-  { name: "Home-Based Care Program", headline: "Healthworker training", :organization_id => orgs.first.id, :country => "Tanzania" },
-  { name: "1 EcoSac women’s entrepreneurship training", headline: "EcoSac Women's Entrepreneurship Training", :organization_id => orgs.first.id, :country => "Senegal" },
+  { name: "Home-Based Care Program", headline: "Healthworker training", :organization_id => orgs.first.id, :country => "Tanzania", :banner_img => "matt_and_lindsey/matt_and_lindsey_project_photo.jpg", :banner_img => "assets/katelyn_and_brandon/katelyn_and_brandons_project_photo.png", :funding_goal => 4000.00 },
+  { name: "1 EcoSac women’s entrepreneurship training", headline: "EcoSac Women's Entrepreneurship Training", :organization_id => orgs.first.id, :country => "Senegal", :banner_img => "assets/eva_and_peter/eva_and_peter_project_photo.jpg"},
   { name: "1 Complete Wangama's Clinic", headline: "Build Wangama's Health Clinic", :organization_id => orgs.first.id, :country => "Tanzania" },
-  { name: '1 Light up the night solar energy campaign', headline: "Light up the Night in Zambia", :organization_id => orgs.first.id, :country => "Zambia" },
-  { name: "1 Home-Based Care Program", headline: "Healthworker training", :organization_id => orgs.first.id, :country => "Tanzania" }
+  { name: '1 Light up the night solar energy campaign', headline: "Light up the Night in Zambia", :organization_id => orgs.first.id, :country => "Zambia", :banner_img => "assets/marissa_and_travis/marissa_and_travis_project_photo.jpg", :funding_goal => 2304.02 },
+  { name: "1 Home-Based Care Program", headline: "Healthworker training", :organization_id => orgs.first.id, :country => "Tanzania", :banner_img => "assets/matt_and_lindsey/matt_and_lindsey_project_photo.jpg", :funding_goal => 4000.00 }
 ])
 
 
@@ -78,12 +78,12 @@ ProjectCategory.create([
   { :project => projects.fourth, :category => categories.last },
   { :project => projects.fifth, :category => categories.first },
   { :project => projects.fifth, :category => categories.fourth },
-  { :project => projects.sixth, :category => categories.second },
-  { :project => projects.sixth, :category => categories.fifth },
-  { :project => projects.seventh, :category => categories.first },
-  { :project => projects.seventh, :category => categories.last },
-  { :project => projects.eigth, :category => categories.third },
-  { :project => projects.eigth, :category => categories.last }
+  { :project => projects[5], :category => categories.second },
+  { :project => projects[5], :category => categories.fifth },
+  { :project => projects[6], :category => categories.first },
+  { :project => projects[6], :category => categories.last },
+  { :project => projects[7], :category => categories.third },
+  { :project => projects[7], :category => categories.last }
 ])
 
 # RegistryProject.create([

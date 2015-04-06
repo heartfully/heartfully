@@ -44,7 +44,12 @@ Rails.application.routes.draw do
   match '/registry/:url_slug/projects', to: 'registries#projects', via: [:get, :post], as: 'registry_project'
 
   # Footer Link Pages
-  get '/:footer_url', to: 'marketing#show'
+  get '/about-us' => 'marketing#about_us'
+  get '/faq' => 'marketing#faq'
+  get '/partner-with-us' => 'marketing#partner_with_us'
+  get '/our-partners' => 'marketing#our_partners'
+  get '/privacy-policy' => 'marketing#privacy_policy'
+  get '/terms-of-use' => 'marketing#terms_of_use'
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
