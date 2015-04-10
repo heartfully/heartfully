@@ -55,7 +55,7 @@ module Api
 
         # Only allow a trusted parameter "white list" through.
         def project_params
-          params.require(:project).permit(:name, :headline, :description, :banner_img, :city, :state, :country, :funding_goal, :public?)
+          params.require(:project).permit(:name, :headline, :description, :profile_img, :banner_img, :city, :state, :country, :funding_goal, :public?)
         end
 
         def filterable_params

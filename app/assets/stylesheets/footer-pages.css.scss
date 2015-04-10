@@ -21,15 +21,34 @@
     }
   }
 }
-
 .faq-page {
+  padding-top: 4.2em;
+  .faq-banner-photo {
+    background: image-url("footer-pages/faq_photo.jpg") center center;
+    background-position: center;
+  }
   .table-of-contents {
     margin: 0;
+    padding-top: 1em;
     text-align: center;
     li {
-      font-size: 1.2em;
+      font-size: 1.5em;
       width: 33.33%;
       margin: 0;
+    }
+  }
+  .faq-list {
+    li:before { 
+      content: "";
+      border-color: transparent #111;
+      border-style: solid;
+      border-width: 0.35em 0 0.35em 0.45em;
+      display: block;
+      height: 0;
+      width: 0;
+      left: -1em;
+      top: 0.9em;
+      position: relative;
     }
   }
 }
@@ -38,20 +57,6 @@
   margin-top: 2em;
 }
 
-.faq-list {
-  li:before { 
-    content: "";
-    border-color: transparent #111;
-    border-style: solid;
-    border-width: 0.35em 0 0.35em 0.45em;
-    display: block;
-    height: 0;
-    width: 0;
-    left: -1em;
-    top: 0.9em;
-    position: relative;
-  }
-}
 
 .our-mission div p strong {
   font-size: 1.2em;
@@ -59,34 +64,10 @@
 }
 
 .about-us {
-  h1 {
-    & span {
-      display: inline-block;
-      position: relative;
-    }
-    & span:before,
-    & span:after {
-      content: "";
-      position: absolute;
-      height: 0.8em;
-      border-bottom: 0.12em solid $quinary-color;
-      top: 0;
-      width: 100%;
-    }
-    & span:before {
-      right: 100%;
-      margin-right: 2em;
-    }
-    & span:after {
-      left: 100%;
-      margin-left: 2em;
-    }
-    @media all and (max-width:  1220px) { & span:before, & span:after { width: 80%; }}
-    @media all and (max-width:  1050px) { & span:before, & span:after { width: 50%; }}
-    @media all and (max-width: 860px) { & span:before, & span:after { width: 35%;} & span:before { margin-right: 1em;} & span:after {margin-left: 1em;}}
-    @media all and (max-width: 675px) { & span:before, & span:after { width: 25%; } & span:before { margin-right: 0.4em;} & span:after { margin-left: 0.4em;} }
-    @media all and (max-width: 420px) { & span {font-size: 0.9em;} & span:before { margin-right: 0;} & span:after { margin-left: 0;} }
-    @media all and (max-width: 350px) { & span:before { width: 0;} & span:after { width: 0;} }
+  padding-top: 4.2em;
+  .about-us-banner {
+    background-image: image-url("footer-pages/about_us_banner.jpg");
+    background-position: top center;
   }
   h3 span {
     background: white;
@@ -126,6 +107,24 @@
         }
       }
     }
+  }
+}
+
+.faq-page .faq-banner-photo, .about-us .about-us-banner {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 16em;
+  background-size: cover;
+  h2 {
+    color: $white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.8em;
+    font-size: 3em;
+    text-shadow:  1px 2px 2px black;
   }
 }
 
