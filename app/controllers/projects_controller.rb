@@ -10,7 +10,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   def show
-    @project = @project.decorate
+    # @project = @project.decorate
+    @project = Project.find(params[:id])
   end
 
   # GET /projects/new
