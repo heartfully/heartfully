@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 20150425000514) do
     t.string "cat_type", null: false
   end
 
+  create_table "consultation_requests", force: true do |t|
+    t.string "email"
+    t.string "couple_names"
+    t.string "phone_number"
+    t.string "preferred_contact_method"
+  end
+
   create_table "favorites", force: true do |t|
     t.integer  "registry_id"
     t.integer  "user_id"
