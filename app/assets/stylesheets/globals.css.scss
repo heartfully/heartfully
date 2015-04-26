@@ -115,6 +115,21 @@ ul.pagination {
   border-radius: 100%;
   top: 50%;
 }
+.error {
+  padding: 8px;
+  color: #F71616;
+  font-weight: 900;
+}
+.confirmation-card { 
+  #stripe_cvc_check {
+    display: inline-block;
+  }
+
+  small {
+    display: inline-block;
+    width: 50%;
+  }
+}
 
 @-webkit-keyframes rotation {
   from {-webkit-transform: rotate(0deg);}
@@ -135,4 +150,5 @@ ul.pagination {
   from {transform: rotate(0deg);}
   to {transform: rotate(359deg);}
 }
+
 

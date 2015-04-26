@@ -1448,3 +1448,8 @@ $topbar-dropdown-link-bg-hover: $tuatara;
 // $include-accessibility-classes: true;
 
 @import "foundation";
+
+small {
+  display: inline-block;
+  width: 50%;
+}
