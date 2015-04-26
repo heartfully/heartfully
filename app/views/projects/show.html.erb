@@ -9,15 +9,16 @@
   <div class='large-4 large-pull-1 medium-6 columns text-align small-12' id="project-photos">
    <div class="image-container">
     <div class="img-container" id="img-1">
-      <img src="<%= @project.project_photo %>">
+      <img src="https://cdn.rawgit.com/Heartfully/registry-images/master/<%= @project.project_photo %>">
     </div>
     <div class="img-container" id="img-2">
-      <img src="<%= @project.project_photo_2 %>">
+      <img src="https://cdn.rawgit.com/Heartfully/registry-images/master/<%= @project.project_photo_2 %>">
     </div>
     <div class="img-container" id="img-3">
-      <img src="<%= @project.project_photo_3 %>">
+      <img src="https://cdn.rawgit.com/Heartfully/registry-images/master/<%= @project.project_photo_3 %>">
     </div>
    </div>
+   <%= raw @project.extra_content[:""] %>
   </div>
 
   <!-- Project Info -->
@@ -27,10 +28,10 @@
     <% @project.extra_content.each do |key, value| %>
       <% if( key != :"" ) %>
         <h3 class="text-center"><strong><%= key %></strong></h3>
+        <div class="project-content"><%= raw value %></div>
       <% end %>
-      <div class="project-content"><%= raw value %></div>
     <% end %>
-  </div> 
+  </div>
 </div>
 
 <div class="row">

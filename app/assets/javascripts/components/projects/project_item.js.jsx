@@ -3,7 +3,7 @@ HeartfullyApp.Components.ProjectItem = React.createBackboneClass({
     return (
       <div className="columns large-4 medium-6 small-12 project-glimpse end">
         <div className="text-center image-container">
-          <img src={this.getModel().get("project_photo")} className="img-circle" />
+          <img src={"https://cdn.rawgit.com/Heartfully/registry-images/master/" + this.getModel().get("project_photo")} className="img-circle" />
         </div>
         <div className="project-header">
           <h3 className="name"><strong>{this.getModel().get("name")}</strong></h3>

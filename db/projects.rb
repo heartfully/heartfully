@@ -11,9 +11,9 @@ def all_projects( orgs )
       city: "Senegal",
       country: "Africa", 
       url_slug: "semfund-womens-business-training",
-      project_photo: "/assets/eva_and_peter/eva_and_peter_project_photo.jpg",
-      project_photo_2: "/assets/projects/female-business-training/photo_2.jpg",
-      project_photo_3: "/assets/projects/female-business-training/photo_3.jpg",
+      project_photo: "eva_and_peter/eva_and_peter_project_photo.jpg",
+      project_photo_2: "projects/female-business-training/photo_2.jpg",
+      project_photo_3: "projects/female-business-training/photo_3.jpg",
       extra_content: {
         "The Problem": "Currently, in Senegal, a meal takes on average 3.5 hours to cook and uses between $1 and $2 worth of fuel per meal.  The economic, health and environmental burden of this task and its associated health risks often fall on women, who are the primary cooks in Senegalese households.",
         "The Opportunity": "The EcoSac is a temperature retention bag that reduces the time, energy, and money necessary for households to cook. By using the EcoSac, low-income families in Senegal can lessen the impact that cooking has on the environment and on their health, all while cutting their expenses.",
@@ -64,9 +64,9 @@ def all_projects( orgs )
       city: "Zambia",
       country: "Africa",
       url_slug: "solar-aid-solar-energy",
-      project_photo: "/assets/marissa_and_travis/marissa_and_travis_project_photo.jpg",
-      project_photo_2: "/assets/marissa_and_travis/full_participation_package.jpg",
-      project_photo_3: "/assets/marissa_and_travis/room_and_board_for_assistants.jpg",
+      project_photo: "marissa_and_travis/marissa_and_travis_project_photo.jpg",
+      project_photo_2: "marissa_and_travis/full_participation_package.jpg",
+      project_photo_3: "marissa_and_travis/room_and_board_for_assistants.jpg",
       extra_content: {
         "The Problem": "Seven out of ten people in Zambia have no access to electricity. Without it, families are dependent on alternatives like burning kerosene. The black smoke a kerosene lamp emits pollutes the environment and its expensive price keeps families locked in a cycle of poverty.",
         "The Opportunity": "Light up the night and help bring access to solar energy to school children and their families across eight schools in Zambia’s Central Province. Specifically, this registry has the opportunity to:
@@ -108,9 +108,9 @@ def all_projects( orgs )
       city: "Tanzania",
       country: "Africa", 
       url_slug: "mufindi-orphans-health_training",
-      project_photo: "/assets/matt_and_lindsey/matt_and_lindsey_project_photo.jpg",
-      project_photo_2: "/assets/projects/home-based-care/photo_2.jpg",
-      project_photo_3: "/assets/projects/home-based-care/photo_3.jpg",
+      project_photo: "matt_and_lindsey/matt_and_lindsey_project_photo.jpg",
+      project_photo_2: "projects/home-based-care/photo_2.jpg",
+      project_photo_3: "projects/home-based-care/photo_3.jpg",
       extra_content: {
         "The Problem": "Although great improvements have been made over the past decade in HIV prevention, care and treatment in Tanzania, Iringa region remains one of the highest affected with an HIV prevalence of 9.1%.",
         "The Opportunity": "With proper training, community health workers can become a critical part of curbing new HIV infections, dispelling health myths and misconceptions, and ensuring those living with HIV access and adhere to treatment.",
@@ -156,9 +156,9 @@ def all_projects( orgs )
       city: "Tanzania",
       country: "Africa",
       url_slug: 'mufindi-orphans-build-preschool',
-      project_photo: '/assets/homepage/mufindi-large.jpg',
-      project_photo_2: '/assets/projects/preschool_program/photo_2.jpeg',
-      project_photo_3: '/assets/projects/preschool_program/photo_3.jpg',
+      project_photo: 'homepage/mufindi-large.jpg',
+      project_photo_2: 'projects/preschool_program/photo_2.jpeg',
+      project_photo_3: 'projects/preschool_program/photo_3.jpg',
       extra_content: {
         "The Problem": "Teachers in Tanzania deal with minimal training, a lack of classroom supplies, dire classroom conditions, and large classroom sizes (sometimes up to100-150 students!) and little community support.  This results in not just poor learning outcomes for students, but a high teacher burn-out rate which contributes to the cycle of a low teacher-to-student ratio.",
         "The Opportunity": "In 2010, the Early Childhood Education Department began to address a pressing need for young children to have a safe and stimulating environment to grow in mind and body. This program offers working parents a place for their children to receive nutritious food, age-appropriate education and a compassionate and loving environment.",
@@ -193,9 +193,9 @@ def all_projects( orgs )
       city: "Kenya",
       country: "Africa",
       url_slug: "many-hopes-girls-education",
-      project_photo: "/assets/projects/girls-education/project_photo.jpg",
-      project_photo_2: "/assets/projects/girls-education/photo_2.jpg",
-      project_photo_3: "/assets/projects/girls-education/photo_3.jpg",
+      project_photo: "projects/girls-education/project_photo.jpg",
+      project_photo_2: "projects/girls-education/photo_2.jpg",
+      project_photo_3: "projects/girls-education/photo_3.jpg",
       extra_content: {
         "Background": "There are 2.6 million children living on the streets of Kenya. Coastal Kenya has one of the lowest levels of education standards in the country, and one of the highest levels of child prostitution. These facts are not a coincidence. The town Many Hopes work nearest to has grown fifteen fold in the last 15-20 years largely due to a sex-tourism and prostitution boom.
         <br />
@@ -250,9 +250,9 @@ def all_projects( orgs )
       city: "Tanzania",
       country: "Africa",
       url_slug: "maryryanfoundation-vocational-school",
-      project_photo: "/assets/homepage/project_3.jpg",
-      project_photo_2: "/assets/projects/mary-ryan/photo_2.jpg",
-      project_photo_3: "/assets/projects/mary-ryan/photo_3.jpg",
+      project_photo: "homepage/project_3.jpg",
+      project_photo_2: "projects/mary-ryan/photo_2.jpg",
+      project_photo_3: "projects/mary-ryan/photo_3.jpg",
       extra_content: {
         "The Problem": "Out of school youth living in rural Tanzania have little to no opportunities to develop income generating skills in a safe and supportive environment. In those rare communities trying to initiate vocational schools for these underserved children, the lack of electricity and infrastructure limit the ability of the school to generate enough income to cover operational costs and provide a quality education for its students.",
         "The Opportunity": "The Mary Ryan Foundation is improving access to educational opportunities for over 80 disadvantaged youth in Mbeya, Tanzania through its  vocational school in Ilembo. In 2014, Ilembo was one of many rural villages added to the electric grid system in the country. Unfortunately, high installation and equipment costs have prevented most of the population from accessing this electricity. Bringing electricity and high quality electric-run products to the vocational school will expand opportunities to initiate new skills training for students and boost the school's ability to become self-sustaining.",
@@ -301,9 +301,9 @@ def all_projects( orgs )
       city: "Tanzania",
       country: "Africa",
       url_slug: "jiamini-girls-education",
-      project_photo: "/assets/projects/jiamini-girls-education/project_photo.jpg",
-      project_photo_2: "/assets/projects/jiamini-girls-education/photo_2.jpg",
-      project_photo_3: "/assets/projects/jiamini-girls-education/photo_3.jpg",
+      project_photo: "projects/jiamini-girls-education/project_photo.jpg",
+      project_photo_2: "projects/jiamini-girls-education/photo_2.jpg",
+      project_photo_3: "projects/jiamini-girls-education/photo_3.jpg",
       extra_content: {
         "Background": "Jiamini scholars are selected based on academic dedication and financial need. They are passionate, dedicated students and without sponsorship they would have no way to pay for school. By funding a student’s education you provide him or her with opportunities for higher education and employment that would otherwise be out of reach.",
         "Impact": "Empowering girls through education transforms societies. Sponsoring a Jiamini girl will forever change her life and have a ripple effect on her family and community.",
@@ -331,9 +331,9 @@ def all_projects( orgs )
       city: "Tanzania",
       country: "Africa",
       url_slug: "jiamini-student-scholarship",
-      project_photo: "/assets/projects/student-scholarship/project_photo.jpg",
-      project_photo_2: "/assets/projects/student-scholarship/photo_2.jpg",
-      project_photo_3: "/assets/projects/student-scholarship/photo_3.jpg",
+      project_photo: "projects/student-scholarship/project_photo.jpg",
+      project_photo_2: "projects/student-scholarship/photo_2.jpg",
+      project_photo_3: "projects/student-scholarship/photo_3.jpg",
       extra_content: {
         "Background": "Jiamini scholars are selected based on academic dedication and financial need. They are passionate, dedicated students and without sponsorship they would have no way to pay for school. By funding a student’s education you provide him or her with opportunities for higher education and employment that would otherwise be out of reach.",
         "Impact": "Sponsoring a Jiamini Scholar will forever change their life and have a ripple effect on their families and communities.",
@@ -361,9 +361,9 @@ def all_projects( orgs )
       city: "Tanzania",
       country: "Africa",
       url_slug: "jiamini-renovations",
-      project_photo: "/assets/projects/classroom-renovations/project_photo.jpg",
-      project_photo_2: "/assets/projects/classroom-renovations/photo_2.jpg",
-      project_photo_3: "/assets/projects/classroom-renovations/photo_3.jpg",
+      project_photo: "projects/classroom-renovations/project_photo.jpg",
+      project_photo_2: "projects/classroom-renovations/photo_2.jpg",
+      project_photo_3: "projects/classroom-renovations/photo_3.jpg",
       extra_content: {
         "Background": "Nangwanda Secondary School is one of two secondary schools in Newala, Tanzania. Several of their classrooms are in disrepair and in some cases dangerous to students.
         <br />
@@ -433,9 +433,9 @@ def all_projects( orgs )
       city: "Tanzania",
       country: "Africa",
       url_slug: "olive-branch-teacher-training",
-      project_photo: "/assets/projects/teacher-training/project_photo.jpg",
-      project_photo_2: "/assets/projects/teacher-training/photo_2.jpg",
-      project_photo_3: "/assets/projects/teacher-training/photo_3.jpg",
+      project_photo: "projects/teacher-training/project_photo.jpg",
+      project_photo_2: "projects/teacher-training/photo_2.jpg",
+      project_photo_3: "projects/teacher-training/photo_3.jpg",
       extra_content: {
         "The Problem": "Early childhood education services—such as kindergarten and preschool—are not provided by the Tanzanian government in the majority of rural communities. This results in missed opportunities for the country’s most vulnerable youth to develop their academic foundations and skills before entering primary school. Children who do not receive early childhood education often have negative attitudes towards school which can lead to low attendance rates throughout their primary school years.",
         "The Opportunity": "The Olive Branch for Children developed a Montessori Outreach Program that brings quality early childhood education to Tanzania’s most vulnerable and hard-to-reach areas. Compared to traditional didactic teaching methods, the Montessori methodology is interactive, encourages self-discipline and independence, and fosters respect within the classroom.",
@@ -488,9 +488,9 @@ def all_projects( orgs )
       city: "India",
       country: "Asia",
       url_slug: "greenway-clean-cookstoves",
-      project_photo: "/assets/projects/greenway/project_photo.png",
-      project_photo_2: "/assets/projects/greenway/project_2.png",
-      project_photo_3: "/assets/projects/greenway/project_3.png",
+      project_photo: "projects/greenway/project_photo.png",
+      project_photo_2: "projects/greenway/project_2.png",
+      project_photo_3: "projects/greenway/project_3.png",
       extra_content: {
         "The Problem": "The current practice of cooking on mud stoves with open indoor fires poses a significant health risk to women in South Asia. Air pollution in the household is a massive challenge in India, leading to approximately 875,000 deaths annually. Mud stoves are also significant contributors to climate change due to their harmful greenhouse gas emissions. In spite of these health and environmental risks, mud stoves continue to be used by nearly two-thirds of India’s households.  Lack of access to modern cooking technologies, affordability, and awareness are just some of the reasons perpetuating this widespread practice.",
         "The Opportunity": "The provision of clean cookstoves, paired with excellent training by Greenway, has the opportunity to reduce the risks associated with traditional cooking on individual, family and community health.",
@@ -588,9 +588,9 @@ def all_projects( orgs )
       city: "Guatemala,",
       country: "Central America",
       url_slug: "helpsinternational-medical-mission",
-      project_photo: "/assets/projects/helps-medical/project_photo.jpg",
-      project_photo_2: "/assets/projects/helps-medical/project_photo_2.png",
-      project_photo_3: "/assets/projects/helps-medical/project_photo_3.jpg",
+      project_photo: "projects/helps-medical/project_photo.jpg",
+      project_photo_2: "projects/helps-medical/project_photo_2.png",
+      project_photo_3: "projects/helps-medical/project_photo_3.jpg",
       extra_content: {
         "The Problem": "Half of Guatemala’s population lives below the poverty line, and nearly 16% live in extreme poverty. The limited existing healthcare services are largely inaccessible due to financial barriers.",
         "The Opportunity": "HELPS International has developed a system of 10 volunteer medical teams to address the healthcare crisis in rural areas of Guatemala. These services are provided free of charge to those in need during medical missions.",
@@ -641,9 +641,9 @@ def all_projects( orgs )
       city: "Guatemala",
       country: "Central America",
       url_slug: "helpsinternational-health-campaign",
-      project_photo: "/assets/projects/helps-clean/project_photo.jpg",
-      project_photo_2: "/assets/projects/helps-clean/project_photo_2.png",
-      project_photo_3: "/assets/projects/helps-clean/project_photo_3.png",
+      project_photo: "projects/helps-clean/project_photo.jpg",
+      project_photo_2: "projects/helps-clean/project_photo_2.png",
+      project_photo_3: "projects/helps-clean/project_photo_3.png",
       extra_content: {
         "The Problem": "Most people living in rural Guatemala do not have access to clean water sources or cooking methods. This contributes to a high rate of the population contracting stomach and respiratory illnesses. Often times these problems will go untreated due to a lack of funds to pay for doctor’s visits and medicine, which can sometimes lead to life-threatening conditions.",
         "The Opportunity": "In response to the high burden of these diseases on the Guatemalan population, HELPS developed the ONIL Stove and Gravity Water Filter. Proper use of this filter could prevent the onset of such health conditions before they begin.",
@@ -737,9 +737,9 @@ def all_projects( orgs )
       city: "Brazil",
       country: " South America",
       url_slug: "lovefutbol-build-a-soccer-field",
-      project_photo: "/assets/projects/love.futbol/project_photo.jpg",
-      project_photo_2: "/assets/projects/love.futbol/photo_2.jpg",
-      project_photo_3: "/assets/projects/love.futbol/photo_3.jpg",
+      project_photo: "projects/love.futbol/project_photo.jpg",
+      project_photo_2: "projects/love.futbol/photo_2.jpg",
+      project_photo_3: "projects/love.futbol/photo_3.jpg",
       extra_content: {
         "Background": "love.fútbol engages, mobilizes and empowers underserved communities to build their own soccer fields. Alianҫa has 35,000 inhabitants, but the field site and the 9,000 locals living nearby are isolated from the rest of the city and lack safe community spaces.  This project will help to provide 5,000 children access to their first recreational field.",
         "The Opportunity": "love.fútbol provides raw materials, guidance, and serves as a catalyst to communities in need of a safe place to play through a proven methodology centered around personal and community empowerment.
@@ -784,7 +784,7 @@ def all_projects( orgs )
           FUN FACT
           <br />
           Alianҫa, Brazil, located near Recife,  the organization’s 19th project, is in the hometown of Anderson Hernanes, Brazilian national team member, midfielder for Inter Milan, and love.fútbol Ambassador
-        </div>/assets/projects/helps-medical/project_photo_3.jpg"
+        </div>projects/helps-medical/project_photo_3.jpg"
       }
     }
   ])
