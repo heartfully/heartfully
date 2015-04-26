@@ -4,7 +4,7 @@ module Api
       before_action :set_project, :only => [:show, :update, :destroy]
 
       def index
-        @projects = Project.filter(filterable_params).paginate(:page => params[:page], :per_page => 5)
+        @projects = Project.filter(filterable_params).paginate(:page => params[:page], :per_page => 10).where(public: true)
         render_success @projects
       end
 
@@ -55,7 +55,7 @@ module Api
 
         # Only allow a trusted parameter "white list" through.
         def project_params
-          params.require(:project).permit(:name, :headline, :description, :profile_img, :banner_img, :city, :state, :country, :funding_goal, :public?)
+          params.require(:project).permit(:name, :partner, :description, :url_slug, :banner_img, :city, :country, :funding_goal, :public?, :project_photo, :project_photo_2, :project_photo_3, :extra_content)
         end
 
         def filterable_params

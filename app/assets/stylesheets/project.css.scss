@@ -1,3 +1,46 @@
 .project-show {
-  padding-top: 8em;
+  padding-top: 7em;
+  padding-bottom: 3em;
+  #project-photos {
+    float: right;
+  }
+  #project-info {
+    float: left;
+    .project-content {
+      padding: 0.5em 0 1.5em 0;
+    }
+    .green-box {
+      background: #F5F5F5;
+      text-align: center;
+      margin: auto;
+    }
+  }
+  .banner {
+    padding-bottom: 4em;
+  }
+  .img-container {
+    height: 22em;
+    margin-bottom: 3em;
+    overflow: hidden;
+    img {
+      max-width: 100%;
+      // max-height: 100%;
+    }
+  }
+}
+
+@media all and( max-width: 641px ) {
+  .project-show {
+    div {
+      #img-1 {
+        text-align: center;
+        img {
+          max-height: 100%;
+        }
+      }
+      #img-2, #img-3 {
+        display: none;
+      }
+    }
+  }
 }

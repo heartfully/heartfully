@@ -4,14 +4,13 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    @projects = Project.filter(filterable_params).paginate(:page => params[:page], :per_page => 12)
-    @categories = Category.all
+    @projects = Project.filter(filterable_params).paginate(:page => params[:page], :per_page => 18).where(public: true)
+    @categories = Category.order("name ASC")
   end
 
   # GET /projects/1
   def show
     # @project = @project.decorate
-    @project = Project.find(params[:id])
   end
 
   # GET /projects/new
@@ -52,12 +51,12 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.find(params[:id])
+      @project = Project.find_by(url_slug: params[:url_slug])
     end
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:name, :headline, :description, :project_url, :profile_img, :banner_img, :city, :state, :country, :funding_goal)
+      params.require(:project).permit(:name, :partner, :description, :url_slug, :banner_img, :city, :country, :funding_goal, :public?, :project_photo, :project_photo_2, :project_photo_3, :extra_content)
     end
 
     def filterable_params

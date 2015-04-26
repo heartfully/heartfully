@@ -4,13 +4,11 @@
 #
 #  id              :integer          not null, primary key
 #  name            :string(255)      not null
-#  headline        :string(255)
+#  partner         :string(255)
 #  description     :text
-#  project_url     :string(255)
-#  profile_img     :string(255)
+#  url_slug        :string(255)
 #  banner_img      :string(255)
 #  city            :string(255)
-#  state           :string(255)
 #  country         :string(255)      not null
 #  funding_goal    :decimal(11, 2)
 #  closed_at       :datetime
@@ -18,30 +16,43 @@
 #  organization_id :integer          not null
 #  created_at      :datetime
 #  updated_at      :datetime
+#  project_photo   :string(255)
+#  project_photo_2 :string(255)
+#  project_photo_3 :string(255)
+#  extra_content   :text
+
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   name: MyString
-  headline: MyString
+  partner: MyString
   description: MyText
+  url_slug: MyString
   banner_img: MyString
   city: MyString
-  state: MyString
   country: MyString
   funding_goal: 1.5
-  open?: false
+  public?: false
+  project_photo: MyString
+  project_photo_2: MyString
+  project_photo_3: MyString
+  extra_content: MyText
   references: 
 
 two:
   name: MyString
-  headline: MyString
+  partner: MyString
   description: MyText
+  url_slug: MyString
   banner_img: MyString
   city: MyString
-  state: MyString
   country: MyString
   funding_goal: 1.5
-  open?: false
+  public?: false
+  project_photo: MyString
+  project_photo_2: MyString
+  project_photo_3: MyString
+  extra_content: MyText
   references: 

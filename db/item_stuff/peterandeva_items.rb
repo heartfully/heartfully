@@ -1,5 +1,5 @@
 def peter_and_eva_items
-  item_types = Project.find_by_name("EcoSac women’s entrepreneurship training").item_types.create([
+  item_types = Project.find_by_name("Provide business training to women and support clean energy in Senegal").item_types.create([
     {:name => 'Introductory Training', 
       :description => 'An overview on alternative energy benefits, the EcoSac, and exercises in women’s empowerment', 
       :price => 60.00, 

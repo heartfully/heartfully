@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414031524) do
+ActiveRecord::Schema.define(version: 20150419004911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,13 +115,11 @@ ActiveRecord::Schema.define(version: 20150414031524) do
 
   create_table "projects", force: true do |t|
     t.string   "name",                                                    null: false
-    t.string   "headline"
+    t.string   "partner"
     t.text     "description"
-    t.string   "project_url"
-    t.string   "profile_img"
+    t.string   "url_slug"
     t.string   "banner_img"
     t.string   "city"
-    t.string   "state"
     t.string   "country",                                                 null: false
     t.decimal  "funding_goal",    precision: 11, scale: 2
     t.datetime "closed_at"
@@ -132,6 +130,7 @@ ActiveRecord::Schema.define(version: 20150414031524) do
     t.string   "project_photo"
     t.string   "project_photo_2"
     t.string   "project_photo_3"
+    t.text     "extra_content"
   end
 
   add_index "projects", ["organization_id", "name"], name: "index_projects_on_organization_id_and_name", unique: true, using: :btree

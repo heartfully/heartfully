@@ -29,25 +29,13 @@
               <li class="product-buy-cell"><%= ff.number_field(item_type.name, in: 0..item_type.items.available.count, :disabled => true) %>
               </li>
             <% end %>
-            <!-- <a href="#" class="button small expand">Add to Cart</a></li> -->
           </ul>
         </div>
       <% end %>
     <% end %>
 
-    <div id="js-thank-you-modal" class="reveal-modal small thank-you-modal" data-reveal>
-      <h2 id="thank-you">Thank You!</h2>
-      <a href="#" class="close-reveal-modal">&times;</a>
-
-      <div class="row">
-        <p>Thanks so much for contributing to our special day by supporting the <strong>Mufindi Orphan Project</strong>! We can't wait to see you at the wedding!</p>
-      </div>
-      
-    </div>
-    
     <div class="row checkout-button">
       <%= submit_tag('All Set? Checkout!', {:class =>'expand  button'}) %>
-      <!-- <a class="expand button" data-reveal-id="js-thank-you-modal" href="">All Set? Checkout</a> -->
     </div>
   <% end %>
 
