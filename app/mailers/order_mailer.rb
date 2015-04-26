@@ -29,6 +29,8 @@ class OrderMailer < ActionMailer::Base
       "marissanewman85@gmail.com"
     elsif(slug.downcase == "lindseyandmatt")
       "lagardner08@gmail.com, matt.a.levinson@gmail.com"
+    elsif(slug.downcase == 'd+d')
+      "Danielle.stoermer@gmail.com, Alec.d.niedermaier@gmail.com"
     end
   end
 end
