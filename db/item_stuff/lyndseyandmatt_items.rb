@@ -1,5 +1,5 @@
 def lyndsey_and_matt_items
-  item_types = Project.find_by_name("Home-Based Care Program").item_types.create([
+  item_types = Project.find_by_name("Train rural community health workers to provide home-based care in Tanzania").item_types.create([
     {:name => 'Training facility',
          :description => 'This building is where all sessions and workshops are taught and where participants eat and sleep.', 
          :price => 100.00, 

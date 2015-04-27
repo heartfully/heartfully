@@ -2,11 +2,11 @@
   div:first-child { margin: 0;}
   h1,h3 { font-kerning: 130px; }
   padding: 0;
-  .eva-and-peter { background: image-url("eva_and_peter/peter_and_eva_banner_photo.jpg"); }
-  .katelyn-and-brandon { background: image-url("katelyn_and_brandon/katelyn_and_brandon_banner_photo.png");}
-  .marissa-and-travis { background: image-url("marissa_and_travis/marissa_and_travis_banner_photo.jpg");}
-  .lindsey-and-matt { background: image-url("matt_and_lindsey/matt_and_lindsey_banner.jpg");}
-  .nicole-and-emery { background: image-url("nicole_and_emery/nicole_and_emery_banner.png");}
+  .eva-and-peter { background: url(https://cdn.rawgit.com/Heartfully/registry-images/master/eva_and_peter/peter_and_eva_banner_photo.jpg);}
+  .katelyn-and-brandon { background: url(https://cdn.rawgit.com/Heartfully/registry-images/master/katelyn_and_brandon/katelyn_and_brandon_banner_photo.png);}
+  .marissa-and-travis { background: url(https://cdn.rawgit.com/Heartfully/registry-images/master/marissa_and_travis/marissa_and_travis_banner_photo.jpg);}
+  .lindsey-and-matt { background: url(https://cdn.rawgit.com/Heartfully/registry-images/master/matt_and_lindsey/matt_and_lindsey_banner.jpg);}
+  .nicole-and-emery { background: url(https://cdn.rawgit.com/Heartfully/registry-images/master/nicole_and_emery/nicole_and_emery_banner.png);}
   #registry-banner-container {
     position:relative;
     background-size: cover;

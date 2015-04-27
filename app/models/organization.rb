@@ -5,6 +5,7 @@ class Organization < ActiveRecord::Base
 
   validates_presence_of :name, :admin_id
   validates_associated :admin
+  validates_uniqueness_of :name
 end
 
 # == Schema Information

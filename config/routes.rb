@@ -24,7 +24,9 @@ Rails.application.routes.draw do
   # User confirmation
   get '/users/:confirmation_token/confirm' => 'users#confirm', :as => 'user_confirmation'
 
-  resources :projects
+  get '/projects/:url_slug', to: 'projects#show'
+
+  resources :projects, except: [:show]
   resources :favorites
 
   post 'orders/:id/finalize' => 'orders#finalize', :as => 'orders_finalize'

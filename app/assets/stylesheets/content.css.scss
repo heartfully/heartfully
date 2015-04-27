@@ -14,20 +14,3 @@
     padding: 0 2%;
   }
 }
-
-.projects-list {
-
-  .project-glimpse {
-    padding: 15px 30px;
-    @include radius(10px);
-
-    .name {
-      text-align: center;
-    }
-  }
-
-  img {
-    min-height: 200px;
-    vertical-align: middle;
-  }
-}
