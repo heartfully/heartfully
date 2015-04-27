@@ -21,13 +21,6 @@ ActiveRecord::Schema.define(version: 20150425000514) do
     t.string "cat_type", null: false
   end
 
-  create_table "consultation_requests", force: true do |t|
-    t.string "email"
-    t.string "couple_names"
-    t.string "phone_number"
-    t.string "preferred_contact_method"
-  end
-
   create_table "favorites", force: true do |t|
     t.integer  "registry_id"
     t.integer  "user_id"
@@ -122,13 +115,11 @@ ActiveRecord::Schema.define(version: 20150425000514) do
 
   create_table "projects", force: true do |t|
     t.string   "name",                                                    null: false
-    t.string   "headline"
+    t.string   "partner"
     t.text     "description"
-    t.string   "project_url"
-    t.string   "profile_img"
+    t.string   "url_slug"
     t.string   "banner_img"
     t.string   "city"
-    t.string   "state"
     t.string   "country",                                                 null: false
     t.decimal  "funding_goal",    precision: 11, scale: 2
     t.datetime "closed_at"
@@ -136,6 +127,10 @@ ActiveRecord::Schema.define(version: 20150425000514) do
     t.integer  "organization_id",                                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "project_photo"
+    t.string   "project_photo_2"
+    t.string   "project_photo_3"
+    t.text     "extra_content"
   end
 
   add_index "projects", ["organization_id", "name"], name: "index_projects_on_organization_id_and_name", unique: true, using: :btree
