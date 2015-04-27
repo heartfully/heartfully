@@ -1,4 +1,5 @@
 def all_projects
+  Project.destroy_all
   Project.create([
     # "Peter and Eva" - Provide business training to women and support clean energy in Senegal
     { 
