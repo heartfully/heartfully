@@ -778,7 +778,7 @@ def all_projects
           <li>Lighting</li>
           <li>Cement</li>
         </ul>",
-        "":
+        :"" =>
         "<div class='green-box'>
           FUN FACT
           <br />
