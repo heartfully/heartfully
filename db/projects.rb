@@ -1,12 +1,11 @@
-def all_projects( orgs )
-  Project.destroy_all
-  projects = Project.create([
+def all_projects
+  Project.create([
     # "Peter and Eva" - Provide business training to women and support clean energy in Senegal
     { 
       name: "Provide business training to women and support clean energy in Senegal", 
       partner: "SEM Fund",
       description: "This project trains cohorts of Senegalese women to use cleaner cooker systems and convincingly promote and sell clean energy cooking products to their communities.",
-      organization_id: orgs[3].id, 
+      organization_id: Organization.find_by_name("SEM Fund").id, 
       funding_goal: 6000,
       city: "Senegal",
       country: "Africa", 
@@ -46,7 +45,7 @@ def all_projects( orgs )
     # "Katelyn and Brandon"
     { 
       name: "Complete Wangama's Clinic", 
-      organization_id: orgs.first.id, 
+      organization_id: Organization.find_by_name("Heartfully").id, 
       funding_goal: 1234.32,
       city: "Tanzania", 
       country: "Africa",
@@ -54,12 +53,12 @@ def all_projects( orgs )
       public: false
     },
 
-    # "Marissa and Travis" - LIGHT UP THE NIGHT WITH A SOLAR CAMPAIGN FOR ZAMBIAN FAMILIES
+    # "Marissa and Travis" - Light Up The Night With A Solar Campaign For Zambian Families
     { 
       name: "Light Up The Night With A Solar Campaign For Zambian Families", 
       partner: "Solar-Aid",
       description: "This campaign will bring access to solar energy to school children and their families at eight schools in Zambia's Central Province.",
-      organization_id: orgs[2].id, 
+      organization_id: Organization.find_by_name("Solar-Aid").id, 
       funding_goal: 3000,
       city: "Zambia",
       country: "Africa",
@@ -103,7 +102,7 @@ def all_projects( orgs )
       name: "Train rural community health workers to provide home-based care in Tanzania", 
       partner: "Mufindi Orphans Project",
       description: "The Home-Based Care Program is a 21-day seminar to train community health workers on a variety of health topics, with a focus on HIV prevention, care and treatment.",
-      organization_id: orgs[1].id,
+      organization_id: Organization.find_by_name("Mufindi Orphans").id,
       funding_goal: 5500,
       city: "Tanzania",
       country: "Africa", 
@@ -151,7 +150,7 @@ def all_projects( orgs )
       name: "Launch Three Preschool Programs In Tanzania",
       partner: "Mufindi Orphans Project",
       description: "This preschool program transforms outdated classrooms into a place where young children can receive better education for their age level and compassionate support from teachers.",
-      organization_id: orgs[1].id,
+      organization_id: Organization.find_by_name("Mufindi Orphans").id,
       funding_goal: 4500,
       city: "Tanzania",
       country: "Africa",
@@ -188,7 +187,7 @@ def all_projects( orgs )
       name: "Provide orphaned and abandoned girls in Kenya with loving homes and education",
       partner: "Many Hopes",
       description: "Help an orphaned or abandoned girl thrive by providing her with safe housing and an excellent education.",
-      organization_id: orgs[4].id, 
+      organization_id: Organization.find_by_name("Many Hopes").id, 
       funding_goal: 4000,
       city: "Kenya",
       country: "Africa",
@@ -240,12 +239,12 @@ def all_projects( orgs )
       }
     },
 
-    # BRING ELECTRICITY TO A VOCATIONAL SCHOOL FOR VULNERABLE CHILDREN IN TANZANIA
+    # Bring Electricity To a Vocational School For Vulnerable Children In Tanzania
     {
-      name: "BRING ELECTRICITY TO A VOCATIONAL SCHOOL FOR VULNERABLE CHILDREN IN TANZANIA",
+      name: "Bring Electricity To a Vocational School For Vulnerable Children In Tanzania",
       partner: "Mary Ryan Foundation",
       description: "This project will provide a source of sustainable income for a vocational school serving at-risk youth in Tanzania and improve the quality and range of education available by equipping it with electricity.",
-      organization_id: orgs[5].id, 
+      organization_id: Organization.find_by_name("The Mary Ryan Foundation").id, 
       funding_goal: 5000,
       city: "Tanzania",
       country: "Africa",
@@ -291,12 +290,12 @@ def all_projects( orgs )
       }
     },
 
-    # SPONSORS A GIRL’S EDUCATION IN TANZANIA
+    # Sponsor a Girl's Education In Tanzania
     {
-      name: "SPONSORS A GIRL’S EDUCATION IN TANZANIA",
+      name: "Sponsor a Girl's Education In Tanzania",
       partner: "Jiamini",
       description: "Fund a girl’s high school education and provide her with a safe living environment and opportunities for higher education and employment that would otherwise be out of reach.",
-      organization_id: orgs[6].id, 
+      organization_id: Organization.find_by_name("Jiamini").id, 
       funding_goal: 3080,
       city: "Tanzania",
       country: "Africa",
@@ -321,12 +320,12 @@ def all_projects( orgs )
       }
     },
 
-    # HELP A PROMISING STUDENT TO ATTEND HIGH SCHOOL IN TANZANIA
+    # Send a Star Student To High School In Tanzania 
     {
-      name: "HELP A PROMISING STUDENT TO ATTEND HIGH SCHOOL IN TANZANIA",
+      name: "Send a Star Student To High School In Tanzania",
       partner: "Jiamini",
       description: "Fund a student’s high school education and provide him or her with opportunities for higher education and employment that would otherwise be out of reach.",
-      organization_id: orgs[6].id, 
+      organization_id: Organization.find_by_name("Jiamini").id, 
       funding_goal: 1600,
       city: "Tanzania",
       country: "Africa",
@@ -351,12 +350,12 @@ def all_projects( orgs )
       }
     },
 
-    # Classroom Renovations
+    # Refurbish damaged classrooms in Tanzania
     {
       name: "Refurbish damaged classrooms in Tanzania",
       partner: "Jiamini",
       description: "Avoid the disruption of education for hundreds of girls in Southern Tanzania by supporting the emergency repairs of four classrooms.",
-      organization_id: orgs[6].id, 
+      organization_id: Organization.find_by_name("Jiamini").id, 
       funding_goal: 500,
       city: "Tanzania",
       country: "Africa",
@@ -428,7 +427,7 @@ def all_projects( orgs )
       name: "Bring Early Childhood Education to Vulnerable, Rural Communities",
       partner: "Olive Branch for Children",
       description: "The Montessori Outreach Program transforms members of Tanzania’s most hard to reach villages into teachers who deliver high quality kindergarten education for children in their communities.",
-      organization_id: orgs[7].id, 
+      organization_id: Organization.find_by_name("Olive Branch for Children").id, 
       funding_goal: 5500,
       city: "Tanzania",
       country: "Africa",
@@ -483,7 +482,7 @@ def all_projects( orgs )
       name: "Provide families in India with safe and affordable clean cookstoves",
       partner: "Greenway",
       description: "This campaign in northern India will equip families with clean cookstoves to improve household health, lower greenhouse gas emissions and reduce both time and money spent on purchasing or collecting fuel.",
-      organization_id: orgs[8].id,
+      organization_id: Organization.find_by_name("Greenway").id,
       funding_goal: 1500,
       city: "India",
       country: "Asia",
@@ -532,7 +531,7 @@ def all_projects( orgs )
       name: "Develop a New Generation of Youth Entrepreneurs in Senegal",
       partner: "SEM Fund",
       description: "This entrepreneurship program expands job opportunities for young people in Senegal and makes clean, affordable energy products accessible to those who need them most.",
-      organization_id: orgs[3].id,
+      organization_id: Organization.find_by_name("SEM Fund").id,
       funding_goal: 7500,
       city: "Senegal",
       country: "Africa",
@@ -583,7 +582,7 @@ def all_projects( orgs )
       name: "Bring high quality medical care to vulnerable populations in rural Guatemala",
       partner: "HELPS International",
       description: "Bring free, high quality medical care to those in need by supporting 10 medical missions that serve the most vulnerable populations of Guatemala.",
-      organization_id: orgs[9].id,
+      organization_id: Organization.find_by_name("HELPS International").id,
       funding_goal: 5000,
       city: "Guatemala,",
       country: "Central America",
@@ -636,7 +635,7 @@ def all_projects( orgs )
       name: "Provide access to clean water and cooking systems in rural Guatemala",
       partner: "HELPS International",
       description: "Installing clean stoves and water filtration systems to homes in rural Guatemala will help families avoid serious health problems, have a clean home they can be proud of, and provide access to a healthy lifestyle so they can focus on being productive members of society.",
-      organization_id: orgs[9].id,
+      organization_id: Organization.find_by_name("HELPS International").id,
       funding_goal: 4000,
       city: "Guatemala",
       country: "Central America",
@@ -679,7 +678,7 @@ def all_projects( orgs )
       name: "Help Children with SCN8A Genetic Neurological Disorders",
       partner: "Wishes for Elliott",
       description: "Support scientific research and help find answers for the growing number of children around the world who suffer from rare genetic neurological disorders",
-      organization_id: orgs[10].id,
+      organization_id: Organization.find_by_name("Wishes for Elliott").id,
       funding_goal: 3000,
       country: "Global",
       url_slug: "wishesforelliott-scn8a-mutation",
@@ -732,7 +731,7 @@ def all_projects( orgs )
       name: "Build a safe place for children to play soccer in Brazil",
       partner: "Love.Futbol",
       description: "A safe place to play is often the last stand before gangs, drugs and despair.  Empower the community of Alianҫa, Brazil to provide its 5,000 children with a  place  to play soccer in the safe environment they deserve.",
-      organization_id: orgs[11].id,
+      organization_id: Organization.find_by_name("Love.Futbol").id,
       funding_goal: 6000,
       city: "Brazil",
       country: " South America",
@@ -788,5 +787,4 @@ def all_projects( orgs )
       }
     }
   ])
-  return projects
 end

@@ -18,7 +18,7 @@ class Registry < ActiveRecord::Base
   #################
 
   validates_presence_of :name, :url_slug, :postal_code
-  validates_uniqueness_of :url_slug
+  validates_uniqueness_of :name, :url_slug
   # TODO a format validation on URL slug
   
   def approved_projects

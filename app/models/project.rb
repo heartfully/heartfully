@@ -16,6 +16,7 @@ class Project < ActiveRecord::Base
 
   validates_presence_of :name, :country, :organization_id #:public?
   validates_associated :organization
+  validates_uniqueness_of :name
 
   def total_cost(items = '')
     total = 0

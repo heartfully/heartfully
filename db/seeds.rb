@@ -4,210 +4,198 @@ require_relative("./item_stuff/peterandeva_items")
 require_relative("./item_stuff/katelynandbrandon_items")
 require_relative("./item_stuff/lyndseyandmatt_items")
 
-Registry.destroy_all
-registries = Registry.create([
+# Validating Uniqueness of name and Url_Slug
+Registry.create([
   { :name => "Peter and Eva", :url_slug => "peterandeva", :postal_code => "20005" },
   { :name => "Katelyn and Brandon", :url_slug => "wangama", :postal_code => "20005"},
   { :name => "Marissa and Travis", :url_slug => "marissaandtravis", :postal_code => "20005"},
   { :name => "Lindsey and Matt", :url_slug => "lindseyandmatt", :postal_code => "20005" }
 ])
 
-User.destroy_all
-users = User.create([
-#   { :email => "mike@fink.com", :password => "jetsrule", :first_name => "Mike", :last_name => "Fink", :registry_id => registries.first.id },
-#   { :email => "megan@fink.com", :password => "lilabeast", :first_name => "Megan", :last_name => "Fink", :registry_id => registries.first.id },
-#   { :email => "seans887@gmail.com", :password => "password", :first_name => "Sean", :last_name => "Shannon" },
+# Validating Uniqueness of Email
+User.create([
   { :email => "cspeisman@gmail.com", :password => "password", :first_name => "Corey", :last_name => "Speisman", :system_admin => true }
 ])
 
-Organization.destroy_all
-orgs = Organization.create([
-  { name: 'Heartfully', admin_id: users.first.id },
-  { name: 'Mufindi Orphans', admin_id: users.first.id },
-  { name: 'SolarAid', admin_id: users.first.id },
-  { name: 'SEM Fund', admin_id: users.first.id },
-  { name: 'Many Hopes', admin_id: users.first.id },
-  { name: 'The Mary Ryan Foundation', admin_id: users.first.id },
-  { name: 'Jiamini', admin_id: users.first.id },
-  { name: 'Olive Branch for Children', admin_id: users.first.id },
-  { name: 'Greenway', admin_id: users.first.id },
-  { name: 'HELPS International', admin_id: users.first.id },
-  { name: 'Wishes for Elliott', admin_id: users.first.id },
-  { name: 'Love.Futbol', admin_id: users.first.id }
+# Validating Uniqueness of Name
+Organization.create([
+  { name: 'Heartfully', admin_id: User.find_by_email("cspeisman@gmail.com").id },
+  { name: 'Mufindi Orphans', admin_id: User.find_by_email("cspeisman@gmail.com").id },
+  { name: 'Solar-Aid', admin_id: User.find_by_email("cspeisman@gmail.com").id },
+  { name: 'SEM Fund', admin_id: User.find_by_email("cspeisman@gmail.com").id },
+  { name: 'Many Hopes', admin_id: User.find_by_email("cspeisman@gmail.com").id },
+  { name: 'The Mary Ryan Foundation', admin_id: User.find_by_email("cspeisman@gmail.com").id },
+  { name: 'Jiamini', admin_id: User.find_by_email("cspeisman@gmail.com").id },
+  { name: 'Olive Branch for Children', admin_id: User.find_by_email("cspeisman@gmail.com").id },
+  { name: 'Greenway', admin_id: User.find_by_email("cspeisman@gmail.com").id },
+  { name: 'HELPS International', admin_id: User.find_by_email("cspeisman@gmail.com").id },
+  { name: 'Wishes for Elliott', admin_id: User.find_by_email("cspeisman@gmail.com").id },
+  { name: 'Love.Futbol', admin_id: User.find_by_email("cspeisman@gmail.com").id }
 ])
 
-projects = all_projects( orgs )
+# Validating Uniqueness of Name
+all_projects
 
-4.times do |num|
-  registries[num].projects << projects[num]
-  RegistryProject.where(registry_id: registries[num].id, project_id: projects[num].id).first.approve!
-end
+Registry.find_by_name("Peter and Eva").projects << Project.find_by_name("Provide business training to women and support clean energy in Senegal")
+RegistryProject.where( registry_id: Registry.find_by_name("Peter and Eva").id , project_id: Project.find_by_name("Provide business training to women and support clean energy in Senegal").id ).first.approve!
 
+Registry.find_by_name("Katelyn and Brandon").projects << Project.find_by_name("Complete Wangama's Clinic")
+RegistryProject.where( registry_id: Registry.find_by_name("Katelyn and Brandon").id , project_id: Project.find_by_name("Complete Wangama's Clinic").id ).first.approve!
 
+Registry.find_by_name("Marissa and Travis").projects << Project.find_by_name("Light Up The Night With A Solar Campaign For Zambian Families")
+RegistryProject.where( registry_id: Registry.find_by_name("Marissa and Travis").id, project_id: Project.find_by_name("Light Up The Night With A Solar Campaign For Zambian Families").id).first.approve!
 
-marrissa_and_travis_items
-peter_and_eva_items
-katelyn_and_brandon_items
-lyndsey_and_matt_items
+Registry.find_by_name("Lindsey and Matt").projects << Project.find_by_name("Train rural community health workers to provide home-based care in Tanzania")
+RegistryProject.where( registry_id: Registry.find_by_name("Lindsey and Matt").id, project_id: Project.find_by_name("Train rural community health workers to provide home-based care in Tanzania").id ).first.approve!
 
-Category.destroy_all
-categories = Category.create([
-  { name: "Africa", cat_type: "region" }, #0
-  { name: "Asia", cat_type: "region" }, #1
-  { name: "India", cat_type: "region" }, #2
-  { name: "Kenya", cat_type: "region" }, #3
-  { name: "Senegal", cat_type: "region"}, #4
-  { name: "South America", cat_type: "region" }, #5
-  { name: "Tanzania", cat_type: "region" }, #6
-  { name: "Zambia", cat_type: "region" }, #7
-  { name: "Capacity Building", cat_type: "issue" }, #8
-  { name: "Clean Energy", cat_type: "issue" }, #9
-  { name: "Education", cat_type: "issue" }, #10
-  { name: "Entrepreneurship", cat_type: "issue" }, #11
-  { name: "Environment", cat_type: "issue" }, #12
-  { name: "Health", cat_type: "issue" }, #13
-  { name: "HIV/AIDS", cat_type: "issue" }, #14
-  { name: "Orphans and Vulnerable Children", cat_type: "issue" }, #15
-  { name: "Research", cat_type: "issue" }, #16
-  { name: "Science", cat_type: "issue" }, #17
-  { name: "Sports", cat_type: "issue" }, #18
-  { name: "Water", cat_type: "issue" }, #19
-  { name: "Women and Girls' Empowerment", cat_type: "issue" }, #20
-  { name: "Youth", cat_type: "issue" }, #21
-  { name: "Central America", cat_type: "region" }, #22
-  { name: "Guatemala", cat_type: "region" }, #23
-  { name: "Global", cat_type: "region" }, #24
-  { name: "Brazil", cat_type: "region" }, #25
+# marrissa_and_travis_items
+# peter_and_eva_items
+# katelyn_and_brandon_items
+# lyndsey_and_matt_items
+
+Category.create([
+  { name: "Africa", cat_type: "region" },
+  { name: "Asia", cat_type: "region" },
+  { name: "India", cat_type: "region" },
+  { name: "Kenya", cat_type: "region" },
+  { name: "Senegal", cat_type: "region"},
+  { name: "South America", cat_type: "region" },
+  { name: "Tanzania", cat_type: "region" },
+  { name: "Zambia", cat_type: "region" },
+  { name: "Capacity Building", cat_type: "issue" },
+  { name: "Clean Energy", cat_type: "issue" },
+  { name: "Education", cat_type: "issue" },
+  { name: "Entrepreneurship", cat_type: "issue" },
+  { name: "Environment", cat_type: "issue" },
+  { name: "Health", cat_type: "issue" },
+  { name: "HIV/AIDS", cat_type: "issue" },
+  { name: "Orphans and Vulnerable Children", cat_type: "issue" },
+  { name: "Research", cat_type: "issue" },
+  { name: "Science", cat_type: "issue" },
+  { name: "Sports", cat_type: "issue" },
+  { name: "Water", cat_type: "issue" },
+  { name: "Women and Girl's Empowerment", cat_type: "issue" },
+  { name: "Youth", cat_type: "issue" },
+  { name: "Central America", cat_type: "region" },
+  { name: "Guatemala", cat_type: "region" },
+  { name: "Global", cat_type: "region" },
+  { name: "Brazil", cat_type: "region" },
 ])
 
-ProjectCategory.destroy_all
+# ProjectCategory.destroy_all
 ProjectCategory.create([
   # Provide business training to women and support clean energy in Senegal
-  { project: projects[0], category: categories[0] },
-  { project: projects[0], category: categories[4]},
-  { project: projects[0], category: categories[9]},
-  { project: projects[0], category: categories[12]},
-  { project: projects[0], category: categories[13]},
-  { project: projects[0], category: categories[20]},
+  { project: Project.find_by_name("Provide business training to women and support clean energy in Senegal"), category: Category.find_by_name("Africa") },
+  { project: Project.find_by_name("Provide business training to women and support clean energy in Senegal"), category: Category.find_by_name("Senegal") },
+  { project: Project.find_by_name("Provide business training to women and support clean energy in Senegal"), category: Category.find_by_name("Clean Energy") },
+  { project: Project.find_by_name("Provide business training to women and support clean energy in Senegal"), category: Category.find_by_name("Environment")},
+  { project: Project.find_by_name("Provide business training to women and support clean energy in Senegal"), category: Category.find_by_name("Health") },
+  { project: Project.find_by_name("Provide business training to women and support clean energy in Senegal"), category: Category.find_by_name("Women and Girl's Empowerment") },
 
   # Complete Wangama's Clinic
-  { project: projects[1], category: categories[1] },
-  { project: projects[1], category: categories[6] },
-  { project: projects[1], category: categories[15] },
+  { project:  Project.find_by_name("Complete Wangama's Clinic"), category: Category.find_by_name("Africa") },
+  { project:  Project.find_by_name("Complete Wangama's Clinic"), category: Category.find_by_name("Tanzania") },
+  { project:  Project.find_by_name("Complete Wangama's Clinic"), category: Category.find_by_name("Orphans and Vulnerable Children") },
 
   # Light Up The Night With A Solar Campaign For Zambian Families
-  { project: projects[2], category: categories[0] },
-  { project: projects[2], category: categories[7] },
-  { project: projects[2], category: categories[9] },
+  { project:  Project.find_by_name("Light Up The Night With A Solar Campaign For Zambian Families"), category: Category.find_by_name("Africa") },
+  { project:  Project.find_by_name("Light Up The Night With A Solar Campaign For Zambian Families"), category: Category.find_by_name("Zambia") },
+  { project:  Project.find_by_name("Light Up The Night With A Solar Campaign For Zambian Families"), category: Category.find_by_name("Clean Energy") },
 
   # Train rural community health workers to provide home-based care in Tanzania
-  { project: projects[3], category: categories[0] },
-  { project: projects[3], category: categories[6] },
-  { project: projects[3], category: categories[8] },
-  { project: projects[3], category: categories[13] },
-  { project: projects[3], category: categories[14] },
+  { project:  Project.find_by_name("Train rural community health workers to provide home-based care in Tanzania"), category: Category.find_by_name("Africa") },
+  { project:  Project.find_by_name("Train rural community health workers to provide home-based care in Tanzania"), category: Category.find_by_name("Tanzania") },
+  { project:  Project.find_by_name("Train rural community health workers to provide home-based care in Tanzania"), category: Category.find_by_name("Capacity Building") },
+  { project:  Project.find_by_name("Train rural community health workers to provide home-based care in Tanzania"), category: Category.find_by_name("Health") },
+  { project:  Project.find_by_name("Train rural community health workers to provide home-based care in Tanzania"), category: Category.find_by_name("HIV/AIDS") },
 
   # Launch Three Preschool Programs In Tanzania
-  { project: projects[4], category: categories[0] },
-  { project: projects[4], category: categories[6] },
-  { project: projects[4], category: categories[10] },
-  { project: projects[4], category: categories[21] },
+  { project:  Project.find_by_name("Launch Three Preschool Programs In Tanzania"), category: Category.find_by_name("Africa") },
+  { project:  Project.find_by_name("Launch Three Preschool Programs In Tanzania"), category: Category.find_by_name("Tanzania") },
+  { project:  Project.find_by_name("Launch Three Preschool Programs In Tanzania"), category: Category.find_by_name("Education") },
+  { project:  Project.find_by_name("Launch Three Preschool Programs In Tanzania"), category: Category.find_by_name("Youth") },
 
   # Provide orphaned and abandoned girls in Kenya with loving homes and education
-  { project: projects[5], category: categories[0] },
-  { project: projects[5], category: categories[3] },
-  { project: projects[5], category: categories[10] },
-  { project: projects[5], category: categories[13] },
-  { project: projects[5], category: categories[15] },
+  { project:  Project.find_by_name("Provide orphaned and abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Africa") },
+  { project:  Project.find_by_name("Provide orphaned and abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Kenya") },
+  { project:  Project.find_by_name("Provide orphaned and abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Education") },
+  { project:  Project.find_by_name("Provide orphaned and abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Health") },
+  { project:  Project.find_by_name("Provide orphaned and abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Orphans and Vulnerable Children") },
 
-  # BRING ELECTRICITY TO A VOCATIONAL SCHOOL FOR VULNERABLE CHILDREN IN TANZANIA
-  { project: projects[6], category: categories[0] },
-  { project: projects[6], category: categories[6] },
-  { project: projects[6], category: categories[8] },
-  { project: projects[6], category: categories[11] },
-  { project: projects[6], category: categories[13] },
-  { project: projects[6], category: categories[15] },
-  { project: projects[6], category: categories[21] },
+  # Bring Electricity To a Vocational School For Vulnerable Children In Tanzania
+  { project:  Project.find_by_name("Bring Electricity To a Vocational School For Vulnerable Children In Tanzania"), category: Category.find_by_name("Africa") },
+  { project:  Project.find_by_name("Bring Electricity To a Vocational School For Vulnerable Children In Tanzania"), category: Category.find_by_name("Tanzania") },
+  { project:  Project.find_by_name("Bring Electricity To a Vocational School For Vulnerable Children In Tanzania"), category: Category.find_by_name("Capacity Building") },
+  { project:  Project.find_by_name("Bring Electricity To a Vocational School For Vulnerable Children In Tanzania"), category: Category.find_by_name("Entrepreneurship") },
+  { project:  Project.find_by_name("Bring Electricity To a Vocational School For Vulnerable Children In Tanzania"), category: Category.find_by_name("Health") },
+  { project:  Project.find_by_name("Bring Electricity To a Vocational School For Vulnerable Children In Tanzania"), category: Category.find_by_name("Orphans and Vulnerable Children") },
+  { project:  Project.find_by_name("Bring Electricity To a Vocational School For Vulnerable Children In Tanzania"), category: Category.find_by_name("Youth") },
 
-  # SPONSORS A GIRL’S EDUCATION IN TANZANIA
-  { project: projects[7], category: categories[0] },
-  { project: projects[7], category: categories[6] },
-  { project: projects[7], category: categories[10] },
-  { project: projects[7], category: categories[15] },
-  { project: projects[7], category: categories[20] },
+  # Sponsor a Girl's Education In Tanzania
+  { project:  Project.find_by_name("Sponsor a Girl's Education In Tanzania"), category: Category.find_by_name("Africa") },
+  { project:  Project.find_by_name("Sponsor a Girl's Education In Tanzania"), category: Category.find_by_name("Tanzania") },
+  { project:  Project.find_by_name("Sponsor a Girl's Education In Tanzania"), category: Category.find_by_name("Education") },
+  { project:  Project.find_by_name("Sponsor a Girl's Education In Tanzania"), category: Category.find_by_name("Orphans and Vulnerable Children") },
+  { project:  Project.find_by_name("Sponsor a Girl's Education In Tanzania"), category: Category.find_by_name("Women and Girl's Empowerment") },
 
-  # SEND A STAR STUDENT TO HIGH SCHOOL IN TANZANIA 
-  { project: projects[8], category: categories[0] },
-  { project: projects[8], category: categories[6] },
-  { project: projects[8], category: categories[8] },
-  { project: projects[8], category: categories[10] },
-  { project: projects[8], category: categories[15] },
-  { project: projects[8], category: categories[20] },
+  # Send a Star Student To High School In Tanzania
+  { project:  Project.find_by_name("Send a Star Student To High School In Tanzania"), category: Category.find_by_name("Africa") },
+  { project:  Project.find_by_name("Send a Star Student To High School In Tanzania"), category: Category.find_by_name("Tanzania") },
+  { project:  Project.find_by_name("Send a Star Student To High School In Tanzania"), category: Category.find_by_name("Capacity Building") },
+  { project:  Project.find_by_name("Send a Star Student To High School In Tanzania"), category: Category.find_by_name("Education") },
+  { project:  Project.find_by_name("Send a Star Student To High School In Tanzania"), category: Category.find_by_name("Orphans and Vulnerable Children") },
+  { project:  Project.find_by_name("Send a Star Student To High School In Tanzania"), category: Category.find_by_name("Women and Girl's Empowerment") },
 
   # Refurbish damaged classrooms in Tanzania
-  { project: projects[9], category: categories[0] },
-  { project: projects[9], category: categories[6] },
-  { project: projects[9], category: categories[10] },
-  { project: projects[9], category: categories[21] },
+  { project:  Project.find_by_name("Refurbish damaged classrooms in Tanzania"), category: Category.find_by_name("Africa") },
+  { project:  Project.find_by_name("Refurbish damaged classrooms in Tanzania"), category: Category.find_by_name("Tanzania") },
+  { project:  Project.find_by_name("Refurbish damaged classrooms in Tanzania"), category: Category.find_by_name("Education") },
+  { project:  Project.find_by_name("Refurbish damaged classrooms in Tanzania"), category: Category.find_by_name("Youth") },
 
   # Bring Early Childhood Education to Vulnerable, Rural Communities
-  { project: projects[10], category: categories[0] },
-  { project: projects[10], category: categories[6] },
-  { project: projects[10], category: categories[8] },
-  { project: projects[10], category: categories[10] },
+  { project: Project.find_by_name("Bring Early Childhood Education to Vulnerable, Rural Communities"), category: Category.find_by_name("Africa") },
+  { project: Project.find_by_name("Bring Early Childhood Education to Vulnerable, Rural Communities"), category: Category.find_by_name("Tanzania") },
+  { project: Project.find_by_name("Bring Early Childhood Education to Vulnerable, Rural Communities"), category: Category.find_by_name("Capacity Building") },
+  { project: Project.find_by_name("Bring Early Childhood Education to Vulnerable, Rural Communities"), category: Category.find_by_name("Education") },
 
   # Provide families in northern India with safe, efficient and affordable clean cookstoves
-  { project: projects[11], category: categories[1] },
-  { project: projects[11], category: categories[2] },
-  { project: projects[11], category: categories[9] },
-  { project: projects[11], category: categories[20] },
+  { project: Project.find_by_name("Provide families in India with safe and affordable clean cookstoves"), category: Category.find_by_name("Asia") },
+  { project: Project.find_by_name("Provide families in India with safe and affordable clean cookstoves"), category: Category.find_by_name("India") },
+  { project: Project.find_by_name("Provide families in India with safe and affordable clean cookstoves"), category: Category.find_by_name("Clean Energy") },
+  { project: Project.find_by_name("Provide families in India with safe and affordable clean cookstoves"), category: Category.find_by_name("Women and Girl's Empowerment") },
 
   # Develop a New Generation of Youth Entrepreneurs in Senegal
-  { project: projects[12], category: categories[0] },
-  { project: projects[12], category: categories[9] },
-  { project: projects[12], category: categories[11] },
-  { project: projects[12], category: categories[13] },
-  { project: projects[12], category: categories[21] },
+  { project: Project.find_by_name("Develop a New Generation of Youth Entrepreneurs in Senegal"), category: Category.find_by_name("Africa") },
+  { project: Project.find_by_name("Develop a New Generation of Youth Entrepreneurs in Senegal"), category: Category.find_by_name("Senegal") },
+  { project: Project.find_by_name("Develop a New Generation of Youth Entrepreneurs in Senegal"), category: Category.find_by_name("Clean Energy") },
+  { project: Project.find_by_name("Develop a New Generation of Youth Entrepreneurs in Senegal"), category: Category.find_by_name("Entrepreneurship") },
+  { project: Project.find_by_name("Develop a New Generation of Youth Entrepreneurs in Senegal"), category: Category.find_by_name("Health") },
+  { project: Project.find_by_name("Develop a New Generation of Youth Entrepreneurs in Senegal"), category: Category.find_by_name("Youth") },
 
   # Bring high quality medical care to vulnerable populations in rural Guatemala 
-  { project: projects[13], category: categories[13] },
-  { project: projects[13], category: categories[22] },
-  { project: projects[13], category: categories[23] },
+  { project: Project.find_by_name("Bring high quality medical care to vulnerable populations in rural Guatemala"), category: Category.find_by_name("Health") },
+  { project: Project.find_by_name("Bring high quality medical care to vulnerable populations in rural Guatemala"), category: Category.find_by_name("Central America") },
+  { project: Project.find_by_name("Bring high quality medical care to vulnerable populations in rural Guatemala"), category: Category.find_by_name("Guatemala") },
 
   # Provide access to clean water and cooking systems in rural Guatemala
-  { project: projects[14], category: categories[9] },
-  { project: projects[14], category: categories[13] },
-  { project: projects[14], category: categories[19] },
-  { project: projects[14], category: categories[22] },
-  { project: projects[14], category: categories[23] },
+  { project: Project.find_by_name("Provide access to clean water and cooking systems in rural Guatemala"), category: Category.find_by_name("Clean Energy") },
+  { project: Project.find_by_name("Provide access to clean water and cooking systems in rural Guatemala"), category: Category.find_by_name("Health") },
+  { project: Project.find_by_name("Provide access to clean water and cooking systems in rural Guatemala"), category: Category.find_by_name("Water") },
+  { project: Project.find_by_name("Provide access to clean water and cooking systems in rural Guatemala"), category: Category.find_by_name("Central America") },
+  { project: Project.find_by_name("Provide access to clean water and cooking systems in rural Guatemala"), category: Category.find_by_name("Guatemala") },
 
   # Help Children with SCN8A Genetic Neurological Disorders
-  { project: projects[15], category: categories[13] },
-  { project: projects[15], category: categories[16] },
-  { project: projects[15], category: categories[17] },
-  { project: projects[15], category: categories[21] },
-  { project: projects[15], category: categories[24] },
+  { project: Project.find_by_name("Help Children with SCN8A Genetic Neurological Disorders"), category: Category.find_by_name("Global") },
+  { project: Project.find_by_name("Help Children with SCN8A Genetic Neurological Disorders"), category: Category.find_by_name("Health") },
+  { project: Project.find_by_name("Help Children with SCN8A Genetic Neurological Disorders"), category: Category.find_by_name("Research") },
+  { project: Project.find_by_name("Help Children with SCN8A Genetic Neurological Disorders"), category: Category.find_by_name("Science") },
+  { project: Project.find_by_name("Help Children with SCN8A Genetic Neurological Disorders"), category: Category.find_by_name("Youth") },
 
   # Build a safe place for children to play soccer in Brazil
-  { project: projects[15], category: categories[5] },
-  { project: projects[15], category: categories[8] },
-  { project: projects[15], category: categories[15] },
-  { project: projects[15], category: categories[18] },
-  { project: projects[15], category: categories[21] },
-  { project: projects[15], category: categories[25] }
+  { project: Project.find_by_name("Build a safe place for children to play soccer in Brazil"), category: Category.find_by_name("Brazil") },
+  { project: Project.find_by_name("Build a safe place for children to play soccer in Brazil"), category: Category.find_by_name("South America") },
+  { project: Project.find_by_name("Build a safe place for children to play soccer in Brazil"), category: Category.find_by_name("Capacity Building") },
+  { project: Project.find_by_name("Build a safe place for children to play soccer in Brazil"), category: Category.find_by_name("Orphans and Vulnerable Children") },
+  { project: Project.find_by_name("Build a safe place for children to play soccer in Brazil"), category: Category.find_by_name("Sports") },
+  { project: Project.find_by_name("Build a safe place for children to play soccer in Brazil"), category: Category.find_by_name("Youth") }
 ])
-
-# RegistryProject.create([
-#   { :registry_id => registries.first.id, :project_id => projects.first.id }
-# ])
-#
-# item_types = ItemType.create([
-#   { :name => "Shovel", :price => 20.99, :project_id => projects.first.id },
-#   { :name => "Bag of cement", :price => 40.00, :project_id => projects.first.id },
-#   { :name => "Filter", :price => 100.00, :project_id => projects.first.id }
-# ])
-#
-# purchases = Purchase.create([
-#   { :user_id => users.last.id }
-# ])
-#
