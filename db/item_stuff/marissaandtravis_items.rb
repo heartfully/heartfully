@@ -1,5 +1,5 @@
 def marrissa_and_travis_items
-  item_types = Project.find_by_name('Light up the night solar energy campaign').item_types.create([
+  item_types = Project.find_by_name('Light Up The Night With A Solar Campaign For Zambian Families').item_types.create([
     {:name => 'Meeting logistics', 
       :description => 'SolarAid kicks off each solar campaign with a meeting at the district and regional level of every community it works in to ensure buy-in at all levels of government.', 
       :price => 60.00, 

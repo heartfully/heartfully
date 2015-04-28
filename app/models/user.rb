@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :password_digest
   validates :password, length: { minimum: 8 }, :allow_nil => true
+  validates_uniqueness_of :email
   # first name, last name, email validation is in a reusable concern
   include Personable
 
