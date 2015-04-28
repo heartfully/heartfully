@@ -15,7 +15,10 @@
 }
 
 #js-projects-list {
-   .region-btn {
+  .project-glimpse {
+    padding: 0 1.6em;
+  }
+  .region-btn {
     padding: 0.4em;
     margin: 0;
     border-radius: 0.4em;
@@ -25,22 +28,31 @@
     border: 0.3em solid $tertiary-color;
   }
   h4 {
-    font-size: 1em;
+    font-size: 0.9em;
     color: $secondary-color;
+  }
+  .organization {
+    font-size: 0.7em;
   }
   .project-header {
     h3 {
-      padding: 1em;
-      font-size: 1.2em;
+      padding-top: 1.2em;
+      font-size: 0.85em;
       box-sizing: border-box;
-      height: 5.2em;
+      height: 6em;
     }
   }
   .actions {
-    padding: 1em 0 3em 0;
+    border: 2px solid $tertiary-color;
+    border-top: none;
+    margin-bottom: 1em;
     a {
+      border-radius: 0.4em;
       font-size: 1.2em;
       @media(max-width: 780px) { font-size: 1em; }
+      &:hover {
+        color: $secondary-color;
+      }
     }
   }
 }

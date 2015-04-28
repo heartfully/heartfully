@@ -414,11 +414,7 @@ def all_projects
               <li>Wire Mesh</li>
             </ul>
           </li>
-        </ul>",
-        :"About Jiamini" => "Jiamini provides orphaned and vulnerable children in southern Tanzania with educational scholarships and support, empowering them to become self-reliant members of their communities. Being a small, hands-on organization gives us the flexibility to offer each of our students the specific resources she or he needs to succeed. Our programs cover everything from family food provisions to textbooks and tutoring, medical exams to social support, sex education, and girls' empowerment training.
-        <br />
-        <br />
-        We work with local, government schools, supporting them as they guide their own development. Our process is founded on collaborating with the headmasters and teachers we have come to know well in the last eight years; giving them the textbooks, equipment, and infrastructure they need most."
+        </ul>"
       }
     },
 
@@ -487,8 +483,8 @@ def all_projects
       city: "India",
       country: "Asia",
       url_slug: "greenway-clean-cookstoves",
-      project_photo: "projects/greenway/project_photo.png",
-      project_photo_2: "projects/greenway/project_2.png",
+      project_photo: "projects/greenway/project_photo_1.png",
+      project_photo_2: "projects/greenway/project_photo_2.png",
       project_photo_3: "projects/greenway/project_3.png",
       extra_content: {
         :"The Problem" => "The current practice of cooking on mud stoves with open indoor fires poses a significant health risk to women in South Asia. Air pollution in the household is a massive challenge in India, leading to approximately 875,000 deaths annually. Mud stoves are also significant contributors to climate change due to their harmful greenhouse gas emissions. In spite of these health and environmental risks, mud stoves continue to be used by nearly two-thirds of India’s households.  Lack of access to modern cooking technologies, affordability, and awareness are just some of the reasons perpetuating this widespread practice.",
