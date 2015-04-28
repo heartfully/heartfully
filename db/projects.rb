@@ -470,7 +470,7 @@ def all_projects
           </li>
           <li>Training tools and materials</li>
         </ul>",
-        :"" => 
+        :"Info Box" => 
         "<div class='green-box'>Did you know.. over 2000 children in Mbeya who would have previously been denied access to any kindergarten or preschool classes are now benefitting from the Montessori Outreach Program? Classes are held Monday through Friday, 8:30am-11:00am. Teachers also offer additional afternoon classes for children requiring extra help. See more info on how the Montessori Outreach Program works here:
           <iframe width='560' height='315' src='https://www.youtube.com/embed/IuN7qQrqMK8' frameborder='0' allowfullscreen></iframe>
         </div>"
@@ -519,7 +519,7 @@ def all_projects
           <li>10 women</li>
           <li>20 women</li>
         </ul>",
-        :"" =>
+        :"Info Box" =>
         "<div class='green-box'>
           Did you know… Each hour spent cooking on a traditional mud stove is equivalent to smoking 20 cigarettes?  Kind of takes away your appetite, doesn’t it?
         </div>"
@@ -560,7 +560,7 @@ def all_projects
           <li><i>EcoSac:</i> This affordable cooking sack reduces the time spent cooking (which on average takes 3.5 hours in Senegal) by about an hour per meal. This decreases exposure to indoor air pollutants and money spent on fuel, while also leaving time and energy for women—who are typically the primary household cook—to do other activities.</li>
         </ul>",
         :"Sustainability" => "During the training, entrepreneurs receive support in building their business plan, step by step, in order to ensure that they have a clear path to success. Each training and marketing event also gives youth a chance to build a network of clean energy entrepreneurs throughout Dakar and the surrounding area, and an opportunity expand their client base. All of these new skills will last well beyond the length of this project, provide a sustainable source of income, and can be applied to other business endeavors in the future.",
-        :"SAMPLE OF GIFT ITEMS" => 
+        :"Sample Of Gift Items" => 
         "Products to get the entrepreneurs started
         <ul class='disc'>
           <li>Solar Lamps</li>
@@ -778,12 +778,12 @@ def all_projects
           <li>Lighting</li>
           <li>Cement</li>
         </ul>",
-        :"" =>
+        :"Info Box" =>
         "<div class='green-box'>
           FUN FACT
           <br />
           Alianҫa, Brazil, located near Recife,  the organization’s 19th project, is in the hometown of Anderson Hernanes, Brazilian national team member, midfielder for Inter Milan, and love.fútbol Ambassador
-        </div>projects/helps-medical/project_photo_3.jpg"
+        </div>"
       }
     }
   ])

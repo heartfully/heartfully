@@ -120,16 +120,21 @@ ul.pagination {
   color: #F71616;
   font-weight: 900;
 }
+
+.order-container {
+  padding: 8em 0;
+}
+
 .confirmation-card { 
   #stripe_cvc_check {
     display: inline-block;
   }
-
   small {
     display: inline-block;
     width: 50%;
   }
 }
+
 
 @-webkit-keyframes rotation {
   from {-webkit-transform: rotate(0deg);}

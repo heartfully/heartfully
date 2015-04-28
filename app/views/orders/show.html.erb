@@ -1,23 +1,25 @@
-<div class='confirmation-card'>
-  <h2>Order confirmation</h2>
+<div class="row order-container">
+  <div class='confirmation-card'>
+    <h2>Order confirmation</h2>
 
-  <% if @order.status.nil? %>
-    <% order_summary(@order.summary).each do |item, quantity| %>
-      <div><%= "#{quantity} #{item}" %></div>
-    <% end %> 
-    <div>total: <%= @order.total %></div>
+    <% if @order.status.nil? %>
+      <% order_summary(@order.summary).each do |item, quantity| %>
+        <div><%= "#{quantity} #{item}" %></div>
+      <% end %> 
+      <div>total: <%= @order.total %></div>
 
-    <strong>Please enter your information below and click checkout to finalize your order:</strong>
-    <%= form_tag(orders_finalize_path, class:'order-form') do %>
-      <%= text_field_tag(:first_name, '', :placeholder => 'First Name') %>
-      <%= text_field_tag(:last_name, '', :placeholder => 'Last Name') %>
-      <%= email_field_tag(:email, '', :placeholder => 'Email') %>
+      <strong>Please enter your information below and click checkout to finalize your order:</strong>
+      <%= form_tag(orders_finalize_path, class:'order-form') do %>
+        <%= text_field_tag(:first_name, '', :placeholder => 'First Name') %>
+        <%= text_field_tag(:last_name, '', :placeholder => 'Last Name') %>
+        <%= email_field_tag(:email, '', :placeholder => 'Email') %>
 
-      Leave a message for the couple:
-      <%= text_area_tag(:message) %>
-      <%= submit_tag('Checkout', class:'expand  button') %>
+        Leave a message for the couple:
+        <%= text_area_tag(:message) %>
+        <%= submit_tag('Checkout', class:'expand  button') %>
+      <% end %>
+    <% else %>
+      This order has been completed by <%= "#{@order.first_name} #{@order.last_name}" %>
     <% end %>
-  <% else %>
-    This order has been completed by <%= "#{@order.first_name} #{@order.last_name}" %>
-  <% end %>
+  </div>
 </div>
