@@ -4,7 +4,7 @@ class Item < ActiveRecord::Base
   belongs_to :orders
 
   validates_presence_of :name, :item_type_id
-  validates_associated :item_type, :purchase
+  validates_associated :item_type
 
   scope :purchased, -> { where.not(order_id: nil) }
   scope :available, -> { where(order_id: nil) }
