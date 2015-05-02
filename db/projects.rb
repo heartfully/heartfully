@@ -20,7 +20,7 @@ def all_projects
         "<ol>
           <li>The EcoSac is currently manufactured in Dakar, Senegal, by a team of four tailors employed by SEM Fund, three of whom are women.</li>
           <li>Once constructed, the product is sold to women’s groups’ presidents who sell them to their members for a commission.</li>
-          <li>For each EcoSac sold, the presidents can make between $1.50 - $2 US dollars, providing an additional source of income.</li>
+          <li>For each EcoSac sold, the presidents can make between $1.50 - $2.00, providing an additional source of income.</li>
           <li>Under this project, SEM Fund will train and mentor 10 new women entrepreneurs for a minimum of six months, and support the creation of a market for clean energy household products.</li>
           <li>Families spend less money on cooking, women have more time to devote to their own personal development, and a chance to earn cash to potentially start their own businesses!</li>
         </ol>",
@@ -506,11 +506,7 @@ def all_projects
           <li>Individual Smart Stove</li>
           <li>Individual Jumbo Stove</li>
         </ul>
-        Clean cookstove training costs for:
-        <ul class='disc'>
-          <li>5 women</li>
-          <li>10 women</li>
-          <li>20 women</li>
+        Clean cookstove training package for 5 women
         </ul>",
         :"Info Box" =>
         "<div class='green-box'>
@@ -537,9 +533,9 @@ def all_projects
         :"The Opportunity" => "SEM Fund’s youth entrepreneurship program is an opportunity to promote jobs and develop business skills for young people while expanding access to clean energy.",
         :"How It Works" => 
         "<ol>
-          <li>SEM Fund recruits 15 to 20 young entrepreneurs (ages 18 to 25) at a time.</li>
-          <li>These youth participate in a 5-day training that covers business, marketing, and accounting, and the impact of energy on development. The training also discusses how to address common barriers they might face in growing their business, ranging from accessing cheaper transport to the market, to partnering with other businesses.</li>
-          <li>Those that complete the training are given clean energy products on consignment, which they pay for once they have sold. There are currently four products to choose from: the Solar lamp, Clean Cookstove, Efficient Fuel, and EcoSac.</li>
+          <li>SEM Fund recruits 15 to 20 young entrepreneurs (ages 18 to 25) per cohort.</li>
+          <li>These individuals participate in a 5-day training that emphasizes business, marketing, and accounting, and the impact of energy on development. The training also discusses how to address common barriers they might face in growing their business, ranging from accessing cheaper transport to the market, to partnering with other businesses.</li>
+          <li>Upon completion of the training, they are given clean energy products on consignment, which they pay for once they have sold. These include: the Solar lamp, Clean Cookstove, Efficient Fuel, and EcoSac.</li>
           <li>SEM Fund then follows up each new entrepreneur with regular mentoring and support visits over a six month cycle. During these visits, SEM Fund checks in on their stock, discusses any client feedback they may have, and revisits business plans to re-evaluate how they might grow as an enterprise.</li>
           <li>For each product sold, youth entrepreneurs receive a commission between $1.50 and $7.00.</li>
         </ol>",
@@ -552,7 +548,7 @@ def all_projects
           <li><i>Efficient Fuel:</i> The biomass reduces environmental degradation as it made from wood that naturally dies. It also promotes rural-urban linkages, reduces the time burden of fuel collection (particularly for women), and decreases fuel expenditures by at least 30%.</li>
           <li><i>EcoSac:</i> This affordable cooking sack reduces the time spent cooking (which on average takes 3.5 hours in Senegal) by about an hour per meal. This decreases exposure to indoor air pollutants and money spent on fuel, while also leaving time and energy for women—who are typically the primary household cook—to do other activities.</li>
         </ul>",
-        :"Sustainability" => "During the training, entrepreneurs receive support in building their business plan, step by step, in order to ensure that they have a clear path to success. Each training and marketing event also gives youth a chance to build a network of clean energy entrepreneurs throughout Dakar and the surrounding area, and an opportunity expand their client base. All of these new skills will last well beyond the length of this project, provide a sustainable source of income, and can be applied to other business endeavors in the future.",
+        :"Sustainability" => "During the training, entrepreneurs receive support in building their business plan to ensure that they have a clear path to success. Each training and marketing event also gives them a chance to build a network of clean energy entrepreneurs throughout Dakar and the surrounding area, and an opportunity to expand their client base. These new skills will last well beyond the length of this project, provide a sustainable source of income, and can be applied to other business endeavors in the future.",
         :"Sample Of Gift Items" => 
         "Products to get the entrepreneurs started
         <ul class='disc'>
@@ -572,9 +568,9 @@ def all_projects
 
     # Bring high quality medical care to vulnerable populations in rural Guatemala
     {
-      name: "Bring high quality medical care to vulnerable populations in rural Guatemala",
+      name: "Bring high-quality medical care to vulnerable populations in rural Guatemala",
       partner: "HELPS International",
-      description: "Bring free, high quality medical care to those in need by supporting 10 medical missions that serve the most vulnerable populations of Guatemala.",
+      description: "Bring free, high-quality medical care to those in need by supporting a medical mission that serves the most vulnerable populations of Guatemala.",
       organization_id: Organization.find_by_name("HELPS International").id,
       funding_goal: 5000,
       city: "Guatemala,",
@@ -584,17 +580,17 @@ def all_projects
       project_photo_2: "projects/helps-medical/project_photo_2.png",
       project_photo_3: "projects/helps-medical/project_photo_3.jpg",
       extra_content: {
-        :"The Problem" => "Half of Guatemala’s population lives below the poverty line, and nearly 16% live in extreme poverty. The limited existing healthcare services are largely inaccessible due to financial barriers.",
-        :"The Opportunity" => "HELPS International has developed a system of 10 volunteer medical teams to address the healthcare crisis in rural areas of Guatemala. These services are provided free of charge to those in need during medical missions.",
+        :"The Problem" => "Half of Guatemala’s population lives below the poverty line, and nearly 16% live in extreme poverty. Already limited existing healthcare services are largely inaccessible to the masses due to financial barriers.",
+        :"The Opportunity" => "HELPS International has developed a system that dispatches volunteer medical teams to address the healthcare crisis in rural areas of Guatemala. These services are provided free of charge to those in need.",
         :"How It Works" =>
         "<ol>
           <li>The volunteer medical teams for HELPS missions are comprised of about 90 members, ranging from physicians and surgeons to nurses and support staff.</li>
-          <li>During a mission, these surgical and medical volunteers staff empty hospitals, which were built during the Civil War, to provide comprehensive care.</li>
+          <li>During a mission, surgical and medical volunteers set up shop in vacant hospitals, filling empty rooms with drugs, supplies and other medical equipment to provide healthcare services that are as close as possible to U.S. quality standards..</li>
           <li>HELPS medical teams are then fully equipped with drugs, supplies and other medical equipment to provide healthcare services that are as close as possible to US quality standards.</li>
-          <li>Free care is accessible to all Guatemalans, regardless of income level. Lives are saved, and long-term disabilities are averted.</li>
+          <li>Free healthcare is accessible to all Guatemalans, regardless of income level enabling lives to be saved and long-term disabilities averted.</li>
         </ol>",
-        :"Why It's Important" => "Latin America is in the midst of an ongoing healthcare crisis. Not only can most of the population not afford healthcare, but a human resources for health shortage often means that families show up to a hospital to receive care, but find it is not adequately staffed or equipped to handle their cases.",
-        :"Sustainability" => "HELPS’ Medical Program began in 1988 when an eight-member US plastic surgery team traveled to a village in the northern highlands of Guatemala. With inadequately staffed hospitals already situated in remote areas of the Guatemalan highlands, HELPS worked in cooperation with the Guatemalan government to make use of these facilities. The HELPS medical teams quickly gained momentum, spreading through Guatemala and covering a much larger area of the country. Since then, the programs have grown immensely, gaining the support needed to move beyond the walls of the hospitals. Today, HELPS’ Medical program has been called the largest medical relief Program of the Country.",
+        :"Why It's Important" => "Latin America is in the midst of an ongoing healthcare crisis. Not only can most of the population not afford healthcare, but due to a shortage in trained health workers, families frequently seeking medical services often find their local hospitals not adequately staffed or equipped to handle their cases.",
+        :"Sustainability" => "HELPS’ Medical Program began in 1988 when an eight-member U.S. plastic surgery team traveled to a village in the northern highlands of Guatemala. With inadequately staffed hospitals already situated in remote areas of the Guatemalan highlands, HELPS worked in cooperation with the Guatemalan government to make use of these facilities. The HELPS medical teams quickly gained momentum, spreading through Guatemala and covering a much larger area of the country. Since then, the programs have grown immensely, gaining the support needed to move beyond the walls of the hospitals. Today, HELPS’ Medical Program has been called the largest medical relief program in Guatemala.",
         :"Sample of gift items" =>
         "<ul class='disc'>
           <li>
@@ -608,15 +604,11 @@ def all_projects
           <li>
             Patient costs:
             <ul class='disc'>
-              <li>A full surgery for one patient (common surgeries include hernias, gall bladder stones removal, cleft lip pallets, prolapsed uterus, removal of tumors, eye cataracts, and other essential surgeries)</li>
-              <li>Post-surgical overnight hospital stay for one patient</li>
+              <li>A full surgery for one patient </li>
+              <li>Post-surgical hospital stay for one patient</li>
             </ul>
           </li>
           <li>
-            Medical staff: Sponsorship for one doctor or nurse to join a medical mission trip for 10 days
-            <ul class='disc'>
-              <li>Airfare and transport costs</li>
-              <li>Room and board</li>
             </ul>
           </li>
         </ul>"
@@ -627,7 +619,7 @@ def all_projects
     {
       name: "Provide access to clean water and cooking systems in rural Guatemala",
       partner: "HELPS International",
-      description: "Installing clean stoves and water filtration systems to homes in rural Guatemala will help families avoid serious health problems, have a clean home they can be proud of, and provide access to a healthy lifestyle so they can focus on being productive members of society.",
+      description: "Installing clean stoves and water filtration systems to homes in rural Guatemala will help families avoid serious health problems, have a clean home they can be proud of, and provide access to a healthier lifestyle.",
       organization_id: Organization.find_by_name("HELPS International").id,
       funding_goal: 4000,
       city: "Guatemala",
@@ -642,23 +634,23 @@ def all_projects
         :"How It Works" => "The ONIL stove is an inexpensive concrete stove that uses a galvanized steel venting pipe to replace open-flame fire pits. The Gravity Water Filter was designed by HELPS as a practical solution to meet the need for safe drinking water, using quality components at a very accessible price. <strong>The water filter provides 10 gallons of safe drinking water in 24 hours.</strong> It is simple to use and the initial setup time is about 15 minutes.The filtered water measures up to US standards of purification, and provides a safe backup system in times of emergency.
         <br />
         <br />
-        After purchasing the stoves and filters, HELPS will
+        After purchasing the stoves and filters, HELPS will:
         <ol>
-          <li>Deliver the products to a community in rural Guatemala and demonstrate how they work</li>
-          <li>Install the stove and filter in each sponsored home</li>
-          <li>Train at least one family member on basic repairs and proper maintenance</li>
-          <li>Provide support or answer questions post-installation as needed</li>
+          <li>Deliver the products to a community in rural Guatemala and demonstrate how they work.</li>
+          <li>Install the stove and filter in each sponsored home.</li>
+          <li>Train at least one family member on basic repairs and proper maintenance.</li>
+          <li>Provide support or answer questions post-installation as needed.</li>
         </ol>",
         :"Why It's Important" =>
         "<ul class='disc'>
           <li><strong>Clean cooking:</strong> HELPS medical teams found an alarming number of people with burns and respiratory illnesses during their missions. This was caused by indigenous families cooking over open-flame fire pits on the dirt floors of their homes, with no ventilation for the toxic smoke and fumes. The ONIL stove reduces smoke and exposure to carbon monoxide by 99%, eliminates the risk of burns, and saves 70% in firewood consumption which results in a safer household environment.</li>
           <li><strong>Clean water:</strong>  60% of all disease is water borne and the lack of clean drinking water impacts all levels of society in the country. Most rural residents draw water from rivers, streams, ponds, or rainwater, which may be the only sources of water for some rural villages in Guatemala. HELPS’ Gravity Water Filter ensures 100% removal of parasites such as guinea worm and giardia, and 99.99% removal of pathogenic bacteria such as: cholera, e. coli, and shigella.</li>
         </ul>",
-        :"Sustainability" => "HELPS has two factories in Guatemala where the stoves are being built locally. To date, 200,000 Stoves and 91,000 Water Filters have been installed throughout Guatemala, Mexico and Central America.  These products and the installation program have the full support of the government and local communities for widespread scale-up. Their positive impact on health and the environment will help avoid serious health problems for all members of the family and preserve quality of life for years to come.",
+        :"Sustainability" => "HELPS has two factories in Guatemala where the stoves are being built locally. To date, 200,000 stoves and 91,000 water filters have been installed throughout Guatemala, Mexico and Central America.  These products and the installation program have the full support of the government and local communities for widespread scale-up. Their positive impact on health and the environment will help avoid serious health problems for all members of the family and preserve quality of life for years to come.",
         :"Sample Of Gift Items" => 
         "<ul class='disc'>
           <li>Onil Stove</li>
-          <li>Gravity Water Filter</li>
+          <li>Gravity water filter</li>
           <li>Installation cost per household</li>
           <li>Training on maintenance and repair</li>
           <li>Spare parts to leave with families</li>
@@ -756,7 +748,8 @@ def all_projects
         <br />
         <br />
         love.fútbol’s projects have consistently shown social impact in the areas of education, health, and decreased anti-social behavior.
-        Here’s what adults interviewed in four love.fútbol communities in Guatemala had to say
+        Here’s what adults interviewed in four love.fútbol communities in Guatemala had to say:
+        
         <ul class='disc'>
           <li>100% of the adults interviewed stated that the community was more united and strengthened</li>
           <li>83% of the parents and school directors reported a better school performance</li>
@@ -773,9 +766,7 @@ def all_projects
         </ul>",
         :"Info Box" =>
         "<div class='green-box'>
-          FUN FACT
-          <br />
-          Alianҫa, Brazil, located near Recife,  the organization’s 19th project, is in the hometown of Anderson Hernanes, Brazilian national team member, midfielder for Inter Milan, and love.fútbol Ambassador
+         
         </div>"
       }
     }
