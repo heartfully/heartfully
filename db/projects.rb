@@ -120,7 +120,7 @@ def all_projects
           <li>Each week, the trained community health workers visit their clients and spreads accurate health knowledge to empower their community.</li>
           <li>Accurate health knowledge and treatment is brought to people’s homes, thereby reaching the most vulnerable groups who might otherwise not seek help at a health facility.</li>
         </ol>",
-        :"Why Its Important" => "Unlike their facility-based counterparts, community health workers are able to couple their clinical skills with a deep rooted understanding of and respect for local culture and traditions. From wound cleaning, to HIV/AIDS counseling, to educating families about maternal and child health, home-based care volunteers are making a real impact in their communities.",
+        :"Why It's Important" => "Unlike their facility-based counterparts, community health workers are able to couple their clinical skills with a deep rooted understanding of and respect for local culture and traditions. From wound cleaning, to HIV/AIDS counseling, to educating families about maternal and child health, home-based care volunteers are making a real impact in their communities.",
         :"Sustainability" => "The training is conducted by Tanzanian medical professionals to local Tanzanian community volunteers, allowing for education to spread throughout the community at a grassroots level.  This education ultimately travels to neighbors and friends as the volunteer builds trust within their community.  This leads to healthier parents and children.  In the long term, a healthy household means more food on the table and more opportunities for education and income generation.",
         :"Sample Of Gift Items" =>
         "<ul class='disc'>
@@ -159,7 +159,7 @@ def all_projects
       project_photo_2: 'projects/preschool_program/photo_2.jpeg',
       project_photo_3: 'projects/preschool_program/photo_3.jpg',
       extra_content: {
-        :"The Problem" => "Teachers in Tanzania deal with minimal training, a lack of classroom supplies, dire classroom conditions, and large classroom sizes (sometimes up to100-150 students!) and little community support.  This results in not just poor learning outcomes for students, but a high teacher burn-out rate which contributes to the cycle of a low teacher-to-student ratio.",
+        :"The Problem" => "Teachers in Tanzania deal with minimal training, a lack of classroom supplies, dire classroom conditions, large classroom sizes (sometimes up to 100 students!) and little community support. This results not only in poor learning outcomes for students, but teacher burn-out which perpetuates the low teacher-to-student ratio.",
         :"The Opportunity" => "In 2010, the Early Childhood Education Department began to address a pressing need for young children to have a safe and stimulating environment to grow in mind and body. This program offers working parents a place for their children to receive nutritious food, age-appropriate education and a compassionate and loving environment.",
         :"How It Works" => 
         "<ol>
@@ -169,7 +169,7 @@ def all_projects
           <li>Mufindi staff conduct follow-up visits to ensure the new classroom materials are being used appropriately and are well-maintained.</li>
           <li>The community, teachers and students get to enjoy a transformed learning space for years to come!</li>
         </ol>",
-        :"Why Its Important" => "The outreach program helps schools with the skills and tools they need to educate their children and to provide a loving environment for children to learn creativity, kindness, problem solving strategies, and of course reading, writing and arithmetic.",
+        :"Why It's Important" => "The outreach program helps schools with the skills and tools they need to educate their children and to provide a loving environment for children to learn creativity, kindness, problem solving strategies, and of course reading, writing and arithmetic.",
         :"Sustainability" => "Sustainability is a key pillar to this program’s success. Communities pay for their kindergarten teacher's wage and institute school lunch programs funded by the parents.  In exchange, the Mufindi Orphans Project funds teacher training, classroom materials and renovations. They also walk side-by-side with community partners throughout the year to ensure all children are getting the best possible access to education and care.",
         :"Sample Of Gift Items" =>
         "<ul class='disc'>
@@ -184,7 +184,7 @@ def all_projects
 
     # Provide orphaned and abandoned girls in Kenya with loving homes and education
     {
-      name: "Provide orphaned and abandoned girls in Kenya with loving homes and education",
+      name: "Provide abandoned girls in Kenya with loving homes and education",
       partner: "Many Hopes",
       description: "Help an orphaned or abandoned girl thrive by providing her with safe housing and an excellent education.",
       organization_id: Organization.find_by_name("Many Hopes").id, 
@@ -200,7 +200,7 @@ def all_projects
         <br />
         <br />
         Unfortunately, girls often feel they have no option but to prostitute themselves. When we asked one girl, “Why are you doing this, you know there is HIV in Kenya, right?” she replied, “AIDS might kill me in five years but I have to eat tomorrow.",
-        :"The Opportunity" => "Rescue, house and educate one girl for a year.
+        :"The Opportunity" => "Rescue, house and educate young girls.
         <br/>
         <br/>
         Many Hopes’ homes are built to cultivate a family atmosphere as opposed to an ‘orphanage’ atmosphere by:
@@ -253,7 +253,7 @@ def all_projects
       project_photo_2: "projects/mary-ryan/photo_2.jpg",
       project_photo_3: "projects/mary-ryan/photo_3.jpg",
       extra_content: {
-        :"The Problem" => "Out of school youth living in rural Tanzania have little to no opportunities to develop income generating skills in a safe and supportive environment. In those rare communities trying to initiate vocational schools for these underserved children, the lack of electricity and infrastructure limit the ability of the school to generate enough income to cover operational costs and provide a quality education for its students.",
+        :"The Problem" => "Out-of-school youth living in rural Tanzania have very few opportunities to develop income generating skills in a safe and supportive environment. In those rare communities trying to initiate vocational schools for these underserved children, the lack of electricity and infrastructure limit the ability of the school to generate enough income to cover operational costs and provide a quality education for its students.",
         :"The Opportunity" => "The Mary Ryan Foundation is improving access to educational opportunities for over 80 disadvantaged youth in Mbeya, Tanzania through its  vocational school in Ilembo. In 2014, Ilembo was one of many rural villages added to the electric grid system in the country. Unfortunately, high installation and equipment costs have prevented most of the population from accessing this electricity. Bringing electricity and high quality electric-run products to the vocational school will expand opportunities to initiate new skills training for students and boost the school's ability to become self-sustaining.",
         :"How It Works" => "Step 1: Power it up! The Mary Ryan Foundation Committee of Ilembo will oversee the installation of electricity at the vocational school in close coordination with the local government leaders. Designated committee members will also ensure the purchase, safe transport, and proper maintenance of the new equipment and supplies.
         <br />
@@ -271,7 +271,7 @@ def all_projects
         <br />
         <br />
         Step 6: People of Ilembo get items and services they need while supporting vulnerable youth in their communities – quite an electrifying combo!",
-        :"Why It's Important" => "Out of school youth are more likely to get into risky behaviors or run away from home to chase down a better life in “the city”. This often leads to homelessness, theft, HIV infection,  unwanted pregnancies, or worse.  Ilembo’s vocational school offers a healthy and fulfilling alternative in the form of valuable income generating and life skills, and a safe environment for youth to come together and build a better future for themselves. It is the first school of its kind in the area, and has been well-received by students, parents/caretakers, community leaders, and district officials. Many graduates of the school now own and operate their own businesses and are supporting themselves and their families.",
+        :"Why It's Important" => "Out-of-school youth are more likely to get into risky behaviors or run away from home to chase down a better life in “the city”. This often leads to homelessness, theft, HIV infection,  unwanted pregnancies, or worse.  Ilembo’s vocational school offers a healthy and fulfilling alternative in the form of valuable income generating and life skills, and a safe environment for youth to come together and build a better future for themselves. It is the first school of its kind in the area, and has been well-received by students, parents/caretakers, community leaders, and district officials. Many graduates of the school now own and operate their own businesses and are supporting themselves and their families.",
         :"Sustainability" => "Sustainability is the name of the game for this project. In 2012, the Mary Ryan Foundation Committee of Ilembo developed a five-year sustainability action plan for the vocational school. Each year, external support is reduced, while the community’s contributions increase by using profits from selling furniture and construction to cover the operating costs. Initial funding for the school to obtain electricity will expand long-term opportunities to initiate new vocational skills training for students while boosting the school’s income and ability to stay on track toward sustainability.",
         :"Sample Of Gift Items" => 
         "Electricity installation supplies
@@ -286,7 +286,6 @@ def all_projects
           <li>Engineers</li>
           <li>Electricians</li>
         </ul>
-        <i>The Mary Ryan Foundation (MRF) is a non-profit organization whose mission is to provide relief and assistance to impoverished communities within Tanzania, specifically by supporting orphans and children living in the most difficult environments within those communities.</i>"
       }
     },
 
@@ -294,9 +293,9 @@ def all_projects
     {
       name: "Sponsor a Girl's Education In Tanzania",
       partner: "Jiamini",
-      description: "Fund a girl’s high school education and provide her with a safe living environment and opportunities for higher education and employment that would otherwise be out of reach.",
+      description: "Fund a girl’s high school education and provide her with a safe living environment and opportunities for higher education and employment.",
       organization_id: Organization.find_by_name("Jiamini").id, 
-      funding_goal: 3080,
+      funding_goal: 3100,
       city: "Tanzania",
       country: "Africa",
       url_slug: "jiamini-girls-education",
@@ -309,7 +308,7 @@ def all_projects
         :"How It Works" => "While the schools Jiamini works with are public, they are not completely free. In Tanzania, school fees and other educational expenses act as barriers to the poorest students, often meaning they have to drop out of school entirely.
         <br />
         <br />
-        With this everlasting gift, The Couple will receive letters from their student and have the opportunity to build a personal relationship with her. This sponsorship will cover her complete educational expenses for the duration of secondary school, and put her in a safe living environment, where she can focus on learning.",
+        With this everlasting gift, donors will receive letters from their student and have the opportunity to build a personal relationship with her. This sponsorship will cover her complete educational expenses for the duration of secondary school, and put her in a safe living environment, where she can focus on learning.",
         :"Sample Of Gift Items" => 
         "<ul class='disc'>
           <li>Textbooks</li>
@@ -339,7 +338,7 @@ def all_projects
         :"How It Works" => "While the schools Jiamini works with are public, they are not completely free. In Tanzania, school fees and other educational expenses act as barriers to the poorest students, often meaning they have to drop out of school entirely.
         <br />
         <br />
-        With this everlasting gift, The Couple* will receive letters and regular updates from their student and have the opportunity to build a personal relationship with him or her. This sponsorship will cover a student’s complete educational expenses for all four years of high school. <i>(*Wedding guests will receive two updates from Heartful.ly. Jiamini is responsible for providing additional updates)</i>",
+        With this everlasting gift, donors will receive letters and regular updates from their student and have the opportunity to build a personal relationship with him or her. This sponsorship will cover a student’s complete educational expenses for all four years of high school. </i>",
         :"Sample Of Gift Items" => 
         "<ul class='disc'>
           <li>Textbooks</li>
@@ -354,7 +353,7 @@ def all_projects
     {
       name: "Refurbish damaged classrooms in Tanzania",
       partner: "Jiamini",
-      description: "Avoid the disruption of education for hundreds of girls in Southern Tanzania by supporting the emergency repairs of four classrooms.",
+      description: "Avoid the disruption of education for hundreds of studenta in Southern Tanzania by supporting the emergency repairs of four classrooms.",
       organization_id: Organization.find_by_name("Jiamini").id, 
       funding_goal: 500,
       city: "Tanzania",
@@ -373,11 +372,10 @@ def all_projects
         With your support, we can repair cracked walls, replace collapsing ceiling tiles, and install new window frames, doors, and blackboards.",
         :"Impact" => "All students deserve safe places to learn.
         <ul class='disc'>
-          This registry has the opportunity to:
+          With this registry you can:
+          <li>Help a secondary school make essential repairs to their facilities</li>
           <li>Provide hundreds of students with safe classrooms that they can be proud of</li>
-          <li>Help a secondary school make basic, essential repairs to their facilities</li>
-          <li>Give local craftspeople valuable contract work</li>
-          <li>Invest students in the upkeep of Nangwanda Secondary School</li>
+          <li>Give local craftspeople valuable work</li>
         </ul>",
         :"How It Will Work" =>
         "The classroom refurbishment project will provide a profound return for a small investment.
@@ -389,7 +387,6 @@ def all_projects
           <li>Jiamini will oversee the work to ensure a high quality of craftsmanship and that budget is spent exactly as intended.</li> 
         </ol>
         <br />
-        Jiamini is volunteer-run, meaning 100% of donations received from Heartful.ly  go directly to students and programs.",
         :"Sample Of Gift Items" =>
         "<ul class='disc'>
           <li>
@@ -420,9 +417,9 @@ def all_projects
 
     # Bring Early Childhood Education to Vulnerable, Rural Communities
     {
-      name: "Bring Early Childhood Education to Vulnerable, Rural Communities",
+      name: "Bring Early Childhood Education to Rural Communities",
       partner: "Olive Branch for Children",
-      description: "The Montessori Outreach Program transforms members of Tanzania’s most hard to reach villages into teachers who deliver high quality kindergarten education for children in their communities.",
+      description: "The Montessori Outreach Program transforms members of Tanzania’s most remote villages into teachers who are equipped to deliver high-quality kindergarten education to the children in their communities.",
       organization_id: Organization.find_by_name("Olive Branch for Children").id, 
       funding_goal: 5500,
       city: "Tanzania",
@@ -432,14 +429,14 @@ def all_projects
       project_photo_2: "projects/teacher-training/photo_2.jpg",
       project_photo_3: "projects/teacher-training/photo_3.jpg",
       extra_content: {
-        :"The Problem" => "Early childhood education services—such as kindergarten and preschool—are not provided by the Tanzanian government in the majority of rural communities. This results in missed opportunities for the country’s most vulnerable youth to develop their academic foundations and skills before entering primary school. Children who do not receive early childhood education often have negative attitudes towards school which can lead to low attendance rates throughout their primary school years.",
+        :"The Problem" => "Early childhood education services—such as kindergarten and preschool—are not provided by the Tanzanian government in the majority of rural communities. This results in missed opportunities for the country’s most vulnerable youth to develop their academic foundations and skills before entering primary school. Children who do not receive early childhood education often have negative attitudes towards school, which can lead to low attendance rates throughout their primary school years.",
         :"The Opportunity" => "The Olive Branch for Children developed a Montessori Outreach Program that brings quality early childhood education to Tanzania’s most vulnerable and hard-to-reach areas. Compared to traditional didactic teaching methods, the Montessori methodology is interactive, encourages self-discipline and independence, and fosters respect within the classroom.",
         :"How it Works:" => 
         "<ul class='disc'>
-          <li>Step 1: The Olive Branch for Children hosts an intensive, 15-day Montessori education seminar focusing on Montessori methodology, material making, classroom management, and implementation for new Montessori teachers and those already enrolled in the outreach program.</li>
-          <li>Step 2: After the training, Montessori teachers return to their communities equipped with the most up to date knowledge and skills and have the option to either: 1) continue teaching at the existing Montessori outreach classroom; or 2) with the support of their community, open a new Montessori Kindergarten classroom.</li>
+          <li>Step 1: The Olive Branch for Children hosts an intensive, 15-day Montessori education seminar focusing on Montessori methodology, material making, and classroom management. </li>
+          <li>Step 2: After the training, Montessori teachers return to their communities equipped with the most up-to-date knowledge and skills and have the option to either: a) continue teaching at the existing Montessori outreach classroom; or b) with the support of their community, open a new Montessori Kindergarten classroom.</li>
           <li>Step 3: Olive Branch trainers provide all teachers with monthly in-class assessments and feedback sessions, as well as monthly follow-up trainings.</li>
-          <li>Step 4: 35 outstanding citizens across Mbeya are transformed into teachers who have the confidence, skills and support to provide Montessori education to hundreds of students in their communities!</li>
+          <li>Step 4: 35 outstanding citizens are transformed into teachers who have the confidence, skills and support to provide Montessori education to hundreds of students in their communities!</li>
         </ul>",
         :"Why it's important" => "The Montessori Outreach Program ensures that children receive a positive first experience with education and build a love for school.  This is essential, since many children will face major challenges just walking to their local primary school once they transition.  The more they love education, the more committed they will be to pursuing it.  In addition, the children moving on from the enrolled Montessori schools developed by the Olive Branch are typically the highest performing students in their primary schools.",
         :"Sustainability" =>
