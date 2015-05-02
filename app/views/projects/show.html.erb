@@ -18,7 +18,7 @@
       <img src="https://cdn.rawgit.com/Heartfully/registry-images/master/<%= @project.project_photo_3 %>">
     </div>
    </div>
-   <%= raw @project.extra_content[:"Info Box"] %>
+   <%= raw @project.extra_content[:"Info Box"] if @project.extra_content[:"Info Box"] %>
   </div>
 
   <!-- Project Info -->
