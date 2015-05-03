@@ -16,7 +16,7 @@
 
 #js-projects-list {
   .project-glimpse {
-    padding: 0 1.6em;
+    padding: 0 1.2em;
   }
   .region-btn {
     padding: 0.4em;
@@ -30,9 +30,16 @@
   h4 {
     font-size: 0.9em;
     color: $secondary-color;
+    .org_url:hover {
+      font-weight: bold;
+    }
   }
   .organization {
-    font-size: 0.7em;
+    font-size: 1em;
+    height: 2.5em;
+    a {
+      font-size: 1em;
+    }
   }
   .project-header {
     h3 {

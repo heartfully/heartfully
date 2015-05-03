@@ -24,6 +24,7 @@ HeartfullyApp.Components.Projects = React.createBackboneClass({
       data: { categories: catIds },
       reset: true,
       success: function() {
+        $(self.refs.projectList.getDOMNode()).stopLoading();
       }
     });
   },

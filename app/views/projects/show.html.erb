@@ -1,8 +1,9 @@
 <div class="row project-show">
   <!-- Project Banner -->
-  <div class="banner">
+  <div class=" large-10 large-push-1 banner">
     <h3 class="text-center"><%= @project.name %></h3>
-    <h4 class="text-center"><%= @project.partner %></h4>
+    <h4 class="reg-text primary-color">Implemented by: <a class="org_url" href=<%= @project.organization.org_url %> target="_blank"><%= @project.partner %></a></h4>
+    <h4 class="reg-text secondary-color">Goal: <%= number_to_currency(@project.funding_goal, precision: 0) %></h4>
   </div>
 
   <!-- Project Photos -->
@@ -11,6 +12,11 @@
       <div class="img-container" id="img-1">
         <img src="https://cdn.rawgit.com/Heartfully/registry-images/master/<%= @project.project_photo %>">
       </div>
+      <% if( @project.extra_content[:"Info Box"] ) %>
+        <div class="img-container">
+          <%= raw @project.extra_content[:"Info Box"] %>
+        </div>
+      <% end  %>
       <div class="img-container" id="img-2">
         <img src="https://cdn.rawgit.com/Heartfully/registry-images/master/<%= @project.project_photo_2 %>">
       </div>
@@ -18,14 +24,10 @@
         <img src="https://cdn.rawgit.com/Heartfully/registry-images/master/<%= @project.project_photo_3 %>">
       </div>
     </div>
-    <div class="show-for-medium-up">
-      <%= raw @project.extra_content[:"Info Box"] %>
-    </div>
   </div>
 
   <!-- Project Info -->
   <div class='large-6 large-offset-1 medium-6 medium-offset-0 small-12 columns text-align' id="project-info">
-    <h3 class="text-center secondary-color">Goal: <%= number_to_currency(@project.funding_goal, precision: 0) %></h3>
     <p><%= @project.description %></p>
     <% @project.extra_content.each do |key, value| %>
       <% if( key != :"Info Box" ) %>
@@ -33,9 +35,6 @@
         <div class="project-content"><%= raw value %></div>
       <% end %>
     <% end %>
-  </div>
-  <div class="show-for-small-only">
-    <%= raw @project.extra_content[:"Info Box"] %>
   </div>
 </div>
 
