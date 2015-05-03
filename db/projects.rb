@@ -138,7 +138,7 @@ Project.create([
         <ul class='disc'>
           <li>Engineers</li>
           <li>Electricians</li>
-        </ul>
+        </ul>"
       }
     },
 
@@ -239,7 +239,7 @@ Project.create([
           <li>Students will contribute by helping paint the classrooms.</li>
           <li>Jiamini will oversee the work to ensure a high quality of craftsmanship and that budget is spent exactly as intended.</li> 
         </ol>
-        <br />
+        <br />",
         :"Sample Of Gift Items" =>
         "<ul class='disc'>
           <li>
