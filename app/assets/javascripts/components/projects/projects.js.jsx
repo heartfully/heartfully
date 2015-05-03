@@ -32,8 +32,6 @@ HeartfullyApp.Components.Projects = React.createBackboneClass({
   handlePaginate: function(data) {
     var self = this;
 
-    this.setState({ pageNumber: data.pageNumber });
-
     this.props.projects.fetch({
       data: { page: data.pageNumber },
       reset: true,
