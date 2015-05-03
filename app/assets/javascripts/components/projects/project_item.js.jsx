@@ -1,4 +1,5 @@
 HeartfullyApp.Components.ProjectItem = React.createBackboneClass({
+
   render: function() {
     return (
       <div className="columns large-4 medium-6 small-12 project-glimpse end">
@@ -9,13 +10,13 @@ HeartfullyApp.Components.ProjectItem = React.createBackboneClass({
           <h3 className="name"><strong>{this.getModel().get("name")}</strong></h3>
         </div>
         <div>
-          <h4 className="organization"><strong>Organization: </strong>{this.getModel().get("partner")}</h4>
+          <h4><strong>Goal:</strong> ${Math.floor(this.getModel().get("funding_goal")).toLocaleString()}</h4>
         </div>
         <div>
-          <h4><strong>Location:</strong> {this.getModel().get("country")}</h4>
+          <h4><strong>Location:</strong> {this.getModel().get("city")}, {this.getModel().get("country")}</h4>
         </div>
         <div>
-          <h4><strong>Goal:</strong> ${Math.floor(this.getModel().get("funding_goal"))}</h4>
+          <h4 className="organization"><strong>Organization: </strong><a href="" className="org_url">{this.getModel().get("partner")}</a></h4>
         </div>
         <div className="actions row text-center">
           <div className="small-12 columns">

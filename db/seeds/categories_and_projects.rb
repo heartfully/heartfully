@@ -59,12 +59,12 @@ ProjectCategory.create([
   { project:  Project.find_by_name("Launch Three Preschool Programs In Tanzania"), category: Category.find_by_name("Education") },
   { project:  Project.find_by_name("Launch Three Preschool Programs In Tanzania"), category: Category.find_by_name("Youth") },
 
-  # Provide orphaned and abandoned girls in Kenya with loving homes and education
-  { project:  Project.find_by_name("Provide orphaned and abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Africa") },
-  { project:  Project.find_by_name("Provide orphaned and abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Kenya") },
-  { project:  Project.find_by_name("Provide orphaned and abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Education") },
-  { project:  Project.find_by_name("Provide orphaned and abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Health") },
-  { project:  Project.find_by_name("Provide orphaned and abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Orphans and Vulnerable Children") },
+  # Provide abandoned girls in Kenya with loving homes and education
+  { project:  Project.find_by_name("Provide abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Africa") },
+  { project:  Project.find_by_name("Provide abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Kenya") },
+  { project:  Project.find_by_name("Provide abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Education") },
+  { project:  Project.find_by_name("Provide abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Health") },
+  { project:  Project.find_by_name("Provide abandoned girls in Kenya with loving homes and education"), category: Category.find_by_name("Orphans and Vulnerable Children") },
 
   # Bring Electricity To a Vocational School For Vulnerable Children In Tanzania
   { project:  Project.find_by_name("Bring Electricity To a Vocational School For Vulnerable Children In Tanzania"), category: Category.find_by_name("Africa") },
@@ -96,11 +96,11 @@ ProjectCategory.create([
   { project:  Project.find_by_name("Refurbish damaged classrooms in Tanzania"), category: Category.find_by_name("Education") },
   { project:  Project.find_by_name("Refurbish damaged classrooms in Tanzania"), category: Category.find_by_name("Youth") },
 
-  # Bring Early Childhood Education to Vulnerable, Rural Communities
-  { project: Project.find_by_name("Bring Early Childhood Education to Vulnerable, Rural Communities"), category: Category.find_by_name("Africa") },
-  { project: Project.find_by_name("Bring Early Childhood Education to Vulnerable, Rural Communities"), category: Category.find_by_name("Tanzania") },
-  { project: Project.find_by_name("Bring Early Childhood Education to Vulnerable, Rural Communities"), category: Category.find_by_name("Capacity Building") },
-  { project: Project.find_by_name("Bring Early Childhood Education to Vulnerable, Rural Communities"), category: Category.find_by_name("Education") },
+  # Bring Early Childhood Education to Rural Communities
+  { project: Project.find_by_name("Bring Early Childhood Education to Rural Communities"), category: Category.find_by_name("Africa") },
+  { project: Project.find_by_name("Bring Early Childhood Education to Rural Communities"), category: Category.find_by_name("Tanzania") },
+  { project: Project.find_by_name("Bring Early Childhood Education to Rural Communities"), category: Category.find_by_name("Capacity Building") },
+  { project: Project.find_by_name("Bring Early Childhood Education to Rural Communities"), category: Category.find_by_name("Education") },
 
   # Provide families in northern India with safe, efficient and affordable clean cookstoves
   { project: Project.find_by_name("Provide families in India with safe and affordable clean cookstoves"), category: Category.find_by_name("Asia") },
@@ -117,9 +117,9 @@ ProjectCategory.create([
   { project: Project.find_by_name("Develop a New Generation of Youth Entrepreneurs in Senegal"), category: Category.find_by_name("Youth") },
 
   # Bring high quality medical care to vulnerable populations in rural Guatemala 
-  { project: Project.find_by_name("Bring high quality medical care to vulnerable populations in rural Guatemala"), category: Category.find_by_name("Health") },
-  { project: Project.find_by_name("Bring high quality medical care to vulnerable populations in rural Guatemala"), category: Category.find_by_name("Central America") },
-  { project: Project.find_by_name("Bring high quality medical care to vulnerable populations in rural Guatemala"), category: Category.find_by_name("Guatemala") },
+  { project: Project.find_by_name("Bring high-quality medical care to vulnerable populations in rural Guatemala"), category: Category.find_by_name("Health") },
+  { project: Project.find_by_name("Bring high-quality medical care to vulnerable populations in rural Guatemala"), category: Category.find_by_name("Central America") },
+  { project: Project.find_by_name("Bring high-quality medical care to vulnerable populations in rural Guatemala"), category: Category.find_by_name("Guatemala") },
 
   # Provide access to clean water and cooking systems in rural Guatemala
   { project: Project.find_by_name("Provide access to clean water and cooking systems in rural Guatemala"), category: Category.find_by_name("Clean Energy") },

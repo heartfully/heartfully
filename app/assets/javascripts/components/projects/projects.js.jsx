@@ -24,14 +24,13 @@ HeartfullyApp.Components.Projects = React.createBackboneClass({
       data: { categories: catIds },
       reset: true,
       success: function() {
+        $(self.refs.projectList.getDOMNode()).stopLoading();
       }
     });
   },
 
   handlePaginate: function(data) {
     var self = this;
-
-    this.setState({ pageNumber: data.pageNumber });
 
     this.props.projects.fetch({
       data: { page: data.pageNumber },

@@ -51,7 +51,7 @@ Project.find_or_create_by(name: "Light Up The Night With A Solar Campaign For Za
       name: "Light Up The Night With A Solar Campaign For Zambian Families", 
       partner: "Solar-Aid",
       description: "This campaign will bring access to solar energy to school children and their families at eight schools in Zambia's Central Province.",
-      organization_id: Organization.find_by_name("Solar-Aid").id, 
+      organization_id: Organization.find_by_name("SolarAid").id, 
       funding_goal: 3000,
       city: "Zambia",
       country: "Africa",

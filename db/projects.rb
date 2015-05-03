@@ -1,4 +1,5 @@
-Project.create([
+def all_projects
+  Project.create([
     { 
       name: "Launch Three Preschool Programs In Tanzania",
       partner: "Mufindi Orphans Project",
@@ -35,7 +36,7 @@ Project.create([
       }
     },
 
-    # Provide orphaned and abandoned girls in Kenya with loving homes and education
+    # Provide abandoned girls in Kenya with loving homes and education
     {
       name: "Provide abandoned girls in Kenya with loving homes and education",
       partner: "Many Hopes",
@@ -108,22 +109,22 @@ Project.create([
       extra_content: {
         :"The Problem" => "Out-of-school youth living in rural Tanzania have very few opportunities to develop income generating skills in a safe and supportive environment. In those rare communities trying to initiate vocational schools for these underserved children, the lack of electricity and infrastructure limit the ability of the school to generate enough income to cover operational costs and provide a quality education for its students.",
         :"The Opportunity" => "The Mary Ryan Foundation is improving access to educational opportunities for over 80 disadvantaged youth in Mbeya, Tanzania through its  vocational school in Ilembo. In 2014, Ilembo was one of many rural villages added to the electric grid system in the country. Unfortunately, high installation and equipment costs have prevented most of the population from accessing this electricity. Bringing electricity and high quality electric-run products to the vocational school will expand opportunities to initiate new skills training for students and boost the school's ability to become self-sustaining.",
-        :"How It Works" => "Step 1: Power it up! The Mary Ryan Foundation Committee of Ilembo will oversee the installation of electricity at the vocational school in close coordination with the local government leaders. Designated committee members will also ensure the purchase, safe transport, and proper maintenance of the new equipment and supplies.
+        :"How It Works" => "<strong>Step 1:</strong> Power it up! The Mary Ryan Foundation Committee of Ilembo will oversee the installation of electricity at the vocational school in close coordination with the local government leaders. Designated committee members will also ensure the purchase, safe transport, and proper maintenance of the new equipment and supplies.
         <br />
         <br />
-        Step 2: Any child or adolescent can enroll in the school and select their area of interest including sewing, carpentry, and masonry. Those who do not have the means to pay the minimal school fee are admitted free of charge.
+        <strong>Step 2:</strong> Any child or adolescent can enroll in the school and select their area of interest including sewing, carpentry, and masonry. Those who do not have the means to pay the minimal school fee are admitted free of charge.
         <br />
         <br />
-        Step 3: Students are treated with respect and are welcomed as part of the community. They attend all-day classes five days per week just like their secondary school counterparts. Students also benefit from trainings on business and accounting, health education (including HIV prevention), and volunteer periodically at the community health center.
+        <strong>Step 3:</strong> Students are treated with respect and are welcomed as part of the community. They attend all-day classes five days per week just like their secondary school counterparts. Students also benefit from trainings on business and accounting, health education (including HIV prevention), and volunteer periodically at the community health center.
         <br />
         <br />
-        Step 4: Students are trained on the new equipment by certified teachers. MRF Committee members also actively promote the new services available to the community which were previously not there, such as electric-powered wood cutting and sewing.
+        <strong>Step 4:</strong> Students are trained on the new equipment by certified teachers. MRF Committee members also actively promote the new services available to the community which were previously not there, such as electric-powered wood cutting and sewing.
         <br />
         <br />
-        Step 5: Community members pay to use the vocational school’s new wood cutting and machine and place orders with the school for clothing, construction and carpentry.
+        <strong>Step 5:</strong> Community members pay to use the vocational school’s new wood cutting and machine and place orders with the school for clothing, construction and carpentry.
         <br />
         <br />
-        Step 6: People of Ilembo get items and services they need while supporting vulnerable youth in their communities – quite an electrifying combo!",
+        <strong>Step 6:</strong> People of Ilembo get items and services they need while supporting vulnerable youth in their communities – quite an electrifying combo!",
         :"Why It's Important" => "Out-of-school youth are more likely to get into risky behaviors or run away from home to chase down a better life in “the city”. This often leads to homelessness, theft, HIV infection,  unwanted pregnancies, or worse.  Ilembo’s vocational school offers a healthy and fulfilling alternative in the form of valuable income generating and life skills, and a safe environment for youth to come together and build a better future for themselves. It is the first school of its kind in the area, and has been well-received by students, parents/caretakers, community leaders, and district officials. Many graduates of the school now own and operate their own businesses and are supporting themselves and their families.",
         :"Sustainability" => "Sustainability is the name of the game for this project. In 2012, the Mary Ryan Foundation Committee of Ilembo developed a five-year sustainability action plan for the vocational school. Each year, external support is reduced, while the community’s contributions increase by using profits from selling furniture and construction to cover the operating costs. Initial funding for the school to obtain electricity will expand long-term opportunities to initiate new vocational skills training for students while boosting the school’s income and ability to stay on track toward sustainability.",
         :"Sample Of Gift Items" => 
@@ -268,7 +269,7 @@ Project.create([
       }
     },
 
-    # Bring Early Childhood Education to Vulnerable, Rural Communities
+    # Bring Early Childhood Education to Rural Communities
     {
       name: "Bring Early Childhood Education to Rural Communities",
       partner: "Olive Branch for Children",
@@ -285,12 +286,13 @@ Project.create([
         :"The Problem" => "Early childhood education services—such as kindergarten and preschool—are not provided by the Tanzanian government in the majority of rural communities. This results in missed opportunities for the country’s most vulnerable youth to develop their academic foundations and skills before entering primary school. Children who do not receive early childhood education often have negative attitudes towards school, which can lead to low attendance rates throughout their primary school years.",
         :"The Opportunity" => "The Olive Branch for Children developed a Montessori Outreach Program that brings quality early childhood education to Tanzania’s most vulnerable and hard-to-reach areas. Compared to traditional didactic teaching methods, the Montessori methodology is interactive, encourages self-discipline and independence, and fosters respect within the classroom.",
         :"How it Works:" => 
-        "<ul class='disc'>
-          <li>Step 1: The Olive Branch for Children hosts an intensive, 15-day Montessori education seminar focusing on Montessori methodology, material making, and classroom management. </li>
-          <li>Step 2: After the training, Montessori teachers return to their communities equipped with the most up-to-date knowledge and skills and have the option to either: a) continue teaching at the existing Montessori outreach classroom; or b) with the support of their community, open a new Montessori Kindergarten classroom.</li>
-          <li>Step 3: Olive Branch trainers provide all teachers with monthly in-class assessments and feedback sessions, as well as monthly follow-up trainings.</li>
-          <li>Step 4: 35 outstanding citizens are transformed into teachers who have the confidence, skills and support to provide Montessori education to hundreds of students in their communities!</li>
-        </ul>",
+        "<strong>Step 1:</strong> The Olive Branch for Children hosts an intensive, 15-day Montessori education seminar focusing on Montessori methodology, material making, and classroom management.
+        </br/>
+        <strong>Step 2:</strong> After the training, Montessori teachers return to their communities equipped with the most up-to-date knowledge and skills and have the option to either: a) continue teaching at the existing Montessori outreach classroom; or b) with the support of their community, open a new Montessori Kindergarten classroom.
+        <br />
+        <strong>Step 3:</strong> Olive Branch trainers provide all teachers with monthly in-class assessments and feedback sessions, as well as monthly follow-up trainings.
+        <br />
+        <strong>Step 4:</strong> 35 outstanding citizens are transformed into teachers who have the confidence, skills and support to provide Montessori education to hundreds of students in their communities!",
         :"Why it's important" => "The Montessori Outreach Program ensures that children receive a positive first experience with education and build a love for school.  This is essential, since many children will face major challenges just walking to their local primary school once they transition.  The more they love education, the more committed they will be to pursuing it.  In addition, the children moving on from the enrolled Montessori schools developed by the Olive Branch are typically the highest performing students in their primary schools.",
         :"Sustainability" =>
         "<ul class='disc'>
@@ -317,9 +319,7 @@ Project.create([
           <li>Training tools and materials</li>
         </ul>",
         :"Info Box" => 
-        "<div class='green-box'>Did you know.. over 2000 children in Mbeya who would have previously been denied access to any kindergarten or preschool classes are now benefitting from the Montessori Outreach Program? Classes are held Monday through Friday, 8:30am-11:00am. Teachers also offer additional afternoon classes for children requiring extra help. See more info on how the Montessori Outreach Program works here:
-          <iframe width='100%' height='315' src='https://www.youtube.com/embed/IuN7qQrqMK8' frameborder='0' allowfullscreen></iframe>
-        </div>"
+          "<iframe width='100%' height='315' src='https://www.youtube.com/embed/IuN7qQrqMK8' frameborder='0' allowfullscreen></iframe>"
       }
     },
 
@@ -340,13 +340,11 @@ Project.create([
         :"The Problem" => "The current practice of cooking on mud stoves with open indoor fires poses a significant health risk to women in South Asia. Air pollution in the household is a massive challenge in India, leading to approximately 875,000 deaths annually. Mud stoves are also significant contributors to climate change due to their harmful greenhouse gas emissions. In spite of these health and environmental risks, mud stoves continue to be used by nearly two-thirds of India’s households.  Lack of access to modern cooking technologies, affordability, and awareness are just some of the reasons perpetuating this widespread practice.",
         :"The Opportunity" => "The provision of clean cookstoves, paired with excellent training by Greenway, has the opportunity to reduce the risks associated with traditional cooking on individual, family and community health.",
         :"How it works" => 
-        "<ul class='disc'>
-          <li>Step 1: Greenway will select a community in the <a href='http://en.wikipedia.org/wiki/Kutch_District' target='_blank'>Kutch district</a> that relies on traditional cooking methods and lead a seminar with women in this area.</li>
-          <li>Step 2: Participants will leave the seminar with an understanding of how the clean cookstoves work, its benefits compared to traditional methods, and hands on experience testing the improved stoves.</li>
-          <li>Step 3: Women who sign up to receive a free clean cookstove will also take part in a follow-up training on the day of the stove’s delivery.</li>
-          <li>Step 4: During this training, women practice cooking on the clean cookstove with the support of Greenway's team and discuss any questions and challenges before taking it home.</li>
-          <li>Step 5: Clean, safe and improved cooking commences!</li>
-        </ul>",
+        "<strong>Step 1:</strong> Greenway will select a community in the <a href='http://en.wikipedia.org/wiki/Kutch_District' target='_blank'>Kutch district</a> that relies on traditional cooking methods and lead a seminar with women in this area.
+          <strong>Step 2:</strong> Participants will leave the seminar with an understanding of how the clean cookstoves work, its benefits compared to traditional methods, and hands on experience testing the improved stoves.
+          <strong>Step 3:</strong> Women who sign up to receive a free clean cookstove will also take part in a follow-up training on the day of the stove’s delivery.
+          <strong>Step 4:</strong> During this training, women practice cooking on the clean cookstove with the support of Greenway's team and discuss any questions and challenges before taking it home.
+          <strong>Step 5:</strong> Clean, safe and improved cooking commences!",
         :"Why It’s Important" => 
         "<ul class='disc'>
           <li>Women and girls in India spend a significant portion of their day preparing multiple meals under dangerous conditions.  Clean cookstoves can avert unnecessary death and injury to women in the home while providing the same healthy meals to their families.</li>
@@ -360,11 +358,7 @@ Project.create([
           <li>Individual Jumbo Stove</li>
         </ul>
         Clean cookstove training package for 5 women
-        </ul>",
-        :"Info Box" =>
-        "<div class='green-box'>
-          Did you know… Each hour spent cooking on a traditional mud stove is equivalent to smoking 20 cigarettes?  Kind of takes away your appetite, doesn’t it?
-        </div>"
+        </ul>"
       }
     },
 
@@ -378,7 +372,7 @@ Project.create([
       city: "Senegal",
       country: "Africa",
       url_slug: "semfund-youth-entrepreneurship",
-      project_photo: "projects/youth-entrepreneurship/project_photo.jpg",
+      project_photo: "projects/youth-entrepreneurship/project-photo.jpg",
       project_photo_2: "projects/youth-entrepreneurship/project_photo_2.jpg",
       project_photo_3: "projects/youth-entrepreneurship/project_photo_3.jpg",
       extra_content: {
@@ -419,7 +413,7 @@ Project.create([
       }
     },
 
-    # Bring high quality medical care to vulnerable populations in rural Guatemala
+    # Bring high-quality medical care to vulnerable populations in rural Guatemala
     {
       name: "Bring high-quality medical care to vulnerable populations in rural Guatemala",
       partner: "HELPS International",
@@ -445,25 +439,16 @@ Project.create([
         :"Why It's Important" => "Latin America is in the midst of an ongoing healthcare crisis. Not only can most of the population not afford healthcare, but due to a shortage in trained health workers, families frequently seeking medical services often find their local hospitals not adequately staffed or equipped to handle their cases.",
         :"Sustainability" => "HELPS’ Medical Program began in 1988 when an eight-member U.S. plastic surgery team traveled to a village in the northern highlands of Guatemala. With inadequately staffed hospitals already situated in remote areas of the Guatemalan highlands, HELPS worked in cooperation with the Guatemalan government to make use of these facilities. The HELPS medical teams quickly gained momentum, spreading through Guatemala and covering a much larger area of the country. Since then, the programs have grown immensely, gaining the support needed to move beyond the walls of the hospitals. Today, HELPS’ Medical Program has been called the largest medical relief program in Guatemala.",
         :"Sample of gift items" =>
-        "<ul class='disc'>
-          <li>
-            Medical Supplies: 
-            <ul class='disc'>
-              <li>Medication</li>
-              <li>Personal protective equipment</li>
-              <li>Surgical equipment</li>
-            </ul>
-          </li>
-          <li>
-            Patient costs:
-            <ul class='disc'>
-              <li>A full surgery for one patient </li>
-              <li>Post-surgical hospital stay for one patient</li>
-            </ul>
-          </li>
-          <li>
-            </ul>
-          </li>
+        "Medical Supplies: 
+        <ul class='disc'>
+          <li>Medication</li>
+          <li>Personal protective equipment</li>
+          <li>Surgical equipment</li>
+        </ul>
+        Patient costs:
+        <ul class='disc'>
+          <li>A full surgery for one patient </li>
+          <li>Post-surgical hospital stay for one patient</li>
         </ul>"
       }
     },
@@ -524,18 +509,19 @@ Project.create([
       project_photo_2: "projects/wishes-for-elliot/project_photo_2.jpg",
       project_photo_3: "projects/wishes-for-elliot/project_photo_3.jpg",
       extra_content: {
-        :"The Problem" => "Imagine your child, grandchild, niece or nephew had a mysterious illness that neither you nor a team of brilliant neurologists could do anything about. Families of these children have all heard their doctors admit that they don’t have any answers and that there is little hope for improving their child’s condition.
-        <br/>
-        <br/>
-        <i>Wishes for Elliott</i> was founded out of parents Gabi and John Conecker’s experience with a rare neurological disorder that affects their two year old son, Elliott, and their determination to try and find answers; answers that could build a better future for Elliott and many others like him.",
-        :"The Opportunity" => "Even though learning these children have the SCN8A mutation has brought no immediate answers and no treatments for Elliott or other children, it has opened up an extraordinary opportunity to build a global database of all identified cases and lay the essential and promising groundwork for research. And research – grounded in real time data on emerging cases  – offers a genuine opportunity to better understand and eventually develop treatments and cures for this debilitating disorder.",
+        :"The Problem" => "Imagine your child, grandchild, niece or nephew had a mysterious illness that neither you nor a team of brilliant neurologists could do anything about. Families of these children have all heard their doctors admit that they don’t have any answers and that there is little hope for improving their child’s condition. Children in 15 countries, so far, have been identified as having this disease but there are undoubtedly many more that will appear as genetic testing becomes more widely available. While the effect of this disorder on children varies widely, many children suffer as Elliott does with severely restricted movement (Elliott has never held his head up, grasped an object or been able to sit on his own) and cognitive development.
+        <br />
+        <br />
+        <a href='http://www.wishesforelliott.org/' target='_blank'>Wishes for Elliott</a> was founded out of parents Gabi and John Conecker’s experience with a rare neurological disorder that affects their two year old son, Elliott, and their determination to try and find answers; answers that could build a better future for Elliott and many others like him.",
+        :"The Opportunity" => "Even though learning these children have the SCN8A mutation, a seizure related disorder, has brought no immediate answers and no treatments for Elliott or other children, it has opened up an extraordinary opportunity to build a global database of all identified cases and lay the essential and promising groundwork for research. And research – grounded in real time data on emerging cases – offers a genuine opportunity to better understand and eventually develop treatments and cures for this debilitating disorder. On the foundation that Wishes for Elliott has already laid, recently gathering experts from around the world to set the agenda for future research efforts, your donation will push forward research that would otherwise not get done.",
         :"How It Works" => "With support from Heartful.ly donors, Wishes for Elliott can help to lay the groundwork for development of a bio-registry of identified cases. Specifically, this project would:
         <ol>
-          <li>Support collection of natural history data (conditions, treatments, test results etc) on identified cases.</li>
-          <li>Gather test results and samples (e.g. skin biopsies) to further populate a comprehensive bio-registry  of identified cases database.</li>
+          <li>Support collection of natural history data (conditions, treatments, test results etc.) on identified cases.</li>
+          <li> Gather test results and samples (e.g. MRIs) to further populate a comprehensive bio-registry of identified cases.</li>
           <li>Support expedited expert analyses of patients’ bio-registry entries for publication.</li>
+          <li>Foster global collaborations to initiate research that can help identify possibly treatments for children suffering from SCN8A disorders.</li>
         </ol>",
-        :"Why It's Important" => "There is an extraordinary absence of international commitment to tackle the many undiagnosed disorders killing children around the world. There are tens of thousands children living and struggling with rare and undiagnosed neurological disorders – but their cause remains largely ignored by major medical research efforts or the international donor agenda.",
+        :"Why It's Important" => "There is an extraordinary absence of international coordination to tackle the many undiagnosed disorders killing children around the world. There are tens of thousands children living and struggling with rare and undiagnosed neurological disorders – but their cause remains largely ignored by major medical research efforts or the international donor agenda.",
         :"Sustainability" => "Developing a comprehensive global bio-registry on the SCN8A genetic disorder holds exciting promise to bring answers and hope to children struggling with that specific mutation, but will surely yield lessons and insights for other genetic and neurological conditions as well.
         <br />
         <br />
@@ -555,11 +541,7 @@ Project.create([
           <li>Laboratory and clinician time</li>
         </ul>",
         :"Info Box" =>
-        "<div class='green-box'>
-          <strong>I’m not a scientist…what does a SCN8A mutation mean?</strong> You’re not alone in your confusion. At 2 years of age, Elliott doesn't have neck control, nor can he sit up, roll, babble, see clearly, eat on his own, or communicate. After a year and a half of failed treatments and doctor’s visits, with no answer as to why Elliott had failed to reach every developmental milestone, Elliott was found to have a rare SCN8A genetic mutation.
-          Recent recognition of the devastating impact of this mutation led to its inclusion in the first “panel” or step in genetic testing worldwide as newborns and young children present intractable forms of epilepsy. And as a result, new cases of this rare disorder are being uncovered constantly. Other children like Elliott with catastrophic disabilities and families being told there are no treatments and little hope. Today, a small network of families exists that includes cases in countries as far flung as Australia, Canada, Cambodia, Finland, Italy, Sweden the U.K. and the U.S.
-          <iframe width='100%' height='315' src='https://www.youtube.com/embed/KT3ZF4x5CU4' frameborder='0' allowfullscreen></iframe>
-        </div>"
+        "<iframe width='100%' height='315' src='https://www.youtube.com/embed/KT3ZF4x5CU4' frameborder='0' allowfullscreen></iframe>"
       }
     },
 
@@ -615,11 +597,7 @@ Project.create([
           <li>Nets</li>
           <li>Lighting</li>
           <li>Cement</li>
-        </ul>",
-        :"Info Box" =>
-        "<div class='green-box'>
-         
-        </div>"
+        </ul>"
       }
     }
   ])
