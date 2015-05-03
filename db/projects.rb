@@ -465,7 +465,7 @@ def all_projects
         </ul>",
         :"Info Box" => 
         "<div class='green-box'>Did you know.. over 2000 children in Mbeya who would have previously been denied access to any kindergarten or preschool classes are now benefitting from the Montessori Outreach Program? Classes are held Monday through Friday, 8:30am-11:00am. Teachers also offer additional afternoon classes for children requiring extra help. See more info on how the Montessori Outreach Program works here:
-          <iframe width='560' height='315' src='https://www.youtube.com/embed/IuN7qQrqMK8' frameborder='0' allowfullscreen></iframe>
+          <iframe width='100%' height='315' src='https://www.youtube.com/embed/IuN7qQrqMK8' frameborder='0' allowfullscreen></iframe>
         </div>"
       }
     },
@@ -480,8 +480,8 @@ def all_projects
       city: "India",
       country: "Asia",
       url_slug: "greenway-clean-cookstoves",
-      project_photo: "projects/greenway/project_photo_1.png",
-      project_photo_2: "projects/greenway/project_photo_2.png",
+      project_photo: "projects/greenway/project_photo_1.jpeg",
+      project_photo_2: "projects/greenway/project_photo_2.jpeg",
       project_photo_3: "projects/greenway/project_3.png",
       extra_content: {
         :"The Problem" => "The current practice of cooking on mud stoves with open indoor fires poses a significant health risk to women in South Asia. Air pollution in the household is a massive challenge in India, leading to approximately 875,000 deaths annually. Mud stoves are also significant contributors to climate change due to their harmful greenhouse gas emissions. In spite of these health and environmental risks, mud stoves continue to be used by nearly two-thirds of India’s households.  Lack of access to modern cooking technologies, affordability, and awareness are just some of the reasons perpetuating this widespread practice.",
@@ -700,13 +700,12 @@ def all_projects
           <li>Cost of biopsy procedure</li>
           <li>MRI testing</li>
           <li>Laboratory and clinician time</li>
-        </ul>
-        <div class='green-box>
+        </ul>",
+        :"Info Box" =>
+        "<div class='green-box'>
           <strong>I’m not a scientist…what does a SCN8A mutation mean?</strong> You’re not alone in your confusion. At 2 years of age, Elliott doesn't have neck control, nor can he sit up, roll, babble, see clearly, eat on his own, or communicate. After a year and a half of failed treatments and doctor’s visits, with no answer as to why Elliott had failed to reach every developmental milestone, Elliott was found to have a rare SCN8A genetic mutation.
-          <br />
-          <br />
           Recent recognition of the devastating impact of this mutation led to its inclusion in the first “panel” or step in genetic testing worldwide as newborns and young children present intractable forms of epilepsy. And as a result, new cases of this rare disorder are being uncovered constantly. Other children like Elliott with catastrophic disabilities and families being told there are no treatments and little hope. Today, a small network of families exists that includes cases in countries as far flung as Australia, Canada, Cambodia, Finland, Italy, Sweden the U.K. and the U.S.
-          <iframe width='560' height='315' src='https://www.youtube.com/embed/KT3ZF4x5CU4' frameborder='0' allowfullscreen></iframe>
+          <iframe width='100%' height='315' src='https://www.youtube.com/embed/KT3ZF4x5CU4' frameborder='0' allowfullscreen></iframe>
         </div>"
       }
     },
