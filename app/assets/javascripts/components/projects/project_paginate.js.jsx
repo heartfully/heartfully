@@ -56,7 +56,7 @@ HeartfullyApp.Components.ProjectPaginate = React.createBackboneClass({
     if( this.state.cantGoBack ) {
       var backClassString = ' hide';
     }
-    if( this.state.cantGoFoward ) {
+    if( this.state.cantGoFoward || this.lastPage === 1 ) {
       var forwardClassString = ' hide';
     }
     return (
