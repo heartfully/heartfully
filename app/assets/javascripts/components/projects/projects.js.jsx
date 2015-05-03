@@ -24,7 +24,19 @@ HeartfullyApp.Components.Projects = React.createBackboneClass({
       data: { categories: catIds },
       reset: true,
       success: function() {
-        $(self.refs.projectList.getDOMNode()).stopLoading();
+      }
+    });
+  },
+
+  handlePaginate: function(data) {
+    var self = this;
+
+    this.setState({ pageNumber: data.pageNumber });
+
+    this.props.projects.fetch({
+      data: { page: data.pageNumber },
+      reset: true,
+      success: function() {
       }
     });
   },
@@ -44,12 +56,10 @@ HeartfullyApp.Components.Projects = React.createBackboneClass({
 
     return (
       <div>
-        <HeartfullyApp.Components.ProjectFilter
-          categories={this.props.categories}
-          onUserInput={this.handleUserInput}
-        />
+        <HeartfullyApp.Components.ProjectFilter categories={this.props.categories} onUserInput={this.handleUserInput} />
         <h2 className="text-center">{catText}</h2>
         <HeartfullyApp.Components.ProjectList ref="projectList" projects={this.props.projects} />
+        <HeartfullyApp.Components.ProjectPaginate onPaginateClick={this.handlePaginate} />
       </div>
     );
   }
