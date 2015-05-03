@@ -1,0 +1,8 @@
+rake db:migrate
+load 'db/seeds/organizations.rb'
+Project.where('name LIKE ?', '%EcoSac%').first.update(name: "Provide business training to women and support clean energy in Senegal")
+Project.where('name LIKE ?', '%solar%').first.update(name: "Light Up The Night With A Solar Campaign For Zambian Families")
+Project.where('name LIKE ?', '%Home-Based%').first.update(name: "Train rural community health workers to provide home-based care in Tanzania")
+load 'db/seeds/existing_projects.rb'
+load 'db/projects.rb'
+load 'db/seeds/categories_and_projects.rb'
