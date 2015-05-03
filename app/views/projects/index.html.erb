@@ -8,6 +8,10 @@
   <%= javascript_include_tag('projects') %>
 <% end %>
 
+<%= javascript_tag do %>
+  window.total_pages = '<%= @project_last_page %>';
+<% end %>
+
 <div class="row projects">
   <div class="columns large-12 medium-12 small-12">
     <h2 class="text-center"><span>Browse Projects</span></h2>

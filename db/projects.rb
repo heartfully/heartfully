@@ -20,7 +20,7 @@ def all_projects
         "<ol>
           <li>The EcoSac is currently manufactured in Dakar, Senegal, by a team of four tailors employed by SEM Fund, three of whom are women.</li>
           <li>Once constructed, the product is sold to women’s groups’ presidents who sell them to their members for a commission.</li>
-          <li>For each EcoSac sold, the presidents can make between $1.50 - $2 US dollars, providing an additional source of income.</li>
+          <li>For each EcoSac sold, the presidents can make between $1.50 - $2.00, providing an additional source of income.</li>
           <li>Under this project, SEM Fund will train and mentor 10 new women entrepreneurs for a minimum of six months, and support the creation of a market for clean energy household products.</li>
           <li>Families spend less money on cooking, women have more time to devote to their own personal development, and a chance to earn cash to potentially start their own businesses!</li>
         </ol>",
@@ -120,7 +120,7 @@ def all_projects
           <li>Each week, the trained community health workers visit their clients and spreads accurate health knowledge to empower their community.</li>
           <li>Accurate health knowledge and treatment is brought to people’s homes, thereby reaching the most vulnerable groups who might otherwise not seek help at a health facility.</li>
         </ol>",
-        :"Why Its Important" => "Unlike their facility-based counterparts, community health workers are able to couple their clinical skills with a deep rooted understanding of and respect for local culture and traditions. From wound cleaning, to HIV/AIDS counseling, to educating families about maternal and child health, home-based care volunteers are making a real impact in their communities.",
+        :"Why It's Important" => "Unlike their facility-based counterparts, community health workers are able to couple their clinical skills with a deep rooted understanding of and respect for local culture and traditions. From wound cleaning, to HIV/AIDS counseling, to educating families about maternal and child health, home-based care volunteers are making a real impact in their communities.",
         :"Sustainability" => "The training is conducted by Tanzanian medical professionals to local Tanzanian community volunteers, allowing for education to spread throughout the community at a grassroots level.  This education ultimately travels to neighbors and friends as the volunteer builds trust within their community.  This leads to healthier parents and children.  In the long term, a healthy household means more food on the table and more opportunities for education and income generation.",
         :"Sample Of Gift Items" =>
         "<ul class='disc'>
@@ -159,7 +159,7 @@ def all_projects
       project_photo_2: 'projects/preschool_program/photo_2.jpeg',
       project_photo_3: 'projects/preschool_program/photo_3.jpg',
       extra_content: {
-        :"The Problem" => "Teachers in Tanzania deal with minimal training, a lack of classroom supplies, dire classroom conditions, and large classroom sizes (sometimes up to100-150 students!) and little community support.  This results in not just poor learning outcomes for students, but a high teacher burn-out rate which contributes to the cycle of a low teacher-to-student ratio.",
+        :"The Problem" => "Teachers in Tanzania deal with minimal training, a lack of classroom supplies, dire classroom conditions, large classroom sizes (sometimes up to 100 students!) and little community support. This results not only in poor learning outcomes for students, but teacher burn-out which perpetuates the low teacher-to-student ratio.",
         :"The Opportunity" => "In 2010, the Early Childhood Education Department began to address a pressing need for young children to have a safe and stimulating environment to grow in mind and body. This program offers working parents a place for their children to receive nutritious food, age-appropriate education and a compassionate and loving environment.",
         :"How It Works" => 
         "<ol>
@@ -169,7 +169,7 @@ def all_projects
           <li>Mufindi staff conduct follow-up visits to ensure the new classroom materials are being used appropriately and are well-maintained.</li>
           <li>The community, teachers and students get to enjoy a transformed learning space for years to come!</li>
         </ol>",
-        :"Why Its Important" => "The outreach program helps schools with the skills and tools they need to educate their children and to provide a loving environment for children to learn creativity, kindness, problem solving strategies, and of course reading, writing and arithmetic.",
+        :"Why It's Important" => "The outreach program helps schools with the skills and tools they need to educate their children and to provide a loving environment for children to learn creativity, kindness, problem solving strategies, and of course reading, writing and arithmetic.",
         :"Sustainability" => "Sustainability is a key pillar to this program’s success. Communities pay for their kindergarten teacher's wage and institute school lunch programs funded by the parents.  In exchange, the Mufindi Orphans Project funds teacher training, classroom materials and renovations. They also walk side-by-side with community partners throughout the year to ensure all children are getting the best possible access to education and care.",
         :"Sample Of Gift Items" =>
         "<ul class='disc'>
@@ -184,7 +184,7 @@ def all_projects
 
     # Provide orphaned and abandoned girls in Kenya with loving homes and education
     {
-      name: "Provide orphaned and abandoned girls in Kenya with loving homes and education",
+      name: "Provide abandoned girls in Kenya with loving homes and education",
       partner: "Many Hopes",
       description: "Help an orphaned or abandoned girl thrive by providing her with safe housing and an excellent education.",
       organization_id: Organization.find_by_name("Many Hopes").id, 
@@ -200,7 +200,7 @@ def all_projects
         <br />
         <br />
         Unfortunately, girls often feel they have no option but to prostitute themselves. When we asked one girl, “Why are you doing this, you know there is HIV in Kenya, right?” she replied, “AIDS might kill me in five years but I have to eat tomorrow.",
-        :"The Opportunity" => "Rescue, house and educate one girl for a year.
+        :"The Opportunity" => "Rescue, house and educate young girls.
         <br/>
         <br/>
         Many Hopes’ homes are built to cultivate a family atmosphere as opposed to an ‘orphanage’ atmosphere by:
@@ -253,7 +253,7 @@ def all_projects
       project_photo_2: "projects/mary-ryan/photo_2.jpg",
       project_photo_3: "projects/mary-ryan/photo_3.jpg",
       extra_content: {
-        :"The Problem" => "Out of school youth living in rural Tanzania have little to no opportunities to develop income generating skills in a safe and supportive environment. In those rare communities trying to initiate vocational schools for these underserved children, the lack of electricity and infrastructure limit the ability of the school to generate enough income to cover operational costs and provide a quality education for its students.",
+        :"The Problem" => "Out-of-school youth living in rural Tanzania have very few opportunities to develop income generating skills in a safe and supportive environment. In those rare communities trying to initiate vocational schools for these underserved children, the lack of electricity and infrastructure limit the ability of the school to generate enough income to cover operational costs and provide a quality education for its students.",
         :"The Opportunity" => "The Mary Ryan Foundation is improving access to educational opportunities for over 80 disadvantaged youth in Mbeya, Tanzania through its  vocational school in Ilembo. In 2014, Ilembo was one of many rural villages added to the electric grid system in the country. Unfortunately, high installation and equipment costs have prevented most of the population from accessing this electricity. Bringing electricity and high quality electric-run products to the vocational school will expand opportunities to initiate new skills training for students and boost the school's ability to become self-sustaining.",
         :"How It Works" => "Step 1: Power it up! The Mary Ryan Foundation Committee of Ilembo will oversee the installation of electricity at the vocational school in close coordination with the local government leaders. Designated committee members will also ensure the purchase, safe transport, and proper maintenance of the new equipment and supplies.
         <br />
@@ -271,7 +271,7 @@ def all_projects
         <br />
         <br />
         Step 6: People of Ilembo get items and services they need while supporting vulnerable youth in their communities – quite an electrifying combo!",
-        :"Why It's Important" => "Out of school youth are more likely to get into risky behaviors or run away from home to chase down a better life in “the city”. This often leads to homelessness, theft, HIV infection,  unwanted pregnancies, or worse.  Ilembo’s vocational school offers a healthy and fulfilling alternative in the form of valuable income generating and life skills, and a safe environment for youth to come together and build a better future for themselves. It is the first school of its kind in the area, and has been well-received by students, parents/caretakers, community leaders, and district officials. Many graduates of the school now own and operate their own businesses and are supporting themselves and their families.",
+        :"Why It's Important" => "Out-of-school youth are more likely to get into risky behaviors or run away from home to chase down a better life in “the city”. This often leads to homelessness, theft, HIV infection,  unwanted pregnancies, or worse.  Ilembo’s vocational school offers a healthy and fulfilling alternative in the form of valuable income generating and life skills, and a safe environment for youth to come together and build a better future for themselves. It is the first school of its kind in the area, and has been well-received by students, parents/caretakers, community leaders, and district officials. Many graduates of the school now own and operate their own businesses and are supporting themselves and their families.",
         :"Sustainability" => "Sustainability is the name of the game for this project. In 2012, the Mary Ryan Foundation Committee of Ilembo developed a five-year sustainability action plan for the vocational school. Each year, external support is reduced, while the community’s contributions increase by using profits from selling furniture and construction to cover the operating costs. Initial funding for the school to obtain electricity will expand long-term opportunities to initiate new vocational skills training for students while boosting the school’s income and ability to stay on track toward sustainability.",
         :"Sample Of Gift Items" => 
         "Electricity installation supplies
@@ -286,7 +286,6 @@ def all_projects
           <li>Engineers</li>
           <li>Electricians</li>
         </ul>
-        <i>The Mary Ryan Foundation (MRF) is a non-profit organization whose mission is to provide relief and assistance to impoverished communities within Tanzania, specifically by supporting orphans and children living in the most difficult environments within those communities.</i>"
       }
     },
 
@@ -294,9 +293,9 @@ def all_projects
     {
       name: "Sponsor a Girl's Education In Tanzania",
       partner: "Jiamini",
-      description: "Fund a girl’s high school education and provide her with a safe living environment and opportunities for higher education and employment that would otherwise be out of reach.",
+      description: "Fund a girl’s high school education and provide her with a safe living environment and opportunities for higher education and employment.",
       organization_id: Organization.find_by_name("Jiamini").id, 
-      funding_goal: 3080,
+      funding_goal: 3100,
       city: "Tanzania",
       country: "Africa",
       url_slug: "jiamini-girls-education",
@@ -309,7 +308,7 @@ def all_projects
         :"How It Works" => "While the schools Jiamini works with are public, they are not completely free. In Tanzania, school fees and other educational expenses act as barriers to the poorest students, often meaning they have to drop out of school entirely.
         <br />
         <br />
-        With this everlasting gift, The Couple will receive letters from their student and have the opportunity to build a personal relationship with her. This sponsorship will cover her complete educational expenses for the duration of secondary school, and put her in a safe living environment, where she can focus on learning.",
+        With this everlasting gift, donors will receive letters from their student and have the opportunity to build a personal relationship with her. This sponsorship will cover her complete educational expenses for the duration of secondary school, and put her in a safe living environment, where she can focus on learning.",
         :"Sample Of Gift Items" => 
         "<ul class='disc'>
           <li>Textbooks</li>
@@ -339,7 +338,7 @@ def all_projects
         :"How It Works" => "While the schools Jiamini works with are public, they are not completely free. In Tanzania, school fees and other educational expenses act as barriers to the poorest students, often meaning they have to drop out of school entirely.
         <br />
         <br />
-        With this everlasting gift, The Couple* will receive letters and regular updates from their student and have the opportunity to build a personal relationship with him or her. This sponsorship will cover a student’s complete educational expenses for all four years of high school. <i>(*Wedding guests will receive two updates from Heartful.ly. Jiamini is responsible for providing additional updates)</i>",
+        With this everlasting gift, donors will receive letters and regular updates from their student and have the opportunity to build a personal relationship with him or her. This sponsorship will cover a student’s complete educational expenses for all four years of high school. </i>",
         :"Sample Of Gift Items" => 
         "<ul class='disc'>
           <li>Textbooks</li>
@@ -354,7 +353,7 @@ def all_projects
     {
       name: "Refurbish damaged classrooms in Tanzania",
       partner: "Jiamini",
-      description: "Avoid the disruption of education for hundreds of girls in Southern Tanzania by supporting the emergency repairs of four classrooms.",
+      description: "Avoid the disruption of education for hundreds of studenta in Southern Tanzania by supporting the emergency repairs of four classrooms.",
       organization_id: Organization.find_by_name("Jiamini").id, 
       funding_goal: 500,
       city: "Tanzania",
@@ -373,11 +372,10 @@ def all_projects
         With your support, we can repair cracked walls, replace collapsing ceiling tiles, and install new window frames, doors, and blackboards.",
         :"Impact" => "All students deserve safe places to learn.
         <ul class='disc'>
-          This registry has the opportunity to:
+          With this registry you can:
+          <li>Help a secondary school make essential repairs to their facilities</li>
           <li>Provide hundreds of students with safe classrooms that they can be proud of</li>
-          <li>Help a secondary school make basic, essential repairs to their facilities</li>
-          <li>Give local craftspeople valuable contract work</li>
-          <li>Invest students in the upkeep of Nangwanda Secondary School</li>
+          <li>Give local craftspeople valuable work</li>
         </ul>",
         :"How It Will Work" =>
         "The classroom refurbishment project will provide a profound return for a small investment.
@@ -389,7 +387,6 @@ def all_projects
           <li>Jiamini will oversee the work to ensure a high quality of craftsmanship and that budget is spent exactly as intended.</li> 
         </ol>
         <br />
-        Jiamini is volunteer-run, meaning 100% of donations received from Heartful.ly  go directly to students and programs.",
         :"Sample Of Gift Items" =>
         "<ul class='disc'>
           <li>
@@ -420,9 +417,9 @@ def all_projects
 
     # Bring Early Childhood Education to Vulnerable, Rural Communities
     {
-      name: "Bring Early Childhood Education to Vulnerable, Rural Communities",
+      name: "Bring Early Childhood Education to Rural Communities",
       partner: "Olive Branch for Children",
-      description: "The Montessori Outreach Program transforms members of Tanzania’s most hard to reach villages into teachers who deliver high quality kindergarten education for children in their communities.",
+      description: "The Montessori Outreach Program transforms members of Tanzania’s most remote villages into teachers who are equipped to deliver high-quality kindergarten education to the children in their communities.",
       organization_id: Organization.find_by_name("Olive Branch for Children").id, 
       funding_goal: 5500,
       city: "Tanzania",
@@ -432,14 +429,14 @@ def all_projects
       project_photo_2: "projects/teacher-training/photo_2.jpg",
       project_photo_3: "projects/teacher-training/photo_3.jpg",
       extra_content: {
-        :"The Problem" => "Early childhood education services—such as kindergarten and preschool—are not provided by the Tanzanian government in the majority of rural communities. This results in missed opportunities for the country’s most vulnerable youth to develop their academic foundations and skills before entering primary school. Children who do not receive early childhood education often have negative attitudes towards school which can lead to low attendance rates throughout their primary school years.",
+        :"The Problem" => "Early childhood education services—such as kindergarten and preschool—are not provided by the Tanzanian government in the majority of rural communities. This results in missed opportunities for the country’s most vulnerable youth to develop their academic foundations and skills before entering primary school. Children who do not receive early childhood education often have negative attitudes towards school, which can lead to low attendance rates throughout their primary school years.",
         :"The Opportunity" => "The Olive Branch for Children developed a Montessori Outreach Program that brings quality early childhood education to Tanzania’s most vulnerable and hard-to-reach areas. Compared to traditional didactic teaching methods, the Montessori methodology is interactive, encourages self-discipline and independence, and fosters respect within the classroom.",
         :"How it Works:" => 
         "<ul class='disc'>
-          <li>Step 1: The Olive Branch for Children hosts an intensive, 15-day Montessori education seminar focusing on Montessori methodology, material making, classroom management, and implementation for new Montessori teachers and those already enrolled in the outreach program.</li>
-          <li>Step 2: After the training, Montessori teachers return to their communities equipped with the most up to date knowledge and skills and have the option to either: 1) continue teaching at the existing Montessori outreach classroom; or 2) with the support of their community, open a new Montessori Kindergarten classroom.</li>
+          <li>Step 1: The Olive Branch for Children hosts an intensive, 15-day Montessori education seminar focusing on Montessori methodology, material making, and classroom management. </li>
+          <li>Step 2: After the training, Montessori teachers return to their communities equipped with the most up-to-date knowledge and skills and have the option to either: a) continue teaching at the existing Montessori outreach classroom; or b) with the support of their community, open a new Montessori Kindergarten classroom.</li>
           <li>Step 3: Olive Branch trainers provide all teachers with monthly in-class assessments and feedback sessions, as well as monthly follow-up trainings.</li>
-          <li>Step 4: 35 outstanding citizens across Mbeya are transformed into teachers who have the confidence, skills and support to provide Montessori education to hundreds of students in their communities!</li>
+          <li>Step 4: 35 outstanding citizens are transformed into teachers who have the confidence, skills and support to provide Montessori education to hundreds of students in their communities!</li>
         </ul>",
         :"Why it's important" => "The Montessori Outreach Program ensures that children receive a positive first experience with education and build a love for school.  This is essential, since many children will face major challenges just walking to their local primary school once they transition.  The more they love education, the more committed they will be to pursuing it.  In addition, the children moving on from the enrolled Montessori schools developed by the Olive Branch are typically the highest performing students in their primary schools.",
         :"Sustainability" =>
@@ -468,7 +465,7 @@ def all_projects
         </ul>",
         :"Info Box" => 
         "<div class='green-box'>Did you know.. over 2000 children in Mbeya who would have previously been denied access to any kindergarten or preschool classes are now benefitting from the Montessori Outreach Program? Classes are held Monday through Friday, 8:30am-11:00am. Teachers also offer additional afternoon classes for children requiring extra help. See more info on how the Montessori Outreach Program works here:
-          <iframe width='560' height='315' src='https://www.youtube.com/embed/IuN7qQrqMK8' frameborder='0' allowfullscreen></iframe>
+          <iframe width='100%' height='315' src='https://www.youtube.com/embed/IuN7qQrqMK8' frameborder='0' allowfullscreen></iframe>
         </div>"
       }
     },
@@ -483,8 +480,8 @@ def all_projects
       city: "India",
       country: "Asia",
       url_slug: "greenway-clean-cookstoves",
-      project_photo: "projects/greenway/project_photo_1.png",
-      project_photo_2: "projects/greenway/project_photo_2.png",
+      project_photo: "projects/greenway/project_photo_1.jpeg",
+      project_photo_2: "projects/greenway/project_photo_2.jpeg",
       project_photo_3: "projects/greenway/project_3.png",
       extra_content: {
         :"The Problem" => "The current practice of cooking on mud stoves with open indoor fires poses a significant health risk to women in South Asia. Air pollution in the household is a massive challenge in India, leading to approximately 875,000 deaths annually. Mud stoves are also significant contributors to climate change due to their harmful greenhouse gas emissions. In spite of these health and environmental risks, mud stoves continue to be used by nearly two-thirds of India’s households.  Lack of access to modern cooking technologies, affordability, and awareness are just some of the reasons perpetuating this widespread practice.",
@@ -509,11 +506,7 @@ def all_projects
           <li>Individual Smart Stove</li>
           <li>Individual Jumbo Stove</li>
         </ul>
-        Clean cookstove training costs for:
-        <ul class='disc'>
-          <li>5 women</li>
-          <li>10 women</li>
-          <li>20 women</li>
+        Clean cookstove training package for 5 women
         </ul>",
         :"Info Box" =>
         "<div class='green-box'>
@@ -540,9 +533,9 @@ def all_projects
         :"The Opportunity" => "SEM Fund’s youth entrepreneurship program is an opportunity to promote jobs and develop business skills for young people while expanding access to clean energy.",
         :"How It Works" => 
         "<ol>
-          <li>SEM Fund recruits 15 to 20 young entrepreneurs (ages 18 to 25) at a time.</li>
-          <li>These youth participate in a 5-day training that covers business, marketing, and accounting, and the impact of energy on development. The training also discusses how to address common barriers they might face in growing their business, ranging from accessing cheaper transport to the market, to partnering with other businesses.</li>
-          <li>Those that complete the training are given clean energy products on consignment, which they pay for once they have sold. There are currently four products to choose from: the Solar lamp, Clean Cookstove, Efficient Fuel, and EcoSac.</li>
+          <li>SEM Fund recruits 15 to 20 young entrepreneurs (ages 18 to 25) per cohort.</li>
+          <li>These individuals participate in a 5-day training that emphasizes business, marketing, and accounting, and the impact of energy on development. The training also discusses how to address common barriers they might face in growing their business, ranging from accessing cheaper transport to the market, to partnering with other businesses.</li>
+          <li>Upon completion of the training, they are given clean energy products on consignment, which they pay for once they have sold. These include: the Solar lamp, Clean Cookstove, Efficient Fuel, and EcoSac.</li>
           <li>SEM Fund then follows up each new entrepreneur with regular mentoring and support visits over a six month cycle. During these visits, SEM Fund checks in on their stock, discusses any client feedback they may have, and revisits business plans to re-evaluate how they might grow as an enterprise.</li>
           <li>For each product sold, youth entrepreneurs receive a commission between $1.50 and $7.00.</li>
         </ol>",
@@ -555,7 +548,7 @@ def all_projects
           <li><i>Efficient Fuel:</i> The biomass reduces environmental degradation as it made from wood that naturally dies. It also promotes rural-urban linkages, reduces the time burden of fuel collection (particularly for women), and decreases fuel expenditures by at least 30%.</li>
           <li><i>EcoSac:</i> This affordable cooking sack reduces the time spent cooking (which on average takes 3.5 hours in Senegal) by about an hour per meal. This decreases exposure to indoor air pollutants and money spent on fuel, while also leaving time and energy for women—who are typically the primary household cook—to do other activities.</li>
         </ul>",
-        :"Sustainability" => "During the training, entrepreneurs receive support in building their business plan, step by step, in order to ensure that they have a clear path to success. Each training and marketing event also gives youth a chance to build a network of clean energy entrepreneurs throughout Dakar and the surrounding area, and an opportunity expand their client base. All of these new skills will last well beyond the length of this project, provide a sustainable source of income, and can be applied to other business endeavors in the future.",
+        :"Sustainability" => "During the training, entrepreneurs receive support in building their business plan to ensure that they have a clear path to success. Each training and marketing event also gives them a chance to build a network of clean energy entrepreneurs throughout Dakar and the surrounding area, and an opportunity to expand their client base. These new skills will last well beyond the length of this project, provide a sustainable source of income, and can be applied to other business endeavors in the future.",
         :"Sample Of Gift Items" => 
         "Products to get the entrepreneurs started
         <ul class='disc'>
@@ -575,9 +568,9 @@ def all_projects
 
     # Bring high quality medical care to vulnerable populations in rural Guatemala
     {
-      name: "Bring high quality medical care to vulnerable populations in rural Guatemala",
+      name: "Bring high-quality medical care to vulnerable populations in rural Guatemala",
       partner: "HELPS International",
-      description: "Bring free, high quality medical care to those in need by supporting 10 medical missions that serve the most vulnerable populations of Guatemala.",
+      description: "Bring free, high-quality medical care to those in need by supporting a medical mission that serves the most vulnerable populations of Guatemala.",
       organization_id: Organization.find_by_name("HELPS International").id,
       funding_goal: 5000,
       city: "Guatemala,",
@@ -587,17 +580,17 @@ def all_projects
       project_photo_2: "projects/helps-medical/project_photo_2.png",
       project_photo_3: "projects/helps-medical/project_photo_3.jpg",
       extra_content: {
-        :"The Problem" => "Half of Guatemala’s population lives below the poverty line, and nearly 16% live in extreme poverty. The limited existing healthcare services are largely inaccessible due to financial barriers.",
-        :"The Opportunity" => "HELPS International has developed a system of 10 volunteer medical teams to address the healthcare crisis in rural areas of Guatemala. These services are provided free of charge to those in need during medical missions.",
+        :"The Problem" => "Half of Guatemala’s population lives below the poverty line, and nearly 16% live in extreme poverty. Already limited existing healthcare services are largely inaccessible to the masses due to financial barriers.",
+        :"The Opportunity" => "HELPS International has developed a system that dispatches volunteer medical teams to address the healthcare crisis in rural areas of Guatemala. These services are provided free of charge to those in need.",
         :"How It Works" =>
         "<ol>
           <li>The volunteer medical teams for HELPS missions are comprised of about 90 members, ranging from physicians and surgeons to nurses and support staff.</li>
-          <li>During a mission, these surgical and medical volunteers staff empty hospitals, which were built during the Civil War, to provide comprehensive care.</li>
+          <li>During a mission, surgical and medical volunteers set up shop in vacant hospitals, filling empty rooms with drugs, supplies and other medical equipment to provide healthcare services that are as close as possible to U.S. quality standards..</li>
           <li>HELPS medical teams are then fully equipped with drugs, supplies and other medical equipment to provide healthcare services that are as close as possible to US quality standards.</li>
-          <li>Free care is accessible to all Guatemalans, regardless of income level. Lives are saved, and long-term disabilities are averted.</li>
+          <li>Free healthcare is accessible to all Guatemalans, regardless of income level enabling lives to be saved and long-term disabilities averted.</li>
         </ol>",
-        :"Why It's Important" => "Latin America is in the midst of an ongoing healthcare crisis. Not only can most of the population not afford healthcare, but a human resources for health shortage often means that families show up to a hospital to receive care, but find it is not adequately staffed or equipped to handle their cases.",
-        :"Sustainability" => "HELPS’ Medical Program began in 1988 when an eight-member US plastic surgery team traveled to a village in the northern highlands of Guatemala. With inadequately staffed hospitals already situated in remote areas of the Guatemalan highlands, HELPS worked in cooperation with the Guatemalan government to make use of these facilities. The HELPS medical teams quickly gained momentum, spreading through Guatemala and covering a much larger area of the country. Since then, the programs have grown immensely, gaining the support needed to move beyond the walls of the hospitals. Today, HELPS’ Medical program has been called the largest medical relief Program of the Country.",
+        :"Why It's Important" => "Latin America is in the midst of an ongoing healthcare crisis. Not only can most of the population not afford healthcare, but due to a shortage in trained health workers, families frequently seeking medical services often find their local hospitals not adequately staffed or equipped to handle their cases.",
+        :"Sustainability" => "HELPS’ Medical Program began in 1988 when an eight-member U.S. plastic surgery team traveled to a village in the northern highlands of Guatemala. With inadequately staffed hospitals already situated in remote areas of the Guatemalan highlands, HELPS worked in cooperation with the Guatemalan government to make use of these facilities. The HELPS medical teams quickly gained momentum, spreading through Guatemala and covering a much larger area of the country. Since then, the programs have grown immensely, gaining the support needed to move beyond the walls of the hospitals. Today, HELPS’ Medical Program has been called the largest medical relief program in Guatemala.",
         :"Sample of gift items" =>
         "<ul class='disc'>
           <li>
@@ -611,15 +604,11 @@ def all_projects
           <li>
             Patient costs:
             <ul class='disc'>
-              <li>A full surgery for one patient (common surgeries include hernias, gall bladder stones removal, cleft lip pallets, prolapsed uterus, removal of tumors, eye cataracts, and other essential surgeries)</li>
-              <li>Post-surgical overnight hospital stay for one patient</li>
+              <li>A full surgery for one patient </li>
+              <li>Post-surgical hospital stay for one patient</li>
             </ul>
           </li>
           <li>
-            Medical staff: Sponsorship for one doctor or nurse to join a medical mission trip for 10 days
-            <ul class='disc'>
-              <li>Airfare and transport costs</li>
-              <li>Room and board</li>
             </ul>
           </li>
         </ul>"
@@ -630,7 +619,7 @@ def all_projects
     {
       name: "Provide access to clean water and cooking systems in rural Guatemala",
       partner: "HELPS International",
-      description: "Installing clean stoves and water filtration systems to homes in rural Guatemala will help families avoid serious health problems, have a clean home they can be proud of, and provide access to a healthy lifestyle so they can focus on being productive members of society.",
+      description: "Installing clean stoves and water filtration systems to homes in rural Guatemala will help families avoid serious health problems, have a clean home they can be proud of, and provide access to a healthier lifestyle.",
       organization_id: Organization.find_by_name("HELPS International").id,
       funding_goal: 4000,
       city: "Guatemala",
@@ -645,23 +634,23 @@ def all_projects
         :"How It Works" => "The ONIL stove is an inexpensive concrete stove that uses a galvanized steel venting pipe to replace open-flame fire pits. The Gravity Water Filter was designed by HELPS as a practical solution to meet the need for safe drinking water, using quality components at a very accessible price. <strong>The water filter provides 10 gallons of safe drinking water in 24 hours.</strong> It is simple to use and the initial setup time is about 15 minutes.The filtered water measures up to US standards of purification, and provides a safe backup system in times of emergency.
         <br />
         <br />
-        After purchasing the stoves and filters, HELPS will
+        After purchasing the stoves and filters, HELPS will:
         <ol>
-          <li>Deliver the products to a community in rural Guatemala and demonstrate how they work</li>
-          <li>Install the stove and filter in each sponsored home</li>
-          <li>Train at least one family member on basic repairs and proper maintenance</li>
-          <li>Provide support or answer questions post-installation as needed</li>
+          <li>Deliver the products to a community in rural Guatemala and demonstrate how they work.</li>
+          <li>Install the stove and filter in each sponsored home.</li>
+          <li>Train at least one family member on basic repairs and proper maintenance.</li>
+          <li>Provide support or answer questions post-installation as needed.</li>
         </ol>",
         :"Why It's Important" =>
         "<ul class='disc'>
           <li><strong>Clean cooking:</strong> HELPS medical teams found an alarming number of people with burns and respiratory illnesses during their missions. This was caused by indigenous families cooking over open-flame fire pits on the dirt floors of their homes, with no ventilation for the toxic smoke and fumes. The ONIL stove reduces smoke and exposure to carbon monoxide by 99%, eliminates the risk of burns, and saves 70% in firewood consumption which results in a safer household environment.</li>
           <li><strong>Clean water:</strong>  60% of all disease is water borne and the lack of clean drinking water impacts all levels of society in the country. Most rural residents draw water from rivers, streams, ponds, or rainwater, which may be the only sources of water for some rural villages in Guatemala. HELPS’ Gravity Water Filter ensures 100% removal of parasites such as guinea worm and giardia, and 99.99% removal of pathogenic bacteria such as: cholera, e. coli, and shigella.</li>
         </ul>",
-        :"Sustainability" => "HELPS has two factories in Guatemala where the stoves are being built locally. To date, 200,000 Stoves and 91,000 Water Filters have been installed throughout Guatemala, Mexico and Central America.  These products and the installation program have the full support of the government and local communities for widespread scale-up. Their positive impact on health and the environment will help avoid serious health problems for all members of the family and preserve quality of life for years to come.",
+        :"Sustainability" => "HELPS has two factories in Guatemala where the stoves are being built locally. To date, 200,000 stoves and 91,000 water filters have been installed throughout Guatemala, Mexico and Central America.  These products and the installation program have the full support of the government and local communities for widespread scale-up. Their positive impact on health and the environment will help avoid serious health problems for all members of the family and preserve quality of life for years to come.",
         :"Sample Of Gift Items" => 
         "<ul class='disc'>
           <li>Onil Stove</li>
-          <li>Gravity Water Filter</li>
+          <li>Gravity water filter</li>
           <li>Installation cost per household</li>
           <li>Training on maintenance and repair</li>
           <li>Spare parts to leave with families</li>
@@ -711,13 +700,12 @@ def all_projects
           <li>Cost of biopsy procedure</li>
           <li>MRI testing</li>
           <li>Laboratory and clinician time</li>
-        </ul>
-        <div class='green-box>
+        </ul>",
+        :"Info Box" =>
+        "<div class='green-box'>
           <strong>I’m not a scientist…what does a SCN8A mutation mean?</strong> You’re not alone in your confusion. At 2 years of age, Elliott doesn't have neck control, nor can he sit up, roll, babble, see clearly, eat on his own, or communicate. After a year and a half of failed treatments and doctor’s visits, with no answer as to why Elliott had failed to reach every developmental milestone, Elliott was found to have a rare SCN8A genetic mutation.
-          <br />
-          <br />
           Recent recognition of the devastating impact of this mutation led to its inclusion in the first “panel” or step in genetic testing worldwide as newborns and young children present intractable forms of epilepsy. And as a result, new cases of this rare disorder are being uncovered constantly. Other children like Elliott with catastrophic disabilities and families being told there are no treatments and little hope. Today, a small network of families exists that includes cases in countries as far flung as Australia, Canada, Cambodia, Finland, Italy, Sweden the U.K. and the U.S.
-          <iframe width='560' height='315' src='https://www.youtube.com/embed/KT3ZF4x5CU4' frameborder='0' allowfullscreen></iframe>
+          <iframe width='100%' height='315' src='https://www.youtube.com/embed/KT3ZF4x5CU4' frameborder='0' allowfullscreen></iframe>
         </div>"
       }
     },
@@ -759,7 +747,8 @@ def all_projects
         <br />
         <br />
         love.fútbol’s projects have consistently shown social impact in the areas of education, health, and decreased anti-social behavior.
-        Here’s what adults interviewed in four love.fútbol communities in Guatemala had to say
+        Here’s what adults interviewed in four love.fútbol communities in Guatemala had to say:
+        
         <ul class='disc'>
           <li>100% of the adults interviewed stated that the community was more united and strengthened</li>
           <li>83% of the parents and school directors reported a better school performance</li>
@@ -776,9 +765,7 @@ def all_projects
         </ul>",
         :"Info Box" =>
         "<div class='green-box'>
-          FUN FACT
-          <br />
-          Alianҫa, Brazil, located near Recife,  the organization’s 19th project, is in the hometown of Anderson Hernanes, Brazilian national team member, midfielder for Inter Milan, and love.fútbol Ambassador
+         
         </div>"
       }
     }
