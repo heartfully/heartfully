@@ -1,4 +1,3 @@
-def all_projects
   Project.create([
     { 
       name: "Launch Three Preschool Programs In Tanzania",
