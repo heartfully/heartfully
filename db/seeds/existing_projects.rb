@@ -49,7 +49,7 @@ Project.find_or_create_by(name: "Complete Wangama's Clinic").update(name: "Compl
 
 Project.find_or_create_by(name: "Light Up The Night With A Solar Campaign For Zambian Families").update( 
       name: "Light Up The Night With A Solar Campaign For Zambian Families", 
-      partner: "Solar-Aid",
+      partner: "SolarAid",
       description: "This campaign will bring access to solar energy to school children and their families at eight schools in Zambia's Central Province.",
       organization_id: Organization.find_by_name("SolarAid").id, 
       funding_goal: 3000,
@@ -75,10 +75,16 @@ Project.find_or_create_by(name: "Light Up The Night With A Solar Campaign For Za
           <li>Parents are able to purchase a solar light at a promotional price and as each light shines in the night, it attracts neighbors and in turn the demand for solar lights grows.</li>
           <li>This sparks the market conditions required for local shops and independent agents to sell solar lights, which supports job creation and ensures money stays in the local economy.</li>
         </ol>",
-        :"Why Its Important" => "Better health: Over 50% of families show signs of improvement in health after switching from kerosene and paraffin to solar lights. Productivity: Solar lights allow students to read under clean light and for an extra hour each evening as well as enabling work and meal preparation after sunset. Savings: Families recover their investment in a solar light, that can last 5 years, in just 10 weeks – allowing for a more prosperous future. Environmentally Smart:  Solar lights in the household can reduce CO₂ emissions by up to 440 pounds per year.",
-        :"Productivity" => "Solar lights allow students to read under clean light and for an extra hour each evening as well as enabling work and meal preparation after sunset.",
-        :"Savings" => "Families recover their investment in a solar light, that can last 5 years, in just 10 weeks – allowing for a more prosperous future.",
-        :"Environmentally Smart" => "Solar lights in the household can reduce CO₂ emissions by up to 440 pounds per year.",
+        :"Why It's Important" => "Better health: Over 50% of families show signs of improvement in health after switching from kerosene and paraffin to solar lights. Productivity: Solar lights allow students to read under clean light and for an extra hour each evening as well as enabling work and meal preparation after sunset. Savings: Families recover their investment in a solar light, that can last 5 years, in just 10 weeks – allowing for a more prosperous future. Environmentally Smart:  Solar lights in the household can reduce CO₂ emissions by up to 440 pounds per year.
+        <br />
+        <br />
+        <strong>Productivity:</strong> Solar lights allow students to read under clean light and for an extra hour each evening as well as enabling work and meal preparation after sunset.
+        <br />
+        <br />
+        <strong>Savings:</strong> Families recover their investment in a solar light, that can last 5 years, in just 10 weeks – allowing for a more prosperous future.
+        <br />
+        <br />
+        <strong>Environmentally Smart:</strong> Solar lights in the household can reduce CO₂ emissions by up to 440 pounds per year.",
         :"Sustainability" => "The SolarAid social enterprise model is steadily progressing towards sustainability through the creation of long-lasting markets for solar lights. It also generates jobs, saves money and increases productivity by harnessing the world’s most sustainable form of energy – solar power!",
         :"Sample Of Gift Items" =>
         "<ul class='disc'>
