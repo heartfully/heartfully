@@ -340,9 +340,13 @@
         :"The Opportunity" => "The provision of clean cookstoves, paired with excellent training by Greenway, has the opportunity to reduce the risks associated with traditional cooking on individual, family and community health.",
         :"How it works" => 
         "<strong>Step 1:</strong> Greenway will select a community in the <a href='http://en.wikipedia.org/wiki/Kutch_District' target='_blank'>Kutch district</a> that relies on traditional cooking methods and lead a seminar with women in this area.
+          <br>
+          <br>
           <strong>Step 2:</strong> Participants will leave the seminar with an understanding of how the clean cookstoves work, its benefits compared to traditional methods, and hands on experience testing the improved stoves.
-          <strong>Step 3:</strong> Women who sign up to receive a free clean cookstove will also take part in a follow-up training on the day of the stove’s delivery.
-          <strong>Step 4:</strong> During this training, women practice cooking on the clean cookstove with the support of Greenway's team and discuss any questions and challenges before taking it home.
+<br>
+<br>
+<strong>Step 3:</strong> Women who sign up to receive a free clean cookstove will also take part in a follow-up training on the day of the stove’s delivery.<br><br>
+          <strong>Step 4:</strong> During this training, women practice cooking on the clean cookstove with the support of Greenway's team and discuss any questions and challenges before taking it home.<br><br>
           <strong>Step 5:</strong> Clean, safe and improved cooking commences!",
         :"Why It’s Important" => 
         "<ul class='disc'>
