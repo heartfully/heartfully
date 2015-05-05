@@ -29,6 +29,19 @@ class Project < ActiveRecord::Base
     end
     total
   end
+
+  def self.projects_with_new_variable(project)
+    projectHash = Hash.new 
+    projectArray = Array.new 
+
+    project.each do |x| 
+      projectHash = x.attributes 
+      projectHash['org_url'] = x.organization.org_url 
+      projectArray << projectHash 
+    end
+    projectArray
+  end
+
 end
 
 # == Schema Information

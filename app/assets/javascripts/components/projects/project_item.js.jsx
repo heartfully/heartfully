@@ -16,7 +16,7 @@ HeartfullyApp.Components.ProjectItem = React.createBackboneClass({
           <h4><strong>Location:</strong> {this.getModel().get("city")}, {this.getModel().get("country")}</h4>
         </div>
         <div>
-          <h4 className="organization"><strong>Organization: </strong><a href="" className="org_url">{this.getModel().get("partner")}</a></h4>
+          <h4 className="organization"><strong>Organization: </strong><a target="_blank" href={this.getModel().get("org_url")} className="org_url">{this.getModel().get("partner")}</a></h4>
         </div>
         <div className="actions row text-center">
           <div className="small-12 columns">
