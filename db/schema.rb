@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425000514) do
+ActiveRecord::Schema.define(version: 20150511050056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -154,8 +154,8 @@ ActiveRecord::Schema.define(version: 20150425000514) do
   add_index "purchases", ["user_id"], name: "index_purchases_on_user_id", using: :btree
 
   create_table "registries", force: true do |t|
-    t.string   "name",          null: false
-    t.string   "url_slug",      null: false
+    t.string   "name",           null: false
+    t.string   "url_slug",       null: false
     t.string   "banner_img"
     t.string   "profile_img"
     t.text     "description"
@@ -163,11 +163,12 @@ ActiveRecord::Schema.define(version: 20150425000514) do
     t.string   "address_2"
     t.string   "city"
     t.string   "state"
-    t.string   "postal_code",   null: false
+    t.string   "postal_code",    null: false
     t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "couples_story"
+    t.text     "registry_story"
   end
 
   add_index "registries", ["url_slug"], name: "index_registries_on_url_slug", unique: true, using: :btree
