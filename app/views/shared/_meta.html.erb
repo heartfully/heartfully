@@ -20,11 +20,12 @@
   <% else %>
     <meta property="og:url" content="https://www.heartful.ly/registry/<%= @registry.url_slug %>"/>
     <meta property="og:description" content="<%= @registry.description %>" />
+    <meta property="og:image" content="<%= @registry.banner_img %>" />
   <% end %>
 <% else %>
   <meta property="og:url" content="https://www.heartful.ly/"/>
   <meta property="og:description" content="Create a charitable wedding registry and share your happily ever after with the world." />
-  <meta property="og:image" content="https://cdn.rawgit.com/Heartfully/registry-images/master/homepage/heartfully_logo.png" />
+  <meta property="og:image" content="https://cdn.rawgit.com/Heartfully/registry-images/master/homepage/homepage_image.jpg" />
 <% end %>
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
