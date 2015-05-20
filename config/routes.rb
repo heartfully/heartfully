@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   resource :session, only: [:create]
   resources :users
 
-  get '/sign_up' => 'users#new'
+  get '/sign_up' => 'marketing#new_inquiry'
+  post '/sign_up' => 'marketing#create_inquiry', :as => 'inquirers'
   get '/sign_in' => 'sessions#new'
   delete '/sign_out' => 'sessions#destroy'
 

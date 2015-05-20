@@ -1,0 +1,18 @@
+<div class="row" >
+  <%= form_for @inquirer do |f| %>
+    <div class="large-12">
+      <%= f.text_field :name, placeholder: "Lovebird Number One" %>
+    </div>  
+    <%= f.text_field :partner_name, placeholder: "Lovebird Number two" %>
+    <%= f.email_field :email, placeholder: "Joe@example.com" %>
+    <%= f.text_field :phone, placeholder: "(202) 555-5432" %>
+    <%= f.fields_for :preferred_contact_method do |method| %>
+      <%= method.check_box :phone %>
+      <%= method.label :phone %>
+      <%= method.check_box :email %>
+      <%= method.label :email %>
+    <% end %>
+    <%= f.text_field :message, placeholder: "message..." %>
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>
