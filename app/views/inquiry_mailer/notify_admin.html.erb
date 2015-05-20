@@ -1,0 +1,30 @@
+Hey Kate,
+<br>
+<div>
+  <%= @inquirer.name %> 
+  <% unless @inquirer.partner_name.empty? %>
+    and <%= @inquirer.partner_name %>
+  <% end %> submitted a consultation form
+</div>
+<div>
+  There email is <%= @inquirer.email %>
+  <% unless @inquirer.phone.empty? %>
+    and phone number is <%= @inquirer.phone %>
+  <% end %>
+</div>
+<br>
+<div>
+  <% if @inquirer.preferred_contact_method.empty? %>
+    They have no preference of contact method
+  <% else %>
+    They prefer that your contact them via <%= @inquirer.preferred_contact_method %> 
+  <% end %>
+</div>
+
+<br>
+<br>
+<div>
+  Best,
+  <br>
+  Team Heartful.ly
+</div>

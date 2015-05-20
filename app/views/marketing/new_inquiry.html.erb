@@ -1,18 +1,41 @@
-<div class="row" >
-  <%= form_for @inquirer do |f| %>
-    <div class="large-12">
-      <%= f.text_field :name, placeholder: "Lovebird Number One" %>
-    </div>  
-    <%= f.text_field :partner_name, placeholder: "Lovebird Number two" %>
-    <%= f.email_field :email, placeholder: "Joe@example.com" %>
-    <%= f.text_field :phone, placeholder: "(202) 555-5432" %>
-    <%= f.fields_for :preferred_contact_method do |method| %>
-      <%= method.check_box :phone %>
-      <%= method.label :phone %>
-      <%= method.check_box :email %>
-      <%= method.label :email %>
+<div class="consulation-card" >
+  <div class="row order-container">
+    <div class="form-header">
+      <h2>REQUEST A CONSULTATION</h2>
+      <p class="primary-color">
+      Take the first step in creating your charitable wedding registry with Heartful.ly! Fill out your contact information and a Heartful.ly concierge will be in touch within 48 hours to answer your questions and help you select a registry based on the issues that matter to you most.
+      </p>
+    </div>
+    <%= form_for @inquirer do |f| %>
+      
+      <% if @inquirer.errors.any? %>
+        <div class="error_explanation">
+          <ul>
+            <% @inquirer.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="large-12">
+        <%= f.text_field :name, placeholder: "Lovebird Number One" %>
+      </div>  
+      <%= f.text_field :partner_name, placeholder: "Lovebird Number two" %>
+      <%= f.email_field :email, placeholder: "Joe@example.com" %>
+      <%= f.text_field :phone, placeholder: "(202) 555-5432" %>
+      <div>
+        <strong>Preferred method of contact: </strong>
+      </div>
+      <%= f.fields_for :preferred_contact_method do |method| %>
+        <%= method.check_box :phone %>
+        <%= method.label :phone %>
+        <%= method.check_box :email %>
+        <%= method.label :email %>
+      <% end %>
+      <div class="secondary-color">Is there anything we should know before we contact you?</div>
+      <%= f.text_area :message, placeholder: "message..." %>
+      <%= f.submit "Submit", class: "button radius small no-margin" %>
     <% end %>
-    <%= f.text_field :message, placeholder: "message..." %>
-    <%= f.submit "Submit" %>
-  <% end %>
+  </div>
 </div>

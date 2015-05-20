@@ -5,6 +5,9 @@ h1, h2, h3, h4, h5, h6 { text-transform: uppercase; }
 ul {
   list-style: none;
 }
+strong {
+  color: $primary-color;
+}
 
 .hide {
   display: none!important;
@@ -14,6 +17,9 @@ ul {
   font-family: 'Pacifico', cursive;
   font-size: 1.4em;
   color: $primary-color;
+}
+.error_explanation {
+  color: red;
 }
 
 .reg-text {
@@ -127,7 +133,7 @@ ul.pagination {
 }
 
 .order-container {
-  padding: 8em 0;
+  padding: 2em 0;
 }
 
 .confirmation-card { 
@@ -138,6 +144,18 @@ ul.pagination {
     display: inline-block;
     width: 50%;
   }
+}
+
+.consulation-card {
+  width: 65%;
+  padding: 24px;
+  border: 1px solid #c7c5c5;
+  margin: 24px auto;
+  border-radius: 5px;
+}
+
+.consultation-header {
+  background: url(http://lh5.googleusercontent.com/15Bns6sS-o_2ffrIfhnP-upgCJ7Q9vcxxoc_f8BT_3t5gD6qefoBs0ZCO0m59F1JbsUQjQ);
 }
 
 

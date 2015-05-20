@@ -14,7 +14,12 @@ class MarketingController < ApplicationController
 
   def create_inquiry
     @inquirer = Inquirer.new(inquiry_params)
-    
+    @inquirer.clean_contact_method(params[:inquirer][:preferred_contact_method])
+    if @inquirer.save
+      InquiryMailer.notify_admin(@inquirer).deliver!
+    else
+      render 'new_inquiry'
+    end
   end
 
   def faq
