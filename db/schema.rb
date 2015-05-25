@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 20150525204824) do
     t.boolean  "in_price_range"
     t.string   "sectors"
     t.text     "mission_statement"
+    t.boolean  "tax_exempt"
     t.string   "city_province"
     t.string   "country"
     t.decimal  "annual_budget",        precision: 8, scale: 2

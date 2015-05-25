@@ -1,4 +1,4 @@
-# class Organization < ActiveRecord::Base
+class Organization < ActiveRecord::Base
   belongs_to :admin, :class_name => "User"
   has_many :employees, :class_name => "User"
   has_many :projects

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :passwords, only: [:create, :new, :edit, :update]
   resource :session, only: [:create]
   resources :users
+  resources :organizations
 
   get '/sign_up' => 'marketing#new_inquiry'
   post '/sign_up' => 'marketing#create_inquiry', :as => 'inquirers'
