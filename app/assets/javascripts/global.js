@@ -26,6 +26,24 @@ $(document).ready(function() {
     $(this).parent().fadeOut();
   });
 
+  var $inputs = $('.form input[type="text"], .form input[type="email"]');
+
+  $(document).ready(function(){
+    $inputs.each(function(index){
+      if ($inputs[index].value != '') {
+        $(this).siblings('label').hide()
+      }
+    })
+  });
+
+  $inputs.focusout(function(){
+    if (this.value != '') {
+      $(this).siblings('label').hide()
+    } else {
+      $(this).siblings('label').show() 
+    }
+  })
+
   // header opaque adjust for homepage
   $(".marketing.index").ready(function() {
     // adds opaque for viewing splash page only

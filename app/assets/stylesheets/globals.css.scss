@@ -158,6 +158,10 @@ ul.pagination {
   background: url(http://lh5.googleusercontent.com/15Bns6sS-o_2ffrIfhnP-upgCJ7Q9vcxxoc_f8BT_3t5gD6qefoBs0ZCO0m59F1JbsUQjQ);
 }
 
+.field_with_errors input {
+  color: red;
+  border: 1px solid red;
+}
 
 @-webkit-keyframes rotation {
   from {-webkit-transform: rotate(0deg);}

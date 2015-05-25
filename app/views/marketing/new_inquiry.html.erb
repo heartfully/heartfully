@@ -1,12 +1,11 @@
-<div class="consulation-card" >
-  <div class="row order-container">
+<div class="form_wrapper" >
+  <%= form_for@inquirer, html: {class: 'form'} do |f| %>
     <div class="form-header">
       <h2>REQUEST A CONSULTATION</h2>
       <p class="primary-color">
       Take the first step in creating your charitable wedding registry with Heartful.ly! Fill out your contact information and a Heartful.ly concierge will be in touch within 48 hours to answer your questions and help you select a registry based on the issues that matter to you most.
       </p>
     </div>
-    <%= form_for @inquirer do |f| %>
       
       <% if @inquirer.errors.any? %>
         <div class="error_explanation">
@@ -19,11 +18,21 @@
       <% end %>
 
       <div class="large-12">
-        <%= f.text_field :name, placeholder: "Lovebird Number One" %>
+        <%= f.text_field :name %>
+        <%= f.label :name, 'Lovebird Number One' %>
       </div>  
-      <%= f.text_field :partner_name, placeholder: "Lovebird Number two" %>
-      <%= f.email_field :email, placeholder: "Joe@example.com" %>
-      <%= f.text_field :phone, placeholder: "(202) 555-5432" %>
+      <div>
+        <%= f.text_field :partner_name %>
+        <%= f.label :partner_name, 'Lovebird number two' %>
+      </div>
+      <div>
+        <%= f.email_field :email %>
+        <%= f.label :email, 'Email' %>
+      </div>
+      <div>
+        <%= f.text_field :phone %>
+        <%= f.label :phone, 'Phone number' %>
+      </div>
       <div>
         <strong>Preferred method of contact: </strong>
       </div>
@@ -36,6 +45,5 @@
       <div class="secondary-color">Is there anything we should know before we contact you?</div>
       <%= f.text_area :message, placeholder: "message..." %>
       <%= f.submit "Submit", class: "button radius small no-margin" %>
-    <% end %>
-  </div>
+  <% end %>
 </div>
