@@ -89,11 +89,17 @@
       <%= f.label :referral_source, "How did you heart about Heartfully?" %>
       <%= f.text_field :referral_source %>
     </div>
+      <% if can? :edit, @organization %>
+        <%= f.radio_button(:heartfully_approved, true) %>
+        <%= label(:heartfully_approved, "Approved", for: :organization_heartfully_approved_true) %>
+        <%= f.radio_button :heartfully_approved, false %>
+        <%= f.label(:heartfully_approved, "Not Approved", for: :organization_heartfully_approved_false)%>
+      <% end %>
     <div>
       Thanks again for your interest! 
     </div>
     <div class="actions">
-      <%= f.submit "Submit", class: "button radius small no-margin" %>
+      <%= f.submit "Submit", class: "test-button" %>
     </div>
   <% end %>
 </div>

@@ -24,15 +24,15 @@
       text-shadow:  0.5px 0.5px 1px black; 
     }
 
-    #cta-button {
-      background: rgba($primary-color, 0.75);
-      font-family: $secondary_font;
-      color: $white;
-      border-radius: 1em;
-      &:hover {
-        background: rgba($primary-color, 1);
-      }
-    }
+  }
+}
+#cta-button {
+  background: rgba($primary-color, 0.9);
+  font-family: $secondary_font;
+  color: $white;
+  border-radius: 1em;
+  &:hover {
+    background: rgba($primary-color, 1);
   }
 }
 .caret-container {

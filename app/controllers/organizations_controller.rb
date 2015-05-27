@@ -4,10 +4,12 @@ class OrganizationsController < ApplicationController
   # GET /organizations
   def index
     @organizations = Organization.all
+    authorize! :read, @organizations
   end
 
   # GET /organizations/1
   def show
+    authorize! :read, @organization
   end
 
   # GET /organizations/new
@@ -25,7 +27,6 @@ class OrganizationsController < ApplicationController
 
     if @organization.save
       OrganizationMailer.notify_admin(@organization).deliver!
-      redirect_to @organization, notice: 'Organization was successfully created.'
     else
       render :new
     end
@@ -71,7 +72,7 @@ class OrganizationsController < ApplicationController
         :contact_job_title,
         :contact_email,
         :contact_phone_number,
-        :heartyfully_approved
+        :heartfully_approved
       )
     end
 end

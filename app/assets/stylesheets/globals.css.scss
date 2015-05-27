@@ -32,6 +32,10 @@ i {
   text-transform: none;
   color: black;
 }
+.center {
+  display: block;
+  margin: 0 auto;
+}
 
 .primary-color {
   color: $primary-color;

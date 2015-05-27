@@ -11,7 +11,7 @@ class Ability
       can :dashboard              # grant access to the dashboard
       can :manage, :all
     else
-      can :read, [Item, ItemType, Organization, Project]
+      can :read, [Item, ItemType, Project]
       can :crud, [User], :id => user.id
       can :crud, [Registry], :id => user.registry_id
     end
