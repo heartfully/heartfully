@@ -24,6 +24,7 @@ class OrganizationsController < ApplicationController
     @organization = Organization.new(organization_params)
 
     if @organization.save
+      OrganizationMailer.notify_admin(@organization).deliver!
       redirect_to @organization, notice: 'Organization was successfully created.'
     else
       render :new
@@ -65,6 +66,11 @@ class OrganizationsController < ApplicationController
         :annual_budget,
         :ranked_charity,
         :referral_source,
+        :entity_if_not_503,
+        :contact_name,
+        :contact_job_title,
+        :contact_email,
+        :contact_phone_number,
         :heartyfully_approved
       )
     end

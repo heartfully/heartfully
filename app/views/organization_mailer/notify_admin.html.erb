@@ -1,0 +1,7 @@
+Hey Kate,
+
+A new organization, <%= @organization.name %>, has submitted a new application.
+<br>
+Please view this application <%= link_to "here", :controller => "organizations", :action => "show",
+:only_path => false, :id => @organization.id, :host => "heartful.ly" %>.
+

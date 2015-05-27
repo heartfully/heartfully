@@ -96,11 +96,11 @@ ActiveRecord::Schema.define(version: 20150527005436) do
   end
 
   create_table "organizations", force: true do |t|
-    t.string   "name",                                         null: false
+    t.string   "name",                                                         null: false
     t.text     "description"
     t.string   "profile_img"
     t.string   "org_url"
-    t.integer  "admin_id",                                     null: false
+    t.integer  "admin_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "in_price_range"
@@ -112,8 +112,8 @@ ActiveRecord::Schema.define(version: 20150527005436) do
     t.decimal  "annual_budget",        precision: 8, scale: 2
     t.boolean  "ranked_charity"
     t.text     "referral_source"
-    t.boolean  "heartyfully_approved"
-    t.string   "organizations"
+    t.boolean  "heartfully_approved",                          default: false
+    t.string   "entity_if_not_503"
     t.string   "contact_name"
     t.string   "contact_job_title"
     t.string   "contact_email"

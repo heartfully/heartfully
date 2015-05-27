@@ -3,16 +3,18 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @organizations.each do |organization| %>
       <tr>
+        <td><%= organization.name %></td> 
         <td><%= link_to 'Show', organization %></td>
         <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
         <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= organization.heartfully_approved ? "Approved" : "Not Approved" %>
       </tr>
     <% end %>
   </tbody>

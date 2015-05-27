@@ -9,6 +9,10 @@ strong {
   color: $primary-color;
 }
 
+i {
+  color: #959595;
+}
+
 .hide {
   display: none!important;
 }
@@ -144,6 +148,11 @@ ul.pagination {
     display: inline-block;
     width: 50%;
   }
+}
+
+.card {
+  border: 1px solid #c7c5c5;
+  padding: 24px;
 }
 
 .consulation-card {

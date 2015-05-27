@@ -1,4 +1,66 @@
 <p id="notice"><%= notice %></p>
-
+<div>
+  <strong>Name: </strong>
+  <%= @organization.name %>
+</div>
+<div>
+  <strong>Site: </strong>
+  <%= link_to @organization.org_url %>
+</div>
+<div>
+  <strong>Project in $3,000-$10,000 range? </strong> 
+  <%= @organization.in_price_range %>
+</div>
+<div>
+  <strong>Sectors: </strong>
+  <%= @organization.sectors %>
+</div>
+<div>
+  <strong>Mission Statement: </strong>
+  <%= @organization.mission_statement %>
+</div>
+<div>
+  <strong>tax exempt?: </strong>
+  <%= @organization.tax_exempt %>
+  <br>
+  <strong> Other entity: </strong>
+  <%= @organization.entity_if_not_503 %>
+</div>
+<div>
+  <strong>City or Province: </strong>
+  <%= @organization.city_province %>
+</div>
+<div>
+  <strong>Country: </strong>
+  <%= @organization.country %>
+</div>
+<div>
+  <strong>Annul budget: $</strong>
+  <%= @organization.annual_budget %>
+</div>
+<div>
+  <strong>Ranked? </strong>
+  <%= @organization.ranked_charity %>
+</div>
+<div>
+  <strong>Referral: </strong>
+  <%= @organization.referral_source %>
+</div>
+<div>
+  <strong>Contact Name: </strong>
+  <%= @organization.contact_name %>
+</div>
+<div>
+  <strong>Contact job title: </strong>
+  <%= @organization.contact_job_title %>
+</div>
+<div>
+  <strong>Contact Email: </strong>
+  <%= @organization.contact_email %>
+</div>
+<div>
+  <strong>Contact Phone: </strong>
+  <%= @organization.contact_phone_number %>
+</div>
 <%= link_to 'Edit', edit_organization_path(@organization) %> |
 <%= link_to 'Back', organizations_path %>
