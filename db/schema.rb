@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525204824) do
+ActiveRecord::Schema.define(version: 20150527005436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,11 @@ ActiveRecord::Schema.define(version: 20150525204824) do
     t.boolean  "ranked_charity"
     t.text     "referral_source"
     t.boolean  "heartyfully_approved"
+    t.string   "organizations"
+    t.string   "contact_name"
+    t.string   "contact_job_title"
+    t.string   "contact_email"
+    t.string   "contact_phone_number"
   end
 
   add_index "organizations", ["admin_id"], name: "index_organizations_on_admin_id", using: :btree
