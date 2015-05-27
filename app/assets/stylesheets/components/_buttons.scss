@@ -8,11 +8,11 @@
 	margin: 16px 0;
 	transition:  300ms ease-in-out;
   	transition-property: all;
-}
-
-.test-button:hover {
-	color: rgba(123, 0, 70, 1);
-	background: transparent;
-	border: 1px solid rgba(123, 0, 70, 1);
-	box-shadow: 1px 0px 1px rgb(89, 87, 87);
+	
+	&:hover, &:focus {
+		color: rgba(123, 0, 70, 1);
+		background: transparent;
+		border: 1px solid rgba(123, 0, 70, 1);
+		box-shadow: 1px 1px 4px rgb(89, 87, 87);
+	}
 }

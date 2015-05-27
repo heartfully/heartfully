@@ -197,3 +197,13 @@ ul.pagination {
 }
 
 
+#error_explanation h2 {
+  color: red;
+  font-size: 16px;
+  font-weight: 800;
+
+  & + ul li {
+    color: red;
+    list-style: circle;
+  }
+}
