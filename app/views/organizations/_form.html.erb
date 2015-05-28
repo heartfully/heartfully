@@ -1,4 +1,17 @@
 <div class="form_wrapper" >
+  <p>
+      Thanks so much for your interest in partnering with Heartful.ly! 
+    </p>
+    <p>
+      This form is intended to help us understand the basic background and operations of your organization.  
+    </p>
+    <p>
+    If we see partnership potential, we’ll arrange a getting to know you phone call and ask you to submit a more comprehensive application. You can expect to hear from the Heartful.ly team within 2-3 business days, but feel free to drop us a line at <%= mail_to "partnerships@heartful.ly" %> any time. 
+    </p>
+    <p>
+      We look forward to learning more about the great work your organization is doing! 
+    </p>
+    <hr>
   <%= form_for(@organization, class: 'form') do |f| %>
     <% if @organization.errors.any? %>
       <div id="error_explanation">
@@ -22,7 +35,7 @@
     <div>
       <div>
         Does your organization work on projects whose total cost is between $3,000-$10,000? 
-        <i>Note: We primarily feature projects within this range, but are open to large projects if they can be funded in phases.</i>
+        <i>Note: We primarily feature projects within this range, but are open to larger projects if they can be funded in phases.</i>
       </div>
       <%= f.radio_button(:in_price_range, true) %>
       <%= label(:in_price_range, "Yes", for: :organization_in_price_range_true) %>
@@ -31,7 +44,7 @@
     </div>
     <div>
       Sector (i.e. health, water, energy, etc)
-      <i>Note: List all that apply.</i>
+      <i>List all that apply.</i>
       <%= f.text_field :sectors %>
     </div>
     <div>
@@ -54,13 +67,12 @@
     <div class="card">
       <div>
         Is your organization a registered 501(c)3 in the United States?
-        <i>If not, what type of entity is it and where is it registered?</i>
       </div>
       <%= f.radio_button(:tax_exempt, true) %>
       <%= label(:tax_exempt, "Yes", for: :organization_tax_exempt_true) %>
       <%= f.radio_button :tax_exempt, false %>
       <%= f.label(:tax_exempt, "No", for: :organization_tax_exempt_false)%>
-      <%= f.label :entity_if_not_503, "Other: " %>
+      <%= f.label :entity_if_not_503, "If not, what type of entity is it and where is it registered?" %>
       <%= f.text_field :entity_if_not_503 %>
     </div>
     <div>
@@ -77,8 +89,8 @@
     </div>
     <div>
       <div>
-        Is your organization ranked Charity Navigator, Guidestar, or a similar platform?
-        <i>This is not a requirement.</i>
+        Is your organization ranked by Charity Navigator, Guidestar, or a similar platform?
+        <i>This is not a requirement. List all links that apply: </i>
       </div>
       <%= f.radio_button(:ranked_charity, true) %>
       <%= label(:ranked_charity, "Yes", for: :organization_ranked_charity_true) %>
@@ -86,7 +98,7 @@
       <%= f.label(:ranked_charity, "No", for: :organization_ranked_charity_false)%>
     </div>
     <div>
-      <%= f.label :referral_source, "How did you heart about Heartfully?" %>
+      <%= f.label :referral_source, "How did you hear about Heartful.ly?" %>
       <%= f.text_field :referral_source %>
     </div>
       <% if can? :edit, @organization %>
@@ -95,9 +107,6 @@
         <%= f.radio_button :heartfully_approved, false %>
         <%= f.label(:heartfully_approved, "Not Approved", for: :organization_heartfully_approved_false)%>
       <% end %>
-    <div>
-      Thanks again for your interest! 
-    </div>
     <div class="actions">
       <%= f.submit "Submit", class: "test-button" %>
     </div>

@@ -19,11 +19,11 @@
 
       <div class="large-12">
         <%= f.text_field :name %>
-        <%= f.label :name, 'Lovebird number one' %>
+        <%= f.label :name, 'Lovebird Number One' %>
       </div>  
       <div>
         <%= f.text_field :partner_name %>
-        <%= f.label :partner_name, 'Lovebird number two' %>
+        <%= f.label :partner_name, 'Lovebird Number Two' %>
       </div>
       <div>
         <%= f.email_field :email %>
@@ -43,7 +43,7 @@
         <%= method.label :email %>
       <% end %>
       <div class="secondary-color">Is there anything we should know before we contact you?</div>
-      <%= f.text_area :message, placeholder: "message..." %>
+      <%= f.text_area :message %>
       <%= f.submit "Submit", class: "button radius small no-margin" %>
   <% end %>
 </div>
