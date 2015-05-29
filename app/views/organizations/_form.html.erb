@@ -88,14 +88,10 @@
       <%= f.number_field :annual_budget %>
     </div>
     <div>
-      <div>
-        Is your organization ranked by Charity Navigator, Guidestar, or a similar platform?
-        <i>This is not a requirement. List all links that apply: </i>
-      </div>
-      <%= f.radio_button(:ranked_charity, true) %>
-      <%= label(:ranked_charity, "Yes", for: :organization_ranked_charity_true) %>
-      <%= f.radio_button :ranked_charity, false %>
-      <%= f.label(:ranked_charity, "No", for: :organization_ranked_charity_false)%>
+        Is your organization ranked by Charity Navigator, Guidestar, or a similar platform?<i>This is not a requirement.</i>
+      
+      <%= f.label :ranked_charity, "List all links that apply:" %>
+      <%= f.text_field(:ranked_charity) %>
     </div>
     <div>
       <%= f.label :referral_source, "How did you hear about Heartful.ly?" %>
@@ -108,7 +104,7 @@
         <%= f.label(:heartfully_approved, "Not Approved", for: :organization_heartfully_approved_false)%>
       <% end %>
     <div class="actions">
-      <%= f.submit "Submit", class: "test-button" %>
+      <%= f.submit "Submit", class: "button", id:"cta-button" %>
     </div>
   <% end %>
 </div>

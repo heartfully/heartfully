@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527005436) do
+ActiveRecord::Schema.define(version: 20150529013156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 20150527005436) do
     t.string   "city_province"
     t.string   "country"
     t.decimal  "annual_budget",        precision: 8, scale: 2
-    t.boolean  "ranked_charity"
+    t.string   "ranked_charity"
     t.text     "referral_source"
     t.boolean  "heartfully_approved",                          default: false
     t.string   "entity_if_not_503"
