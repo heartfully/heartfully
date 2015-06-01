@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :passwords, only: [:create, :new, :edit, :update]
   resource :session, only: [:create]
   resources :users
+  get 'organizations/application', to: 'organizations#new', as: 'new_organization'
   resources :organizations
 
   get '/sign_up' => 'marketing#new_inquiry'
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
   get '/users/:confirmation_token/confirm' => 'users#confirm', :as => 'user_confirmation'
 
   get '/projects/:url_slug', to: 'projects#show'
+  post '/projects/:url_slug/select', to: 'projects#select'
 
   resources :projects, except: [:show]
   resources :favorites
