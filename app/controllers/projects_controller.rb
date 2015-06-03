@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :require_auth, :except => [:index, :show]
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :require_auth, :except => [:index, :show, :select]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :select]
 
   # GET /projects
   def index
@@ -14,6 +14,11 @@ class ProjectsController < ApplicationController
   def show
     # @project = @project.decorate
   end
+  
+  def select
+    print "I WAS HIT !!!!!!!!!!!!!"
+  end
+
 
   # GET /projects/new
   def new

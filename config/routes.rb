@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   get '/users/:confirmation_token/confirm' => 'users#confirm', :as => 'user_confirmation'
 
   get '/projects/:url_slug', to: 'projects#show'
-  post '/projects/:url_slug/select', to: 'projects#select'
+  post '/projects/:url_slug/select', to: 'projects#select', as: 'select_project'
 
   resources :projects, except: [:show]
   resources :favorites
