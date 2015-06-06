@@ -19,6 +19,9 @@ class ProjectsController < ApplicationController
     unless current_user
       session[:poject_slug] = params[:url_slug]
       redirect_to sign_in_path
+    else 
+      current_user.projects << set_project
+      redirect_to user_path(current_user)
     end
   end
 
