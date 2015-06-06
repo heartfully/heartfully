@@ -9,9 +9,8 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(session_params[:password])
       sign_in @user
-      flash[:notice] = "Logged in successfully"
       session_params[:remember_me] == '1' ? remember(@user) : forget(@user)
-      redirect_to return_to_url
+      redirect_to user_path(@user)
     else
       flash.now.notice = "Invalid email or password"
       render :new, status: :unauthorized

@@ -16,7 +16,10 @@ class ProjectsController < ApplicationController
   end
   
   def select
-    print "I WAS HIT !!!!!!!!!!!!!"
+    unless current_user
+      session[:poject_slug] = params[:url_slug]
+      redirect_to sign_in_path
+    end
   end
 
 
