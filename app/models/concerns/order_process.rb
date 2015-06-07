@@ -19,10 +19,9 @@ module OrderProcess
     hashed_items = eval(self.summary)
     hashed_items.each do |item, quantity|
       # finds the registry's item type
-      item_type = self.registry.item_types.where(name: item).first
-
+      items = self.registry.items.where(["name LIKE ?", "%#{item}%"]).available
       # finds the item_type's items and assigns an order_id
-      item_type.items.available.limit(quantity.to_i).update_all(:order_id => self.id)
+      items.limit(quantity.to_i).update_all(:order_id => self.id)
     end
   end
 

@@ -14,7 +14,7 @@ class RegistryProject < ActiveRecord::Base
 
   def fill_registry_items
     self.registry.item_types.each do |item_type|
-      item_type.quantity.times { |count| registry.items.create(name: "item_type #{item_type.name}", item_type_id: item_type.id)} if item_type.quantity
+      item_type.quantity.times { |count| registry.items.create(name: "#{item_type.name} #{count}", item_type_id: item_type.id)} if item_type.quantity
     end
   end
 end
