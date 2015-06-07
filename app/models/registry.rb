@@ -13,6 +13,11 @@ class Registry < ActiveRecord::Base
   has_many :orders
   has_and_belongs_to_many :guests, :class_name => "User", :join_table => "guests_registries", :association_foreign_key => "guest_id"
 
+  has_attached_file :banner_image
+  has_attached_file :profile_image
+  validates_attachment_content_type :banner_image, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :profile_image, :content_type => /\Aimage\/.*\Z/
+  
   #################
   ## VALIDATIONS ##
   #################

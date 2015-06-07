@@ -95,7 +95,9 @@ class RegistriesController < ApplicationController
         :city,
         :state,
         :postal_code,
-        :country
+        :country,
+        :banner_image,
+        :profile_image
       )
     end
 end

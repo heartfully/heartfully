@@ -1,4 +1,4 @@
-<%= form_for @registry, class: 'form' do |f| %>
+<%= form_for @registry, :html => { multipart: true, class: 'form'}  do |f| %>
 
   <%= render 'shared/error_messages', :obj => @registry %>
 
@@ -55,6 +55,12 @@
   <div class="text-field">
     <%= f.label :country %>
     <%= f.text_field :country %>
+  </div>
+  <div>
+    <%= f.label :banner_image %>
+    <%= f.file_field :banner_image %>
+    <%= f.label :profile_image %>
+    <%= f.file_field :profile_image %>
   </div>
 
   <div class="actions">
