@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(session_params[:password])
       sign_in @user
       session_params[:remember_me] == '1' ? remember(@user) : forget(@user)
+      set_registry_project if session[:project_slug]
       redirect_to user_path(@user)
     else
       flash.now.notice = "Invalid email or password"
@@ -24,6 +25,10 @@ class SessionsController < ApplicationController
 
   private
 
+  def set_registry_project
+    @user.registry.projects << Project.find_by_url_slug(session[:project_slug]) if @user.registry.projects
+    session.delete(:project_slug)  
+  end
   def session_params
     params.require(:session).permit(:email, :password, :remember_me)
   end
