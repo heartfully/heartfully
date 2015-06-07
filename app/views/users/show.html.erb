@@ -1,3 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
+
+<% if current_user.registry %>
+  <h1>Woo!!</h1>
+<% else %>
+  <%= link_to "Create Your Registry", new_registry_path %>
+<% end %>
