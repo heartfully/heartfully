@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529013156) do
+ActiveRecord::Schema.define(version: 20150607015539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20150529013156) do
   end
 
   create_table "organizations", force: true do |t|
-    t.string   "name",                                                         null: false
+    t.string   "name",                                 null: false
     t.text     "description"
     t.string   "profile_img"
     t.string   "org_url"
@@ -109,10 +109,10 @@ ActiveRecord::Schema.define(version: 20150529013156) do
     t.boolean  "tax_exempt"
     t.string   "city_province"
     t.string   "country"
-    t.decimal  "annual_budget",        precision: 8, scale: 2
+    t.string   "annual_budget"
     t.string   "ranked_charity"
     t.text     "referral_source"
-    t.boolean  "heartfully_approved",                          default: false
+    t.boolean  "heartfully_approved",  default: false
     t.string   "entity_if_not_503"
     t.string   "contact_name"
     t.string   "contact_job_title"
@@ -180,8 +180,8 @@ ActiveRecord::Schema.define(version: 20150529013156) do
   add_index "purchases", ["user_id"], name: "index_purchases_on_user_id", using: :btree
 
   create_table "registries", force: true do |t|
-    t.string   "name",           null: false
-    t.string   "url_slug",       null: false
+    t.string   "name",                       null: false
+    t.string   "url_slug",                   null: false
     t.string   "banner_img"
     t.string   "profile_img"
     t.text     "description"
@@ -189,12 +189,20 @@ ActiveRecord::Schema.define(version: 20150529013156) do
     t.string   "address_2"
     t.string   "city"
     t.string   "state"
-    t.string   "postal_code",    null: false
+    t.string   "postal_code",                null: false
     t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "couples_story"
     t.text     "registry_story"
+    t.string   "banner_image_file_name"
+    t.string   "banner_image_content_type"
+    t.integer  "banner_image_file_size"
+    t.datetime "banner_image_updated_at"
+    t.string   "profile_image_file_name"
+    t.string   "profile_image_content_type"
+    t.integer  "profile_image_file_size"
+    t.datetime "profile_image_updated_at"
   end
 
   add_index "registries", ["url_slug"], name: "index_registries_on_url_slug", unique: true, using: :btree

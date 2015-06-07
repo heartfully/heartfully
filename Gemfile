@@ -23,6 +23,7 @@ gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
 gem 'rails_12factor'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'awesome_print'
+gem 'paperclip', '~> 4.2'
 
 group :development do
   gem 'annotate'
