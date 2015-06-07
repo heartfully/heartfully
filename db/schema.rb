@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150607015539) do
+ActiveRecord::Schema.define(version: 20150607032808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20150607015539) do
     t.integer  "project_id",                            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantity"
   end
 
   add_index "item_types", ["project_id", "name"], name: "index_item_types_on_project_id_and_name", unique: true, using: :btree
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(version: 20150607015539) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "order_id"
+    t.integer  "registry_id"
   end
 
   add_index "items", ["item_type_id"], name: "index_items_on_item_type_id", using: :btree

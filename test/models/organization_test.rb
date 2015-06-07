@@ -16,10 +16,10 @@
 #  tax_exempt           :boolean
 #  city_province        :string(255)
 #  country              :string(255)
-#  annual_budget        :decimal(8, 2)
-#  ranked_charity       :boolean
+#  annual_budget        :string(255)
+#  ranked_charity       :string(255)
 #  referral_source      :text
-#  heartyfully_approved :boolean
+#  heartfully_approved  :boolean          default(FALSE)
 #  entity_if_not_503    :string(255)
 #  contact_name         :string(255)
 #  contact_job_title    :string(255)

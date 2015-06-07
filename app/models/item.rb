@@ -2,7 +2,8 @@ class Item < ActiveRecord::Base
   belongs_to :item_type
   belongs_to :purchase
   belongs_to :orders
-
+  belongs_to :registry
+  
   validates_presence_of :name, :item_type_id
   validates_associated :item_type
 

@@ -7,8 +7,16 @@ class RegistryProject < ActiveRecord::Base
 
   def approve!
     self.update_attributes(:approved => true)
+    fill_registry_items
   end
 
+  private
+
+  def fill_registry_items
+    self.registry.item_types.each do |item_type|
+      item_type.quantity.times { |count| registry.items.create(name: "item_type #{item_type.name}", item_type_id: item_type.id)} if item_type.quantity
+    end
+  end
 end
 
 # == Schema Information

@@ -6,7 +6,7 @@ class ItemType < ActiveRecord::Base
   validates_presence_of :name, :price, :project_id
   validates_associated :project
   validates_numericality_of :price
-  validates_uniqueness_of :name
+  # validates_uniqueness_of :name
 
 end
 
