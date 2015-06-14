@@ -40,7 +40,7 @@ class RegistriesController < ApplicationController
 
     if @registry.save
       current_user.update(:registry_id => @registry.id)
-      redirect_to edit_registry_path(@registry) , notice: 'Registry was successfully created.'
+      redirect_to projects_path , notice: 'Please select a project'
     else
       render :new
     end
