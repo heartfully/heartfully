@@ -24,7 +24,7 @@ gem 'rails_12factor'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'awesome_print'
 gem 'paperclip', '~> 4.2'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 group :development do
   gem 'annotate'
