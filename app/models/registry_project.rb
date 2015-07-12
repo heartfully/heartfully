@@ -5,12 +5,7 @@ class RegistryProject < ActiveRecord::Base
   validates_presence_of :registry_id, :project_id
   validates_associated :registry, :project
 
-  after_save :approve!
-
-  def approve!
-    self.update_attributes(:approved => true)
-    fill_registry_items
-  end
+  after_save :fill_registry_items
 
   private
 

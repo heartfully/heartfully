@@ -12,7 +12,7 @@ class ChargesController < ApplicationController
           email: @order.email,
           card: params[:stripe],
           metadata: {
-            project_name: @order.registry.approved_projects.first.name,
+            project_name: @order.registry.projects.first.name,
             registry: @order.registry.name,
             price: @order.total
           }
@@ -23,7 +23,7 @@ class ChargesController < ApplicationController
           amount: @order.total.tr('$,.', '').to_i,
           currency: 'usd',
           metadata: {
-            project_name: @order.registry.approved_projects.first.name,
+            project_name: @order.registry.projects.first.name,
             registry: @order.registry.name,
             price: @order.total
           },
@@ -42,7 +42,7 @@ class ChargesController < ApplicationController
   end
 
   private
-  
+
   def fill_order
     @order.fill_order && @order.send_emails if @order.status == 'complete'
   end

@@ -17,7 +17,7 @@ class Registry < ActiveRecord::Base
   has_attached_file :profile_image
   validates_attachment_content_type :banner_image, :content_type => /\Aimage\/.*\Z/
   validates_attachment_content_type :profile_image, :content_type => /\Aimage\/.*\Z/
-  
+
   #################
   ## VALIDATIONS ##
   #################
@@ -25,10 +25,7 @@ class Registry < ActiveRecord::Base
   validates_presence_of :name, :url_slug, :postal_code
   validates_uniqueness_of :name, :url_slug
   # TODO a format validation on URL slug
-  
-  def approved_projects
-    projects.joins(:registry_projects).where(:registry_projects => {:approved => true})
-  end
+
 end
 
 # == Schema Information

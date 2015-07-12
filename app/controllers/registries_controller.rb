@@ -2,7 +2,7 @@ class RegistriesController < ApplicationController
   before_action :require_auth, :only => [:create, :edit, :update, :destroy]
   before_action :set_registry, :only => [:edit, :update, :destroy]
   before_action :find_by_slug, :only => [:show, :projects]
-  
+
   layout 'registry_layout'
   # GET /registries/:url_slug
   def show
@@ -10,10 +10,10 @@ class RegistriesController < ApplicationController
       render :show_peter_and_eva
     elsif(params[:url_slug].downcase == "wangama")
       render :show_katelyn_and_brandon
-    elsif(params[:url_slug].downcase == "marissaandtravis") 
+    elsif(params[:url_slug].downcase == "marissaandtravis")
       render :show_marissa_and_travis
     elsif(params[:url_slug].downcase == "lindseyandmatt")
-      render :show_lindsey_and_matt  
+      render :show_lindsey_and_matt
     elsif(params[:url_slug].downcase == "sample")
       @registry = Registry.find_by(:url_slug => "lindseyandmatt")
       render :show_sample
@@ -61,21 +61,11 @@ class RegistriesController < ApplicationController
     redirect_to registries_url, notice: 'Registry was successfully destroyed.'
   end
 
-  def projects
-    if request.post?
-      RegistryProject.where(registry_id: @registry.id, project_id: params[:project_id].to_i).first.approve!
-      redirect_to "/registry/#{@registry.url_slug}"
-    else
-      redirect_to "/registry/#{@registry.url_slug}" if current_user.nil? || !current_user.system_admin
-      @projects = @registry.approved_projects.empty? ? @registry.projects : @registry.approved_projects
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_registry
       @registry = current_user.registry
-      redirect_to new_registry_path unless @registry.present? 
+      redirect_to new_registry_path unless @registry.present?
     end
 
     def find_by_slug

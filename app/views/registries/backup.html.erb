@@ -26,15 +26,6 @@
 
     </div>
 
-    <% if current_user && current_user.system_admin %>
-      <% if @registry.approved_projects.empty? %>
-        <%= link_to "Pending Projects", registry_project_path(:url_slug => @registry.url_slug), :class => 'button expand radius alert' %>
-      <% else %>
-        <%= link_to "Approved Project", registry_project_path(:url_slug => @registry.url_slug), :class => 'button expand radius success' %>
-      <% end %>
-    <% end %>
-  </div>
-
   <div class="large-8 small-12 columns">
 
     <div class="panel">

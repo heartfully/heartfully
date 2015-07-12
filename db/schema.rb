@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150606004706) do
+ActiveRecord::Schema.define(version: 20150712170347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -210,11 +210,10 @@ ActiveRecord::Schema.define(version: 20150606004706) do
   add_index "registries", ["url_slug"], name: "index_registries_on_url_slug", unique: true, using: :btree
 
   create_table "registry_projects", force: true do |t|
-    t.integer  "registry_id",                 null: false
-    t.integer  "project_id",                  null: false
+    t.integer  "registry_id", null: false
+    t.integer  "project_id",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "approved",    default: false
   end
 
   add_index "registry_projects", ["project_id"], name: "index_registry_projects_on_project_id", using: :btree
