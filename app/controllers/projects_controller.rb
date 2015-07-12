@@ -14,14 +14,14 @@ class ProjectsController < ApplicationController
   def show
     # @project = @project.decorate
   end
-  
+
   def select
     unless current_user
       session[:project_slug] = params[:url_slug]
       redirect_to sign_in_path
-    else 
+    else
       current_user.registry.projects << set_project if current_user.registry
-      redirect_to user_path(current_user)
+      redirect_to "/registry/#{current_user.registry.url_slug}"
     end
   end
 

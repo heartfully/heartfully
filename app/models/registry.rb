@@ -7,7 +7,7 @@ class Registry < ActiveRecord::Base
   has_many :partners, :class_name => "User"
   has_many :partner_invites
   has_many :registry_projects
-  has_many :projects, :through => :registry_projects
+  has_many :projects, :through => :registry_projects, dependent: :destroy
   has_many :item_types, :through => :projects
   has_many :items
   has_many :orders

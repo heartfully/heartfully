@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 
   post 'orders/:id/finalize' => 'orders#finalize', :as => 'orders_finalize'
 
-  resources :registries do
+  resources :registries, except: [:show] do
     resources :orders, :only => [:show, :create]
   end
 
@@ -46,8 +46,7 @@ Rails.application.routes.draw do
   resources :partner_invites, :only => [:create, :destroy]
 
   # Main registry page, this must be after `resource :registry`
-  get '/registry/:url_slug', to: 'registries#show'
-  match '/registry/:url_slug/projects', to: 'registries#projects', via: [:get, :post], as: 'registry_project'
+  get '/registry/:url_slug', to: 'registries#show', as: 'registry_home'
 
   # Footer Link Pages
   get '/about-us' => 'marketing#about_us'
