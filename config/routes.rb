@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   resource :session, only: [:create]
   resources :users
   get 'organizations/application', to: 'organizations#new', as: 'new_organization'
-  resources :organizations
+  resources :organizations do
+    resources :reports
+  end
 
   get '/sign_up' => 'marketing#new_inquiry'
   post '/sign_up' => 'marketing#create_inquiry', :as => 'inquirers'

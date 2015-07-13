@@ -2,7 +2,8 @@ class Organization < ActiveRecord::Base
   belongs_to :admin, :class_name => "User"
   has_many :employees, :class_name => "User"
   has_many :projects
-
+  has_many :reports
+  
   validates_presence_of :name
   validates_uniqueness_of :name
 end
