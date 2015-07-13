@@ -1,0 +1,55 @@
+<h1>New Report</h1>
+
+<%= form_for([@organization, @organization.reports.build], html: {multipart: :true }) do |f| %>
+  <div>
+    How many people are benefiting from the work your organization is doing in this sector?
+    How you report this number is flexible. It can be based on money raised from this registry, annual totals for your organization, or in some other way. Please specify how it’s broken down.
+    <%= f.label :number_of_benefitters, "Total: " %>
+    <%= f.number_field :number_of_benefitters %>
+  </div>
+
+  <div>
+    If applicable:
+    <%= f.label :number_of_communities_served %>
+    <%= f.number_field :number_of_communities_served %>
+
+    <%= f.label :number_of_trainings_complete %>
+    <%= f.number_field :number_of_trainings_complete %>
+
+    <%= f.label :number_of_buildings_constructed %>
+    <%= f.text_field :number_of_buildings_constructed %>
+
+    <%= f.label :other_benefits, "other" %>
+    <%= f.text_field :other_benefits %>
+  </div>
+
+  <div>
+    Provide a brief description about how you measure the impact of work in this sector. Highlight any relevant successes that occurred in the last 4-6 months.  (1-2 paragraphs)
+
+    <%= f.text_area :impact_measurement %>
+  </div>
+
+  <div>
+    In a couple sentences, please describe your work going forward. How is your organization building on the success of the work described here? This is an opportunity to inform donors about the work you’re doing and to inspire a continued relationship.
+
+    <%= f.text_area :forward_steps %>
+  </div>
+
+  <div>
+    Please write a 1-2 sentence thank you message to your donors.
+    <%= f.text_area :thank_you_message %>
+  </div>
+
+  <%= f.label :photo1 %>
+  <%= f.file_field :photo1 %>
+  <%= f.label :photo2 %>
+  <%= f.file_field :photo2 %>
+  <%= f.label :photo3 %>
+  <%= f.file_field :photo3 %>
+  <%= f.label :photo4 %>
+  <%= f.file_field :photo4 %>
+  <%= f.label :photo5 %>
+  <%= f.file_field :photo5 %>
+
+  <%= f.submit %>
+<% end %>
