@@ -1,0 +1,43 @@
+<div>
+  <strong>Number of people benefitted: </strong>
+  <%= @report.number_of_benefitters %>
+</div>
+
+<div>
+  <strong>Number of communities served: </strong>
+  <%= @report.number_of_communities_served %>
+</div>
+
+<div>
+  <strong>Number of trainings complete: </strong>
+  <%= @report.number_of_trainings_complete %>
+</div>
+
+<div>
+  <strong>Number of buildings constructed: </strong>
+  <%= @report.number_of_buildings_constructed %>
+</div>
+
+<div>
+  <strong>Other benefits: </strong>
+  <%= @report.other_benefits %>
+</div>
+
+<div>
+  <strong>How we measured impact: </strong>
+  <%= @report.impact_measurement %>
+</div>
+
+<div>
+  <strong>Forward steps: </strong>
+  <%= @report.forward_steps %>
+</div>
+
+<div>
+  <strong>Thank you message: </strong>
+  <%= @report.thank_you_message %>
+</div>
+
+<% (1..5).to_a.each do |count| %>
+  <%= image_tag(@report.send("photo#{count}")) if @report.send("photo#{count}") %>
+<% end %>
