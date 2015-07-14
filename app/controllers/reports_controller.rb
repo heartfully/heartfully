@@ -3,6 +3,10 @@ class ReportsController < ApplicationController
     @organization = Organization.find(params[:organization_id])
   end
 
+  def show
+    @report = Report.find(params[:id])
+  end
+
   def create
     @organization = Organization.find(params[:organization_id])
     @report = @organization.reports.create(report_params)

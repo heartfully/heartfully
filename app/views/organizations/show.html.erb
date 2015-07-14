@@ -8,7 +8,7 @@
   <%= link_to @organization.org_url %>
 </div>
 <div>
-  <strong>Project in $3,000-$10,000 range? </strong> 
+  <strong>Project in $3,000-$10,000 range? </strong>
   <%= @organization.in_price_range %>
 </div>
 <div>
@@ -64,3 +64,10 @@
 </div>
 <%= link_to 'Edit', edit_organization_path(@organization) %> |
 <%= link_to 'Back', organizations_path %>
+
+<h4>Reports</h4>
+<%= link_to "New Report", new_organization_report_path(@organization) %>
+<br>
+<% @organization.reports.each do |report| %>
+  <%= link_to report.created_at, organization_report_path(@organization, report) %>
+<% end %>
