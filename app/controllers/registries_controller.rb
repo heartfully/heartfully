@@ -2,18 +2,18 @@ class RegistriesController < ApplicationController
   before_action :require_auth, :only => [:create, :edit, :update, :destroy]
   before_action :set_registry, :only => [:edit, :update, :destroy]
   before_action :find_by_slug, :only => [:show, :projects]
-  
+
   layout 'registry_layout'
   # GET /registries/:url_slug
   def show
     if(params[:url_slug].downcase == "peterandeva")
       render :show_peter_and_eva
-    elsif(params[:url_slug].downcase == "wangama")
-      render :show_katelyn_and_brandon
-    elsif(params[:url_slug].downcase == "marissaandtravis") 
-      render :show_marissa_and_travis
+    # elsif(params[:url_slug].downcase == "wangama")
+    #   render :show_katelyn_and_brandon
+    # elsif(params[:url_slug].downcase == "marissaandtravis")
+    #   render :show_marissa_and_travis
     elsif(params[:url_slug].downcase == "lindseyandmatt")
-      render :show_lindsey_and_matt  
+      render :show_lindsey_and_matt
     elsif(params[:url_slug].downcase == "sample")
       @registry = Registry.find_by(:url_slug => "lindseyandmatt")
       render :show_sample
@@ -75,7 +75,7 @@ class RegistriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_registry
       @registry = current_user.registry
-      redirect_to new_registry_path unless @registry.present? 
+      redirect_to new_registry_path unless @registry.present?
     end
 
     def find_by_slug
