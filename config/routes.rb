@@ -25,7 +25,6 @@ Rails.application.routes.draw do
   get '/sign_in' => 'sessions#new'
   delete '/sign_out' => 'sessions#destroy'
 
-  get '/wangama' => 'registries#show', :url_slug => 'wangama'
   # User confirmation
   get '/users/:confirmation_token/confirm' => 'users#confirm', :as => 'user_confirmation'
 

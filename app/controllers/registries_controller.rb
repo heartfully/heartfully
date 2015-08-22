@@ -8,10 +8,10 @@ class RegistriesController < ApplicationController
   def show
     if(params[:url_slug].downcase == "peterandeva")
       render :show_peter_and_eva
-    elsif(params[:url_slug].downcase == "wangama")
-      render :show_katelyn_and_brandon
-    elsif(params[:url_slug].downcase == "marissaandtravis")
-      render :show_marissa_and_travis
+    # elsif(params[:url_slug].downcase == "wangama")
+    #   render :show_katelyn_and_brandon
+    # elsif(params[:url_slug].downcase == "marissaandtravis")
+    #   render :show_marissa_and_travis
     elsif(params[:url_slug].downcase == "lindseyandmatt")
       render :show_lindsey_and_matt
     elsif(params[:url_slug].downcase == "sample")
