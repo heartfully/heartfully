@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'organizations/application', to: 'organizations#new', as: 'new_organization'
   resources :organizations do
     resources :reports
+    resources :projects
   end
 
   get '/sign_up' => 'marketing#new_inquiry'

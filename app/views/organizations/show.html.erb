@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<%= link_to "Back", organizations_path %>
 <div>
   <strong>Name: </strong>
   <%= @organization.name %>
@@ -65,9 +66,21 @@
 <%= link_to 'Edit', edit_organization_path(@organization) %> |
 <%= link_to 'Back', organizations_path %>
 
-<h4>Reports</h4>
-<%= link_to "New Report", new_organization_report_path(@organization) %>
-<br>
-<% @organization.reports.each do |report| %>
-  <%= link_to report.created_at, organization_report_path(@organization, report) %>
-<% end %>
+<div>
+  <h4>Reports</h4>
+  <%= link_to "New Report", new_organization_report_path(@organization) %>
+  <br>
+  <% @organization.reports.each do |report| %>
+    <%= link_to report.created_at, organization_report_path(@organization, report) %>
+  <% end %>
+</div>
+
+<div>
+  <h4>Projects</h4>
+  <%= link_to "Project", new_organization_project_path(@organization) %>
+  <br>
+  <% @organization.projects.each do |project| %>
+    <%= link_to project.name, organization_project_path(@organization, project) %>
+    <%= link_to 'edit', edit_organization_project_path(@organization, project) %>
+  <% end %>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713003603) do
+ActiveRecord::Schema.define(version: 20150905153832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -149,23 +149,59 @@ ActiveRecord::Schema.define(version: 20150713003603) do
   add_index "project_categories", ["project_id"], name: "index_project_categories_on_project_id", using: :btree
 
   create_table "projects", force: true do |t|
-    t.string   "name",                                                    null: false
+    t.string   "name",                                                         null: false
     t.string   "partner"
     t.text     "description"
     t.string   "url_slug"
     t.string   "banner_img"
     t.string   "city"
-    t.string   "country",                                                 null: false
-    t.decimal  "funding_goal",    precision: 11, scale: 2
+    t.string   "country",                                                      null: false
+    t.decimal  "funding_goal",         precision: 11, scale: 2
     t.datetime "closed_at"
-    t.boolean  "public",                                   default: true, null: false
-    t.integer  "organization_id",                                         null: false
+    t.boolean  "public",                                        default: true, null: false
+    t.integer  "organization_id",                                              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "project_photo"
     t.string   "project_photo_2"
     t.string   "project_photo_3"
     t.text     "extra_content"
+    t.string   "contact_name"
+    t.string   "contact_email"
+    t.string   "contact_phone_number"
+    t.string   "sector"
+    t.text     "overview"
+    t.text     "problem"
+    t.text     "solution"
+    t.string   "how_it_works_step1"
+    t.string   "how_it_works_step2"
+    t.string   "how_it_works_step3"
+    t.string   "how_it_works_step4"
+    t.string   "how_it_works_step5"
+    t.text     "importance"
+    t.text     "sustainability"
+    t.string   "staff_quote"
+    t.string   "photo1_file_name"
+    t.string   "photo1_content_type"
+    t.integer  "photo1_file_size"
+    t.datetime "photo1_updated_at"
+    t.string   "photo2_file_name"
+    t.string   "photo2_content_type"
+    t.integer  "photo2_file_size"
+    t.datetime "photo2_updated_at"
+    t.string   "photo3_file_name"
+    t.string   "photo3_content_type"
+    t.integer  "photo3_file_size"
+    t.datetime "photo3_updated_at"
+    t.string   "photo4_file_name"
+    t.string   "photo4_content_type"
+    t.integer  "photo4_file_size"
+    t.datetime "photo4_updated_at"
+    t.string   "photo5_file_name"
+    t.string   "photo5_content_type"
+    t.integer  "photo5_file_size"
+    t.datetime "photo5_updated_at"
+    t.boolean  "certified"
   end
 
   add_index "projects", ["organization_id", "name"], name: "index_projects_on_organization_id_and_name", unique: true, using: :btree
