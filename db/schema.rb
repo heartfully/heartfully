@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150905153832) do
+ActiveRecord::Schema.define(version: 20150907193336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -202,6 +202,10 @@ ActiveRecord::Schema.define(version: 20150905153832) do
     t.integer  "photo5_file_size"
     t.datetime "photo5_updated_at"
     t.boolean  "certified"
+    t.string   "budget_file_name"
+    t.string   "budget_content_type"
+    t.integer  "budget_file_size"
+    t.datetime "budget_updated_at"
   end
 
   add_index "projects", ["organization_id", "name"], name: "index_projects_on_organization_id_and_name", unique: true, using: :btree

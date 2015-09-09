@@ -1,8 +1,30 @@
 class Project < ActiveRecord::Base
   include Filterable #allows for easy model filtering
-
+  has_attached_file :photo1
+  has_attached_file :photo2
+  has_attached_file :photo3
+  has_attached_file :photo4
+  has_attached_file :photo5
+  has_attached_file :budget
+  validates_attachment_content_type :photo1, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :photo2, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :photo3, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :photo4, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :photo5, :content_type => /\Aimage\/.*\Z/
+  validates_attachment :budget, content_type: { :content_type => %w(application/pdf
+                                                                    application/msword
+                                                                    application/vnd.openxmlformats-officedocument.wordprocessingml.document
+                                                                    application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+                                                                    application/vnd.ms-excel
+                                                                    application/vnd.openxmlformats-officedocument.wordprocessingml.document
+                                                                    application/vnd.openxmlformats-officedocument.wordprocessingml.template
+                                                                    application/x-tar
+                                                                    application/vnd.ms-excel
+                                                                    application/vnd.openxmlformats-officedocument.spreadsheetml.template
+                                                                    application/zip
+                                                                    application/x-compressed-zip) }
   serialize :extra_content, Hash
-  
+
   scope :in_category, -> (category_id = nil) { joins(:project_categories).where("project_categories.category_id" => category_id).group("projects.id").having('count(*) = ?', (category_id.is_a?(Array) ? category_id.length : 1)) }
 
   belongs_to :organization
@@ -31,13 +53,13 @@ class Project < ActiveRecord::Base
   end
 
   def self.projects_with_new_variable(project)
-    projectHash = Hash.new 
-    projectArray = Array.new 
+    projectHash = Hash.new
+    projectArray = Array.new
 
-    project.each do |x| 
-      projectHash = x.attributes 
-      projectHash['org_url'] = x.organization.org_url 
-      projectArray << projectHash 
+    project.each do |x|
+      projectHash = x.attributes
+      projectHash['org_url'] = x.organization.org_url
+      projectArray << projectHash
     end
     projectArray
   end

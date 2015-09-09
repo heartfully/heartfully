@@ -77,10 +77,13 @@
 
 <div>
   <h4>Projects</h4>
-  <%= link_to "Project", new_organization_project_path(@organization) %>
+  <%= link_to "New Project", new_organization_project_path(@organization) %>
   <br>
   <% @organization.projects.each do |project| %>
-    <%= link_to project.name, organization_project_path(@organization, project) %>
-    <%= link_to 'edit', edit_organization_project_path(@organization, project) %>
+    <div>
+      <%= project.id %>: 
+      <%= link_to project.name, organization_project_path(@organization, project) %> | 
+      <%= link_to 'edit', edit_organization_project_path(@organization, project) %>
+    </div>
   <% end %>
 </div>

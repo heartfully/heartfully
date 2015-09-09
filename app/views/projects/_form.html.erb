@@ -80,7 +80,8 @@
   <%= f.text_area :sustainability %>
   <%= f.label :staff_quote, 'Quote from a staff member, beneficiary, or other individual affiliated with your' %>
   <%= f.text_field :staff_quote %>
-  <!-- TODO: NEEDS A BUDGET UPLOAD FIELD -->
+  <%= f.label :budget, 'upload your budget' %>
+  <%= f.file_field :budget %>
   <%= f.label :photo1, 'Upload 3-5 high resolution photos (ideally between 500-1000 pixels) with captions that highlight and/or explain the community and work this project supports.' %>
   <%= f.file_field :photo1 %>
   <%= f.file_field :photo2 %>

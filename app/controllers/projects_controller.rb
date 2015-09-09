@@ -1,10 +1,11 @@
 class ProjectsController < ApplicationController
   before_action :require_auth, :except => [:index, :show, :select]
-  before_action :set_project, only: [:show, :edit, :update, :destroy, :select]
+  before_action :set_project, only: [:show, :update, :destroy, :select]
 
   # GET /projects
   def index
     @projects = Project.filter(filterable_params).paginate(:page => params[:page], :per_page => 9).where(public: true)
+    # @projects = Project.where(public: true)
     @project_last_page = @projects.total_pages
     @projects = Project.projects_with_new_variable(@projects)
     @categories = Category.order("name ASC")
@@ -33,6 +34,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @project = Project.find(params[:id])
   end
 
   # POST /projects
@@ -69,7 +71,47 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:name, :partner, :description, :url_slug, :banner_img, :city, :country, :funding_goal, :public?, :project_photo, :project_photo_2, :project_photo_3, :extra_content)
+      params.require(:project).permit(
+        :name,
+        :partner,
+        :description,
+        :url_slug,
+        :banner_img,
+        :city,
+        :country,
+        :funding_goal,
+        :closed_at,
+        :public,
+        :organization_id,
+        :created_at,
+        :updated_at,
+        :project_photo,
+        :project_photo_2,
+        :project_photo_3,
+        :extra_content,
+        :contact_name,
+        :contact_email,
+        :contact_phone_number,
+        :sector,
+        :overview,
+        :problem,
+        :solution,
+        :how_it_works_step1,
+        :how_it_works_step2,
+        :how_it_works_step3,
+        :how_it_works_step4,
+        :how_it_works_step5,
+        :importance,
+        :sustainability,
+        :staff_quote,
+        :photo1,
+        :photo2,
+        :photo3,
+        :photo4,
+        :photo5,
+        :certified,
+        :budget
+      )
     end
 
     def filterable_params
