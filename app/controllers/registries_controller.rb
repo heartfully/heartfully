@@ -3,7 +3,6 @@ class RegistriesController < ApplicationController
   before_action :set_registry, :only => [:edit, :update, :destroy]
   before_action :find_by_slug, :only => [:show, :projects]
 
-  layout 'registry_layout'
   # GET /registries/:url_slug
   def show
     if(params[:url_slug].downcase == "peterandeva")
@@ -59,6 +58,9 @@ class RegistriesController < ApplicationController
   def destroy
     @registry.destroy
     redirect_to registries_url, notice: 'Registry was successfully destroyed.'
+  end
+
+  def sample_show 
   end
 
   private

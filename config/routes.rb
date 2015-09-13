@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sample-registry', to: 'registries#sample_show'
+  
   # Rails Admin for backend project creation/approval
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
