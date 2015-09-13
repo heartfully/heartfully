@@ -1,0 +1,27 @@
+$color-text: #2e2e2e;
+
+$color-purple-deep: #7D72DE;
+$color-purple-light: lighten($color-purple-deep, 30%);
+$color-purple-lightest: #F2EFF9;
+$color-purple-deep-hover: #5E54B8;
+$color-purple-deep-muted: #6059A0;
+$color-purple-deep-dark: darken($color-purple-deep-muted, 10%);
+$color-purple-muted: #7D72DE;
+
+$color-purple-secondary: #7953B8;
+$color-purple-secondary-dark: darken($color-purple-secondary, 7%);
+
+$color-blue-light: #C7E7EC;
+$color-blue-dark: #147584;
+$color-blue-base: #81E1F0;
+
+$color-medium-gray: #777;
+$color-dark-gray: darken(#777, 10%);
+$color-light-gray: lighten(#777, 40%);
+$color-breaker-gray: lighten(#F4F4F4, 1%);
+
+$color-danger: #FF4D4D;
+$color-success: #2BD380;
+$color-warning: #E9D04C;
+
+$padding-base: 40px;

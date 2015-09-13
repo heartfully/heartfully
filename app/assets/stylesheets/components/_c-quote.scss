@@ -1,0 +1,25 @@
+.c-quote {
+  //border-top: 1px solid $color-light-gray;
+  //border-bottom: 1px solid $color-light-gray;
+  background: $color-purple-deep-dark;
+  color: #fff;
+  &__content {
+    padding: $padding-base*2 0;
+  }
+  &__quote {
+    @include font-subhed;
+    font-size: 1.7em;
+    position: relative;
+    &:before {
+      content: '“';
+      position: absolute;
+      top: -5px;
+      left: -($padding-base);
+      color: $color-purple-deep;
+      font-size: 2em;
+    }
+  }
+  &__person {
+    font-size: 0.8em;
+  }
+}

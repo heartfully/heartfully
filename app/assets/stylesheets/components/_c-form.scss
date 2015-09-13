@@ -1,0 +1,96 @@
+// base / initial form styles
+label {
+  margin-right: $padding-base/4;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea,
+fieldset {
+  padding: $padding-base/4;
+  outline: 0;
+  border: 1px solid $color-light-gray;
+  box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+select {
+  height: 2.25rem;
+  vertical-align: middle;
+}
+
+input[type="checkbox"],
+select {
+  box-shadow: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 0;
+  border: 1px solid $color-purple-deep;
+  box-shadow: 0 0 0 2px lighten($color-purple-deep, 10%);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin: 0 $padding-base/4 $padding-base/4 0;
+  &:focus {
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+// putting this class in <form> will stack
+// all the form elements with proper spacing.
+// it will also stretch labels and inputs to be width: 100%
+.stacked {
+  label, input, textarea {
+    display: block;
+  }
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: inline;
+  }
+}
+
+// this will float labels to the left
+// and input to the right
+.float-form {
+  label {
+    width: 25%;
+    float: left;
+    &:after {
+      content: '';
+      clear: both;
+    }
+  }
+}
+
+.help {
+  margin: 5px 0 $padding-base/4 0;
+  color: $color-medium-gray;
+  font-size: 0.8em;
+}
+
+// form states
+.is-disabled {
+  background: $color-light-gray;
+  color: $color-medium-gray;
+  box-shadow: none;
+  border: 1px solid $color-medium-gray;
+}
+
+.is-readonly {
+  color: $color-medium-gray;
+}
+
+.is-required {
+  border: 1px solid $color-danger;
+}
+
+.is-success {
+  border: 1px solid $color-success;
+}

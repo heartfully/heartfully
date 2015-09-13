@@ -1,0 +1,49 @@
+// base button
+.c-button {
+  border: 3px solid $color-purple-deep;
+  color: $color-purple-deep;
+  background: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.8pt;
+  font-weight: 600;
+  padding: 10px;
+  outline: none;
+  @include vendor-prefix(transition, 0.2s ease-in-out);
+  &:hover {
+    background: $color-purple-deep;
+    color: #fff;
+  }
+}
+
+// primary action button
+.c-button--primary {
+  background: $color-purple-deep;
+  color: #fff;
+  &:hover {
+    border: 3px solid $color-purple-deep-hover;
+    background: $color-purple-deep-hover;
+  }
+}
+
+.c-button--disabled {
+  background: $color-light-gray;
+  color: $color-medium-gray;
+  border: $color-light-gray;
+  &:hover {
+    cursor: default;
+    background: $color-light-gray;
+    color: $color-medium-gray;
+    border: $color-light-gray;
+  }
+}
+
+.link--secondary {
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  padding-bottom: 5px;
+  font-weight: 600;
+  border-bottom: 1px solid $color-purple-deep;
+  &:hover {
+    opacity: 0.8;
+  }
+}

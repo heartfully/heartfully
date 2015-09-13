@@ -1,0 +1,12 @@
+.c-paragraph {
+	&__heading {
+		margin-bottom: $padding-base/4;
+		@include font-heading;
+	}
+	&__text {
+		margin: 0;
+		font-size: 1em;
+		line-height: 1.6;
+		@include vendor-prefix(font-smoothing, initial);
+	}
+}
