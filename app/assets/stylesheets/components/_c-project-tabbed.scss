@@ -1,0 +1,89 @@
+.c-project-tabbed {
+	margin: $padding-base auto ($padding-base*2) auto;
+	border: 1px solid #ccc;
+	border-radius: 0 0 10px 10px;
+	border-top: 0;
+	&__header {
+		position: relative;
+		height: 400px;
+		background: url('http://media.npr.org/assets/img/2015/08/21/ballet2-edit_custom-e2652607fbfa2d04ec7fb756ab9f7581c98a034c-s800-c85.jpg');
+		background-size: cover;
+		color: #fff;
+	}
+	&__header--overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient((rgba(0,0,0,0)), rgba(0,0,0,0.9));
+	}
+	&__header--wrapper {
+		position: absolute;
+		bottom: 0;
+		padding: $padding-base;
+		max-width: 75%;
+		z-index: 1;
+	}
+	&__header--subtitle {
+		@include font-meta;
+    color: #fff;
+	}
+	&__header--title {
+		@include font-subhed;
+		font-size: 2.8em;
+	}
+	&__menu {
+		margin: 0;
+		padding: $padding-base/2 $padding-base 0 $padding-base;
+		background: $color-purple-secondary;
+		color: #fff;
+	}
+	&__menu-item {
+		display: inline-block;
+		margin-right: $padding-base;
+		text-transform: uppercase;
+		font-weight: 600;
+		padding-bottom: $padding-base/2;
+		border-bottom: 5px solid rgba(0,0,0,0);
+    letter-spacing: 0.2pt;
+		@include vendor-prefix(font-smoothing, antialiased);
+		@include vendor-prefix(transition, 0.2s ease-in-out);
+		&:last-child {
+			margin-right: 0;
+		}
+		&.active {
+			border-bottom: 5px solid lighten($color-purple-secondary, 25%);
+		}
+		a {
+			color: #fff;
+		}
+		&:hover {
+			border-bottom: 5px solid lighten($color-purple-secondary, 25%);
+		}
+	}
+	&__content {
+		padding: $padding-base;
+		font-size: 1.3em;
+	}
+	&__content--overview {
+		display: flex;
+		align-items: flex-start;
+	}
+	&__content--overview--summary {
+		width: 60%;
+		font-size: 1.2em;
+		line-height: 1.5;
+		@include vendor-prefix(font-smoothing, antialiased);
+		border-right: 1px solid $color-light-gray;
+		padding-right: $padding-base;
+	}
+	&__content--overview--partner {
+		color: $color-dark-gray;
+		padding-left: $padding-base;
+		font-size: 0.8em;
+		h4 {
+			font-weight: 600;
+		}
+	}
+}
