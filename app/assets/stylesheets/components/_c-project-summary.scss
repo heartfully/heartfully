@@ -1,0 +1,16 @@
+.c-project-summary {
+  &__summary {
+    font-size: 1.8em;
+    line-height: 1.5;
+    font-weight: 200;
+    flex-grow: 2;
+    padding-right: $padding-base;
+  }
+  &__photo {
+    min-width: 365px;
+    height: 235px;
+    flex-grow: 1;
+    background: url('http://d11sa1anfvm2xk.cloudfront.net/index/versions/campaigners/images/clean-water@2x.jpg');
+    background-size: cover;
+  }
+}

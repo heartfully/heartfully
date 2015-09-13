@@ -1,0 +1,31 @@
+.c-icon {
+  fill: $color-medium-gray;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  &--white {
+    fill: #fff;
+  }
+  &--purple {
+    fill: $color-purple-deep;
+  }
+  &--gray {
+    fill: $color-light-gray;
+  }
+  &--green {
+    fill: $color-success;
+  }
+  &--inline {
+    width: 1em;
+    height: 1em;
+    margin-right: 3px;
+  }
+  &--large {
+    width: 40px;
+    height: 40px;
+  }
+  &--medium {
+    width: 25px;
+    height: 25px;
+  }
+}

@@ -1,0 +1,72 @@
+.c-registry-card {
+	padding: $padding-base;
+	margin-bottom: $padding-base;
+	border-radius: 5px;
+	background: #fff;
+	@include vendor-prefix(transition, 0.2s ease-in-out);
+	box-shadow: 0 1px 0 0 hsla(0, 0%, 0%, 0.1);
+	&:hover {
+		@include vendor-prefix(transform, scale3d(1.03,1.03,1.03));
+	}
+	&__title {
+    font-weight: normal;
+		//color: $color-purple-muted;
+		margin-bottom: ($padding-base/2);
+	}
+	&__info {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__price {
+		font-size: 2em;
+    color: $color-medium-gray;
+	}
+  &__gift,
+	&__cart {
+		position: relative;
+		overflow: hidden;
+		span {
+			z-index: 1;
+			width: 100%;
+		}
+	}
+	&__qty {
+		opacity: 0;
+		height: 0;
+		overflow: hidden;
+		@include vendor-prefix(transition, 0.2s ease-in-out);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include vendor-prefix(transform, translateY(-30%));
+		&.active {
+			opacity: 1;
+			height: auto;
+			padding: $padding-base 0px;
+			border-top: 1px solid $color-light-gray;
+			margin-top: $padding-base;
+			-webkit-animation: grow 0.2s ease-in-out forwards;
+		}
+	}
+	&__qty-input label {
+		font-size: 0.85em;
+	}
+  &__qty-input input {
+    width: 50px;
+  }
+}
+
+@-webkit-keyframes grow {
+	0% {
+		height: 0;
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		height: auto;
+		@include vendor-prefix(transform, translateY(0%));
+		opacity: 1;
+	}
+}

@@ -1,0 +1,17 @@
+.c-project-header {
+  padding-bottom: $padding-base*2;
+  &__title {
+    @include font-subhed;
+    display: inline;
+    line-height: 1.5;
+    font-size: 3em;
+    box-shadow: 0px 4px 0px 0px white, 0px 6px 0px 0px lighten($color-purple-deep, 20%);
+    max-width: 40%;
+    &:after {
+      content: '';
+      position: relative;
+      display: block;
+      height: 1px;
+    }
+  }
+}
