@@ -1,58 +1,13 @@
-<footer class="footer">
+<footer class="c-footer">
+  <div class="test">
+    About
+    Browse Projects
+    Our Partners
+    FAQ
 
-  <div class="row full-width">
-    <div class="small-12 medium-3 large-3 columns text-center logo-footer">
-      <h1><a href="/">Heartful.ly</a></h1><br/>
-      <a href="https://instagram.com/heartful.ly/" target="_blank">
-        <i class="fa fa-instagram"></i>
-      </a>
-      <a href="https://twitter.com/heartful_ly" target="_blank">
-        <i class="fa fa-twitter"></i>
-      </a>
-    </div>
-
-    <div class="small-12 medium-2 large-2 columns text-center mailing-address text-center">
-     <!-- <a href="https://www.google.com/maps/place/123+Washington+Ave+SW,+Washington,+DC+20024/@38.8875589,-77.0139829,17z/data=!3m1!4b1!4m2!3m1!1s0x89b7b78123738b27:0xe7ef9fad2da4d173"> -->
-      <!-- Address Goes here -->
-     <!-- </a> -->
-    </div>
-
-    <div class="small-12 medium-2 large-2 columns about-us-footer text-center">
-      <ul class="footer-links">
-        <li class="left"><a href="/faq">Faq</a></li>
-        <!-- <li class="left"><a href="/our-mission">Our Mission</a></li> -->
-        <li class="left"><a href="/about-us">About Us</a></li>
-      </ul>
-    </div>
-    <div class="small-12 medium-2 large-2 columns company-info text-center">
-      <ul class="footer-links">
-        <!-- <li class="left"><a href="/how-it-works">How It Works</a></li> -->
-        <li class="left"><a href="/partner-with-us">Partner With Us</a></li>
-        <li class="left"><a href="/our-partners">Our Partners</a></li>
-      </ul>
-    </div>
-    <div class="small-12 medium-3 large-3 columns contact-us text-center">
-      <ul class="footer-links">
-        <!-- <li class="left"><a href="#">Create Your Registry</a></li> -->
-        <!-- <li class="left"><a href="#">Login</a></li> -->
-        <li class="left"><a href="mailto:info@heartful.ly">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="row full-width terms-and-rights">
-    <div class="columns small-12 medium-12 large-12 text-center">
-      <h6>
-        <span class="line-center">
-          Copyright 2015 Heartful.ly. All rights reserved. <a href="/privacy-policy">Privacy</a>. <a href="/terms-of-use">Terms of Use</a>
-          <br/>
-          <% if(params[:controller] == "marketing" && action_name == "index") %>
-            Photo credit: <a href="http://www.leppertphoto.com/" target="_blank">Leppert Photography</a>
-          <% elsif(params[:url_slug] == "sample") %>
-            Photo credit: <a href="http://venturephotography.us/" target="_blank">Venture Photography</a>
-          <% end %>
-        </span>
-      </h6>
-    </div>
+    Admin
+    View Registry
+    Edit Registry
+    Settings & Admin
   </div>
 </footer>
-<%= render "shared/google_analytics" %>
