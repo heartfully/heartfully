@@ -3,9 +3,9 @@
     <h2><%= pluralize(obj.errors.count, "error") %> prohibited this registry from being saved:</h2>
 
     <ul>
-    <% obj.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
+      <% obj.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
     </ul>
   </div>
 <% end %>

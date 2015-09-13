@@ -2,13 +2,15 @@
   <%= "#{yield(:page_title)} | " if content_for?(:page_title) %> Heartful.ly
 </title>
 
+<!-- Loading Google web fonts -->
+<link href='//fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Playfair+Display:400italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Hind:400,300,500,700,600' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Lora:700' rel='stylesheet' type='text/css'>
+
 <%= stylesheet_link_tag('application', media: 'all') %>
 <%= javascript_include_tag "vendor/modernizr" %>
 
-<link href='//fonts.googleapis.com/css?family=Pacifico|Hind:400,700' rel='stylesheet' type='text/css'>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link href='//fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <% if(controller_name == "registries" && action_name == "show") %>
   <% if(params[:url_slug] == "sample") %>

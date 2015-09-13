@@ -1,13 +1,11 @@
 class MarketingController < ApplicationController
 
-  layout 'full_width'
-
   def index
   end
 
   def about_us
   end
-  
+
   def new_inquiry
     @inquirer = Inquirer.new
   end
@@ -33,7 +31,7 @@ class MarketingController < ApplicationController
 
   def privacy_policy
   end
-  
+
   def terms_of_use
   end
 
