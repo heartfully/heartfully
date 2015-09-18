@@ -34,7 +34,7 @@ HeartfullyApp.Components.Projects = React.createBackboneClass({
 
     // Start loading gif
     $(this.refs.projectList.getDOMNode()).startLoading();
-    
+
     this.props.projects.fetch({
       data: { page: data.pageNumber },
       reset: true,
