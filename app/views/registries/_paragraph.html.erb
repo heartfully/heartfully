@@ -1,0 +1,22 @@
+<div class="c-breaker gray section">
+  <div class="test">
+    <div class="meta mb center">About The Couple</div>
+    <div class="c-circle" style='background-image: url(<%=  "#{@registry.profile_image.url}" %>);'></div>
+    <div class="c-paragraph ma skinny mb--large">
+      <h2 class="c-paragraph__heading">
+        Our Story
+      </h2>
+      <p class="c-paragraph__text">
+        <%= @registry.couples_story %>
+      </p>
+    </div
+    ><div class="c-paragraph ma skinny">
+      <h2 class="c-paragraph__heading">
+        Our Registry
+      </h2>
+      <p class="c-paragraph__text">
+        <%= @registry.registry_story %>
+      </p>
+    </div>
+  </div>
+</div>

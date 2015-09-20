@@ -1,5 +1,5 @@
 <div class="row first-div">
-    <div id="registry-banner-container" class="hero-banner nicole-and-emery <%= controller_name %> <%= action_name %>" style='background-image: url(<%=  @registry.banner_image.url ? "#{@registry.banner_image.url}" : "#{@registry.banner_img}"%>);'>
+    <div id="registry-banner-container" class="hero-banner nicole-and-emery <%= controller_name %> <%= action_name %>" style='background: image-url(<%=  @registry.banner_image.url %>);'>
     <div class="large-12 columns ">
         <h1><%= @registry.name %></h1>
     <h3><span>Wedding Registry</span></h3>
@@ -17,10 +17,10 @@
   </div>
   <div class="large-8 columns">
     <h2>Our Story</h2>
-    <%= raw(@registry.couples_story) %> 
+    <%= raw(@registry.couples_story) %>
     </p>
     <h2>Our Registry</h2>
-    <%= raw(@registry.registry_story) %> 
+    <%= raw(@registry.registry_story) %>
   </div>
 </div>
 <div class="row couple-project" id="couple-project-div">
@@ -38,7 +38,7 @@
       <h3>The Opportunity</h3>
       <p>The EcoSac is a temperature retention bag that reduces the time, energy, and money necessary for households to cook. By using the EcoSac, low-income families in Senegal can lessen the impact that cooking has on the environment and on their health, all while cutting their expenses.
       </p>
-      
+
       <h3>How it Works</h3>
       <ol>
         <li>The EcoSac is currently manufactured in Dakar, Senegal, by a team of four tailors employed by SEM Fund, three of whom are women.
@@ -65,7 +65,7 @@
     <h3>Thanks To <span>You</span>, This Project is: </h3>
     <div class="text-center" id="fund-meter-div">
       <%= image_tag "homepage/fund_meter.png", :id => "fund-meter" %>
-      <span id="percentage-funded"><%= calc_percentage(@registry) %>%</span> 
+      <span id="percentage-funded"><%= calc_percentage(@registry) %>%</span>
     </div>
     <h3 class="toBeFundedOrNot">Funded</h3>
   </div>
