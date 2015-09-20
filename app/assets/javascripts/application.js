@@ -19,6 +19,7 @@
 //= require react
 //= require react_ujs
 //= require react.backbone/react.backbone
+//= require ./alisha_js
 //= require ./utils
 //= require ./app_bootstrap
 //= require global
