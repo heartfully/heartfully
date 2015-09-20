@@ -1,12 +1,14 @@
 <% content_for :nav do %>
   <%= render "shared/nav" %>
 <% end %>
-<%= render "shared/hero" %>
+<%= render 'hero'%>
 <%= render "shared/breaker" %>
-<%= render "shared/paragraph" %>
+<%= render 'paragraph' %>
+
 <div class="test">
-<%= render "shared/project_tabbed" %>
+  <%= render "shared/project_tabbed" %>
 </div>
-<%= render "shared/registry_card" %>
+
+<%= render 'registry_item_card' %>
 <%= render "shared/breaker" %>
 <%= render "shared/footer" %>

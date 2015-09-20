@@ -1,0 +1,34 @@
+<div class="c-breaker gray">
+  <div class="block center mb--small"><svg class="c-icon c-icon--large" title="gifts"><use xlink:href="#icon-gift"></use></svg></div>
+  <h4 class="meta center mb--xl">Registry Gift Items</h4>
+  <% @registry.item_types.each_with_index do |item, index| %>
+    <% if index % 2 == 0 %>
+      <div class="test flex">
+    <% end %>
+      <div class="c-registry-card flex-2">
+        <h3 class="c-registry-card__title">
+          <%= item.name %>
+        </h3>
+        <div class="c-registry-card__info">
+          <div class="c-registry-card__price">
+            <%= number_to_currency(item.price, :precision => 0) %>
+          </div>
+          <button class="c-registry-card__gift c-button">
+            <span>Gift this item</span>
+          </button>
+        </div>
+        <div class="c-registry-card__qty">
+          <div class="c-registry-card__qty-input">
+            <label>Quantity</label>
+            <input type="number" placeholder="0"></input>
+          </div>
+          <button class="c-registry-card__cart c-button">
+            <span>Add to Cart</span>
+          </button>
+        </div>
+      </div>
+    <% if index % 2 == 1 %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

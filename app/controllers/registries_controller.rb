@@ -61,6 +61,7 @@ class RegistriesController < ApplicationController
   end
 
   def sample_show 
+    @registry = Registry.find(37)
   end
 
   private
