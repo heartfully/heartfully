@@ -1,40 +1,26 @@
 <%= form_for([@registry, @registry.orders.build]) do |f| %>
-
   <%= fields_for :items do |ff| %>
-    <% @registry.items.available.group_by { |item| item.item_type }.each do |item_type| %>
-
-
+    <% @registry.item_types.each do |item| %>
       <div class="small-12 medium-4 large-3 columns">
         <ul class="pricing-table">
           <li class="product-img-cell">
-            <div class="product-img-div"><img src="https://cdn.rawgit.com/Heartfully/registry-images/master/<%=item_type[0].thumbnail_img %>" class="product-img" /></div>
+            <div class="product-img-div"><img src="https://cdn.rawgit.com/Heartfully/registry-images/master/<%=item.thumbnail_img %>" class="product-img" /></div>
           </li>
           <li class="product-name-cell">
-            <p><strong><%= item_type[0].name %></strong><%= ": #{item_type[0].description}" unless item_type[0].description.blank? %>
+            <p><strong><%= item.name %></strong><%= ": #{item.description}" unless item.description.blank? %>
             </p>
           </li>
           <li class="product-price-cell">
-            <strong><%= number_to_currency(item_type[0].price, :precision => 0) %></strong>
+            <strong><%= number_to_currency(item.price, :precision => 0) %></strong>
           </li>
-          <% unless item_type[1].empty? %>
-            <li class="product-avail-cell">
-              <strong>Available: <%= item_type[1].count %></strong>
-            </li>
-            <li class="product-buy-cell"><%= ff.number_field(item_type[0].name, in: 0..item_type[1].count) %>
-            </li>
-          <% else %>
-            <li class="product-avail-cell">
-              None
-            </li>
-            <li class="product-buy-cell"><%= ff.number_field(item_type[0].name, in: 0..item_type[1].count, :disabled => true) %>
-            </li>
-          <% end %>
+          <li class="product-buy-cell">
+            <strong>Quantity</strong>: <%= ff.number_field(item.name, in: 0..20) %>
+          </li>
         </ul>
       </div>
-
     <% end %>
     <div class="row checkout-button">
       <%= submit_tag('All Set? Checkout!', {:class =>'expand  button'}) %>
     </div>
   <% end %>
-<% end %>  
+<% end %>

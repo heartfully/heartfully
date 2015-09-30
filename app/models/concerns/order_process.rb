@@ -1,8 +1,10 @@
 module OrderProcess
 
   def calc_total(items)
+    # select all items that have a value
+    items = items.select { |key, val| !val.empty? }
     total = 0.0
-    # iterates through all items passed to it
+    # iterates through all items
     items.each do |item, quantity|
       # finds the registry's item type
       item_type = self.registry.item_types.where(name: item).first
@@ -13,16 +15,6 @@ module OrderProcess
     self.summary = items.to_s
     self.total = number_to_currency(total)
     self.save
-  end
-
-  def fill_order
-    hashed_items = eval(self.summary)
-    hashed_items.each do |item, quantity|
-      # finds the registry's item type
-      items = self.registry.items.where(["name LIKE ?", "%#{item}%"]).available
-      # finds the item_type's items and assigns an order_id
-      items.limit(quantity.to_i).update_all(:order_id => self.id)
-    end
   end
 
   def send_emails

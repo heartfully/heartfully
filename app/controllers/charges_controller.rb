@@ -44,7 +44,7 @@ class ChargesController < ApplicationController
   private
 
   def fill_order
-    @order.fill_order && @order.send_emails if @order.status == 'complete'
+    @order.send_emails if @order.status == 'complete'
   end
 
   def set_order

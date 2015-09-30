@@ -50,7 +50,7 @@
         }
         & span {
           display: inline-block;
-          position: relative;  
+          position: relative;
         }
         & span:before,
         & span:after {
@@ -130,7 +130,7 @@
     font-size: 2.4em;
     font-kerning: 60px;
   }
-  
+
   div {
     .pricing-table {
       margin: 0.5em;
@@ -145,9 +145,10 @@
           line-height: 18px;
         }
         input {
-          width: 80%;
+          width: 35%;
           margin: 16px auto;
           border-radius: 0.5em;
+          display: inline-block;
         }
         a {
           margin: 0!important;
@@ -268,7 +269,7 @@
   border: 1px solid rgb(199, 197, 197);
   margin: 24px auto;
   border-radius: 5px;
-  
+
   #stripe_cvc_check {
     width: 30%;
   }
