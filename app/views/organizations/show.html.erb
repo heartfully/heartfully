@@ -9,10 +9,6 @@
   <%= link_to @organization.org_url %>
 </div>
 <div>
-  <strong>Project in $3,000-$10,000 range? </strong>
-  <%= @organization.in_price_range %>
-</div>
-<div>
   <strong>Sectors: </strong>
   <%= @organization.sectors %>
 </div>
@@ -81,8 +77,8 @@
   <br>
   <% @organization.projects.each do |project| %>
     <div>
-      <%= project.id %>: 
-      <%= link_to project.name, organization_project_path(@organization, project) %> | 
+      <%= project.id %>:
+      <%= link_to project.name, organization_project_path(@organization, project) %> |
       <%= link_to 'edit', edit_organization_project_path(@organization, project) %>
     </div>
   <% end %>

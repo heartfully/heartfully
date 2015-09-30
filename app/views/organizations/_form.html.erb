@@ -1,15 +1,15 @@
 <div class="form_wrapper" >
   <p>
-      Thanks so much for your interest in partnering with Heartful.ly! 
+      Thanks so much for your interest in partnering with Heartful.ly!
     </p>
     <p>
-      This form is intended to help us understand the basic background and operations of your organization.  
+      This form is intended to help us understand the basic background and operations of your organization.
     </p>
     <p>
-    If we see partnership potential, we’ll arrange a getting to know you phone call and ask you to submit a more comprehensive application. You can expect to hear from the Heartful.ly team within 2-3 business days, but feel free to drop us a line at <%= mail_to "partnerships@heartful.ly" %> any time. 
+    If we see partnership potential, we’ll arrange a getting to know you phone call and ask you to submit a more comprehensive application. You can expect to hear from the Heartful.ly team within 2-3 business days, but feel free to drop us a line at <%= mail_to "partnerships@heartful.ly" %> any time.
     </p>
     <p>
-      We look forward to learning more about the great work your organization is doing! 
+      We look forward to learning more about the great work your organization is doing!
     </p>
     <hr>
   <%= form_for(@organization, class: 'form') do |f| %>
@@ -31,16 +31,6 @@
     <div>
       <%= f.label :org_url, "Website: " %>
       <%= f.text_field :org_url %>
-    </div>
-    <div>
-      <div>
-        Does your organization work on projects whose total cost is between $3,000-$10,000? 
-        <i>Note: We primarily feature projects within this range, but are open to larger projects if they can be funded in phases.</i>
-      </div>
-      <%= f.radio_button(:in_price_range, true) %>
-      <%= label(:in_price_range, "Yes", for: :organization_in_price_range_true) %>
-      <%= f.radio_button :in_price_range, false %>
-      <%= f.label(:in_price_range, "No", for: :organization_in_price_range_false)%>
     </div>
     <div>
       Sector (i.e. health, water, energy, etc)
@@ -89,7 +79,7 @@
     </div>
     <div>
         Is your organization ranked by Charity Navigator, Guidestar, or a similar platform?<i>This is not a requirement.</i>
-      
+
       <%= f.label :ranked_charity, "List all links that apply:" %>
       <%= f.text_field(:ranked_charity) %>
     </div>
