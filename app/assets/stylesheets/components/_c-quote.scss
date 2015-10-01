@@ -17,6 +17,9 @@
       left: -($padding-base);
       color: $color-purple-deep;
       font-size: 2em;
+      @media (max-width: $break-large) {
+        left: 0;
+      }
     }
   }
   &__person {

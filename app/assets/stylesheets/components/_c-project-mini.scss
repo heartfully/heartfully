@@ -1,5 +1,5 @@
 .c-project-mini {
-  margin-bottom: $padding-base;
+  //margin-bottom: $padding-base;
   &:hover {
     &__header:after {
       opacity: 0.5;
@@ -36,5 +36,9 @@
     border-right: 1px solid $color-light-gray;
     border-bottom: 1px solid $color-light-gray;
     border-radius: 0 0 10px 10px;
+    line-height: 1.6;
+  }
+  @media (max-width: $break-large) {
+    margin-bottom: $padding-base;
   }
 }

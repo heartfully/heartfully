@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'sample-registry', to: 'registries#sample_show'
-  
+
   # Rails Admin for backend project creation/approval
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
@@ -59,6 +59,10 @@ Rails.application.routes.draw do
   get '/our-partners' => 'marketing#our_partners'
   get '/privacy-policy' => 'marketing#privacy_policy'
   get '/terms-of-use' => 'marketing#terms_of_use'
+
+  ['admin', 'browse', 'create', 'create_2', 'faq', 'home', 'index', 'our_partners', 'partner', 'project', 'registry'].each do |route|
+    get "/designs/#{route}" => "designs##{route}"
+  end
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do

@@ -18,6 +18,8 @@
     position: relative;
     list-style: none;
     margin-bottom: $padding-base;
+    line-height: 1.6;
+    font-size: 0.9em;
     &:before {
       content: '';
       position: absolute;

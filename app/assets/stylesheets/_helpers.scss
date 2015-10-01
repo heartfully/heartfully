@@ -6,25 +6,64 @@
   #{$name}: #{$argument};
 }
 
+// Custom Fonts
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/2f4562");
+@import url("//hello.myfonts.net/count/2f456e");
+
+
+@font-face {
+  font-family: 'AvenirNextLTPro-Bold';
+  src: url('2F4562_0_0.eot');
+  src: url('2F4562_0_0.eot?#iefix') format('embedded-opentype'),
+       url('2F4562_0_0.woff2') format('woff2'),
+       url('2F4562_0_0.woff') format('woff'),
+       url('2F4562_0_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AvenirNextLTPro-Regular';
+  src: url('2F4562_1_0.eot');
+  src: url('2F4562_1_0.eot?#iefix') format('embedded-opentype'),
+  url('2F4562_1_0.woff2') format('woff2'),
+  url('2F4562_1_0.woff') format('woff'),
+  url('2F4562_1_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AvenirNextLTPro-Demi';
+  src: url('2F456E_0_0.eot');
+  src: url('2F456E_0_0.eot?#iefix') format('embedded-opentype'),
+       url('2F456E_0_0.woff2') format('woff2'),
+       url('2F456E_0_0.woff') format('woff'),
+       url('2F456E_0_0.ttf') format('truetype');
+}
+
+@mixin avenir-demi {
+  font-family: 'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif;
+}
+
+@mixin avenir-bold {
+  font-family: 'AvenirNextLTPro-Bold', Helvetica, Arial, sans-serif;
+}
+
 @mixin font-heading {
-  font-weight: 700;
+  font-weight: normal;
   font-size: 1.35rem;
   color: #525252;
-  //font-family: 'Lora', Georgia, Times New Roman, serif;
+  color: #7D72DE;
 }
 
 @mixin font-subhed {
   font-family: 'Roboto Slab', sans-serif;
   font-weight: 300;
-  @include vendor-prefix(font-smoothing, antialiased);
 }
 
 @mixin font-meta {
-	font-family: 'Hind', Arial, sans-serif;
+	@include avenir-demi;
 	text-transform: uppercase;
 	letter-spacing: 0.5pt;
-	font-weight: 600;
-  color: lighten($color-medium-gray, 15%);
+  //color: lighten($color-medium-gray, 15%);
 	@include vendor-prefix(font-smoothing, antialiased);
 }
 
@@ -37,6 +76,14 @@
 // TODO:
 // input style mixins
 // button focus/outline mixins
+
+.subhed {
+  @include font-subhed;
+}
+
+.purple {
+  color: $color-purple-deep;
+}
 
 .section {
   margin-bottom: $padding-base*2;
@@ -51,6 +98,10 @@
 		background: $color-purple-light;
     color: $color-purple-deep-muted;
 	}
+  &.dark-purple {
+    background: $color-purple-deep-dark;
+    color: #fff;
+  }
   &.white {
     background: #fff;
     border-top: 1px solid $color-light-gray;
@@ -60,14 +111,42 @@
     background: $color-blue-light;
     color: $color-blue-dark;
   }
+  &--large {
+    padding: $padding-base*4 0;
+  }
+  &--impact {
+    position: relative;
+    .content {
+      max-width: 50%;
+      margin: 0 auto;
+      z-index: 1;
+    }
+  }
 }
 
 .meta {
 	@include font-meta;
+  &--ul {
+    &:after {
+      content: '';
+      display: block;
+      margin: 5px auto $padding-base/2 auto;
+      max-width: 50px;
+      border-bottom: 3px solid #fff;
+    }
+  }
 }
 
 .block {
   display: block;
+}
+
+.pad {
+  padding: $padding-base 0;
+}
+
+.pad-lr {
+  padding: 0 $padding-base;
 }
 
 .stretch {
@@ -82,8 +161,28 @@
   color: $color-medium-gray;
 }
 
+// type
+
 .small {
   font-size: 0.85em;
+}
+
+.large {
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
+.xl {
+  font-size: 2em;
+}
+
+.roboto {
+  @include font-subhed;
+  em {
+    @include font-meta;
+    font-style: normal;
+    font-weight: 700;
+  }
 }
 
 .ma {
@@ -118,6 +217,10 @@
   display: inline-block;
 }
 
+.vm {
+  vertical-align: middle;
+}
+
 .nudge-top {
   margin-top: $padding-base;
 }
@@ -145,7 +248,7 @@
 }
 
 .col-1-2 {
-	width: 50%;
+	width: 49%;
 }
 
 // Flex children
@@ -153,6 +256,17 @@
 	display: flex;
 	justify-content: space-around;
   align-items: flex-start;
+}
+
+.flex--sb {
+  justify-content: space-between;
+}
+
+// Overrides justify-content space-around to be flex-start
+// so that items do not have large awkward spaces in between
+// and that items are not weirdly centered.
+.flex--start {
+  justify-content: flex-start;
 }
 
 // if you want flexbox in a two column layout
@@ -167,4 +281,24 @@
 
 .flex-40 {
   width: 40%;
+}
+
+.border {
+  padding: $padding-base;
+  border: 0 px solid #eee;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 1px 0 0 hsla(0, 0%, 0%, 0.1);
+}
+
+// Links
+.link--danger {
+  color: $color-danger;
+  &:hover {
+    color: darken($color-danger, 20%);
+  }
+}
+
+.link--neutral {
+  color: $color-dark-gray;
 }
