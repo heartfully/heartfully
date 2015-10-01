@@ -2,7 +2,7 @@
 label {
   margin-right: $padding-base/4;
   vertical-align: middle;
-  font-weight: bold;
+  @include avenir-bold;
 }
 
 input,

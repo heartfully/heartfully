@@ -1,9 +1,13 @@
 .c-hero {
+	background: url('http://cdn0.stocksy.com/a/9Gy200/z0/708297.jpg');
+	background-position: 50% 50%;
 	height: 800px;
-	margin-bottom: $padding-base*2;
 	position: relative;
 	background-size: cover;
 	color: #fff;
+	@media (max-width: $break-large) {
+		height: 450px;
+	}
 	&:before {
 		content: '';
 		position: absolute;
@@ -20,16 +24,43 @@
 		width: 100%;
 		top: 40%;
 		text-align: center;
+		@media (max-width: $break-large) {
+			top: 40%;
+		}
+		@media (max-width: $break-small) {
+			top: 30%;
+		}
 	}
 	&__couple {
 		@include font-fancy;
 		font-size: 5.5em;
 		margin-bottom: $padding-base/4;
+		@media (max-width: $break-large) {
+			font-size: 4em;
+		}
+	}
+	&__home {
+		@include font-subhed;
+		margin-top: -5%;
+		max-width: 80%;
+		font-size: 3.5em;
 	}
 	&__date {
 		@include font-subhed;
 		font-size: 1.3em;
 		letter-spacing: 2pt;
 		text-transform: uppercase;
+	}
+	&__video {
+		max-width: 300px;
+		text-transform: uppercase;
+		letter-spacing: 0.5pt;
+		opacity: 0.8;
+		&:before {
+			content: 'O ';
+		}
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
