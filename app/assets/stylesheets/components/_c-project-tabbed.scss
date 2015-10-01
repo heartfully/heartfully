@@ -1,13 +1,11 @@
 .c-project-tabbed {
 	margin: $padding-base auto ($padding-base*2) auto;
-	border: 1px solid #ccc;
-	border-radius: 0 0 10px 10px;
-	border-top: 0;
 	&__header {
 		position: relative;
 		height: 400px;
-		background: url('http://media.npr.org/assets/img/2015/08/21/ballet2-edit_custom-e2652607fbfa2d04ec7fb756ab9f7581c98a034c-s800-c85.jpg');
+		background: url('//images.nationalgeographic.com/wpf/media-live/photos/000/279/cache/students-santa-avelina_27917_600x450.jpg');
 		background-size: cover;
+		background-position: 50% 50%;
 		color: #fff;
 	}
 	&__header--overlay {
@@ -16,14 +14,14 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: linear-gradient((rgba(0,0,0,0)), rgba(0,0,0,0.9));
+		background: linear-gradient((rgba(0,0,0,0.2)), rgba(0,0,0,0.6));
 	}
 	&__header--wrapper {
 		position: absolute;
-		bottom: 0;
+		bottom: $padding-base;
 		padding: $padding-base;
-		max-width: 75%;
 		z-index: 1;
+		text-align: center;
 	}
 	&__header--subtitle {
 		@include font-meta;
@@ -32,58 +30,76 @@
 	&__header--title {
 		@include font-subhed;
 		font-size: 2.8em;
+		@media (max-width: $break-large) {
+			font-size: 2em;
+		}
 	}
 	&__menu {
+		min-width: 250px;
+		display: inline-block;
 		margin: 0;
-		padding: $padding-base/2 $padding-base 0 $padding-base;
-		background: $color-purple-secondary;
-		color: #fff;
+		padding: 0;
+		padding-right: $padding-base;
+		@media (max-width: $break-large) {
+			display: none;
+		}
 	}
 	&__menu-item {
-		display: inline-block;
-		margin-right: $padding-base;
+		display: block;
+		margin: $padding-base/4 0;
+		padding-left: $padding-base/2;
+		border-right: 5px solid rgba(0,0,0,0);
+		font-size: 0.9em;
+		@include font-meta;
 		text-transform: uppercase;
-		font-weight: 600;
-		padding-bottom: $padding-base/2;
-		border-bottom: 5px solid rgba(0,0,0,0);
-    letter-spacing: 0.2pt;
-		@include vendor-prefix(font-smoothing, antialiased);
-		@include vendor-prefix(transition, 0.2s ease-in-out);
-		&:last-child {
-			margin-right: 0;
-		}
-		&.active {
-			border-bottom: 5px solid lighten($color-purple-secondary, 25%);
-		}
-		a {
-			color: #fff;
-		}
+		letter-spacing: 0.5pt;
+		color: $color-dark-gray;
+		&.active,
 		&:hover {
-			border-bottom: 5px solid lighten($color-purple-secondary, 25%);
+			border-left: 5px solid lighten($color-purple-deep, 25%);
+			color: $color-purple-deep;
 		}
 	}
 	&__content {
 		padding: $padding-base;
-		font-size: 1.3em;
-	}
-	&__content--overview {
-		display: flex;
-		align-items: flex-start;
+		@media (max-width: $break-large) {
+			padding: $padding-base 0;
+		}
 	}
 	&__content--overview--summary {
-		width: 60%;
-		font-size: 1.2em;
-		line-height: 1.5;
-		@include vendor-prefix(font-smoothing, antialiased);
-		border-right: 1px solid $color-light-gray;
-		padding-right: $padding-base;
+		font-size: 1.5em;
+		min-width: 50%;
+		@media (max-width: $break-large) {
+			margin-bottom: $padding-base;
+		}
 	}
 	&__content--overview--partner {
-		color: $color-dark-gray;
-		padding-left: $padding-base;
-		font-size: 0.8em;
+		min-width: 25%;
+		margin-left: $padding-base/2;
+		border: 1px solid $color-light-gray;
+		padding: $padding-base/2;
+		border-radius: 5px;
+		font-size: 0.9em;
 		h4 {
-			font-weight: 600;
+			@include avenir-demi;
 		}
+		@media (max-width: $break-large) {
+			//display: none;
+			margin: 0;
+		}
+	}
+	&__menu-small {
+		@media (min-width: $break-large) {
+			display: none;
+		}
+		border: 2px solid $color-purple-deep;
+		padding: $padding-base/2;
+		margin-bottom: $padding-base;
+		font-size: 0.9em;
+		@include avenir-bold;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.5pt;
+		color: $color-purple-deep;
 	}
 }

@@ -5,13 +5,17 @@
   background: #fff;
   text-transform: uppercase;
   letter-spacing: 0.8pt;
-  font-weight: 600;
+  @include avenir-demi;
   padding: 10px;
   outline: none;
   @include vendor-prefix(transition, 0.2s ease-in-out);
   &:hover {
     background: $color-purple-deep;
     color: #fff;
+  }
+  &--big {
+    font-size: 1.5em;
+    padding: 10px 40px;
   }
 }
 
@@ -22,6 +26,17 @@
   &:hover {
     border: 3px solid $color-purple-deep-hover;
     background: $color-purple-deep-hover;
+  }
+}
+
+// secondary button
+.c-button--secondary {
+  background: $color-light-gray;
+  border: 3px solid $color-light-gray;
+  color: $color-medium-gray;
+  &:hover {
+    background: $color-light-gray;
+    color: #fff;
   }
 }
 
@@ -41,9 +56,10 @@
   text-transform: uppercase;
   letter-spacing: 1pt;
   padding-bottom: 5px;
-  font-weight: 600;
+  @include avenir-bold;
   border-bottom: 1px solid $color-purple-deep;
   &:hover {
-    opacity: 0.8;
+    color: $color-purple-deep;
+    border-bottom: 1px solid $color-purple-deep-dark;
   }
 }

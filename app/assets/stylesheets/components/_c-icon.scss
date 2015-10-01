@@ -15,6 +15,10 @@
   &--green {
     fill: $color-success;
   }
+  &--status {
+    fill: #fff;
+    margin-right: 5px;
+  }
   &--inline {
     width: 1em;
     height: 1em;

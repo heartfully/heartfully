@@ -33,6 +33,10 @@ $navheight: 65px;
   background: #fff;
   font-size: 0.9em;
 
+  @media (max-width: $break-medium) {
+    display: none;
+  }
+
   &--normal {
     position: relative;
   }
@@ -108,18 +112,18 @@ $navheight: 65px;
     color: $color-medium-gray;
     font-size: 0.93em;
     text-transform: uppercase;
-    font-weight: 600;
     letter-spacing: 0.5pt;
+    @include avenir-demi;
     &:last-child {
       color: $color-text;
       margin-right: $padding-base;
       text-transform: none;
-      font-weight: 700;
+      @include avenir-bold;
       letter-spacing: 0;
       margin-left: 15px;
       position: relative;
       &:hover {
-        color: $color-text;
+        color: #eee;
         .c-nav__admin-menu {
           opacity: 1;
         }
@@ -127,7 +131,7 @@ $navheight: 65px;
       &:before {
         content: '';
         position: absolute;
-        margin-top: 6px;
+        margin-top: 3px;
         margin-left: -15px;
         width: 10px;
         height: 10px;
@@ -136,7 +140,7 @@ $navheight: 65px;
       }
     }
     &:hover {
-      color: $color-text;
+      color: #eee;
     }
   }
   &__admin-menu {
@@ -152,11 +156,12 @@ $navheight: 65px;
     list-style: none;
   }
   &__admin-menu-item {
-    font-weight: 600;
+    color: $color-text;
+    @include avenir-demi;
     letter-spacing: 0;
     line-height: 2;
     &:hover {
-      color: $color-text;
+      //color: $color-text;
     }
     &:last-child {
       margin-top: $padding-base/4;
