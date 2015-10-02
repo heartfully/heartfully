@@ -3,17 +3,18 @@
     Dear Heartful.ly Partner,
   </div>
   <div>
-    The information you provide here is the only content we have to draw from when featuring your
-    work in our project gallery. Filling out every section will improve this project’s chances of
-    being selected by a couple!
+    We are so excited to feature the work your organization is doing! Please know that the information you provide here is the only content we have to draw from when featuring this project.
   </div>
   <div>
     Once you’ve submitted this form, we will review your
     submission and let you know whether we have any questions
-    or concerns within 5 business days. If your project gets the green light, we’ll send you a confirmation email with a link to the content once it’s published.
+    or concerns within 5 business days. We’ll send you a confirmation email with a link to the content once it’s published.
   </div>
   <div>
     Please fill out a new project proposal for <strong>every</strong project you’d like to submit.
+  </div>
+  <div>
+    Thank you for being part of Heartful.ly’s journey!
   </div>
   <div>
     Tips:
@@ -60,7 +61,7 @@
     </div>
 
     <%= f.label :sector, 'Sector of project:' %>
-    <i>Note: funds raised must be used ONLY to support activities in this sector.</i>
+    <i>Note: We recognize that funds raised for this specific project cannot always be directly allocated. However, funds raised must be used only to support activities within this sector.</i>
     <%= f.text_field :sector %>
     <%= f.label :overview, 'Overview: (max 250 characters)' %>
     <i>In 1 sentence explain what this project seeks to accomplish.</i>
@@ -73,7 +74,6 @@
     <%= f.text_field :solution %>
     <div>
       In a nutshell, how does it work? (max 350 characters)
-      <i>Please explain this section in concise, numbered steps.</i>
     </div>
     <%= f.label :how_it_works_step1, '1.' %>
     <%= f.text_field :how_it_works_step1, placeholder: '200 characters per step' %>
@@ -91,7 +91,7 @@
     <%= f.label :sustainability, 'Sustainability: (max 500 characters)' %>
     <i>How will the impact of this project be sustained once it has been implemented?</i>
     <%= f.text_area :sustainability %>
-    <%= f.label :staff_quote, 'Quote from a staff member, beneficiary, or other individual affiliated with your' %>
+    <%= f.label :staff_quote, 'Please share a quote from a staff member, beneficiary, or other individual affiliated with your organization. (max 250 characters)' %>
     <%= f.text_field :staff_quote %>
     <div>
       <%= f.label :budget, 'Upload your budget' %>
@@ -104,7 +104,7 @@ associated with the project. We will use this budget to create an authentic gift
       </p>
     </div>
     <%= f.file_field :budget %>
-    <%= f.label :photo1, 'Upload 3-5 high resolution photos (ideally between 500-1000 pixels) with captions that highlight and/or explain the community and work this project supports.' %>
+    <%= f.label :photo1, 'Upload 3-5 high resolution photos (ideally between 500-1000 pixels).' %>
     <%= f.file_field :photo1 %>
     <%= f.file_field :photo2 %>
     <%= f.file_field :photo3 %>
