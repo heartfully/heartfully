@@ -29,6 +29,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
+    @organization = Organization.find(params[:organization_id])
     @project = Project.new
   end
 
@@ -39,12 +40,13 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   def create
-    @project = Project.new(project_params)
+    @organization = Organization.find(params[:organization_id])
+    @project = @organization.projects.new(project_params)
 
     if @project.save
-      redirect_to @project, notice: 'Project was successfully created.'
+      redirect_to @organization
     else
-      render :new
+      redirect_to organization_project_path(@project)
     end
   end
 

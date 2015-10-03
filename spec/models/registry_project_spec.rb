@@ -7,7 +7,6 @@
 #  project_id  :integer          not null
 #  created_at  :datetime
 #  updated_at  :datetime
-#  approved    :boolean          default(FALSE)
 #
 
 require 'rails_helper'

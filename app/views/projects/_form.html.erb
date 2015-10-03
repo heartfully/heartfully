@@ -33,7 +33,7 @@
   </p>
   <hr>
   <br>
-  <%= form_for(@project) do |f| %>
+  <%= form_for([@organization, @project]) do |f| %>
     <% if @project.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -63,6 +63,8 @@
     <%= f.label :sector, 'Sector of project:' %>
     <i>Note: We recognize that funds raised for this specific project cannot always be directly allocated. However, funds raised must be used only to support activities within this sector.</i>
     <%= f.text_field :sector %>
+    <%= f.label :country, 'Country where this project is implemented' %>
+    <%= f.text_field :country %>
     <%= f.label :overview, 'Overview: (max 250 characters)' %>
     <i>In 1 sentence explain what this project seeks to accomplish.</i>
     <%= f.text_field :overview %>

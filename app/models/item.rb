@@ -22,4 +22,5 @@ end
 #  created_at   :datetime
 #  updated_at   :datetime
 #  order_id     :integer
+#  registry_id  :integer
 #
