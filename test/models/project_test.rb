@@ -2,24 +2,64 @@
 #
 # Table name: projects
 #
-#  id              :integer          not null, primary key
-#  name            :string(255)      not null
-#  partner         :string(255)
-#  description     :text
-#  url_slug        :string(255)
-#  banner_img      :string(255)
-#  city            :string(255)
-#  country         :string(255)      not null
-#  funding_goal    :decimal(11, 2)
-#  closed_at       :datetime
-#  public          :boolean          default(TRUE), not null
-#  organization_id :integer          not null
-#  created_at      :datetime
-#  updated_at      :datetime
-#  project_photo   :string(255)
-#  project_photo_2 :string(255)
-#  project_photo_3 :string(255)
-#  extra_content   :text
+#  id                   :integer          not null, primary key
+#  name                 :string(255)      not null
+#  partner              :string(255)
+#  description          :text
+#  url_slug             :string(255)
+#  banner_img           :string(255)
+#  city                 :string(255)
+#  country              :string(255)      not null
+#  funding_goal         :decimal(11, 2)
+#  closed_at            :datetime
+#  public               :boolean          default(TRUE), not null
+#  organization_id      :integer          not null
+#  created_at           :datetime
+#  updated_at           :datetime
+#  project_photo        :string(255)
+#  project_photo_2      :string(255)
+#  project_photo_3      :string(255)
+#  extra_content        :text
+#  contact_name         :string(255)
+#  contact_email        :string(255)
+#  contact_phone_number :string(255)
+#  sector               :string(255)
+#  overview             :text
+#  problem              :text
+#  solution             :text
+#  how_it_works_step1   :string(255)
+#  how_it_works_step2   :string(255)
+#  how_it_works_step3   :string(255)
+#  how_it_works_step4   :string(255)
+#  how_it_works_step5   :string(255)
+#  importance           :text
+#  sustainability       :text
+#  staff_quote          :string(255)
+#  photo1_file_name     :string(255)
+#  photo1_content_type  :string(255)
+#  photo1_file_size     :integer
+#  photo1_updated_at    :datetime
+#  photo2_file_name     :string(255)
+#  photo2_content_type  :string(255)
+#  photo2_file_size     :integer
+#  photo2_updated_at    :datetime
+#  photo3_file_name     :string(255)
+#  photo3_content_type  :string(255)
+#  photo3_file_size     :integer
+#  photo3_updated_at    :datetime
+#  photo4_file_name     :string(255)
+#  photo4_content_type  :string(255)
+#  photo4_file_size     :integer
+#  photo4_updated_at    :datetime
+#  photo5_file_name     :string(255)
+#  photo5_content_type  :string(255)
+#  photo5_file_size     :integer
+#  photo5_updated_at    :datetime
+#  certified            :boolean
+#  budget_file_name     :string(255)
+#  budget_content_type  :string(255)
+#  budget_file_size     :integer
+#  budget_updated_at    :datetime
 #
 
 require 'test_helper'
