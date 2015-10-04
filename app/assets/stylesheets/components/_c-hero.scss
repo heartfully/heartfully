@@ -56,9 +56,6 @@
 		text-transform: uppercase;
 		letter-spacing: 0.5pt;
 		opacity: 0.8;
-		&:before {
-			content: 'O ';
-		}
 		&:hover {
 			opacity: 1;
 		}
