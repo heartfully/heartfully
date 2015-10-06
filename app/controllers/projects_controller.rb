@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :require_auth, :except => [:index, :show, :select]
+  before_action :require_auth, :only => [:update, :destroy]
   before_action :set_project, only: [:show, :update, :destroy, :select]
 
   # GET /projects
@@ -44,9 +44,9 @@ class ProjectsController < ApplicationController
     @project = @organization.projects.new(project_params)
 
     if @project.save
-      redirect_to @organization
+      redirect_to current_user ? @organization : projects_thank_you_path
     else
-      redirect_to organization_project_path(@project)
+      render 'new'
     end
   end
 
@@ -65,7 +65,11 @@ class ProjectsController < ApplicationController
     redirect_to projects_url, notice: 'Project was successfully destroyed.'
   end
 
+  def thank_you
+  end
+
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_project
       @project = Project.find_by(url_slug: params[:url_slug])
