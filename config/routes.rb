@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   # User confirmation
   get '/users/:confirmation_token/confirm' => 'users#confirm', :as => 'user_confirmation'
 
+  get '/projects/thank_you', to: 'projects#thank_you'
   get '/projects/:url_slug', to: 'projects#show'
   post '/projects/:url_slug/select', to: 'projects#select', as: 'select_project'
 
