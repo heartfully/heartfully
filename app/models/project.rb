@@ -14,6 +14,8 @@ class Project < ActiveRecord::Base
   validates_attachment :budget, content_type: { :content_type => %w(application/pdf
                                                                     application/msword
                                                                     application/xlsx
+                                                                    application/xls
+                                                                    application/csv
                                                                     application/vnd.openxmlformats-officedocument.wordprocessingml.document
                                                                     application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
                                                                     application/vnd.ms-excel
