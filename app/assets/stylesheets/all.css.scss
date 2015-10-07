@@ -258,12 +258,18 @@ td { vertical-align: top }
 		@include avenir-demi;
 		font-size: 0.9em;
 		letter-spacing: 1pt;
-		&:after {
-			content: ' ----------------------------'
+		&:nth-of-type(odd):after {
+			content: '';
+			position: absolute;
+			margin: 5px 0 0 5px;
+			height: 1px;
+			width: 500px;
+			border-bottom: 1px solid $color-light-gray;
 		}
-		&--odd {
+		&:nth-of-type(even):after {
 			&:after {
-				content: '';
+				content: 'o';
+				height: 0px;
 			}
 			&:before {
 				content: '---------------------------- '
@@ -290,9 +296,6 @@ a.c-how__step-view {
 	font-size: 0.85em;
 	@include avenir-demi;
 	color: $color-medium-gray;
-	&:before {
-		content: 'tk ';
-	}
 	&:hover {
 		color: $color-dark-gray;
 	}

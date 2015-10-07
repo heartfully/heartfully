@@ -1,7 +1,7 @@
 <%= render "shared/svg" %>
 
 <%= render "shared/nav_guest" %>
-<header class="c-hero" style="background-image: url('https://photos-3.dropbox.com/t/2/AABb4gG7gjhyK4f0kulPQ39HAUw3QPtBWuV1lM73wHaGNg/12/651217/jpeg/32x32/1/_/1/2/heartfully-home.jpg/EPL9VRjBhM-1AiACKAI/MqZoyKxhfBNbjM3zupstzEjiEZXuHsojizsHVG35j2E?size=1024x768&size_mode=2');">
+<header class="c-hero" style="background-image: url('<%=image_url('heartfully-home.jpg')%>');">
   <div class="c-hero__container">
     <h1 class="c-hero__home ma mb">
       Celebrate your big day by<br/>
@@ -35,7 +35,10 @@
       <p class="c-how__step-description mb">
         Choose a unique URL, share some basic information about your big day, and upload a few photos.
       </p>
-      <a class="c-how__step-view block" href="#">View a sample registry</a>
+      <a class="c-how__step-view block" href="#">
+        <svg class="c-icon"><use xlink:href="#icon-preview"></use></svg>
+        View a sample registry
+      </a>
     </div>
     <div class="c-how__visual flex-2">
     </div>
@@ -66,6 +69,7 @@
 </div>
 
 <div class="c-breaker dark-purple center mb--large">
+  <svg class="c-icon c-icon--medium mb--small" style="fill: #C0BDDE;"><use xlink:href="#icon-smile"></use></svg>
   <h3 class="roboto large mb">Heartful.ly is free for couples. Free for nonprofits.</h3>
   <button class="c-button c-button--primary">Create a registry</button>
 </div>
@@ -77,10 +81,24 @@
 </div>
 
 <!-- impact breaker -->
-<div class="c-breaker c-breaker--impact dark-purple center" style="background-image: url(<%=image_url('impact.jpg')%>); background-size: cover; min-height: 300px; background-position: 50% 50%;">
+<div class="c-breaker c-breaker--impact dark-purple center mb" style="background-image: url(<%=image_url('impact-crop.jpg')%>); background-size: cover; background-position: 100% 50%;">
   <div class="meta meta--ul">Our impact</div>
   <div class="content roboto xl">Heartful.ly registries have raised over <em>$14,456</em> for people in need.</div>
 </div>
+
+<div class="c-how test pad">
+  <h3 class="c-how__title center subhed purple mb">Selected Partners</h3>
+  <div class="mb--large center">Heartful.ly is proud to partner with these established organizations.</div>
+  <div class="c-partners r-flex mb">
+    <img src="<%=image_url('partners/logo-futbol.png')%>" class="c-partners__logo">
+    <img src="<%=image_url('partners/logo-mh.png')%>" class="c-partners__logo">
+    <img src="<%=image_url('partners/logo-olivebranch.png')%>" class="c-partners__logo">
+    <img src="<%=image_url('partners/logo-solaraid.png')%>" class="c-partners__logo">
+    <img src="<%=image_url('partners/logo-streetsense.jpg')%>" class="c-partners__logo">
+  </div>
+</div>
+
+<div class="line"></div>
 
 <!-- make this into a cta component -->
 <div class="c-breaker center">
