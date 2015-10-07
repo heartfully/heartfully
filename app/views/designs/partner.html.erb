@@ -1,4 +1,3 @@
-
 <%= render "shared/svg" %>
 
 <%= render "shared/nav" %>
@@ -36,22 +35,20 @@
   </div>
 </div>
 
-<div class="line"></div>
-
 <div class="c-how test pad">
   <h3 class="c-how__title center subhed purple mb">Selected Partners</h3>
   <div class="mb--large center">Heartful.ly is proud to partner with these established organizations.</div>
   <div class="c-partners r-flex mb">
-    <img src="../images/logo-futbol.png" class="c-partners__logo">
-    <img src="../images/logo-mh.png" class="c-partners__logo">
-    <img src="../images/logo-olivebranch.png" class="c-partners__logo">
-    <img src="../images/logo-solaraid.png" class="c-partners__logo">
-    <img src="../images/logo-streetsense.jpg" class="c-partners__logo">
+    <img src="<%=image_url('partners/logo-futbol.png')%>" class="c-partners__logo">
+    <img src="<%=image_url('partners/logo-mh.png')%>" class="c-partners__logo">
+    <img src="<%=image_url('partners/logo-olivebranch.png')%>" class="c-partners__logo">
+    <img src="<%=image_url('partners/logo-solaraid.png')%>" class="c-partners__logo">
+    <img src="<%=image_url('partners/logo-streetsense.jpg')%>" class="c-partners__logo">
   </div>
 </div>
 
 <!-- impact breaker -->
-<div class="c-breaker c-breaker--impact dark-purple center" style="background-image: url('http://cdn2.stocksy.com/a/pol100/z0/422147.jpg'); background-size: cover; min-height: 300px; background-position: 50% 50%;">
+<div class="c-breaker c-breaker--impact dark-purple center mb" style="background-image: url(<%=image_url('impact-crop.jpg')%>); background-size: cover; background-position: 100% 50%;">
   <div class="meta meta--ul">Our impact</div>
   <div class="content roboto xl">Heartful.ly registries have raised over <em>$14,456</em> for people in need.</div>
 </div>
