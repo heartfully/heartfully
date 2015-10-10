@@ -258,23 +258,6 @@ td { vertical-align: top }
 		@include avenir-demi;
 		font-size: 0.9em;
 		letter-spacing: 1pt;
-		&:nth-of-type(odd):after {
-			content: '';
-			position: absolute;
-			margin: 5px 0 0 5px;
-			height: 1px;
-			width: 500px;
-			border-bottom: 1px solid $color-light-gray;
-		}
-		&:nth-of-type(even):after {
-			&:after {
-				content: 'o';
-				height: 0px;
-			}
-			&:before {
-				content: '---------------------------- '
-			}
-		}
 	}
 	&__step-title {
 		font-size: 1.3em;
@@ -287,9 +270,9 @@ td { vertical-align: top }
 		max-width: 500px;
 		height: 250px;
 		background-color: $color-light-gray;
-		background-image: url("https://apis.xogrp.com/media-api/images/c832b1b3-d37f-452e-8e9f-6ad3a90c5aec");
 		background-size: cover;
 		background-position: 50% 50%;
+		z-index: 1;
 	}
 }
 a.c-how__step-view {
