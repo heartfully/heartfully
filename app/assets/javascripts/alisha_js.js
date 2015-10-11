@@ -60,3 +60,13 @@ $('.c-nav__cart').on('click', function() {
   $('.c-checkout').removeClass('inactive');
 });
 
+// open video modal
+$('.c-hero__video').on('click', function() {
+  $('.c-video-modal').addClass('active');
+});
+
+// close video modal
+$('#close-video').on('click', function() {
+  $('.c-video-modal').removeClass('active');
+});
+

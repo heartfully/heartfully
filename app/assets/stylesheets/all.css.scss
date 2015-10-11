@@ -437,3 +437,20 @@ a.c-how__step-view {
 		z-index: -1;
 	}
 }
+
+.c-video-modal {
+	width: auto;
+	max-width: 100%;
+	background: rgba(0,0,0,0.7);
+	padding: $padding-base;
+	opacity: 0;
+	z-index: -1;
+	height: 470px;
+	@include vendor-prefix(transition, 0.2s ease-in-out);
+	&.active {
+		display: inline-block;
+		opacity: 1;
+		z-index: 1;
+		@include vendor-prefix(transform, translateY(-75%));
+	}
+}
