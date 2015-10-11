@@ -432,7 +432,7 @@ a.c-how__step-view {
 		color: $color-purple-deep;
 	}
 	&.inactive {
-		@include vendor-prefix(transform, translateX(50%));
+		@include vendor-prefix(transform, translateX(100%));
 		opacity: 0;
 		z-index: -1;
 	}
@@ -441,16 +441,22 @@ a.c-how__step-view {
 .c-video-modal {
 	width: auto;
 	max-width: 100%;
-	background: rgba(0,0,0,0.7);
+	background: rgba(0,0,0,0.9);
 	padding: $padding-base;
 	opacity: 0;
 	z-index: -1;
 	height: 470px;
+	text-align: center;
 	@include vendor-prefix(transition, 0.2s ease-in-out);
+	@include vendor-prefix(transform, translateY(20%));
 	&.active {
-		display: inline-block;
+		position: absolute;
+		top: 10%;
+		left: 0;
+		right: 0;
+		bottom: 0;
 		opacity: 1;
-		z-index: 1;
-		@include vendor-prefix(transform, translateY(-75%));
+		z-index: 2;
+		@include vendor-prefix(transform, translateY(0%));
 	}
 }

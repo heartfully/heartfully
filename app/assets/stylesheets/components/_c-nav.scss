@@ -93,7 +93,7 @@ $navheight: 65px;
     text-align: center;
     @include vendor-prefix(transition, 0.2s ease-in-out);
     &.inactive {
-      @include vendor-prefix(transform, translateY(-30%));
+      @include vendor-prefix(transform, translateY(-100%));
       opacity: 0;
       z-index: -1;
     }

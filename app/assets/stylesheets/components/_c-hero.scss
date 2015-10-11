@@ -43,6 +43,12 @@
 		margin-top: -5%;
 		max-width: 80%;
 		font-size: 3.5em;
+		@media (max-width: $break-large) {
+			font-size: 2.8em;
+		}
+		@media (max-width: $break-medium) {
+			font-size: 2.5em;
+		}
 	}
 	&__date {
 		@include font-subhed;
