@@ -50,3 +50,13 @@ $('.c-nav__menu-indicator').on('click', function() {
   $('.c-nav__mobile-menu').removeClass('inactive');
 });
 
+// close checkout panel
+$('#continue-shopping').on('click', function() {
+  $('.c-checkout').addClass('inactive');
+});
+
+// open checkout panel
+$('.c-nav__cart').on('click', function() {
+  $('.c-checkout').removeClass('inactive');
+});
+

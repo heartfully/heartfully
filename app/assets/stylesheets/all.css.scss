@@ -320,14 +320,6 @@ a.c-how__step-view {
 			opacity: 1;
 		}
 	}
-	.testing-modal {
-		opacity: 0;
-		position: absolute;
-		top: 45px;
-		left: -220px;
-		width: 300px;
-		border: 1px solid gray;
-	}
 }
 
 // Partner component on Our Partners page
@@ -420,5 +412,28 @@ a.c-how__step-view {
 	&__question {
 		font-size: 1.3em;
 		color: $color-purple-deep;
+	}
+}
+
+.c-checkout {
+	width: 400px;
+	background: #fff;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	height: 100vh;
+	padding: $padding-base;
+	line-height: 1.5;
+	@include vendor-prefix(transition, 0.2s ease-in-out);
+	h3 {
+		@include avenir-demi;
+		font-size: 1.4em;
+		color: $color-purple-deep;
+	}
+	&.inactive {
+		@include vendor-prefix(transform, translateX(50%));
+		opacity: 0;
+		z-index: -1;
 	}
 }

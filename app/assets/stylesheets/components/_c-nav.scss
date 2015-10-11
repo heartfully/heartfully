@@ -54,6 +54,14 @@ $navheight: 65px;
     opacity: 0;
   }
 
+  // checkout cart
+  &__cart {
+    &:hover {
+      opacity: 0.4;
+      cursor: pointer;
+    }
+  }
+
   // menu text on mobile that opens the mobile menu
   &__menu-indicator {
     float: right;
