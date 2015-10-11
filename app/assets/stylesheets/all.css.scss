@@ -446,17 +446,17 @@ a.c-how__step-view {
 	opacity: 0;
 	z-index: -1;
 	height: 470px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	text-align: center;
-	@include vendor-prefix(transition, 0.2s ease-in-out);
-	@include vendor-prefix(transform, translateY(20%));
+	@include vendor-prefix(transition, 0.3s ease-in-out);
+	@include vendor-prefix(transform, translateY(100%));
 	&.active {
-		position: absolute;
-		top: 10%;
-		left: 0;
-		right: 0;
-		bottom: 0;
 		opacity: 1;
 		z-index: 2;
-		@include vendor-prefix(transform, translateY(0%));
+		@include vendor-prefix(transform, translateY(20%));
 	}
 }
