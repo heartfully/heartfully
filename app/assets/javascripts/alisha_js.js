@@ -40,4 +40,13 @@ $('.c-nav__menu-item:last-child').on('mouseleave', function(){
   $('.c-nav__admin-menu').css('opacity', '0');
 });
 
+// exit mobile menu if clicking close icon
+$('.c-nav__mobile-menu--close').on('click', function() {
+  $('.c-nav__mobile-menu').addClass('inactive');
+});
+
+// expand the mobile menu
+$('.c-nav__menu-indicator').on('click', function() {
+  $('.c-nav__mobile-menu').removeClass('inactive');
+});
 
