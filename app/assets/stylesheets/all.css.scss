@@ -460,3 +460,27 @@ a.c-how__step-view {
 		@include vendor-prefix(transform, translateY(20%));
 	}
 }
+
+.kate-signature {
+		width: 250px;
+		max-width: 100%;
+	@media (min-width: $break-medium) {
+		margin-top: -100px;
+		margin-left: 400px;
+	}
+	@media (max-width: $break-medium) {
+		max-width: 200px;
+		display: block;
+		margin: 1em;
+	}
+}
+
+.values {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	&__name {
+		font-size: 1.5em;
+		@include avenir-demi;
+	}
+}
