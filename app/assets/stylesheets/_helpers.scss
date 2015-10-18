@@ -14,29 +14,29 @@
 
 @font-face {
   font-family: 'AvenirNextLTPro-Bold';
-  src: url('2F4562_0_0.eot');
-  src: url('2F4562_0_0.eot?#iefix') format('embedded-opentype'),
-       url('2F4562_0_0.woff2') format('woff2'),
-       url('2F4562_0_0.woff') format('woff'),
-       url('2F4562_0_0.ttf') format('truetype');
+  src: font-url('2F4562_0_0.eot');
+  src: font-url('2F4562_0_0.eot?#iefix') format('embedded-opentype'),
+       font-url('2F4562_0_0.woff2') format('woff2'),
+       font-url('2F4562_0_0.woff') format('woff'),
+       font-url('2F4562_0_0.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'AvenirNextLTPro-Regular';
-  src: url('2F4562_1_0.eot');
-  src: url('2F4562_1_0.eot?#iefix') format('embedded-opentype'),
-  url('2F4562_1_0.woff2') format('woff2'),
-  url('2F4562_1_0.woff') format('woff'),
-  url('2F4562_1_0.ttf') format('truetype');
+  src: font-url('2F4562_1_0.eot');
+  src: font-url('2F4562_1_0.eot?#iefix') format('embedded-opentype'),
+  font-url('2F4562_1_0.woff2') format('woff2'),
+  font-url('2F4562_1_0.woff') format('woff'),
+  font-url('2F4562_1_0.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'AvenirNextLTPro-Demi';
-  src: url('2F456E_0_0.eot');
-  src: url('2F456E_0_0.eot?#iefix') format('embedded-opentype'),
-       url('2F456E_0_0.woff2') format('woff2'),
-       url('2F456E_0_0.woff') format('woff'),
-       url('2F456E_0_0.ttf') format('truetype');
+  src: font-url('2F456E_0_0.eot');
+  src: font-url('2F456E_0_0.eot?#iefix') format('embedded-opentype'),
+       font-url('2F456E_0_0.woff2') format('woff2'),
+       font-url('2F456E_0_0.woff') format('woff'),
+       font-url('2F456E_0_0.ttf') format('truetype');
 }
 
 @mixin avenir-demi {
