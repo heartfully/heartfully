@@ -487,3 +487,10 @@ a.c-how__step-view {
 		@include avenir-demi;
 	}
 }
+
+// impact cycle
+.content-tag {
+	@include avenir-demi;
+	font-size: 0.5em;
+	margin-bottom: 1em;
+}
