@@ -19,6 +19,7 @@ if ($('.c-hero').length != 0) {
     } else {
       $('.c-nav').removeClass('animate');
       $('.c-nav').addClass('c-nav--transparent');
+      $('.c-nav__cart cart-icon').css('fill', '#fff');
     }
   };
 } else {
