@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907193336) do
+ActiveRecord::Schema.define(version: 20151020005156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,13 +19,6 @@ ActiveRecord::Schema.define(version: 20150907193336) do
   create_table "categories", force: true do |t|
     t.string "name",     null: false
     t.string "cat_type", null: false
-  end
-
-  create_table "consultation_requests", force: true do |t|
-    t.string "email"
-    t.string "couple_names"
-    t.string "phone_number"
-    t.string "preferred_contact_method"
   end
 
   create_table "favorites", force: true do |t|
@@ -149,17 +142,17 @@ ActiveRecord::Schema.define(version: 20150907193336) do
   add_index "project_categories", ["project_id"], name: "index_project_categories_on_project_id", using: :btree
 
   create_table "projects", force: true do |t|
-    t.string   "name",                                                         null: false
+    t.string   "name",                                                                     null: false
     t.string   "partner"
     t.text     "description"
     t.string   "url_slug"
     t.string   "banner_img"
     t.string   "city"
-    t.string   "country",                                                      null: false
-    t.decimal  "funding_goal",         precision: 11, scale: 2
+    t.string   "country",                                                                  null: false
+    t.decimal  "funding_goal",                     precision: 11, scale: 2
     t.datetime "closed_at"
-    t.boolean  "public",                                        default: true, null: false
-    t.integer  "organization_id",                                              null: false
+    t.boolean  "public",                                                    default: true, null: false
+    t.integer  "organization_id",                                                          null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "project_photo"
@@ -173,11 +166,11 @@ ActiveRecord::Schema.define(version: 20150907193336) do
     t.text     "overview"
     t.text     "problem"
     t.text     "solution"
-    t.string   "how_it_works_step1"
-    t.string   "how_it_works_step2"
-    t.string   "how_it_works_step3"
-    t.string   "how_it_works_step4"
-    t.string   "how_it_works_step5"
+    t.string   "how_it_works_step1",   limit: 350
+    t.string   "how_it_works_step2",   limit: 350
+    t.string   "how_it_works_step3",   limit: 350
+    t.string   "how_it_works_step4",   limit: 350
+    t.string   "how_it_works_step5",   limit: 350
     t.text     "importance"
     t.text     "sustainability"
     t.string   "staff_quote"

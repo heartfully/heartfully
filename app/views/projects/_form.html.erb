@@ -68,17 +68,17 @@
     <%= f.label :overview, 'Overview: (max 250 characters)' %>
     <i>In 1 sentence explain what this project seeks to accomplish.</i>
     <%= f.text_field :overview %>
-    <%= f.label :problem, ' Problem: (max 250 characters)' %>
+    <%= f.label :problem, ' Problem: (max 500 characters)' %>
     <i>Why is there a need for this project?</i>
-    <%= f.text_field :problem %>
+    <%= f.text_area :problem %>
     <%= f.label :solution, 'Solution: (max 500 characters)' %>
     <i>What impact will this project make?</i>
-    <%= f.text_field :solution %>
+    <%= f.text_area :solution %>
     <div>
-      In a nutshell, how does it work? (max 350 characters)
+      In a nutshell, how does it work? (max 300 characters)
     </div>
     <%= f.label :how_it_works_step1, '1.' %>
-    <%= f.text_field :how_it_works_step1, placeholder: '200 characters per step' %>
+    <%= f.text_field :how_it_works_step1 %>
     <%= f.label :how_it_works_step2, '2.' %>
     <%= f.text_field :how_it_works_step2 %>
     <%= f.label :how_it_works_step2, '3.' %>
