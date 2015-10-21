@@ -1,0 +1,23 @@
+<% if  index % 2 == 0 %>
+  <div class="r-flex mb--large">
+<% end %>
+  <div class="c-project-mini flex-2">
+    <a href="#">
+      <div class="c-project-mini__header">
+        <div class="c-project-mini__title">
+          <%= project.organization.name %>
+        </div>
+      <div class="c-project-tabbed__header--overlay"></div>
+      </div>
+    </a>
+    <div class="c-project-mini__info">
+      <p><%= project.name %></p>
+      <a href="#" class="link--secondary inline nudge-top--small">Learn more &rarr;</a>
+      <button class="c-button c-button--primary block nudge-top stretch">
+        Select this project
+      </button>
+    </div>
+  </div>
+<% if index % 2 != 0 %>
+  </div>
+<% end %>

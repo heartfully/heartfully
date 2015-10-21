@@ -1,6 +1,7 @@
 class MarketingController < ApplicationController
 
   def index
+    @projects = Project.where(public: true).last(4)
   end
 
   def about_us

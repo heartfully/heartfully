@@ -21,6 +21,7 @@ class RegistriesController < ApplicationController
 
   # GET /registries/new
   def new
+    redirect_to new_user_path if !current_user
     @registry = Registry.new
   end
 
@@ -60,7 +61,7 @@ class RegistriesController < ApplicationController
     redirect_to registries_url, notice: 'Registry was successfully destroyed.'
   end
 
-  def sample_show 
+  def sample_show
     @registry = Registry.find(37)
   end
 
