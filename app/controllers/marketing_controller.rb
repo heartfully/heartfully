@@ -1,7 +1,7 @@
 class MarketingController < ApplicationController
 
   def index
-    @projects = Project.where(public: true).last(4)
+    @projects = Project.where(public: true).limit(4).order("RANDOM()")
   end
 
   def about_us

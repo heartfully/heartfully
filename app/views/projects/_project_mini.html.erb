@@ -12,7 +12,7 @@
     </a>
     <div class="c-project-mini__info">
       <p><%= project.name %></p>
-      <a href="#" class="link--secondary inline nudge-top--small">Learn more &rarr;</a>
+      <%= link_to "Learn more &rarr;".html_safe, "/projects/#{project.url_slug}", class:"link--secondary inline nudge-top--small" %>
       <button class="c-button c-button--primary block nudge-top stretch">
         Select this project
       </button>
