@@ -1,0 +1,10 @@
+// Currently used in the create a registry flow.
+// Usage: Use this to create a white, rounded 'card'
+// component with padding.
+.c-card {
+  font-size: 0.9em;
+  background: #fff;
+  padding: $padding-base;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 0 hsla(0, 0%, 0%, 0.1);
+}

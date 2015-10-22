@@ -1,0 +1,46 @@
+// Create A Registry specific styles
+
+// Used to create a simple line separating
+// elements in the Create A Registry flow.
+.c-create__line {
+  display: inline-block;
+  border-top: 2px solid $color-light-gray;
+  height: 1px;
+  width: 50px;
+}
+
+.c-create__step {
+  @include avenir-bold;
+  font-size: 0.9em;
+  color: $color-dark-gray;
+}
+
+.c-tiny-project {
+  border: 1px solid $color-light-gray;
+  font-size: 0.95em;
+  input {
+    margin-left: $padding-base;
+  }
+  &__photo,
+  &__info {
+    vertical-align: top;
+  }
+  &__photo {
+    display: inline-block;
+    min-height: 200px;
+    width: 100%;
+    background-image: image-url('homepage-sample-project-guatemala.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  &__info {
+    display: inline-block;
+    padding: $padding-base/2;
+  }
+  @media (max-width: $break-large) {
+    margin-bottom: $padding-base/2;
+    &.flex-2 {
+      width: 100%;
+    }
+  }
+}

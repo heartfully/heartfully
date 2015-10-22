@@ -1,0 +1,9 @@
+// A status bar that appears at the top of the page
+// to provide users information or warnings.
+
+.c-status {
+  background: $color-warning-bg;
+  color: #fff;
+  font-size: 0.9em;
+  padding: $padding-base/2 0;
+}

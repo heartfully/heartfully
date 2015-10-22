@@ -16,6 +16,7 @@ a, a:visited, a:active {
 
 h1, h2, h3, h4, h5 {
 	font-weight: normal;
+	margin: 0;
 }
 
 b, strong {
@@ -25,14 +26,11 @@ b, strong {
 
 p {
 	line-height: 1.5;
+	margin: 0;
 }
 
 p a {
 	color: $color-purple-deep;
-}
-
-h1, h2, h3, h4, h5, p {
-	margin: 0;
 }
 
 li {
@@ -49,186 +47,6 @@ li {
 	}
 }
 
-.c-card {
-	font-size: 0.9em;
-	background: #fff;
-	padding: $padding-base;
-	border-radius: 5px;
-	box-shadow: 1px 1px 2px 0 hsla(0, 0%, 0%, 0.1);
-}
-
-.c-create__line {
-	display: inline-block;
-	border-top: 2px solid $color-light-gray;
-	height: 1px;
-	width: 50px;
-}
-
-.c-create__step {
-	@include avenir-bold;
-	font-size: 0.9em;
-	color: $color-dark-gray;
-}
-
-.c-status-wrapper {
-}
-
-.c-status {
-	background: $color-warning-bg;
-	color: #fff;
-	font-size: 0.9em;
-	padding: $padding-base/2 0;
-}
-
-// tables
-
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  max-width: 100%;
-  width: 100%;
-}
-
-table {
-	border: 1px solid #eee;
-}
-
-.scroll-table {
-	border: 1px solid red;
-	width: 200px;
-	height: 400px;
-	overflow: auto;
-}
-
-th, td {
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	border-bottom-color: #eee;
-	padding: 10px;
-}
-tr:last-child {
-	border-bottom: 0;
-}
-td:last-child {
-	max-width: 300px;
-	font-size: 0.8em;
-}
-
-th {
-  text-align: left;
-}
-
-th { vertical-align: bottom }
-td { vertical-align: top }
-
-// homepage breakers
-.c-home-breaker {
-	position: relative;
-	padding: 200px 0;
-	background: url('http://www.garancedore.fr/wp-content/uploads/2015/07/hawaii-beach_garance-dore.jpg');
-	background-size: cover;
-	text-align: center;
-	color: #fff;
-	text-transform: uppercase;
-	@include avenir-bold;
-	letter-spacing: 1pt;
-	font-size: 1.4em;
-	h2 {
-		position: absolute;
-		text-align: center;
-		width: 100%;
-		z-index: 1;
-	}
-}
-
-.overlay {
-	position: absolute;
-	z-index: 0;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(0,0,0,0.5);
-}
-
-// Admin page
-.c-admin {
-	&__heading {
-		font-size: 0.9em;
-    text-transform: uppercase;
-    letter-spacing: 0.5pt;
-    color: #726E7D;
-	}
-	&__links {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		li {
-			color: $color-purple-deep;
-		}
-		li:not(:last-child) {
-			margin-bottom: 10px;
-		}
-		li:hover {
-			color: $color-purple-deep-dark;
-		}
-	}
-	&__table {
-		a, a:visited, a:active {
-			color: $color-purple-deep;
-		}
-		a:hover {
-			color: $color-purple-deep-dark;
-		}
-	}
-}
-
-//responsive flex wrapper will collapse into
-// display: block on smaller breakpoints
-.r-flex {
-	display: flex;
-	justify-content: space-around;
-  align-items: flex-start;
-	@media (max-width: $break-large) {
-		display: block;
-		.flex-2 {
-			width: 100%;
-			margin-bottom: $padding-base;
-		}
-	}
-}
-
-// tiny project card (to go into create a registry steps)
-.c-tiny-project {
-	border: 1px solid $color-light-gray;
-	font-size: 0.95em;
-	input {
-		margin-left: $padding-base;
-	}
-	&__photo,
-	&__info {
-		vertical-align: top;
-	}
-	&__photo {
-		display: inline-block;
-		min-height: 200px;
-		width: 100%;
-		background-image: image-url('homepage-sample-project-guatemala.jpg');
-		background-size: cover;
-		background-position: 50% 50%;
-	}
-	&__info {
-		display: inline-block;
-		padding: $padding-base/2;
-	}
-	@media (max-width: $break-large) {
-		margin-bottom: $padding-base/2;
-		&.flex-2 {
-			width: 100%;
-		}
-	}
-}
-
 // about the couple section
 .c-couple {
 	padding: $padding-base*2 0;
@@ -237,67 +55,6 @@ td { vertical-align: top }
 	&__info {
 		max-width: 35em;
 		margin: 0 auto;
-	}
-}
-
-// a long horizontal line
-.line {
-	border-top: 1px solid $color-light-gray;
-	height: 1px;
-}
-
-// how it works
-.c-how {
-	max-width: 800px;
-	&__title {
-		font-size: 1.6em;
-	}
-	&__step-number {
-		color: lighten($color-medium-gray, 15%);
-		text-transform: uppercase;
-		@include avenir-demi;
-		font-size: 0.9em;
-		letter-spacing: 1pt;
-	}
-	&__step-title {
-		font-size: 1.3em;
-	}
-	&__step-description {
-		max-width: 85%;
-		font-size: 1.025em;
-	}
-	&__visual {
-		max-width: 500px;
-		height: 250px;
-		background-color: $color-light-gray;
-		background-size: cover;
-		background-position: 50% 50%;
-		z-index: 1;
-	}
-}
-a.c-how__step-view {
-	font-size: 0.85em;
-	@include avenir-demi;
-	color: $color-medium-gray;
-	&:hover {
-		color: $color-dark-gray;
-	}
-}
-
-// our partners breaker
-.c-partners {
-	text-align: center;
-	&__logo {
-		max-width: 100%;
-		max-height: 70px;
-		display: inline-block;
-		vertical-align: middle;
-		text-align: center;
-		@media (max-width: $break-medium) {
-			display: block;
-			margin: 0 auto;
-			margin-bottom: 2em;
-		}
 	}
 }
 
@@ -385,17 +142,13 @@ a.c-how__step-view {
 			@include font-subhed;
 			color: $color-medium-gray;
 			font-size: 1.3em;
-			//background: $color-purple-deep;
 			border-bottom: 1px solid $color-purple-light;
-			//border-radius: 10px;
 			padding: $padding-base/4;
-			//color: #fff;
 			&.active,
 			&:hover {
 				cursor: pointer;
 				color: $color-purple-deep-muted;
 				border-bottom: 1px solid $color-purple-deep;
-				//background: $color-purple-deep-dark;
 			}
 			@media (max-width: $break-small) {
 				width: 100%;

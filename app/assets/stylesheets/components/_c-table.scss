@@ -1,0 +1,31 @@
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+table {
+  border: 1px solid #eee;
+}
+
+th, td {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #eee;
+  padding: 10px;
+}
+tr:last-child {
+  border-bottom: 0;
+}
+td:last-child {
+  max-width: 300px;
+  font-size: 0.8em;
+}
+
+th {
+  text-align: left;
+}
+
+th { vertical-align: bottom }
+td { vertical-align: top }

@@ -1,0 +1,37 @@
+// how it works on the homepage
+.c-how {
+  max-width: 800px;
+  &__title {
+    font-size: 1.6em;
+  }
+  &__step-number {
+    color: lighten($color-medium-gray, 15%);
+    text-transform: uppercase;
+    @include avenir-demi;
+    font-size: 0.9em;
+    letter-spacing: 1pt;
+  }
+  &__step-title {
+    font-size: 1.3em;
+  }
+  &__step-description {
+    max-width: 85%;
+    font-size: 1.025em;
+  }
+  &__visual {
+    max-width: 500px;
+    height: 250px;
+    background-color: $color-light-gray;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: 1;
+  }
+}
+a.c-how__step-view {
+  font-size: 0.85em;
+  @include avenir-demi;
+  color: $color-medium-gray;
+  &:hover {
+    color: $color-dark-gray;
+  }
+}

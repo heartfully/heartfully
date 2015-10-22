@@ -1,0 +1,16 @@
+// "Selected Partners" breaker
+.c-partners {
+  text-align: center;
+  &__logo {
+    max-width: 100%;
+    max-height: 70px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    @media (max-width: $break-medium) {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 2em;
+    }
+  }
+}

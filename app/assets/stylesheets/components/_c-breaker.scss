@@ -1,0 +1,28 @@
+// BREAKERS
+// Usage: Larger blocks/sections used
+// usually to include a simple sentence or message
+.c-breaker {
+  padding: ($padding-base*2) 0;
+  &.gray {
+    background: $color-breaker-gray;
+  }
+  &.purple {
+    background: $color-purple-light;
+    color: $color-purple-deep-muted;
+  }
+  &.dark-purple {
+    background: $color-purple-deep-dark;
+    color: #fff;
+  }
+  &--large {
+    padding: $padding-base*4 0;
+  }
+  &--impact {
+    position: relative;
+    .content {
+      max-width: 50%;
+      margin: 0 auto;
+      z-index: 1;
+    }
+  }
+}

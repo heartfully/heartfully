@@ -50,7 +50,6 @@
 @mixin font-heading {
   font-weight: normal;
   font-size: 1.35rem;
-  color: #525252;
   color: #7D72DE;
 }
 
@@ -63,7 +62,6 @@
 	@include avenir-demi;
 	text-transform: uppercase;
 	letter-spacing: 0.5pt;
-  //color: lighten($color-medium-gray, 15%);
 	@include vendor-prefix(font-smoothing, antialiased);
 }
 
@@ -73,9 +71,40 @@
 	font-style: italic;
 }
 
-// TODO:
-// input style mixins
-// button focus/outline mixins
+// Tinted overlays for images
+.overlay {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+// a long horizontal line
+.line {
+  border-top: 1px solid $color-light-gray;
+  height: 1px;
+}
+
+// RESPONSIVE FLEXBOX
+// Usage: Place this class on a parent element
+// if you'd like the children to be displayed
+// as two columns and expand to full-width
+// on smaller breakpoints
+.r-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  @media (max-width: $break-large) {
+    display: block;
+    .flex-2 {
+      width: 100%;
+      margin-bottom: $padding-base;
+    }
+  }
+}
 
 .subhed {
   @include font-subhed;
@@ -87,41 +116,6 @@
 
 .section {
   margin-bottom: $padding-base*2;
-}
-
-.c-breaker {
-	padding: ($padding-base*2) 0;
-	&.gray {
-		background: $color-breaker-gray;
-	}
-	&.purple {
-		background: $color-purple-light;
-    color: $color-purple-deep-muted;
-	}
-  &.dark-purple {
-    background: $color-purple-deep-dark;
-    color: #fff;
-  }
-  &.white {
-    background: #fff;
-    border-top: 1px solid $color-light-gray;
-    border-bottom: 1px solid $color-light-gray;
-  }
-  &.blue {
-    background: $color-blue-light;
-    color: $color-blue-dark;
-  }
-  &--large {
-    padding: $padding-base*4 0;
-  }
-  &--impact {
-    position: relative;
-    .content {
-      max-width: 50%;
-      margin: 0 auto;
-      z-index: 1;
-    }
-  }
 }
 
 .meta {
