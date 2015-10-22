@@ -237,3 +237,24 @@ $navheight: 65px;
     }
   }
 }
+
+// nav bar for guests
+// the number that appears to show quantity of items in cart
+.c-icon--cart {
+  &:hover {
+    .testing-modal {
+      opacity: 1;
+    }
+  }
+}
+.c-icon--cart-quantity {
+  display: inline-block;
+  margin-left: 3px;
+  &:hover {
+    cursor: pointer;
+    color: $color-text;
+    .testing-modal {
+      opacity: 1;
+    }
+  }
+}

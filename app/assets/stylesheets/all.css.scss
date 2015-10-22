@@ -4,7 +4,7 @@
 
 body {
 	color: $color-text;
-  font-family: 'AvenirNextLTPro-Regular', 'Open Sans', Arial, sans-serif;
+  font-family: 'AvenirNextLTPro-Regular', Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -55,116 +55,6 @@ li {
 	&__info {
 		max-width: 35em;
 		margin: 0 auto;
-	}
-}
-
-// nav bar for guests
-// the number that appears to show quantity of items in cart
-.c-icon--cart {
-	&:hover {
-		.testing-modal {
-			opacity: 1;
-		}
-	}
-}
-.c-icon--cart-quantity {
-	display: inline-block;
-	margin-left: 3px;
-	&:hover {
-		cursor: pointer;
-		color: $color-text;
-		.testing-modal {
-			opacity: 1;
-		}
-	}
-}
-
-// Partner component on Our Partners page
-.c-partner {
-	display: inline-block;
-	vertical-align: middle;
-	margin-bottom: $padding-base;
-	border: 1px solid $color-light-gray;
-	padding: $padding-base;
-	border-radius: 5px;
-	background: #fff;
-	@media (min-width: $break-large) {
-		&:not(:last-child) {
-			// padding-right: percentage(((100-90)/2)/100);
-			margin-right: percentage(((100-90)/2)/100);
-			// border-right: 1px solid $color-light-gray;
-		}
-	}
-	&__name {
-		text-align: center;
-		@include avenir-bold;
-	}
-	&__logo-wrap {
-		text-align: center;
-	}
-	&__logo {
-		max-height: 150px;
-	}
-}
-
-// FAQ page
-.c-faq {
-	&__more,
-	&__content {
-		display: inline-block;
-		vertical-align: top;
-	}
-	&__more {
-		width: 25%;
-		margin-right: 5%;
-		line-height: 1.5;
-		font-family: 'AvenirNextLTPro-Regular', sans-serif;
-		border: 1px solid $color-light-gray;
-		padding: $padding-base/2;
-		border-radius: 5px;
-		@media (max-width: $break-large) {
-			width: 100%;
-			margin-bottom: $padding-base;
-		}
-		a {
-			text-decoration: underline;
-		}
-	}
-	&__menu {
-		list-style: none;
-		padding: 0;
-		margin: 0 0 $padding-base 0;
-		@include avenir-demi;
-		li {
-			text-align: center;
-			min-width: 30%;
-			display: inline-block;
-			@include font-subhed;
-			color: $color-medium-gray;
-			font-size: 1.3em;
-			border-bottom: 1px solid $color-purple-light;
-			padding: $padding-base/4;
-			&.active,
-			&:hover {
-				cursor: pointer;
-				color: $color-purple-deep-muted;
-				border-bottom: 1px solid $color-purple-deep;
-			}
-			@media (max-width: $break-small) {
-				width: 100%;
-				margin-bottom: $padding-base/2;
-			}
-		}
-	}
-	&__content {
-		width: 70%;
-		@media (max-width: $break-large) {
-			width: 100%;
-		}
-	}
-	&__question {
-		font-size: 1.3em;
-		color: $color-purple-deep;
 	}
 }
 

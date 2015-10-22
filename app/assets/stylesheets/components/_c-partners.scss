@@ -14,3 +14,29 @@
     }
   }
 }
+
+// Partner component on Our Partners page
+.c-partner {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: $padding-base;
+  border: 1px solid $color-light-gray;
+  padding: $padding-base;
+  border-radius: 5px;
+  background: #fff;
+  @media (min-width: $break-large) {
+    &:not(:last-child) {
+      margin-right: percentage(((100-90)/2)/100);
+    }
+  }
+  &__name {
+    text-align: center;
+    @include avenir-bold;
+  }
+  &__logo-wrap {
+    text-align: center;
+  }
+  &__logo {
+    max-height: 150px;
+  }
+}
