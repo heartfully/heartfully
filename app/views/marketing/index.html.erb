@@ -83,9 +83,7 @@
 <div class="c-how test pad">
   <h3 class="c-how__title center subhed purple mb--large">Projects We Love</h3>
 
-    <% @projects.each_with_index do |project, index| %>
-      <%= render  partial: "projects/project_mini", locals: {project: project, index: index} %>
-    <% end %>
+    <%= render "projects/project_mini" %>
 
   <%#= render "projects/project_mini" %>
 </div>

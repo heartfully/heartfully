@@ -1,109 +1,97 @@
-<div class="row about-us">
-  <h2 class="text-center"><strong>About Us</strong></h2>
+<%= render "shared/svg" %>
 
-  <!-- Our Mission Section-->
-  <div class="columns large-10 large-offset-1 medium-12 medium-offset-0 small-12 ">
-    <h3 class="text-center"><span><strong>OUR MISSION</strong></span></h3>
-    <p>
-      <span id="logo-font"><strong>Heartful.ly</strong></span> celebrates life’s most important moments by connecting couples and their communities to locally-driven infrastructure and development projects around the world through a charitable gift registry platform. With its unique, personalized take on crowdfunding, Heartful.ly transforms weddings into vehicles for positive social change. 
-    </p>
+<%= render "shared/nav" %>
+<div class="mb--large">
+  <div class="test center">
+    <h1 class="c-project-header__title">About Heartful.ly</h1>
+  </div>
+</div>
+
+<div class="c-breaker mb--large" style="background-image: url(<%=image_url('about-banner.jpg')%>); background-size: cover; background-position: 100% 50%; height: 300px; margin-top: 80px;"></div>
+
+<div class="test pad" style="margin-bottom: 70px;">
+  <div class="c-subhed center">
+    <svg class="c-icon mb" style="width: 25px; height: 25px;"><use xlink:href="#icon-hearts-purple"></use></svg>
+    <h2 class="c-subhed__text c-subhed__text--home">
+      Making the world a better place — one celebration at a time.
+    </h2>
+  </div>
+</div>
+
+<div class="c-breaker purple mb--large">
+  <div class="test center large pad-lr">
+    Heartful.ly is a gift registry that empowers couples to fund life changing projects around the world.
+  </div>
+</div>
+
+
+  <div class="test pad" style="margin-bottom: 70px;">
+    <h3 class="c-how__title center subhed purple mb--large">Our Story</h3>
+    <div class="ma" style="max-width: 500px; font-size: 1.2em;">
+      <p class="mb">Heartful.ly’s story begins in a tiny village in Tanzania where I served as a Peace Corps Volunteer. While my community was poor by every standard, they knew better than any how to celebrate life.</p>
+      <p class="mb">For these celebrations — mainly weddings — we would eat and drink long into the night. Even strangers were welcomed and fed. The heart and generosity of spirit that sustained my community, has influenced the way I celebrate now, too.</p>
+      <p class="mb">That’s why I created Heartful.ly. I believe that life’s most important moments are the best times to give back. I also believe that when our communities unite around these moments, we have the power and opportunity to do great things.</p>
+      <p class="mb">Heartful.ly is a platform for you and all compassionate people to share love where it’s needed most.</p>
+      <p>xo,<br />
+      <strong>KATE GLANTZ</strong><br />
+      Founder, CEO</p>
+    </div>
+    <img class="kate-signature" src="<%=image_url('kate-signature.png')%>">
   </div>
 
-  <!-- Our Story Section -->
-  <div class="columns large-10 large-offset-1 medium-12 medium-offset-0 small-12 small-offset-0">
-    <h3 class="text-center"><span><strong>OUR STORY</strong></span></h3>
-    <p>
-      <span id="logo-font">Heartful.ly</span> was born in a rural Tanzanian village where founder Kate Glantz served as a Peace Corps Volunteer from 2008-2010.  After a storm destroyed every latrine at the primary school where she taught, the community quickly mobilized to build temporary replacements out of mud and thatch.  The structure wouldn't last longer than a month, but there was simply no money for a long-term solution.
-    </p>
-    <p>
-      Witnessing a trifecta of urgent need, community support, and a clear roadmap from start to finish, Kate and her village counterpart wrote a grant proposal for new latrines.
-    </p>
-    <div class="columns large-6 medium-6 small-12 text-center">
-     <img src="https://cdn.rawgit.com/Heartfully/registry-images/master/footer-pages/destroyed_latrine.png" alt="Destroyed Latrine" />
-      <h4 class="reg-text primary-color"><strong>Destroyed latrines</strong></h4>
-    </div>
-    <div class="columns large-6 medium-6 small-12 text-center">
-      <img src="https://cdn.rawgit.com/Heartfully/registry-images/master/footer-pages/latrine.png" />
-      <h4 class="reg-text primary-color"><strong>Rebuilt latrines</strong></h4>
-    </div>
-    <p>
-      As she was developing a supply list for new toilets, several of her friends were itemizing slightly more glamorous lists of their own -- for their wedding registries. It hit her like a ton of bricks! How wonderful and symbolic would it be to create a wedding registry for social good?
-    </p>
-    <p>
-      Testing out the theory that people would enjoy donating to a wishlist of real items, she measured goals not in dollars and cents, but in bricks and cement! Her family and friends took so much pride in knowing exactly how their money was used.
-    </p>
-    <p>
-      With this direct connection to real materials and a specific community, the $3,000 proposal was funded in three days. Kate was blown away by the generosity of her loved ones and is eager to replicate this form of connected giving with communities around the world.
-    </p>
-  </div>
 
-  <!-- Our Team Section -->
-  <div class="columns large-10 large-offset-1 medium-12 medium-offset-0 small-12 small-offset-0">
-    <h3 class="text-center"><span><strong>OUR TEAM</strong></span></h3>
-    <p></p>
-    <div class="columns large-6 large-offset-3 medium-6 medium-offset-3 small-12 small-offset-0 team">
-      <div class="text-center"><img src="https://cdn.rawgit.com/Heartfully/registry-images/master/footer-pages/KateG.jpeg" /></div>
-        <div class="team-description">
-        <h4>Kate Glantz</h4>
-        <h5>Founder</h5>
-        <a href="https://twitter.com/kateglantz" target="_blank"><i class="fa fa-twitter-square"></i></a>
-        <a href="https://www.linkedin.com/in/kateglantz" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-      </div>
-    </div>
-    <div class="columns large-4 medium-4 small-12 team">
-      <div class="text-center"><img src="https://cdn.rawgit.com/Heartfully/registry-images/master/footer-pages/seanS.jpg" /></div>
-      <div class="team-description">
-        <h4>Sean Shannon</h4>
-        <h5>Lead Developer</h5>
-        <a href="https://twitter.com/seans887" target="_blank"><i class="fa fa-twitter-square"></i></a>
-        <a href="https://github.com/seans887" target="_blank"><i class="fa fa-github-square"></i></a>
-      </div>
-    </div>
-    <div class="columns large-4 medium-4 small-12 team">
-      <div class="text-center"><img src="https://cdn.rawgit.com/Heartfully/registry-images/master/footer-pages/coreyS.jpg" /></div>
-      <div class="team-description">
-        <h4>Corey Speisman</h4>
-        <h5>Developer</h5>
-        <a href="https://twitter.com/cdspeis" target="_blank"><i class="fa fa-twitter-square"></i></a>
-        <a href="https://github.com/cspeisman" target="_blank"><i class="fa fa-github-square"></i></a>
-      </div>
-    </div>
-    <div class="columns large-4 medium-4 small-12 team">
-      <div class="text-center"><img src="https://cdn.rawgit.com/Heartfully/registry-images/master/footer-pages/salh.jpg" /></div>
-      <div class="team-description">
-        <h4>Sal Hernandez</h4>
-        <h5>Developer</h5>
-        <a href="https://twitter.com/clickclickonsal" target="_blank"><i class="fa fa-twitter-square"></i></a>
-        <a href="https://github.com/clickclickonsal" target="_blank"><i class="fa fa-github-square"></i></a>
-      </div>
-    </div>
-  </div>
+<div class="line mb--large"></div>
 
-  <!-- Advisory Board Section -->
-  <div class="columns large-10 large-offset-1 medium-12 medium-offset-0 small-12 small-offset-0 end">
-    <h3 class="text-center"><span><strong>Advisory Board</strong></span></h3>
-    <p></p>
-     <div class="columns large-4 medium-4 small-12 team">
-      <div class="team-description">
-        <h4>Sheila Campbell</h4>
-        <h5>Director of Digital Integration</h5>
-        <h5>Peace Corps</h5>
-      </div>
+<div class="pad center test" style="margin-bottom: 70px;">
+  <h3 class="c-how__title center subhed purple mb--large">Meet The Team</h3>
+  <div class="r-flex ma">
+    <div class="flex-2">
+      <img class="inline mb" src="<%=image_url('team-kate.jpg')%>" style="max-width: 250px;">
+      <p><strong>Kate Glantz</strong><br/>Founder and CEO</p>
     </div>
-     <div class="columns large-4 medium-4 small-12 team">
-      <div class="team-description">
-        <h4>Chris Hedrick</h4>
-        <h5>CEO</h5>
-        <h5>Kepler University</h5>
-        
-      </div>
-    </div>
-     <div class="columns large-4 medium-4 small-12 team">
-      <div class="team-description">
-        <h4>Carl Valentstein</h4>
-        <h5>Partner</h5>
-        <h5>Morgan Lewis & Bockius LLP</h5>
-      </div>
+    <div class="flex-2">
+      <img class="inline mb" src="<%=image_url('team-corey.jpg')%>" style="max-width: 250px;">
+      <p><strong>Corey Speisman</strong><br/>Technology</p>
     </div>
   </div>
 </div>
+
+<div class="line mb--large"></div>
+
+<div class="pad test center" style="margin-bottom: 70px;">
+  <h3 class="c-how__title subhed purple mb--large" style="font-size:;">What makes our heart full?*</h3>
+  <ul class="values r-flex block">
+    <li>
+      <svg class="c-icon c-icon--large mb"><use xlink:href="#icon-smile"></use></svg>
+      <h4 class="values__name mb--small">Kindness</h4>
+      <p style="font-size: 1.1em;">It’s a topsy turvy world out there so be nice!</p>
+    </li>
+    <li>
+      <svg class="c-icon c-icon--large mb"><use xlink:href="#icon-globe"></use></svg>
+      <h4 class="values__name mb--small">Impact</h4>
+      <p style="font-size: 1.1em;">We all have a role to play.</p>
+    </li>
+    <li>
+      <svg class="c-icon c-icon--large mb" style="stroke: #777;"><use xlink:href="#icon-rings"></use></svg>
+      <h4 class="values__name mb--small">Equality</h4>
+      <p style="font-size: 1.1em;">People are people and love is love.</p>
+    </li>
+    <li>
+      <svg class="c-icon c-icon--large mb" style="stroke: #777;"><use xlink:href="#icon-mustache"></use></svg>
+      <h4 class="values__name mb--small">Originality</h4>
+      <p style="font-size: 1.1em;">Do you. It’s a lot more fun that way.</p>
+    </li>
+  </ul>
+  <p class="nudge-top quiet">*We also <3 family, friends, and breakfast for dinner.</p>
+</div>
+
+<div class="line"></div>
+
+<!-- make this into a cta component -->
+<div class="c-breaker center">
+  <svg class="c-icon c-icon--status" style="width: 25px; height: 25px;"><use xlink:href="#icon-hearts-purple"></use></svg>
+  <h3 class="roboto large mb">Are you ready to <span style="border-bottom: 2px solid #7D72DE;">share the love?</span></h3>
+  <button class="c-button c-button--primary">Create a registry</button>
+</div>
+
+<%= render "shared/footer" %>

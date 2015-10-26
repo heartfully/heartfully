@@ -1,15 +1,4 @@
 GIT
-  remote: git://github.com/reactjs/react-rails.git
-  revision: 0ef3775a78d20a802bb72d6148327c746b352271
-  specs:
-    react-rails (1.0.0.pre)
-      coffee-script-source (= 1.8.0)
-      connection_pool
-      execjs
-      rails (>= 3.1)
-      react-source (~> 0.12)
-
-GIT
   remote: https://github.com/stripe/stripe-ruby
   revision: 2df5817192e58265bcdff06956250e8d37b354f8
   specs:
@@ -60,6 +49,10 @@ GEM
     aws-sdk-v1 (1.64.0)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
+    babel-source (5.8.26)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.10)
     bower-rails (0.9.2)
     builder (3.2.2)
@@ -87,7 +80,7 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     columnize (0.9.0)
-    connection_pool (2.1.1)
+    connection_pool (2.2.0)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
     draper (1.4.0)
@@ -192,7 +185,13 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
-    react-source (0.12.2)
+    react-rails (1.4.1)
+      babel-transpiler (>= 0.7.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      rails (>= 3.2)
+      tilt
     remotipart (1.2.1)
     request_store (1.1.0)
     rest-client (1.7.3)
@@ -276,7 +275,7 @@ DEPENDENCIES
   rails (= 4.1.4)
   rails_12factor
   rails_admin
-  react-rails (~> 1.0.0.pre)!
+  react-rails (~> 1.4.0)
   rspec-rails
   sass-rails (>= 5.0.0)
   sdoc (~> 0.4.0)

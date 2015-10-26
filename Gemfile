@@ -20,7 +20,7 @@ gem 'bower-rails'
 # will_paginate gem is break rails_admin
 # gem 'will_paginate'
 gem 'draper', '1.4.0'
-gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
+gem 'react-rails', '~> 1.4.0'
 gem 'rails_12factor'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'awesome_print'

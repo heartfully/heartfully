@@ -72,7 +72,7 @@ $('#close-video').on('click', function() {
 });
 
 // rotating impact panel
-$.fn.extend({ 
+$.fn.extend({
   rotaterator: function(options) {
 
     var defaults = {
@@ -80,14 +80,14 @@ $.fn.extend({
       pauseSpeed: 100,
       child:null
     };
-           
+
     var options = $.extend(defaults, options);
-       
+
     return this.each(function() {
       var o =options;
-      var obj = $(this);                
+      var obj = $(this);
       var items = $(obj.children(), obj);
-      
+
       items.each(function() {
         $(this).hide();
       });
@@ -103,7 +103,7 @@ $.fn.extend({
         .delay(o.pauseSpeed)
         .fadeOut(o.fadeSpeed, function() {
           var next = $(this).next();
-          
+
           if (next.length == 0){
             next = $(obj).children(':first');
           }
@@ -119,4 +119,3 @@ $.fn.extend({
  $(document).ready(function() {
         $('#rotate').rotaterator({fadeSpeed:1000, pauseSpeed:1300});
  });
-

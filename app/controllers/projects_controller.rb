@@ -4,11 +4,9 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    # @projects = Project.filter(filterable_params).paginate(:page => params[:page], :per_page => 9).where(public: true)
-    @projects = Project.where(public: true)
-    # @project_last_page = @projects.total_pages
-    @projects = Project.projects_with_new_variable(@projects)
-    @categories = Category.order("name ASC")
+    # @projects = Project.where(public: true)
+    # @projects = Project.projects_with_new_variable(@projects)
+    # @categories = Category.order("name ASC")
   end
 
   # GET /projects/1

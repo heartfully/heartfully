@@ -1,23 +1,25 @@
-<% if  index % 2 == 0 %>
-  <div class="r-flex mb--large">
-<% end %>
-  <div class="c-project-mini flex-2">
-    <a href="#">
-      <div class="c-project-mini__header" style="background-image: url(<%= project.photo1 %>)">
-        <div class="c-project-mini__title">
-          <%= project.name %>
+<% @projects.each_with_index do |project, index| %>
+  <% if  index % 2 == 0 %>
+    <div class="r-flex mb--large">
+  <% end %>
+    <div class="c-project-mini flex-2">
+      <a href="#">
+        <div class="c-project-mini__header" style="background-image: url(<%= project.photo1 %>)">
+          <div class="c-project-mini__title">
+            <%= project.name %>
+          </div>
+          <div class="c-project-tabbed__header--overlay"></div>
         </div>
-      <div class="c-project-tabbed__header--overlay"></div>
+      </a>
+      <div class="c-project-mini__info">
+        <p><%= project.description %></p>
+        <%= link_to "Learn more &rarr;".html_safe, "/projects/#{project.url_slug}", class:"link--secondary inline nudge-top--small" %>
+        <button class="c-button c-button--primary block nudge-top stretch">
+          Select this project
+        </button>
       </div>
-    </a>
-    <div class="c-project-mini__info">
-      <p><%= project.description %></p>
-      <%= link_to "Learn more &rarr;".html_safe, "/projects/#{project.url_slug}", class:"link--secondary inline nudge-top--small" %>
-      <button class="c-button c-button--primary block nudge-top stretch">
-        Select this project
-      </button>
     </div>
-  </div>
-<% if index % 2 != 0 %>
-  </div>
+  <% if index % 2 != 0 %>
+    </div>
+  <% end %>
 <% end %>

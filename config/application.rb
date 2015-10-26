@@ -21,5 +21,8 @@ module Heartfully
     # config.i18n.default_locale = :de
 
     config.assets.paths << Rails.root.join("vendor", "assets", "bower_components", "fonts")
+
+    config.react.addons = true
+    config.react.jsx_transformer_class = React::JSX::BabelTransformer
   end
 end

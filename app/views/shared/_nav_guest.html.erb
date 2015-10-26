@@ -4,14 +4,16 @@
       <use xlink:href="#icon-logo-logotype"></use>
     </svg>
 
-    <svg class="c-nav__logo c-nav__logo--mark" viewBox="0 0 135.4 135.4" preserveAspectRatio="xMinYMax meet">
-      <use xlink:href="#icon-logo-logomark"></use>
-    </svg>
+    <a href='/'>
+      <svg class="c-nav__logo c-nav__logo--mark" viewBox="0 0 135.4 135.4" preserveAspectRatio="xMinYMax meet">
+        <use xlink:href="#icon-logo-logomark"></use>
+      </svg>
+    </a>
   </div>
 
   <ul class="c-nav__menu">
-    <li class="c-nav__menu-item"><a href="#">About</a></li>
-    <li class="c-nav__menu-item"><a href="#">Browse Projects</a></li>
+    <li class="c-nav__menu-item"><%= link_to 'About', about_us_path %></li>
+    <li class="c-nav__menu-item"><%= link_to "Browse Project's", projects_path %></li>
     <li class="c-nav__menu-item"><a href="#">Our Partners</a></li>
     <li class="c-nav__menu-item"><%= link_to 'Log In', sign_in_path%></a></li>
     <li class="c-nav__menu-item"><a href="#">FAQ</a></li>

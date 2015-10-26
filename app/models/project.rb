@@ -67,6 +67,9 @@ class Project < ActiveRecord::Base
     projectArray
   end
 
+  def photo1_url
+    self.photo1.url
+  end
 end
 
 # == Schema Information
