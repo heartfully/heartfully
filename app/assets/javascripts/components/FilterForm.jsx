@@ -1,35 +1,36 @@
 class FilterForm extends React.Component {
   render() {
-    let regions, issues = [];
-    const foo = this.props.categories.reduce((prev, curr, index) => {
-      console.log(prev)
-      if (curr.cat_type === 'region') return Object.assign(prev, prev.region.push(curr));
-      if (curr.cat_type === 'issues') return Object.assign(prev, prev.issues.push(curr));
+    const selectors = this.props.categories.reduce((prev, curr) => {
+      if (curr.cat_type === 'region') return {...prev, regions: prev.regions.concat([curr])};
+      if (curr.cat_type === 'issue') return {...prev, issues: prev.issues.concat([curr])};
       return prev;
     }, {regions: [], issues: []});
 
-    console.log(foo)
+    const regions = selectors.regions.map(region => <option value={region.name}>{region.name}</option>)
+
+    const issues = selectors.issues.map(issue => <option value={issue.name}>{issue.name}</option>)
 
     return (
-      <div className="flex test">
-        <div className="pad flex-2">
-          <form>
+      <form>
+        <div className="r-flex test">
+          <div className="pad flex-2">
             <div className="inline" style={{marginRight: 20}}>
               <label className="block mb--small" style={styles}>Filter by region</label>
               <select className="vm">
-                // fill with region options
+                {regions}
               </select>
             </div>
+          </div>
+          <div className="pad flex-2">
             <div className="inline">
               <label className="block mb--small" style={styles}>Filter by issue</label>
               <select className="vm">
-                // fill with issue options
+                {issues}
               </select>
             </div>
-          </form>
+          </div>
         </div>
-        <div className="flex-2"></div>
-      </div>
+      </form>
     );
   }
 }
