@@ -1,4 +1,5 @@
 class FilterForm extends React.Component {
+
   render() {
     const selectors = this.props.categories.reduce((prev, curr) => {
       if (curr.cat_type === 'region') return {...prev, regions: prev.regions.concat([curr])};
@@ -6,9 +7,9 @@ class FilterForm extends React.Component {
       return prev;
     }, {regions: [], issues: []});
 
-    const regions = selectors.regions.map(region => <option value={region.name}>{region.name}</option>)
+    const regions = selectors.regions.map(region => <option value={region.id}>{region.name}</option>)
 
-    const issues = selectors.issues.map(issue => <option value={issue.name}>{issue.name}</option>)
+    const issues = selectors.issues.map(issue => <option value={issue.id}>{issue.name}</option>)
 
     return (
       <form>
@@ -16,7 +17,8 @@ class FilterForm extends React.Component {
           <div className="pad flex-2">
             <div className="inline" style={{marginRight: 20}}>
               <label className="block mb--small" style={styles}>Filter by region</label>
-              <select className="vm">
+              <select onChange={this.props.onChange} className="vm">
+                <option value={0}>Filter by Region</option>
                 {regions}
               </select>
             </div>
@@ -24,7 +26,8 @@ class FilterForm extends React.Component {
           <div className="pad flex-2">
             <div className="inline">
               <label className="block mb--small" style={styles}>Filter by issue</label>
-              <select className="vm">
+              <select onChange={this.props.onChange} className="vm">
+                <option value={0}>Filter by Issue</option>
                 {issues}
               </select>
             </div>

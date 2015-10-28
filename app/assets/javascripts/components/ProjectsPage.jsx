@@ -1,12 +1,20 @@
 class ProjectsPage extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {}
   }
 
   componentWillMount() {
     $.get('/api/v1/projects', (data) => {
       this.setState({...data});
+    });
+  }
+
+  requestFilter(event){
+    const filterParams = parseInt(event.target.value) ? {categories: event.target.value} : null;
+
+    $.get('/api/v1/projects', filterParams, (data) => {
+      this.setState({projects: data.projects});
     });
   }
 
@@ -51,7 +59,7 @@ class ProjectsPage extends React.Component {
             Heartful.ly wedding registries benefit these many programs around the world.
           </div>
         </div>
-        {this.state.projects ? <div><FilterForm categories={this.state.categories} />{this.handleProjectDisplay()}</div>: <div>Loading...</div>}
+        {this.state.projects ? <div><FilterForm onChange={this.requestFilter.bind(this)} categories={this.state.categories} />{this.handleProjectDisplay()}</div> : <div>Loading...</div>}
       </div>
     );
   }
