@@ -21,12 +21,20 @@ class ProjectsPage extends React.Component {
   renderProjects(projects) {
     return projects.map((project, index, projectArray) => {
       if (index % 2 == 0) {
-        return (
-          <div className="r-flex mb--large">
-            <ProjectTile {...projectArray[index]} key={index}/>
-            <ProjectTile {...projectArray[index + 1]} key={index + 1}/>
-          </div>
-        );
+        if (projectArray[index + 1]) {
+          return (
+            <div className="r-flex mb--large">
+              <ProjectTile {...projectArray[index]} key={index}/>
+              <ProjectTile {...projectArray[index + 1]} key={index + 1}/>
+            </div>
+          );
+        } else {
+          return (
+            <div className="r-flex mb--large">
+              <ProjectTile {...projectArray[index]} key={index}/>
+            </div>
+          );
+        }
       }
     })
   }

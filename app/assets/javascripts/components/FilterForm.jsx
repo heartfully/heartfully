@@ -1,15 +1,20 @@
 class FilterForm extends React.Component {
 
   render() {
-    const selectors = this.props.categories.reduce((prev, curr) => {
-      if (curr.cat_type === 'region') return {...prev, regions: prev.regions.concat([curr])};
-      if (curr.cat_type === 'issue') return {...prev, issues: prev.issues.concat([curr])};
-      return prev;
-    }, {regions: [], issues: []});
+    const {categories} = this.props;
+    let selectors, regions, issues;
+    if (categories) {
+      selectors = this.props.categories.reduce((prev, curr) => {
+        if (curr.cat_type === 'region') return {...prev, regions: prev.regions.concat([curr])};
+        if (curr.cat_type === 'issue') return {...prev, issues: prev.issues.concat([curr])};
+        return prev;
+      }, {regions: [], issues: []});
 
-    const regions = selectors.regions.map(region => <option value={region.id}>{region.name}</option>)
+      regions = selectors.regions.map(region => <option value={region.id}>{region.name}</option>)
 
-    const issues = selectors.issues.map(issue => <option value={issue.id}>{issue.name}</option>)
+      issues = selectors.issues.map(issue => <option value={issue.id}>{issue.name}</option>)
+    }
+
 
     return (
       <form>
