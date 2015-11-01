@@ -1,6 +1,6 @@
 <%= render "shared/svg" %>
 
-<%= render "shared/nav" %>
-<%= react_component('ProjectsPage') %>
+<%= render current_user ? "shared/nav" : "shared/nav_guest" %>
+<%= react_component('ProjectsPage', {projects: @projects, categories: @categories}) %>
 
 <%= render "shared/footer" %>

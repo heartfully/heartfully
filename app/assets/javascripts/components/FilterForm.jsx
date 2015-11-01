@@ -15,7 +15,6 @@ class FilterForm extends React.Component {
       issues = selectors.issues.map(issue => <option value={issue.id}>{issue.name}</option>)
     }
 
-
     return (
       <form>
         <div className="r-flex test">

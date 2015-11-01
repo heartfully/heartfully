@@ -4,9 +4,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    # @projects = Project.where(public: true)
-    # @projects = Project.projects_with_new_variable(@projects)
-    # @categories = Category.order("name ASC")
+    @projects = Project.where(public: true)
+    @categories = Category.order("name ASC")
   end
 
   # GET /projects/1

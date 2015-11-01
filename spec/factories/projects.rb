@@ -27,11 +27,11 @@
 #  overview             :text
 #  problem              :text
 #  solution             :text
-#  how_it_works_step1   :string(255)
-#  how_it_works_step2   :string(255)
-#  how_it_works_step3   :string(255)
-#  how_it_works_step4   :string(255)
-#  how_it_works_step5   :string(255)
+#  how_it_works_step1   :string(350)
+#  how_it_works_step2   :string(350)
+#  how_it_works_step3   :string(350)
+#  how_it_works_step4   :string(350)
+#  how_it_works_step5   :string(350)
 #  importance           :text
 #  sustainability       :text
 #  staff_quote          :string(255)

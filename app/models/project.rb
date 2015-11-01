@@ -55,18 +55,6 @@ class Project < ActiveRecord::Base
     total
   end
 
-  def self.projects_with_new_variable(project)
-    projectHash = Hash.new
-    projectArray = Array.new
-
-    project.each do |x|
-      projectHash = x.attributes
-      projectHash['org_url'] = x.organization.org_url
-      projectArray << projectHash
-    end
-    projectArray
-  end
-
   def photo1_url
     self.photo1.url
   end
@@ -101,11 +89,11 @@ end
 #  overview             :text
 #  problem              :text
 #  solution             :text
-#  how_it_works_step1   :string(255)
-#  how_it_works_step2   :string(255)
-#  how_it_works_step3   :string(255)
-#  how_it_works_step4   :string(255)
-#  how_it_works_step5   :string(255)
+#  how_it_works_step1   :string(350)
+#  how_it_works_step2   :string(350)
+#  how_it_works_step3   :string(350)
+#  how_it_works_step4   :string(350)
+#  how_it_works_step5   :string(350)
 #  importance           :text
 #  sustainability       :text
 #  staff_quote          :string(255)

@@ -1,15 +1,14 @@
 class ProjectsPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {};
   }
 
-  componentWillMount() {
+  componentDidMount() {
     $.get('/api/v1/projects', (data) => {
-      this.setState({...data});
+      this.setState({projects: data.projects});
     });
   }
-
   requestFilter(event){
     const filterParams = parseInt(event.target.value) ? {categories: event.target.value} : null;
 
@@ -21,6 +20,9 @@ class ProjectsPage extends React.Component {
   renderProjects(projects) {
     return projects.map((project, index, projectArray) => {
       if (index % 2 == 0) {
+        // if there are actually two projects
+        // keeps from rendering an empty project tile
+        // TODO: Make cleaner if possible
         if (projectArray[index + 1]) {
           return (
             <div className="r-flex mb--large">
@@ -54,6 +56,15 @@ class ProjectsPage extends React.Component {
     );
   }
 
+  handleFilter() {
+    return (
+       <div>
+         <FilterForm onChange={this.requestFilter.bind(this)} categories={this.props.categories} />
+         {this.handleProjectDisplay()}
+       </div>
+    );
+  }
+
   render() {
     return (
       <div>
@@ -67,7 +78,7 @@ class ProjectsPage extends React.Component {
             Heartful.ly wedding registries benefit these many programs around the world.
           </div>
         </div>
-        {this.state.projects ? <div><FilterForm onChange={this.requestFilter.bind(this)} categories={this.state.categories} />{this.handleProjectDisplay()}</div> : <div>Loading...</div>}
+        {this.state.projects ? this.handleFilter() : <div>Loading...</div>}
       </div>
     );
   }
