@@ -47,6 +47,18 @@ Rails.application.configure do
   #   :enable_starttls_auto => true
   # }
 
+  # S3 and Paperclip settings
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_protocol => 'http',
+    :s3_credentials => {
+      :bucket => 'heartfullyimages',
+      :access_key_id => 'AKIAIXJAHNL7GI5NT4EA',
+      :secret_access_key => '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'
+    }
+  }
+
   # Paperclip and ImageMagick Config
-  Paperclip.options[:command_path] = '/usr/local/bin'
+  # Local path
+  # Paperclip.options[:command_path] = '/usr/local/bin'
 end

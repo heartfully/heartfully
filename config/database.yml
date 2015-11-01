@@ -23,7 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: heartfully_development
+  url: postgres://dphijskaomzkus:1NrwrwIryqYmvEU2-mrFnJrX36@ec2-54-243-187-196.compute-1.amazonaws.com:5432/d6pmnmddti5fls
+  # local database
+  # database: heartfully_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
