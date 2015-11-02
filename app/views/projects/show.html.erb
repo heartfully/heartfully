@@ -1,45 +1,17 @@
-<div class="row project-show">
-  <!-- Project Banner -->
-  <div class=" large-10 large-push-1 banner">
-    <h3 class="text-center"><%= @project.name %></h3>
-    <h4 class="reg-text primary-color">Implemented by: <a class="org_url" href=<%= @project.organization.org_url %> target="_blank"><%= @project.partner %></a></h4>
-    <h4 class="reg-text secondary-color">Goal: <%= number_to_currency(@project.funding_goal, precision: 0) %></h4>
-  </div>
+<%= render "shared/svg" %>
 
-  <!-- Project Photos -->
-  <div class='large-4 large-pull-1 medium-6 columns text-align small-12' id="project-photos">
-    <div class="image-container">
-      <div class="img-container" id="img-1">
-        <img src="https://cdn.rawgit.com/Heartfully/registry-images/master/<%= @project.project_photo %>">
-      </div>
-      <% if( @project.extra_content[:"Info Box"] ) %>
-        <div class="img-container">
-          <%= raw @project.extra_content[:"Info Box"] %>
-        </div>
-      <% end  %>
-      <div class="img-container" id="img-2">
-        <img src="https://cdn.rawgit.com/Heartfully/registry-images/master/<%= @project.project_photo_2 %>">
-      </div>
-      <div class="img-container" id="img-3">
-        <img src="https://cdn.rawgit.com/Heartfully/registry-images/master/<%= @project.project_photo_3 %>">
-      </div>
-    </div>
-  </div>
+<%= render current_user ? "shared/nav" : "shared/nav_guest" %>
+<%= render "shared/status" %>
 
-  <!-- Project Info -->
-  <div class='large-6 large-offset-1 medium-6 medium-offset-0 small-12 columns text-align' id="project-info">
-    <p><%= @project.description %></p>
-    <% @project.extra_content.each do |key, value| %>
-      <% if( key != :"Info Box" ) %>
-        <h3 class="text-center"><strong><%= key %></strong></h3>
-        <div class="project-content"><%= raw value %></div>
-      <% end %>
-    <% end %>
-  </div>
+<%= render "header" %>
+<%= render "summary" %>
+<%= render "about" %>
+<%= render "shared/quote" %>
+<%= render "details" %>
+<%= render "shared/registry_card" %>
+<div class="test">
+  <div class="meta mb--large" style="margin-top: 80px; text-align: center;">Browse More Projects</div>
+  <%#= render "projects/project_mini" %>
+  <button class="c-button mb--xl block ma">browse all projects &rarr;</button>
 </div>
-
-<div class="row">
-  <div class="large-4 columns large-offset-4 checkout-button">
-    <%= link_to 'Select Project', select_project_path, {class: "expand button", method: :post} %>
-  </div>
-</div>
+<%= render "shared/footer" %>
