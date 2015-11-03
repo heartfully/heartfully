@@ -4,16 +4,16 @@
   <div class="test r-flex">
     <div class="c-project-about__overview">
       <div class="c-paragraph mb--small">
-        <h2 class="c-paragraph__heading">HELPS International</h2>
+        <h2 class="c-paragraph__heading"><%= @project.organization.name %></h2>
         <p class="c-paragraph__text">
-          HELP International's mission is to provide shelter, sustenance, education, and medical care for vulnerable children and families in the Mufindi District of Tanzania; to curtail the spread of HIV/AIDS, to teach life skills (language, fiscal, vocation and self-sufficiency) and to create supportive networks and opportunities for future generations.
+          <%= @project.organization.description %>
         </p>
       </div>
       <ul class="c-project-about__meta">
         <li>
-          <svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-map"></use></svg> Tanzania
+          <svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-map"></use></svg><%= @project.organization.country %>
         </li>
-        <li><svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-link"></use></svg> <a class="c-project-about__link" href="#">helpsintl.org</a></li>
+        <li><svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-link"></use></svg> <a class="c-project-about__link" target="_blank" href="<%= @project.organization.org_url %>"><%= @project.organization.org_url %></a></li>
       </ul>
     </div>
     <div class="c-project-about__photo">
