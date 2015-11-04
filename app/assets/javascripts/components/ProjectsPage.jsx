@@ -42,15 +42,16 @@ class ProjectsPage extends React.Component {
   }
 
   handleProjectDisplay() {
+    const {projects} = this.state;
     return (
       <div>
         <div className="test">
-          {this.renderProjects(this.state.projects.slice(0,2))}
-          {this.renderProjects(this.state.projects.slice(2,4))}
+          {this.renderProjects(projects.slice(0,2))}
+          {this.renderProjects(projects.slice(2,4))}
         </div>
         <RegistryBreaker />
         <div className="test">
-          {this.renderProjects(this.state.projects.slice(5, -1))}
+          {this.renderProjects(projects.slice(5, projects.length))}
         </div>
       </div>
     );

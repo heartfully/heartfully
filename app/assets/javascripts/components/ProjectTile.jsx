@@ -1,8 +1,4 @@
 class ProjectTile extends React.Component {
-  propTypes: {
-    photo1_url: React.PropTypes.string,
-    url_slug: React.PropTypes.string,
-  }
 
   render() {
     return (
@@ -28,3 +24,8 @@ class ProjectTile extends React.Component {
     );
   }
 }
+
+ProjectTile.propTypes = {
+    photo1_url: React.PropTypes.string,
+    url_slug: React.PropTypes.string,
+  }

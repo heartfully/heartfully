@@ -8,10 +8,22 @@
 <%= render "about" %>
 <%= render "shared/quote" %>
 <%= render "details" %>
-<%= render "shared/registry_card" %>
+
+<div class="c-breaker c-breaker--small" style="border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+  <div class="block center mb--small"><svg class="c-icon c-icon--large" title="gifts"><use xlink:href="#icon-gift"></use></svg></div>
+  <h4 class="meta center mb--xl" style="font-weight: normal;">Registry Gift Items</h4>
+  <div class="test" style="display: flex; flex-wrap: wrap;">
+    <% @project.item_types.each do |item_type| %>
+      <%= react_component('ItemCard', {itemType: item_type, purchase: false}) %>
+    <% end %>
+  </div>
+</div>
+
 <div class="test">
-  <div class="meta mb--large" style="margin-top: 80px; text-align: center;">Browse More Projects</div>
+  <!-- TODO: Pull 2 related projects -->
+  <!-- <div class="meta mb--large" style="margin-top: 80px; text-align: center;">Browse More Projects</div> -->
   <%#= render "projects/project_mini" %>
+  
   <button class="c-button mb--xl block ma">browse all projects &rarr;</button>
 </div>
 <%= render "shared/footer" %>
