@@ -1,7 +1,10 @@
 <%= render "shared/svg" %>
 
 <%= render current_user ? "shared/nav" : "shared/nav_guest" %>
-<%= render "shared/status" %>
+
+<% if current_user && !current_user.registry %>
+  <%= render "shared/status" %>
+<% end %>
 
 <%= render "header" %>
 <%= render "summary" %>
@@ -23,7 +26,8 @@
   <!-- TODO: Pull 2 related projects -->
   <!-- <div class="meta mb--large" style="margin-top: 80px; text-align: center;">Browse More Projects</div> -->
   <%#= render "projects/project_mini" %>
-  
-  <button class="c-button mb--xl block ma">browse all projects &rarr;</button>
+  <br>
+  <br>
+  <%= button_to 'browse all projects &rarr;'.html_safe , projects_path, class: 'c-button mb--xl block ma', method: :get %>
 </div>
 <%= render "shared/footer" %>
