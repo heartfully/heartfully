@@ -1,14 +1,17 @@
 <% content_for :nav do %>
-  <%= render "shared/nav" %>
+  <%= render current_user ? "shared/nav" : "shared/nav_guest" %>
 <% end %>
 <%= render 'hero'%>
 <%= render "shared/breaker" %>
 <%= render 'paragraph' %>
 
 <div class="test">
-  <%= render "shared/project_tabbed" %>
+  <%= render "project_tabbed" %>
 </div>
 
-<%= render 'registry_item_card' %>
+<%#= render 'registry_item_card' %>
+
+<%= react_component('RegistryItems', {items: @registry.projects.first.item_types}) %>
+
 <%= render "shared/breaker" %>
 <%= render "shared/footer" %>

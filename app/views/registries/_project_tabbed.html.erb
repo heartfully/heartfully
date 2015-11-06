@@ -3,10 +3,10 @@
 </div>
 <div class="meta center">About Our Project</div>
 <div class="c-project-tabbed">
-  <div class="c-project-tabbed__header">
+  <div class="c-project-tabbed__header" style='background-image: url(<%=  "#{@registry.projects.first.photo1.url}" %>);'>
     <div class="c-project-tabbed__header--wrapper">
       <span class="c-project-tabbed__header--subtitle">PROJECT</span>
-      <h2 class="c-project-tabbed__header--title">Support life saving surgeries in Guatemala</h2>
+      <h2 class="c-project-tabbed__header--title"><%= @registry.projects.first.name %></h2>
     </div>
     <div class="c-project-tabbed__header--overlay"></div>
   </div>
@@ -43,9 +43,9 @@
         </div>
           <ul class="c-project-about__meta">
             <li>
-              <svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-map"></use></svg> Guatemala
+              <svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-map"></use></svg> <%= @registry.projects.first.country %>
             </li>
-            <li><svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-link"></use></svg> <a class="c-project-about__link" href="#">helpsintl.org</a></li>
+            <li><svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-link"></use></svg> <a class="c-project-about__link" href="<%= @registry.projects.first.organization.org_url %>"><%= @registry.projects.first.organization.org_url %></a></li>
           </ul>
         </div>
       </div>
