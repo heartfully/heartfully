@@ -1,7 +1,3 @@
-<%= render "shared/svg" %>
-
-<%= render current_user ? "shared/nav" : "shared/nav_guest" %>
-
 <% if current_user && !current_user.registry %>
   <%= render "shared/status" %>
 <% end %>

@@ -18,7 +18,7 @@ class ItemCard extends React.Component {
   }
 
   render() {
-    const purchase = this.state.purchaseMenu ? <PurchaseMenu /> : null;
+    const purchase = this.state.purchaseMenu ? <PurchaseMenu {...this.props} /> : null;
 
     return (
       <div className="c-registry-card" style={cardStyles}>

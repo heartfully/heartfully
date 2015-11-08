@@ -19,7 +19,8 @@
   </head>
 
   <body>
-    <%= yield :nav %>
+    <%= render "shared/svg" %>
+    <%= render current_user ? "shared/nav" : "shared/nav_guest" %>
     <%= yield %>
     <%= javascript_include_tag('application') %>
     <%= yield :load_js %>
