@@ -5,7 +5,7 @@
     <% if @order.status.nil? %>
       <% order_summary(@order.summary).each do |item, quantity| %>
         <div><%= "#{quantity} #{item}" %></div>
-      <% end %> 
+      <% end %>
       <div>total: <%= @order.total %></div>
 
       <strong>Please enter your information below and click checkout to finalize your order:</strong>

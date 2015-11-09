@@ -1,18 +1,14 @@
 module OrderProcess
 
   def calc_total(items)
-    # select all items that have a value
-    items = items.select { |key, val| !val.empty? }
     total = 0.0
-    # iterates through all items
-    items.each do |item, quantity|
-      # finds the registry's item type
-      item_type = self.registry.item_types.where(name: item).first
-      # calculates total price from quantity
-      total += item_type.price * quantity.to_i
+    summary = {}
+    items.each do |item|
+      summary[item[:name]] = item[:quantity].to_i
+      total += item[:price].to_f * item[:quantity].to_i
     end
 
-    self.summary = items.to_s
+    self.summary = summary.to_s
     self.total = number_to_currency(total)
     self.save
   end

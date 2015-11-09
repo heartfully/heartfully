@@ -14,8 +14,19 @@ class RegistryItems extends React.Component {
   }
 
   submitOrder() {
-    $.post('/orders', JSON.stringify(this.state.cart), data => {
-      console.log('yolo??');
+    const data = {registry_id: this.props.registry_id, items: this.state.cart}
+    $.ajax({
+        type: "POST",
+        url: "/orders",
+        data: JSON.stringify(data),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (msg) {
+          //do something
+        },
+        error: function (errormessage) {
+          //do something else
+        }
     });
   }
 

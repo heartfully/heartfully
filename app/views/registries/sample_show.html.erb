@@ -8,7 +8,7 @@
 
 <%#= render 'registry_item_card' %>
 
-<%= react_component('RegistryItems', {items: @registry.projects.first.item_types}) %>
+<%= react_component('RegistryItems', {registry_id: @registry.id, items: @registry.projects.first.item_types}) %>
 
 <%= render "shared/breaker" %>
 <%= render "shared/footer" %>
