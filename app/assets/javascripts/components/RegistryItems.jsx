@@ -21,12 +21,13 @@ class RegistryItems extends React.Component {
         data: JSON.stringify(data),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
-        success: function (msg) {
+        success: function (data) {
+          window.location = data.responseText;
           //do something
         },
-        error: function (errormessage) {
-          //do something else
-        }
+        // error: function (errormessage) {
+        //   console.log(errormessage)
+        // }
     });
   }
 

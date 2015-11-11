@@ -5,18 +5,6 @@ class RegistriesController < ApplicationController
 
   # GET /registries/:url_slug
   def show
-    if(params[:url_slug].downcase == "peterandeva")
-      render :show_peter_and_eva
-    # elsif(params[:url_slug].downcase == "wangama")
-    #   render :show_katelyn_and_brandon
-    # elsif(params[:url_slug].downcase == "marissaandtravis")
-    #   render :show_marissa_and_travis
-    elsif(params[:url_slug].downcase == "lindseyandmatt")
-      render :show_lindsey_and_matt
-    elsif(params[:url_slug].downcase == "sample")
-      @registry = Registry.find_by(:url_slug => "lindseyandmatt")
-      render :show_sample
-    end
   end
 
   # GET /registries/new
@@ -37,7 +25,6 @@ class RegistriesController < ApplicationController
   # POST /registries
   def create
     @registry = Registry.new(registry_params)
-
     if @registry.save
       current_user.update(:registry_id => @registry.id)
       redirect_to projects_path , notice: 'Please select a project'
@@ -81,17 +68,13 @@ class RegistriesController < ApplicationController
       params.require(:registry).permit(
         :name,
         :url_slug,
-        :banner_img,
-        :profile_img,
         :description,
-        :address_1,
-        :address_2,
-        :city,
-        :state,
-        :postal_code,
-        :country,
+        :city_state,
         :banner_image,
-        :profile_image
+        :profile_image,
+        :wedding_date,
+        :couples_story,
+        :registry_story
       )
     end
 end

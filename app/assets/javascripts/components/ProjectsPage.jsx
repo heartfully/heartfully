@@ -9,6 +9,7 @@ class ProjectsPage extends React.Component {
       this.setState({projects: data.projects});
     });
   }
+  
   requestFilter(event){
     const filterParams = parseInt(event.target.value) ? {categories: event.target.value} : null;
 

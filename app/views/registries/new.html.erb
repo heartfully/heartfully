@@ -1,5 +1,53 @@
-<h1>New registry</h1>
+<div class="c-breaker gray">
+  <div class="test">
+    <div class="c-card ma" style="max-width:800px;"><!-- TODO: make card a helper instead of a component -->
+    <div class="meta mb--large center">Create A Registry</div>
+      <div style="margin: 0 auto 4em auto; font-size: 1.3em; text-align: center;">
+        <div class="c-create__step mb">Step 1: Wedding & Registry Details</div>
+        <svg class="c-icon c-icon--large" style="fill: #61AFFF;"><use xlink:href="#icon-cake"></use></svg>
+        <span class="c-create__line"></span>
+        <svg class="c-icon c-icon--large c-icon--gray"><use xlink:href="#icon-globe"></use></svg>
+        <span class="c-create__line"></span>
+        <svg class="c-icon c-icon--large c-icon--gray"><use xlink:href="#icon-preview"></use></svg>
+      </div>
 
-<div class="form_wrapper">
-  <%= render 'form' %>
+      <%= form_for(@registry, html: {class: 'stacked skinny ma'}) do |f| %>
+        <%= f.label :name, 'You and your partner\'s name' %>
+        <div class="help">(James & Sarah)</div>
+        <%= f.text_field :name, class: 'mb--large stretch' %>
+
+        <%= f.label :url_slug, 'Your registry URL' %>
+        <div class="help">(This is the link your guests will visit to see your registry)</div>
+        <div class="help">*can only contain lowercase letters. numbers, dashes (-), and underscores</div>
+        <%= f.text_field :url_slug, placeholder: 'our-unique-url', class: 'mb--large stretch' %>
+
+        <%= f.label :city_state, 'Current city and state' %>
+        <%= f.text_field :city_state, placeholder: 'Seattle, Washington', class: 'mb--large stretch' %>
+
+        <%= f.label :banner_image, 'Cover photo' %>
+        <div class="help">Suggested dimensions: 1200x800 pixels</div>
+        <%= f.file_field :banner_image, class: 'mb--large' %>
+
+        <%= f.label :profile_image, 'Couple profile photo' %>
+        <div class="help">Suggested dimensions: 600x350 pixels</div>
+        <%= f.file_field :profile_image, class: 'mb--large' %>
+
+        <%= f.label :wedding_date, 'When is the big day?' %>
+        <div class="help"></div>
+        <%= f.date_field :wedding_date, placeholder:'yyyy-mm-dd', min: Date.today, class: 'mb--large stretch' %>
+
+        <%= f.label :couples_story, 'Your Story: How did you meet?' %>
+        <div class="help">Go on, gush! Share your love story with your friends and family! (___ character limit)</div>
+        <%= f.text_area :couples_story, class: 'stretch mb--large' %>
+
+        <%= f.label :registry_story, 'Your Registry: Why this project?' %>
+        <div class="help">Explain why you are passionate about this project or organization and thank your guests for their generosity.  Haven't selected a project yet? Come back to this section at the end.</div>
+        <%= f.text_area :registry_story, class: 'stretch mb--large' %>
+
+        <%= f.submit "Next \&rarr;".html_safe, class: 'c-button c-button--primary stretch'%>
+      <% end %>
+
+      <%#= render "shared/project-mini" %>
+    </div>
+  </div>
 </div>
