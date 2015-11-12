@@ -27,7 +27,7 @@ class RegistriesController < ApplicationController
     @registry = Registry.new(registry_params)
     if @registry.save
       current_user.update(:registry_id => @registry.id)
-      redirect_to projects_path , notice: 'Please select a project'
+      redirect_to project_registry_form_path(@registry)
     else
       render :new
     end
@@ -50,6 +50,11 @@ class RegistriesController < ApplicationController
 
   def sample_show
     @registry = Registry.find(37)
+  end
+
+  def project_registry_form
+    @registry = Registry.find(params[:id])
+    @projects = Project.all
   end
 
   private

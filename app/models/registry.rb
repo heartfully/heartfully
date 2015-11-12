@@ -22,7 +22,7 @@ class Registry < ActiveRecord::Base
   ## VALIDATIONS ##
   #################
 
-  validates_presence_of :name, :url_slug
+  validates_presence_of :name, :url_slug, :banner_image, :profile_image
   validates_uniqueness_of :name, :url_slug
   # TODO a format validation on URL slug
 

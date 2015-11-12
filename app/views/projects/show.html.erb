@@ -2,6 +2,17 @@
   <%= render "shared/status" %>
 <% end %>
 
+<% flash.each do |key, value| %>
+  <div class="c-status-wrapper">
+    <div class="c-status">
+      <div class="test">
+        <svg class="center c-icon c-icon--status"><use xlink:href="#icon-globe"></use></svg>
+        <span class="underline"><%= value.html_safe %></span>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <%= render "header" %>
 <%= render "summary" %>
 <%= render "about" %>

@@ -6,9 +6,6 @@ module RegistriesHelper
     end
   end
 
-  def calc_percentage(registry)
-    ((registry.projects.first.total_cost('purchased').to_f / registry.projects.first.total_cost.to_f) * 100).round(0)
-  end
   def approved_project?(registry, project)
     RegistryProject.where(:registry_id => registry.id, :project_id => project.id).first.approved
   end

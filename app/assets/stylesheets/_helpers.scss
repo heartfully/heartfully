@@ -110,6 +110,11 @@
   }
 }
 
+.r-flex-wrap {
+  @extend .r-flex;
+  flex-wrap: wrap;
+}
+
 .subhed {
   @include font-subhed;
 }
