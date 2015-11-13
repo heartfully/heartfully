@@ -11,7 +11,22 @@
         <svg class="c-icon c-icon--large c-icon--gray"><use xlink:href="#icon-preview"></use></svg>
       </div>
 
+
       <%= form_for(@registry, html: {class: 'stacked skinny ma'}) do |f| %>
+
+        <!-- error handling  -->
+        <% if @registry.errors.any? %>
+           <div class="error mb">
+             <strong><%= pluralize(@registry.errors.count, "error") %> prohibited
+             this registry from being saved:</strong>
+              <ul>
+                <% @registry.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+           </div>
+        <% end %>
+        
         <%= f.label :name, 'You and your partner\'s name' %>
         <div class="help">(James & Sarah)</div>
         <%= f.text_field :name, class: 'mb--large stretch' %>
