@@ -17,29 +17,52 @@
       </div>
       <ul class="c-project-tabbed__menu">
         <li class="c-project-tabbed__menu-item active">
-          <a href="#">Overview</a>
+          <a class="registry_project_tab" id="tab-project-overview">Overview</a>
         </li>
         <li class="c-project-tabbed__menu-item">
-          <a href="#">Problem & Solution</a>
+          <a class="registry_project_tab" id="tab-project-problem-and-solution">Problem & Solution</a>
         </li>
         <li class="c-project-tabbed__menu-item">
-          <a href="#">How It Works</a>
+          <a class="registry_project_tab" id="tab-project-how-it-works">How It Works</a>
         </li>
         <li class="c-project-tabbed__menu-item">
-          <a href="#">Why It's Important</a>
+          <a class="registry_project_tab" id="tab-project-why-its-import">Why It's Important</a>
         </li>
         <li class="c-project-tabbed__menu-item">
-          <a href="#">Sustainability</a>
+          <a class="registry_project_tab" id="tab-project-sustainability">Sustainability</a>
         </li>
       </ul>
-      <div class="c-project-tabbed__content--overview--summary mb">
-        Bring free, high quality medical care to those in need by supporting medical missions that serve the most vulnerable populations of Guatemala.
+
+      <div class="c-project-content" style="min-width: 52%;">
+        <div class="content-project-overview c-project-tabbed__content--overview--summary mb">
+          <%= @registry.projects.first.overview %>
+        </div>
+        <div class="content-project-problem-and-solution c-project-tabbed__content--overview--summary mb" style="display: none">
+          <p><%= @registry.projects.first.problem %></p>
+          <p><%= @registry.projects.first.solution %></p>
+        </div>
+        <div class="content-project-how-it-works c-project-tabbed__content--overview--summary mb" style="display: none">
+          <% 1.upto(5) do |step| %>
+            <% unless @registry.projects.first.send("how_it_works_step#{step}").empty? %>
+              <li>
+                <%= @registry.projects.first.send("how_it_works_step#{step}") %>
+              </li>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="content-project-why-its-import c-project-tabbed__content--overview--summary mb" style="display: none">
+          <%= @registry.projects.first.importance %>
+        </div>
+        <div class="content-project-sustainability c-project-tabbed__content--overview--summary mb" style="display: none">
+          <%= @registry.projects.first.sustainability %>
+        </div>
       </div>
+
       <div class="c-project-tabbed__content--overview--partner">
         <h3 class="mb" style="text-transform: uppercase; color: gray; font-family: 'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;">About This Partner</h3>
         <img src="https://pbs.twimg.com/profile_images/616326778/Helps_Logo_H_only.JPG" style="width: 50px; height: 50px; display: inline-block; vertical-align: middle;">
         <div class="block">
-          <h4 class="c-project-about__partner nudge-top--small">HELPS International</h4>
+          <h4 class="c-project-about__partner nudge-top--small"><%= @registry.projects.first.organization.name %></h4>
         </div>
           <ul class="c-project-about__meta">
             <li>

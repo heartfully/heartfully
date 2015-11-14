@@ -133,4 +133,12 @@ $(document).ready(function() {
     $('.c-project-submit').attr('href', '/projects/' +event.target.value + '/select');
   });
 
+  $('.registry_project_tab').on('click', function(event) {
+    event.preventDefault();
+    var contentSelector = '.' + $(this).attr('id').replace(/tab/, 'content');
+    $(this).parent().siblings().removeClass('active');
+    $(this).parent().addClass('active');
+    $(contentSelector).siblings().hide();
+    $(contentSelector).show();
+  });
 });
