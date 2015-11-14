@@ -60,12 +60,12 @@
                     <li><svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-link"></use></svg> <a class="c-project-about__link" href="<%= project.organization.org_url%>"><%= project.organization.org_url %></a></li>
                   </ul>
                   <%= link_to 'Learn More', "/projects/#{project.url_slug}", class: 'c-button c-button--secondary nudge-top--small'%>
-                  <button class="c-button c-button--primary nudge-top--small">Select</button>
+                  <button value="<%= project.url_slug %>" class="c-project-select c-button c-button--primary nudge-top--small">Select</button>
                 </div>
             </div>
           <% end %>
         </div>
-        <button class="c-button c-button--primary stretch">Next &rarr;</button>
+        <%= link_to 'Next &rarr;'.html_safe, '#', method: :post, class: 'c-project-submit c-button c-button--primary stretch' %>
       </form>
     </div>
   </div>

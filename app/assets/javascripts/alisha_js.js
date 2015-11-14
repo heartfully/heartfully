@@ -116,6 +116,21 @@ $.fn.extend({
 });
 
 
- $(document).ready(function() {
-        $('#rotate').rotaterator({fadeSpeed:1000, pauseSpeed:1300});
- });
+$(document).ready(function() {
+  $('#rotate').rotaterator({fadeSpeed:1000, pauseSpeed:1300});
+
+  $('.c-project-select').on('click', function(event){
+    event.preventDefault();
+
+    if ($(this).parents('.c-tiny-project').hasClass('c-project-selected')) {
+      event.target.innerHTML = 'select';
+      $(this).parents('.c-tiny-project').removeClass('c-project-selected');
+    } else {
+      event.target.innerHTML = 'deselect';
+      $(this).parents('.c-tiny-project').addClass('c-project-selected');
+    }
+
+    $('.c-project-submit').attr('href', '/projects/' +event.target.value + '/select');
+  });
+
+});
