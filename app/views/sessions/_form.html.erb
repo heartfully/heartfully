@@ -1,4 +1,8 @@
 <%= form_for :session, :url => session_path do |form| %>
+  <% if flash[:notice] %>
+    <div class="error mb"><%= flash[:notice] %></div>
+  <% end %>
+
   <div class="text-field">
     <%= form.label :email %>
     <%= form.text_field :email, :type => 'email' %>

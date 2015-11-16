@@ -13,6 +13,14 @@ class RegistryItems extends React.Component {
     this.setState({showCart: false});
   }
 
+  itemInCart(item) {
+    let matchedItems = this.state.cart.filter(cartItem => {
+      return cartItem.id === item.id;
+    });
+    if (matchedItems.length >= 1) return true;
+    return false;
+  }
+
   submitOrder() {
     const data = {registry_id: this.props.registry_id, items: this.state.cart}
     $.ajax({
@@ -43,6 +51,7 @@ class RegistryItems extends React.Component {
         <ItemCard
           addToCart={this.addToAndShowCart.bind(this)}
           itemType={item}
+          inCart={this.itemInCart(item)}
           purchase
           key={index}
         />

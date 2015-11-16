@@ -1,6 +1,6 @@
 class PurchaseMenu extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {quantity: 0};
   }
 
@@ -11,7 +11,6 @@ class PurchaseMenu extends React.Component {
   render() {
     const item = this.props.itemType;
     const {quantity} = this.state;
-
     return (
       <div>
         <div className="c-registry-card__qty active">
@@ -19,15 +18,25 @@ class PurchaseMenu extends React.Component {
             <label>Quantity</label>
             <input onChange={this.handleQuantity.bind(this)}
               type="number"
+              disabled={this.props.inCart}
               min="0"
               placeholder="0" />
           </div>
-          <button
-            onClick={this.props.addToCart.bind(null, item, quantity)}
-            className="c-registry-card__cart c-button"
-            >
-            <span>Add to Cart</span>
-          </button>
+          {this.props.inCart ?
+            <div style={{
+                background: '#7D72DE',
+                color: '#fff',
+                padding: 10,
+                fontSize: 20}}>
+              In cart
+            </div> :
+            <button
+              onClick={this.props.addToCart.bind(null, item, quantity)}
+              className="c-registry-card__cart c-button"
+              >
+              <span>Add to Cart</span>
+            </button>
+          }
         </div>
       </div>
     );

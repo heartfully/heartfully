@@ -23,8 +23,8 @@ Rails.application.routes.draw do
     resources :projects
   end
 
-  get '/sign_up' => 'marketing#new_inquiry'
-  post '/sign_up' => 'marketing#create_inquiry', :as => 'inquirers'
+  get '/sign_up' => 'users#new'
+  post '/sign_up' => 'users#create'
   get '/sign_in' => 'sessions#new'
   delete '/sign_out' => 'sessions#destroy'
 
