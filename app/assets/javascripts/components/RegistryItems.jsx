@@ -9,6 +9,10 @@ class RegistryItems extends React.Component {
     this.setState({showCart: true, ...this.state.cart.push({...item, quantity: quantity})});
   }
 
+  emptyCart() {
+    this.setState({showCart: false, cart: []});
+  }
+
   hideCart() {
     this.setState({showCart: false});
   }
@@ -31,11 +35,11 @@ class RegistryItems extends React.Component {
         dataType: "json",
         success: function (data) {
           window.location = data.responseText;
-          //do something
         },
-        // error: function (errormessage) {
-        //   console.log(errormessage)
-        // }
+        error: function (errormessage) {
+          console.log("whyyyyyyyy")
+          console.log(errormessage)
+        }
     });
   }
 
@@ -44,6 +48,7 @@ class RegistryItems extends React.Component {
                   <Cart {...this.state}
                     hideCart={this.hideCart.bind(this)}
                     submit={this.submitOrder.bind(this)}
+                    emptyCart={this.emptyCart.bind(this)}
                    /> : null;
 
     const ItemCards = this.props.items.map((item, index) => {

@@ -21,11 +21,14 @@ class Cart extends React.Component {
             {this.cartItems()}
           </tbody>
         </table>
-        <button onClick={this.props.submit} className="c-button c-button--primary block mb--small">
-          Go to Checkout
+        <button onClick={this.props.submit} className="c-button block c-button--primary mb--small">
+            Go to Checkout
         </button>
-        <button onClick={this.props.hideCart} id="continue-shopping" className="c-button c-button--secondary">
+        <button onClick={this.props.hideCart} id="continue-shopping" className="c-button block mb c-button--secondary">
           Continue Shopping
+        </button>
+        <button onClick={this.props.emptyCart} style={emptyCartStyles}>
+          Empty Cart
         </button>
       </div>
     );
@@ -34,4 +37,11 @@ class Cart extends React.Component {
 
 Cart.propTypes = {
   cart: React.PropTypes.array.isRequired,
+}
+
+emptyCartStyles = {
+  padding: 10,
+  color: '#FF4D4D',
+  border: '1px solid #FF4D4D',
+  background: '#FFDADA',
 }

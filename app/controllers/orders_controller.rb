@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to order_path(@order) }
-      format.json { render json: order_path(@order) }
+      format.json { render :json => order_path(@order), :status => :ok }
     end
   end
 
