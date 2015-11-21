@@ -33,13 +33,13 @@ class RegistryItems extends React.Component {
         data: JSON.stringify(data),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
+        error: function (errormessage) {
+          // TODO: figure out why 200 status gets returned in the error callback
+          window.location = errormessage.responseText;
+        },
         success: function (data) {
           window.location = data.responseText;
         },
-        error: function (errormessage) {
-          console.log("whyyyyyyyy")
-          console.log(errormessage)
-        }
     });
   }
 

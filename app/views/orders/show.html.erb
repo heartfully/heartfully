@@ -1,25 +1,50 @@
-<div class="row order-container">
-  <div class='confirmation-card'>
-    <h2>Order confirmation</h2>
+<div class="test">
+    <h2 class="c-how__title center subhed purple mb">Order confirmation</h2>
+    <h4 class="center quiet mb--large">Step 1 of 2: Personalize your gift</h4>
+    <div class="mb--large">
+      <h3 class="mb">Order Summary</h3>
 
-    <% if @order.status.nil? %>
-      <% order_summary(@order.summary).each do |item, quantity| %>
-        <div><%= "#{quantity} #{item}" %></div>
-      <% end %>
-      <div>total: <%= @order.total %></div>
+      <% if @order.status.nil? %>
+        <table class="c-admin__table mb">
+          <thead>
+            <tr>
+              <th>Item</th> <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% order_summary(@order.summary).each do |item, quantity| %>
+              <tr> <td><%= item %></td> <td><%= quantity %></td></tr>
+            <% end %>
+          </tbody>
+        </table>
+        <strong>Order Total: <%= @order.total %></strong>
+    </div>
 
-      <strong>Please enter your information below and click checkout to finalize your order:</strong>
+      <h3 class="mb">Your Information</h3>
       <%= form_tag(orders_finalize_path, class:'order-form') do %>
-        <%= text_field_tag(:first_name, '', :placeholder => 'First Name') %>
-        <%= text_field_tag(:last_name, '', :placeholder => 'Last Name') %>
-        <%= email_field_tag(:email, '', :placeholder => 'Email') %>
-
-        Leave a message for the couple:
-        <%= text_area_tag(:message) %>
-        <%= submit_tag('Checkout', class:'expand  button') %>
+        <div class="mb">
+          <%= label_tag(:first_name, 'First Name') %>
+          <br>
+          <%= text_field_tag(:first_name, '', :placeholder => 'First Name') %>
+        </div>
+        <div class="mb">
+          <%= label_tag(:last_name, 'Last Name') %>
+          <br>
+          <%= text_field_tag(:last_name, '', :placeholder => 'Last Name') %>
+        </div>
+        <div class="mb">
+          <%= label_tag(:email, 'Email') %>
+          <br>
+          <%= email_field_tag(:email, '', :placeholder => 'Email') %>
+        </div>
+        <div class="mb">
+          <%= label_tag(:message, 'Leave a message for the couple:') %>
+          <br>
+          <%= text_area_tag(:message, nil, rows: 5, cols: 45) %>
+        </div>
+        <%= submit_tag('Go to payment details', class:'c-button c-button--primary') %>
       <% end %>
     <% else %>
       This order has been completed by <%= "#{@order.first_name} #{@order.last_name}" %>
     <% end %>
   </div>
-</div>
