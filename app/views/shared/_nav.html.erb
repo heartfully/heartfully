@@ -14,8 +14,8 @@
   <ul class="c-nav__menu">
     <li class="c-nav__menu-item"><%= link_to 'About', about_us_path %></li>
     <li class="c-nav__menu-item"><%= link_to "Browse Projects", projects_path %></li>
-    <li class="c-nav__menu-item"><a href="#">Our Partners</a></li>
-    <li class="c-nav__menu-item"><a href="#">FAQ</a></li>
+    <li class="c-nav__menu-item"><a href="/our-partners">Our Partners</a></li>
+    <li class="c-nav__menu-item"><a href="/faq">FAQ</a></li>
     <li class="c-nav__menu-item">
       <% if current_user.registry %>
         <a href="#"><%= current_user.registry.name %></a>
