@@ -20,7 +20,7 @@
       <% if current_user.registry %>
         <a href="#"><%= current_user.registry.name %></a>
       <% else  %>
-        <a href="#"><%= current_user.name %></a>
+        <a href="#"><%= current_user.first_name %></a>
       <% end %>
       <ul class="c-nav__admin-menu">
         <li class="c-nav__admin-menu-item"><a href="#">Settings & Admin</a></li>
