@@ -33,14 +33,14 @@ if ($('.c-hero').length != 0) {
   }
 }
 
-// TODO: jquery for nav shopping cart
-// $('.c-nav__menu-item:last-child').on('mouseover', function(){
-//   $('.c-nav__admin-menu').css('opacity', '1');
-// });
-//
-// $('.c-nav__menu-item:last-child').on('mouseleave', function(){
-//   $('.c-nav__admin-menu').css('opacity', '0');
-// });
+
+$('.c-nav__menu-item:last-child').on('mouseover', function(){
+  $('.c-nav__admin-menu').css('opacity', '1');
+});
+
+$('.c-nav__menu-item:last-child').on('mouseleave', function(){
+  $('.c-nav__admin-menu').css('opacity', '0');
+});
 
 // exit mobile menu if clicking close icon
 $('.c-nav__mobile-menu--close').on('click', function() {
