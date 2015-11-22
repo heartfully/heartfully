@@ -1,12 +1,16 @@
-<div id="clearance" class="password-reset">
+<div class="test">
+  <p class="purple">
+    Forgot your password?  Please enter your email in the field below and we will email you a token in order to reset your password.
+  </p>
+  <br>
   <%= form_for :password, :url => passwords_path do |form| %>
-    <div class="text-field">
+    <div class="mb">
       <%= form.label :email %>
       <%= form.text_field :email, :type => 'email' %>
     </div>
 
     <div class="submit-field">
-      <%= form.submit %>
+      <%= form.submit "Send email" %>
     </div>
   <% end %>
 </div>

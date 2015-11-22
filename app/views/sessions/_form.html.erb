@@ -3,29 +3,31 @@
     <div class="error mb"><%= flash[:notice] %></div>
   <% end %>
 
-  <div class="text-field">
+  <div class="mb">
     <%= form.label :email %>
+    <br>
     <%= form.text_field :email, :type => 'email' %>
   </div>
 
-  <div class="password-field">
+  <div class="mb">
     <%= form.label :password %>
+    <div class="mb">
     <%= form.password_field :password %>
   </div>
 
-  <div class="remember-me">
+  <div class="mb">
     <%= form.label :remember_me, class: "checkbox inline" do %>
       <%= form.check_box :remember_me %>
       <span>Remember me on this computer</span>
     <% end %>
   </div>
 
-  <div class="submit-field">
+  <div class="mb">
     <%= form.submit "Log In", :class => "button expand" %>
   </div>
 
-  <div class="other-links">
-    <%= link_to "Sign Up", sign_up_path %>
-    <%= link_to "Forgot Password", new_password_path %>
+  <div class="mb purple">
+    <%= link_to "Sign Up", sign_up_path, class: 'underline' %> |
+    <%= link_to "Forgot Password", new_password_path, class: 'underline' %>
   </div>
 <% end %>
