@@ -51,6 +51,11 @@ class RegistriesController < ApplicationController
 
   # GET /registry/:url_slug/admin
   def admin
+    # allow system admins to see admin page for a registry with any slug
+    find_by_slug if current_user.system_admin?
+
+    @project = @registry.projects.first
+    @orders = @registry.orders.complete
   end
 
   def sample_show

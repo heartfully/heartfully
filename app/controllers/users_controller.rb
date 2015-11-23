@@ -43,11 +43,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
-    else
-      render :edit
-    end
+    render :edit
   end
 
   # DELETE /users/1
