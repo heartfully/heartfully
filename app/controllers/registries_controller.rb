@@ -1,9 +1,10 @@
 class RegistriesController < ApplicationController
-  before_action :require_auth, :only => [:create, :edit, :update, :destroy]
-  before_action :set_registry, :only => [:edit, :update, :destroy]
+  before_action :require_auth, :only => [:create, :edit, :update, :destroy,
+                                         :admin]
+  before_action :set_registry, :only => [:edit, :update, :destroy, :admin]
   before_action :find_by_slug, :only => [:show, :projects]
 
-  # GET /registries/:url_slug
+  # GET /registry/:url_slug
   def show
   end
 
@@ -46,6 +47,15 @@ class RegistriesController < ApplicationController
   def destroy
     @registry.destroy
     redirect_to registries_url, notice: 'Registry was successfully destroyed.'
+  end
+
+  # GET /registry/:url_slug/admin
+  def admin
+    # allow system admins to see admin page for a registry with any slug
+    find_by_slug if current_user.system_admin?
+
+    @project = @registry.projects.first
+    @orders = @registry.orders.complete
   end
 
   def sample_show

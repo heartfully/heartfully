@@ -10,7 +10,9 @@ class SessionsController < ApplicationController
       sign_in @user
       session_params[:remember_me] == '1' ? remember(@user) : forget(@user)
       set_registry_project if session[:project_slug]
-      redirect_to user_path(@user)
+
+      slug = current_user.registry.try(:url_slug)
+      redirect_to slug ? registry_admin_path(slug) : new_registry_path
     else
       flash[:notice] = "Invalid email or password"
       render :new, status: :unauthorized

@@ -23,7 +23,7 @@
         <a href="#"><%= current_user.first_name %></a>
       <% end %>
       <ul class="c-nav__admin-menu">
-        <li class="c-nav__admin-menu-item"><%= link_to 'Settings & Admin', user_path(current_user) %></li>
+        <li class="c-nav__admin-menu-item"><%= link_to 'Settings & Admin', registry_admin_path(current_user.registry.url_slug) %></li>
         <% if current_user.registry  %>
           <li class="c-nav__admin-menu-item"><%= link_to 'View Registry', registry_home_path(current_user.registry.url_slug) %></li>
           <li class="c-nav__admin-menu-item"><%= link_to 'Edit Registry', edit_registry_path(current_user.registry)%></li>

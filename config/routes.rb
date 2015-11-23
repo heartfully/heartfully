@@ -52,7 +52,11 @@ Rails.application.routes.draw do
 
   # Main registry page, this must be after `resource :registry`
   get '/registries/:id/project', to: 'registries#project_registry_form', as: 'project_registry_form'
-  get '/registry/:url_slug', to: 'registries#show', as: 'registry_home'
+
+  scope '/registry/:url_slug' do
+    root to: 'registries#show', as: 'registry_home'
+    get '/admin', to: 'registries#admin', as: 'registry_admin'
+  end
 
   # Footer Link Pages
   get '/about-us' => 'marketing#about_us'

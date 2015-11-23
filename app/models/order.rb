@@ -1,12 +1,26 @@
 class Order < ActiveRecord::Base
   belongs_to :registry
   has_many :items
-  
+
   include ActionView::Helpers::NumberHelper
   include OrderProcess
 
+  scope :complete, -> { where(status: 'complete') }
+
   def complete
     self.update(status: 'complete')
+  end
+
+  def item
+    (eval summary).keys.first
+  end
+
+  def quantity
+    (eval summary).values.first
+  end
+
+  def total_big_decimal
+    total && BigDecimal(total.gsub(/[^\d.]/, ''))
   end
 end
 
@@ -26,4 +40,3 @@ end
 #  summary     :text
 #  message     :text
 #
-

@@ -1,0 +1,80 @@
+<%= render "shared/svg" %>
+
+<%= render "shared/nav" %>
+<div class="c-breaker" style="background-color: #7D72DE; background-image: url('http://cdn1.stocksy.com/a/ciA000/z0/41206.jpg'); background-size: cover; background-position: 30% 30%; color: white;">
+  <div class="test center">
+    <h1 class="roboto"><%= @registry.name %></h1>
+  </div>
+</div>
+<div class="pad" style="background: #f5f5f5;">
+  <div class="c-circle ma mb" style="border-radius: 50%; width: 100px; height: 100px; margin-top: -100px; box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.2)">
+  </div>
+  <div class="test">
+    <div class="r-flex flex--sb mb--large">
+      <div class="border flex-2">
+        <h2 class="c-admin__heading mb meta">Your Project</h2>
+        <p>Thanks to your generosity, your registry has helped
+          <strong><%= @project.partner %></strong> raise
+          <strong><%= dollars @orders.to_a.sum(&:total_big_decimal) %></strong>
+          so far.</p>
+        <div class="c-tiny-project nudge-top">
+          <div class="c-tiny-project__photo"
+               style="background-image: url(<%= @project.photo1 %>)"></div>
+            <div class="c-tiny-project__info">
+              <h3 class="mb--small" style="font-family: 'AvenirNextLTPro-Bold', Helvetica, Arial, sans-serif;"><%= @project.name %></h3>
+              <p class="mb--small"><%= @project.description %></p>
+              <ul class="c-project-about__meta">
+                <li>
+                  <svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-map"></use></svg> <%= @project.country %>
+                </li>
+                <li><svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-link"></use></svg>
+                  <%= link_to(URI(@project.organization.org_url).host,
+                              @project.organization.org_url,
+                              class: 'c-project-about__link') %>
+                </li>
+              </ul>
+              <%= link_to('Learn more &rarr;'.html_safe,
+                          @project,
+                          class: 'link--secondary inline nudge-top--small') %>
+            </div>
+        </div>
+      </div>
+      <div class="border flex-2">
+        <h2 class="c-admin__heading mb meta">Registry Admin</h2>
+        <ul class="c-admin__links">
+          <li><%= link_to 'View registry', registry_home_path(current_user.registry.url_slug) %></li>
+          <li><%= link_to 'Edit registry', edit_registry_path(current_user.registry) %></li>
+          <li><%= link_to 'My profile', edit_user_path(current_user) %></li>
+          <li><%= link_to 'Log out', sign_out_path, method: 'delete' %></li>
+          <li><a href="#" class="link--danger">Delete registry</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border">
+      <h2 class="c-admin__heading mb meta"><svg class="c-icon c-icon--medium" title="gifts"><use xlink:href="#icon-gift"></use></svg> Your Gifted Items</h2>
+      <table class="c-admin__table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Bought by</th>
+            <th>Total amount</th>
+            <th>Personal note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+          <tr>
+            <td><%= order.item %></td>
+            <td><%= order.quantity %></td>
+            <td><%= mail_to order.email %></td>
+            <td><%= dollars order.total_big_decimal %></td>
+            <td><%= order.message %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>
