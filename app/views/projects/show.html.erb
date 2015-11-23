@@ -1,4 +1,4 @@
-<% if current_user && !current_user.registry %>
+<% if current_user && current_user.registry && current_user.registry.projects.empty? %>
   <%= render "shared/status" %>
 <% end %>
 

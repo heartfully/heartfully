@@ -34,7 +34,7 @@ class UsersController < ApplicationController
       sign_in @user
       partner_invite.update(:accepted_at => Time.zone.now) if partner_invite
       # UserMailer.user_confirmation(@user).deliver!
-      flash[:notice] = "Account created. We'll update you when more projects are available!"
+      # flash[:notice] = "Account created. We'll update you when more projects are available!"
       redirect_to user_path(@user)
     else
       render :new

@@ -13,7 +13,6 @@ class ProjectsController < ApplicationController
     if request.referrer
       flash[:notice] = %Q[<a href="#{request.referrer}">Go back to browse projects</a>] if request.referrer.split('/').include?('registries')
     end
-    # @project = @project.decorate
   end
 
   def select

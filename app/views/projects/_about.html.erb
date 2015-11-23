@@ -16,7 +16,7 @@
         <li><svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-link"></use></svg> <a class="c-project-about__link" target="_blank" href="<%= @project.organization.org_url %>"><%= @project.organization.org_url %></a></li>
       </ul>
     </div>
-    <div class="c-project-about__photo">
+    <div class="c-project-about__photo" style="background-image: url(<%= @project.photo2 %>); background-size: cover; background-position: center;">
     </div>
   </div>
 </div>
