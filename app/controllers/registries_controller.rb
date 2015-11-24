@@ -64,7 +64,7 @@ class RegistriesController < ApplicationController
 
   def project_registry_form
     @registry = Registry.find(params[:id])
-    @projects = Project.all
+    @projects = Project.where(public: true)
   end
 
   private
