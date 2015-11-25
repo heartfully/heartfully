@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :require_auth, :only => [:update, :destroy]
   before_action :set_project, only: [:show, :update, :destroy, :select]
-
+  skip_before_filter :verify_authenticity_token, only: :select
   # GET /projects
   def index
     @projects = Project.where(public: true)
@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
       session[:project_slug] = params[:url_slug]
       redirect_to sign_in_path
     else
-      current_user.registry.projects << set_project if current_user.registry
+      current_user.registry.projects << set_project if current_user.registry && current_user.registry.projects.empty?
       redirect_to "/registry/#{current_user.registry.url_slug}"
     end
   end

@@ -16,9 +16,10 @@ class ProjectTile extends React.Component {
           <a className="link--secondary inline nudge-top--small" href={`/projects/${this.props.url_slug}`}>
             {['Learn More', <span>&rarr;</span>]}
           </a>
-          <button className="c-button c-button--primary block nudge-top stretch">
-            Select this project
-          </button>
+          <form action={`/projects/${this.props.url_slug}/select`} method="post">
+            <input type="submit"
+              className="c-button c-button--primary block nudge-top stretch" value="Select This Project"/>
+          </form>
         </div>
       </div>
     );
@@ -29,3 +30,5 @@ ProjectTile.propTypes = {
     photo1_url: React.PropTypes.string,
     url_slug: React.PropTypes.string,
   }
+
+style ={color: '#fff', textAlign: 'center', padding: 10};
