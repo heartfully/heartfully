@@ -10,8 +10,12 @@ class RegistriesController < ApplicationController
 
   # GET /registries/new
   def new
-    redirect_to new_user_path if !current_user
-    @registry = Registry.new
+    if !current_user
+      redirect_to new_user_path
+    else
+      redirect_to registry_home_path(current_user.registry.url_slug) if current_user.registry
+      @registry = Registry.new
+    end
   end
 
   # GET /registries/1/edit
