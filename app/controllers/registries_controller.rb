@@ -41,7 +41,7 @@ class RegistriesController < ApplicationController
   # PATCH/PUT /registries/1
   def update
     if @registry.update(registry_params)
-      redirect_to @registry, notice: 'Registry was successfully updated.'
+      redirect_to "/registry/#{@registry.url_slug}", notice: 'Registry was successfully updated.'
     else
       render :edit
     end
