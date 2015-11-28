@@ -60,7 +60,9 @@
 
       <div class="c-project-tabbed__content--overview--partner">
         <h3 class="mb" style="text-transform: uppercase; color: gray; font-family: 'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;">About This Partner</h3>
-        <img src="https://pbs.twimg.com/profile_images/616326778/Helps_Logo_H_only.JPG" style="width: 50px; height: 50px; display: inline-block; vertical-align: middle;">
+        <% if @registry.projects.first.organization.logo %>
+          <%= image_tag @registry.projects.first.organization.logo.url, style: 'width: 50px; height: 50px; display: inline-block; vertical-align: middle;' %>
+        <% end %>
         <div class="block">
           <h4 class="c-project-about__partner nudge-top--small"><%= @registry.projects.first.organization.name %></h4>
         </div>
