@@ -31,7 +31,7 @@
                 </li>
               </ul>
               <%= link_to('Learn more &rarr;'.html_safe,
-                          @project,
+                          project_path(@project.url_slug),
                           class: 'link--secondary inline nudge-top--small') %>
             </div>
         </div>
