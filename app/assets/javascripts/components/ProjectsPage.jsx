@@ -9,7 +9,7 @@ class ProjectsPage extends React.Component {
       this.setState({projects: data.projects});
     });
   }
-  
+
   requestFilter(event){
     const filterParams = parseInt(event.target.value) ? {categories: event.target.value} : null;
 
@@ -52,7 +52,7 @@ class ProjectsPage extends React.Component {
         </div>
         <RegistryBreaker />
         <div className="test">
-          {this.renderProjects(projects.slice(5, projects.length))}
+          {this.renderProjects(projects.slice(4, projects.length))}
         </div>
       </div>
     );
