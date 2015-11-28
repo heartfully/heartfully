@@ -50,7 +50,7 @@ class RegistriesController < ApplicationController
   # DELETE /registries/1
   def destroy
     @registry.destroy
-    redirect_to registries_url, notice: 'Registry was successfully destroyed.'
+    redirect_to user_path(current_user), notice: 'Registry was successfully destroyed.'
   end
 
   # GET /registry/:url_slug/admin
@@ -67,8 +67,9 @@ class RegistriesController < ApplicationController
   end
 
   def project_registry_form
+    @categories = Category.all.group_by { |category| category.cat_type }
     @registry = Registry.find(params[:id])
-    @projects = Project.where(public: true)
+    @projects = Project.filter(filterable_params).where(public: true)
   end
 
   private
@@ -95,5 +96,9 @@ class RegistriesController < ApplicationController
         :couples_story,
         :registry_story
       )
+    end
+
+    def filterable_params
+      { :in_category => params[:categories] }
     end
 end

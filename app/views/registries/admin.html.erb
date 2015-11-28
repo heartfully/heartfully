@@ -43,7 +43,7 @@
           <li><%= link_to 'Edit registry', edit_registry_path(current_user.registry) %></li>
           <li><%= link_to 'My profile', edit_user_path(current_user) %></li>
           <li><%= link_to 'Log out', sign_out_path, method: 'delete' %></li>
-          <li><a href="#" class="link--danger">Delete registry</a></li>
+          <li><%= link_to 'Delete registry', registry_path(@registry), method: :delete, data: { confirm: 'Are you sure you want to delete your registry?'} %></li>
         </ul>
       </div>
     </div>

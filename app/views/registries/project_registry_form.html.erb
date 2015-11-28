@@ -21,28 +21,22 @@
         </div>
       </div>
 
-      <div class="flex flex--start test">
-        <div class="mb">
-          <form>
+      <%= form_tag(project_registry_form_path(@registry), method: 'get', class: 'filter_form') do %>
+        <div class="flex flex--start test">
+          <div class="mb">
             <div class="inline" style="margin-right: 20px;">
               <label class="block mb--small" style="text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;">Filter by region</label>
-              <select class="vm">
-                <option>South America</option>
-                <option>Another option</option>
+              <select name="categories" class="vm">
+                <option value="nil">Region</option>
+                <% @categories['region'].each do |category|  %>
+                  <option value="<%= category.id %>"><%= category.name %></option>
+                <% end  %>
               </select>
             </div>
-          </form>
-        </div>
-        <div class="">
-          <div class="inline">
-            <label class="block mb--small" style="text-transform: uppercase; color: gray; font-family: 'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;">Filter by issue</label>
-            <select class="vm">
-              <option>Education</option>
-              <option>Another option</option>
-            </select>
           </div>
+          <%= submit_tag "Search", style: 'align-self: center; margin-left: 16px' %>
         </div>
-      </div>
+      <% end  %>
 
       <!-- form starts here -->
       <form class="ma">

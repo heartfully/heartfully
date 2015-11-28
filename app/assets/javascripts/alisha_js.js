@@ -117,6 +117,8 @@ $.fn.extend({
 });
 
 
+
+
 $(document).ready(function() {
   $('#rotate').rotaterator({fadeSpeed:1000, pauseSpeed:1300});
 
@@ -142,4 +144,11 @@ $(document).ready(function() {
     $(contentSelector).siblings().hide();
     $(contentSelector).show();
   });
+
+  // filter form on registry project select
+  $('.filter_form select').on('change', function(){
+    if ($(this).val() === 'nil') {
+      $(this).parents('.filter_form')
+    }
+  })
 });
