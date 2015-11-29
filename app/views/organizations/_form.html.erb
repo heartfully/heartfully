@@ -35,7 +35,8 @@
       <%= f.text_field :org_url %>
     </div>
     <div class="mb">
-      Sector (i.e. health, water, energy, etc)
+      <strong>Sector (i.e. health, water, energy, etc)</strong>
+      <br>
       <i>List all that apply.</i>
       <br>
       <%= f.text_field :sectors %>
@@ -45,10 +46,9 @@
       <br>
       <%= f.text_area :mission_statement %>
     </div>
-    <div class="border" >
-      <div class="mb">
-        Partnership point of contact
-      </div>
+    <div class="breaker mb" >
+      <strong class="underline">Partnership point of contact</strong>
+      <br>
       <%= f.label :contact_name, "Name: " %>
       <br>
       <%= f.text_field :contact_name %>
@@ -67,35 +67,41 @@
     </div>
     <div class="mb">
       <div class="mb">
-        Is your organization a registered 501(c)3 in the United States?
+        <strong>Is your organization a registered 501(c)3 in the United States?</strong>
       </div>
       <%= f.radio_button(:tax_exempt, true) %>
       <%= label(:tax_exempt, "Yes", for: :organization_tax_exempt_true) %>
       <%= f.radio_button :tax_exempt, false %>
       <%= f.label(:tax_exempt, "No", for: :organization_tax_exempt_false)%>
+      <br>
       <%= f.label :entity_if_not_503, "If not, what type of entity is it and where is it registered?" %>
       <%= f.text_field :entity_if_not_503 %>
     </div>
     <div class="mb">
       <%= f.label :city_province, "City/Province and country of organization's main office: " %>
+      <br>
       <%= f.text_field :city_province %>
     </div>
     <div class="mb">
       <%= f.label :country, "Country or countries of operation:  " %>
+      <br>
       <%= f.text_field :country %>
     </div>
     <div class="mb">
       <%= f.label :annual_budget, "Annual operating budget for FY 2015: " %>
+      <br>
       <%= f.text_field :annual_budget %>
     </div>
     <div class="mb">
-        Is your organization ranked by Charity Navigator, Guidestar, or a similar platform?<i>This is not a requirement.</i>
+      <strong>Is your organization ranked by Charity Navigator, Guidestar, or a similar platform?<i>This is not a requirement.</i></strong>
 
       <%= f.label :ranked_charity, "List all links that apply:" %>
+      <br>
       <%= f.text_field(:ranked_charity) %>
     </div>
     <div class="mb">
       <%= f.label :referral_source, "How did you hear about Heartful.ly?" %>
+      <br>
       <%= f.text_field :referral_source %>
     </div>
       <% if can? :edit, @organization %>

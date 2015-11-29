@@ -24,7 +24,9 @@
   padding: $padding-base;
   border-radius: 5px;
   background: #fff;
+  width: $break-large - 25;
   @media (min-width: $break-large) {
+    width: 430px;
     &:not(:last-child) {
       margin-right: percentage(((100-90)/2)/100);
     }
