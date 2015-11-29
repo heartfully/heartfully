@@ -11,7 +11,7 @@
       </div>
       <ul class="c-project-about__meta">
         <li>
-          <svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-map"></use></svg><%= @project.organization.country %>
+          <svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-map"></use></svg><%= @project.country %>
         </li>
         <li><svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-link"></use></svg> <a class="c-project-about__link" target="_blank" href="<%= @project.organization.org_url %>"><%= @project.organization.org_url %></a></li>
       </ul>
