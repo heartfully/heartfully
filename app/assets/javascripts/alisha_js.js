@@ -151,4 +151,14 @@ $(document).ready(function() {
       $(this).parents('.filter_form')
     }
   })
+
+  $('.faq_subject').on('click', function(event) {
+    event.preventDefault();
+    $(this).addClass('active');
+    $(this).siblings().removeClass('active');
+    $('.faq_content_section').hide();
+    var contentSelector = '.' + $(this).attr('id') + '_content';
+    console.log(contentSelector)
+    $(contentSelector).show();
+  })
 });
