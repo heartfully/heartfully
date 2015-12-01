@@ -20,7 +20,8 @@
   <%= f.label :url_slug, 'Your registry URL' %>
   <div class="help">(This is the link your guests will visit to see your registry)</div>
   <div class="help">*can only contain lowercase letters. numbers, dashes (-), and underscores</div>
-  <%= f.text_field :url_slug, placeholder: 'our-unique-url', class: 'mb--large stretch' %>
+  <div class="help">https://www.heartful.ly/registry/[your-unique-URL]</div>
+  <%= f.text_field :url_slug, placeholder: 'your-unique-url', class: 'mb--large stretch' %>
 
   <%= f.label :city_state, 'Current city and state' %>
   <%= f.text_field :city_state, placeholder: 'Seattle, Washington', class: 'mb--large stretch' %>
@@ -38,7 +39,7 @@
   <%= f.date_field :wedding_date, placeholder:'mm/dd/yyyy', min: Date.today, class: 'mb--large stretch' %>
 
   <%= f.label :couples_story, 'Your Story: How did you meet?' %>
-  <div class="help">Go on, gush! Share your love story with your friends and family! (___ character limit)</div>
+  <div class="help">Go on, gush! Share your love story with your friends and family!</div>
   <%= f.text_area :couples_story, class: 'stretch mb--large' %>
 
   <%= f.label :registry_story, 'Your Registry: Why this project?' %>

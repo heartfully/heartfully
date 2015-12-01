@@ -77,7 +77,7 @@ class ProjectsPage extends React.Component {
         </div>
         <div className="c-breaker purple">
           <div className="test center large">
-            Heartful.ly wedding registries benefit these many programs around the world.
+            Browse our project gallery to learn about the life changing work Heartful.ly partners are doing around the world. 
           </div>
         </div>
         {this.state.projects ? this.handleFilter() : <div>Loading...</div>}
