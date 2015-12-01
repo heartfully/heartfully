@@ -44,4 +44,5 @@ emptyCartStyles = {
   color: '#FF4D4D',
   border: '1px solid #FF4D4D',
   background: '#FFDADA',
+  float: 'left',
 }

@@ -13,7 +13,7 @@
       <div>
         Your total comes to: <strong><%= @order.total %></strong>
       </div>
-      <div style="border: 1px solid red;">
+      <div>
       <%= form_tag order_charges_path @order do %>
         <%= fields_for :stripe do |ff| %>
           <%= ff.hidden_field(:object, value: "card") %>

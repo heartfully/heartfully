@@ -17,6 +17,9 @@
   <div class="help">(James & Sarah)</div>
   <%= f.text_field :name, class: 'mb--large stretch' %>
 
+  <%= f.label :email, 'Email to send registry updates to' %>
+  <%= f.text_field :email, placeholder: 'Annie@email.com', class: 'mb--large stretch' %>
+
   <%= f.label :url_slug, 'Your registry URL' %>
   <div class="help">(This is the link your guests will visit to see your registry)</div>
   <div class="help">*can only contain lowercase letters. numbers, dashes (-), and underscores</div>
