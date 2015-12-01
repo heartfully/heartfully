@@ -139,8 +139,8 @@ $(document).ready(function() {
   $('.registry_project_tab').on('click', function(event) {
     event.preventDefault();
     var contentSelector = '.' + $(this).attr('id').replace(/tab/, 'content');
-    $(this).parent().siblings().removeClass('active');
-    $(this).parent().addClass('active');
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
     $(contentSelector).siblings().hide();
     $(contentSelector).show();
   });
