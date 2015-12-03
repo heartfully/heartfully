@@ -88,6 +88,10 @@
   height: 1px;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 // RESPONSIVE FLEXBOX
 // Usage: Place this class on a parent element
 // if you'd like the children to be displayed
@@ -104,6 +108,11 @@
       margin-bottom: $padding-base;
     }
   }
+}
+
+.r-flex-wrap {
+  @extend .r-flex;
+  flex-wrap: wrap;
 }
 
 .subhed {
@@ -295,4 +304,12 @@
 
 .link--neutral {
   color: $color-dark-gray;
+}
+
+.error {
+  padding: 10px;
+  color: #FF4D4D;
+  border: 1px solid #FF4D4D;
+  background: #FFDADA;
+  line-height: 1.5;
 }

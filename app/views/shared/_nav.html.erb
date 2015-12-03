@@ -1,10 +1,10 @@
 <header class="c-nav c-nav--transparent">
   <div class="c-nav__logo-wrapper">
-    <svg class="c-nav__logo c-nav__logo--logotype" viewbox="0 0 275.5 71.5" preserveAspectRatio="xMinYMax meet">
-      <use xlink:href="#icon-logo-logotype"></use>
-    </svg>
-
     <a href='/'>
+      <svg class="c-nav__logo c-nav__logo--logotype" viewbox="0 0 275.5 71.5" preserveAspectRatio="xMinYMax meet">
+        <use xlink:href="#icon-logo-logotype"></use>
+      </svg>
+
       <svg class="c-nav__logo c-nav__logo--mark" viewBox="0 0 135.4 135.4" preserveAspectRatio="xMinYMax meet">
         <use xlink:href="#icon-logo-logomark"></use>
       </svg>
@@ -13,15 +13,24 @@
 
   <ul class="c-nav__menu">
     <li class="c-nav__menu-item"><%= link_to 'About', about_us_path %></li>
-    <li class="c-nav__menu-item"><%= link_to "Browse Project's", projects_path %></li>
-    <li class="c-nav__menu-item"><a href="#">Our Partners</a></li>
-    <li class="c-nav__menu-item"><a href="#">FAQ</a></li>
+    <li class="c-nav__menu-item"><%= link_to "Browse Projects", projects_path %></li>
+    <li class="c-nav__menu-item"><a href="/our-partners">Our Partners</a></li>
+    <li class="c-nav__menu-item"><a href="/faq">FAQ</a></li>
     <li class="c-nav__menu-item">
-      <a href="#">Lauren & Benjamin</a>
+      <% if current_user.registry %>
+        <a href="#"><%= current_user.registry.name %></a>
+      <% else  %>
+        <a href="#"><%= current_user.first_name %></a>
+      <% end %>
       <ul class="c-nav__admin-menu">
-        <li class="c-nav__admin-menu-item"><a href="#">Settings & Admin</a></li>
-        <li class="c-nav__admin-menu-item"><a href="#">View Registry</a></li>
-        <li class="c-nav__admin-menu-item"><a href="#">Edit Registry</a></li>
+
+        <% if current_user.registry  %>
+          <li class="c-nav__admin-menu-item"><%= link_to 'Settings & Admin', registry_admin_path(current_user.registry.url_slug) %></li>
+          <li class="c-nav__admin-menu-item"><%= link_to 'View Registry', registry_home_path(current_user.registry.url_slug) %></li>
+          <li class="c-nav__admin-menu-item"><%= link_to 'Edit Registry', edit_registry_path(current_user.registry)%></li>
+        <% else  %>
+          <li class="c-nav__admin-menu-item"><%= link_to 'Settings & Admin', user_path(current_user) %></li>
+        <% end %>
         <li class="c-nav__admin-menu-item"><%= link_to 'Sign Out', sign_out_path, method: 'delete' %></li>
       </ul>
     </li>
@@ -33,11 +42,15 @@
     <div class="c-nav__mobile-menu--close">
       <svg class="c-icon c-icon--medium mb"><use xlink:href="#icon-close"></use></svg>
     </div>
-    <li class="c-nav__menu-item"><a href="#">About</a></li>
-    <li class="c-nav__menu-item"><a href="#">Browse Projects</a></li>
-    <li class="c-nav__menu-item"><a href="#">Our Partners</a></li>
-    <li class="c-nav__menu-item"><a href="#">FAQ</a></li>
-    <li class="c-nav__menu-item"><a href="#">Settings & Admin</a></li>
-    <li class="c-nav__menu-item"><a href="#">Sign Out</a></li>
+    <li class="c-nav__menu-item"><a href="/about-us">About</a></li>
+    <li class="c-nav__menu-item"><%= link_to "Browse Projects", projects_path %></li>
+    <li class="c-nav__menu-item"><a href="/our-partners">Our Partners</a></li>
+    <li class="c-nav__menu-item"><a href="/faq">FAQ</a></li>
+    <% if current_user.registry  %>
+      <li class="c-nav__menu-item"><%= link_to 'Settings & Admin', registry_admin_path(current_user.registry.url_slug) %></li>
+    <% else  %>
+      <li class="c-nav__menu-item"><%= link_to 'Settings & Admin', user_path(current_user) %></li>
+    <% end %>
+    <li class="c-nav__menu-item"><%= link_to 'Sign Out', sign_out_path, method: 'delete' %></li>
   </ul>
 </header>

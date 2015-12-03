@@ -28,6 +28,7 @@ class MarketingController < ApplicationController
   end
 
   def our_partners
+    @partners = Organization.where(heartfully_approved: true)
   end
 
   def privacy_policy

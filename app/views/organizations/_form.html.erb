@@ -1,4 +1,4 @@
-<div class="form_wrapper" >
+<div>
   <p>
       Thanks so much for your interest in partnering with Heartful.ly!
     </p>
@@ -24,67 +24,84 @@
         </ul>
       </div>
     <% end %>
-    <div>
+    <div class="mb">
       <%= f.label :name, "Organization name: " %>
+      <br>
       <%= f.text_field :name %>
     </div>
-    <div>
+    <div class="mb">
       <%= f.label :org_url, "Website: " %>
+      <br>
       <%= f.text_field :org_url %>
     </div>
-    <div>
-      Sector (i.e. health, water, energy, etc)
+    <div class="mb">
+      <strong>Sector (i.e. health, water, energy, etc)</strong>
+      <br>
       <i>List all that apply.</i>
+      <br>
       <%= f.text_field :sectors %>
     </div>
-    <div>
+    <div class="mb">
       <%= f.label :mission_statement, "Mission statement: " %>
+      <br>
       <%= f.text_area :mission_statement %>
     </div>
-    <div class="card" >
-      <div>
-        Partnership point of contact
-      </div>
+    <div class="breaker mb" >
+      <strong class="underline">Partnership point of contact</strong>
+      <br>
       <%= f.label :contact_name, "Name: " %>
+      <br>
       <%= f.text_field :contact_name %>
+      <br>
       <%= f.label :contact_job_title, "Job title: "%>
+      <br>
       <%= f.text_field :contact_job_title %>
+      <br>
       <%= f.label :contact_email, "Email: " %>
+      <br>
       <%= f.email_field :contact_email %>
+      <br>
       <%= f.label :contact_phone_number, "Phone number: "%>
+      <br>
       <%= f.text_field :contact_phone_number %>
     </div>
-    <div class="card">
-      <div>
-        Is your organization a registered 501(c)3 in the United States?
+    <div class="mb">
+      <div class="mb">
+        <strong>Is your organization a registered 501(c)3 in the United States?</strong>
       </div>
       <%= f.radio_button(:tax_exempt, true) %>
       <%= label(:tax_exempt, "Yes", for: :organization_tax_exempt_true) %>
       <%= f.radio_button :tax_exempt, false %>
       <%= f.label(:tax_exempt, "No", for: :organization_tax_exempt_false)%>
+      <br>
       <%= f.label :entity_if_not_503, "If not, what type of entity is it and where is it registered?" %>
       <%= f.text_field :entity_if_not_503 %>
     </div>
-    <div>
+    <div class="mb">
       <%= f.label :city_province, "City/Province and country of organization's main office: " %>
+      <br>
       <%= f.text_field :city_province %>
     </div>
-    <div>
+    <div class="mb">
       <%= f.label :country, "Country or countries of operation:  " %>
+      <br>
       <%= f.text_field :country %>
     </div>
-    <div>
+    <div class="mb">
       <%= f.label :annual_budget, "Annual operating budget for FY 2015: " %>
+      <br>
       <%= f.text_field :annual_budget %>
     </div>
-    <div>
-        Is your organization ranked by Charity Navigator, Guidestar, or a similar platform?<i>This is not a requirement.</i>
+    <div class="mb">
+      <strong>Is your organization ranked by Charity Navigator, Guidestar, or a similar platform?<i>This is not a requirement.</i></strong>
 
       <%= f.label :ranked_charity, "List all links that apply:" %>
+      <br>
       <%= f.text_field(:ranked_charity) %>
     </div>
-    <div>
+    <div class="mb">
       <%= f.label :referral_source, "How did you hear about Heartful.ly?" %>
+      <br>
       <%= f.text_field :referral_source %>
     </div>
       <% if can? :edit, @organization %>
@@ -93,7 +110,7 @@
         <%= f.radio_button :heartfully_approved, false %>
         <%= f.label(:heartfully_approved, "Not Approved", for: :organization_heartfully_approved_false)%>
       <% end %>
-    <div class="actions">
+    <div class="mb">
       <%= f.submit "Submit", class: "button", id:"cta-button" %>
     </div>
   <% end %>

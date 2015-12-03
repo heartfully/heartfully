@@ -20,9 +20,9 @@ class FilterForm extends React.Component {
         <div className="r-flex test">
           <div className="pad flex-2">
             <div className="inline" style={{marginRight: 20}}>
-              <label className="block mb--small" style={styles}>Filter by region</label>
+              <label className="block mb--small" style={styles}>Filter by Location</label>
               <select onChange={this.props.onChange} className="vm">
-                <option value={0}>Filter by Region</option>
+                <option value={0}>Filter by Location</option>
                 {regions}
               </select>
             </div>

@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def user_confirmation(user)
     @user = user
-    mail to: user.email, subject: "Account confirmation"
+    mail to: user.email, subject: "Welcome to Heartful.ly!"
   end
 
   def password_reset(user)

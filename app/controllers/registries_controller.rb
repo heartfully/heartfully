@@ -1,28 +1,21 @@
 class RegistriesController < ApplicationController
-  before_action :require_auth, :only => [:create, :edit, :update, :destroy]
-  before_action :set_registry, :only => [:edit, :update, :destroy]
+  before_action :require_auth, :only => [:create, :edit, :update, :destroy,
+                                         :admin]
+  before_action :set_registry, :only => [:edit, :update, :destroy, :admin]
   before_action :find_by_slug, :only => [:show, :projects]
 
-  # GET /registries/:url_slug
+  # GET /registry/:url_slug
   def show
-    if(params[:url_slug].downcase == "peterandeva")
-      render :show_peter_and_eva
-    # elsif(params[:url_slug].downcase == "wangama")
-    #   render :show_katelyn_and_brandon
-    # elsif(params[:url_slug].downcase == "marissaandtravis")
-    #   render :show_marissa_and_travis
-    elsif(params[:url_slug].downcase == "lindseyandmatt")
-      render :show_lindsey_and_matt
-    elsif(params[:url_slug].downcase == "sample")
-      @registry = Registry.find_by(:url_slug => "lindseyandmatt")
-      render :show_sample
-    end
   end
 
   # GET /registries/new
   def new
-    redirect_to new_user_path if !current_user
-    @registry = Registry.new
+    if !current_user
+      redirect_to new_user_path
+    else
+      redirect_to registry_home_path(current_user.registry.url_slug) if current_user.registry
+      @registry = Registry.new
+    end
   end
 
   # GET /registries/1/edit
@@ -37,10 +30,9 @@ class RegistriesController < ApplicationController
   # POST /registries
   def create
     @registry = Registry.new(registry_params)
-
     if @registry.save
       current_user.update(:registry_id => @registry.id)
-      redirect_to projects_path , notice: 'Please select a project'
+      redirect_to project_registry_form_path(@registry)
     else
       render :new
     end
@@ -49,7 +41,7 @@ class RegistriesController < ApplicationController
   # PATCH/PUT /registries/1
   def update
     if @registry.update(registry_params)
-      redirect_to @registry, notice: 'Registry was successfully updated.'
+      redirect_to "/registry/#{@registry.url_slug}", notice: 'Registry was successfully updated.'
     else
       render :edit
     end
@@ -58,11 +50,26 @@ class RegistriesController < ApplicationController
   # DELETE /registries/1
   def destroy
     @registry.destroy
-    redirect_to registries_url, notice: 'Registry was successfully destroyed.'
+    redirect_to user_path(current_user), notice: 'Registry was successfully destroyed.'
+  end
+
+  # GET /registry/:url_slug/admin
+  def admin
+    # allow system admins to see admin page for a registry with any slug
+    find_by_slug if current_user.system_admin?
+
+    @project = @registry.projects.first
+    @orders = @registry.orders.complete
   end
 
   def sample_show
     @registry = Registry.find(37)
+  end
+
+  def project_registry_form
+    @categories = Category.all.group_by { |category| category.cat_type }
+    @registry = Registry.find(params[:id])
+    @projects = Project.filter(filterable_params).where(public: true)
   end
 
   private
@@ -81,17 +88,17 @@ class RegistriesController < ApplicationController
       params.require(:registry).permit(
         :name,
         :url_slug,
-        :banner_img,
-        :profile_img,
         :description,
-        :address_1,
-        :address_2,
-        :city,
-        :state,
-        :postal_code,
-        :country,
+        :city_state,
         :banner_image,
-        :profile_image
+        :profile_image,
+        :wedding_date,
+        :couples_story,
+        :registry_story
       )
+    end
+
+    def filterable_params
+      { :in_category => params[:categories] }
     end
 end

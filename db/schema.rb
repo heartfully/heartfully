@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020005156) do
+ActiveRecord::Schema.define(version: 20151201010744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20151020005156) do
   create_table "categories", force: true do |t|
     t.string "name",     null: false
     t.string "cat_type", null: false
+  end
+
+  create_table "consultation_requests", force: true do |t|
+    t.string "email"
+    t.string "couple_names"
+    t.string "phone_number"
+    t.string "preferred_contact_method"
   end
 
   create_table "favorites", force: true do |t|
@@ -113,6 +120,10 @@ ActiveRecord::Schema.define(version: 20151020005156) do
     t.string   "contact_job_title"
     t.string   "contact_email"
     t.string   "contact_phone_number"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   add_index "organizations", ["admin_id"], name: "index_organizations_on_admin_id", using: :btree
@@ -217,14 +228,9 @@ ActiveRecord::Schema.define(version: 20151020005156) do
   create_table "registries", force: true do |t|
     t.string   "name",                       null: false
     t.string   "url_slug",                   null: false
-    t.string   "banner_img"
-    t.string   "profile_img"
     t.text     "description"
     t.string   "address_1"
     t.string   "address_2"
-    t.string   "city"
-    t.string   "state"
-    t.string   "postal_code",                null: false
     t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -238,6 +244,9 @@ ActiveRecord::Schema.define(version: 20151020005156) do
     t.string   "profile_image_content_type"
     t.integer  "profile_image_file_size"
     t.datetime "profile_image_updated_at"
+    t.string   "city_state"
+    t.date     "wedding_date"
+    t.string   "email"
   end
 
   add_index "registries", ["url_slug"], name: "index_registries_on_url_slug", unique: true, using: :btree

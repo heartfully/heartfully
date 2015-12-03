@@ -3,7 +3,10 @@ class Organization < ActiveRecord::Base
   has_many :employees, :class_name => "User"
   has_many :projects
   has_many :reports
-  
+
+  has_attached_file :logo
+  validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
+
   validates_presence_of :name
   validates_uniqueness_of :name
 end

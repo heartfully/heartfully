@@ -5,15 +5,6 @@ class RegistryProject < ActiveRecord::Base
   validates_presence_of :registry_id, :project_id
   validates_associated :registry, :project
 
-  after_save :fill_registry_items
-
-  private
-
-  def fill_registry_items
-    self.registry.item_types.each do |item_type|
-      item_type.quantity.times { |count| registry.items.create(name: "#{item_type.name} #{count}", item_type_id: item_type.id)} if item_type.quantity
-    end
-  end
 end
 
 # == Schema Information

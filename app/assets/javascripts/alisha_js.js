@@ -1,8 +1,8 @@
 
-$('.c-registry-card__gift').on('click', function() {
-  $(this).toggleClass('c-button--disabled');
-  $(this).parent('.c-registry-card__info').next('.c-registry-card__qty').toggleClass('active');
-})
+// $('.c-registry-card__gift').on('click', function() {
+//   $(this).toggleClass('c-button--disabled');
+//   $(this).parent('.c-registry-card__info').next('.c-registry-card__qty').toggleClass('active');
+// })
 
 var d = $('.c-hero');
 var heroHeight = d.height();
@@ -32,6 +32,7 @@ if ($('.c-hero').length != 0) {
     $('.c-nav').next().css('padding-top', navHeight);
   }
 }
+
 
 $('.c-nav__menu-item:last-child').on('mouseover', function(){
   $('.c-nav__admin-menu').css('opacity', '1');
@@ -116,6 +117,48 @@ $.fn.extend({
 });
 
 
- $(document).ready(function() {
-        $('#rotate').rotaterator({fadeSpeed:1000, pauseSpeed:1300});
- });
+
+
+$(document).ready(function() {
+  $('#rotate').rotaterator({fadeSpeed:1000, pauseSpeed:1300});
+
+  $('.c-project-select').on('click', function(event){
+    event.preventDefault();
+
+    if ($(this).parents('.c-tiny-project').hasClass('c-project-selected')) {
+      event.target.innerHTML = 'select';
+      $(this).parents('.c-tiny-project').removeClass('c-project-selected');
+    } else {
+      event.target.innerHTML = 'deselect';
+      $(this).parents('.c-tiny-project').addClass('c-project-selected');
+    }
+
+    $('.c-project-submit').attr('href', '/projects/' +event.target.value + '/select');
+  });
+
+  $('.registry_project_tab').on('click', function(event) {
+    event.preventDefault();
+    var contentSelector = '.' + $(this).attr('id').replace(/tab/, 'content');
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+    $(contentSelector).siblings().hide();
+    $(contentSelector).show();
+  });
+
+  // filter form on registry project select
+  $('.filter_form select').on('change', function(){
+    if ($(this).val() === 'nil') {
+      $(this).parents('.filter_form')
+    }
+  })
+
+  $('.faq_subject').on('click', function(event) {
+    event.preventDefault();
+    $(this).addClass('active');
+    $(this).siblings().removeClass('active');
+    $('.faq_content_section').hide();
+    var contentSelector = '.' + $(this).attr('id') + '_content';
+    console.log(contentSelector)
+    $(contentSelector).show();
+  })
+});

@@ -43,18 +43,6 @@ class Project < ActiveRecord::Base
   validates_associated :organization
   validates_uniqueness_of :name
 
-  def total_cost(items = '')
-    total = 0
-    item_types.each do |item_type|
-      if items.empty?
-        total += (item_type.price * item_type.items.count).to_i
-      else
-        total += (item_type.price * item_type.items.purchased.count).to_i
-      end
-    end
-    total
-  end
-
   def photo1_url
     self.photo1.url
   end

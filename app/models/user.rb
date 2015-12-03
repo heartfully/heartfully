@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   ## RELATIONSHIPS ##
   ###################
 
-  belongs_to :registry
+  belongs_to :registry, dependent: :destroy
   has_and_belongs_to_many :guest_registries, :class_name => "Registry", :join_table => "guests_registries", :foreign_key => "guest_id"
   belongs_to :organization
 

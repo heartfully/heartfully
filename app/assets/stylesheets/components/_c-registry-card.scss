@@ -17,6 +17,7 @@
 	&__title {
     font-weight: normal;
 		margin-bottom: ($padding-base/2);
+		text-align: left;
 	}
 	&__info {
 		display: flex;
@@ -38,18 +39,18 @@
 		opacity: 0;
 		height: 0;
 		overflow: hidden;
-		@include vendor-prefix(transition, 0.2s ease-in-out);
+		// @include vendor-prefix(transition, 0.2s ease-in-out);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include vendor-prefix(transform, translateY(-30%));
+    // @include vendor-prefix(transform, translateY(-30%));
 		&.active {
 			opacity: 1;
 			height: auto;
 			padding: $padding-base 0px;
 			border-top: 1px solid $color-light-gray;
 			margin-top: $padding-base;
-			-webkit-animation: grow 0.2s ease-in-out forwards;
+			// -webkit-animation: grow 0.2s ease-in-out forwards;
 		}
 	}
 	&__qty-input label {

@@ -1,62 +1,53 @@
-<%= form_for @registry, :html => { multipart: true, class: 'form'}  do |f| %>
+<%= form_for(@registry, html: {class: 'stacked skinny ma'}) do |f| %>
 
-  <%= render 'shared/error_messages', :obj => @registry %>
-  <div class="text-field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+  <!-- error handling  -->
+  <% if @registry.errors.any? %>
+     <div class="error mb">
+       <strong><%= pluralize(@registry.errors.count, "error") %> prohibited
+       this registry from being saved:</strong>
+        <ul>
+          <% @registry.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+     </div>
+  <% end %>
 
-  <div class="text-field">
-    <%= f.label :url_slug %>
-    <%= f.text_field :url_slug %>
-  </div>
+  <%= f.label :name, 'You and your partner\'s name' %>
+  <div class="help">(James & Sarah)</div>
+  <%= f.text_field :name, class: 'mb--large stretch' %>
 
-  <div class="text-field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+  <%= f.label :email, 'Email to send registry updates to' %>
+  <%= f.text_field :email, placeholder: 'Annie@email.com', class: 'mb--large stretch' %>
 
-  <div class="text-field">
-    <%= f.label :address_1 %>
-    <%= f.text_field :address_1 %>
-  </div>
+  <%= f.label :url_slug, 'Your registry URL' %>
+  <div class="help">(This is the link your guests will visit to see your registry)</div>
+  <div class="help">*can only contain lowercase letters. numbers, dashes (-), and underscores</div>
+  <div class="help">https://www.heartful.ly/registry/[your-unique-URL]</div>
+  <%= f.text_field :url_slug, placeholder: 'your-unique-url', class: 'mb--large stretch' %>
 
-  <div class="text-field">
-    <%= f.label :address_2 %>
-    <%= f.text_field :address_2 %>
-  </div>
+  <%= f.label :city_state, 'Current city and state' %>
+  <%= f.text_field :city_state, placeholder: 'Seattle, Washington', class: 'mb--large stretch' %>
 
-  <div class="text-field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
+  <%= f.label :banner_image, 'Cover photo' %>
+  <div class="help">Suggested dimensions: 1200x800 pixels</div>
+  <%= f.file_field :banner_image, class: 'mb--large' %>
 
-  <div class="text-field">
-    <%= f.label :state %>
-    <%= f.text_field :state %>
-  </div>
+  <%= f.label :profile_image, 'Couple profile photo' %>
+  <div class="help">Suggested dimensions: 600x350 pixels</div>
+  <%= f.file_field :profile_image, class: 'mb--large' %>
 
-  <div class="text-field">
-    <%= f.label :postal_code %>
-    <%= f.text_field :postal_code %>
-  </div>
+  <%= f.label :wedding_date, 'When is the big day?' %>
+  <div class="help"></div>
+  <%= f.date_field :wedding_date, placeholder:'mm/dd/yyyy', min: Date.today, class: 'mb--large stretch' %>
 
-  <div class="text-field">
-    <%= f.label :country %>
-    <%= f.text_field :country %>
-  </div>
-  <div>
-    <div>
-      <%= f.label :banner_image %>
-      <%= f.file_field :banner_image %>
-    </div>
-    <div>
-      <%= f.label :profile_image %>
-      <%= f.file_field :profile_image %>
-    </div>
-  </div>
+  <%= f.label :couples_story, 'Your Story: How did you meet?' %>
+  <div class="help">Go on, gush! Share your love story with your friends and family!</div>
+  <%= f.text_area :couples_story, class: 'stretch mb--large' %>
 
-  <div class="actions">
-    <%= f.submit "#{@registry.new_record? ? "Create" : "Edit"} Registry", :class => "button" %>
-  </div>
+  <%= f.label :registry_story, 'Your Registry: Why this project?' %>
+  <div class="help">Explain why you are passionate about this project or organization and thank your guests for their generosity.  Haven't selected a project yet? Come back to this section at the end.</div>
+  <%= f.text_area :registry_story, class: 'stretch mb--large' %>
+
+  <%= f.submit "Next \&rarr;".html_safe, class: 'c-button c-button--primary stretch'%>
 <% end %>

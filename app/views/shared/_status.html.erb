@@ -2,7 +2,7 @@
   <div class="c-status">
     <div class="test">
       <svg class="c-icon c-icon--status"><use xlink:href="#icon-globe"></use></svg>
-      <strong>Reminder:</strong> You haven't yet selected a project for your registry! <a href="#" style="text-decoration: underline;">Select a project.</a>
+      <strong>Reminder:</strong> You haven't yet selected a project for your registry! <%= link_to 'Select this project', select_project_path(@project.url_slug), class: 'underline', method: :post %>
     </div>
   </div>
 </div>

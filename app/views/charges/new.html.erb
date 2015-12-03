@@ -1,4 +1,4 @@
-<div class="row order-container">
+<div class="test">
   <% content_for :load_js do %>
   	<script>
   		$(window).load(function() {
@@ -6,64 +6,61 @@
   		});
   	</script>
   <% end %>
-  <div class='confirmation-card'>
+  <div class='center'>
+    <h2 class="c-how__title center subhed purple mb">Order confirmation</h2>
+    <h4 class="center quiet mb--large">Step 2 of 2: Enter payment details</h4
     <% unless @order.status == 'complete' %>
       <div>
-        Total comes to: <strong><%= @order.total %></strong>
+        Your total comes to: <strong><%= @order.total %></strong>
       </div>
-      
+      <div>
       <%= form_tag order_charges_path @order do %>
         <%= fields_for :stripe do |ff| %>
           <%= ff.hidden_field(:object, value: "card") %>
-          <div class="row">
-            <div class="large-12 columns">
-            <%= label_tag(:number, "Card Number") %>
-            <%= ff.text_field(:number, placeholder: "XXXX-XXXX-XXXX-XXXX") %>
+            <div class="mb">
+              <%= label_tag(:number, "Card Number") %>
+              <%= ff.text_field(:number, placeholder: "XXXX-XXXX-XXXX-XXXX") %>
             </div>
-          </div>
-          <div class='row'>
-            <div class="large-4 columns">
+            <div class="mb">
               <%= label_tag(:exp_month, "Exp Month") %>
               <%= ff.text_field(:exp_month, placeholder: 'MM') %>
             </div>
-            <div class="large-4 columns">
+            <div class="mb">
               <%= label_tag(:exp_year, "Exp Year") %>
               <%= ff.text_field(:exp_year, placeholder: 'YYYY') %>
             </div>
-            <div class="large-4 columns">
+            <div class="mb">
               <%= label_tag(:cvc_check, "CVV2/CVC") %>
               <%= ff.text_field(:cvc_check) %>
               <small>The last 3 digits displayed on the back for your card</small>
             </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
+            <div class="mb">
               <%= label_tag(:address_line1, "Address line 1") %>
               <%= ff.text_field(:address_line1, placeholder:"Street") %>
 
               <%= label_tag(:address_line2, "Address line2") %>
               <%= ff.text_field(:address_line1, placeholder:"Street 2") %>
             </div>
-            <div class="large-6 columns">
+            <div class="mb">
               <%= label_tag(:address_city, "City") %>
               <%= ff.text_field(:address_city, placeholder: "City") %>
             </div>
-            <div class="large-3 columns">
-            <%= label_tag(:address_state, "State") %>
-            <%= ff.text_field(:address_state, placeholder: 'State') %>
+            <div class="mb">
+              <%= label_tag(:address_state, "State") %>
+              <%= ff.text_field(:address_state, placeholder: 'State') %>
             </div>
-            <div class="large-3 columns">
-            <%= label_tag(:address_zip, "Zip") %>
-            <%= ff.text_field(:address_zip, placeholder: "Zip") %>
+            <div class="mb">
+              <%= label_tag(:address_zip, "Zip") %>
+              <%= ff.text_field(:address_zip, placeholder: "Zip") %>
             </div>
-          </div>
         <% end %>
 
-        <%= submit_tag("Submit", class:'expand  button') %>
-        
+        <%= submit_tag("Submit", class:'c-button c-button--primary') %>
+
       <% end %>
     <% else %>
       There was an error loading this page
     <% end %>
+  </div>
   </div>
 </div>

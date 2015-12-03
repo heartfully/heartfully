@@ -41,7 +41,7 @@
 		padding: 0;
 		padding-right: $padding-base;
 		@media (max-width: $break-large) {
-			display: none;
+			width: 100%;
 		}
 	}
 	&__menu-item {
@@ -54,6 +54,12 @@
 		text-transform: uppercase;
 		letter-spacing: 0.5pt;
 		color: $color-dark-gray;
+		cursor: pointer;
+		@media (max-width: $break-large) {
+			padding: 16px;
+			width: 100%;
+			text-align: center;
+		}
 		&.active,
 		&:hover {
 			border-left: 5px solid lighten($color-purple-deep, 25%);
@@ -67,7 +73,7 @@
 		}
 	}
 	&__content--overview--summary {
-		font-size: 1.5em;
+		font-size: 1.25em;
 		min-width: 50%;
 		@media (max-width: $break-large) {
 			margin-bottom: $padding-base;

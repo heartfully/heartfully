@@ -1,9 +1,11 @@
 .c-admin {
+
   &__heading {
     font-size: 0.9em;
     text-transform: uppercase;
     letter-spacing: 0.5pt;
     color: $color-medium-gray;
+
   }
   &__links {
     list-style: none;
@@ -17,6 +19,9 @@
     }
     li:hover {
       color: $color-purple-deep-dark;
+    }
+    a {
+        color: $color-purple-deep;
     }
   }
   &__table {

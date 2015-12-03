@@ -8,7 +8,11 @@ class OrdersController < ApplicationController
     @registry = Registry.find(params[:registry_id])
     @order = @registry.orders.create
     @order.calc_total(params[:items])
-    redirect_to order_path(@order)
+
+    respond_to do |format|
+      format.html { redirect_to order_path(@order) }
+      format.json { render :json => order_path(@order), :status => :ok }
+    end
   end
 
   def finalize

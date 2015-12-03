@@ -11,7 +11,7 @@
     font-size: 1.7em;
     position: relative;
     &:before {
-      content: '“';
+      // content: '“';
       position: absolute;
       top: -5px;
       left: -($padding-base);

@@ -1,17 +1,40 @@
-<%= render "shared/svg" %>
+<% if current_user && current_user.registry && current_user.registry.projects.empty? %>
+  <%= render "shared/status" %>
+<% end %>
 
-<%= render current_user ? "shared/nav" : "shared/nav_guest" %>
-<%= render "shared/status" %>
+<% flash.each do |key, value| %>
+  <div class="c-status-wrapper">
+    <div class="c-status">
+      <div class="test">
+        <svg class="center c-icon c-icon--status"><use xlink:href="#icon-globe"></use></svg>
+        <span class="underline"><%= value.html_safe %></span>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 <%= render "header" %>
 <%= render "summary" %>
 <%= render "about" %>
 <%= render "shared/quote" %>
 <%= render "details" %>
-<%= render "shared/registry_card" %>
+
+<div class="c-breaker c-breaker--small" style="border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+  <div class="block center mb--small"><svg class="c-icon c-icon--large" title="gifts"><use xlink:href="#icon-gift"></use></svg></div>
+  <h4 class="meta center mb--xl" style="font-weight: normal;">Registry Gift Items</h4>
+  <div class="test" style="display: flex; flex-wrap: wrap;">
+    <% @project.item_types.each do |item_type| %>
+      <%= react_component('ItemCard', {itemType: item_type, purchase: false}) %>
+    <% end %>
+  </div>
+</div>
+
 <div class="test">
-  <div class="meta mb--large" style="margin-top: 80px; text-align: center;">Browse More Projects</div>
+  <!-- TODO: Pull 2 related projects -->
+  <!-- <div class="meta mb--large" style="margin-top: 80px; text-align: center;">Browse More Projects</div> -->
   <%#= render "projects/project_mini" %>
-  <button class="c-button mb--xl block ma">browse all projects &rarr;</button>
+  <br>
+  <br>
+  <%= button_to 'browse all projects &rarr;'.html_safe , projects_path, class: 'c-button mb--xl block ma', method: :get %>
 </div>
 <%= render "shared/footer" %>

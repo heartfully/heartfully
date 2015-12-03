@@ -33,8 +33,8 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       partner_invite.update(:accepted_at => Time.zone.now) if partner_invite
-      # UserMailer.user_confirmation(@user).deliver!
-      flash[:notice] = "Account created. We'll update you when more projects are available!"
+      UserMailer.user_confirmation(@user).deliver!
+      # flash[:notice] = "Account created. We'll update you when more projects are available!"
       redirect_to user_path(@user)
     else
       render :new
@@ -43,11 +43,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
-    else
-      render :edit
-    end
+    render :edit
   end
 
   # DELETE /users/1

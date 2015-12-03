@@ -23,8 +23,8 @@ Rails.application.routes.draw do
     resources :projects
   end
 
-  get '/sign_up' => 'marketing#new_inquiry'
-  post '/sign_up' => 'marketing#create_inquiry', :as => 'inquirers'
+  get '/sign_up' => 'users#new'
+  post '/sign_up' => 'users#create'
   get '/sign_in' => 'sessions#new'
   delete '/sign_out' => 'sessions#destroy'
 
@@ -51,7 +51,12 @@ Rails.application.routes.draw do
   resources :partner_invites, :only => [:create, :destroy]
 
   # Main registry page, this must be after `resource :registry`
-  get '/registry/:url_slug', to: 'registries#show', as: 'registry_home'
+  get '/registries/:id/project', to: 'registries#project_registry_form', as: 'project_registry_form'
+
+  scope '/registry/:url_slug' do
+    root to: 'registries#show', as: 'registry_home'
+    get '/admin', to: 'registries#admin', as: 'registry_admin'
+  end
 
   # Footer Link Pages
   get '/about-us' => 'marketing#about_us'

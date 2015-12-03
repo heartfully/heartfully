@@ -1,11 +1,8 @@
-<%= render "shared/svg" %>
 
-<%= render current_user ? "shared/nav" : "shared/nav_guest" %>
 <header class="c-hero" style="background-image: url('<%=image_url('heartfully-home.jpg')%>');">
   <div class="c-hero__container">
     <h1 class="c-hero__home ma mb">
-      Celebrate your big day by
-      making someone else's.
+      Share your happily ever after
     </h1>
     <div class="">
       <button class="c-button c-button--primary mb" style="max-width: 90%;"><%= link_to 'Create a charitable wedding registry', new_registry_path %></button>
@@ -13,7 +10,7 @@
     </div>
   </div>
   <div class="c-video-modal inline ma">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/mzx4HhHIUx4" frameborder="0" allowfullscreen></iframe>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/mzx4HhHIUx4" frameborder="0" allowfullscreen></iframe>
     <div class="center">
       <button id="close-video" class="c-button c-button--primary nudge-top--small">Close window</button>
     </div>
@@ -41,7 +38,7 @@
       <p class="c-how__step-description mb">
         Choose a unique URL, share some basic information about your big day, and upload a few photos.
       </p>
-      <a class="c-how__step-view block" href="#">
+      <a class="c-how__step-view block" href="/registry/james-loves-alexis">
         <svg class="c-icon"><use xlink:href="#icon-preview"></use></svg>
         View a sample registry
       </a>
@@ -91,7 +88,7 @@
 <!-- impact breaker -->
 <div class="c-breaker c-breaker--impact dark-purple center mb" style="background-image: url(<%=image_url('impact-crop.jpg')%>); background-size: cover; background-position: 100% 50%;">
   <div class="content roboto xl">
-    <div class="content-tag">Heartfu.ly registries are improving the quality of people's lives around the world.</div>
+    <div class="content-tag">Heartfu.ly registries are improving people's lives around the world.</div>
     <div id="rotate">
       <div class="content-cycle">Empowering women in Senegal to start and grow their own businesses.</div>
       <div class="content-cycle">Reducing carbon dioxide emissions through solar light campaigns in Zambia.</div>
@@ -102,8 +99,8 @@
 </div>
 
 <div class="c-how test pad">
-  <h3 class="c-how__title center subhed purple mb">Selected Partners</h3>
-  <div class="mb--large center">Heartful.ly is proud to partner with these established organizations.</div>
+  <h3 class="c-how__title center subhed purple mb">Our Partners</h3>
+  <div class="mb--large center">Heartful.ly is proud to support diverse and innovative organizations around the world.</div>
   <div class="c-partners r-flex mb">
     <img src="<%=image_url('partners/logo-futbol.png')%>" class="c-partners__logo">
     <img src="<%=image_url('partners/logo-mh.png')%>" class="c-partners__logo">
