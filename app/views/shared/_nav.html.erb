@@ -16,7 +16,7 @@
     <li class="c-nav__menu-item"><%= link_to "Browse Projects", projects_path %></li>
     <li class="c-nav__menu-item"><a href="/our-partners">Our Partners</a></li>
     <li class="c-nav__menu-item"><a href="/faq">FAQ</a></li>
-    <li class="c-nav__menu-item">
+    <li class="c-nav__menu-item is-logged-in">
       <% if current_user.registry %>
         <a href="#"><%= current_user.registry.name %></a>
       <% else  %>

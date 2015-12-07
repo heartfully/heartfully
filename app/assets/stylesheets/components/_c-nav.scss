@@ -186,6 +186,18 @@ $navheight: 65px;
     text-transform: uppercase;
     letter-spacing: 0.5pt;
     @include avenir-demi;
+    &.is-logged-in {
+      &:last-child:before {
+        content: '';
+        position: absolute;
+        margin-top: 3px;
+        margin-left: -15px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $color-success;
+      }
+    }
     &:last-child {
       color: $color-text;
       margin-right: $padding-base;
@@ -199,16 +211,6 @@ $navheight: 65px;
         .c-nav__admin-menu {
           opacity: 1;
         }
-      }
-      &:before {
-        content: '';
-        position: absolute;
-        margin-top: 3px;
-        margin-left: -15px;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: $color-success;
       }
     }
     &:hover {
