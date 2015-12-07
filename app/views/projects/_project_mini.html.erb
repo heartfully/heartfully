@@ -3,14 +3,14 @@
     <div class="r-flex mb--large">
   <% end %>
     <div class="c-project-mini flex-2">
-      <a href="#">
+      <%= link_to "/projects/#{project.url_slug}" do %>
         <div class="c-project-mini__header" style="background-image: url(<%= project.photo1 %>)">
           <div class="c-project-mini__title">
             <%= project.name %>
           </div>
           <div class="c-project-tabbed__header--overlay"></div>
         </div>
-      </a>
+      <% end %>
       <div class="c-project-mini__info">
         <p><%= project.description %></p>
         <%= link_to "Learn more &rarr;".html_safe, "/projects/#{project.url_slug}", class:"link--secondary inline nudge-top--small" %>
