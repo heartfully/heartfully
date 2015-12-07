@@ -1,5 +1,5 @@
 .c-project-header {
-  padding-bottom: $padding-base*2;
+  padding: $padding-base*2 $padding-base;
   &__title {
     @include font-subhed;
     display: inline;
@@ -12,6 +12,11 @@
       position: relative;
       display: block;
       height: 1px;
+    }
+  }
+  @media (max-width: $break-medium) {
+    &__title {
+      font-size: 2em;
     }
   }
 }

@@ -3,7 +3,7 @@ class ProjectTile extends React.Component {
   render() {
     return (
       <div className="c-project-mini flex-2">
-        <a href="#">
+        <a href={`/projects/${this.props.url_slug}`}>
           <div className="c-project-mini__header" style={{backgroundImage: `url(${this.props.photo1_url})`}}>
             <div className="c-project-mini__title">
               {this.props.name}

@@ -25,4 +25,10 @@
       z-index: 1;
     }
   }
+  @media (max-width: $break-medium) {
+    padding: $padding-base 0;
+    .content {
+      max-width: 90%;
+    }
+  }
 }
