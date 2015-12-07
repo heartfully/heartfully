@@ -1,27 +1,23 @@
 .c-project-mini {
+  .c-project-tabbed__header--overlay {
+    @include vendor-prefix(transition, 0.2s ease-in-out);
+  }
   &:hover {
-    &__header:after {
+    .c-project-tabbed__header--overlay {
       opacity: 0.5;
+    }
+    .c-project-mini__title {
+      @include vendor-prefix(transform, translateY(-10px));
     }
   }
   &__header {
-    background: url('http://www.socialbrite.org/wp-content/uploads/2011/11/EpicChange_Children.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
     position: relative;
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: $color-purple-deep;
-      opacity: 0;
-    }
   }
   &__title {
+    @include vendor-prefix(transition, 0.2s ease-in-out);
     z-index: 1;
     position: absolute;
     bottom: 0;
