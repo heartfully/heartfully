@@ -1,5 +1,4 @@
 .c-project-mini {
-  //margin-bottom: $padding-base;
   &:hover {
     &__header:after {
       opacity: 0.5;
@@ -25,10 +24,10 @@
   &__title {
     z-index: 1;
     position: absolute;
+    bottom: 0;
     color: #fff;
     font-size: 1.8em;
-    bottom: $padding-base;
-    left: $padding-base;
+    padding: $padding-base/2;
     @include font-subhed;
   }
   &__info {
