@@ -1,22 +1,21 @@
-<div class="form_wrapper" >
-  <div>
+  <div class="mb">
     Dear Heartful.ly Partner,
   </div>
-  <div>
+  <div class="mb">
     We are so excited to feature the work your organization is doing! Please know that the information you provide here is the only content we have to draw from when featuring this project.
   </div>
-  <div>
+  <div class="mb">
     Once you’ve submitted this form, we will review your
     submission and let you know whether we have any questions
     or concerns within 5 business days. We’ll send you a confirmation email with a link to the content once it’s published.
   </div>
-  <div>
+  <div class="mb">
     Please fill out a new project proposal for <strong>every</strong> project you’d like to submit.
   </div>
-  <div>
+  <div class="mb">
     Thank you for being part of Heartful.ly’s journey!
   </div>
-  <div>
+  <div class="mb">
     Tips:
   </div>
   <p>
@@ -45,57 +44,101 @@
         </ul>
       </div>
     <% end %>
-    <%= f.label :name, 'Name of project: (max 10 words):' %>
-    <%= f.text_field :name %>
 
-    <div class="card" >
+    <div class="mb">
+      <%= f.label :name, 'Name of project: (max 10 words):' %>
+      <br>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="mb">
       <div>
-        Project point of contact
+        <strong class="underline">Project point of contact</strong>
       </div>
       <%= f.label :contact_name, 'Name:' %>
+      <br>
       <%= f.text_field :contact_name %>
+      <br>
       <%= f.label :contact_email, 'Email:' %>
+      <br>
       <%= f.text_field :contact_email %>
+      <br>
       <%= f.label :contact_phone_number, 'Phone:' %>
+      <br>
       <%= f.text_field :contact_phone_number %>
     </div>
-
-    <%= f.label :sector, 'Sector of project:' %>
-    <i>Note: We recognize that funds raised for this specific project cannot always be directly allocated. However, funds raised must be used only to support activities within this sector.</i>
-    <%= f.text_field :sector %>
-    <%= f.label :country, 'Country where this project is implemented' %>
-    <%= f.text_field :country %>
-    <%= f.label :overview, 'Overview: (max 250 characters)' %>
-    <i>In 1 sentence explain what this project seeks to accomplish.</i>
-    <%= f.text_field :overview %>
-    <%= f.label :problem, ' Problem: (max 500 characters)' %>
-    <i>Why is there a need for this project?</i>
-    <%= f.text_area :problem %>
-    <%= f.label :solution, 'Solution: (max 500 characters)' %>
-    <i>What impact will this project make?</i>
-    <%= f.text_area :solution %>
-    <div>
+    <div class="mb">
+      <%= f.label :sector, 'Sector of project:' %>
+      <br>
+      <i>Note: We recognize that funds raised for this specific project cannot always be directly allocated. However, funds raised must be used only to support activities within this sector.</i>
+      <br>
+      <%= f.text_field :sector %>
+    </div>
+    <div class="mb">
+      <%= f.label :country, 'Country where this project is implemented' %>
+      <br>
+      <%= f.text_field :country %>
+    </div>
+    <div class="mb">
+      <%= f.label :overview, 'Overview: (max 250 characters)' %>
+      <br>
+      <i>In 1 sentence explain what this project seeks to accomplish.</i>
+      <br>
+      <%= f.text_field :overview %>
+    </div>
+    <div class="mb">
+      <%= f.label :problem, ' Problem: (max 500 characters)' %>
+      <br>
+      <i>Why is there a need for this project?</i>
+      <br>
+      <%= f.text_area :problem %>
+    </div>
+    <div class="mb">
+      <%= f.label :solution, 'Solution: (max 500 characters)' %>
+      <br>
+      <i>What impact will this project make?</i>
+      <br>
+      <%= f.text_area :solution %>
+    </div>
+    <div class="mb">
       In a nutshell, how does it work? (max 300 characters)
     </div>
-    <%= f.label :how_it_works_step1, '1.' %>
-    <%= f.text_field :how_it_works_step1 %>
-    <%= f.label :how_it_works_step2, '2.' %>
-    <%= f.text_field :how_it_works_step2 %>
-    <%= f.label :how_it_works_step2, '3.' %>
-    <%= f.text_field :how_it_works_step3 %>
-    <%= f.label :how_it_works_step2, '4.' %>
-    <%= f.text_field :how_it_works_step4 %>
-    <%= f.label :how_it_works_step2, '5.' %>
-    <%= f.text_field :how_it_works_step5 %>
-    <%= f.label :importance, 'Why is this project important? (max 500 characters)' %>
-    <i>Explain why there is a need for this project.</i>
-    <%= f.text_area :importance %>
-    <%= f.label :sustainability, 'Sustainability: (max 500 characters)' %>
-    <i>How will the impact of this project be sustained once it has been implemented?</i>
-    <%= f.text_area :sustainability %>
-    <%= f.label :staff_quote, 'Please share a quote from a staff member, beneficiary, or other individual affiliated with your organization. (max 250 characters)' %>
-    <%= f.text_field :staff_quote %>
-    <div>
+    <div class="mb">
+      <%= f.label :how_it_works_step1, '1.' %>
+      <%= f.text_field :how_it_works_step1 %>
+      <br>
+      <%= f.label :how_it_works_step2, '2.' %>
+      <%= f.text_field :how_it_works_step2 %>
+      <br>
+      <%= f.label :how_it_works_step2, '3.' %>
+      <%= f.text_field :how_it_works_step3 %>
+      <br>
+      <%= f.label :how_it_works_step2, '4.' %>
+      <%= f.text_field :how_it_works_step4 %>
+      <br>
+      <%= f.label :how_it_works_step2, '5.' %>
+      <%= f.text_field :how_it_works_step5 %>
+    </div>
+    <div class="mb">
+      <%= f.label :importance, 'Why is this project important? (max 500 characters)' %>
+      <br>
+      <i>Explain why there is a need for this project.</i>
+      <br>
+      <%= f.text_area :importance %>
+    </div>
+    <div class="mb">
+      <%= f.label :sustainability, 'Sustainability: (max 500 characters)' %>
+      <br>
+      <i>How will the impact of this project be sustained once it has been implemented?</i>
+      <br>
+      <%= f.text_area :sustainability %>
+    </div>
+    <div class="mb">
+      <%= f.label :staff_quote, 'Please share a quote from a staff member, beneficiary, or other individual affiliated with your organization. (max 250 characters)' %>
+      <br>
+      <%= f.text_field :staff_quote %>
+    </div>
+    <div class="mb">
       <%= f.label :budget, 'Upload your budget' %>
       <p>
         <i>Please upload an itemized budget that includes unit cost and quantity for costs
@@ -105,17 +148,29 @@ associated with the project. We will use this budget to create an authentic gift
         <i>If an item’s purpose is not immediately clear, please add a one sentence explanation of its use in the budget. The budget must be in USD.  [Send us your existing budget for this project. You do not need to create a new one for Heartful.ly.]</i>
       </p>
     </div>
-    <%= f.file_field :budget %>
+    <div class="mb">
+      <%= f.file_field :budget %>
+    </div>
+    <br>
     <%= f.label :photo1, 'Upload 3-5 high resolution photos (ideally between 500-1000 pixels).' %>
-    <%= f.file_field :photo1 %>
-    <%= f.file_field :photo2 %>
-    <%= f.file_field :photo3 %>
-    <%= f.file_field :photo4 %>
-    <%= f.file_field :photo5 %>
-    <%= f.file_field :photo5 %>
-    <div>
-      <%= f.label :certified, 'I, (text field to enter name), certify that the content in this project statement is true and accurate. By clicking submit, I authorize Heartful.ly to advertise and offer the described project for association with a registry on its website through such website, or through e-mail communications, printed publications, or any other means.' %>
+    <div class="mb">
+      <%= f.file_field :photo1 %>
+    </div>
+    <div class="mb">
+      <%= f.file_field :photo2 %>
+    </div>
+    <div class="mb">
+      <%= f.file_field :photo3 %>
+    </div>
+    <div class="mb">
+      <%= f.file_field :photo4 %>
+    </div>
+    <div class="mb">
+      <%= f.file_field :photo5 %>
+    </div>
+    <div class="mb">
       <%= f.check_box :certified, {style: 'display: inline-block;'} %>
+      <%= f.label :certified, 'I, (text field to enter name), certify that the content in this project statement is true and accurate. By clicking submit, I authorize Heartful.ly to advertise and offer the described project for association with a registry on its website through such website, or through e-mail communications, printed publications, or any other means.' %>
     </div>
     <div class="actions">
       <%= f.submit "Submit", class: "button", id:"cta-button" %>
