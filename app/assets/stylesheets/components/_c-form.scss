@@ -94,3 +94,41 @@ input[type="radio"] {
 .is-success {
   border: 1px solid $color-success;
 }
+
+// newsletter signup form in footer
+.footer-form {
+  label {
+    @include avenir-demi;
+    margin: 20px 0 10px 0;
+  }
+  input {
+    margin-bottom: 10px;
+  }
+  input[type="email"] {
+    border: 1px solid $color-purple-light;
+    color: #fff;
+  }
+  input[type="submit"] {
+    background: $color-purple-deep;
+  }
+
+  ::-webkit-input-placeholder {
+     color: $color-purple-light;
+     opacity: 0.5;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+     color: $color-purple-light;
+     opacity: 0.5;
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+     color: $color-purple-light;
+     opacity: 0.5; 
+  }
+
+  :-ms-input-placeholder {  
+     color: $color-purple-light;
+     opacity: 0.5;
+  }
+}
