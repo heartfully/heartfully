@@ -12,11 +12,11 @@ class Order < ActiveRecord::Base
   end
 
   def item
-    (eval summary).keys.first
+    (eval summary).keys.join(', ')
   end
 
   def quantity
-    (eval summary).values.first
+    (eval summary).values.join(', ')
   end
 
   def total_big_decimal
