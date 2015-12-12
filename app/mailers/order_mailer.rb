@@ -4,7 +4,7 @@ class OrderMailer < ActionMailer::Base
 
   def order_confirmation(order)
     @order = order
-    mail to: "#{order.email}, corey@heartful.ly", subject: "Heartful.ly order confirmation"
+    mail to: "#{order.email}, tech@heartful.ly", subject: "Your Heartful.ly gift has been delivered! "
   end
 
   def registry_order(order)
