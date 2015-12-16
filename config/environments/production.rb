@@ -65,7 +65,7 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
 
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => 'wwww.heartful.ly' }
+  config.action_mailer.default_url_options = { :host => 'www.heartful.ly' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
@@ -77,7 +77,7 @@ Rails.application.configure do
     :enable_starttls_auto => true,
   }
 
-  # S3 and Paperclip settings 
+  # S3 and Paperclip settings
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_protocol => 'http',
