@@ -1,42 +1,42 @@
 <% if controller_name == "registries" && action_name == "show" %>
   <title>Heartful.ly Wedding Registry: <%= @registry.name %></title>
-  <meta property="og:title" content="Heartful.ly Wedding Registry: <%= @registry.name %>"/>
-  <meta property="og:url" content="https://www.heartful.ly/registry/<%= @registry.url_slug %>"/>
-  <meta property="og:description" content="Celebrate our love with a gift from the heart." />
-  <meta property="og:image" content="<%= @registry.banner_image %>"/>
+  <meta property="og:title" content="Heartful.ly Wedding Registry: <%= @registry.name %>">
+  <meta property="og:url" content="https://www.heartful.ly/registry/<%= @registry.url_slug %>">
+  <meta property="og:description" content="Celebrate our love with a gift from the heart." >
+  <meta property="og:image" content="<%= @registry.banner_image %>">
 
 <% else %>
   <title>Heartful.ly | The Wedding Registry for Charitable Giving</title>
-  <meta name="description" content="Heartful.ly is a wedding registry that empowers couples and their wedding guests to support and fund charitable  projects in the U.S. and around the world." />
+  <meta name="description" content="Heartful.ly is a wedding registry that empowers couples and their wedding guests to support and fund charitable  projects in the U.S. and around the world." >
   <!-- Schema.org markup for Google+ -->
-  <meta itemprop="name" content="Heartful.ly"/>
-  <meta itemprop="description" content="Heartful.ly is a wedding registry for charitable giving"/>
-  <meta itemprop="image" content=<%=image_tag("card.jpg")%>/>
+  <meta itemprop="name" content="Heartful.ly">
+  <meta itemprop="description" content="Heartful.ly is a wedding registry for charitable giving">
+  <meta itemprop="image" content=<%=image_tag("card.jpg")%>>
   <!-- Twitter Card data -->
-  <meta name="twitter:card" content=<%=image_tag("card.jpg")%>/>
-  <meta name="twitter:site" content="@heartful_ly"/>
-  <meta name="twitter:title" content="Heartful.ly wedding registry"/>
-  <meta name="twitter:description" content="Heartful.ly is a wedding registry that empowers couples and their wedding guests to support and fund charitable  projects in the U.S. and around the world."/>
-  <meta name="twitter:creator" content="@heartful_ly"/>
+  <meta name="twitter:card" content=<%=image_tag("card.jpg")%>>
+  <meta name="twitter:site" content="@heartful_ly">
+  <meta name="twitter:title" content="Heartful.ly wedding registry">
+  <meta name="twitter:description" content="Heartful.ly is a wedding registry that empowers couples and their wedding guests to support and fund charitable  projects in the U.S. and around the world.">
+  <meta name="twitter:creator" content="@heartful_ly">
   <!-- Twitter summary card with large image must be at least 280x150px -->
-  <meta name="twitter:image:src" content=<%=image_tag("card.jpg")%>/>
+  <meta name="twitter:image:src" content=<%=image_tag("card.jpg")%>>
   <!-- Open Graph data -->
-  <meta property="og:title" content="Heartful.ly | The Wedding Registry for Charitable Giving" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://www.heartful.ly/" />
-  <meta property="og:image" content=<%=image_tag("card.jpg")%> />
-  <meta property="og:description" content="Heartful.ly is a wedding registry that empowers couples and their wedding guests to support and fund charitable  projects in the U.S. and around the world." />
-  <meta property="og:site_name" content="Heartful.ly" />
+  <meta property="og:title" content="Heartful.ly | The Wedding Registry for Charitable Giving" >
+  <meta property="og:type" content="article" >
+  <meta property="og:url" content="https://www.heartful.ly/" >
+  <meta property="og:image" content=<%=image_tag("card.jpg")%> >
+  <meta property="og:description" content="Heartful.ly is a wedding registry that empowers couples and their wedding guests to support and fund charitable  projects in the U.S. and around the world." >
+  <meta property="og:site_name" content="Heartful.ly" >
 
 <% end %>
 
-<meta charset="utf-8"/>
+<meta charset="utf-8">
 
 <!-- Always force latest IE rendering engine or request Chrome Frame -->
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-<meta property="og:image" content="<%= image_url('heartfully-og.jpg')%>"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+<meta property="og:image" content="<%= image_url('heartfully-og.jpg')%>">
 
 
 <%= stylesheet_link_tag('application', media: 'all') %>
