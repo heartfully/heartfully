@@ -32,7 +32,6 @@
   </head>
 
   <body>
-    <%= render "shared/svg" %>
     <%= render current_user ? "shared/nav" : "shared/nav_guest" %>
     <%= yield %>
     <%= javascript_include_tag('application') %>
