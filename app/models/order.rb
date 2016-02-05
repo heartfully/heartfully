@@ -7,6 +7,7 @@ class Order < ActiveRecord::Base
 
   scope :complete, -> { where(status: 'complete') }
 
+
   def complete
     self.update(status: 'complete')
   end

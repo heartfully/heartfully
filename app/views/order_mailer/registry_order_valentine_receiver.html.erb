@@ -1,0 +1,20 @@
+<div>
+  Hi <%= @order.recipient_first_name %> <%= @order.recipient_last_name %>!
+</div>
+<br>
+<div>
+  You just received the following items from Heartful.ly:
+</div>
+<br>
+<div>
+  <% order_summary(@order.summary).each do |item, quantity| %>
+    <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
+  <% end %>
+</div>
+<br>
+<br>
+<div>
+  Best,
+  <br>
+  Team Heartful.ly
+</div>

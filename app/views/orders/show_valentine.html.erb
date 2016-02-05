@@ -38,6 +38,24 @@
           <br>
           <%= email_field_tag(:email, '', :placeholder => 'Email', :required => true) %>
         </div>
+
+            <h3 class="mb">Recipient's Information</h3>
+            <div class="mb">
+                <%= label_tag(:recipient_first_name, 'First Name') %><span class="red">*</span>
+                <br>
+                <%= text_field_tag(:recipient_first_name, '', :placeholder => 'First Name', :required => true) %>
+              </div>
+              <div class="mb">
+                <%= label_tag(:recipient_last_name, 'Last Name') %><span class="red">*</span>
+                <br>
+                <%= text_field_tag(:recipient_last_name, '', :placeholder => 'Last Name', :required => true) %>
+              </div>
+              <div class="mb">
+                <%= label_tag(:recipient_email, 'Email') %><span class="red">*</span>
+
+                <br>
+                <%= email_field_tag(:recipient_email, '', :placeholder => 'Email', :required => true) %>
+              </div>
         <div class="mb">
           <%= label_tag(:message, 'Leave a message for the couple:') %>
           <br>

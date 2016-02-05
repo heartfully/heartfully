@@ -17,5 +17,9 @@ module OrderProcess
     OrderMailer.order_confirmation(self).deliver!
     OrderMailer.email_kate(self).deliver!
     OrderMailer.registry_order(self).deliver!
+    if self.registry.url_slug == 'sharethelove'
+      OrderMailer.registry_order_valentine_sender(self).deliver!
+      OrderMailer.registry_order_valentine_receiver(self).deliver!
+    end
   end
 end

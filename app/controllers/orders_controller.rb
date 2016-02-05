@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    if @order.registry.url_slug == 'myloves'
+    if @order.registry.url_slug == 'sharethelove'
       render :show_valentine
     end
   end
@@ -30,6 +30,6 @@ class OrdersController < ApplicationController
     end
 
     def update_params
-      params.permit(:email, :first_name, :last_name, :message)
+      params.permit(:email, :first_name, :last_name, :recipient_first_name, :recipient_last_name, :recipient_email,  :message)
     end
 end
