@@ -2,6 +2,9 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    if @order.registry.url_slug == 'myloves'
+      render :show_valentine
+    end
   end
 
   def create
