@@ -33,6 +33,10 @@ class ChargesController < ApplicationController
 
         @order.complete if charge
 
+        if @order.registry.url_slug == 'sharethelove'
+          render :create_valentine
+        end
+
       rescue Exception => e
         @order.update_attributes(status: "error")
         flash[:error] = e.message
