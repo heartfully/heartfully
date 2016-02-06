@@ -1,20 +1,40 @@
 <div>
-  Hi <%= @order.first_name %> <%= @order.last_name %>!
+  Dear <%= @order.first_name %>,
 </div>
-<br>
+<br><br/>
 <div>
-You just donated the following items of the Heartful.ly registry:
+  You just did something great! As you read this message, <%= @order.first_name %> is receiving an email notifying them of your gift.
 </div>
-<br>
+<br><br/>
 <div>
+  As a reminder, here’s what you purchased:<br/><br/>
   <% order_summary(@order.summary).each do |item, quantity| %>
-    <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
+      <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
   <% end %>
 </div>
-<br>
-<br>
+<br/><br/>
+<div>
+  Funds raised through our Valentine’s Day initiative will be sent to <a href="http://www.blessingsinabackpack.org">Blessings in a Backpack</a>, a trusted nationwide nonprofit that procures and packs bags of food to go home with over 80,000 children every weekend of the school year.
+</div>
+<br/><br/>
+<div>
+  In early March, we’ll drop you a line to let you know how many meals we provided for children in need.
+</div>
+<br/><br/>
+<div>
+  In the meantime, shout your love from the rooftops! Tag us on <a href="http://facebook.com/beheartful">Facebook</a> or <a href="http://twitter.com/heartful_ly">Tweet</a> at us, and tell the world why you decided to #sharethelove this Valentine’s Day.
+</div>
+<br/><br/>
 <div>
   Best,
-  <br>
-  Team Heartful.ly
+  <br/>
+  Kate Glantz
+  <br/>
+  Founder, Heartful.ly
+  <br/>
+  <br/>
+  P.S. Are you engaged? Consider creating a Heartful.ly wedding registry to support the causes you care about. Learn more <a href="http://www.heartful.ly">here</a> and check out this awesome <a href="http://bit.ly/heartfullyvideo">video</a>!
+  <br/>
+  <br/>
+  Questions about your order? Send them to <a href="mailto:hello@heartful.ly">hello@heartful.ly</a>.
 </div>

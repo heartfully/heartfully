@@ -1,20 +1,50 @@
 <div>
-  Hi <%= @order.recipient_first_name %> <%= @order.recipient_last_name %>!
+  Hi <%= @order.recipient_first_name %>,
 </div>
-<br>
+<br><br/>
 <div>
-  You just received the following items from Heartful.ly:
+  You don’t know it yet, but you just did something great! <%= @order.first_name %> <%= @order.last_name %> wants to wish you a Happy Valentine’s Day with the gift of nutritious meals for children in need.
 </div>
-<br>
+<br><br/>
 <div>
+  <%= @order.first_name %> has bought&nbsp;
   <% order_summary(@order.summary).each do |item, quantity| %>
-    <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
+      <%= "#{item} (#{quantity}): " %>&nbsp;
+  <% end %>in your honor and wrote this special message for you:
+  <% if @order.message != '' %>
+      <br>
+      <%= @order.message %>
   <% end %>
 </div>
-<br>
-<br>
+<br/><br/>
+<div>
+  But wait, there’s more! As you read this message, people all over the country are donating meals for hungry kids in honor of their loved ones.
+</div>
+<br/><br/>
+<div>
+  Funds raised through this initiative will be sent to <a href="http://www.blessingsinabackpack.org">Blessings in a Backpack</a>, a trusted nationwide nonprofit that procures and packs bags of food to go home with children every weekend of the school year.
+</div>
+<br/><br/>
+<div>
+  In early March, we’ll drop you a line to let you know how many meals we provided for kiddos across America.
+</div>
+<br/><br/>
+<div>
+  Join the movement and <a href="http://www.heartful.ly/registry/sharethelove">buy a few meals</a> in honor of your friends, family, and loved ones!
+</div>
+<br/><br/>
+<div>
+  Happy Valentine’s Day and thank you for sharing the love!
+</div>
+<br/>
+<br/>
 <div>
   Best,
-  <br>
-  Team Heartful.ly
+  <br/>
+  Kate Glantz
+  <br/>
+  Founder, Heartful.ly
+  <br/>
+  <br/>
+  P.S. Are you engaged? Consider creating a Heartful.ly wedding registry to support the causes you care about. Learn more <a href="http://www.heartful.ly">here</a> and check out this awesome <a href="http://bit.ly/heartfullyvideo">video</a>!
 </div>
