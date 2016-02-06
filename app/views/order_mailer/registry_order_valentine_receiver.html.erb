@@ -9,10 +9,10 @@
 <div>
   <%= @order.first_name %> has bought&nbsp;
   <% order_summary(@order.summary).each do |item, quantity| %>
-      <%= "#{item} (#{quantity}): " %>&nbsp;
+      <%= "#{item}" %>&nbsp;
   <% end %>in your honor and wrote this special message for you:
   <% if @order.message != '' %>
-      <br>
+      <br/><br/>
       <%= @order.message %>
   <% end %>
 </div>
