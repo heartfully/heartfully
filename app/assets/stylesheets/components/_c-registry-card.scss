@@ -20,8 +20,10 @@
 		text-align: left;
 	}
 	&__info {
-		display: flex;
-		justify-content: space-between;
+		@media (min-width: $break-medium) {
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 	&__price {
 		font-size: 2em;
