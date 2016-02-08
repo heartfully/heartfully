@@ -27,6 +27,9 @@ gem 'awesome_print'
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '< 2.0'
 
+gem 'premailer-rails'
+gem 'nokogiri'
+
 group :development do
   gem 'annotate'
   gem 'pry'

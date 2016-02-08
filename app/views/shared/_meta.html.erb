@@ -1,9 +1,17 @@
 <% if controller_name == "registries" && action_name == "show" %>
+    <% if @registry.url_slug == 'sharethelove' %>
+        <title>Heartful.ly Valentine’s Day Campaign: This Valentine’s Day, share your love with children in need.</title>
+        <meta property="og:title" content="Heartful.ly Valentine’s Day Campaign: This Valentine’s Day, share your love with children in need.">
+        <meta property="og:url" content="https://www.heartful.ly/registry/<%= @registry.url_slug %>">
+        <meta property="og:description" content="Donate nutritious meals in honor of your loved ones." >
+        <meta property="og:image" content="<%= @registry.banner_image %>">
+    <% else %>
   <title>Heartful.ly Wedding Registry: <%= @registry.name %></title>
   <meta property="og:title" content="Heartful.ly Wedding Registry: <%= @registry.name %>">
   <meta property="og:url" content="https://www.heartful.ly/registry/<%= @registry.url_slug %>">
   <meta property="og:description" content="Celebrate our love with a gift from the heart." >
   <meta property="og:image" content="<%= @registry.banner_image %>">
+    <% end %>
 
 <% else %>
   <title>Heartful.ly | The Wedding Registry for Charitable Giving</title>
@@ -36,7 +44,9 @@
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
-<meta property="og:image" content="<%= image_url('heartfully-og.jpg')%>">
+<% if @registry.nil? || (@registry.url_slug != 'sharethelove') %>
+    <meta property="og:image" content="<%= image_url('heartfully-og.jpg')%>">
+<% end %>
 
 
 <%= stylesheet_link_tag('application', media: 'all') %>
