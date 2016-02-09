@@ -266,7 +266,7 @@
                       You don’t know it yet, but you just did something great! <%= @order.first_name %> <%= @order.last_name %> wants to wish you a Happy Valentine’s Day with the gift of nutritious meals for children in need.<br>
                       <%= @order.first_name %> has bought <strong>
                       <% order_summary(@order.summary).each do |item, quantity| %>
-                          <%= "#{item}" %>&nbsp;
+                          <%= "#{item}" %>
                       <% end %>
                     </strong>in your honor and wrote this special message for you:
                     </p>
