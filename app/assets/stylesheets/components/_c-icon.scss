@@ -32,8 +32,13 @@
     width: 25px;
     height: 25px;
   }
-  &--media {
-    width: 120px;
+  &--media-grey {
+    width: 150px;
     height: auto;
+  }
+  &--media-hidden {
+    width: 150px;
+    height: auto;
+    display: none;
   }
 }

@@ -21,5 +21,6 @@
 //= require ./alisha_js
 //= require ./utils
 //= require global
+//= require media-logo
 
 $(function(){ $(document).foundation(); });
