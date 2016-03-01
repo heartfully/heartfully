@@ -76,6 +76,8 @@ $('#close-video').on('click', function() {
 $.fn.extend({
   rotaterator: function(options) {
 
+    $(this).addClass('rotating')
+
     var defaults = {
       fadeSpeed: 500,
       pauseSpeed: 100,
@@ -100,20 +102,31 @@ $.fn.extend({
       }
 
       $(next).fadeIn(o.fadeSpeed, function() {
+        next.addClass('current');
         $(next)
         .delay(o.pauseSpeed)
         .fadeOut(o.fadeSpeed, function() {
+          $(this).removeClass('current');
+
           var next = $(this).next();
 
           if (next.length == 0){
             next = $(obj).children(':first');
           }
 
-          $(obj).rotaterator({child : next, fadeSpeed : o.fadeSpeed, pauseSpeed : o.pauseSpeed});
+          if(obj.hasClass('rotating')){
+            $(obj).rotaterator({child : next, fadeSpeed : o.fadeSpeed, pauseSpeed : o.pauseSpeed});
+          }
+
         });
       });
     });
+  },
+
+  stopRotaterator: function(){
+    this.removeClass('rotating');
   }
+
 });
 
 
@@ -122,6 +135,21 @@ $.fn.extend({
 $(document).ready(function() {
   $('#rotate').rotaterator({fadeSpeed:1000, pauseSpeed:1300});
   $('#testimonials').rotaterator({fadeSpeed:1000, pauseSpeed:2800});
+  $('#next-testimonial').click(function(){
+    $('#testimonials').stopRotaterator();
+    $('#testimonials').children().each(function() {
+      $(this).hide();
+    });
+    var current = $('#testimonials .current')[0];
+    $(current).removeClass('current');
+    var next;
+    next = $(current).next();
+    if(next.length === 0){
+      next = $('#testimonials').children(':first');
+    }
+    $(next).fadeIn(1000);
+    $(next).addClass('current');
+  })
 
   $('.c-project-select').on('click', function(event){
     event.preventDefault();
