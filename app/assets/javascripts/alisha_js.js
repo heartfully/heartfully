@@ -121,6 +121,7 @@ $.fn.extend({
 
 $(document).ready(function() {
   $('#rotate').rotaterator({fadeSpeed:1000, pauseSpeed:1300});
+  $('#testimonials').rotaterator({fadeSpeed:1000, pauseSpeed:2800});
 
   $('.c-project-select').on('click', function(event){
     event.preventDefault();
