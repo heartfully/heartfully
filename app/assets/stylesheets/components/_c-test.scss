@@ -1,0 +1,26 @@
+// testimonials on the homepage
+.c-test {
+  max-width: 800px;
+  &__title {
+    font-size: 1.6em;
+  }
+  &__quote {
+    max-width: 85%;
+    font-size: 1.5em;
+  }
+  &__photo {
+    width: 300px;
+    height: 300px;
+  }
+  &__names {
+
+  }
+  &__next {
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
