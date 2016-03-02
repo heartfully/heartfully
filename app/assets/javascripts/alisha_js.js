@@ -150,12 +150,16 @@ $.fn.extend({
 
 
 $(document).ready(function() {
+  var testimonials = $('#testimonials').children();
+  var testimonial_triggers = $('#testimonial-triggers').children();
+
   $('#rotate').rotaterator({fadeSpeed:1000, pauseSpeed:1300});
   $('#testimonials').rotaterator({fadeSpeed:1000, pauseSpeed:2800});
   $('#testimonials').rotateManually({trigger: $('#next-testimonial')});
-  $('#testimonials').rotateManually({trigger: $('#trigger-test-0'), child: $('.c-test__content')[0]});
-  $('#testimonials').rotateManually({trigger: $('#trigger-test-1'), child: $('.c-test__content')[1]});
-  $('#testimonials').rotateManually({trigger: $('#trigger-test-2'), child: $('.c-test__content')[2]});
+
+  $.each(testimonials, function(index, element){
+    $('#testimonials').rotateManually({trigger: testimonial_triggers[index], child: element});
+  });
 
   $('.c-project-select').on('click', function(event){
     event.preventDefault();
