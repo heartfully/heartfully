@@ -95,14 +95,14 @@ $.fn.extend({
         $(this).hide();
       });
 
-      if (!o.child) {
+      if (!o.child || o.child.length === 0) {
         var next = $(obj).children(':first');
       } else {
         var next = o.child;
       }
 
       $(next).fadeIn(o.fadeSpeed, function() {
-        next.addClass('current');
+        $(next).addClass('current');
         $(next)
         .delay(o.pauseSpeed)
         .fadeOut(o.fadeSpeed, function() {
@@ -125,56 +125,22 @@ $.fn.extend({
 
   rotateManually: function(options){
 
-    var defaults = {
-      first: null,
-      fadeSpeed: 500,
-      pauseSpeed: 2800,
-      trigger: $(this)
-    };
-
-    var o = $.extend(defaults, options);
-
     var obj = $(this);
 
-    $(o.trigger).click(function(){
-      var id = Math.random();
-      obj.data('rotation', id);
-
+    $(options.trigger).click(function(){
       var current = $('#testimonials .current')[0];
-
       var next = $(current).next();
-      if(o.first !== null){
-        next = o.first;
-      }
-      if(next.length === 0){
-        next = obj.children(':first');
-      }
+      var defaults = {
+        child: next,
+        fadeSpeed: 1000,
+        pauseSpeed: 2800,
+        trigger: obj
+      };
 
+      var settings = $.extend(defaults, options);
       $(current).removeClass('current');
-      $(next).addClass('current');
 
-      obj.children().each(function() {
-          $(this).hide();
-      });
-
-      $(next).fadeIn(o.fadeSpeed, function(){
-        $(next)
-        .delay(o.pauseSpeed)
-        .fadeOut(o.fadeSpeed, function() {
-
-          if(obj.data('rotation') === id){
-            $(this).removeClass('current');
-
-            var next = $(this).next();
-
-            if (next.length == 0){
-              next = $(obj).children(':first');
-            }
-
-            $(obj).rotaterator({child : next, fadeSpeed : o.fadeSpeed, pauseSpeed : o.pauseSpeed});
-          }
-        })
-      });
+      obj.rotaterator(settings);
     });
   }
 
@@ -186,10 +152,10 @@ $.fn.extend({
 $(document).ready(function() {
   $('#rotate').rotaterator({fadeSpeed:1000, pauseSpeed:1300});
   $('#testimonials').rotaterator({fadeSpeed:1000, pauseSpeed:2800});
-  $('#testimonials').rotateManually({fadeSpeed:1000, trigger: $('#next-testimonial')});
-  $('#testimonials').rotateManually({fadeSpeed:1000, trigger: $('#trigger-test-0'), first: $('.c-test__content')[0]});
-  $('#testimonials').rotateManually({fadeSpeed:1000, trigger: $('#trigger-test-1'), first: $('.c-test__content')[1]});
-  $('#testimonials').rotateManually({fadeSpeed:1000, trigger: $('#trigger-test-2'), first: $('.c-test__content')[2]});
+  $('#testimonials').rotateManually({trigger: $('#next-testimonial')});
+  $('#testimonials').rotateManually({trigger: $('#trigger-test-0'), child: $('.c-test__content')[0]});
+  $('#testimonials').rotateManually({trigger: $('#trigger-test-1'), child: $('.c-test__content')[1]});
+  $('#testimonials').rotateManually({trigger: $('#trigger-test-2'), child: $('.c-test__content')[2]});
 
   $('.c-project-select').on('click', function(event){
     event.preventDefault();
