@@ -29,4 +29,12 @@
       fill: darken($color-light-gray, 10%);
     }
   }
+  &__center{
+    text-align: center;
+  }
+  &__heart{
+    &:hover{
+      fill: darken($color-light-gray, 10%);
+    }
+  }
 }
