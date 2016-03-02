@@ -84,12 +84,12 @@ $.fn.extend({
 
     var options = $.extend(defaults, options);
 
-    $(this).addClass('rotating')
-
     return this.each(function() {
       var o =options;
       var obj = $(this);
       var items = $(obj.children(), obj);
+      var id = Math.random();
+      obj.data('rotation', id)
 
       items.each(function() {
         $(this).hide();
@@ -106,15 +106,15 @@ $.fn.extend({
         $(next)
         .delay(o.pauseSpeed)
         .fadeOut(o.fadeSpeed, function() {
-          $(this).removeClass('current');
 
-          var next = $(this).next();
+          if(obj.data('rotation') === id){
+            $(this).removeClass('current');
 
-          if (next.length == 0){
-            next = $(obj).children(':first');
-          }
+            var next = $(this).next();
 
-          if(obj.hasClass('rotating')){
+            if (next.length == 0){
+              next = $(obj).children(':first');
+            }
             $(obj).rotaterator({child : next, fadeSpeed : o.fadeSpeed, pauseSpeed : o.pauseSpeed});
           }
 
@@ -123,41 +123,58 @@ $.fn.extend({
     });
   },
 
-  stopRotaterator: function(){
-    this.removeClass('rotating');
-  },
-
   rotateManually: function(options){
 
     var defaults = {
       first: null,
       fadeSpeed: 500,
-      trigger: $(this),
+      pauseSpeed: 2800,
+      trigger: $(this)
     };
 
-    options = $.extend(defaults, options);
+    var o = $.extend(defaults, options);
 
-    var obj = $(this)
+    var obj = $(this);
 
-    $(options.trigger).click(function(){
-      obj.stopRotaterator();
-
-      obj.children().each(function() {
-        $(this).hide();
-      });
+    $(o.trigger).click(function(){
+      var id = Math.random();
+      obj.data('rotation', id);
 
       var current = $('#testimonials .current')[0];
-      $(current).removeClass('current');
 
       var next = $(current).next();
-      if(options.first !== null){
-        next = options.first;
+      if(o.first !== null){
+        next = o.first;
       }
       if(next.length === 0){
         next = obj.children(':first');
       }
-      $(next).fadeIn(options.fadeSpeed);
+
+      $(current).removeClass('current');
       $(next).addClass('current');
+
+      obj.children().each(function() {
+          $(this).hide();
+      });
+
+      $(next).fadeIn(o.fadeSpeed, function(){
+        $(next)
+        .delay(o.pauseSpeed)
+        .fadeOut(o.fadeSpeed, function() {
+
+          if(obj.data('rotation') === id){
+            $(this).removeClass('current');
+
+            var next = $(this).next();
+
+            if (next.length == 0){
+              next = $(obj).children(':first');
+            }
+
+            $(obj).rotaterator({child : next, fadeSpeed : o.fadeSpeed, pauseSpeed : o.pauseSpeed});
+          }
+        })
+      });
     });
   }
 
