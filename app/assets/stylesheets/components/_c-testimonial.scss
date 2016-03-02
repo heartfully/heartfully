@@ -1,12 +1,19 @@
 // testimonials on the homepage
 .c-test {
   max-width: 800px;
+  text-align: right;
+  &__content {
+    min-height: 300px;
+    @media (max-width: $break-large) {
+      min-height: 600px;
+    }
+  }
   &__title {
     font-size: 1.6em;
   }
   &__quote {
-    max-width: 85%;
     font-size: 1.5em;
+    text-align: left;
     color: $color-medium-gray;
   }
   &__photo {
@@ -14,19 +21,19 @@
     height: 300px;
   }
   &__names {
-    text-align: right;
     font-size: 0.6em;
     color: $color-purple-deep;
   }
   &__next {
-    width: 50px;
-    height: 100px;
-    position: absolute;
+    width: 24px;
+    height: 24px;
     top: 50%;
-    left: 100%;
-    transform: translate(-50%, -50%);
+    transform: translate(0, -50%);
     &:hover{
       fill: darken($color-light-gray, 10%);
+    }
+    @media (max-width: $break-large) {
+      display: none;
     }
   }
   &__center{
