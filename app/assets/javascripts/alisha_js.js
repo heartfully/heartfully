@@ -130,6 +130,7 @@ $.fn.extend({
   rotateManually: function(options){
 
     var defaults = {
+      first: null,
       fadeSpeed: 500,
       trigger: $(this),
     };
@@ -140,13 +141,18 @@ $.fn.extend({
 
     $(options.trigger).click(function(){
       obj.stopRotaterator();
+
       obj.children().each(function() {
         $(this).hide();
       });
+
       var current = $('#testimonials .current')[0];
       $(current).removeClass('current');
-      var next;
-      next = $(current).next();
+
+      var next = $(current).next();
+      if(options.first !== null){
+        next = options.first;
+      }
       if(next.length === 0){
         next = obj.children(':first');
       }
@@ -164,6 +170,9 @@ $(document).ready(function() {
   $('#rotate').rotaterator({fadeSpeed:1000, pauseSpeed:1300});
   $('#testimonials').rotaterator({fadeSpeed:1000, pauseSpeed:2800});
   $('#testimonials').rotateManually({fadeSpeed:1000, trigger: $('#next-testimonial')});
+  $('#testimonials').rotateManually({fadeSpeed:1000, trigger: $('#trigger-test-0'), first: $('.c-test__content')[0]});
+  $('#testimonials').rotateManually({fadeSpeed:1000, trigger: $('#trigger-test-1'), first: $('.c-test__content')[1]});
+  $('#testimonials').rotateManually({fadeSpeed:1000, trigger: $('#trigger-test-2'), first: $('.c-test__content')[2]});
 
   $('.c-project-select').on('click', function(event){
     event.preventDefault();
