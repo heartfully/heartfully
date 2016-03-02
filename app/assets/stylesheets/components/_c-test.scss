@@ -7,6 +7,7 @@
   &__quote {
     max-width: 85%;
     font-size: 1.5em;
+    color: $color-medium-gray;
   }
   &__photo {
     width: 300px;
@@ -15,6 +16,7 @@
   &__names {
     text-align: right;
     font-size: 0.6em;
+    color: $color-purple-deep;
   }
   &__next {
     width: 50px;
@@ -23,5 +25,8 @@
     top: 50%;
     left: 100%;
     transform: translate(-50%, -50%);
+    &:hover{
+      fill: darken($color-light-gray, 10%);
+    }
   }
 }
