@@ -88,39 +88,78 @@ $.fn.extend({
       var o =options;
       var obj = $(this);
       var items = $(obj.children(), obj);
+      var id = Math.random();
+      obj.data('rotation', id)
 
       items.each(function() {
         $(this).hide();
       });
 
-      if (!o.child) {
+      if (!o.child || o.child.length === 0) {
         var next = $(obj).children(':first');
       } else {
         var next = o.child;
       }
 
       $(next).fadeIn(o.fadeSpeed, function() {
+        $(next).addClass('current');
         $(next)
         .delay(o.pauseSpeed)
         .fadeOut(o.fadeSpeed, function() {
-          var next = $(this).next();
 
-          if (next.length == 0){
-            next = $(obj).children(':first');
+          if(obj.data('rotation') === id){
+            $(this).removeClass('current');
+
+            var next = $(this).next();
+
+            if (next.length == 0){
+              next = $(obj).children(':first');
+            }
+            $(obj).rotaterator({child : next, fadeSpeed : o.fadeSpeed, pauseSpeed : o.pauseSpeed});
           }
 
-          $(obj).rotaterator({child : next, fadeSpeed : o.fadeSpeed, pauseSpeed : o.pauseSpeed});
         });
       });
     });
+  },
+
+  rotateManually: function(options){
+
+    var obj = $(this);
+
+    $(options.trigger).click(function(){
+      var current = $('#testimonials .current')[0];
+      var next = $(current).next();
+      var defaults = {
+        child: next,
+        fadeSpeed: 1000,
+        pauseSpeed: 2800,
+        trigger: obj
+      };
+
+      var settings = $.extend(defaults, options);
+      $(current).removeClass('current');
+
+      obj.rotaterator(settings);
+    });
   }
+
 });
 
 
 
 
 $(document).ready(function() {
+  var testimonials = $('#testimonials').children();
+  var testimonial_triggers = $('#testimonial-triggers').children();
+
   $('#rotate').rotaterator({fadeSpeed:1000, pauseSpeed:1300});
+  $('#testimonials').rotaterator({fadeSpeed:1000, pauseSpeed:2800});
+  $('#testimonials').rotateManually({trigger: $('#next-testimonial')});
+
+  $.each(testimonials, function(index, element){
+    $('#testimonials').rotateManually({trigger: testimonial_triggers[index], child: element});
+  });
 
   $('.c-project-select').on('click', function(event){
     event.preventDefault();
