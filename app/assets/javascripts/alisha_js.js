@@ -87,13 +87,10 @@ $.fn.extend({
     return this.each(function() {
       var o =options;
       var obj = $(this);
-      var items = $(obj.children(), obj);
       var id = Math.random();
       obj.data('rotation', id)
 
-      items.each(function() {
-        $(this).hide();
-      });
+      obj.children().hide();
 
       if (!o.child || o.child.length === 0) {
         var next = $(obj).children(':first');
@@ -101,8 +98,8 @@ $.fn.extend({
         var next = o.child;
       }
 
+      $(next).addClass('current');
       $(next).fadeIn(o.fadeSpeed, function() {
-        $(next).addClass('current');
         $(next)
         .delay(o.pauseSpeed)
         .fadeOut(o.fadeSpeed, function() {
