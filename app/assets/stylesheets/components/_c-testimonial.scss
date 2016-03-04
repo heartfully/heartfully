@@ -51,7 +51,7 @@
   }
   &__heart{
     &:hover{
-      fill: darken($color-purple-light, 10%);
+      fill: lighten($color-purple-deep, 10%);
     }
   }
 }
