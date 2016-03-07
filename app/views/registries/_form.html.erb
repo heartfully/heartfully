@@ -17,13 +17,16 @@
   <div class="help">(James & Sarah)</div>
   <%= f.text_field :name, class: 'mb--large stretch' %>
 
-  <%= f.label :email, 'Email to send registry updates to' %>
+  <%= f.label :email, 'Send donation notifications to' %>
   <%= f.text_field :email, placeholder: 'Annie@email.com', class: 'mb--large stretch' %>
 
   <%= f.label :url_slug, 'Your registry URL' %>
   <div class="help">(This is the link your guests will visit to see your registry)</div>
-  <div class="help">*can only contain lowercase letters. numbers, dashes (-), and underscores</div>
-  <%= f.text_field :url_slug, placeholder: 'your-unique-url', class: 'mb--large stretch' %>
+  <div class="help">*can only contain lowercase letters, numbers, dashes (-), and underscores</div>
+  <div>
+    <span>https://heartful.ly/registry/</span>
+  <%= f.text_field :url_slug, placeholder: 'your-unique-url', class: 'mb--large', style: 'display: inline;' %>
+  </div>
 
   <%= f.label :city_state, 'Current city and state' %>
   <%= f.text_field :city_state, placeholder: 'Seattle, Washington', class: 'mb--large stretch' %>
