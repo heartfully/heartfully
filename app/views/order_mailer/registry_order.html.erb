@@ -1,27 +1,110 @@
-<div>
-  Hi <%= @order.registry.name %>!
-</div>
-<br>
-<div>
-We wanted to let you know that <%= @order.first_name %> <%= @order.last_name %> just purchased the following items of your Heartful.ly registry:
-</div>
-<br>
-<div>
-  <% order_summary(@order.summary).each do |item, quantity| %>
-    <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
-  <% end %>
-</div>
-<br>
-<div>
- <% if @order.message != '' %>
-  They also left you the following note:
-  <br>
-  <%= @order.message %>
- <% end %>
-<br>
-<br>
-<div>
-  Best,
-  <br>
-  Team Heartful.ly
-</div>
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td height="40" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+    </td>
+  </tr>
+</table>
+
+<!-- 1/1 Text start  -->
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+      <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+        <tr style="padding:0">
+          <!-- CONTENT start -->
+          <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+            <h1 style="color:#353535;font-family:'Roboto Slab';Helvetica,Arial,sans-serif;font-weight:bold;font-size:24px;letter-spacing:0px;margin-bottom:6px;margin-top:6px;line-height:24px">
+									<span style="font-family:'Roboto Slab';Helvetica,Arial,sans-serif;">
+										Hi, <%= @order.registry.name %>.
+									</span>
+            </h1>
+            <div>
+              <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
+                We wanted to let you know that <%= @order.first_name %> <%= @order.last_name %> just purchased the following items of your Heartful.ly registry:
+                <% order_summary(@order.summary).each do |item, quantity| %>
+                  <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
+                <% end %>
+              </p>
+              <% if @order.message != '' %>
+              <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
+               They also left you the following note:
+             </p>
+             <% end %>
+            </div>
+          </td>
+          <!-- CONTENT end -->
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 1/1 Text end   -->
+
+<% if @order.message != '' %>
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td height="20" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+    </td>
+  </tr>
+</table>
+
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+      <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+        <tr style="padding:0">
+          <!-- CONTENT start -->
+          <td width="20" class="padd" style="border-collapse:collapse;color:#787878;width:20px;line-height:24px;padding:0">
+          </td>
+          <td width="2" valign="top" align="left" bgcolor="#7d6fe1" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+          </td>
+          <td width="18" valign="top" align="right" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0;background:#efeefb;">
+          </td>
+          <td width="445" valign="middle" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0;background:#efeefb;">
+            <div class="quote" style="color:#6059A0;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:24px;letter-spacing:0;margin-bottom:6px;margin-top:6px;line-height:24px;font-style:italic;font-weight:400;">
+                  <span><%= @order.message %></span>
+            </div>
+          </td>
+          <td width="20" class="padd" style="border-collapse:collapse;color:#787878;width:20px;line-height:24px;padding:0">
+          </td>
+          <!-- CONTENT end -->
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td height="20" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+    </td>
+  </tr>
+</table>
+
+<% end %>
+
+<!-- Signature start  -->
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0;">
+    <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+      <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+        <tr style="padding:0">
+          <!-- CONTENT start -->
+          <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+            <div>
+              <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
+                Best,<br>
+                Team Heartful.ly
+              </p>
+              <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
+                Questions or feedback? Drop us a line at <%= mail_to "hello@heartful.ly" %>.
+              </p>
+            </div>
+          </td>
+          <!-- CONTENT end -->
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- Signature end   -->
