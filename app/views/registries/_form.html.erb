@@ -18,7 +18,10 @@
 
   <%= render 'form_part_2', f: f unless (defined?(step) && step==1) %>
 
-  <% @registry.new_record? ? button = "Next \&rarr;" : button = "View my registry!" %>
-  <%= f.submit button.html_safe, class: 'c-button c-button--primary stretch' %>
+  <% if (defined?(step) && step==1)%>
+    <%= f.submit "Next \&rarr;".html_safe, name: 'next', class: 'c-button c-button--primary stretch' %>
+  <% else %>
+    <%= f.submit "View my registry!".html_safe, name: 'done', class: 'c-button c-button--primary stretch' %>
+  <% end %>
 
 <% end %>

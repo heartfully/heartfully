@@ -6,6 +6,7 @@ class RegistriesController < ApplicationController
 
   # GET /registry/:url_slug
   def show
+    redirect_to project_registry_form_path(@registry) if @registry.projects.empty?
   end
 
   # GET /registries/new
@@ -13,8 +14,8 @@ class RegistriesController < ApplicationController
     if !current_user
       redirect_to new_user_path
     else
-      redirect_to registry_home_path(current_user.registry.url_slug) if current_user.registry
-      @registry = Registry.new
+      @registry = current_user.registry if current_user.registry
+      @registry ||= Registry.new
     end
   end
 
@@ -40,10 +41,12 @@ class RegistriesController < ApplicationController
 
   # PATCH/PUT /registries/1
   def update
-    if @registry.update(registry_params)
+    if @registry.update(registry_params) && defined?(params[:done])
       redirect_to "/registry/#{@registry.url_slug}", notice: 'Registry was successfully updated.'
+    elsif @registry.update(registry_params)
+      redirect_to project_registry_form_path(@registry)
     else
-      render :edit
+      redirect_to :back, notice: 'There was an error updating your registry. Please try again.'
     end
   end
 
