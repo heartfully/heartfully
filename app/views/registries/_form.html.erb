@@ -14,7 +14,7 @@
   <% end %>
   <!-- end error handling -->
 
-  <%= render partial: 'form_part_1', locals: {f: f} if @registry.new_record? || @edit %>
+  <%= render partial: 'form_part_1', locals: {f: f} unless (defined?(finishing_step) && finishing_step) %>
 
   <%= render partial: 'form_part_2', locals: {f: f} unless @registry.new_record? %>
 

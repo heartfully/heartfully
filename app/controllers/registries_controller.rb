@@ -25,7 +25,6 @@ class RegistriesController < ApplicationController
     else
       @partner_invite = PartnerInvite.find_or_initialize_by(:registry_id => @registry.id)
     end
-    @edit = true
   end
 
   # POST /registries
