@@ -52,6 +52,7 @@ Rails.application.routes.draw do
 
   # Main registry page, this must be after `resource :registry`
   get '/registries/:id/project', to: 'registries#project_registry_form', as: 'project_registry_form'
+  get '/registries/:id/finishing_registry', to: 'registries#finishing_registry_form', as: 'finishing_registry_form'
 
   scope '/registry/:url_slug' do
     root to: 'registries#show', as: 'registry_home'

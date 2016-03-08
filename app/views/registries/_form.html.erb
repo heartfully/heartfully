@@ -12,12 +12,15 @@
         </ul>
      </div>
   <% end %>
+  <!-- end error handling -->
 
-    <%= render partial: 'form_part_1', locals: {f: f} %>
+  <%= render partial: 'form_part_1', locals: {f: f} if @registry.new_record? || @edit %>
 
-  <% unless @registry.new_record? %>
-    <%= render partial: 'form_part_2', locals: {f: f} %>
+  <%= render partial: 'form_part_2', locals: {f: f} unless @registry.new_record? %>
+
+  <% if @registry.new_record? %>
+    <%= f.submit "Next \&rarr;".html_safe, class: 'c-button c-button--primary stretch'%>
+  <% else %>
+    <%= f.submit "View my registry!".html_safe, class: 'c-button c-button--primary stretch'%>
   <% end %>
-
-  <%= f.submit "Next \&rarr;".html_safe, class: 'c-button c-button--primary stretch'%>
 <% end %>

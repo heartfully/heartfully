@@ -25,6 +25,7 @@ class RegistriesController < ApplicationController
     else
       @partner_invite = PartnerInvite.find_or_initialize_by(:registry_id => @registry.id)
     end
+    @edit = true
   end
 
   # POST /registries
@@ -70,6 +71,10 @@ class RegistriesController < ApplicationController
     @categories = Category.all.group_by { |category| category.cat_type }
     @registry = Registry.find(params[:id])
     @projects = Project.filter(filterable_params).where(public: true)
+  end
+
+  def finishing_registry_form
+    @registry = Registry.find(params[:id])
   end
 
   private
