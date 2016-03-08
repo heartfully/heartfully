@@ -18,9 +18,7 @@
 
   <%= render partial: 'form_part_2', locals: {f: f} unless @registry.new_record? %>
 
-  <% if @registry.new_record? %>
-    <%= f.submit "Next \&rarr;".html_safe, class: 'c-button c-button--primary stretch'%>
-  <% else %>
-    <%= f.submit "View my registry!".html_safe, class: 'c-button c-button--primary stretch'%>
-  <% end %>
+  <% @registry.new_record? ? button = "Next \&rarr;" : button = "View my registry!" %>
+  <%= f.submit button.html_safe, class: 'c-button c-button--primary stretch' %>
+
 <% end %>
