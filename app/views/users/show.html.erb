@@ -12,7 +12,7 @@
       <p class="center quiet c-admin__links">
         Welcome to Heartful.ly! Let's get this party started!
       </p>
-      <button class="c-button c-button--primary nudge-top--small"><%= link_to "Start &rarr;".html_safe, new_registry_path %></button>
+      <%= button_to "Start &rarr;".html_safe, new_registry_path, method: :get, class: "c-button c-button--primary nudge-top--small" %>
     </div>
   </div>
 </div>
