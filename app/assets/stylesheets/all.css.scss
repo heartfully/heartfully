@@ -37,6 +37,12 @@ li {
 	margin: 0 3px;
 }
 
+// content between header and footer
+.page-wrap {
+	min-height: 100vh;
+	margin-top: -($navheight);
+}
+
 // testing
 .test {
 	max-width: 960px;
