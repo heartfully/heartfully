@@ -4,6 +4,7 @@ class RegistriesController < ApplicationController
   before_action :set_registry, :only => [:edit, :update, :destroy, :admin]
   before_action :confirm_project, :only => [:admin]
   before_action :find_by_slug, :only => [:show, :projects]
+  before_filter :prevent_caching, :only => [:new]
 
   # GET /registry/:url_slug
   def show
@@ -116,5 +117,11 @@ class RegistriesController < ApplicationController
 
     def filterable_params
       { :in_category => params[:categories] }
+    end
+
+    def prevent_caching
+      response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+      response.headers["Pragma"] = "no-cache"
+      response.headers["Expires"] = "0"
     end
 end
