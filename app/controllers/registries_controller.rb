@@ -2,6 +2,7 @@ class RegistriesController < ApplicationController
   before_action :require_auth, :only => [:create, :edit, :update, :destroy,
                                          :admin]
   before_action :set_registry, :only => [:edit, :update, :destroy, :admin]
+  before_action :confirm_project, :only => [:admin]
   before_action :find_by_slug, :only => [:show, :projects]
 
   # GET /registry/:url_slug
@@ -84,6 +85,14 @@ class RegistriesController < ApplicationController
     def set_registry
       @registry = current_user.registry
       redirect_to new_registry_path unless @registry.present?
+    end
+
+    def confirm_project
+      @registry = current_user.registry
+      @project = current_user.registry.projects.first
+      unless @project.present?
+        redirect_to project_registry_form_path(@registry), notice: "You must first choose a project"
+      end
     end
 
     def find_by_slug
