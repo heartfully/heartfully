@@ -1,10 +1,11 @@
 class OrderMailer < ActionMailer::Base
   add_template_helper(OrdersHelper)
   default from: "Heartful.ly@heartful.ly"
+  layout 'user_mailer'
 
   def order_confirmation(order)
     @order = order
-    # mail to: "#{order.email}", subject: "Your Heartful.ly gift has been delivered! "
+    mail to: "#{order.email}", subject: "Your Heartful.ly gift has been delivered! "
   end
 
   def registry_order(order)
