@@ -42,7 +42,7 @@ class RegistriesController < ApplicationController
 
   # PATCH/PUT /registries/1
   def update
-    if @registry.update(registry_params) && defined?(params[:done])
+    if @registry.update(registry_params) && params.has_key?(:done)
       redirect_to "/registry/#{@registry.url_slug}", notice: 'Registry was successfully updated.'
     elsif @registry.update(registry_params)
       redirect_to project_registry_form_path(@registry)
