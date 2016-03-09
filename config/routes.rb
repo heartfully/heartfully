@@ -66,10 +66,6 @@ Rails.application.routes.draw do
   get '/privacy-policy' => 'marketing#privacy_policy'
   get '/terms-of-use' => 'marketing#terms_of_use'
 
-  ['admin', 'browse', 'create', 'create_2', 'faq', 'home', 'index', 'our_partners', 'partner', 'project', 'registry', 'about'].each do |route|
-    get "/designs/#{route}" => "designs##{route}"
-  end
-
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       with_options :except => [:new, :edit] do |api|
