@@ -24,5 +24,11 @@ module Heartfully
 
     config.react.addons = true
     config.react.jsx_transformer_class = React::JSX::BabelTransformer
+
+    # Disable the addition of a div (class="field_with_errors") around input and label
+    # This div is a block element that takes the registry_url input out of alignment
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance|
+      html_tag
+    }
   end
 end
