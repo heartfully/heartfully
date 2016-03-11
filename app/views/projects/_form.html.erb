@@ -57,27 +57,27 @@
       </div>
       <%= f.label :contact_name, 'Name:' %>
       <br>
-      <%= f.text_field :contact_name, class: "input-sm" %>
+      <%= f.text_field :contact_name, maxlength: 255, class: "input-sm" %>
       <br>
       <%= f.label :contact_email, 'Email:' %>
       <br>
-      <%= f.text_field :contact_email, class: "input-sm" %>
+      <%= f.text_field :contact_email, maxlength: 255, class: "input-sm" %>
       <br>
       <%= f.label :contact_phone_number, 'Phone:' %>
       <br>
-      <%= f.text_field :contact_phone_number, class: "input-sm" %>
+      <%= f.text_field :contact_phone_number, maxlength: 255, class: "input-sm" %>
     </div>
     <div class="mb">
       <%= f.label :sector, 'Sector of project:' %>
       <br>
       <i>Note: We recognize that funds raised for this specific project cannot always be directly allocated. However, funds raised must be used only to support activities within this sector.</i>
       <br>
-      <%= f.text_field :sector, class: "input-sm" %>
+      <%= f.text_field :sector, maxlength: 255, class: "input-sm" %>
     </div>
     <div class="mb">
       <%= f.label :country, 'Country where this project is implemented' %>
       <br>
-      <%= f.text_field :country, class: "input-sm" %>
+      <%= f.text_field :country, maxlength: 255, class: "input-sm" %>
     </div>
     <div class="mb">
       <%= f.label :overview, 'Overview: (max 250 characters)' %>
