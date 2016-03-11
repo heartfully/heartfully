@@ -48,7 +48,7 @@
     <div class="mb">
       <%= f.label :name, 'Name of project: (max 50 characters)' %>
       <br>
-      <%= f.text_field :name, class: "input-sm" %>
+      <%= f.text_field :name, maxlength: 50, class: "input-sm" %>
     </div>
 
     <div class="mb">
@@ -124,19 +124,19 @@
       <br>
       <i>Explain why there is a need for this project.</i>
       <br>
-      <%= f.text_area :importance, class: "input-lg" %>
+      <%= f.text_area :importance, maxlength: 500, class: "input-lg" %>
     </div>
     <div class="mb">
       <%= f.label :sustainability, 'Sustainability: (max 500 characters)' %>
       <br>
       <i>How will the impact of this project be sustained once it has been implemented?</i>
       <br>
-      <%= f.text_area :sustainability, class: "input-lg" %>
+      <%= f.text_area :sustainability, maxlength: 500, class: "input-lg" %>
     </div>
     <div class="mb">
       <%= f.label :staff_quote, 'Please share a quote from a staff member, beneficiary, or other individual affiliated with your organization. (max 250 characters)' %>
       <br>
-      <%= f.text_area :staff_quote, class: "input-med" %>
+      <%= f.text_area :staff_quote, maxlength: 250, class: "input-med" %>
     </div>
     <div class="mb">
       <%= f.label :budget, 'Upload your budget' %>
