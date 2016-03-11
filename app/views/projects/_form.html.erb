@@ -46,7 +46,7 @@
     <% end %>
 
     <div class="mb">
-      <%= f.label :name, 'Name of project: (max 10 words):' %>
+      <%= f.label :name, 'Name of project: (max 50 characters)' %>
       <br>
       <%= f.text_field :name %>
     </div>
@@ -89,7 +89,7 @@
     <div class="mb">
       <%= f.label :problem, ' Problem: (max 500 characters)' %>
       <br>
-      <i>Why is there a need for this project?</i>
+      <i>Provide an overview of the issue.</i>
       <br>
       <%= f.text_area :problem %>
     </div>
@@ -101,7 +101,7 @@
       <%= f.text_area :solution %>
     </div>
     <div class="mb">
-      In a nutshell, how does it work? (max 300 characters)
+      In a nutshell, how does it work? (max 300 characters per step)
     </div>
     <div class="mb">
       <%= f.label :how_it_works_step1, '1.' %>
