@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
       redirect_to sign_in_path
     else
       current_user.registry.projects << set_project if current_user.registry && current_user.registry.projects.empty?
-      redirect_to "/registry/#{current_user.registry.url_slug}"
+      redirect_to finishing_registry_form_path(current_user.registry)
     end
   end
 
