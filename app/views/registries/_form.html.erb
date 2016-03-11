@@ -12,41 +12,16 @@
         </ul>
      </div>
   <% end %>
+  <!-- end error handling -->
 
-  <%= f.label :name, 'You and your partner\'s name' %>
-  <div class="help">(James & Sarah)</div>
-  <%= f.text_field :name, class: 'mb--large stretch' %>
+  <%= render 'form_part_1', f: f unless (defined?(step) && step==3) %>
 
-  <%= f.label :email, 'Email to send registry updates to' %>
-  <%= f.text_field :email, placeholder: 'Annie@email.com', class: 'mb--large stretch' %>
+  <%= render 'form_part_2', f: f unless (defined?(step) && step==1) %>
 
-  <%= f.label :url_slug, 'Your registry URL' %>
-  <div class="help">(This is the link your guests will visit to see your registry)</div>
-  <div class="help">*can only contain lowercase letters, numbers, dashes (-), and underscores</div>
-  <%= f.text_field :url_slug, placeholder: 'your-unique-url', class: 'mb--large stretch' %>
+  <% if (defined?(step) && step==1)%>
+    <%= f.submit "Next \&rarr;".html_safe, name: 'next', class: 'c-button c-button--primary stretch' %>
+  <% else %>
+    <%= f.submit "View my registry!".html_safe, name: 'done', class: 'c-button c-button--primary stretch' %>
+  <% end %>
 
-  <%= f.label :city_state, 'Current city and state' %>
-  <%= f.text_field :city_state, placeholder: 'Seattle, Washington', class: 'mb--large stretch' %>
-
-  <%= f.label :banner_image, 'Cover photo' %>
-  <div class="help">Suggested dimensions: 1200x800 pixels</div>
-  <%= f.file_field :banner_image, class: 'mb--large' %>
-
-  <%= f.label :profile_image, 'Couple profile photo' %>
-  <div class="help">Suggested dimensions: 600x350 pixels</div>
-  <%= f.file_field :profile_image, class: 'mb--large' %>
-
-  <%= f.label :wedding_date, 'When is the big day?' %>
-  <div class="help"></div>
-  <%= f.date_field :wedding_date, placeholder:'mm/dd/yyyy', min: Date.today, class: 'mb--large stretch' %>
-
-  <%= f.label :couples_story, 'Your Story: How did you meet?' %>
-  <div class="help">Go on, gush! Share your love story with your friends and family!</div>
-  <%= f.text_area :couples_story, class: 'stretch mb--large' %>
-
-  <%= f.label :registry_story, 'Your Registry: Why this project?' %>
-  <div class="help">Explain why you are passionate about this project or organization and thank your guests for their generosity.  Haven't selected a project yet? Come back to this section at the end.</div>
-  <%= f.text_area :registry_story, class: 'stretch mb--large' %>
-
-  <%= f.submit "Next \&rarr;".html_safe, class: 'c-button c-button--primary stretch'%>
 <% end %>

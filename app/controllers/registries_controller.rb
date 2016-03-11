@@ -2,10 +2,13 @@ class RegistriesController < ApplicationController
   before_action :require_auth, :only => [:create, :edit, :update, :destroy,
                                          :admin]
   before_action :set_registry, :only => [:edit, :update, :destroy, :admin]
+  before_action :confirm_project, :only => [:admin]
   before_action :find_by_slug, :only => [:show, :projects]
+  before_filter :prevent_caching, :only => [:new]
 
   # GET /registry/:url_slug
   def show
+    redirect_to project_registry_form_path(@registry) if @registry.projects.empty?
   end
 
   # GET /registries/new
@@ -13,8 +16,8 @@ class RegistriesController < ApplicationController
     if !current_user
       redirect_to new_user_path
     else
-      redirect_to registry_home_path(current_user.registry.url_slug) if current_user.registry
-      @registry = Registry.new
+      @registry = current_user.registry if current_user.registry
+      @registry ||= Registry.new
     end
   end
 
@@ -40,10 +43,12 @@ class RegistriesController < ApplicationController
 
   # PATCH/PUT /registries/1
   def update
-    if @registry.update(registry_params)
+    if @registry.update(registry_params) && params.has_key?(:done)
       redirect_to "/registry/#{@registry.url_slug}", notice: 'Registry was successfully updated.'
+    elsif @registry.update(registry_params)
+      redirect_to project_registry_form_path(@registry)
     else
-      render :edit
+      redirect_to :back, notice: 'There was an error updating your registry. Please try again.'
     end
   end
 
@@ -72,11 +77,23 @@ class RegistriesController < ApplicationController
     @projects = Project.filter(filterable_params).where(public: true)
   end
 
+  def finishing_registry_form
+    @registry = Registry.find(params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_registry
       @registry = current_user.registry
       redirect_to new_registry_path unless @registry.present?
+    end
+
+    def confirm_project
+      @registry = current_user.registry
+      @project = current_user.registry.projects.first
+      unless @project.present?
+        redirect_to project_registry_form_path(@registry), notice: "You must first choose a project"
+      end
     end
 
     def find_by_slug
@@ -100,5 +117,11 @@ class RegistriesController < ApplicationController
 
     def filterable_params
       { :in_category => params[:categories] }
+    end
+
+    def prevent_caching
+      response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+      response.headers["Pragma"] = "no-cache"
+      response.headers["Expires"] = "0"
     end
 end
