@@ -1,7 +1,7 @@
 class Organization < ActiveRecord::Base
   belongs_to :admin, :class_name => "User"
   has_many :employees, :class_name => "User"
-  has_many :projects
+  has_many :projects, validate: false
   has_many :reports
 
   has_attached_file :logo
