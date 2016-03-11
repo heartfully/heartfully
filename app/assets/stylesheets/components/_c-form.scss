@@ -95,6 +95,28 @@ input[type="radio"] {
   border: 1px solid $color-success;
 }
 
+// text field input sizes
+.input-sm {
+  width: 20em;
+  max-width: 100%;
+}
+.input-med {
+  width: 40em;
+  height: 5em;
+  max-width: 100%;
+  @media (max-width: $break-small){
+    height: 10em;
+  }
+}
+.input-lg {
+  width: 40em;
+  height: 10em;
+  max-width: 100%;
+  @media (max-width: $break-small){
+    height: 20em;
+  }
+}
+
 // newsletter signup form in footer
 .footer-form {
   label {
@@ -124,10 +146,10 @@ input[type="radio"] {
 
   ::-moz-placeholder {  /* Firefox 19+ */
      color: $color-purple-light;
-     opacity: 0.5; 
+     opacity: 0.5;
   }
 
-  :-ms-input-placeholder {  
+  :-ms-input-placeholder {
      color: $color-purple-light;
      opacity: 0.5;
   }
