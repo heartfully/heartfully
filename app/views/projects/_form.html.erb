@@ -34,7 +34,7 @@
   <br>
   <%= form_for([@organization, @project]) do |f| %>
     <% if @project.errors.any? %>
-      <div id="error_explanation">
+      <div class="error mb">
         <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
         <ul>
@@ -46,9 +46,9 @@
     <% end %>
 
     <div class="mb">
-      <%= f.label :name, 'Name of project: (max 10 words):' %>
+      <%= f.label :name, 'Name of project: (max 50 characters)' %>
       <br>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, maxlength: 50, class: "input-sm" %>
     </div>
 
     <div class="mb">
@@ -57,86 +57,86 @@
       </div>
       <%= f.label :contact_name, 'Name:' %>
       <br>
-      <%= f.text_field :contact_name %>
+      <%= f.text_field :contact_name, maxlength: 255, class: "input-sm" %>
       <br>
       <%= f.label :contact_email, 'Email:' %>
       <br>
-      <%= f.text_field :contact_email %>
+      <%= f.text_field :contact_email, maxlength: 255, class: "input-sm" %>
       <br>
       <%= f.label :contact_phone_number, 'Phone:' %>
       <br>
-      <%= f.text_field :contact_phone_number %>
+      <%= f.text_field :contact_phone_number, maxlength: 255, class: "input-sm" %>
     </div>
     <div class="mb">
       <%= f.label :sector, 'Sector of project:' %>
       <br>
       <i>Note: We recognize that funds raised for this specific project cannot always be directly allocated. However, funds raised must be used only to support activities within this sector.</i>
       <br>
-      <%= f.text_field :sector %>
+      <%= f.text_field :sector, maxlength: 255, class: "input-sm" %>
     </div>
     <div class="mb">
       <%= f.label :country, 'Country where this project is implemented' %>
       <br>
-      <%= f.text_field :country %>
+      <%= f.text_field :country, maxlength: 255, class: "input-sm" %>
     </div>
     <div class="mb">
       <%= f.label :overview, 'Overview: (max 250 characters)' %>
       <br>
       <i>In 1 sentence explain what this project seeks to accomplish.</i>
       <br>
-      <%= f.text_field :overview %>
+      <%= f.text_area :overview, maxlength: 250, class: "input-med" %>
     </div>
     <div class="mb">
       <%= f.label :problem, ' Problem: (max 500 characters)' %>
       <br>
-      <i>Why is there a need for this project?</i>
+      <i>Provide an overview of the issue.</i>
       <br>
-      <%= f.text_area :problem %>
+      <%= f.text_area :problem, maxlength: 500, class: "input-lg" %>
     </div>
     <div class="mb">
       <%= f.label :solution, 'Solution: (max 500 characters)' %>
       <br>
       <i>What impact will this project make?</i>
       <br>
-      <%= f.text_area :solution %>
+      <%= f.text_area :solution, maxlength: 500, class: "input-lg" %>
     </div>
     <div class="mb">
-      In a nutshell, how does it work? (max 300 characters)
+      In a nutshell, how does it work? (max 300 characters per step)
     </div>
     <div class="mb">
       <%= f.label :how_it_works_step1, '1.' %>
-      <%= f.text_field :how_it_works_step1 %>
+      <%= f.text_area :how_it_works_step1, maxlength: 300, class: "input-med mb" %>
       <br>
       <%= f.label :how_it_works_step2, '2.' %>
-      <%= f.text_field :how_it_works_step2 %>
+      <%= f.text_area :how_it_works_step2, maxlength: 300, class: "input-med mb" %>
       <br>
       <%= f.label :how_it_works_step2, '3.' %>
-      <%= f.text_field :how_it_works_step3 %>
+      <%= f.text_area :how_it_works_step3, maxlength: 300, class: "input-med mb" %>
       <br>
       <%= f.label :how_it_works_step2, '4.' %>
-      <%= f.text_field :how_it_works_step4 %>
+      <%= f.text_area :how_it_works_step4, maxlength: 300, class: "input-med mb" %>
       <br>
       <%= f.label :how_it_works_step2, '5.' %>
-      <%= f.text_field :how_it_works_step5 %>
+      <%= f.text_area :how_it_works_step5, maxlength: 300, class: "input-med mb" %>
     </div>
     <div class="mb">
       <%= f.label :importance, 'Why is this project important? (max 500 characters)' %>
       <br>
       <i>Explain why there is a need for this project.</i>
       <br>
-      <%= f.text_area :importance %>
+      <%= f.text_area :importance, maxlength: 500, class: "input-lg" %>
     </div>
     <div class="mb">
       <%= f.label :sustainability, 'Sustainability: (max 500 characters)' %>
       <br>
       <i>How will the impact of this project be sustained once it has been implemented?</i>
       <br>
-      <%= f.text_area :sustainability %>
+      <%= f.text_area :sustainability, maxlength: 500, class: "input-lg" %>
     </div>
     <div class="mb">
       <%= f.label :staff_quote, 'Please share a quote from a staff member, beneficiary, or other individual affiliated with your organization. (max 250 characters)' %>
       <br>
-      <%= f.text_field :staff_quote %>
+      <%= f.text_area :staff_quote, maxlength: 250, class: "input-med" %>
     </div>
     <div class="mb">
       <%= f.label :budget, 'Upload your budget' %>

@@ -42,6 +42,20 @@ class Project < ActiveRecord::Base
   validates_presence_of :name, :country, :organization_id #:public?
   validates_associated :organization
   validates_uniqueness_of :name
+  validates_acceptance_of :certified, accept: true
+
+  validates_length_of :name, maximum: 50
+  validates_length_of :overview, maximum: 250
+  validates_length_of :problem, maximum: 500
+  validates_length_of :solution, maximum: 500
+  validates_length_of :how_it_works_step1, maximum: 300
+  validates_length_of :how_it_works_step2, maximum: 300
+  validates_length_of :how_it_works_step3, maximum: 300
+  validates_length_of :how_it_works_step4, maximum: 300
+  validates_length_of :importance, maximum: 500
+  validates_length_of :sustainability, maximum: 500
+  validates_length_of :staff_quote, maximum: 250
+
 
   def photo1_url
     self.photo1.url
