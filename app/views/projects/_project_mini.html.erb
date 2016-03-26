@@ -13,8 +13,7 @@
       <% end %>
       <div class="c-project-mini__info">
         <p><%= project.description %></p>
-        <%= link_to "Learn more &rarr;".html_safe, "/projects/#{project.url_slug}", class:"link--secondary inline nudge-top--small" %>
-        <%= link_to 'Select this project', "/projects/#{project.url_slug}", class: "c-button c-button--primary block nudge-top stretch", style: "text-align: center; color: white;" %>
+        <%= link_to 'Learn more', "/projects/#{project.url_slug}", class: "c-button c-button--primary block nudge-top stretch", style: "text-align: center; color: white;" %>
       </div>
     </div>
   <% if index % 2 != 0 %>
