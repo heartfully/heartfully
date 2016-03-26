@@ -229,8 +229,8 @@ ActiveRecord::Schema.define(version: 20160326212717) do
   add_index "purchases", ["user_id"], name: "index_purchases_on_user_id", using: :btree
 
   create_table "registries", force: true do |t|
-    t.string   "name",                                            null: false
-    t.string   "url_slug",                                        null: false
+    t.string   "name",                       null: false
+    t.string   "url_slug",                   null: false
     t.text     "description"
     t.string   "address_1"
     t.string   "address_2"
@@ -250,7 +250,7 @@ ActiveRecord::Schema.define(version: 20160326212717) do
     t.string   "city_state"
     t.date     "event_date"
     t.string   "email"
-    t.string   "type",                       default: "registry", null: false
+    t.string   "type"
   end
 
   add_index "registries", ["url_slug"], name: "index_registries_on_url_slug", unique: true, using: :btree
