@@ -22,7 +22,7 @@
 #  profile_image_file_size    :integer
 #  profile_image_updated_at   :datetime
 #  city_state                 :string(255)
-#  wedding_date               :date
+#  event_date               :date
 #
 
 require 'test_helper'

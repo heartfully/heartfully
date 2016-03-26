@@ -109,7 +109,7 @@ class RegistriesController < ApplicationController
         :city_state,
         :banner_image,
         :profile_image,
-        :wedding_date,
+        :event_date,
         :couples_story,
         :registry_story
       )
