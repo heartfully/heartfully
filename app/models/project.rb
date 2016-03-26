@@ -42,7 +42,7 @@ class Project < ActiveRecord::Base
   validates_presence_of :name, :country, :organization_id #:public?
   validates_associated :organization
   validates_uniqueness_of :name
-  validates_acceptance_of :certified, accept: true
+  validates_acceptance_of :certified, accept: true, on: :create
 
   validates_length_of :name, maximum: 50
   validates_length_of :overview, maximum: 250
