@@ -59,6 +59,10 @@ Rails.application.routes.draw do
     get '/admin', to: 'registries#admin', as: 'registry_admin'
   end
 
+  scope '/campaign/:url_slug' do
+    root to: 'campaigns#show', as: 'campaign_home'
+  end
+
   # Footer Link Pages
   get '/about-us' => 'marketing#about_us'
   get '/faq' => 'marketing#faq'
