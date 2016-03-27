@@ -37,6 +37,10 @@ class ChargesController < ApplicationController
           render :create_valentine
         end
 
+				if @order.registry.type.downcase == 'campaign'
+					render :create_campaign
+				end
+
       rescue Exception => e
         @order.update_attributes(status: "error")
         flash[:error] = e.message
