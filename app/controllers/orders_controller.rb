@@ -5,6 +5,9 @@ class OrdersController < ApplicationController
     if @order.registry.url_slug == 'sharethelove'
       render :show_valentine
     end
+    if @order.registry.type == 'campaign'
+      render :show_campaign
+    end
   end
 
   def create
