@@ -1,0 +1,283 @@
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+<tr style="padding:0">
+  <td height="40" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+  </td>
+</tr>
+</table>
+
+<!-- 1/1 Text start  -->
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+      <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+        <tr style="padding:0">
+          <!-- CONTENT start -->
+          <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+            <h1 style="color:#353535;font-family:'Roboto Slab';Helvetica,Arial,sans-serif;font-weight:bold;font-size:24px;letter-spacing:0px;margin-bottom:6px;margin-top:6px;line-height:24px">
+									<span style="font-family:'Roboto Slab';Helvetica,Arial,sans-serif;">
+										Hi <%= @order.recipient_first_name %>,
+									</span>
+            </h1>
+            <div class="quote" style="margin:1em 0;text-align:center;color:#6059A0;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:24px;letter-spacing:0;line-height:24px;font-style:italic;font-weight:400;">
+  								<span>
+                    <%= @order.registry.description %>
+  								</span>
+            </div>
+            <div>
+              <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
+                You don’t know it yet, but you just did something great! <%= @order.first_name %> <%= @order.last_name %> wants to make a donation to <%= @order.registry.projects.first.organization.name.strip %> in your honor.<br>
+                <br>
+                <%= @order.first_name %> has bought:<strong>
+              </p>
+              <div>
+                <% order_summary(@order.summary).each do |item, quantity| %>
+                  <%= "#{item}" %>
+                <% end %>
+              </div>
+              <% if @order.message != '' %>
+              <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
+               They also left you the following note:
+             </p>
+             <% end %>
+            </div>
+          </td>
+          <!-- CONTENT end -->
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 1/1 Text end   -->
+
+<!-- Git message start -->
+<% if @order.message != '' %>
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td height="20" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+    </td>
+  </tr>
+</table>
+
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+      <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+        <tr style="padding:0">
+          <!-- CONTENT start -->
+          <td width="20" class="padd" style="border-collapse:collapse;color:#787878;width:20px;line-height:24px;padding:0">
+          </td>
+          <td width="2" valign="top" align="left" bgcolor="#7d6fe1" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+          </td>
+          <td width="18" valign="top" align="right" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0;background:#efeefb;">
+          </td>
+          <td width="445" valign="middle" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0;background:#efeefb;">
+            <div class="quote" style="color:#6059A0;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:20px;letter-spacing:0;margin-bottom:6px;margin-top:6px;line-height:24px;font-style:italic;font-weight:300;">
+                  <span><%= @order.message %></span>
+            </div>
+          </td>
+          <td width="20" class="padd" style="border-collapse:collapse;color:#787878;width:20px;line-height:24px;padding:0">
+          </td>
+          <!-- CONTENT end -->
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td height="20" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+    </td>
+  </tr>
+</table>
+
+<% end %>
+<!-- Gift Message end -->
+
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+<tr style="padding:0">
+  <td height="20" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+  </td>
+</tr>
+</table>
+
+<!-- Bottom paragraph start  -->
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+<tr style="padding:0">
+  <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+    <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+      <tr style="padding:0">
+        <!-- CONTENT start -->
+        <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+          <div>
+            <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
+              But wait, there’s more! As you read this message, people all over the country are donating to this amazing nonprofit.
+            </p>
+          </div>
+        </td>
+        <!-- CONTENT end -->
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<!-- Bottom paragraph end   -->
+
+<!-- Charity feature start -->
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+      <table cellpadding="0" cellspacing="0" class="o-fix" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+        <tr style="padding:0">
+          <td width="600" valign="top" align="left" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;line-height:24px;padding:0">
+            <!-- CONTENT start -->
+            <table cellpadding="0" cellspacing="0" align="left" class="m-b" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+              <tr style="padding:0">
+                <td width="290" valign="top" align="left" class="m-b" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;line-height:24px;padding:0">
+                  <img src="http://soumikpal.com/heartfully/img/Blessings.jpg" alt="" width="290" height="180" border="0" style="max-width:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;image-rendering:optimizeQuality;display:block">
+                </td>
+              </tr>
+            </table>
+            <table cellpadding="0" cellspacing="0" align="right" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+              <tr style="padding:0">
+                <td width="290" valign="top" align="left" class="m-b" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;line-height:24px;padding:0">
+                  <h1 style="color:#2e2e2e;font-family:'Nunito',Helvetica,Arial,sans-serif;font-weight:400;font-size:24px;letter-spacing:0px;margin-bottom:6px;margin-top:6px;line-height:24px">
+												<span>
+													<%= @order.registry.projects.first.name %>
+												</span>
+                  </h1>
+                  <div>
+                    <p style="margin:1em 0;color:#2e2e2e;line-height:24px">
+                      Funds raised through this initiative will be sent to <a href="<%= @order.registry.projects.first.organization.org_url %>" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank"><%= @order.registry.projects.first.organization.name %></a>, a Heartful.ly approved nonprofit.
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <!-- CONTENT end -->
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- Charity feature end -->
+
+<!-- Bottom paragraph and signature start  -->
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0;">
+    <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+      <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+        <tr style="padding:0">
+          <!-- CONTENT start -->
+          <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+            <div>
+              <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
+                Once this Heartful.ly campaign is complete we will send a follow up email that describes the impact that generous donors like you have made for <%= @order.registry.projects.first.organization.name %>.<br>
+                <br>
+                Best,<br>
+                <img src="http://soumikpal.com/heartfully/img/kg-sig-purple.png" alt="" width="150" height="45" border="0" style="max-width:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;image-rendering:optimizeQuality;display:block;padding-top:5px;">
+                <img src="http://soumikpal.com/heartfully/img/hearts.png" alt="" width="20" height="18" border="0" style="max-width:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;image-rendering:optimizeQuality;display:block;float:left;padding-right:5px;">Founder & CEO, Heartful.ly<br>
+                <br>
+              </p>
+              <p style="margin:1em 0;color:#2e2e2e;line-height:20px;font-family:'Nunito', Arial, sans-serif;font-size:12px;">
+                <i><strong>P.S.</strong> Know someone who's getting engaged? Consider telling them about Heartful.ly wedding registries and help support the causes you care about. Learn more <a href="http://www.heartful.ly/" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank">here</a> and check out this <a href="http://bit.ly/heartfullyvideo" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank">awesome video</a>!</i>
+              </p>
+            </div>
+          </td>
+          <!-- CONTENT end -->
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- Bottom paragraph and signature end   -->
+
+<table width="600" cellpadding="0" cellspacing="0" class="wrap line" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;border-bottom:1px solid #dddddd;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td width="600" height="0" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+    </td>
+  </tr>
+</table>
+
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#efeefb;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td width="600" height="20" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+    </td>
+  </tr>
+</table>
+
+<!-- Share your gift start -->
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#efeefb;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+      <table cellpadding="0" cellspacing="0" class="o-fix" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+        <tr style="padding:0">
+          <td width="600" valign="top" align="left" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;line-height:24px;padding:0">
+            <!-- CONTENT start -->
+            <table cellpadding="0" cellspacing="0" align="left" class="m-b" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+              <tr style="padding:0">
+                <td width="187" valign="top" align="left" class="m-b" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;line-height:24px;padding:0">
+                  <img src="http://soumikpal.com/heartfully/img/heartshare-674-2.png" alt="" width="187" height="160" border="0" style="max-width:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;image-rendering:optimizeQuality;display:block">
+                </td>
+              </tr>
+            </table>
+            <table cellpadding="0" cellspacing="0" align="right" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+              <tr style="padding:0">
+                <td width="394" valign="top" align="left" class="m-b" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;line-height:24px;padding:0">
+                  <h1 style="color:#2e2e2e;font-family:'Nunito',Helvetica,Arial,sans-serif;font-weight:bold;font-size:24px;letter-spacing:0px;margin-bottom:6px;margin-top:6px;line-height:24px">
+												<span>
+													Share the love!
+												</span>
+                  </h1>
+                  <div>
+                    <p style="margin:1em 0;color:#2e2e2e;line-height:24px;padding-right:14px;">
+                      Don't stop now, shout your love from the rooftops! Tag us on Facebook or Tweet at us, and tell the world why you decided to #sharethelove this Valentine’s Day.
+                    </p>
+                  </div>
+                  <div class="btn" style="color:#FFFFFF;display:block">
+                    <table class="textbutton" align="left" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+                      <tbody>
+                      <tr style="padding:0">
+                        <td align="center" width="auto" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#FFF;line-height:24px;padding:1px 14px 1px 14px;background:#3b5998;display:block;height:24px;vertical-align:top;margin-right:4px;margin-bottom:4px">
+                          <a href="https://www.facebook.com/sharer/sharer.php?u=http://heartful.ly/campaign/<%= @order.registry.url_slug %>" label="Facebook" style="color:#FFF;background:#3b5998;text-decoration:none;padding:0;display:inline-block;line-height:20px;font-size:12px;font-weight:100;width:100%" target="_blank">
+                            FACEBOOK
+                          </a>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <table class="textbutton" align="left" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+                      <tbody>
+                      <tr style="padding:0">
+                        <td align="center" width="auto" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#FFF;line-height:24px;padding:1px 14px 1px 14px;background:#1b95e0;display:block;height:24px;vertical-align:top;margin-right:4px;margin-bottom:4px">
+                          <a href="https://twitter.com/intent/tweet?text=Meals%20were%20donated%20to%20hungry%20children%20in%20my%20honor,%20you%20can%20%23sharethelove%20too!%20%23Valentine%20http://heartful.ly/registry/sharethelove%20via%20%40heartful_ly" label="Twitter" style="color:#FFF;background:#1b95e0;text-decoration:none;padding:0;display:inline-block;line-height:20px;font-size:12px;font-weight:100;width:100%" target="_blank">
+                            TWITTER
+                          </a>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <!-- CONTENT end -->
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr style="padding:0">
+    <td width="600" height="5" style="border-collapse:collapse;color:#787878;line-height:12px;padding:0">
+    </td>
+  </tr>
+</table>
+<!-- Share your gift end -->
+
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#efeefb;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td width="600" height="20" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+    </td>
+  </tr>
+</table>
