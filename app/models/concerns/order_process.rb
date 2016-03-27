@@ -21,5 +21,9 @@ module OrderProcess
       OrderMailer.registry_order_valentine_sender(self).deliver!
       OrderMailer.registry_order_valentine_receiver(self).deliver!
     end
+    if self.registry.type == 'campaign'
+      OrderMailer.campaign_order_sender(self).deliver!
+      OrderMailer.campaign_order_receiver(self).deliver!
+    end
   end
 end
