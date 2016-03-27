@@ -1,27 +1,13 @@
 <div class="test">
     <h2 class="c-how__title center subhed purple mb">Order confirmation</h2>
     <h4 class="center quiet mb--large">Step 1 of 2: Personalize your gift</h4>
-    <div class="mb--large">
       <h3 class="mb">Order Summary</h3>
 
       <% if @order.status.nil? %>
-        <table class="c-admin__table mb">
-          <thead>
-            <tr>
-              <th>Item</th> <th>Quantity</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% order_summary(@order.summary).each do |item, quantity| %>
-              <tr> <td><%= item %></td> <td><%= quantity %></td></tr>
-            <% end %>
-          </tbody>
-        </table>
-        <strong>Order Total: <%= @order.total %></strong>
-    </div>
+        <%=render 'order_summary' %>
 
-      <h3 class="mb">Your Information</h3>
       <%= form_tag(orders_finalize_path, class:'order-form') do %>
+      <h3 class="mb">Your Information</h3>
         <div class="mb">
           <%= label_tag(:first_name, 'First Name') %><span class="red">*</span>
           <br>
