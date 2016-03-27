@@ -37,7 +37,7 @@ class ChargesController < ApplicationController
           render :create_valentine
         end
 
-				if @order.registry.type.downcase == 'campaign'
+				if @order.registry.type && @order.registry.type.downcase == 'campaign'
 					render :create_campaign
 				end
 
