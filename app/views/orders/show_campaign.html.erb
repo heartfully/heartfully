@@ -1,27 +1,70 @@
 <div class="test">
-  <h2 class="c-how__title center subhed purple mb">Order confirmation</h2>
-  <h4 class="center quiet mb--large">Step 1 of 2: Personalize your gift</h4>
-  <div class="mb--large">
-    <h3 class="mb">Order Summary</h3>
-  </div>
-    <% if @order.status.nil? %>
-      <%= render 'order_summary' %>
+    <h2 class="c-how__title center subhed purple mb">Order confirmation</h2>
+    <h4 class="center quiet mb--large">Step 1 of 2: Personalize your gift</h4>
+    <div class="mb--large">
+      <h3 class="mb">Order Summary</h3>
 
-    <%= form_tag(orders_finalize_path, class:'order-form') do %>
+      <% if @order.status.nil? %>
+        <table class="c-admin__table mb">
+          <thead>
+            <tr>
+              <th>Item</th> <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% order_summary(@order.summary).each do |item, quantity| %>
+              <tr> <td><%= item %></td> <td><%= quantity %></td></tr>
+            <% end %>
+          </tbody>
+        </table>
+        <strong>Order Total: <%= @order.total %></strong>
+    </div>
 
-      <%= render 'your_information' %>
+      <h3 class="mb">Your Information</h3>
+      <%= form_tag(orders_finalize_path, class:'order-form') do %>
+        <div class="mb">
+          <%= label_tag(:first_name, 'First Name') %><span class="red">*</span>
+          <br>
+          <%= text_field_tag(:first_name, '', :placeholder => 'First Name', :required => true) %>
+        </div>
+        <div class="mb">
+          <%= label_tag(:last_name, 'Last Name') %><span class="red">*</span>
+          <br>
+          <%= text_field_tag(:last_name, '', :placeholder => 'Last Name', :required => true) %>
+        </div>
+        <div class="mb">
+          <%= label_tag(:email, 'Email') %><span class="red">*</span>
 
-      <%= render 'recipient_information' %>
+          <br>
+          <%= email_field_tag(:email, '', :placeholder => 'Email', :required => true) %>
+        </div>
 
-      <div class="mb">
-        <%= label_tag(:message, 'You may include a message with your gift.') %>
-        <span>(This note and the details of your generous gift will be shared by email after you confirm your payment information.)</span>
-        <br>
-        <%= text_area_tag(:message, nil, rows: 5, cols: 45) %>
-      </div>
-      <%= submit_tag('Go to payment details', class:'c-button c-button--primary') %>
+            <h3 class="mb">Your Valentine's Information</h3>
+            <div class="mb">
+                <%= label_tag(:recipient_first_name, 'First Name') %><span class="red">*</span>
+                <br>
+                <%= text_field_tag(:recipient_first_name, '', :placeholder => 'First Name', :required => true) %>
+              </div>
+              <div class="mb">
+                <%= label_tag(:recipient_last_name, 'Last Name') %><span class="red">*</span>
+                <br>
+                <%= text_field_tag(:recipient_last_name, '', :placeholder => 'Last Name', :required => true) %>
+              </div>
+              <div class="mb">
+                <%= label_tag(:recipient_email, 'Email') %><span class="red">*</span>
+
+                <br>
+                <%= email_field_tag(:recipient_email, '', :placeholder => 'Email', :required => true) %>
+              </div>
+        <div class="mb">
+          <%= label_tag(:message, 'Leave a message for your love. ') %>
+          <span>(This note and the details of your generous gift will be shared by email after you confirm your payment information.)</span>
+          <br>
+          <%= text_area_tag(:message, nil, rows: 5, cols: 45) %>
+        </div>
+        <%= submit_tag('Go to payment details', class:'c-button c-button--primary') %>
+      <% end %>
+    <% else %>
+      This order has been completed by <%= "#{@order.first_name} #{@order.last_name}" %>
     <% end %>
-  <% else %>
-    This order has been completed by <%= "#{@order.first_name} #{@order.last_name}" %>
-  <% end %>
-</div>
+  </div>
