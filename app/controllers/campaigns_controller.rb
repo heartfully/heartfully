@@ -1,5 +1,4 @@
 class CampaignsController < ApplicationController
-  layout 'registry_layout'
   before_action :find_by_slug
 
   def show
