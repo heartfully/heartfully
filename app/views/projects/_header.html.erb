@@ -1,7 +1,7 @@
 <div class="test center c-project-header">
   <div class="meta">Project</div>
   <h1 class="c-project-header__title"><%= @project.name %></h1>
-  <% if current_user && current_user.registry && current_user.registry.projects.empty? %>
+  <% unless current_user && current_user.registry && !current_user.registry.projects.empty? %>
     <%= button_to 'Select this project for our registry', select_project_path(@project.url_slug), class: 'c-button c-button--primary nudge-top--small' %>
   <% end %>
 </div>
