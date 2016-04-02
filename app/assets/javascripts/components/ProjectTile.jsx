@@ -13,6 +13,11 @@ class ProjectTile extends React.Component {
         </a>
         <div className="c-project-mini__info">
           <p>{this.props.description }</p>
+          <form action={`/projects/${this.props.url_slug}`} method="get">
+            <input type="submit"
+              className="c-button c-button--primary block nudge-top stretch" value="Learn More"/>
+          </form>
+          {/*
           <a className="link--secondary inline nudge-top--small" href={`/projects/${this.props.url_slug}`}>
             {['Learn More', <span>&rarr;</span>]}
           </a>
@@ -20,6 +25,7 @@ class ProjectTile extends React.Component {
             <input type="submit"
               className="c-button c-button--primary block nudge-top stretch" value="Select This Project"/>
           </form>
+          */}
         </div>
       </div>
     );
