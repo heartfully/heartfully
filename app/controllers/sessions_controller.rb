@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
   private
 
   def set_registry_project
-    @user.registry.projects << Project.find_by_url_slug(session[:project_slug]) if @user.registry.projects
+    @user.registry.projects << Project.find_by_url_slug(session[:project_slug]) if @user.registry
     session.delete(:project_slug)
   end
 
