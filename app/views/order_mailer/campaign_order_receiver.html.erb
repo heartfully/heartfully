@@ -25,9 +25,9 @@
             </div>
             <div>
               <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
-                You don’t know it yet, but you just did something great! <%= @order.first_name %> <%= @order.last_name %> wants to make a donation to <%= @order.registry.projects.first.organization.name.strip %> in your honor.<br>
+                You don’t know it yet, but you just did something great! <%= @order.first_name %> <%= @order.last_name %> has made a donation to <%= @order.registry.projects.first.organization.name.strip %> in your honor.<br>
                 <br>
-                <%= @order.first_name %> has bought:<strong>
+                This generous gift represents:
               </p>
               <div>
                 <% order_summary(@order.summary).each do |item, quantity| %>
@@ -36,7 +36,7 @@
               </div>
               <% if @order.message != '' %>
               <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
-               They also left you the following note:
+               <%= @order.first_name %> also wrote the following note:
              </p>
              <% end %>
             </div>
@@ -94,34 +94,12 @@
 <% end %>
 <!-- Gift Message end -->
 
-<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
-<tr style="padding:0">
-  <td height="20" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
-  </td>
-</tr>
+<table width="600" cellpadding="0" cellspacing="0" class="wrap line" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;border-bottom:1px solid #dddddd;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td width="600" height="0" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+    </td>
+  </tr>
 </table>
-
-<!-- Bottom paragraph start  -->
-<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
-<tr style="padding:0">
-  <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
-    <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
-      <tr style="padding:0">
-        <!-- CONTENT start -->
-        <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
-          <div>
-            <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
-              But wait, there’s more! As you read this message, people all over the country are donating to this amazing nonprofit.
-            </p>
-          </div>
-        </td>
-        <!-- CONTENT end -->
-      </tr>
-    </table>
-  </td>
-</tr>
-</table>
-<!-- Bottom paragraph end   -->
 
 <!-- Charity feature start -->
 <table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
@@ -134,7 +112,7 @@
             <table cellpadding="0" cellspacing="0" align="left" class="m-b" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
               <tr style="padding:0">
                 <td width="290" valign="top" align="left" class="m-b" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;line-height:24px;padding:0">
-                  <img src="http://c0278592.cdn.cloudfiles.rackspacecloud.com/original/449444.jpg" alt="" width="290" height="180" border="0" style="max-width:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;image-rendering:optimizeQuality;display:block">
+                  <img src="<%= @order.registry.projects.first.photo1 %>" alt="" width="290" height="180" border="0" style="max-width:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;image-rendering:optimizeQuality;display:block">
                 </td>
               </tr>
             </table>
@@ -148,7 +126,7 @@
                   </h1>
                   <div>
                     <p style="margin:1em 0;color:#2e2e2e;line-height:24px">
-                      Funds raised through this initiative will be sent to <a href="<%= @order.registry.projects.first.organization.org_url %>" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank"><%= @order.registry.projects.first.organization.name %></a>, a Heartful.ly approved nonprofit.
+                      Funds raised through this initiative will be sent to <a href="<%= @order.registry.projects.first.organization.org_url %>" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank"><%= @order.registry.projects.first.organization.name %></a>, a Heartful.ly approved organization.
                     </p>
                   </div>
                 </td>
@@ -163,6 +141,46 @@
 </table>
 <!-- Charity feature end -->
 
+<!-- Bottom paragraph start  -->
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+<tr style="padding:0">
+  <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+    <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+      <tr style="padding:0">
+        <!-- CONTENT start -->
+        <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+          <div>
+            <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
+              But wait, there’s more! As you read this message, people everywhere are donating in celebration of their loved ones. You can too!
+            </p>
+          </div>
+        </td>
+        <!-- CONTENT end -->
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<!-- Bottom paragraph end   -->
+
+<!-- Join button start  -->
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+<tr style="padding:0">
+  <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+    <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+      <tr style="padding:0">
+        <!-- CONTENT start -->
+        <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0;text-align:center">
+          <button style="margin:0 auto;border:3px solid #7D72DE;background:#7D72DE;text-transform:uppercase;letter-spacing:0.8pt;padding:10px;outline:none;"><%= link_to 'Join the party!', campaign_home_path(@order.registry), {style: "color:#fff;"} %></button>
+        </td>
+        <!-- CONTENT end -->
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<!-- Join button end   -->
+
 <!-- Bottom paragraph and signature start  -->
 <table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
   <tr style="padding:0;">
@@ -173,7 +191,7 @@
           <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
             <div>
               <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
-                Once this Heartful.ly campaign is complete we will send a follow up email that describes the impact that generous donors like you have made for <%= @order.registry.projects.first.organization.name %>.<br>
+                Once the campaign wraps, we will send a follow up email highlighting the impact that awesome donors like you have made for <%= @order.registry.projects.first.organization.name %>.<br>
                 <br>
                 Best,<br>
                 <img src="http://soumikpal.com/heartfully/img/kg-sig-purple.png" alt="" width="150" height="45" border="0" style="max-width:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;image-rendering:optimizeQuality;display:block;padding-top:5px;">
@@ -181,7 +199,7 @@
                 <br>
               </p>
               <p style="margin:1em 0;color:#2e2e2e;line-height:20px;font-family:'Nunito', Arial, sans-serif;font-size:12px;">
-                <i><strong>P.S.</strong> Know someone who's getting engaged? Tell them about Heartful.ly wedding registries and help support the causes you care about. Learn more <a href="http://www.heartful.ly/" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank">here</a> and check out this <a href="http://bit.ly/heartfullyvideo" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank">awesome video</a>!</i>
+                <i><strong>P.S.</strong> Know someone who's engaged? Tell them about Heartful.ly wedding registries and encourage them to support the causes they care about. Learn more <a href="http://www.heartful.ly/" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank">here</a> and check out this <a href="http://bit.ly/heartfullyvideo" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank">awesome video</a>!</i>
               </p>
             </div>
           </td>
@@ -232,7 +250,7 @@
                   </h1>
                   <div>
                     <p style="margin:1em 0;color:#2e2e2e;line-height:24px;padding-right:14px;">
-                      Don't stop now, shout your love from the rooftops! Tag us on Facebook or Tweet at us, and tell the world why you decided to #sharethelove this Valentine’s Day.
+                      Don't stop now, shout your love from the rooftops! Tag us on Facebook or Tweet at us, and tell the world why you decided to #sharethelove.
                     </p>
                   </div>
                   <div class="btn" style="color:#FFFFFF;display:block">
