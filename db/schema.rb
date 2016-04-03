@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160205035241) do
+ActiveRecord::Schema.define(version: 20160403141032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -231,7 +231,7 @@ ActiveRecord::Schema.define(version: 20160205035241) do
   create_table "registries", force: true do |t|
     t.string   "name",                       null: false
     t.string   "url_slug",                   null: false
-    t.text     "description"
+    t.text     "campaign_message"
     t.string   "address_1"
     t.string   "address_2"
     t.string   "country"
@@ -248,8 +248,10 @@ ActiveRecord::Schema.define(version: 20160205035241) do
     t.integer  "profile_image_file_size"
     t.datetime "profile_image_updated_at"
     t.string   "city_state"
-    t.date     "wedding_date"
+    t.date     "event_date"
     t.string   "email"
+    t.string   "type"
+    t.string   "tweet"
   end
 
   add_index "registries", ["url_slug"], name: "index_registries_on_url_slug", unique: true, using: :btree
