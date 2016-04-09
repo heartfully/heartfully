@@ -1,21 +1,21 @@
 <div class="test">
-    <h2 class="c-how__title center subhed purple mb">Order confirmation</h2>
-    <h4 class="center quiet mb--large">Step 1 of 2: Personalize your gift</h4>
-      <h3 class="mb">Order Summary</h3>
+  <h2 class="c-how__title center subhed purple mb">Order confirmation</h2>
+  <h4 class="center quiet mb--large">Step 1 of 2: Personalize your gift</h4>
+    <h3 class="mb">Order Summary</h3>
 
-      <% if @order.status.nil? %>
-        <%=render 'order_summary' %>
+    <% if @order.status.nil? %>
+      <%=render 'order_summary' %>
 
-      <%= form_tag(orders_finalize_path, class:'order-form') do %>
-        <%= render 'your_information' %>
-        <div class="mb">
-          <%= label_tag(:message, 'Leave a message for the couple:') %>
-          <br>
-          <%= text_area_tag(:message, nil, rows: 5, cols: 45) %>
-        </div>
-        <%= submit_tag('Go to payment details', class:'c-button c-button--primary') %>
-      <% end %>
-    <% else %>
-      This order has been completed by <%= "#{@order.first_name} #{@order.last_name}" %>
+    <%= form_tag(orders_finalize_path, class:'order-form mb--large') do %>
+      <%= render 'your_information' %>
+      <div class="mb">
+        <%= label_tag(:message, 'Leave a message for the couple:') %>
+        <br>
+        <%= text_area_tag(:message, nil, rows: 5, cols: 45) %>
+      </div>
+      <%= submit_tag('Go to payment details', class:'c-button c-button--primary') %>
     <% end %>
-  </div>
+  <% else %>
+    This order has been completed by <%= "#{@order.first_name} #{@order.last_name}" %>
+  <% end %>
+</div>
