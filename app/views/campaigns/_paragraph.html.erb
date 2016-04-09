@@ -1,10 +1,12 @@
 <div class="c-about mb--xl">
   <div class="test">
     <div class="center">
-      <svg class="c-icon mb" style="width: 25px; height: 25px;"><use xlink:href="#icon-hearts-purple"></use></svg>
+      <svg class="c-icon mb" style="width: 25px; height: 25px;">
+        <use xlink:href="#icon-hearts-purple"></use>
+      </svg>
     </div>
     <div class="c-about__info">
-    <div class="c-circle ma mb--large" style='background-image: url(<%=  "#{@registry.profile_image.url}" %>);'></div>
+      <div class="c-circle ma mb--large" style='background-image: url(<%=  "#{@registry.profile_image.url}" %>);'></div>
       <div class="c-paragraph ma">
         <p class="c-paragraph__text">
           <%= @registry.registry_story %>
