@@ -1,76 +1,87 @@
-<div class="center">
-  <svg class="c-icon mb" style="width: 25px; height: 25px;"><use xlink:href="#icon-globe-purple"></use></svg>
-</div>
-<div class="meta center">About Our Project</div>
-<div class="c-project-tabbed">
-  <div class="c-project-tabbed__header" style='background-image: url(<%=  "#{@registry.projects.first.photo1.url}" %>);'>
-    <div class="c-project-tabbed__header--wrapper">
-      <span class="c-project-tabbed__header--subtitle">PROJECT</span>
-      <h2 class="c-project-tabbed__header--title"><%= @registry.projects.first.name %></h2>
-    </div>
-    <div class="c-project-tabbed__header--overlay"></div>
+<div class="test">
+  <div class="center">
+    <svg class="c-icon mb" style="width: 25px; height: 25px;">
+      <use xlink:href="#icon-globe-purple"></use>
+    </svg>
   </div>
-  <div class="c-project-tabbed__content">
-    <div class="c-project-tabbed__content--overview r-flex">
-      <!-- <div class="c-project-tabbed__menu-small">
-        Tablet and down menu to go here
-      </div> -->
-      <ul class="c-project-tabbed__menu">
-        <li class="c-project-tabbed__menu-item active registry_project_tab" id="tab-project-overview">
-          <a>Overview</a>
-        </li>
-        <li class="c-project-tabbed__menu-item registry_project_tab"  id="tab-project-problem-and-solution">
-          <a>Problem & Solution</a>
-        </li>
-        <li class="c-project-tabbed__menu-item registry_project_tab" id="tab-project-how-it-works">
-          <a>How It Works</a>
-        </li>
-        <li class="c-project-tabbed__menu-item registry_project_tab" id="tab-project-why-its-import">
-          <a>Why It's Important</a>
-        </li>
-        <li class="c-project-tabbed__menu-item registry_project_tab" id="tab-project-sustainability">
-          <a>Sustainability</a>
-        </li>
-      </ul>
-
-      <div class="c-project-content" style="min-width: 52%;">
-        <div class="content-project-overview c-project-tabbed__content--overview--summary mb">
-          <%= @registry.projects.first.overview %>
-        </div>
-        <div class="content-project-problem-and-solution c-project-tabbed__content--overview--summary mb" style="display: none">
-          <p><%= @registry.projects.first.problem %></p>
-          <p><%= @registry.projects.first.solution %></p>
-        </div>
-        <div class="content-project-how-it-works c-project-tabbed__content--overview--summary mb" style="display: none">
-          <% 1.upto(5) do |step| %>
-            <% unless @registry.projects.first.send("how_it_works_step#{step}").empty? %>
-              <li>
-                <%= @registry.projects.first.send("how_it_works_step#{step}") %>
-              </li>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="content-project-why-its-import c-project-tabbed__content--overview--summary mb" style="display: none">
-          <%= @registry.projects.first.importance %>
-        </div>
-        <div class="content-project-sustainability c-project-tabbed__content--overview--summary mb" style="display: none">
-          <%= @registry.projects.first.sustainability %>
-        </div>
+  <div class="meta center">About The Project</div>
+  <div class="c-project-tabbed">
+    <div class="c-project-tabbed__header" style='background-image: url(<%=  "#{@registry.projects.first.photo1.url}" %>);'>
+      <div class="c-project-tabbed__header--wrapper">
+        <span class="c-project-tabbed__header--subtitle">PROJECT</span>
+        <h2 class="c-project-tabbed__header--title"><%= @registry.projects.first.name %></h2>
       </div>
+      <div class="c-project-tabbed__header--overlay"></div>
+    </div>
+    <div class="c-project-tabbed__content">
+      <div class="c-project-tabbed__content--overview r-flex">
+        <!-- <div class="c-project-tabbed__menu-small">
+          Tablet and down menu to go here
+        </div> -->
+        <ul class="c-project-tabbed__menu">
+          <li class="c-project-tabbed__menu-item active registry_project_tab" id="tab-project-overview">
+            <a>Overview</a>
+          </li>
+          <li class="c-project-tabbed__menu-item registry_project_tab" id="tab-project-problem-and-solution">
+            <a>Problem & Solution</a>
+          </li>
+          <li class="c-project-tabbed__menu-item registry_project_tab" id="tab-project-how-it-works">
+            <a>How It Works</a>
+          </li>
+          <li class="c-project-tabbed__menu-item registry_project_tab" id="tab-project-why-its-import">
+            <a>Why It's Important</a>
+          </li>
+          <li class="c-project-tabbed__menu-item registry_project_tab" id="tab-project-sustainability">
+            <a>Sustainability</a>
+          </li>
+        </ul>
 
-      <div class="c-project-tabbed__content--overview--partner">
-        <h3 class="mb" style="text-transform: uppercase; color: gray; font-family: 'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;">About This Partner</h3>
-        <% if @registry.projects.first.organization.logo %>
-          <%= image_tag @registry.projects.first.organization.logo.url, style: 'width: 50px; height: 50px; display: inline-block; vertical-align: middle;' %>
-        <% end %>
-        <div class="block">
-          <h4 class="c-project-about__partner nudge-top--small"><%= @registry.projects.first.organization.name %></h4>
+        <div class="c-project-content" style="min-width: 52%;">
+          <div class="content-project-overview c-project-tabbed__content--overview--summary mb">
+            <%= @registry.projects.first.overview %>
+          </div>
+          <div class="content-project-problem-and-solution c-project-tabbed__content--overview--summary mb" style="display: none">
+            <p><%= @registry.projects.first.problem %></p>
+            <p><%= @registry.projects.first.solution %></p>
+          </div>
+          <div class="content-project-how-it-works c-project-tabbed__content--overview--summary mb" style="display: none">
+            <% 1.upto(5) do |step| %>
+            <% unless @registry.projects.first.send("how_it_works_step#{step}").empty? %>
+            <li>
+              <%= @registry.projects.first.send("how_it_works_step#{step}") %>
+            </li>
+            <% end %>
+            <% end %>
+          </div>
+          <div class="content-project-why-its-import c-project-tabbed__content--overview--summary mb" style="display: none">
+            <%= @registry.projects.first.importance %>
+          </div>
+          <div class="content-project-sustainability c-project-tabbed__content--overview--summary mb" style="display: none">
+            <%= @registry.projects.first.sustainability %>
+          </div>
         </div>
+
+        <div class="c-project-tabbed__content--overview--partner">
+          <h3 class="mb" style="text-transform: uppercase; color: gray; font-family: 'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;">About This Partner</h3>
+            <% if @registry.projects.first.organization.logo %>
+            <%= image_tag @registry.projects.first.organization.logo.url, style: 'width: 50px; height: 50px; display: inline-block; vertical-align: middle;' %>
+            <% end %>
+          <div class="block">
+            <h4 class="c-project-about__partner nudge-top--small"><%= @registry.projects.first.organization.name %></h4>
+          </div>
           <ul class="c-project-about__meta">
             <li>
-              <svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-map"></use></svg> <%= @registry.projects.first.country %>
+              <svg class="c-icon c-icon--inline" title="location">
+                <use xlink:href="#icon-map"></use>
+              </svg>
+              <%= @registry.projects.first.country %>
             </li>
-            <li><svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-link"></use></svg> <a class="c-project-about__link" href="<%= @registry.projects.first.organization.org_url %>"><%= @registry.projects.first.organization.org_url %></a></li>
+            <li>
+              <svg class="c-icon c-icon--inline" title="location">
+                <use xlink:href="#icon-link"></use>
+              </svg>
+              <a class="c-project-about__link" href="<%= @registry.projects.first.organization.org_url %>"><%= @registry.projects.first.organization.org_url %></a>
+            </li>
           </ul>
         </div>
       </div>

@@ -1,0 +1,21 @@
+<div>
+  <div class="mb">
+    <h3>To:</h3>
+    <div class="help">(Recipient information)</div>
+  </div>
+  <div class="mb">
+    <%= label_tag(:recipient_first_name, 'First Name') %>
+    <br>
+    <%= text_field_tag(:recipient_first_name, '', :placeholder => 'First Name') %>
+  </div>
+  <div class="mb">
+    <%= label_tag(:recipient_last_name, 'Last Name') %>
+    <br>
+    <%= text_field_tag(:recipient_last_name, '', :placeholder => 'Last Name') %>
+  </div>
+  <div class="mb">
+    <%= label_tag(:recipient_email, 'Email') %>
+    <br>
+    <%= email_field_tag(:recipient_email, '', :placeholder => 'Email') %>
+  </div>
+</div>

@@ -32,10 +32,13 @@ class ChargesController < ApplicationController
         )
 
         @order.complete if charge
-
         if @order.registry.url_slug == 'sharethelove'
           render :create_valentine
         end
+
+				if @order.registry.type && @order.registry.type.downcase == 'campaign'
+					render :create_campaign
+				end
 
       rescue Exception => e
         @order.update_attributes(status: "error")

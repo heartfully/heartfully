@@ -22,7 +22,7 @@
 #  profile_image_file_size    :integer
 #  profile_image_updated_at   :datetime
 #  city_state                 :string(255)
-#  wedding_date               :date
+#  event_date               :date
 #
 
 require 'rails_helper'
@@ -30,7 +30,7 @@ require 'rails_helper'
 RSpec.describe Registry, type: :model do
   describe "#approved_projects" do
     let(:registry) { FactoryGirl.create(:registry_with_projects) }
-    
+
     it 'returns an empty array if no projects are  approved' do
       expect(registry.approved_projects).to eq([])
     end

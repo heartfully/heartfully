@@ -1,0 +1,62 @@
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td height="40" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+    </td>
+  </tr>
+</table>
+
+<!-- 1/1 Text start  -->
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0">
+    <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+      <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+        <tr style="padding:0">
+          <!-- CONTENT start -->
+          <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+            <h1 style="color:#353535;font-family:'Roboto Slab';Helvetica,Arial,sans-serif;font-weight:bold;font-size:24px;letter-spacing:0px;margin-bottom:6px;margin-top:6px;line-height:24px">
+									<span style="font-family:'Roboto Slab';Helvetica,Arial,sans-serif;">
+										Hi Kate,
+									</span>
+            </h1>
+            <div>
+              <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
+                Just letting you know <strong><%= @order.first_name %> <%= @order.last_name %></strong> got <strong><%= @order.recipient_first_name %> <%= @order.recipient_last_name %></strong> the following items for <%= @order.registry.name %>:
+                <% order_summary(@order.summary).each do |item, quantity| %>
+                <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
+                <% end %>
+              </p>
+              <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
+                Corey would appreciate it if you made sure that the total of <strong><%= @order.total %></strong> added up correctly.
+              </p>
+            </div>
+          </td>
+          <!-- CONTENT end -->
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 1/1 Text end   -->
+
+<!-- Signature start  -->
+<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+  <tr style="padding:0;">
+    <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+      <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
+        <tr style="padding:0">
+          <!-- CONTENT start -->
+          <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+            <div>
+              <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
+                Best,<br>
+                Team Heartful.ly
+              </p>
+            </div>
+          </td>
+          <!-- CONTENT end -->
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- Signature end   -->

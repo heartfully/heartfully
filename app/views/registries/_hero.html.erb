@@ -1,8 +1,8 @@
 <header class="c-hero registry" style='background-image: url(<%=  @registry.banner_image.url ? "#{@registry.banner_image.url}" : "#{image_tag @registry.banner_img}"%>);'>
   <div class="c-hero__container">
     <h1 class="c-hero__couple"><%= @registry.name %></h1>
-    <% if @registry.wedding_date  %>
-      <span class="c-hero__date">— <%= @registry.wedding_date.to_formatted_s(:long) %> —</span>
+    <% if @registry.event_date  %>
+      <span class="c-hero__date">— <%= @registry.event_date.to_formatted_s(:long) %> —</span>
     <% end %>
   </div>
 </header>

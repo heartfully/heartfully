@@ -35,7 +35,7 @@ end
 #  id                         :integer          not null, primary key
 #  name                       :string(255)      not null
 #  url_slug                   :string(255)      not null
-#  description                :text
+#  campaign_message           :text
 #  address_1                  :string(255)
 #  address_2                  :string(255)
 #  country                    :string(255)
@@ -52,5 +52,7 @@ end
 #  profile_image_file_size    :integer
 #  profile_image_updated_at   :datetime
 #  city_state                 :string(255)
-#  wedding_date               :date
-#
+#  event_date                 :date
+#  email                      :string
+#  type                       :string  
+#  tweet                      :string

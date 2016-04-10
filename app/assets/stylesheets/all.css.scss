@@ -29,7 +29,7 @@ p {
 	margin: 0;
 }
 
-p a {
+p a, p a:visited {
 	color: $color-purple-deep;
 }
 
@@ -53,8 +53,8 @@ li {
 	}
 }
 
-// about the couple section
-.c-couple {
+// about the couple section and about the campaign section
+.c-about {
 	padding: $padding-base*2 0;
 	border-top: 1px solid $color-light-gray;
 	border-bottom: 1px solid $color-light-gray;

@@ -1,0 +1,32 @@
+<div class="test">
+    <h2 class="c-how__title center subhed purple mb">Order confirmation</h2>
+    <h4 class="center quiet mb--large">Step 1 of 2: Personalize your gift</h4>
+    <div class="mb--large">
+      <h3 class="mb">Order Summary</h3>
+
+      <% if @order.status.nil? %>
+        <%= render 'order_summary' %>
+
+      <%= form_tag(orders_finalize_path, class:'order-form') do %>
+        <div class="flex mb">
+          <div class="flex-2">
+            <%= render 'your_information' %>
+          </div>
+          <div class="flex-2">
+            <%= render 'recipient_information' %>
+          </div>
+        </div>
+
+        <div class="mb">
+          <h3>Leave a message with your gift!</h3>
+          <%#= label_tag(:message, 'Leave a message with your gift!') %>
+          <div class="help">(This note and the details of your generous gift will be shared by email after you confirm your payment information.)</div>
+          <br>
+          <%= text_area_tag(:message, nil, rows: 5, cols: 45) %>
+        </div>
+        <%= submit_tag('Go to payment details', class:'c-button c-button--primary') %>
+      <% end %>
+    <% else %>
+      This order has been completed by <%= "#{@order.first_name} #{@order.last_name}" %>
+    <% end %>
+  </div>

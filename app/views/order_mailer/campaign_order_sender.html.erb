@@ -1,10 +1,3 @@
-<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
-  <tr style="padding:0">
-    <td height="40" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
-    </td>
-  </tr>
-</table>
-
 <!-- Intro Text start  -->
 <table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
   <tr style="padding:0">
@@ -20,10 +13,19 @@
             </h1>
             <div>
               <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
-                You just did something great! As you read this message, <%= @order.recipient_first_name %> is receiving an email notifying them of your gift.<br>
+                You just did something great!
+                <% if @order.recipient_email.empty? %>
+                  This email is confirmation that your generous gift has been received.
+                <% else %>
+                  As you read this message, <%= @order.recipient_first_name.presence || "your loved one" %> is receiving an email with news of your gift.
+                <% end %>
+                <br>
                 <br>
                 As a reminder, here's what you purchased:
               </p>
+              <% order_summary(@order.summary).each do |item, quantity| %>
+              <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
+              <% end %>
             </div>
           </td>
           <!-- CONTENT end -->
@@ -41,44 +43,7 @@
   </tr>
 </table>
 
-<!-- Gift Message start -->
-<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
-  <tr style="padding:0">
-    <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
-      <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
-        <tr style="padding:0">
-          <!-- CONTENT start -->
-          <td width="20" class="padd" style="border-collapse:collapse;color:#787878;width:20px;line-height:24px;padding:0">
-          </td>
-          <td width="2" valign="top" align="left" bgcolor="#7d6fe1" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
-          </td>
-          <td width="18" valign="top" align="right" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0;background:#efeefb;">
-          </td>
-          <td width="445" valign="middle" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0;background:#efeefb;">
-            <div class="quote" style="color:#6059A0;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:24px;letter-spacing:0;margin-bottom:6px;margin-top:6px;line-height:24px;font-style:italic;font-weight:400;">
-              <% order_summary(@order.summary).each do |item, quantity| %>
-                  <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
-              <% end %>
-            </div>
-          </td>
-          <td width="20" class="padd" style="border-collapse:collapse;color:#787878;width:20px;line-height:24px;padding:0">
-          </td>
-          <!-- CONTENT end -->
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<!-- Gift Message end -->
-
-<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
-  <tr style="padding:0">
-    <td height="20" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
-    </td>
-  </tr>
-</table>
-
-<!-- Intro Text start  -->
+<!-- Questions about order start  -->
 <table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
   <tr style="padding:0">
     <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
@@ -98,7 +63,7 @@
     </td>
   </tr>
 </table>
-<!-- Intro Text end   -->
+<!-- Question about order end   -->
 
 <table width="600" cellpadding="0" cellspacing="0" class="wrap line" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;border-bottom:1px solid #dddddd;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
   <tr style="padding:0">
@@ -125,7 +90,7 @@
             <table cellpadding="0" cellspacing="0" align="left" class="m-b" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
               <tr style="padding:0">
                 <td width="290" valign="top" align="left" class="m-b" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;line-height:24px;padding:0">
-                  <img src="http://soumikpal.com/heartfully/img/Blessings.jpg" alt="" width="290" height="180" border="0" style="max-width:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;image-rendering:optimizeQuality;display:block">
+                  <img src="<%= @order.registry.projects.first.photo1 %>" alt="" width="290" height="180" border="0" style="max-width:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;image-rendering:optimizeQuality;display:block">
                 </td>
               </tr>
             </table>
@@ -134,12 +99,12 @@
                 <td width="290" valign="top" align="left" class="m-b" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;line-height:24px;padding:0">
                   <h1 style="color:#2e2e2e;font-family:'Nunito',Helvetica,Arial,sans-serif;font-weight:400;font-size:24px;letter-spacing:0px;margin-bottom:6px;margin-top:6px;line-height:24px">
 												<span>
-													Backpack Impact
+													<%= @order.registry.projects.first.name %>
 												</span>
                   </h1>
                   <div>
                     <p style="margin:1em 0;color:#2e2e2e;line-height:24px">
-                      Funds raised through this initiative will be sent to <a href="http://www.blessingsinabackpack.org/" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank">Blessings in a Backpack</a>, a trusted nationwide nonprofit that procures and packs bags of food to go home with over 80,000 children every weekend of the school year.
+                      Funds raised through this initiative will be sent to <a href="<%= @order.registry.projects.first.organization.org_url %>" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank"><%= @order.registry.projects.first.organization.name %></a>, a Heartful.ly approved organization.
                     </p>
                   </div>
                 </td>
@@ -164,9 +129,7 @@
           <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
             <div>
               <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
-                In early March, we’ll drop you a line to let you know how many meals <strong>you helped us provide</strong> for kiddos in need across America. Join the movement and donate a meal in honor of your friends, family, and loved ones!<br>
-                <br>
-                Happy Valentine’s Day and thank you for sharing the love!<br>
+                Once the campaign wraps, we will send a follow up email highlighting the impact that awesome donors like you have made for <%= @order.registry.projects.first.organization.name %>.<br>
                 <br>
                 Best,<br>
                 <img src="http://soumikpal.com/heartfully/img/kg-sig-purple.png" alt="" width="150" height="45" border="0" style="max-width:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;image-rendering:optimizeQuality;display:block;padding-top:5px;">
@@ -174,7 +137,7 @@
                 <br>
               </p>
               <p style="margin:1em 0;color:#2e2e2e;line-height:20px;font-family:'Nunito', Arial, sans-serif;font-size:12px;">
-                <i><strong>P.S.</strong> Know someone who's getting engaged? Tell them about Heartful.ly wedding registries and help support the causes you care about. Learn more <a href="http://www.heartful.ly/" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank">here</a> and check out this <a href="http://bit.ly/heartfullyvideo" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank">awesome video</a>!</i>
+                <i><strong>P.S.</strong> Know someone who's engaged? Tell them about Heartful.ly wedding registries and encourage them to support the causes they care about. Learn more <a href="http://www.heartful.ly/" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank">here</a> and check out this <a href="http://bit.ly/heartfullyvideo" style="color:#7d6fe1;text-decoration:none;padding:2px 0px" target="_blank">awesome video</a>!</i>
               </p>
             </div>
           </td>
@@ -225,7 +188,7 @@
                   </h1>
                   <div>
                     <p style="margin:1em 0;color:#2e2e2e;line-height:24px;padding-right:14px;">
-                      Don't stop now, shout your love from the rooftops! Tag us on Facebook or Tweet at us, and tell the world why you decided to #sharethelove this Valentine’s Day.
+                      Don't stop now, shout your love from the rooftops! Tag us on Facebook or Tweet at us, and tell the world why you decided to #sharethelove.
                     </p>
                   </div>
                   <div class="btn" style="color:#FFFFFF;display:block">
@@ -233,7 +196,7 @@
                       <tbody>
                       <tr style="padding:0">
                         <td align="center" width="auto" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#FFF;line-height:24px;padding:1px 14px 1px 14px;background:#3b5998;display:block;height:24px;vertical-align:top;margin-right:4px;margin-bottom:4px">
-                          <a href="https://www.facebook.com/sharer/sharer.php?u=http://heartful.ly/registry/sharethelove" label="Facebook" style="color:#FFF;background:#3b5998;text-decoration:none;padding:0;display:inline-block;line-height:20px;font-size:12px;font-weight:100;width:100%" target="_blank">
+                          <a href="https://www.facebook.com/sharer/sharer.php?u=http://heartful.ly/campaign/<%= @order.registry.url_slug %>" label="Facebook" style="color:#FFF;background:#3b5998;text-decoration:none;padding:0;display:inline-block;line-height:20px;font-size:12px;font-weight:100;width:100%" target="_blank">
                             FACEBOOK
                           </a>
                         </td>
@@ -244,7 +207,7 @@
                       <tbody>
                       <tr style="padding:0">
                         <td align="center" width="auto" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#FFF;line-height:24px;padding:1px 14px 1px 14px;background:#1b95e0;display:block;height:24px;vertical-align:top;margin-right:4px;margin-bottom:4px">
-                          <a href="https://twitter.com/intent/tweet?text=Meals%20were%20donated%20to%20hungry%20children%20in%20my%20honor,%20you%20can%20%23sharethelove%20too!%20%23Valentine%20http://heartful.ly/registry/sharethelove%20via%20%40heartful_ly" label="Twitter" style="color:#FFF;background:#1b95e0;text-decoration:none;padding:0;display:inline-block;line-height:20px;font-size:12px;font-weight:100;width:100%" target="_blank">
+                          <a href="<%= @order.registry.tweet_link %>" label="Twitter" style="color:#FFF;background:#1b95e0;text-decoration:none;padding:0;display:inline-block;line-height:20px;font-size:12px;font-weight:100;width:100%" target="_blank">
                             TWITTER
                           </a>
                         </td>
@@ -274,13 +237,3 @@
     </td>
   </tr>
 </table>
-
-<!-- Full Size Colorbar start -->
-<table width="600" cellpadding="0" cellspacing="0" class="wrap" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#787878;background-color:#fffff;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:14px">
-  <tr style="padding:0">
-    <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
-      <div style="height:4px;background-image:-webkit-linear-gradient(left,#201b43 2.32558%,#ccc9e0 2.32558%,#ccc9e0 4.65116%,#433c70 4.65116%,#433c70 6.97674%,#ffffff 6.97674%,#ffffff 9.30233%,#000000 9.30233%,#000000 11.62791%,#ccc9e0 11.62791%,#ccc9e0 13.95349%,#433c70 13.95349%,#433c70 16.27907%,#ccc9e0 16.27907%,#ccc9e0 18.60465%,#201b43 18.60465%,#201b43 20.93023%,#ccc9e0 20.93023%,#ccc9e0 23.25581%,#201b43 23.25581%,#201b43 25.5814%,#433c70 25.5814%,#433c70 27.90698%,#ffffff 27.90698%,#ffffff 30.23256%,#201b43  30.23256%,#201b43  32.55814%,#000000 32.55814%,#000000 34.88372%,#ffffff 34.88372%,#ffffff 37.2093%,#201b43 37.2093%,#201b43 39.53488%,#ccc9e0 39.53488%,#ccc9e0 41.86047%,#000000 41.86047%,#000000 44.18605%,#433c70 44.18605%,#433c70 46.51163%,#ffffff 46.51163%,#ffffff 48.83721%,#2e2e2e 48.83721%,#2e2e2e 51.16279%,#5d4284 51.16279%,#5d4284 53.48837%,#201b43 53.48837%,#201b43 55.81395%,#ccc9e0  55.81395%,#ccc9e0 58.13953%,#000000 58.13953%,#000000 60.46512%,#ffffff 60.46512%,#ffffff 62.7907%,#433c70 62.7907%,#433c70 65.11628%,#201b43 65.11628%,#201b43 67.44186%,#ccc9e0 67.44186%,#ccc9e0 69.76744%,#000000 69.76744%,#000000 72.09302%,#ffffff 72.09302%,#ffffff 74.4186%,#2e2e2e 74.4186%,#2e2e2e 76.74419%,#201b43 76.74419%,#201b43 79.06977%,#433c70 79.06977%,#433c70 81.39535%,#ccc9e0 81.39535%,#ccc9e0 83.72093%,#201b43 83.72093%,#201b43 86.04651%,#ffffff 86.04651%,#ffffff 88.37209%,#000000 88.37209%,#000000 90.69767%,#433c70 90.69767%,#433c70 93.02326%,#201b43 93.02326%,#201b43 95.34884%,#ffffff 95.34884%,#ffffff 97.67442%,#000000 97.67442%,#000000 100%)"></div>
-    </td>
-  </tr>
-</table>
-<!-- Full Size Colorbar end -->

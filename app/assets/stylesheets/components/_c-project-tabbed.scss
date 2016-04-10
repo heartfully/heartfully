@@ -21,6 +21,8 @@
 		padding: $padding-base;
 		z-index: 1;
 		text-align: center;
+		left: 0;
+		right: 0;
 	}
 	&__header--subtitle {
 		@include font-meta;
