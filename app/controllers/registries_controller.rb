@@ -105,7 +105,6 @@ class RegistriesController < ApplicationController
       params.require(:registry).permit(
         :name,
         :url_slug,
-        :description,
         :city_state,
         :banner_image,
         :profile_image,
