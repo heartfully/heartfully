@@ -57,7 +57,7 @@ module Api
 
       # Only allow a trusted parameter "white list" through.
       def registry_params
-        params.require(:registry).permit(:name, :description)
+        params.require(:registry).permit(:name, :campaign_message)
       end
 
     end
