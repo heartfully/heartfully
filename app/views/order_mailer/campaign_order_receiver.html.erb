@@ -15,7 +15,11 @@
           <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
             <h1 style="color:#353535;font-family:'Roboto Slab';Helvetica,Arial,sans-serif;font-weight:bold;font-size:24px;letter-spacing:0px;margin-bottom:6px;margin-top:6px;line-height:24px">
 									<span style="font-family:'Roboto Slab';Helvetica,Arial,sans-serif;">
-										Hi <%= @order.recipient_first_name.presence || "Generous Donor" %>,
+                    <% if @order.recipient_first_name.empty? %>
+                      You are so loved!
+                    <% else %>
+										  Hi <%= @order.recipient_first_name.presence %>,
+                    <% end %>
 									</span>
             </h1>
             <div class="quote" style="margin:1em 0;text-align:center;color:#6059A0;font-family:'Nunito',Helvetica,Arial,sans-serif;font-size:24px;letter-spacing:0;line-height:24px;font-style:italic;font-weight:400;">
@@ -171,7 +175,7 @@
       <tr style="padding:0">
         <!-- CONTENT start -->
         <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0;text-align:center">
-          <button style="margin:0 auto;border:3px solid #7D72DE;background:#7D72DE;text-transform:uppercase;letter-spacing:0.8pt;padding:10px;outline:none;"><%= link_to 'Join the party!', campaign_home_path(@order.registry), {style: "color:#fff;"} %></button>
+          <button style="margin:0 auto;border:3px solid #7D72DE;background:#7D72DE;text-transform:uppercase;letter-spacing:0.8pt;padding:10px;outline:none;"><a style="color:#fff" href="http://www.heartful.ly/campaign/<%= @order.registry.url_slug %>">Join the party!</a></button>
         </td>
         <!-- CONTENT end -->
       </tr>

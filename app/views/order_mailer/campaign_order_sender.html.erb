@@ -14,8 +14,10 @@
             <div>
               <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
                 You just did something great!
-                <% unless @order.recipient_email.empty? %>
-                As you read this message, <%= @order.recipient_first_name %> is receiving an email with news of your gift.
+                <% if @order.recipient_email.empty? %>
+                  This email is confirmation that your generous gift has been received.
+                <% else %>
+                  As you read this message, <%= @order.recipient_first_name.presence || "your loved one" %> is receiving an email with news of your gift.
                 <% end %>
                 <br>
                 <br>
