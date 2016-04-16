@@ -31,8 +31,10 @@
               <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
                 You don’t know it yet, but you just did something great! <%= @order.first_name %> <%= @order.last_name %> has made a donation to <%= @order.registry.projects.first.organization.name.strip %> in your honor.<br>
                 <br>
-                <%= @order.registry.registry_story %><br>
-                <br>
+                <% if @order.registry.registry_story.presence %>
+                  <%= @order.registry.registry_story %><br>
+                  <br>
+                <% end %>
                 This generous gift represents:
               </p>
               <div>
