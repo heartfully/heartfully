@@ -17,6 +17,9 @@
   &--large {
     padding: $padding-base*4 0;
   }
+  &--small {
+    padding: $padding-base 0;
+  }
   &--impact {
     position: relative;
     .content {
