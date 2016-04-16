@@ -91,6 +91,10 @@
 		padding: $padding-base/2;
 		border-radius: 5px;
 		font-size: 0.9em;
+		.truncated-url {
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
 		h4 {
 			@include avenir-demi;
 		}

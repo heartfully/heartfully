@@ -80,7 +80,9 @@
               <svg class="c-icon c-icon--inline" title="location">
                 <use xlink:href="#icon-link"></use>
               </svg>
-              <a class="c-project-about__link" href="<%= @registry.projects.first.organization.org_url %>"><%= @registry.projects.first.organization.org_url %></a>
+              <div class="truncated-url">
+                <a class="c-project-about__link" href="<%= @registry.projects.first.organization.org_url %>"><%= @registry.projects.first.organization.org_url %></a>
+              </div>
             </li>
           </ul>
         </div>
