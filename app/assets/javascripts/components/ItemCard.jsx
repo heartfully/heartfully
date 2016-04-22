@@ -19,6 +19,7 @@ class ItemCard extends React.Component {
 
   render() {
     const purchase = this.state.purchaseMenu ? <PurchaseMenu {...this.props} /> : null;
+    const purchaseButton = window.location.href.match("projects") ? null : this.handlePurchase();
 
     return (
       <div className="c-registry-card" style={cardStyles}>
@@ -29,7 +30,7 @@ class ItemCard extends React.Component {
           <div className="c-registry-card__price">
             ${Math.round(this.props.itemType.price)}
           </div>
-          {this.handlePurchase()}
+          {purchaseButton}
         </div>
         {purchase}
       </div>
