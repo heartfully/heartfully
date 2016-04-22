@@ -19,8 +19,8 @@ class PurchaseMenu extends React.Component {
             <input onChange={this.handleQuantity.bind(this)}
               type="number"
               disabled={this.props.inCart}
-              min="0"
-              placeholder="0" />
+              min="1"
+              placeholder="1" />
           </div>
           {this.props.inCart ?
             <div style={{
