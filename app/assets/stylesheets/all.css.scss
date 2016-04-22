@@ -152,3 +152,8 @@ li {
 	font-size: 0.5em;
 	margin-bottom: 1em;
 }
+
+/* add required field asterisk */
+label.required:after {
+    content: " *";
+}
