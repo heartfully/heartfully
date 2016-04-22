@@ -2,6 +2,9 @@
   <div class="meta">Project</div>
   <h1 class="c-project-header__title"><%= @project.name %></h1>
   <% unless current_user && current_user.registry && !current_user.registry.projects.empty? %>
-    <%= button_to 'Create a registry for this project', select_project_path(@project.url_slug), class: 'c-button c-button--primary nudge-top--small' %>
+    <%= button_to 'Create a registry for this project', select_project_path(@project.url_slug), class: 'c-button c-button--primary c-button--desktop nudge-top--small' %>
+    <%= button_to(select_project_path(@project.url_slug), class: 'c-button c-button--primary c-button--mobile nudge-top--small') do %>
+      Create a registry<br>for this project
+    <% end %>
   <% end %>
 </div>

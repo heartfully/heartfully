@@ -17,6 +17,16 @@
     font-size: 1.5em;
     padding: 10px 40px;
   }
+  &--desktop {
+    @media (max-width: $break-medium) {
+      display: none;
+    }
+  }
+  &--mobile {
+    @media (min-width: $break-medium) {
+      display: none;
+    }
+  }
 }
 
 // primary action button
