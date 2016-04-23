@@ -74,6 +74,18 @@
           <% end %>
         </tbody>
       </table>
+      <div class="c-admin__mobile-items">
+        <!-- boo more inline styles, fix this soon -->
+        <% @orders.each do |order| %>
+          <div class="c-registry-card" style="padding: 20px; font-size: 9pt; font-size: 2.5vw">
+            <p style="font-weight: bold"><%= order.item %></p>
+            <p>Quantity: <%= order.quantity %></p>
+            <p>Bought by: <%= mail_to order.email %></p>
+            <p>Amount: $<%= dollars order.total_big_decimal %></p>
+            <p><%= order.message %></p>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -25,11 +25,19 @@
     }
   }
   &__table {
+    @media (max-width: $break-medium) {
+      display: none;
+    }
     a, a:visited, a:active {
       color: $color-purple-deep;
     }
     a:hover {
       color: $color-purple-deep-dark;
+    }
+  }
+  &__mobile-items {
+    @media (min-width: $break-medium) {
+      display: none;
     }
   }
 }
