@@ -18,10 +18,13 @@
 
   <%= render 'form_part_2', f: f unless (defined?(step) && step==1) %>
 
-  <% if (defined?(step) && step==1)%>
-    <%= f.submit "Next \&rarr;".html_safe, name: 'next', class: 'c-button c-button--primary stretch' %>
-  <% else %>
-    <%= f.submit "View my registry!".html_safe, name: 'done', class: 'c-button c-button--primary stretch' %>
-  <% end %>
+  <!-- boo inline styles, fix this later -->
+  <div style="margin-bottom:40px;">
+    <% if (defined?(step) && step==1)%>
+      <%= f.submit "Next \&rarr;".html_safe, name: 'next', class: 'c-button c-button--primary stretch' %>
+    <% else %>
+      <%= f.submit "Update registry".html_safe, name: 'done', class: 'c-button c-button--primary stretch' %>
+    <% end %>
+  </div>
 
 <% end %>

@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+<div class="success mb"><%= flash[:notice] %></div>
+<% end %>
 <div class="c-breaker" style="background-color: #7D72DE; background-image: url('http://cdn1.stocksy.com/a/ciA000/z0/41206.jpg'); background-size: cover; background-position: 30% 30%; color: white;">
   <div class="test center">
     <h1 class="roboto"><%= @registry.name %></h1>

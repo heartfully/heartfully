@@ -314,6 +314,14 @@
   line-height: 1.5;
 }
 
+.success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border: 1px solid #3c763d;
+  padding: 10px;
+  line-height: 1.5;
+}
+
 .red {
   color: $color-danger;
 }
