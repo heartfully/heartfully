@@ -22,7 +22,7 @@ class ItemCard extends React.Component {
     const purchaseButton = window.location.href.match("projects") ? null : this.handlePurchase();
 
     return (
-      <div className="c-registry-card" style={cardStyles}>
+      <div className="c-registry-card">
         <h3 className="c-registry-card__title">
           {this.props.itemType.name}
         </h3>
@@ -41,9 +41,4 @@ class ItemCard extends React.Component {
 ItemCard.propTypes = {
   itemType: React.PropTypes.object.isRequired,
   purchase: React.PropTypes.bool.isRequired,
-}
-
-const cardStyles = {
-  width: 460,
-  margin: 10,
 }

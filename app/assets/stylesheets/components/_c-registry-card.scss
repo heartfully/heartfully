@@ -11,6 +11,15 @@
 			width: 100%;
 		}
 	}
+	@media (min-width: $break-medium) {
+		width: 460px;
+		margin: 10px;
+	}
+	@media (max-width: $break-medium) {
+		width: 260px;
+		margin: 10px;
+	}
+
 	&:hover {
 		@include vendor-prefix(transform, translateY(-10px));
 	}
