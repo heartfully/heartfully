@@ -133,6 +133,9 @@
     .c-nav__mobile-menu
     .c-nav__menu-item {
       color: $color-medium-gray;
+      &:last-child {
+        color: $color-medium-gray;
+      }
     }
 
     .c-nav__menu-item {
