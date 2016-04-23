@@ -1,7 +1,7 @@
 class PurchaseMenu extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {quantity: 0};
+    this.state = {quantity: 1};
   }
 
   handleQuantity(event) {
