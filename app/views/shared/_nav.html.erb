@@ -18,9 +18,9 @@
     <li class="c-nav__menu-item"><a href="/faq">FAQ</a></li>
     <li class="c-nav__menu-item is-logged-in">
       <% if current_user.registry %>
-        <a href="#"><%= current_user.registry.name %></a>
+        <%= link_to current_user.registry.name, registry_home_path(current_user.registry.url_slug) %>
       <% else  %>
-        <a href="#"><%= current_user.first_name %></a>
+        <%= link_to current_user.first_name, user_path(current_user) %>
       <% end %>
       <ul class="c-nav__admin-menu">
 
