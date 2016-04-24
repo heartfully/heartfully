@@ -31,6 +31,9 @@ gem 'aws-sdk', '< 2.0'
 gem 'premailer-rails'
 gem 'nokogiri'
 
+gem 'haml'
+gem "haml-rails", "~> 0.9"
+
 group :development do
   gem 'annotate'
   gem 'pry'

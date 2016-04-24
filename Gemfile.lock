@@ -106,6 +106,17 @@ GEM
       sass (>= 3.2.0)
     haml (4.0.6)
       tilt
+    haml-rails (0.9.0)
+      actionpack (>= 4.0.1)
+      activesupport (>= 4.0.1)
+      haml (>= 4.0.6, < 5.0)
+      html2haml (>= 1.0.1)
+      railties (>= 4.0.1)
+    html2haml (2.0.0)
+      erubis (~> 2.7.0)
+      haml (~> 4.0.0)
+      nokogiri (~> 1.6.0)
+      ruby_parser (~> 3.5)
     htmlentities (4.3.4)
     i18n (0.7.0)
     jquery-rails (3.1.2)
@@ -223,6 +234,8 @@ GEM
       rspec-mocks (~> 3.2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.1)
+    ruby_parser (3.8.1)
+      sexp_processor (~> 4.1)
     safe_yaml (1.0.4)
     sass (3.4.18)
     sass-rails (5.0.4)
@@ -234,6 +247,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sexp_processor (4.7.0)
     slop (3.6.0)
     sprockets (3.3.4)
       rack (~> 1.0)
@@ -276,6 +290,8 @@ DEPENDENCIES
   factory_girl_rails
   faker
   foundation-rails (= 5.4.5)
+  haml
+  haml-rails (~> 0.9)
   jquery-rails
   letter_opener
   nokogiri
