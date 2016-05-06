@@ -14,6 +14,10 @@ a, a:visited, a:active {
 	@include vendor-prefix(transition, 0.1s ease-in-out);
 }
 
+a.underline_link {
+	text-decoration: underline;
+}
+
 h1, h2, h3, h4, h5 {
 	font-weight: normal;
 	margin: 0;

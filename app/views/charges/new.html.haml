@@ -4,48 +4,49 @@
       $(window).load(function() {
       	$('form').get(0).reset();
       });
-  .center
-    %h2.c-how__title.center.subhed.purple.mb Order confirmation
-    %h4.center.quiet.mb--large Step 2 of 2: Enter payment details
-    unless @order.status == 'complete'
+  - unless @order.status == 'complete'
+    .center
+      %h2.c-how__title.center.subhed.purple.mb Order confirmation
+      %h4.center.quiet.mb--large Step 2 of 2: Enter payment details
       %div
         Your total comes to:
         %strong= @order.total
-      .mb--large
-        = form_tag order_charges_path @order do
-          = fields_for :stripe do |ff|
-            = ff.hidden_field(:object, value: "card")
-            .mb
-              = label_tag(:number, "Card Number")
-              = ff.text_field(:number, placeholder: "XXXX-XXXX-XXXX-XXXX")
-            .mb
-              = label_tag(:exp_month, "Exp Month")
-              = ff.text_field(:exp_month, placeholder: 'MM')
-            .mb
-              = label_tag(:exp_year, "Exp Year")
-              = ff.text_field(:exp_year, placeholder: 'YYYY')
-            .mb
-              = label_tag(:cvc_check, "CVV2/CVC")
-              = ff.text_field(:cvc_check)
-              %small The last 3 digits displayed on the back for your card
-            .mb
-              = label_tag(:address_line1, "Address line 1")
-              = ff.text_field(:address_line1, placeholder:"Street")
-              = label_tag(:address_line2, "Address line2")
-              = ff.text_field(:address_line1, placeholder:"Street 2")
-            .mb
-              = label_tag(:address_city, "City")
-              = ff.text_field(:address_city, placeholder: "City")
-            .mb
-              = label_tag(:address_state, "State")
-              = ff.text_field(:address_state, placeholder: 'State')
-            .mb
-              = label_tag(:address_zip, "Zip")
-              = ff.text_field(:address_zip, placeholder: "Zip")
-          = submit_tag("Submit", class:'c-button c-button--primary')
-          .help
-            By Clicking the Submit Button You Agree to Our
-            = link_to "Terms and Conditions.", terms_of_use_path
-            Transaction Fees Apply.
-        - else
-          There was an error loading this page
+    .mb--large
+      = form_tag order_charges_path @order do
+        = fields_for :stripe do |ff|
+          = ff.hidden_field(:object, value: "card")
+          .mb
+            = label_tag(:number, "Card Number")
+            = ff.text_field(:number, placeholder: "XXXX-XXXX-XXXX-XXXX")
+          .mb
+            = label_tag(:exp_month, "Exp Month")
+            = ff.text_field(:exp_month, placeholder: 'MM')
+          .mb
+            = label_tag(:exp_year, "Exp Year")
+            = ff.text_field(:exp_year, placeholder: 'YYYY')
+          .mb
+            = label_tag(:cvc_check, "CVV2/CVC")
+            = ff.text_field(:cvc_check)
+            %small The last 3 digits displayed on the back for your card
+          .mb
+            = label_tag(:address_line1, "Address line 1")
+            = ff.text_field(:address_line1, placeholder:"Street")
+            = label_tag(:address_line2, "Address line2")
+            = ff.text_field(:address_line1, placeholder:"Street 2")
+          .mb
+            = label_tag(:address_city, "City")
+            = ff.text_field(:address_city, placeholder: "City")
+          .mb
+            = label_tag(:address_state, "State")
+            = ff.text_field(:address_state, placeholder: 'State')
+          .mb
+            = label_tag(:address_zip, "Zip")
+            = ff.text_field(:address_zip, placeholder: "Zip")
+        = submit_tag("Submit", class:'c-button c-button--primary')
+        .help
+          By Clicking the Submit Button You Agree to Our
+          = succeed "." do 
+            = link_to "Terms and Conditions", terms_of_use_path, {class: 'underline_link'}
+          Transaction Fees Apply.
+  - else
+    There was an error loading this page
