@@ -29,10 +29,10 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:email, :first_name, :last_name, :message)
+      params.require(:order).permit(:email, :first_name, :last_name, :message, :email_subscription)
     end
 
     def update_params
-      params.permit(:email, :first_name, :last_name, :recipient_first_name, :recipient_last_name, :recipient_email,  :message)
+      params.permit(:email, :first_name, :last_name, :recipient_first_name, :recipient_last_name, :recipient_email, :message, :email_subscription)
     end
 end

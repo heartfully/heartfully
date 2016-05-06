@@ -2,6 +2,10 @@ class Order < ActiveRecord::Base
   belongs_to :registry
   has_many :items
 
+  # put this in a background job
+  attr_accessor :email_subscription
+  before_save :subscribe_user
+
   include ActionView::Helpers::NumberHelper
   include OrderProcess
 
@@ -22,6 +26,15 @@ class Order < ActiveRecord::Base
 
   def total_big_decimal
     total && BigDecimal(total.gsub(/[^\d.]/, ''))
+  end
+
+  private
+
+  def subscribe_user
+    if email_subscription
+      #subscribe them to list 606837
+      
+    end
   end
 end
 

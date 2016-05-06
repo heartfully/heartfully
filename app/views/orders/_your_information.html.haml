@@ -1,0 +1,22 @@
+%div
+  .mb
+    %h3 From:
+    .help (Your information)
+  .mb
+    = label_tag(:first_name, 'First Name')
+    %span.red *
+    %br/
+    = text_field_tag(:first_name, '', :placeholder => 'First Name', :required => true)
+  .mb
+    = label_tag(:last_name, 'Last Name')
+    %span.red *
+    %br/
+    = text_field_tag(:last_name, '', :placeholder => 'Last Name', :required => true)
+  .mb
+    = label_tag(:email, 'Email')
+    %span.red *
+    %br/
+    = email_field_tag(:email, '', :placeholder => 'Email', :required => true)
+  .mb
+    = check_box_tag(:email_subscription, true, true)
+    Send me occasional marketing emails from Heartful.ly about more ways I can make a difference.

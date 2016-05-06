@@ -34,6 +34,8 @@ gem 'nokogiri'
 gem 'haml'
 gem "haml-rails", "~> 0.9"
 
+gem 'gibbon'
+
 group :development do
   gem 'annotate'
   gem 'pry'
