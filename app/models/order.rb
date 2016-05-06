@@ -33,7 +33,11 @@ class Order < ActiveRecord::Base
     if email_subscription
       # TODO: put this in a background job
       gibbon = Gibbon::Request.new
-      gibbon.lists("2f411af5a1").members.create(body: {email_address: email, status: "subscribed", merge_fields: {FNAME: first_name, LNAME: last_name}})
+      begin
+        gibbon.lists("2f411af5a1").members.create(body: {email_address: email, status: "subscribed", merge_fields: {FNAME: first_name, LNAME: last_name}})
+      rescue
+        # Don't want a bad request to foil the purchase
+      end
     end
   end
 end
