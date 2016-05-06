@@ -2,7 +2,6 @@ class Order < ActiveRecord::Base
   belongs_to :registry
   has_many :items
 
-  # put this in a background job
   attr_accessor :email_subscription
   before_save :subscribe_user
 
@@ -32,8 +31,9 @@ class Order < ActiveRecord::Base
 
   def subscribe_user
     if email_subscription
-      #subscribe them to list 606837
-      
+      # TODO: put this in a background job
+      gibbon = Gibbon::Request.new
+      gibbon.lists("2f411af5a1").members.create(body: {email_address: email, status: "subscribed", merge_fields: {FNAME: first_name, LNAME: last_name}})
     end
   end
 end
