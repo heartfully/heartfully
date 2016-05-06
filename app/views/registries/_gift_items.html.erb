@@ -2,6 +2,6 @@
   <div class="block center mb--small">
     <svg class="c-icon c-icon--large" title="gifts"><use xlink:href="#icon-gift"></use></svg>
     <h4 class="meta center mb--xl">Registry Gift Items</h4>
-    <%= react_component('RegistryItems', {registry_id: @registry.id, items: @registry.projects.first.item_types}) %>
+    <%= react_component('RegistryItems', {registry_id: @registry.id, items: @registry.projects.first.item_types.sort{|a,b| a.price <=> b.price}}) %>
   </div>
 </div>
