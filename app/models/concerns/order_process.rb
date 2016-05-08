@@ -20,8 +20,7 @@ module OrderProcess
     # end
     if self.registry.type && self.registry.type.downcase == 'campaign'
       OrderMailer.campaign_order_sender(self).deliver!
-      # TODO: uncomment this after mother's day!
-      # OrderMailer.campaign_order_receiver(self).deliver! unless self.recipient_email.empty?
+      OrderMailer.campaign_order_receiver(self).deliver! unless self.recipient_email.empty?
       OrderMailer.campaign_order_kate(self).deliver!
     else
       OrderMailer.order_confirmation(self).deliver!

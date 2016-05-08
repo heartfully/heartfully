@@ -17,7 +17,7 @@
                 <% if @order.recipient_email.empty? %>
                   This email is confirmation that your generous gift has been received.
                 <% else %>
-                  On the morning of Mother's Day (Sunday, May 8), <%= @order.recipient_first_name.presence || "your loved one" %> will receive an email with news of your gift.
+                  As you read this message, <%= @order.recipient_first_name.presence || "your loved one" %> is receiving an email with news of your gift.
                 <% end %>
                 <br>
                 <br>
@@ -129,7 +129,7 @@
           <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
             <div>
               <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
-                In a few days, we'll send you an update highlighting how all of the mamas and the kids that love them have made a collective impact.<br>
+                Once the campaign wraps, we will send a follow up email highlighting the impact that awesome donors like you have made for <%= @order.registry.projects.first.organization.name %>.<br>
                 <br>
                 Best,<br>
                 <img src="http://soumikpal.com/heartfully/img/kg-sig-purple.png" alt="" width="150" height="45" border="0" style="max-width:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;image-rendering:optimizeQuality;display:block;padding-top:5px;">
