@@ -5,6 +5,10 @@
       	$('form').get(0).reset();
       });
   - unless @order.status == 'complete'
+    - if flash[:error]
+      .error
+        There was an error processing your order:
+        = flash[:error]
     .center
       %h2.c-how__title.center.subhed.purple.mb Order confirmation
       %h4.center.quiet.mb--large Step 2 of 2: Enter payment details

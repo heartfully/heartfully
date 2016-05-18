@@ -48,6 +48,8 @@ class ChargesController < ApplicationController
         logger.info "Code is: #{err[:code]}"
         logger.info "Param is: #{err[:param]}"
         logger.info "Message is: #{err[:message]}"
+        flash[:error] = err[:message]
+        render 'new'
       rescue Exception => e
         @order.update_attributes(status: "error")
         logger.info "Order #{@order.id} had an error: #{e.backtrace}"
