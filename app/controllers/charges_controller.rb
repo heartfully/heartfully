@@ -42,7 +42,7 @@ class ChargesController < ApplicationController
 
       rescue Exception => e
         @order.update_attributes(status: "error")
-        logger.debug "Order #{@order.id} had an error: #{e.backtrace}"
+        logger.info "Order #{@order.id} had an error: #{e.backtrace}"
         flash[:error] = e.message
         render 'new'
       end
