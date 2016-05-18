@@ -39,7 +39,15 @@ class ChargesController < ApplicationController
 				if @order.registry.type && @order.registry.type.downcase == 'campaign'
 					render :create_campaign
 				end
-
+      rescue Stripe::CardError => e
+        @order.update_attributes(status: "error")
+        body = e.json_body
+        err  = body[:error]
+        logger.info "Status is: #{e.http_status}"
+        logger.info "Type is: #{err[:type]}"
+        logger.info "Code is: #{err[:code]}"
+        logger.info "Param is: #{err[:param]}"
+        logger.info "Message is: #{err[:message]}"
       rescue Exception => e
         @order.update_attributes(status: "error")
         logger.info "Order #{@order.id} had an error: #{e.backtrace}"
