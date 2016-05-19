@@ -325,3 +325,19 @@
 .red {
   color: $color-danger;
 }
+
+.home-hero {
+  @media (max-width: $break-medium) {
+    background-image: url('heartfully-home.jpg');
+  }
+
+  video {
+    @media (max-width: $break-large) {
+      height: 450px;
+    }
+
+    @media (max-width: $break-medium) {
+      display: none;
+    }
+  }
+}
