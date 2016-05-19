@@ -328,7 +328,7 @@
 
 .home-hero {
   @media (max-width: $break-medium) {
-    background-image: url('heartfully-home.jpg');
+    background-image: image_url('heartfully-home.jpg');
   }
 
   video {
