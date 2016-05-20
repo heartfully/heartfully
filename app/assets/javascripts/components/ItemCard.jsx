@@ -23,9 +23,9 @@ class ItemCard extends React.Component {
 
     return (
       <div className="c-registry-card">
-        <h3 className="c-registry-card__title">
+        <p className="c-registry-card__title">
           {this.props.itemType.name}
-        </h3>
+        </p>
         <div className="c-registry-card__info">
           <div className="c-registry-card__price">
             ${Math.round(this.props.itemType.price)}

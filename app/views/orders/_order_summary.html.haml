@@ -1,0 +1,13 @@
+.mb--large
+  %table.c-admin__table.mb
+    %thead
+      %tr
+        %th Item
+        %th Quantity
+    %tbody
+      - order_summary(@order.summary).each do |item, quantity|
+        %tr
+          %td= item
+          %td= quantity
+  %strong
+    Order Total: #{@order.total}

@@ -36,6 +36,9 @@ gem "haml-rails", "~> 0.9"
 
 gem 'gibbon'
 
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'rails-assets-tether', source: 'https://rails-assets.org'
+
 group :development do
   gem 'annotate'
   gem 'pry'

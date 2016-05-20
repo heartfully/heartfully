@@ -29,3 +29,6 @@
 @import 'components/c-partners';
 @import 'components/c-faq';
 @import 'components/c-testimonial';
+
+// Custom bootstrap variables must be set or imported before bootstrap itself.
+@import "bootstrap-custom";

@@ -1,0 +1,15 @@
+.test
+  %h2.c-how__title.center.subhed.purple.mb Order confirmation
+  %h4.center.quiet.mb--large Step 1 of 2: Personalize your gift
+  %h3.mb Order Summary
+  - if @order.status.nil?
+    = render 'order_summary'
+    = form_tag(orders_finalize_path, class:'order-form mb--large') do
+      = render 'your_information'
+      .mb
+        = label_tag(:message, 'Leave a message for the couple:')
+        %br/
+        = text_area_tag(:message, nil, rows: 5, cols: 45)
+      = submit_tag('Go to payment details', class:'c-button c-button--primary')
+  - else
+    This order has been completed by #{"#{@order.first_name} #{@order.last_name}"}

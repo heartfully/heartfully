@@ -22,5 +22,7 @@
 //= require ./utils
 //= require global
 //= require media-logo
+//= require tether
+//= require bootstrap-sprockets
 
 $(function(){ $(document).foundation(); });

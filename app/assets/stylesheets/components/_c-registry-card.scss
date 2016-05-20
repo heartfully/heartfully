@@ -6,6 +6,8 @@
 	background: #fff;
 	@include vendor-prefix(transition, 0.2s ease-in-out);
 	box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.1);
+  color: #2e2e2e;
+  font-family: 'AvenirNextLTPro-Regular', Arial, sans-serif;
 	&.flex-2 {
 		@media (max-width: $break-large) {
 			width: 100%;
@@ -27,6 +29,8 @@
     font-weight: normal;
 		margin-bottom: ($padding-base/2);
 		text-align: left;
+		font-size: 1.17em;
+		line-height: 1.2;
 	}
 	&__info {
 		@media (min-width: $break-medium) {
