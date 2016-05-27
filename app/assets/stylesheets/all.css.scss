@@ -161,3 +161,9 @@ li {
 label.required:after {
     content: " *";
 }
+
+/* styles on the homepage buttons above the fold */
+.hero-cta {
+	display: inline-block;
+  margin: 0 10px 20px;
+}
