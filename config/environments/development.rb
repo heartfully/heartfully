@@ -52,9 +52,9 @@ Rails.application.configure do
     :storage => :s3,
     :s3_protocol => 'http',
     :s3_credentials => {
-      :bucket => 'heartfullyimages',
-      :access_key_id => 'AKIAIXJAHNL7GI5NT4EA',
-      :secret_access_key => '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'
+      :bucket => ENV['S3_BUCKET_NAME'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
 
