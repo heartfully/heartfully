@@ -16,16 +16,29 @@
       %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/mzx4HhHIUx4", :width => "100%"}
       .center
         %button#close-video.c-button.c-button--primary.nudge-top--small Close window
-  .test
-    .c-breaker
-      .c-subhed.center
-        %svg.c-icon.mb{:style => "width: 25px; height: 25px;"}
-          %use{"xlink:href" => "#icon-globe-purple"}
-        %h2.c-subhed__text.c-subhed__text--home
-          Heartful.ly is a wedding registry for charitable giving.
+  .line
+  .c-how.test.pad
+    %h3.c-how__title.center.subhed.purple.mb--large Heartful.ly is a wedding registry for charitable giving.
+    .r-flex.mb
+      .c-how__step
+        .c-how__visual{:style => "background-color: transparent; background-image: url('#{image_url('sample-registry-laptop.jpg')}'); background-size: contain; background-repeat: no-repeat;"}
+        %h4.c-how__step-title.purple.mb--small
+          Create and personalize your registry.
+        %a.c-how__step-view.block{:href => "/registry/james-loves-alexis"}
+          %svg.c-icon
+            %use{"xlink:href" => "#icon-preview"}
+          View a sample registry
+      .c-how__step
+        .c-how__visual{:style => "background-color: transparent; background-image: url('#{image_url('steptwo.png')}'); background-size: contain; background-repeat: no-repeat;"}
+        %h4.c-how__step-title.purple.mb--small
+          Select a project to support.
+      .c-how__step
+        .c-how__visual{:style => "background-color: transparent; background-image: url('#{image_url('homepage-step-three.jpg')}'); background-size: contain; background-repeat: no-repeat; height: 250px;"}
+        %h4.c-how__step-title.purple.mb--small
+          See the impact.
   .line
   .c-test.test.pad.mb{:style => "position: relative;"}
-    %h3.c-test__title.center.subhed.purple.mb--xl What our couples are saying
+    %h3.c-test__title.center.subhed.purple.mb--xl What our couples are saying about Heartful.ly
     #testimonials.mb--large.c-test__content
       .r-flex
         .flex-2.c-test__text
@@ -59,36 +72,10 @@
     = render 'testimonial_hearts'
   .line
   .c-how.test.pad
-    %h3.c-how__title.center.subhed.purple.mb--xl How It Works
-    .r-flex.mb--xl
-      .c-how__step.flex-2
-        %span.c-how__step-number.block.mb Step One
-        %h4.c-how__step-title.purple.mb--small Create and personalize your registry.
-        %p.c-how__step-description.mb
-          Choose a unique URL, share some basic information about your big day, and upload a few photos.
-        %a.c-how__step-view.block{:href => "/registry/james-loves-alexis"}
-          %svg.c-icon
-            %use{"xlink:href" => "#icon-preview"}
-          View a sample registry
-      .c-how__visual.flex-2{:style => "background-color: transparent; background-image: url('#{image_url('sample-registry-laptop.jpg')}'); background-size: contain; background-repeat: no-repeat; margin-top: -25px;"}
-    .r-flex.mb--xl{:style => "position: relative;"}
-      .c-how__visual.flex-2{:style => "background-color: transparent; background-image: url('#{image_url('steptwo.png')}'); background-size: contain; background-repeat: no-repeat;"}
-      .c-how__step.flex-2
-        %span.c-how__step-number.block.mb Step Two
-        %h4.c-how__step-title.purple.mb--small Select a project to support.
-        %p.c-how__step-description.mb
-          Browse vetted charitable projects by region or issue and select your favorite one.
-    .r-flex.mb--large
-      .c-how__step.flex-2
-        %span.c-how__step-number.block.mb Step Three
-        %h4.c-how__step-title.purple.mb--small See the impact.
-        %p.c-how__step-description.mb
-          After your wedding, you and your guests will receive an update on how the project is helping people.
-      .c-how__visual.flex-2{:style => "background-color: transparent; background-image: url('#{image_url('homepage-step-three.jpg')}'); background-size: contain; background-repeat: no-repeat; height: 300px; margin-top: -25px;"}
-  .c-how.test.pad
     %h3.c-how__title.center.subhed.purple.mb--large Projects We Love
     = render "projects/project_mini"
-  .c-how.test.pad
+  .line
+  .c-how.test.pad.center
     %h3.c-how__title.center.subhed.purple.mb Our Partners
     .mb--large.center Heartful.ly is proud to support diverse and innovative organizations around the world.
     .c-partners.r-flex.mb
@@ -97,6 +84,7 @@
       %img.c-partners__logo{:src => "#{image_url('partners/logo-olivebranch.png')}"}/
       %img.c-partners__logo{:src => "#{image_url('partners/logo-solaraid.png')}"}/
       %img.c-partners__logo{:src => "#{image_url('partners/logo-streetsense.jpg')}"}/
+    %button.c-button.c-button--primary= link_to 'View all partners', our_partners_path
   .line
   / make this into a cta component
   .c-breaker.center

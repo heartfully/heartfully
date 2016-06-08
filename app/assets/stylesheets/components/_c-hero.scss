@@ -1,9 +1,12 @@
 .c-hero {
 	background-position: 50% 50%;
-	height: 800px;
+	height: 600px;
 	position: relative;
 	background-size: cover;
 	color: #fff;
+	@media (min-width: $break-large) {
+		overflow: hidden;
+	}
 	@media (max-width: $break-large) {
 		height: 450px;
 	}
@@ -50,9 +53,9 @@
 	}
 	&__home {
 		@include font-subhed;
-		margin-top: -5%;
+		margin-top: 0%;
 		max-width: 80%;
-		font-size: 3.5em;
+		font-size: 2.9em;
 		@media (max-width: $break-large) {
 			font-size: 2.8em;
 		}

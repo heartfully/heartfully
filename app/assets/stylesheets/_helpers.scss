@@ -332,9 +332,7 @@
   }
 
   video {
-    @media (max-width: $break-large) {
-      height: 450px;
-    }
+    height: 100%;
 
     @media (max-width: $break-medium) {
       display: none;

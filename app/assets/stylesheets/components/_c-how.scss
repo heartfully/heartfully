@@ -1,8 +1,15 @@
 // how it works on the homepage
 .c-how {
-  max-width: 800px;
   &__title {
     font-size: 1.6em;
+  }
+  &__step {
+    width: 30%;
+
+    @media (max-width: $break-large) {
+      width: 100%;
+      margin-bottom: $padding-base;
+    }
   }
   &__step-number {
     color: lighten($color-medium-gray, 15%);
@@ -13,18 +20,19 @@
   }
   &__step-title {
     font-size: 1.3em;
+    text-align: center;
   }
   &__step-description {
     max-width: 85%;
     font-size: 1.025em;
   }
   &__visual {
-    max-width: 500px;
     height: 250px;
     background-color: $color-light-gray;
     background-size: cover;
     background-position: 50% 50%;
     z-index: 1;
+    margin-bottom: 10px;
   }
 }
 a.c-how__step-view {
@@ -34,4 +42,5 @@ a.c-how__step-view {
   &:hover {
     color: $color-dark-gray;
   }
+  text-align: center;
 }
