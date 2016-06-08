@@ -332,7 +332,10 @@
   }
 
   video {
-    height: 100%;
+    // Hack for video on homepage, change if the height of the video changes
+    @media (max-width: 1447px) {
+      height: 100%;    
+    }
 
     @media (max-width: $break-medium) {
       display: none;
