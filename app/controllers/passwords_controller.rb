@@ -56,7 +56,7 @@ class PasswordsController < ApplicationController
 
     # Confirms a valid user.
     def valid_user
-      unless (@user && @user.confirmed? && @user.authenticate_by(:reset, params[:id]))
+      unless (@user && @user.authenticate_by(:reset, params[:id]))
         flash[:error] = "Invalid password reset link. Be sure you've confirmed your account."
         redirect_to root_url
       end
