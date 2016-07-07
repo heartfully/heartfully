@@ -12,7 +12,13 @@
         <li><a href="mailto:info@heartful.ly">Contact Us</a></li>
     </ul>
     <ul class="c-footer__list">
-        <li><%= link_to 'Create A Registry', new_user_path %></li>
+        <% if current_user && current_user.registry %>
+          <li><%= link_to 'Manage Your Registry', registry_admin_path(current_user.registry.url_slug) %></li>
+        <% elsif current_user %>
+          <li><%= link_to 'Create a Registry', user_path(current_user) %></li>
+        <% else %>
+          <li><%= link_to 'Create a Registry', new_user_path, class: "launchSignupModal" %></li>
+        <% end %>
         <li><%= link_to 'Browse Projects', projects_path %></li>
         <li><a href="/faq">FAQ</a></li>
       <li><a href="http://blog.heartful.ly" target="_blank">Blog</a></li>
