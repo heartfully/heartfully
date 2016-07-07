@@ -1,0 +1,17 @@
+= form_for :session, :url => session_path do |form|
+  - if flash[:notice]
+    .error.mb= flash[:notice]
+  .mb
+    = form.label :email
+    %br/
+    = form.text_field :email, :type => 'email'
+  .mb
+    = form.label :password
+    %br/
+    = form.password_field :password
+  .mb
+    = form.submit "Log In", :class => "c-button c-button--primary"
+  .purple
+    = link_to "Sign Up", sign_up_path, class: 'underline launchSignupModal'
+    |
+    \#{link_to "Forgot Password", new_password_path, class: 'underline'}

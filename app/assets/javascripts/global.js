@@ -74,4 +74,19 @@ $(document).ready(function() {
         $(".header-home").removeClass("header-opaque");
       }
     }
+
+  //login modal
+  $(".launchLoginModal").click(function(e) {
+    e.preventDefault();
+    $("#signupModal").modal('hide');
+    $("#loginModal").modal();
+  });
+
+  //signup modal
+  $(".launchSignupModal").click(function(e) {
+    e.preventDefault();
+    $("#loginModal").modal('hide');
+    $("#signupModal").modal();
+  });
+
 });

@@ -1,6 +1,10 @@
 class MarketingController < ApplicationController
 
   def index
+    if current_user
+      slug = current_user.registry.try(:url_slug)
+      redirect_to slug ? registry_admin_path(slug) : user_path(@user)
+    end
     @projects = Project.where(public: true).limit(4).order("RANDOM()")
   end
 

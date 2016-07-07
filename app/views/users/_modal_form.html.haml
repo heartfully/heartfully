@@ -1,0 +1,25 @@
+= form_for :user, :url => users_path do |form|
+  .mb
+    = form.label :first_name
+    %br/
+    = form.text_field :first_name
+  .mb
+    = form.label :last_name
+    %br/
+    = form.text_field :last_name
+  .mb
+    = form.label :email
+    %br/
+    = form.text_field :email, :type => 'email'
+  .mb
+    = form.label :password
+    %br/
+    = form.password_field :password
+  .mb
+    = form.label :password_confirmation
+    %br/
+    = form.password_field :password_confirmation
+  %div
+    = form.submit "Start Your Registry", :class => "c-button c-button--primary"
+%p
+  Already a member? #{link_to "Log in", sign_in_path, class: "launchLoginModal"}
