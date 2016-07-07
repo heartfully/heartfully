@@ -77,7 +77,7 @@ class ProjectsPage extends React.Component {
         </div>
         <div className="c-breaker purple center">
           <div className="test large mb">
-            Found the one? Create your wedding registry and share the love!
+            Browse the project gallery to learn about the life changing work Heartful.ly partners are doing around the world. Found the one? Create your wedding registry and share the love!
           </div>
           <button className="button c-button c-button--primary launchSignupModal"><a href="/registries/new">Create a registry</a></button>
         </div>
