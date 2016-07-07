@@ -8,6 +8,9 @@ class MarketingController < ApplicationController
     @projects = Project.where(public: true).limit(4).order("RANDOM()")
   end
 
+  def how_it_works
+  end
+
   def about_us
   end
 

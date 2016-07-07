@@ -75,10 +75,11 @@ class ProjectsPage extends React.Component {
             <h1 className="c-project-header__title">Browse Projects</h1>
           </div>
         </div>
-        <div className="c-breaker purple">
-          <div className="test center large">
-            Browse our project gallery to learn about the life changing work Heartful.ly partners are doing around the world. 
+        <div className="c-breaker purple center">
+          <div className="test large">
+            Found the one? Create your wedding registry and share the love!
           </div>
+          <button className="button c-button c-button--primary launchSignupModal"><a href="/registries/new">Create a registry</a></button>
         </div>
         {this.state.projects ? this.handleFilter() : <div>Loading...</div>}
       </div>

@@ -1,25 +1,15 @@
 = form_for :user, :url => users_path do |form|
   .mb
-    = form.label :first_name
-    %br/
-    = form.text_field :first_name
+    = form.text_field :email, :type => 'email', :placeholder => "Email address", class: "input-sm"
   .mb
-    = form.label :last_name
-    %br/
-    = form.text_field :last_name
+    = form.password_field :password, :placeholder => "Password (8 or more characters)", class: "input-sm"
   .mb
-    = form.label :email
-    %br/
-    = form.text_field :email, :type => 'email'
-  .mb
-    = form.label :password
-    %br/
-    = form.password_field :password
-  .mb
-    = form.label :password_confirmation
-    %br/
-    = form.password_field :password_confirmation
-  %div
-    = form.submit "Start Your Registry", :class => "c-button c-button--primary"
-%p
+    = form.submit "Start Your Registry", :class => "c-button c-button--primary input-sm"
+  %p.mb.small
+    By creating your Heartful.ly account you agree to our
+    = link_to "Terms of Use", terms_of_use_path, class: "purple"
+    and
+    = succeed "." do
+      = link_to "Privacy Policy", privacy_policy_path
+%p.small
   Already a member? #{link_to "Log in", sign_in_path, class: "launchLoginModal"}

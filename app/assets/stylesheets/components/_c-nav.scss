@@ -52,6 +52,11 @@
     opacity: 0;
   }
 
+  &__logo--modal {
+    width: 15%;
+    fill: #7D72DE;
+  }
+
   // checkout cart
   &__cart {
     &:hover {

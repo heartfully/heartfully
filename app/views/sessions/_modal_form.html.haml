@@ -2,16 +2,12 @@
   - if flash[:notice]
     .error.mb= flash[:notice]
   .mb
-    = form.label :email
-    %br/
-    = form.text_field :email, :type => 'email'
+    = form.text_field :email, :type => 'email', :placeholder => "Email address", class: "input-sm"
   .mb
-    = form.label :password
-    %br/
-    = form.password_field :password
+    = form.password_field :password, :placeholder => "Password (8 or more characters)", class: "input-sm"
   .mb
-    = form.submit "Log In", :class => "c-button c-button--primary"
-  .purple
+    = form.submit "Log In", :class => "c-button c-button--primary input-sm"
+  .small.purple
     = link_to "Sign Up", sign_up_path, class: 'underline launchSignupModal'
     |
     \#{link_to "Forgot Password", new_password_path, class: 'underline'}

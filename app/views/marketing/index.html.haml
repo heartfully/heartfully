@@ -7,7 +7,7 @@
         Your wedding can change lives.
       %div
         = link_to "Create a registry", new_registry_path, class: "c-button c-button--primary hero-cta launchSignupModal"
-        = link_to "Browse gifts for good", projects_path, class: "c-button c-button--primary hero-cta"
+        = link_to "Discover gifts for good", projects_path, class: "c-button c-button--primary hero-cta"
         %a.c-hero__video.block.ma{:href => "#"}
           %svg.c-icon.c-icon--white{:style => "margin: -2px 0 0 5px;"}
             %use{"xlink:href" => "#icon-play"}
@@ -61,7 +61,7 @@
       .r-flex
         .flex-2.c-test__text
           %p.c-test__quote
-            "Our guests were thrilled to donate to our Heartful.ly registry as they know it means so much to us as a couple."
+            "Our guests were thrilled to donate to our Heartful.ly wedding registry as they know it means so much to us as a couple."
           .c-test__names
             %h2 Katelyn and Brandon
             %em Built a community health clinic
@@ -76,7 +76,7 @@
     / = render "projects/project_mini"
     .r-flex.mb--large
       - @projects.first(3).each do |project|
-        .c-project-mini
+        .c-project-mini__homepage
           = link_to "/projects/#{project.url_slug}" do
             .c-project-mini__header{style: "background-image: url('#{project.photo1}')"}
               .c-project-mini__title= project.name

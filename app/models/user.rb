@@ -88,6 +88,10 @@ class User < ActiveRecord::Base
     reset_sent_at < 2.hours.ago
   end
 
+  def nav_display_name
+    first_name || email
+  end
+
   private
 
   def downcase_email

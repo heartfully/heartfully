@@ -64,6 +64,7 @@ Rails.application.routes.draw do
   end
 
   # Footer Link Pages
+  get '/how-it-works' => 'marketing#how_it_works'
   get '/about-us' => 'marketing#about_us'
   get '/faq' => 'marketing#faq'
   get '/partner-with-us' => 'marketing#partner_with_us'

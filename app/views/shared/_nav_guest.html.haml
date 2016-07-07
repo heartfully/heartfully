@@ -36,20 +36,26 @@
   .modal-dialog
     .modal-content
       .modal-header
-        %svg.c-nav__logo.c-nav__logo--mark{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 135.4 135.4"}
-          %use{"xlink:href" => "#icon-logo-logomark"}
         %button.close{type: "button", data: {dismiss: "modal"}, aria: {label: "Close"}}
           %span{aria: {hidden: "true"}} &times;
-      .modal-body
+        .c-nav__logo--modal.center-block.mb
+          %svg{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 135.4 135.4"}
+            %use{"xlink:href" => "#icon-logo-logomark"}
+        %span.center.center-block.purple.subhed
+          Your wedding registry can change lives. Sign up and share the love.
+      .modal-body.center.center-block
         = render 'users/modal_form'
 
 #loginModal.modal
   .modal-dialog
     .modal-content
       .modal-header
-        %svg.c-nav__logo.c-nav__logo--mark{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 135.4 135.4"}
-          %use{"xlink:href" => "#icon-logo-logomark"}
         %button.close{type: "button", data: {dismiss: "modal"}, aria: {label: "Close"}}
           %span{aria: {hidden: "true"}} &times;
-      .modal-body
+        .c-nav__logo--modal.center-block.mb
+          %svg{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 135.4 135.4"}
+            %use{"xlink:href" => "#icon-logo-logomark"}
+        %span.center.center-block.purple.subhed
+          Log In
+      .modal-body.center.center-block
         = render 'sessions/modal_form'

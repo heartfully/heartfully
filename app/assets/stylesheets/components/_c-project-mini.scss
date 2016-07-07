@@ -1,5 +1,4 @@
 .c-project-mini {
-  width: 30%;
   .c-project-tabbed__header--overlay {
     @include vendor-prefix(transition, 0.2s ease-in-out);
   }
@@ -10,6 +9,9 @@
     .c-project-mini__title {
       @include vendor-prefix(transform, translateY(-10px));
     }
+  }
+  &__homepage {
+    width: 30%;
   }
   &__header {
     background-size: cover;
