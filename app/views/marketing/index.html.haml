@@ -17,7 +17,7 @@
       .center
         %button#close-video.c-button.c-button--primary.nudge-top--small Close window
   .line
-  .c-how.test.pad
+  .c-how.test.pad.center
     %h3.c-how__title.center.subhed.purple.mb--large Heartful.ly is a wedding registry for charitable giving.
     .r-flex.mb
       .c-how__step
@@ -36,6 +36,7 @@
         .c-how__visual{:style => "background-color: transparent; background-image: url('#{image_url('homepage-step-three.jpg')}'); background-size: contain; background-repeat: no-repeat; height: 250px;"}
         %h4.c-how__step-title.purple.mb--small
           See the impact.
+    %button.c-button.c-button--primary= link_to 'Learn more', how_it_works_path
   .line
   .c-test.test.pad.mb{:style => "position: relative;"}
     %h3.c-test__title.center.subhed.purple.mb--xl What our couples are saying about Heartful.ly

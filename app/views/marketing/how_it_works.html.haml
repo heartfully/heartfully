@@ -8,10 +8,40 @@
     We’ve taken the guesswork out of giving back on your wedding day. With vetted charities, elegant registries, and real-time donation tracking, sharing your love has never been easier. 
 
 .c-breaker
-  .test.r-flex
-    .c-how-it-works-step
-      .c-how-it-works-step__header.purple
-        Create and personalize your Heartful.ly registry.
-      .c-how-it-works-step__content
-        = "Personalize your registry with photos, a message to your guests, and a custom URL. Get started."
-    .c-how-it-works-image{style: "background-image: url('step-1.jpg'); background-size: cover; background-position: center;"}
+  .r-flex.test.mb--xl
+    .c-how__visual.flex-2{:style => "background-color: transparent; background-image: url('#{image_url('step1.jpg')}'); background-size: contain; background-repeat: no-repeat; margin-top: -25px;"}
+    .flex-2
+      %h4.c-how__step-title.purple.mb--small Create and personalize your Heartful.ly registry
+      %p.c-how__step-description.center-block.mb
+        Personalize your registry with photos, a message to your guests, and a custom URL.
+      %p.c-how__step-description.purple.small.center-block
+        = link_to "Get started &rsaquo;".html_safe, new_registry_path, class: "launchSignupModal"
+  .r-flex.test.mb--xl
+    .c-how__visual.flex-2{:style => "background-color: transparent; background-image: url('#{image_url('step2.jpg')}'); background-size: contain; background-repeat: no-repeat; margin-top: -25px;"}
+    .flex-2
+      %h4.c-how__step-title.purple.mb--small Select a project
+      %p.c-how__step-description.center-block.mb
+        Browse vetted charitable projects and select your favorite one. Each project is connected to a custom gift list with items like bricks and cement.
+      %p.c-how__step-description.purple.small.center-block
+        = link_to "Browse projects &rsaquo;".html_safe, projects_path
+  .r-flex.test.mb--xl
+    .c-how__visual.flex-2{:style => "background-color: transparent; background-image: url('#{image_url('step3.jpg')}'); background-size: contain; background-repeat: no-repeat; margin-top: -25px;"}
+    .flex-2
+      %h4.c-how__step-title.purple.mb--small Share your registry
+      %p.c-how__step-description.center-block.mb
+        Share your custom URL on your wedding website, in your bridal shower invitations, or simply shout it from the rooftops!
+  .r-flex.test.mb--xl
+    .c-how__visual.flex-2{:style => "background-color: transparent; background-image: url('#{image_url('step4.jpg')}'); background-size: contain; background-repeat: no-repeat; margin-top: -25px;"}
+    .flex-2
+      %h4.c-how__step-title.purple.mb--small Watch the love grow!
+      %p.c-how__step-description.center-block.mb
+        Track donations in real-time in your registry dashboard. After your wedding, you and your guests will receive an email update showing how your generosity has made a real impact.
+.line
+.c-breaker.center
+  %svg.c-icon.c-icon--status{:style => "width: 25px; height: 25px;"}
+    %use{"xlink:href" => "#icon-hearts-purple"}
+  %h3.roboto.large.mb
+    Create your charitable wedding registry today!
+  %button.c-button.c-button--primary.mb.launchSignupModal= link_to 'Get Started', new_registry_path
+  %div{style: "color: gray; font-size: 0.9em"}
+    Still have questions? We're here to help! <a href="mailto:support@heartful.ly">support@heartful.ly</a>.
