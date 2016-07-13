@@ -89,4 +89,14 @@ $(document).ready(function() {
     $("#signupModal").modal();
   });
 
+  //fb share post-order
+  $(".shareRegistry").click(function(e) {
+    e.preventDefault();
+    FB.ui({
+      method: 'share',
+      display: 'popup',
+      href: $(this).data("registry"),
+    }, function(response){});
+  });
+
 });
