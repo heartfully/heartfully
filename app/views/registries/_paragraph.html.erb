@@ -6,22 +6,26 @@
     <div class="meta mb--large center">About Us</div>
     <div class="c-circle ma mb--large" style='background-image: url(<%=  "#{@registry.profile_image.url}" %>);'></div>
     <div class="c-couple__info">
-      <div class="c-paragraph ma mb--large">
-        <h2 class="c-paragraph__heading">
-          Our Story
-        </h2>
-        <p class="c-paragraph__text">
-          <%= @registry.couples_story %>
-        </p>
-      </div>
-      <div class="c-paragraph ma">
-        <h2 class="c-paragraph__heading">
-          Our Registry
-        </h2>
-        <p class="c-paragraph__text">
-          <%= @registry.registry_story %>
-        </p>
-      </div>
+      <% if @registry.couples_story? %>
+        <div class="c-paragraph ma mb--large">
+          <h2 class="c-paragraph__heading">
+            Our Story
+          </h2>
+          <p class="c-paragraph__text">
+            <%= @registry.couples_story %>
+          </p>
+        </div>
+      <% end %>
+      <% if @registry.registry_story? %>
+        <div class="c-paragraph ma">
+          <h2 class="c-paragraph__heading">
+            Our Registry
+          </h2>
+          <p class="c-paragraph__text">
+            <%= @registry.registry_story %>
+          </p>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
