@@ -21,7 +21,7 @@
           <div class="c-project-steps__list-left"></div>
           <ul class="c-project-steps__list-right">
             <% 1.upto(5) do |step| %>
-              <% unless @project.send("how_it_works_step#{step}").empty? %>
+              <% unless @project.send("how_it_works_step#{step}").blank? %>
                 <li class="c-project-steps__list-item">
                   <%= @project.send("how_it_works_step#{step}") %>
                 </li>
