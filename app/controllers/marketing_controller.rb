@@ -44,6 +44,9 @@ class MarketingController < ApplicationController
   def terms_of_use
   end
 
+  def press
+  end
+
   private
   def inquiry_params
     params.require(:inquirer).permit(:name, :partner_name, :email,

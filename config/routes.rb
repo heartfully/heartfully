@@ -71,6 +71,7 @@ Rails.application.routes.draw do
   get '/our-partners' => 'marketing#our_partners'
   get '/privacy-policy' => 'marketing#privacy_policy'
   get '/terms-of-use' => 'marketing#terms_of_use'
+  get '/press' => 'marketing#press'
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
