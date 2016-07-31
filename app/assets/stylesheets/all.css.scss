@@ -149,6 +149,15 @@ li {
 		max-width: 200px;
 		margin: 0 0.5em;
 	}
+	&__press-item {
+		display: inline-block;
+		max-width: 13%;
+		margin: 0 0.3em;
+		@media (min-width: $break-medium) {
+			max-width: 10%;
+			margin: 0 1.9em;
+		}
+	}
 }
 
 // impact cycle

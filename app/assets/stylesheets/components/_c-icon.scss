@@ -41,4 +41,15 @@
     height: auto;
     display: none;
   }
+  &--media-bar-grey {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+  &--media-bar-purple {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: none;
+  }
 }
