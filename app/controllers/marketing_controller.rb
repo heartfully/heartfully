@@ -2,6 +2,7 @@ class MarketingController < ApplicationController
 
   def index
     if current_user
+      cookies[:hide_sub_modal] = 1
       slug = current_user.registry.try(:url_slug)
       redirect_to slug ? registry_admin_path(slug) : user_path(current_user)
     end
