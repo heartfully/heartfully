@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   root 'marketing#index'
-  resources :marketing, only: [:show]
+  post 'email_subscription', to: 'marketing#email_subscription'
   # Authentication routes
   resources :passwords, only: [:create, :new, :edit, :update]
   resource :session, only: [:create]

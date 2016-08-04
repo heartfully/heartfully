@@ -47,6 +47,19 @@ class MarketingController < ApplicationController
   def press
   end
 
+  def email_subscription
+    name = params[:name].split(" ")
+    first_name = name.first
+    last_name = name.last
+    # TODO: put this in a background job
+    gibbon = Gibbon::Request.new
+    begin
+      gibbon.lists("767e0539d0").members.create(body: {email_address: params[:email], status: "subscribed", merge_fields: {FNAME: first_name, LNAME: last_name}})
+    rescue
+    end
+    head :ok
+  end
+
   private
   def inquiry_params
     params.require(:inquirer).permit(:name, :partner_name, :email,

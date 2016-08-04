@@ -135,6 +135,8 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.3)
       railties (>= 3.2.16)
+    js_cookie_rails (2.1.2)
+      railties (>= 3.1)
     json (1.8.3)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
@@ -311,6 +313,7 @@ DEPENDENCIES
   haml
   haml-rails (~> 0.9)
   jquery-rails
+  js_cookie_rails
   letter_opener
   nokogiri
   paperclip (~> 4.2)

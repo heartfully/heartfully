@@ -1,0 +1,52 @@
+#signupModal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{type: "button", data: {dismiss: "modal"}, aria: {label: "Close"}}
+          %span{aria: {hidden: "true"}} &times;
+        .c-nav__logo--modal.center-block.mb
+          %svg{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 135.4 135.4"}
+            %use{"xlink:href" => "#icon-logo-logomark"}
+        %span.center.center-block.purple.subhed
+          Your wedding registry can change lives. Sign up and share the love.
+      .modal-body.center.center-block
+        = render 'users/modal_form'
+
+#loginModal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{type: "button", data: {dismiss: "modal"}, aria: {label: "Close"}}
+          %span{aria: {hidden: "true"}} &times;
+        .c-nav__logo--modal.center-block.mb
+          %svg{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 135.4 135.4"}
+            %use{"xlink:href" => "#icon-logo-logomark"}
+        %span.center.center-block.purple.subhed
+          Log In
+      .modal-body.center.center-block
+        = render 'sessions/modal_form'
+
+#emailSubModal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{type: "button", data: {dismiss: "modal"}, aria: {label: "Close"}}
+          %span{aria: {hidden: "true"}} &times;
+        .c-nav__logo--modal.center-block.mb
+          %svg{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 135.4 135.4"}
+            %use{"xlink:href" => "#icon-logo-logomark"}
+        %span.center.center-block.purple.subhed
+          Get the scoop on the sweetest couples, the most innovative nonprofits, and the coolest ways to give back.
+      .modal-body.center.center-block
+        = form_tag("/email_subscription") do
+          .mb= text_field_tag :name, nil, placeholder: "Name", class: "input-sm"
+          .mb= text_field_tag :email, nil, placeholder: "Email address", class: "input-sm"
+          .mb= submit_tag "I'm in!", :class => "c-button c-button--primary input-sm"
+        %p.mb.small
+          By clicking "I'm in!" you agree to the
+          = link_to "Terms of Use", terms_of_use_path, class: "purple"
+          and
+          = succeed "." do
+            = link_to "Privacy Policy", privacy_policy_path
+        %p.small
+          %a{href: "#", data: {dismiss: "modal"}} No thanks, maybe later.

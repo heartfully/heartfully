@@ -99,4 +99,16 @@ $(document).ready(function() {
     }, function(response){});
   });
 
+  $(window).load(function() {
+    if(!Cookies.get("hide_sub_modal")) {
+      Cookies.set("hide_sub_modal", 1);
+      $("#emailSubModal").modal();
+    }
+  });
+
+  $("#emailSubModal form").submit(function(e) {
+    e.preventDefault();
+    $.post($(this).prop("action"), $(this).serialize(), $("#emailSubModal").modal("hide"));
+  });
+
 });

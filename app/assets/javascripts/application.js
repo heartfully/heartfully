@@ -24,5 +24,6 @@
 //= require media-logo
 //= require tether
 //= require bootstrap-sprockets
+//= require js.cookie
 
 $(function(){ $(document).foundation(); });

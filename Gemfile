@@ -41,6 +41,8 @@ gem 'rails-assets-tether', source: 'https://rails-assets.org'
 
 gem 'sitemap_generator'
 
+gem 'js_cookie_rails'
+
 group :development do
   gem 'annotate'
   gem 'pry'
