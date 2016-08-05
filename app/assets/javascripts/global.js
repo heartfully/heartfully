@@ -101,8 +101,10 @@ $(document).ready(function() {
 
   $(window).load(function() {
     if(!Cookies.get("hide_sub_modal")) {
-      Cookies.set("hide_sub_modal", 1);
-      $("#emailSubModal").modal();
+      Cookies.set("hide_sub_modal", 1, { expires: 30 });
+      setTimeout(function(){
+        $("#emailSubModal").modal();
+      }, 5000);
     }
   });
 
