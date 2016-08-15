@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160707052620) do
+ActiveRecord::Schema.define(version: 20160716145801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20160707052620) do
     t.integer  "quantity"
   end
 
-  add_index "item_types", ["project_id", "name"], name: "index_item_types_on_project_id_and_name", unique: true, using: :btree
+  add_index "item_types", ["project_id", "name", "price"], name: "index_item_types_on_project_id_and_name_and_price", unique: true, using: :btree
   add_index "item_types", ["project_id"], name: "index_item_types_on_project_id", using: :btree
 
   create_table "items", force: true do |t|
@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 20160707052620) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.integer  "source_id"
   end
 
   add_index "organizations", ["admin_id"], name: "index_organizations_on_admin_id", using: :btree
@@ -213,6 +214,7 @@ ActiveRecord::Schema.define(version: 20160707052620) do
     t.string   "budget_content_type"
     t.integer  "budget_file_size"
     t.datetime "budget_updated_at"
+    t.integer  "source_id"
   end
 
   add_index "projects", ["organization_id", "name"], name: "index_projects_on_organization_id_and_name", unique: true, using: :btree

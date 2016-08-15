@@ -16,7 +16,7 @@
           %strong= dollars @orders.to_a.sum(&:total_big_decimal)
           so far.
         .c-tiny-project.nudge-top
-          .c-tiny-project__photo{:style => "background-image: url(#{@project.photo1})"}
+          .c-tiny-project__photo{:style => "background-image: url(#{@project.photo1_url})"}
           .c-tiny-project__info
             %h3.mb--small{:style => "font-family: 'AvenirNextLTPro-Bold', Helvetica, Arial, sans-serif;"}= @project.name
             %p.mb--small= @project.description

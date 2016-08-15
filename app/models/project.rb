@@ -44,21 +44,12 @@ class Project < ActiveRecord::Base
   validates_uniqueness_of :name
   validates_acceptance_of :certified, accept: true, on: :create
 
-  validates_length_of :name, maximum: 50, on: :create
-  validates_length_of :overview, maximum: 250, on: :create
-  validates_length_of :problem, maximum: 500, on: :create
-  validates_length_of :solution, maximum: 500, on: :create
-  validates_length_of :how_it_works_step1, maximum: 300, on: :create
-  validates_length_of :how_it_works_step2, maximum: 300, on: :create
-  validates_length_of :how_it_works_step3, maximum: 300, on: :create
-  validates_length_of :how_it_works_step4, maximum: 300, on: :create
-  validates_length_of :importance, maximum: 500, on: :create
-  validates_length_of :sustainability, maximum: 500, on: :create
-  validates_length_of :staff_quote, maximum: 250, on: :create
-
-
   def photo1_url
-    self.photo1.url
+    source_id? ? project_photo : photo1.url
+  end
+
+  def photo2_url
+    source_id? ? project_photo : photo2.url
   end
 end
 

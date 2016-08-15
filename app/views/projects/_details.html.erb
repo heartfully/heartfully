@@ -15,21 +15,30 @@
       </div>
     </div>
     <div class="flex-2">
-      <div class="c-project-steps">
-        <h2 class="c-project-steps__title mb--small">How It Works</h2>
-        <div class="c-project-steps__list">
-          <div class="c-project-steps__list-left"></div>
-          <ul class="c-project-steps__list-right">
-            <% 1.upto(5) do |step| %>
-              <% unless @project.send("how_it_works_step#{step}").blank? %>
-                <li class="c-project-steps__list-item">
-                  <%= @project.send("how_it_works_step#{step}") %>
-                </li>
+      <% if @project.sustainability.blank? %>
+        <div class="c-project-steps">
+          <h2 class="c-project-steps__title mb--small">How It Works</h2>
+          <div class="c-project-steps__list">
+            <div class="c-project-steps__list-left"></div>
+            <ul class="c-project-steps__list-right">
+              <% 1.upto(5) do |step| %>
+                <% unless @project.send("how_it_works_step#{step}").blank? %>
+                  <li class="c-project-steps__list-item">
+                    <%= @project.send("how_it_works_step#{step}") %>
+                  </li>
+                <% end %>
               <% end %>
-            <% end %>
-          </ul>
+            </ul>
+          </div>
         </div>
+      <% else %>
+        <div class="c-paragraph mb--large">
+        <h2 class="c-paragraph__heading">Sustainability</h2>
+        <p class="c-paragraph__text">
+          <%= @project.sustainability %>
+        </p>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
