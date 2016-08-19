@@ -43,7 +43,7 @@ namespace :import do
     uri = URI.parse(target)
     response = Net::HTTP.get_response(uri)
     response_json = JSON.parse(response.body)
-    puts "Importing projects..."
+    puts "Importing projects...next project id is #{next_project_id}"
     import_projects(response_json["projects"]["project"])
     fetch_project_data(response_json["projects"]["nextProjectId"]) if response_json["projects"]["hasNext"]
   end
@@ -95,7 +95,11 @@ namespace :import do
     organization_params[:profile_img] = organization_json["logoUrl"]
     organization_params[:org_url] = organization_json["url"]
     organization_params[:admin_id] = admin_id
-    organization_params[:sectors] = organization_json["themes"]["theme"].map{|t| t["name"]}.join(",")
+    if organization_json["themes"]["theme"]
+      organization_params[:sectors] = organization_json["themes"]["theme"].map{|t| t["name"]}.join(",")
+    else
+      puts "Organization #{organization_json["id"]} has no themes!"
+    end
     organization_params[:tax_exempt] = true
     organization_params[:city_province] = organization_json["city"] + ", " + organization_json["state"]
     organization_params[:country] = organization_json["country"]
