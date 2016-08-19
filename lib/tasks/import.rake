@@ -112,7 +112,11 @@ namespace :import do
     donation_options.each do |option|
       project.item_types.build(name: option["description"], price: option["amount"])
     end
-    project.save!
+    begin
+      project.save!
+    rescue Exception => e
+      puts "Project #{project.id} had some problems creating item types"
+    end
   end
 
   def admin_id
