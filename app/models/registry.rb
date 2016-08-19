@@ -25,6 +25,13 @@ class Registry < ActiveRecord::Base
   validates_presence_of :name, :url_slug
   validates_uniqueness_of :name, :url_slug
   # TODO a format validation on URL slug
+  validate :url_slug_restrictions
+
+  def url_slug_restrictions
+    if url_slug.match(/^[a-zA-Z0-9]([a-zA-Z0-9\-]*[a-zA-Z0-9])?$/).nil?
+      errors.add(:url_slug, "can only contain letters, numbers, and hyphens, and cannot begin or end with a hyphen")
+    end
+  end
 
 end
 
