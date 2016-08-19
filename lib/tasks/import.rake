@@ -15,7 +15,7 @@ namespace :import do
   # better solution: index on id/name/price and don't blow up when we try and save
 
   def fetch_regions
-    target = "https://api.globalgiving.org/api/public/projectservice/regions.json?api_key=263e5982-6e2d-4ead-929b-dde009811b74"
+    target = "https://api.globalgiving.org/api/public/projectservice/regions.json?api_key=#{ENV['GLOBAL_GIVING_API_KEY']}"
     uri = URI.parse(target)
     response = Net::HTTP.get_response(uri)
     response_json = JSON.parse(response.body)
@@ -26,7 +26,7 @@ namespace :import do
   end
 
   def fetch_themes
-    target = "https://api.globalgiving.org/api/public/projectservice/themes.json?api_key=263e5982-6e2d-4ead-929b-dde009811b74"
+    target = "https://api.globalgiving.org/api/public/projectservice/themes.json?api_key=#{ENV['GLOBAL_GIVING_API_KEY']}"
     uri = URI.parse(target)
     response = Net::HTTP.get_response(uri)
     response_json = JSON.parse(response.body)
@@ -37,7 +37,7 @@ namespace :import do
   end
 
   def fetch_project_data(next_project_id = nil)
-    target = "https://api.globalgiving.org/api/public/projectservice/all/projects/active.json?api_key=263e5982-6e2d-4ead-929b-dde009811b74"
+    target = "https://api.globalgiving.org/api/public/projectservice/all/projects/active.json?api_key=#{ENV['GLOBAL_GIVING_API_KEY']}"
     target += "&nextProjectId=#{next_project_id}" if next_project_id
 
     uri = URI.parse(target)
