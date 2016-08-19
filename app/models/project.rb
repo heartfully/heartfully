@@ -41,7 +41,7 @@ class Project < ActiveRecord::Base
 
   validates_presence_of :name, :country, :organization_id #:public?
   validates_associated :organization
-  validates_uniqueness_of :name
+  validates_uniqueness_of :url_slug
   validates_acceptance_of :certified, accept: true, on: :create
 
   def photo1_url
