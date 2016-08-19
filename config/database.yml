@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  url: postgres://dphijskaomzkus:1NrwrwIryqYmvEU2-mrFnJrX36@ec2-54-243-187-196.compute-1.amazonaws.com:5432/d6pmnmddti5fls
+  url: postgres://rcllpmctudvlxi:eBfBaFs83OMMaPIXex0wqzxWC8@ec2-54-83-44-117.compute-1.amazonaws.com:5432/d46qrh5uh60fco
   # local database
   # database: heartfully_development
 
