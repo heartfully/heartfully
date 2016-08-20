@@ -122,8 +122,7 @@ namespace :import do
   # has fewer than 4 item types, has fewer than 3 item types 100 or under,
   # or has any item type over 1500
   def we_dont_want_this_project(project_json)
-    puts "do we want #{project_json["id"]}?"
-    project_json["type"] =! "project" ||
+    project_json["type"] != "project" ||
     project_json["remaining"].to_f < 1500 ||
     project_json["donationOptions"]["donationOption"].length < 4 ||
     project_json["donationOptions"]["donationOption"].select{|option| option["amount"].to_i <= 100}.length < 3 ||
