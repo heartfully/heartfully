@@ -130,7 +130,7 @@ namespace :import do
     project_json["type"] =! "project" ||
     project_json["remaining"].to_f < 1500 ||
     project_json["donationOptions"]["donationOption"].length < 4 ||
-    project_json["donationOptions"]["donationOption"].select{|option| option["amount"].to_i <= 100} < 3 ||
-    project_json["donationOptions"]["donationOption"].select{|option| option["amount"].to_i > 1500} > 0
+    project_json["donationOptions"]["donationOption"].select{|option| option["amount"].to_i <= 100}.length < 3 ||
+    project_json["donationOptions"]["donationOption"].select{|option| option["amount"].to_i > 1500}.length > 0
   end
 end
