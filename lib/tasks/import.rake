@@ -55,7 +55,7 @@ namespace :import do
   end
 
   def import_project(project_json)
-    return unless project_json["type"] == "project"
+    return if we_dont_want_this_project(project_json)
 
     organization = find_or_import_organization(project_json["organization"])
     project = Project.find_or_initialize_by(source_id: project_json["id"])
@@ -115,11 +115,22 @@ namespace :import do
     begin
       project.save!
     rescue Exception => e
-      puts "Project #{project.id} had some problems creating item types"
+      puts "Project #{project.source_id} had some problems creating item types"
     end
   end
 
   def admin_id
     @admin_id ||= User.find_by_email("aleach84@gmail.com").id
+  end
+
+  # if it's not a project, has less than 1500 remaining in the funding goal,
+  # has fewer than 4 item types, has fewer than 3 item types 100 or under,
+  # or has any item type over 1500
+  def we_dont_want_this_project(project_json)
+    project_json["type"] =! "project" ||
+    project_json["remaining"].to_f < 1500 ||
+    project_json["donationOptions"]["donationOption"].length < 4 ||
+    project_json["donationOptions"]["donationOption"].select{|option| option["amount"].to_i <= 100} < 3 ||
+    project_json["donationOptions"]["donationOption"].select{|option| option["amount"].to_i > 1500} > 0
   end
 end
