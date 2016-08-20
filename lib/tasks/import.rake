@@ -1,18 +1,13 @@
 namespace :import do
 
   desc "Import projects and organizations from Global Giving"
-  task :global_giving => :environment do
+  task :global_giving, [:next_project_id] => :environment do |t, args|
     puts "Starting task"
     fetch_regions
     fetch_themes
-    fetch_project_data
+    fetch_project_data(args.next_project_id)
     puts "Done!"
   end
-
-  # TODOS
-  # Hide the api key!!!!!!!!!!!!
-  # destroy item cards
-  # better solution: index on id/name/price and don't blow up when we try and save
 
   def fetch_regions
     target = "https://api.globalgiving.org/api/public/projectservice/regions.json?api_key=#{ENV['GLOBAL_GIVING_API_KEY']}"
