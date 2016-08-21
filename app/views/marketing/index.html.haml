@@ -100,7 +100,7 @@
       - @projects.first(3).each do |project|
         .c-project-mini.c-project-mini__homepage
           = link_to "/projects/#{project.url_slug}" do
-            .c-project-mini__header{style: "background-image: url('#{project.photo1}')"}
+            .c-project-mini__header{style: "background-image: url('#{project.photo1_url}')"}
               .c-project-mini__title= project.name
               .c-project-tabbed__header--overlay
           .c-project-mini__info
