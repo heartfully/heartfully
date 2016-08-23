@@ -4,7 +4,11 @@ module Api
       before_action :set_project, :only => [:show, :update, :destroy]
 
       def index
-        @projects = Project.filter(filterable_params).where(public: true)
+        if params[:categories]
+          @projects = Project.filter(filterable_params).where(public: true)
+        else
+          @projects = Project.includes(:categories).where(public: true)
+        end
         render_success @projects
       end
 
