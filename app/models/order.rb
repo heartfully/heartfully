@@ -34,7 +34,7 @@ class Order < ActiveRecord::Base
       # TODO: put this in a background job
       gibbon = Gibbon::Request.new
       begin
-        gibbon.lists("2f411af5a1").members.create(body: {email_address: email, status: "subscribed", merge_fields: {FNAME: first_name, LNAME: last_name}})
+        gibbon.lists("0144e2897d").members.create(body: {email_address: email, status: "subscribed", merge_fields: {FNAME: first_name, LNAME: last_name}})
       rescue
         # Don't want a bad request to foil the purchase
       end
