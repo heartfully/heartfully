@@ -8,7 +8,8 @@ class Organization < ActiveRecord::Base
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
 
   validates_presence_of :name
-  validates_uniqueness_of :name
+  # Now that we're importing organizations from external sources, easy to have name conflicts
+  # validates_uniqueness_of :name
 
   def logo_url
     logo? ? logo.url : profile_img
