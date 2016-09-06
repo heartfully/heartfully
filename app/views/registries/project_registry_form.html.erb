@@ -62,7 +62,7 @@
         <div class="r-flex-wrap mb">
           <% @projects.each do |project| %>
             <div class="c-tiny-project flex-2 mb">
-                <div class="c-tiny-project__photo" style='background-image: <%= "url('#{project.photo1}') "%>'></div>
+                <div class="c-tiny-project__photo" style='background-image: <%= "url('#{project.photo1_url}') "%>'></div>
                 <div class="c-tiny-project__info">
                   <h3 class="mb--small"><%= project.name %></h3>
                   <p class="mb--small"><%= project.description %></p>
