@@ -44,13 +44,14 @@ class ProjectsPage extends React.Component {
 
   handleProjectDisplay() {
     const {projects} = this.state;
+    const registryBreaker = this.props.current_user ? null : <RegistryBreaker />;
     return (
       <div>
         <div className="test">
           {this.renderProjects(projects.slice(0,2))}
           {this.renderProjects(projects.slice(2,4))}
         </div>
-        <RegistryBreaker />
+        {registryBreaker}
         <div className="test">
           {this.renderProjects(projects.slice(4, projects.length))}
         </div>
@@ -67,7 +68,16 @@ class ProjectsPage extends React.Component {
     );
   }
 
+  createRegistryButton() {
+    return(
+      <button className="button c-button c-button--primary launchSignupModal"><a href="/registries/new">Create a registry</a></button>
+    );
+  }
+
   render() {
+    const registryButton = this.props.current_user ? null : this.createRegistryButton();
+    const createRegistryText = this.props.current_user ? null : "Found the one? Create your wedding registry and share the love!"
+
     return (
       <div>
         <div className="mb--xl">
@@ -77,9 +87,9 @@ class ProjectsPage extends React.Component {
         </div>
         <div className="c-breaker purple center">
           <div className="test large mb">
-            Browse the project gallery to learn about the life changing work Heartful.ly partners are doing around the world. Found the one? Create your wedding registry and share the love!
+            Browse the project gallery to learn about the life changing work Heartful.ly partners are doing around the world. {createRegistryText}
           </div>
-          <button className="button c-button c-button--primary launchSignupModal"><a href="/registries/new">Create a registry</a></button>
+          {registryButton}
         </div>
         {this.state.projects ? this.handleFilter() : <div>Loading...</div>}
       </div>

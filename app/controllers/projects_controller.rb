@@ -4,7 +4,8 @@ class ProjectsController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: :select
   # GET /projects
   def index
-    @projects = Project.where(public: true)
+    # probably don't need to assign projects
+    # @projects = Project.where(public: true)
     @categories = Category.order("name ASC")
   end
 
