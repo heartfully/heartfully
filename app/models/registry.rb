@@ -4,7 +4,7 @@ class Registry < ActiveRecord::Base
   ## RELATIONSHIPS ##
   ###################
 
-  has_many :partners, :class_name => "User"
+  has_many :partners, :class_name => "User", dependent: :nullify
   has_many :partner_invites
   has_many :registry_projects
   has_many :projects, :through => :registry_projects, dependent: :destroy
