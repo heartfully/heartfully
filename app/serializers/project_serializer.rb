@@ -1,4 +1,5 @@
 class ProjectSerializer < ActiveModel::Serializer
+  cached
   attributes :id,
              :name,
              :partner,
