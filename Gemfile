@@ -43,6 +43,8 @@ gem 'sitemap_generator'
 
 gem 'js_cookie_rails'
 
+gem 'newrelic_rpm'
+
 group :development do
   gem 'annotate'
   gem 'pry'
