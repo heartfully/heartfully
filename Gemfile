@@ -19,7 +19,7 @@ gem 'rails_admin'
 gem 'cancan'
 gem 'bower-rails'
 # will_paginate gem is break rails_admin
-# gem 'will_paginate'
+gem 'will_paginate'
 gem 'draper', '1.4.0'
 gem 'react-rails', '~> 1.4.0'
 gem 'rails_12factor'

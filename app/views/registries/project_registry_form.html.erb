@@ -21,6 +21,12 @@
         </div>
       </div>
 
+      <div class="r-flex mb">
+        <div class="page_info">
+          <%= page_entries_info @projects %>
+        </div>
+      </div>
+
       <div class="r-flex">
         <%= form_tag(project_registry_form_path(@registry), method: 'get', class: 'filter_form') do %>
           <div class="flex flex--start test">
@@ -72,13 +78,15 @@
                     </li>
                     <li><svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-link"></use></svg> <a class="c-project-about__link" href="<%= project.organization.org_url%>"><%= project.organization.org_url %></a></li>
                   </ul>
-                  <%= link_to 'Learn More', "/projects/#{project.url_slug}", class: 'c-button c-button--secondary nudge-top--small'%>
-                  <button value="<%= project.url_slug %>" class="c-project-select c-button c-button--primary nudge-top--small">Select</button>
+                  <div style="padding: 20px 0 10px;">
+                    <%= link_to 'Learn More', "/projects/#{project.url_slug}", class: 'c-button c-button--secondary nudge-top--small'%>
+                    <%= link_to 'Select'.html_safe, select_project_path(project.url_slug), class: 'c-button c-button--primary nudge-top--small'%>
+                  </div>
                 </div>
             </div>
           <% end %>
+          <%= will_paginate @projects %>
         </div>
-        <%= link_to 'Next &rarr;'.html_safe, '#', method: :post, class: 'c-project-submit c-button c-button--primary stretch' %>
       </form>
     </div>
   </div>
