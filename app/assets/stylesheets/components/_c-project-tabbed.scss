@@ -7,13 +7,6 @@
 		background-position: 50% 50%;
 		color: #fff;
 	}
-	&__header-modal {
-		position: relative;
-		height: 300px;
-		background-size: cover;
-		background-position: 50% 50%;
-		color: #fff;
-	}
 	&__header--overlay {
 		position: absolute;
 		top: 0;
@@ -90,11 +83,6 @@
 		p, li {
 			margin-bottom: 1em;
 		}
-	}
-	&__content--overview--modal-summary {
-		font-size: 1.1em;
-		line-height: 1.5;
-		min-width: 50%;
 	}
 	&__content--overview--partner {
 		min-width: 25%;
