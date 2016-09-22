@@ -1,12 +1,6 @@
 <div class="test">
-  <div class="center">
-    <svg class="c-icon mb" style="width: 25px; height: 25px;">
-      <use xlink:href="#icon-globe-purple"></use>
-    </svg>
-  </div>
-  <div class="meta center">About The Project</div>
   <div>
-    <div class="c-project-tabbed__header" style='background-image: url(<%=  "#{project.photo1_url}" %>);'>
+    <div class="c-project-tabbed__header-modal" style='background-image: url(<%=  "#{project.photo1_url}" %>);'>
       <div class="c-project-tabbed__header--wrapper">
         <span class="c-project-tabbed__header--subtitle">PROJECT</span>
         <h2 class="c-project-tabbed__header--title"><%= project.name %></h2>
@@ -37,14 +31,14 @@
         </ul>
 
         <div class="c-project-content" style="min-width: 52%;">
-          <div class="content-project-overview c-project-tabbed__content--overview--summary mb">
+          <div class="content-project-overview c-project-tabbed__content--overview--modal-summary mb">
             <%= project.overview %>
           </div>
-          <div class="content-project-problem-and-solution c-project-tabbed__content--overview--summary mb" style="display: none">
+          <div class="content-project-problem-and-solution c-project-tabbed__content--overview--modal-summary mb" style="display: none">
             <p><%= project.problem %></p>
             <p><%= project.solution %></p>
           </div>
-          <div class="content-project-how-it-works c-project-tabbed__content--overview--summary mb" style="display: none">
+          <div class="content-project-how-it-works c-project-tabbed__content--overview--modal-summary mb" style="display: none">
             <% 1.upto(5) do |step| %>
             <% unless project.send("how_it_works_step#{step}").blank? %>
             <li>
@@ -53,10 +47,10 @@
             <% end %>
             <% end %>
           </div>
-          <div class="content-project-why-its-import c-project-tabbed__content--overview--summary mb" style="display: none">
+          <div class="content-project-why-its-import c-project-tabbed__content--overview--modal-summary mb" style="display: none">
             <%= project.importance %>
           </div>
-          <div class="content-project-sustainability c-project-tabbed__content--overview--summary mb" style="display: none">
+          <div class="content-project-sustainability c-project-tabbed__content--overview--modal-summary mb" style="display: none">
             <%= project.sustainability %>
           </div>
         </div>
