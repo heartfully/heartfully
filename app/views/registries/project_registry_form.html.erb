@@ -79,10 +79,24 @@
                     <li><svg class="c-icon c-icon--inline" title="location"><use xlink:href="#icon-link"></use></svg> <a class="c-project-about__link" href="<%= project.organization.org_url%>"><%= project.organization.org_url %></a></li>
                   </ul>
                   <div style="padding: 20px 0 10px;">
-                    <%= link_to 'Learn More', "/projects/#{project.url_slug}", class: 'c-button c-button--secondary nudge-top--small'%>
+                    <%= link_to 'Learn More', "/projects/#{project.url_slug}", class: 'c-button c-button--secondary nudge-top--small launchProjectModal', data: {project: project.url_slug} %>
                     <%= link_to 'Select'.html_safe, select_project_path(project.url_slug), class: 'c-button c-button--primary nudge-top--small'%>
                   </div>
                 </div>
+            </div>
+            <div id="<%=project.url_slug %>" class="modal fade">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class='modal-header'>
+                    <button class="close" type="button" data-dismiss="modal">
+                      <span>&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <%= render partial: 'project_modal', locals: {project: project} %>
+                  </div>
+                </div>
+              </div>
             </div>
           <% end %>
           <%= will_paginate @projects %>

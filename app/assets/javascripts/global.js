@@ -89,6 +89,13 @@ $(document).ready(function() {
     $("#signupModal").modal();
   });
 
+  //project modal
+  $(".launchProjectModal").click(function(e) {
+    var projectId = $(this).data("project");
+    e.preventDefault();
+    $("#" + projectId).modal();
+  })
+
   //fb share post-order
   $(".shareRegistry").click(function(e) {
     e.preventDefault();
