@@ -113,4 +113,14 @@ $(document).ready(function() {
     $.post($(this).prop("action"), $(this).serialize(), $("#emailSubModal").modal("hide"));
   });
 
+  $("#region-select").change(function(e){
+    e.preventDefault();
+    $("#region-filter").submit();
+  });
+
+  $("#issue-select").change(function(e){
+    e.preventDefault();
+    $("#issue-filter").submit();
+  });
+
 });
