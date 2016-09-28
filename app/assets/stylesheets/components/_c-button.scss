@@ -33,7 +33,7 @@
 // primary action button
 .c-button--primary {
   background: $color-purple-deep;
-  color: #fff;
+  color: #fff !important;
   &:hover {
     border: 3px solid $color-purple-deep-hover;
     background: $color-purple-deep-hover;

@@ -1,0 +1,39 @@
+.mb--xl
+  .test.center
+    %h1.c-project-header__title
+      Browse Projects
+
+.c-breaker.purple.center
+  .test.large
+    Browse the project gallery to learn about the life changing work Heartful.ly partners are doing around the world.
+
+.r-flex.test
+  .pad.flex-2
+    = form_tag(projects_path, method: 'get', class: 'filter_form', id: 'region-filter') do
+      .inline{:style => "margin-right: 20px; width: 100%;"}
+        %label.block.mb--small{:style => "text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;"} Filter by region
+        = select_tag "categories", options_for_select(@categories['region'].sort{|a,b| a.name <=> b.name}.map{|c| [c.name, c.id]}, params[:categories]), {prompt: "All Regions", id: "region-select", style: "width: 100%"}
+  .pad.flex-2
+    = form_tag(projects_path, method: 'get', class: 'filter_form', id: 'issue-filter') do
+      .inline{:style => "margin-right: 20px; width: 100%;"}
+        %label.block.mb--small{:style => "text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;"} Filter by issue
+        = select_tag "categories", options_for_select(@categories['issue'].sort{|a,b| a.name <=> b.name}.map{|c| [c.name, c.id]}, params[:categories]), {prompt: "All Issues", id: "issue-select", style: "width: 100%"}
+
+.r-flex.test.mb
+  .page_info
+    = page_entries_info @projects
+
+.test
+  - @projects.each_slice(2) do |project_pair|
+    .r-flex.mb--large
+      - project_pair.each do |project|
+        .c-project-mini.flex-2
+          = link_to project_path(project.url_slug) do
+            .c-project-mini__header{:style => "background-image: url('#{project.photo1_url}')" }
+              .c-project-mini__title= project.name
+              .c-project-tabbed__header--overlay
+          .c-project-mini__info
+            %p= project.description
+            = link_to 'Learn More', project_path(project.url_slug), class: 'c-button c-button--primary block nudge-top stretch center'
+.r-flex.test
+  = will_paginate @projects
