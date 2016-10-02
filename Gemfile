@@ -45,6 +45,8 @@ gem 'js_cookie_rails'
 
 gem 'newrelic_rpm'
 
+gem 'pg_search'
+
 group :development do
   gem 'annotate'
   gem 'pry'

@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  include PgSearch
   include Filterable #allows for easy model filtering
   has_attached_file :photo1
   has_attached_file :photo2
@@ -43,6 +44,8 @@ class Project < ActiveRecord::Base
   validates_associated :organization
   validates_uniqueness_of :url_slug
   validates_acceptance_of :certified, accept: true, on: :create
+
+  pg_search_scope :search_by_lots_of_fields, against: [:name, :description, :city, :country]
 
   def photo1_url
     source_id? ? project_photo : photo1.url

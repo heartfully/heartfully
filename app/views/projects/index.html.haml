@@ -3,18 +3,28 @@
     %h1.c-project-header__title
       Browse Projects
 
-.c-breaker.purple.center
+.c-breaker.purple.center.mb
   .test.large
     Browse the project gallery to learn about the life changing work Heartful.ly partners are doing around the world.
 
 .r-flex.test
+  .flex-1
+    = form_tag(projects_path, method: 'get', enforce_utf8: false) do
+      .inline{:style => "margin-right: 20px; width: 100%;"}
+        %label.block.mb--small{:style => "text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;"} Search projects
+      .input-group
+        = text_field_tag 'search', params[:search], class: "form-control"
+        %span.input-group-btn
+          = submit_tag 'Search', name: nil, class: "btn c-button c-button--secondary"
+
+.r-flex.test
   .pad.flex-2
-    = form_tag(projects_path, method: 'get', class: 'filter_form', id: 'region-filter') do
+    = form_tag(projects_path, method: 'get', enforce_utf8: false, class: 'filter_form', id: 'region-filter') do
       .inline{:style => "margin-right: 20px; width: 100%;"}
         %label.block.mb--small{:style => "text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;"} Filter by region
         = select_tag "categories", options_for_select(@categories['region'].sort{|a,b| a.name <=> b.name}.map{|c| [c.name, c.id]}, params[:categories]), {prompt: "All Regions", id: "region-select", style: "width: 100%"}
   .pad.flex-2
-    = form_tag(projects_path, method: 'get', class: 'filter_form', id: 'issue-filter') do
+    = form_tag(projects_path, method: 'get', enforce_utf8: false, class: 'filter_form', id: 'issue-filter') do
       .inline{:style => "margin-right: 20px; width: 100%;"}
         %label.block.mb--small{:style => "text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;"} Filter by issue
         = select_tag "categories", options_for_select(@categories['issue'].sort{|a,b| a.name <=> b.name}.map{|c| [c.name, c.id]}, params[:categories]), {prompt: "All Issues", id: "issue-select", style: "width: 100%"}
