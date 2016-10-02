@@ -13,7 +13,7 @@
       .inline{:style => "margin-right: 20px; width: 100%;"}
         %label.block.mb--small{:style => "text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;"} Search projects
       .input-group
-        = text_field_tag 'search', params[:search], class: "form-control"
+        = text_field_tag 'search', params[:search], class: "form-control", placeholder: "Search by name or keyword"
         %span.input-group-btn
           = submit_tag 'Search', name: nil, class: "btn c-button c-button--secondary"
 
