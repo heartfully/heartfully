@@ -45,7 +45,7 @@ class Project < ActiveRecord::Base
   validates_uniqueness_of :url_slug
   validates_acceptance_of :certified, accept: true, on: :create
 
-  pg_search_scope :search_by_lots_of_fields, against: [:name, :description, :city, :country]
+  pg_search_scope :search_by_lots_of_fields, against: [:name, :description, :city, :country, :overview, :problem, :solution, :sustainability]
 
   def photo1_url
     source_id? ? project_photo : photo1.url
