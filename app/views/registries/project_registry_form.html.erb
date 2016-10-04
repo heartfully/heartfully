@@ -21,10 +21,22 @@
         </div>
       </div>
 
-      <div class="r-flex mb">
-        <div class="page_info">
-          <%= page_entries_info @projects %>
-        </div>
+      <div class="r-flex">
+        <%= form_tag(project_registry_form_path(@registry), method: 'get', enforce_utf8: false) do %>
+          <div class="flex flex--start test" style="width: 91%">
+            <div class="mb">
+              <div class="inline" style="margin-right: 20px;">
+                <label class="block mb--small" style="text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;">Search Results</label>
+                <div class="input-group">
+                  <input class="form-control" id="search" name="search" type="text" value="<%= params[:search] %>">
+                  <span class="input-group-btn">
+                    <input class="btn c-button c-button--secondary" type="submit" value="Search">
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
 
       <div class="r-flex">
@@ -59,6 +71,12 @@
             </div>
           </div>
         <% end  %>
+      </div>
+
+      <div class="r-flex mb">
+        <div class="page_info">
+          <%= page_entries_info @projects %>
+        </div>
       </div>
 
       <!-- form starts here -->

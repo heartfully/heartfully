@@ -79,7 +79,11 @@ class RegistriesController < ApplicationController
   def project_registry_form
     @categories = Category.all.group_by { |category| category.cat_type }
     @registry = Registry.find(params[:id])
-    @projects = Project.includes(:organization).filter(filterable_params).where(public: true).paginate(page: params[:page], per_page: 10)
+    if params[:search]
+      @projects = Project.includes(:organization).search_by_lots_of_fields(params[:search]).where(public: true).paginate(page: params[:page], per_page: 10)
+    else
+      @projects = Project.includes(:organization).filter(filterable_params).where(public: true).paginate(page: params[:page], per_page: 10)
+    end
   end
 
   def finishing_registry_form
