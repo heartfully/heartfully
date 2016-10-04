@@ -9,8 +9,10 @@ class RegistriesController < ApplicationController
   # GET /registry/:url_slug
   def show
     if @registry
-      redirect_to campaign_home_path(@registry.url_slug) if @registry.type.downcase == "campaign"
-      redirect_to birthday_home_path(@registry.url_slug) if @registry.type.downcase == "birthday"
+      if @registry.type
+        redirect_to campaign_home_path(@registry.url_slug) if @registry.type.downcase == "campaign"
+        redirect_to birthday_home_path(@registry.url_slug) if @registry.type.downcase == "birthday"
+      end
       redirect_to project_registry_form_path(@registry) if @registry.projects.empty?
     else
       redirect_to root_path

@@ -2,5 +2,10 @@
   .block.center.mb--small
     %svg.c-icon.c-icon--large{:title => "gifts"}
       %use{"xlink:href" => "#icon-gift"}
-    %h4.meta.center.mb--xl Gift Items
+    - if @registry.projects.first.source_id.present?
+      %h4.meta.center Gift Items
+      .test.quiet.small.mb--xl
+        Your donation is tax-deductible.
+    - else
+      %h4.meta.center.mb--xl Gift Items
     = react_component('RegistryItems', {registry_id: @registry.id, items: @registry.projects.first.item_types.sort{|a,b| a.price <=> b.price}})
