@@ -15,12 +15,12 @@
           <td width="600" valign="top" align="left" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
             <h1 style="color:#353535;font-family:'Roboto Slab';Helvetica,Arial,sans-serif;font-weight:bold;font-size:24px;letter-spacing:0px;margin-bottom:6px;margin-top:6px;line-height:24px">
 									<span style="font-family:'Roboto Slab';Helvetica,Arial,sans-serif;">
-										Hi <%= @order.registry.name %>,
+										Hi there!
 									</span>
             </h1>
             <div>
               <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
-                We wanted to let you know that <%= @order.first_name %> <%= @order.last_name %> just purchased the following items of your Heartful.ly registry:
+                We're writing to let you know that a donation has been made in your honor by <%= @order.first_name %> <%= @order.last_name %>.
                 <% order_summary(@order.summary).each do |item, quantity| %>
                   <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
                 <% end %>
