@@ -63,6 +63,10 @@ Rails.application.routes.draw do
     root to: 'campaigns#show', as: 'campaign_home'
   end
 
+  scope '/birthday/:url_slug' do
+    root to: 'birthdays#show', as: 'birthday_home'
+  end
+
   # Footer Link Pages
   get '/how-it-works' => 'marketing#how_it_works'
   get '/about-us' => 'marketing#about_us'

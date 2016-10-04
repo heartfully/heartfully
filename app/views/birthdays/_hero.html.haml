@@ -1,0 +1,7 @@
+%body
+  %header.c-hero.registry{:style => "background-image: url(#{@registry.banner_image.url ? "#{@registry.banner_image.url}" : "#{image_tag @registry.banner_img}"});"}
+    .c-hero__container
+      %h1.c-hero__couple= @registry.name
+      - if @registry.event_date
+        %span.c-hero__date
+          — #{@registry.event_date.to_formatted_s(:long)} —
