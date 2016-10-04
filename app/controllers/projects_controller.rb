@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: :select
   # GET /projects
   def index
-    if params[:search]
+    if params[:search].present?
       @projects = Project.includes(:organization).search_by_lots_of_fields(params[:search]).where(public: true).paginate(page: params[:page], per_page: 10)
     else
       @projects = Project.includes(:organization).filter(filterable_params).where(public: true).paginate(page: params[:page], per_page: 10)
