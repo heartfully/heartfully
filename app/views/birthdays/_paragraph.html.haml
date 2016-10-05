@@ -3,4 +3,10 @@
     .center
       %svg.c-icon.mb{:style => "width: 25px; height: 25px;"}
         %use{"xlink:href" => "#icon-hearts-purple"}
-    .c-circle.ma.mb--large{:style => "background-image: url(#{"#{@registry.profile_image.url}"});"}
+    - if @registry.profile_image.present?
+      .c-circle.ma.mb--large{:style => "background-image: url(#{"#{@registry.profile_image.url}"});"}
+    .c-couple__info
+      - if @registry.registry_story
+        .c-paragraph.ma
+          %p.c-paragraph__text
+            = @registry.registry_story
