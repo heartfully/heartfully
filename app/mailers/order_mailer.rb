@@ -42,4 +42,19 @@ class OrderMailer < ActionMailer::Base
     @order = order
     mail to: 'kate@heartful.ly, tech@heartul.ly', subject: "Order #{@order.id} summary"
   end
+
+  def birthday_order_confirmation(order)
+    @order = order
+    mail to: "#{order.email}", subject: "Your Heartful.ly gift has been delivered!"
+  end
+
+  def birthday_order(order)
+    @order = order
+    mail to: "#{order.registry.email}, tech@heartul.ly", subject: "#{@order.first_name} #{@order.last_name} just purchased a gift off your Heartful.ly registry!"
+  end
+
+  def birthday_email_kate(order)
+    @order = order
+    mail to: 'kate@heartful.ly, tech@heartul.ly', subject: "Birthday order #{@order.id} summary"
+  end
 end

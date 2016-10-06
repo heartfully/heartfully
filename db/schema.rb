@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716145801) do
+ActiveRecord::Schema.define(version: 20160820001414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -217,7 +217,6 @@ ActiveRecord::Schema.define(version: 20160716145801) do
     t.integer  "source_id"
   end
 
-  add_index "projects", ["organization_id", "name"], name: "index_projects_on_organization_id_and_name", unique: true, using: :btree
   add_index "projects", ["organization_id"], name: "index_projects_on_organization_id", using: :btree
 
   create_table "purchases", force: true do |t|
@@ -254,6 +253,12 @@ ActiveRecord::Schema.define(version: 20160716145801) do
     t.string   "email"
     t.string   "type"
     t.string   "tweet"
+    t.string   "registrant_first_name"
+    t.string   "registrant_last_name"
+    t.string   "registrant_type"
+    t.string   "partner_first_name"
+    t.string   "partner_last_name"
+    t.string   "partner_type"
   end
 
   add_index "registries", ["url_slug"], name: "index_registries_on_url_slug", unique: true, using: :btree
