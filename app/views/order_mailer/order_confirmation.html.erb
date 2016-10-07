@@ -31,6 +31,12 @@
                 <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
                 <% end %>
               </p>
+              <% if @order.receipt_number %>
+                <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
+                  Your receipt number is <%= @order.receipt_number %><br/>
+                  Your gift is tax-deductible through our partnership with Global Giving. GlobalGiving's tax-exempt ID number is 30-0108263. This email serves as evidence of your donation, which, if applicable, may be used for tax purposes.
+                </p>
+              <% end %>
               <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
                 What's next? Shortly after <%= @order.registry.name %>'s wedding day, all funds raised on their behalf will be transferred to the organization leading this project. As the project gets underway, you will receive a progress update from us. Think of it as an opportunity to watch the love grow!
               </p>
