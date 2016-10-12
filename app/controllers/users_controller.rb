@@ -4,8 +4,11 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     if current_user
-      slug = current_user.registry.try(:url_slug)
-      redirect_to registry_admin_path(slug) if slug
+      if current_user.registry.try(:url_slug)
+        redirect_to registry_admin_path(slug)
+      else
+        redirect_to new_registry_path
+      end
     end
   end
 
