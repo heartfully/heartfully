@@ -6,11 +6,17 @@
         <meta property="og:description" content="Donate nutritious meals in honor of your loved ones." >
         <meta property="og:image" content="<%= @registry.banner_image %>">
     <% else %>
-  <title>Heartful.ly Wedding Registry: <%= @registry.name %></title>
-  <meta property="og:title" content="Click here to donate to <%= @registry.name %>'s charitable wedding registry!">
-  <meta property="og:url" content="https://www.heartful.ly/registry/<%= @registry.url_slug %>">
-  <meta property="og:description" content="Celebrate their big day with a donation in their honor to <%= @registry.projects.first.organization.name %>." >
-  <meta property="og:image" content="<%= @registry.banner_image %>">
+    <title>Heartful.ly Wedding Registry: <%= @registry.name %></title>
+    <% if @registry.is_a?(Birthday) %>
+      <meta property="og:title" content="Click here to donate to <%= @registry.reference_name %>'s birthday fundraiser!">
+      <meta property="og:url" content="https://www.heartful.ly/birthday/<%= @registry.url_slug %>">
+      <meta property="og:description" content="Celebrate <%= @registry.reference_name %>'s big day with a donation to <%= @registry.projects.first.organization.name %>." >
+      <meta property="og:image" content="<%= @registry.banner_image %>">
+    <% else %>
+      <meta property="og:title" content="Click here to donate to <%= @registry.name %>'s charitable wedding registry!">
+      <meta property="og:url" content="https://www.heartful.ly/registry/<%= @registry.url_slug %>">
+      <meta property="og:description" content="Celebrate their big day with a donation in their honor to <%= @registry.projects.first.organization.name %>." >
+      <meta property="og:image" content="<%= @registry.banner_image %>">
     <% end %>
 
 <% else %>
