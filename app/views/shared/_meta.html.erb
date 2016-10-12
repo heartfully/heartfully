@@ -1,4 +1,4 @@
-<% if controller_name == "registries" && action_name == "show" %>
+<% if @registry.present? %>
     <% if @registry.url_slug == 'sharethelove' %>
         <title>Heartful.ly Valentine’s Day Campaign: This Valentine’s Day, share your love with children in need.</title>
         <meta property="og:title" content="Heartful.ly Valentine’s Day Campaign: This Valentine’s Day, share your love with children in need.">
