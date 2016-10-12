@@ -33,6 +33,7 @@ class MarketingController < ApplicationController
   end
 
   def partner_with_us
+    redirect_to root_path
   end
 
   def our_partners
