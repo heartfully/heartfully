@@ -7,7 +7,7 @@ ruby "2.2.4"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'rails', '4.1.4'
+gem 'rails', '4.2.7'
 gem 'pg'
 gem 'sass-rails', '>= 5.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -51,6 +51,7 @@ group :development do
   gem 'annotate'
   gem 'pry'
   gem 'letter_opener'
+  gem 'web-console', '~> 2.0'
 end
 
 group :test do
