@@ -7,7 +7,10 @@
     = form_tag(orders_finalize_path, class:'order-form mb--large') do
       = render 'your_information'
       .mb
-        = label_tag(:message, 'Leave a message for the couple:')
+        - if @order.registry.is_a?(Birthday)
+          = label_tag(:message, "Leave #{@order.registry.registrant_first_name} a birthday message")
+        - else
+          = label_tag(:message, 'Leave a message for the couple:')
         %br/
         = text_area_tag(:message, nil, rows: 5, cols: 45)
       = submit_tag('Go to payment details', class:'c-button c-button--primary')
