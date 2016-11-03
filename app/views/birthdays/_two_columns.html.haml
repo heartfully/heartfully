@@ -1,0 +1,55 @@
+.column-container
+  .column-one
+    - if @registry.video_url.present?
+      .video-container
+        .meta.mb  
+          %svg.c-icon{:style => "width: 20px; height: 20px;"}
+            %use{"xlink:href" => "#icon-hearts-purple"}
+          From the heart
+        %iframe{src: @registry.video_url, frameborder: 0, height: 300, width: "100%" }
+    .about-this-project
+      .meta.mb
+        %svg.c-icon{:style => "width: 20px; height: 20px;"}
+          %use{"xlink:href" => "#icon-globe-purple"}
+        About this project
+      .project-header.mb{style: "background-image: url(#{@registry.projects.first.photo1_url})"}
+      %h3.title= @registry.projects.first.name
+      %p= @registry.projects.first.description
+    .about-this-partner
+      .meta.mb
+        About this partner
+      .partner-container
+        .partner-info
+          %h4.title= @registry.projects.first.organization.name
+          %ul.c-project-about__meta
+            %li
+              %svg.c-icon.c-icon--inline{title: "location"}
+                %use{"xlink:href" => "#icon-map"}
+              = @registry.projects.first.country
+            %li
+              %svg.c-icon.c-icon--inline{title: "location"}
+                %use{"xlink:href" => "#icon-link"}
+              = link_to @registry.projects.first.organization.org_url, @registry.projects.first.organization.org_url, target: "_blank"
+        .partner-image
+          = link_to image_tag(@registry.projects.first.organization.logo_url, style: 'width: 75px; height: 75px; display: inline-block; vertical-align: middle;'), @registry.projects.first.organization.org_url, target: "_blank"
+  .column-two
+    - if @registry.goal.present?
+      .goal
+        .meta.mb
+          %svg.c-icon{:style => "width: 20px; height: 20px;"}
+            %use{"xlink:href" => "#icon-heart"}
+          My fundraising goal
+        .goal-info
+          .goal-heart
+            = image_tag 'heart-inverted.png', style: 'width: 100px; height: 100px;'
+          %h3.goal-statement
+            %span#total-raised.goal-number= "$#{@registry.total_raised}"
+            raised of
+            %span#registry-goal.goal-number= "$#{@registry.goal}"
+            goal
+    .registry-items
+      .meta.mb
+        %svg.c-icon{:style => "width: 20px; height: 20px;", :title => "gifts"}
+          %use{"xlink:href" => "#icon-gift"}
+        = gift_items_display_for(@registry)
+      = react_component('RegistryItems', {registry_id: @registry.id, items: @registry.projects.first.item_types.sort{|a,b| a.price <=> b.price}})

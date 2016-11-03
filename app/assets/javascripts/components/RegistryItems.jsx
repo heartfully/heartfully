@@ -66,7 +66,7 @@ class RegistryItems extends React.Component {
     return (
       <div>
         {cart}
-        <div className="test r-flex" style={{display: 'flex', flexWrap: 'wrap'}}>
+        <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {ItemCards}
         </div>
       </div>

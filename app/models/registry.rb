@@ -37,6 +37,10 @@ class Registry < ActiveRecord::Base
     registrant_first_name.present? ? registrant_first_name : name
   end
 
+  def total_raised
+    orders.complete.to_a.sum(&:total_big_decimal).to_i
+  end
+
 end
 
 # == Schema Information

@@ -123,4 +123,11 @@ $(document).ready(function() {
     $("#issue-filter").submit();
   });
 
+  $(".goal").ready(function() {
+    var totalRaised = $("#total-raised").text().replace("$","");
+    var registryGoal = $("#registry-goal").text().replace("$","");
+    var backgroundShift = (-1 * totalRaised / registryGoal) * 100 + "px";
+    $(".goal-heart img").css('background-position-y', backgroundShift);
+  });
+
 });
