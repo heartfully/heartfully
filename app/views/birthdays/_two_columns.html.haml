@@ -17,7 +17,7 @@
       %p.mb= @registry.projects.first.description
       = link_to "Learn more", project_path(@registry.projects.first.url_slug), class: "c-button c-button--primary", target: "_blank"
     .about-this-partner
-      .meta.mb
+      .meta.quiet.mb
         About this partner
       .partner-container
         .partner-info
@@ -33,6 +33,12 @@
               = link_to @registry.projects.first.organization.org_url, @registry.projects.first.organization.org_url, target: "_blank"
         .partner-image
           = link_to image_tag(@registry.projects.first.organization.logo_url, style: 'width: 75px; height: 75px; display: inline-block; vertical-align: middle;'), @registry.projects.first.organization.org_url, target: "_blank"
+    .share-container
+      .meta.quiet.mb
+        Share the love
+      = link_to image_tag('facebook.png'), "#", class: "shareRegistry", data: {registry: birthday_home_url(@registry.url_slug)}
+      = link_to image_tag('twitter.png'), "https://twitter.com/intent/tweet?text=Celebrate #{@registry.reference_name}'s big day with a donation to #{@registry.projects.first.organization.name}&url=#{birthday_home_url(@registry.url_slug)}&via=Heartful_ly"
+
   .column-two
     - if @registry.goal.present?
       .goal
