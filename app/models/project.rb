@@ -48,11 +48,11 @@ class Project < ActiveRecord::Base
   pg_search_scope :search_by_lots_of_fields, against: [:name, :description, :city, :country, :overview, :problem, :solution, :sustainability]
 
   def photo1_url
-    source_id? ? project_photo : photo1.url
+    photo1.url || project_photo
   end
 
   def photo2_url
-    source_id? ? project_photo : photo2.url
+    photo2.url || project_photo
   end
 end
 

@@ -5,7 +5,7 @@
     <p>Here's what you bought:
       <%= render 'orders/order_summary' %>
     </p>
-    <p>Help <%= @order.registry.name %> raise even more money by sharing their registry:</p>
+    <p>Help <%= @order.registry.name %> raise more money to support <%= @order.registry.projects.first.organization.name %> by sharing their registry:</p>
     <button class="c-button c-button--primary shareRegistry mb" data-registry="<%= registry_home_url(@order.registry.url_slug) %>">Share on Facebook</button>
   </div>
 </div>
