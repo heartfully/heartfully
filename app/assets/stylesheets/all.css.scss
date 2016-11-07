@@ -73,6 +73,7 @@ li {
 	@media (max-width: $break-medium) {
 		width: 100%;
 	}
+	overflow: scroll;
 	width: 400px;
 	background: #fff;
 	position: fixed;
