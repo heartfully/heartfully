@@ -45,6 +45,15 @@
 
 <% end %>
 
+<%# BOO HISS %>
+<% if @registry.present? && @registry.url_slug == "hbdheartfully" %>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@heartful_ly">
+  <meta name="twitter:title" content="Celebrate your big day by making someone else's.">
+  <meta name="twitter:description" content="With Heartful.ly your wedding, birthday, anniversary or plain old Tuesday can change lives!">
+  <meta name="twitter:image" content="<%= image_url("heartfully-cake.png")%>">
+<% end %>
+
 <meta charset="utf-8">
 
 <!-- Always force latest IE rendering engine or request Chrome Frame -->
