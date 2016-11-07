@@ -1,6 +1,6 @@
 namespace :import do
 
-  desc "Import projects and organizations from Global Giving"
+  desc "Import projects and organizations from GlobalGiving"
   task :global_giving, [:next_project_id] => :environment do |t, args|
     puts "Starting task"
     fetch_regions

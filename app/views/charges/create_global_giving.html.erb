@@ -5,7 +5,7 @@
     <p>Here's what you bought:
       <%= render 'orders/order_summary' %>
     </p>
-    <p>Your receipt number is <%= @order.receipt_number %>. Your gift is tax-deductible through our partnership with Global Giving. GlobalGiving's tax-exempt ID number is 30-0108263.</p>
+    <p>Your receipt number is <%= @order.receipt_number %>. Your gift is tax-deductible through our partnership with GlobalGiving. GlobalGiving's tax-exempt ID number is 30-0108263.</p>
     <p>Help <%= @order.registry.reference_name %> raise even more money by sharing their registry:</p>
     <button class="c-button c-button--primary shareRegistry mb" data-registry="<%= registry_home_url(@order.registry.url_slug) %>">Share on Facebook</button>
   </div>
