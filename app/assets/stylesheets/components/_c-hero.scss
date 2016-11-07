@@ -46,6 +46,7 @@
 	&__couple {
 		@include font-fancy;
 		font-size: 5.5em;
+		font-size: 8vw;
 		margin-bottom: $padding-base/4;
 		@media (max-width: $break-large) {
 			font-size: 4em;
