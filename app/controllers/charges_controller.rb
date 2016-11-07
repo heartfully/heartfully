@@ -6,6 +6,7 @@ class ChargesController < ApplicationController
   end
 
 	def create
+    raise params.inspect
     unless @order.status == 'complete'
       begin
         if @order.registry.projects.first.source_id.present?
@@ -92,8 +93,8 @@ class ChargesController < ApplicationController
       donation_params = {"donation":
         {"refcode": "DEFAULT",
           "email": @order.email,
-          "amount": "10",
-          "project": {"id": 1963},
+          "amount": @order.total.match(/\$(\d+)\./)[1],
+          "project": {"id": @order.registry.projects.first.source_id},
           "payment_detail":
             {"firstname": @order.first_name,
               "lastname": @order.last_name,
