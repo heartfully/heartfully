@@ -6,7 +6,6 @@ class ChargesController < ApplicationController
   end
 
 	def create
-    raise params.inspect
     unless @order.status == 'complete'
       begin
         if @order.registry.projects.first.source_id.present?
