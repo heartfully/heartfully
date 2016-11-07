@@ -1,0 +1,37 @@
+#projectModal.modal.fade
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{type: "button", data: {dismiss: "modal"}, aria: {label: "Close"}}
+          %span{aria: {hidden: "true"}} &times;
+      .modal-body
+        .project-header.mb
+          %h3.title= @registry.projects.first.name
+          .partner-container
+            .small.quiet.mb--small
+              =@registry.projects.first.organization.name
+              %ul.c-project-about__meta
+                %li
+                  %svg.c-icon.c-icon--inline{title: "location"}
+                    %use{"xlink:href" => "#icon-map"}
+                  = @registry.projects.first.country
+                %li
+                  %svg.c-icon.c-icon--inline{title: "location"}
+                    %use{"xlink:href" => "#icon-link"}
+                  = link_to @registry.projects.first.organization.org_url, @registry.projects.first.organization.org_url, target: "_blank"
+            .partner-image
+              = link_to image_tag(@registry.projects.first.organization.logo_url, style: 'width: 50px; height: 50px; display: inline-block; vertical-align: middle;'), @registry.projects.first.organization.org_url, target: "_blank"
+        .project-body
+          .project-photo.mb{style: "background-image: url(#{@registry.projects.first.photo2_url})"}
+          .project-info
+            .mb
+              .meta.quiet.mb--small The Problem
+              %p= @registry.projects.first.problem
+            .mb
+              .meta.quiet.mb--small The Solution
+              %p= @registry.projects.first.solution
+            .mb
+              .meta.quiet.mb--small Sustainability
+              %p= @registry.projects.first.sustainability
+        %button.c-button.c-button--primary{data: {dismiss: "modal"}, aria: {label: "Close"}}
+          Back to registry

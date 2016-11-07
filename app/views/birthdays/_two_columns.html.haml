@@ -15,7 +15,7 @@
       .project-header.mb{style: "background-image: url(#{@registry.projects.first.photo1_url})"}
       %h3.title= @registry.projects.first.name
       %p.mb= @registry.projects.first.description
-      = link_to "Learn more", project_path(@registry.projects.first.url_slug), class: "c-button c-button--primary", target: "_blank"
+      = link_to "Learn more", project_path(@registry.projects.first.url_slug), class: "c-button c-button--primary launchProjectModal", target: "_blank"
     .about-this-partner
       .meta.quiet.mb
         About this partner

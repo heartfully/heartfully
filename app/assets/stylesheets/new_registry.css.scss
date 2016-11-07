@@ -92,5 +92,61 @@
   .title {
     font-family: 'AvenirNextLTPro-Bold', Helvetica, Arial, sans-serif;
   }
+}
 
+#projectModal {
+
+  .project-header {
+    @media (min-width: $break-medium) {
+      width: 60%;
+    }
+    @media (max-width: $break-medium) {
+      width: 90%;
+    }
+  }
+
+  .project-body {
+    width: 80%;
+  }
+
+  .title {
+    font-family: 'AvenirNextLTPro-Bold', Helvetica, Arial, sans-serif;
+    &:after {
+      content: '';
+      display: block;
+      margin: 10px auto 0 auto;
+      max-width: 0;
+      border-bottom: 5px solid $color-purple-deep;
+      // include animation
+      -webkit-animation: line 1.5s forwards;
+    }
+  }
+
+  .partner-container {
+    display: flex;
+    justify-content: space-between;
+
+    .partner-info {
+      width: 60%;
+    }
+
+    .partner-image {
+      width: 30%;
+    }
+  }
+
+  .project-body {
+    .project-photo {
+      height: 300px;
+      width: 80%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .project-info {
+      p {
+        font-weight: bold;
+      }
+    }
+  }
 }

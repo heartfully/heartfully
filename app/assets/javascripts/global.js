@@ -89,6 +89,12 @@ $(document).ready(function() {
     $("#signupModal").modal();
   });
 
+  //project modal on registry page
+  $(".launchProjectModal").click(function(e) {
+    e.preventDefault();
+    $("#projectModal").modal();
+  })
+
   //fb share post-order
   $(".shareRegistry").click(function(e) {
     e.preventDefault();
