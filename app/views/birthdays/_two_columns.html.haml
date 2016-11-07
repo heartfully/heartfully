@@ -36,15 +36,15 @@
     .share-container
       .meta.quiet.mb
         Share the love
-      = link_to image_tag('facebook.png'), "#", class: "shareRegistry", data: {registry: birthday_home_url(@registry.url_slug)}
-      = link_to image_tag('twitter.png'), "https://twitter.com/intent/tweet?text=Celebrate #{@registry.reference_name}'s big day with a donation to #{@registry.projects.first.organization.name}&url=#{birthday_home_url(@registry.url_slug)}&via=Heartful_ly"
+      = link_to image_tag('facebook.png', width: "50px"), "#", class: "shareRegistry", data: {registry: birthday_home_url(@registry.url_slug)}
+      = link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate #{@registry.reference_name}'s big day with a donation to #{@registry.projects.first.organization.name}&url=#{birthday_home_url(@registry.url_slug)}&via=Heartful_ly"
 
   .column-two
     - if @registry.goal.present?
       .goal
         .meta.mb
-          %svg.c-icon{:style => "width: 20px; height: 20px;"}
-            %use{"xlink:href" => "#icon-heart"}
+          %svg.c-icon{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 512 512", :style => "width: 20px; height: 20px;"}
+            %use{"xlink:href" => "#bullseye"}
           My fundraising goal
         .goal-info
           .goal-heart.mb--small
