@@ -26,12 +26,12 @@
           .project-info
             .mb
               .meta.quiet.mb--small The Problem
-              %p= @registry.projects.first.problem
+              = simple_format @registry.projects.first.problem
             .mb
               .meta.quiet.mb--small The Solution
-              %p= @registry.projects.first.solution
+              = simple_format @registry.projects.first.solution
             .mb
               .meta.quiet.mb--small Sustainability
-              %p= @registry.projects.first.sustainability
+              = simple_format @registry.projects.first.sustainability
         %button.c-button.c-button--primary{data: {dismiss: "modal"}, aria: {label: "Close"}}
           Back to registry
