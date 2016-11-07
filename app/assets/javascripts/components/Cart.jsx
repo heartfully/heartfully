@@ -11,7 +11,7 @@ class Cart extends React.Component {
       <div className="c-checkout">
         <h3>Are you ready to checkout?</h3>
         <h4 className="mb">Your selected items:</h4>
-        <table className="c-admin__table mb">
+        <table className="mb">
           <thead>
             <tr>
               <th>Item</th> <th>Quantity</th> <th>Total amount</th>
