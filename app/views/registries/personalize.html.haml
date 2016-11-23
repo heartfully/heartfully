@@ -1,0 +1,10 @@
+= form_for(@registry, format: :json, html: {id: 'personalize-registry-form', class: 'stacked skinny ma'}) do |f|
+  = f.label :banner_image, 'Cover photo'
+  .help Suggested dimensions: 1200x800 pixels
+  = f.file_field :banner_image, class: 'mb--large stretch'
+  = f.label :profile_image, 'Couple profile photo'
+  .help Suggested dimensions: 600x350 pixels
+  = f.file_field :profile_image, class: 'mb--large stretch'
+  = f.text_field :registry_story, placeholder: "A message to your friends..."
+  = f.text_field :goal, placeholder: "1000"
+  = f.text_field :video_url, placeholder: "youtube.com"

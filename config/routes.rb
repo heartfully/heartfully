@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get '/projects/thank_you', to: 'projects#thank_you'
   get '/projects/:url_slug', to: 'projects#show'
   post '/projects/:url_slug/select', to: 'projects#select', as: 'select_project'
+  get '/projects/:url_slug/modal', to: 'projects#modal', as: 'project_modal'
 
   resources :projects, except: [:show]
   resources :favorites
@@ -41,6 +42,8 @@ Rails.application.routes.draw do
   post 'orders/:id/finalize' => 'orders#finalize', :as => 'orders_finalize'
 
   resources :registries, except: [:show] do
+    get 'projects_and_categories', on: :collection
+    get 'personalize', on: :member
     resources :orders, :only => [:show, :create]
   end
 

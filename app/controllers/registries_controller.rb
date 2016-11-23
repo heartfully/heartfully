@@ -26,6 +26,7 @@ class RegistriesController < ApplicationController
     else
       @registry = current_user.registry if current_user.registry
       @registry ||= Registry.new
+      render "new_registry"
     end
   end
 
@@ -40,10 +41,15 @@ class RegistriesController < ApplicationController
 
   # POST /registries
   def create
+    project_url_slug = params.delete(:project_url_slug)
     @registry = Registry.new(registry_params)
     if @registry.save
-      current_user.update(:registry_id => @registry.id)
-      redirect_to project_registry_form_path(@registry)
+      @registry.projects << Project.find_by(url_slug: project_url_slug)
+      current_user.update(registry_id: @registry.id)
+      respond_to do |format|
+        format.html { redirect_to project_registry_form_path(@registry) }
+        format.json { render json: {personalize_url: personalize_registry_path(@registry)}.to_json }
+      end
     else
       render :new
     end
@@ -93,6 +99,22 @@ class RegistriesController < ApplicationController
     @registry = Registry.find(params[:id])
   end
 
+  def projects_and_categories
+    if params[:search].present?
+      @projects = Project.includes(:organization).search_by_lots_of_fields(params[:search]).where(public: true).paginate(page: params[:page], per_page: 3)
+    else
+      @projects = Project.includes(:organization).filter(filterable_params).where(public: true).paginate(page: params[:page], per_page: 3)
+    end
+    @categories = Category.all.group_by { |category| category.cat_type }
+
+    render layout: false
+  end
+
+  def personalize
+    @registry = current_user.registry
+    render layout: false
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_registry
@@ -116,13 +138,19 @@ class RegistriesController < ApplicationController
     def registry_params
       params.require(:registry).permit(
         :name,
+        :registrant_first_name,
+        :registrant_last_name,
+        :partner_first_name,
+        :partner_last_name,
         :url_slug,
         :city_state,
         :banner_image,
         :profile_image,
         :event_date,
         :couples_story,
-        :registry_story
+        :registry_story,
+        :goal,
+        :video_url
       )
     end
 

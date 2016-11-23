@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :require_auth, :only => [:update, :destroy]
-  before_action :set_project, only: [:show, :update, :destroy, :select]
+  before_action :set_project, only: [:show, :update, :destroy, :select, :modal]
   skip_before_filter :verify_authenticity_token, only: :select
   # GET /projects
   def index
@@ -69,6 +69,10 @@ class ProjectsController < ApplicationController
   end
 
   def thank_you
+  end
+
+  def modal
+    render layout: false
   end
 
   private

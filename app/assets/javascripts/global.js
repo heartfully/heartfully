@@ -136,4 +136,63 @@ $(document).ready(function() {
     $(".goal-heart img").css('background-position-y', backgroundShift);
   });
 
+  $(".slider").slick({
+    swipe: false,
+    infinite: false,
+    arrows: false,
+    adaptiveHeight: true
+  });
+
+  $("#select-project").ready(function() {
+    $.get("/registries/projects_and_categories", function(data) {
+      $("#select-project .project-container").html(data);
+    })
+  });
+
+  $("#select-project").on("click", ".pagination a", function(e) {
+    e.preventDefault();
+    $.get($(this).prop("href"), function(data) {
+      $("#select-project .project-container").html(data);
+      $(".slider").slick("reinit");
+    });
+  });
+
+  $("#select-project").on("click", ".project-select", function(e) {
+    e.preventDefault();
+    $("#project_url_slug").val($(this).data("url-slug"));
+    $.post($("#new-registry-form").prop("action"), $("#new-registry-form").serialize(), function(data) {
+    }).done(function(data) {
+      $.get(data["personalize_url"], function(personalizeForm) {
+        $("#personalize .personalize-container").html(personalizeForm);
+      }).done(function() {
+        $(".slider").slick("slickNext");
+      });
+    });
+  });
+
+  $("#select-project").on("click", ".fetchProjectModal", function(e) {
+    e.preventDefault();
+    $.get($(this).data("loadUrl"), function(data) {
+      $("#projectModalContainer .modal-dialog").html(data);
+    });
+    $("#projectModalContainer").modal();
+  });
+
+  $("#step-1-next").click(function(e) {
+    $(".slider").slick("slickNext");
+  });
+
+  $("#step-2-previous").click(function(e) {
+    $(".slider").slick("slickPrev");
+  });
+
+  $("#step-3-previous").click(function(e) {
+    $(".slider").slick("slickPrev");
+  });
+
+  $("#step-3-next").click(function(e) {
+    $.post($("#personalize-registry-form").prop("action"), $("#personalize-registry-form").serialize(), function(data) {
+      $(".slider").slick("slickNext");
+    });
+  });
 });

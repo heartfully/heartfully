@@ -1,0 +1,20 @@
+.r-flex-wrap.mb
+  - @projects.each do |project|
+    .c-tiny-project.flex-3.mb
+      .c-tiny-project__photo{:style => "background-image: #{"url('#{project.photo1_url}') "}"}
+      .c-tiny-project__info
+        %h3.mb--small= project.name
+        %p.mb--small= project.description
+        %ul.c-project-about__meta
+          %li
+            %svg.c-icon.c-icon--inline{:title => "location"}
+              %use{"xlink:href" => "#icon-map"}
+            = project.country
+          %li
+            %svg.c-icon.c-icon--inline{:title => "location"}
+              %use{"xlink:href" => "#icon-link"}
+            %a.c-project-about__link{:href => "#{project.organization.org_url}"}= project.organization.org_url
+        %div{:style => "padding: 20px 0 10px;"}
+          = link_to 'Learn More', "/projects/#{project.url_slug}", class: 'c-button c-button--secondary nudge-top--small fetchProjectModal', data: {load_url: project_modal_path(project.url_slug)}
+          = link_to 'Select'.html_safe, "#", class: 'c-button c-button--primary nudge-top--small project-select', data: {url_slug: project.url_slug}
+  = will_paginate @projects
