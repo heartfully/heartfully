@@ -157,6 +157,23 @@ $(document).ready(function() {
     });
   });
 
+  function triggerSearch(url) {
+    $.get(url, {"search": $("#search").val(), "region_category": $("#region-category").val(), "issue_category": $("#issue-category").val(), }, function(data) {
+      $("#select-project .project-container").html(data);
+      $(".slider").slick("reinit");
+    });
+  }
+
+  $("#select-project").on("click", ".search", function(e) {
+    e.preventDefault();
+    triggerSearch($(this).data("url"));
+  });
+
+  $("#select-project").on("change", "#region-category, #issue-category", function(e) {
+    e.preventDefault();
+    triggerSearch($(this).data("url"));
+  })
+
   $("#select-project").on("click", ".project-select", function(e) {
     e.preventDefault();
     $("#project_url_slug").val($(this).data("url-slug"));
@@ -166,6 +183,7 @@ $(document).ready(function() {
         $("#personalize .personalize-container").html(personalizeForm);
       }).done(function() {
         $(".slider").slick("slickNext");
+        $('html, body').animate({scrollTop: 0}, "fast");
       });
     });
   });
@@ -179,20 +197,56 @@ $(document).ready(function() {
   });
 
   $("#step-1-next").click(function(e) {
-    $(".slider").slick("slickNext");
+    if((/^[a-z\d-]+$/).test($("#registry_url_slug").val())) {
+      $(".url-container span").css("color", "black");
+      $(".slider").slick("slickNext");
+      $('html, body').animate({scrollTop: 0}, "fast");
+    } else {
+      $(".url-container span").css("color", "red");
+    }
   });
 
   $("#step-2-previous").click(function(e) {
     $(".slider").slick("slickPrev");
+    $('html, body').animate({scrollTop: 0}, "fast");
   });
 
-  $("#step-3-previous").click(function(e) {
-    $(".slider").slick("slickPrev");
+  $(".personalize-container").on("change", "#registry_banner_image", function(e){
+    if(this.files && this.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('.preview-container .preview-hero').css('background-image', 'url("' + e.target.result + '")');
+      }
+      reader.readAsDataURL(this.files[0]);
+    } else {
+      $('.preview-container .preview-hero').css('background-image', '');
+    }
+  });
+
+  $(".personalize-container").on("change", "#registry_profile_image", function(e){
+    if(this.files && this.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('.preview-container .c-circle').css('background-image', 'url("' + e.target.result + '")');
+      }
+      reader.readAsDataURL(this.files[0]);
+    } else {
+      $('.preview-container .c-circle').css('background-image', '');
+    }
   });
 
   $("#step-3-next").click(function(e) {
-    $.post($("#personalize-registry-form").prop("action"), $("#personalize-registry-form").serialize(), function(data) {
-      $(".slider").slick("slickNext");
+    var formData = new FormData($("#personalize-registry-form")[0]);
+    $.ajax({
+      url: $("#personalize-registry-form").prop("action"),
+      data: formData,
+      type: 'POST',
+      contentType: false,
+      processData: false,
+      success: function(data) {
+        $(".slider").slick("slickNext");
+        $('html, body').animate({scrollTop: 0}, "fast");
+      }
     });
   });
 });

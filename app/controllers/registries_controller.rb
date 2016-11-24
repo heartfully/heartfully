@@ -100,11 +100,9 @@ class RegistriesController < ApplicationController
   end
 
   def projects_and_categories
-    if params[:search].present?
-      @projects = Project.includes(:organization).search_by_lots_of_fields(params[:search]).where(public: true).paginate(page: params[:page], per_page: 3)
-    else
-      @projects = Project.includes(:organization).filter(filterable_params).where(public: true).paginate(page: params[:page], per_page: 3)
-    end
+    @projects = Project.includes(:organization).where(public: true).paginate(page: params[:page], per_page: 3)
+    @projects = @projects.filter(filterable_params) if (params[:region_category].present? || params[:issue_category].present?)
+    @projects = @projects.search_by_lots_of_fields(params[:search]) if params[:search].present?
     @categories = Category.all.group_by { |category| category.cat_type }
 
     render layout: false
@@ -155,7 +153,7 @@ class RegistriesController < ApplicationController
     end
 
     def filterable_params
-      { :in_category => params[:categories] }
+      { :in_category => [params[:region_category], params[:issue_category]].reject(&:blank?) }
     end
 
     def prevent_caching

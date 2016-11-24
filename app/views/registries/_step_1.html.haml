@@ -1,12 +1,19 @@
-= form_for(@registry, format: :json, html: {id: "new-registry-form", class: 'stacked skinny ma'}) do |f|
+= form_for(@registry, format: :json, html: {id: "new-registry-form", class: 'stacked skinny ma mb'}) do |f|
   = hidden_field_tag :project_url_slug
-  = f.text_field :registrant_first_name, placeholder: "Your first name"
-  = f.text_field :registrant_last_name, placeholder: "Your last name"
-  = f.text_field :partner_first_name, placeholder: "Partner's first name"
-  = f.text_field :partner_last_name, placeholder: "Partner's last name"
-  = f.text_field :event_date, placeholder: "put jquery datepicker here"
-  = precede "https://heartful.ly/registry/" do
+  .flexstuff
+    = f.text_field :registrant_first_name, placeholder: "Your first name", class: "flex-2"
+    = f.text_field :registrant_last_name, placeholder: "Your last name", class: "flex-2"
+    = f.text_field :partner_first_name, placeholder: "Partner's first name", class: "flex-2"
+    = f.text_field :partner_last_name, placeholder: "Partner's last name", class: "flex-2"
+  .date-container.mb
+    %span Wedding date:
+    = f.date_field :event_date, placeholder:'mm/dd/yyyy', min: Date.today
+  .url-container
+    %span https://heartful.ly/registry/
     = f.text_field :url_slug, placeholder: "your-unique-url"
+    .help
+      *can only contain lowercase letters, numbers, and dashes (-)
 
-%button#step-1-next.c-button.c-button--primary{type: "button"}
-  Next
+.slide-footer.skinny.ma
+  %button#step-1-next.c-button.c-button--primary{type: "button", style: "float: right;"}
+    Next

@@ -33,6 +33,10 @@ class Registry < ActiveRecord::Base
     end
   end
 
+  def wedding_name
+    name || "#{registrant_first_name} & #{partner_first_name}"
+  end
+
   def reference_name
     registrant_first_name.present? ? registrant_first_name : name
   end

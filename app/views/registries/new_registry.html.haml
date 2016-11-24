@@ -1,12 +1,15 @@
-.slider
-  #create-registry
-    = render "step_1"
-  #select-project
-    = render "step_2"
-  #personalize
-    = render "step_3"
-  #finished
-    All done!
+.registry-container
+  .header.test{style: "height: 50px; border: 1px solid purple;"}
+    (The header for what step you're on goes here)
+  .slider.test
+    #create-registry
+      = render "step_1"
+    #select-project
+      = render "step_2"
+    #personalize
+      = render "step_3"
+    #finished
+      All done!
 
 #projectModal
   #projectModalContainer.modal.fade

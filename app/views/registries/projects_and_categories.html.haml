@@ -1,3 +1,28 @@
+.r-flex.test
+  .flex-1
+    %span.strong Select a project that's meaningful to you.
+    %span Your registry will feature information about the project and a gift list of items needed to make it happen.
+    %p About a month after your big day, you and everyone who donated will receive an update that shows the difference you made in the lives of others.
+
+.r-flex.test
+  .flex-1
+    .inline{:style => "margin-right: 20px; width: 100%;"}
+      %label.block.mb--small{:style => "text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;"} Search projects
+    .input-group
+      = text_field_tag 'search', params[:search], class: "form-control", placeholder: "Search by name or keyword"
+      %span.input-group-btn
+        = link_to 'Search', '#', class: "btn c-button c-button--secondary search", data: {url: projects_and_categories_registries_path}
+
+.r-flex.test
+  .pad.flex-2
+    .inline{:style => "margin-right: 20px; width: 100%;"}
+      %label.block.mb--small{:style => "text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;"} Filter by region
+      = select_tag "region_category", options_for_select(@categories['region'].sort{|a,b| a.name <=> b.name}.map{|c| [c.name, c.id]}, params[:region_category]), {prompt: "All Regions", id: "region-category", style: "width: 100%", data: {url: projects_and_categories_registries_path}}
+  .pad.flex-2
+    .inline{:style => "margin-right: 20px; width: 100%;"}
+      %label.block.mb--small{:style => "text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;"} Filter by issue
+      = select_tag "issue_category", options_for_select(@categories['issue'].sort{|a,b| a.name <=> b.name}.map{|c| [c.name, c.id]}, params[:issue_category]), {prompt: "All Issues", id: "issue-category", style: "width: 100%", data: {url: projects_and_categories_registries_path}}
+
 .r-flex-wrap.mb
   - @projects.each do |project|
     .c-tiny-project.flex-3.mb
@@ -13,7 +38,7 @@
           %li
             %svg.c-icon.c-icon--inline{:title => "location"}
               %use{"xlink:href" => "#icon-link"}
-            %a.c-project-about__link{:href => "#{project.organization.org_url}"}= project.organization.org_url
+            %a.c-project-about__link{:href => "#{project.organization.org_url}"}= truncate(project.organization.org_url, length: 30)
         %div{:style => "padding: 20px 0 10px;"}
           = link_to 'Learn More', "/projects/#{project.url_slug}", class: 'c-button c-button--secondary nudge-top--small fetchProjectModal', data: {load_url: project_modal_path(project.url_slug)}
           = link_to 'Select'.html_safe, "#", class: 'c-button c-button--primary nudge-top--small project-select', data: {url_slug: project.url_slug}

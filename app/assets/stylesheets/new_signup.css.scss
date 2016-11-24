@@ -1,0 +1,55 @@
+.slider {
+  margin-bottom: 20px;
+
+  .slick-slide, .slick-slide *{ outline: none !important; }
+}
+
+.strong {
+  font-family: 'AvenirNextLTPro-Bold', Helvetica, Arial, sans-serif;
+}
+
+#new-registry-form {
+  .flexstuff {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    > input {
+      margin-bottom: 25px;
+    }
+  }
+
+  .date-container {
+    > input {
+      display: inline;
+    }
+  }
+
+  .url-container {
+    > input {
+      display: inline;
+    }
+  }
+}
+
+.preview-container {
+  height: 200px;
+  width: 500px;
+  margin-bottom: 50px;
+
+  .preview-hero {
+    height: 200px;
+
+    .preview-text {
+      top: 25%;
+
+      .preview-name {
+        font-family: 'Playfair Display', serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 2vw;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

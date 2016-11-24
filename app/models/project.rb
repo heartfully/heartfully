@@ -30,6 +30,7 @@ class Project < ActiveRecord::Base
   serialize :extra_content, Hash
 
   scope :in_category, -> (category_id = nil) { joins(:project_categories).where("project_categories.category_id" => category_id).group("projects.id").having('count(*) = ?', (category_id.is_a?(Array) ? category_id.length : 1)) }
+  scope :in_category_no_group, -> (category_id = nil) { joins(:project_categories).where("project_categories.category_id" => category_id) }
 
   belongs_to :organization
   has_many :registry_projects
