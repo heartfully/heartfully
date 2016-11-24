@@ -1,5 +1,11 @@
 .column-container
   .column-one
+    .story
+      .meta.mb
+        %svg.c-icon{:style => "width: 20px; height: 20px;", :preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 512 512"}
+          %use{"xlink:href" => "#confetti"}
+        Welcome
+      %p.mb= simple_format @registry.registry_story
     - if @registry.video_url.present?
       .video-container
         .meta.mb  
