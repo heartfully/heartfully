@@ -60,7 +60,10 @@ class RegistriesController < ApplicationController
     if params.has_key?(:done) && @registry.update(registry_params)
       redirect_to registry_admin_path(@registry.url_slug), notice: 'Registry was successfully updated.'
     elsif @registry.update(registry_params)
-      redirect_to project_registry_form_path(@registry)
+      respond_to do |format|
+        format.html { redirect_to project_registry_form_path(@registry) }
+        format.json { render json: {finished_url: finished_registry_path(@registry)}.to_json }
+      end
     else
       redirect_to :back, notice: 'There was an error updating your registry. Please try again.'
     end
@@ -109,6 +112,11 @@ class RegistriesController < ApplicationController
   end
 
   def personalize
+    @registry = current_user.registry
+    render layout: false
+  end
+
+  def finished
     @registry = current_user.registry
     render layout: false
   end

@@ -53,3 +53,12 @@
     }
   }
 }
+
+.column-container {
+  display: flex;
+  .share-container {
+    img {
+      display: inline !important;
+    }
+  }
+}

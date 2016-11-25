@@ -242,11 +242,14 @@ $(document).ready(function() {
       data: formData,
       type: 'POST',
       contentType: false,
-      processData: false,
-      success: function(data) {
+      processData: false
+    }).done(function(data) {
+      $.get(data["finished_url"], function(finishedData) {
+        $("#finished .finished-container").html(finishedData);
+      }).done(function() {
         $(".slider").slick("slickNext");
         $('html, body').animate({scrollTop: 0}, "fast");
-      }
+      });
     });
   });
 });

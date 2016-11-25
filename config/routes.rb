@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   resources :registries, except: [:show] do
     get 'projects_and_categories', on: :collection
     get 'personalize', on: :member
+    get 'finished', on: :member
     resources :orders, :only => [:show, :create]
   end
 

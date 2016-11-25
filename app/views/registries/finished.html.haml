@@ -1,0 +1,21 @@
+%p.strong.test.mb--large Congratulations, your registry is complete! Visit your admin panel and share with friends now.
+
+.column-container
+  .column-one.flex-2.ma
+    %p
+      Share your registry on your wedding website:
+      - if @registry.is_a?(Birthday)
+        %input.c-admin__share-link.mb--small{value: birthday_home_url(@registry.url_slug), readonly: true}
+      - else
+        %input.c-admin__share-link.mb--small{value: registry_home_url(@registry.url_slug), readonly: true}
+    .share-container
+      %p Spread the word on social media:
+      - if @registry.is_a?(Birthday)
+        = link_to image_tag('facebook.png', width: "50px"), "#", class: "shareRegistry", data: {registry: birthday_home_url(@registry.url_slug)}
+        = link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate #{@registry.reference_name}'s big day with a donation to #{@registry.projects.first.organization.name}&url=#{birthday_home_url(@registry.url_slug)}&via=Heartful_ly"
+      - else
+        = link_to image_tag('facebook.png', width: "50px"), "#", class: "shareRegistry", data: {registry: registry_home_url(@registry.url_slug)}
+        = link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate #{@registry.reference_name}'s big day with a donation to #{@registry.projects.first.organization.name}&url=#{registry_home_url(@registry.url_slug)}&via=Heartful_ly"
+  .column-two.flex-2.ma
+    %p.mb--large Monitor donations and access sharing and editing tools in your admin panel.
+    = link_to "Launch Admin Panel", registry_admin_path(@registry.url_slug), class: "c-button c-button--primary ma"
