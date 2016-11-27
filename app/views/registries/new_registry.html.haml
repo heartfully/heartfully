@@ -4,7 +4,7 @@
     %span Create Registry
     %span Select Project
     %span Personalize
-    %span.disabled Done/Share
+    %span.disabled Done
   = form_for(@registry, format: :json, html: {id: "new-registry-form", class: 'stacked skinny ma mb'}) do |f|
     = hidden_field_tag :project_url_slug
     = f.hidden_field :type
