@@ -9,27 +9,28 @@
     .r-flex.flex--sb.mb--large
       .border.flex-2
         %h2.c-admin__heading.mb.meta Your Project
-        %p
-          Thanks to your generosity, your registry has helped
-          %strong= @project.partner
-          raise
-          %strong= dollars @orders.to_a.sum(&:total_big_decimal)
-          so far.
-        .c-tiny-project.nudge-top
-          .c-tiny-project__photo{:style => "background-image: url(#{@project.photo1_url})"}
-          .c-tiny-project__info
-            %h3.mb--small{:style => "font-family: 'AvenirNextLTPro-Bold', Helvetica, Arial, sans-serif;"}= @project.name
-            %p.mb--small= @project.description
-            %ul.c-project-about__meta
-              %li
-                %svg.c-icon.c-icon--inline{:title => "location"}
-                  %use{"xlink:href" => "#icon-map"}
-                = @project.country
-              %li
-                %svg.c-icon.c-icon--inline{:title => "location"}
-                  %use{"xlink:href" => "#icon-link"}
-                = link_to(URI(@project.organization.org_url).host, @project.organization.org_url, class: 'c-project-about__link')
-            = link_to('Learn more &rarr;'.html_safe, project_path(@project.url_slug), class: 'link--secondary inline nudge-top--small')
+        - if @project.present?
+          %p
+            Thanks to your generosity, your registry has helped
+            %strong= @project.partner
+            raise
+            %strong= dollars @orders.to_a.sum(&:total_big_decimal)
+            so far.
+          .c-tiny-project.nudge-top
+            .c-tiny-project__photo{:style => "background-image: url(#{@project.photo1_url})"}
+            .c-tiny-project__info
+              %h3.mb--small{:style => "font-family: 'AvenirNextLTPro-Bold', Helvetica, Arial, sans-serif;"}= @project.name
+              %p.mb--small= @project.description
+              %ul.c-project-about__meta
+                %li
+                  %svg.c-icon.c-icon--inline{:title => "location"}
+                    %use{"xlink:href" => "#icon-map"}
+                  = @project.country
+                %li
+                  %svg.c-icon.c-icon--inline{:title => "location"}
+                    %use{"xlink:href" => "#icon-link"}
+                  = link_to(URI(@project.organization.org_url).host, @project.organization.org_url, class: 'c-project-about__link')
+              = link_to('Learn more &rarr;'.html_safe, project_path(@project.url_slug), class: 'link--secondary inline nudge-top--small')
       .flex-2
         .border.mb
           %h2.c-admin__heading.mb.meta Registry Admin

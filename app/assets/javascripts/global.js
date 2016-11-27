@@ -224,9 +224,17 @@ $(document).ready(function() {
   });
 
   $("#registry_url_slug").focusout(function(e) {
+    $("#registry_url_slug").removeClass("ui-state-valid");
     if(validateURLSlug()) {
-      $("#registry_url_slug").removeClass("ui-state-invalid");
-      $("#registry_url_slug").addClass("ui-state-valid");
+      $.get("/registries/check_url_availability", {url_slug: $("#registry_url_slug").val()}, function(data) {
+        if(data["available"]) {
+          $("#registry_url_slug").removeClass("ui-state-invalid");
+          $("#registry_url_slug").addClass("ui-state-valid");
+        } else {
+          $("#registry_url_slug").removeClass("ui-state-valid");
+          $("#registry_url_slug").addClass("ui-state-invalid");
+        }
+      });
     } else {
       $("#registry_url_slug").removeClass("ui-state-valid");
       $("#registry_url_slug").addClass("ui-state-invalid");
@@ -234,13 +242,10 @@ $(document).ready(function() {
   });
 
   $("#step-1-next").click(function(e) {
-    if(validateURLSlug()) {
-      $("#registry_url_slug").removeClass("ui-state-invalid");
-      $("#registry_url_slug").addClass("ui-state-valid");
+    if($("#registry_url_slug").hasClass("ui-state-valid")) {
       $(".slider").slick("slickNext");
       refreshSlides();
     } else {
-      $("#registry_url_slug").removeClass("ui-state-valid");
       $("#registry_url_slug").addClass("ui-state-invalid");
     }
   });
@@ -293,11 +298,11 @@ $(document).ready(function() {
     e.preventDefault();
     if (urlSlug == $("#project_url_slug").val()) {
       $("#project_url_slug").val("");
-      $(".c-tiny-project").css("border", "");
+      $(".c-tiny-project").css("background-color", "");
     } else {
       $("#project_url_slug").val(urlSlug);
-      $(".c-tiny-project").css("border", "");
-      $("#" + urlSlug).css("border", "3px solid #7272de");
+      $(".c-tiny-project").css("background-color", "");
+      $("#" + urlSlug).css("background-color", "#F2EFF9");
     }
   });
 

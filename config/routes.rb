@@ -41,6 +41,7 @@ Rails.application.routes.draw do
 
   post 'orders/:id/finalize' => 'orders#finalize', :as => 'orders_finalize'
 
+  get '/registries/check_url_availability', to: 'registries#check_url_availability', as: 'check_url_availability'
   resources :registries, except: [:show] do
     get 'projects_and_categories', on: :collection
     get 'personalize', on: :member

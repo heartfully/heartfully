@@ -114,6 +114,10 @@ class RegistriesController < ApplicationController
     render layout: false
   end
 
+  def check_url_availability
+    render json: {available: Registry.where(url_slug: params["url_slug"]).count == 0}
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_registry
@@ -124,9 +128,6 @@ class RegistriesController < ApplicationController
     def confirm_project
       @registry = current_user.registry
       @project = current_user.registry.projects.first
-      unless @project.present?
-        redirect_to project_registry_form_path(@registry), notice: "You must first choose a project"
-      end
     end
 
     def find_by_slug
