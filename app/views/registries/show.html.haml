@@ -1,4 +1,4 @@
 = render 'hero_new'
 = render 'two_columns'
 = render 'thank_you'
-= render 'project_modal'
+= render 'project_modal' if @registry.projects.first.present?

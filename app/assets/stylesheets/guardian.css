@@ -1,0 +1,14 @@
+/*variables*/
+.ui-state-invalid {
+  background-image: image_url('invalid.png');
+  background-position: 95% center;
+  background-repeat: no-repeat;
+}
+
+.ui-state-valid {
+  background-image: image_url('valid.png');
+  background-position: 95% center;
+  background-repeat: no-repeat; }
+
+.ui-error-message {
+  color: #bd1a00; }

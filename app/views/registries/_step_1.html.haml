@@ -24,12 +24,12 @@
       = f.text_field :registrant_last_name, placeholder: "Your last name", class: "flex-2"
       = f.text_field :partner_first_name, placeholder: "Partner's first name", class: "flex-2 wedding"
       = f.text_field :partner_last_name, placeholder: "Partner's last name", class: "flex-2 wedding"
-      .date-container.mb
+      .date-container.flex-2
         %span Event date:
         = f.date_field :event_date, placeholder:'mm/dd/yyyy', min: Date.today
-      .url-container
+      .url-container.flex-2
         %span heartful.ly/registry/
-        = f.text_field :url_slug, placeholder: "your-unique-url"
+        = f.text_field :url_slug, placeholder: "your-unique-url", required: "required"
         .help
           *can only contain lowercase letters, numbers, and dashes
 

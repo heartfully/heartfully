@@ -44,7 +44,7 @@ class RegistriesController < ApplicationController
     project_url_slug = params.delete(:project_url_slug)
     @registry = Registry.new(registry_params)
     if @registry.save
-      @registry.projects << Project.find_by(url_slug: project_url_slug)
+      @registry.projects << Project.find_by(url_slug: project_url_slug) if project_url_slug.present?
       current_user.update(registry_id: @registry.id)
       @registry.update(email: current_user.email)
       respond_to do |format|

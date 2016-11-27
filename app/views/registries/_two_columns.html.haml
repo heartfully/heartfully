@@ -1,11 +1,12 @@
 .column-container
   .column-one
-    .story
-      .meta.mb
-        %svg.c-icon{:style => "width: 20px; height: 20px;", :preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 512 512"}
-          %use{"xlink:href" => "#confetti"}
-        Welcome
-      %p.mb= simple_format @registry.registry_story
+    -if @registry.registry_story.present?
+      .story
+        .meta.mb
+          %svg.c-icon{:style => "width: 20px; height: 20px;", :preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 512 512"}
+            %use{"xlink:href" => "#confetti"}
+          Welcome
+        %p.mb= simple_format @registry.registry_story
     - if @registry.video_url.present?
       .video-container
         .meta.mb
@@ -13,42 +14,43 @@
             %use{"xlink:href" => "#icon-hearts-purple"}
           From the heart
         %iframe{src: @registry.video_url, frameborder: 0, height: 300, width: "100%" }
-    .about-this-project
-      .meta.mb
-        %svg.c-icon{:style => "width: 20px; height: 20px;"}
-          %use{"xlink:href" => "#icon-globe-purple"}
-        About this project
-      .project-header.mb{style: "background-image: url(#{@registry.projects.first.photo1_url})"}
-      %h3.title= @registry.projects.first.name
-      %p.mb= @registry.projects.first.description
-      = link_to "Learn more", project_path(@registry.projects.first.url_slug), class: "c-button c-button--primary launchProjectModal", target: "_blank"
-    .about-this-partner
-      .meta.quiet.mb
-        About this partner
-      .partner-container
-        .partner-info
-          %h4.title= @registry.projects.first.organization.name
-          %ul.c-project-about__meta
-            %li
-              %svg.c-icon.c-icon--inline{title: "location"}
-                %use{"xlink:href" => "#icon-map"}
-              = @registry.projects.first.country
-            %li
-              %svg.c-icon.c-icon--inline{title: "location"}
-                %use{"xlink:href" => "#icon-link"}
-              = link_to @registry.projects.first.organization.org_url, @registry.projects.first.organization.org_url, target: "_blank"
-        .partner-image
-          = link_to image_tag(@registry.projects.first.organization.logo_url, style: 'width: 75px; height: 75px; display: inline-block; vertical-align: middle;'), @registry.projects.first.organization.org_url, target: "_blank"
-    .share-container
-      .meta.quiet.mb
-        Share the love
-      = facebook_share_link_for(@registry)
+    - if @registry.projects.first.present?
+      .about-this-project
+        .meta.mb
+          %svg.c-icon{:style => "width: 20px; height: 20px;"}
+            %use{"xlink:href" => "#icon-globe-purple"}
+          About this project
+        .project-header.mb{style: "background-image: url(#{@registry.projects.first.photo1_url})"}
+        %h3.title= @registry.projects.first.name
+        %p.mb= @registry.projects.first.description
+        = link_to "Learn more", project_path(@registry.projects.first.url_slug), class: "c-button c-button--primary launchProjectModal", target: "_blank"
+      .about-this-partner
+        .meta.quiet.mb
+          About this partner
+        .partner-container
+          .partner-info
+            %h4.title= @registry.projects.first.organization.name
+            %ul.c-project-about__meta
+              %li
+                %svg.c-icon.c-icon--inline{title: "location"}
+                  %use{"xlink:href" => "#icon-map"}
+                = @registry.projects.first.country
+              %li
+                %svg.c-icon.c-icon--inline{title: "location"}
+                  %use{"xlink:href" => "#icon-link"}
+                = link_to @registry.projects.first.organization.org_url, @registry.projects.first.organization.org_url, target: "_blank"
+          .partner-image
+            = link_to image_tag(@registry.projects.first.organization.logo_url, style: 'width: 75px; height: 75px; display: inline-block; vertical-align: middle;'), @registry.projects.first.organization.org_url, target: "_blank"
+      .share-container
+        .meta.quiet.mb
+          Share the love
+        = facebook_share_link_for(@registry)
 
-      / BOO HISS
-      - if @registry.url_slug == "hbdheartfully"
-        = link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Join me in celebrating @heartful_ly's 1st birthday with a donation to @marthastableorg&url=#{birthday_home_url(@registry.url_slug)}&hashtags=hbdheartfully"
-      - else
-        = twitter_share_link_for(@registry)
+        / BOO HISS
+        - if @registry.url_slug == "hbdheartfully"
+          = link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Join me in celebrating @heartful_ly's 1st birthday with a donation to @marthastableorg&url=#{birthday_home_url(@registry.url_slug)}&hashtags=hbdheartfully"
+        - else
+          = twitter_share_link_for(@registry)
 
   .column-two
     - if @registry.goal.present?
@@ -65,16 +67,17 @@
             raised of
             %span#registry-goal.goal-number= "$#{@registry.goal}"
             goal
-    .registry-items
-      - if @registry.projects.first.source_id.present?
-        .meta
-          %svg.c-icon{:style => "width: 20px; height: 20px;", :title => "gifts"}
-            %use{"xlink:href" => "#icon-gift"}
-          = gift_items_display_for(@registry)
-        .quiet.small.mb Your donation is tax-deductible.
-      - else
-        .meta.mb
-          %svg.c-icon{:style => "width: 20px; height: 20px;", :title => "gifts"}
-            %use{"xlink:href" => "#icon-gift"}
-          = gift_items_display_for(@registry)
-      = react_component('RegistryItems', {registry_id: @registry.id, items: @registry.projects.first.item_types.sort{|a,b| a.price <=> b.price}})
+    - if @registry.projects.first.present?
+      .registry-items
+        - if @registry.projects.first.source_id.present?
+          .meta
+            %svg.c-icon{:style => "width: 20px; height: 20px;", :title => "gifts"}
+              %use{"xlink:href" => "#icon-gift"}
+            = gift_items_display_for(@registry)
+          .quiet.small.mb Your donation is tax-deductible.
+        - else
+          .meta.mb
+            %svg.c-icon{:style => "width: 20px; height: 20px;", :title => "gifts"}
+              %use{"xlink:href" => "#icon-gift"}
+            = gift_items_display_for(@registry)
+        = react_component('RegistryItems', {registry_id: @registry.id, items: @registry.projects.first.item_types.sort{|a,b| a.price <=> b.price}})

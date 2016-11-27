@@ -3,6 +3,9 @@
     margin-bottom: 20px;
 
     .slick-slide, .slick-slide *{ outline: none !important; }
+    .slide-footer {
+      display: none;
+    }
   }
 
   .strong {
@@ -81,12 +84,14 @@
     .date-container {
       > input {
         display: inline;
+        width: 80%; // make this responsive
       }
     }
 
     .url-container {
       > input {
         display: inline;
+        width: 65%; //make this responsive
       }
     }
   }

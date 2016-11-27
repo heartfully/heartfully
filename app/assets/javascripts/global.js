@@ -169,6 +169,10 @@ $(document).ready(function() {
     }
   }
 
+  function validateURLSlug() {
+    return (/^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$/).test($("#registry_url_slug").val());
+  }
+
   $(".slider").ready(function() {
     $(".slider").slick({
       swipe: false,
@@ -193,15 +197,18 @@ $(document).ready(function() {
   $(".registry-type").click(function(e){
     var registryType = $(this).data("type");
     if(registryType == "wedding") {
-      $(".wedding").css("display", "inline");
+      $(".url-container span").text("heartful.ly/registry/")
       $(".birthday").css("display", "none");
+      $(".wedding").css("display", "inline");
       $("#registry_type").val("");
     } else {
-      $(".birthday").css("display", "inline");
+      $(".url-container span").text("heartful.ly/birthday/")
       $(".wedding").css("display", "none");
+      $(".birthday").css("display", "inline");
       $("#registry_type").val("Birthday");
     }
     $(".fields-container").css("display", "inline");
+    $(".slide-footer").css("display", "inline");
     $(".slider").slick("reinit");
     refreshPreview();
   });
@@ -216,9 +223,26 @@ $(document).ready(function() {
     return (/[a-z\d-]/).test(chr);
   });
 
+  $("#registry_url_slug").focusout(function(e) {
+    if(validateURLSlug()) {
+      $("#registry_url_slug").removeClass("ui-state-invalid");
+      $("#registry_url_slug").addClass("ui-state-valid");
+    } else {
+      $("#registry_url_slug").removeClass("ui-state-valid");
+      $("#registry_url_slug").addClass("ui-state-invalid");
+    }
+  });
+
   $("#step-1-next").click(function(e) {
-    $(".slider").slick("slickNext");
-    refreshSlides();
+    if(validateURLSlug()) {
+      $("#registry_url_slug").removeClass("ui-state-invalid");
+      $("#registry_url_slug").addClass("ui-state-valid");
+      $(".slider").slick("slickNext");
+      refreshSlides();
+    } else {
+      $("#registry_url_slug").removeClass("ui-state-valid");
+      $("#registry_url_slug").addClass("ui-state-invalid");
+    }
   });
 
   $("#step-2-previous").click(function(e) {
@@ -273,7 +297,7 @@ $(document).ready(function() {
     } else {
       $("#project_url_slug").val(urlSlug);
       $(".c-tiny-project").css("border", "");
-      $("#" + urlSlug).css("border", "1px solid #7272de");
+      $("#" + urlSlug).css("border", "3px solid #7272de");
     }
   });
 
@@ -333,7 +357,7 @@ $(document).ready(function() {
     });
   });
 
-  $(".refresh-slides").click(function(e) {
-    refreshSlides();
-  });
+  // $(".refresh-slides").click(function(e) {
+  //   refreshSlides();
+  // });
 });

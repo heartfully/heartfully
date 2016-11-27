@@ -17,7 +17,6 @@
 
   .disabled {
     color: #999999;
-    border: 1px solid #dddddd;
   }
 
   .current {
@@ -31,7 +30,6 @@
   a {
     text-decoration: none;
     color: $color-purple-deep;
-    border: 1px solid $color-purple-deep;
 
     &:hover, &:focus {
       color: #000033;
