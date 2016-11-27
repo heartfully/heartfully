@@ -35,12 +35,12 @@ class Registry < ActiveRecord::Base
     end
   end
 
-  def wedding_name
+  def display_name
     "#{registrant_first_name} & #{partner_first_name}"
   end
 
   def reference_name
-    registrant_first_name.present? ? registrant_first_name : name
+    #Implement in subclass
   end
 
   def total_raised

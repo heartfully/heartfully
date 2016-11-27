@@ -1,6 +1,6 @@
 %header.c-hero.registry{:style => "height: 384px; background-image: url(#{@registry.banner_image.url});"}
   .c-hero__container{style: "top: 15%"}
-    %h1.c-hero__couple= @registry.name
+    %h1.c-hero__couple= @registry.display_name
     - if @registry.event_date
       %span.c-hero__date
         — #{@registry.event_date.to_formatted_s(:long)} —

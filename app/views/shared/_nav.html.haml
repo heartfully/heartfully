@@ -15,7 +15,7 @@
       %a{:href => "/faq"} FAQ
     %li.c-nav__menu-item.is-logged-in
       - if current_user.registry
-        = link_to current_user.registry.name, registry_home_path(current_user.registry.url_slug)
+        = link_to current_user.nav_display_name, registry_home_path(current_user.registry.url_slug)
       - else
         = link_to current_user.nav_display_name, user_path(current_user)
       %ul.c-nav__admin-menu
