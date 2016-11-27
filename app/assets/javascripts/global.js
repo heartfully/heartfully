@@ -162,9 +162,9 @@ $(document).ready(function() {
       var eventName = $("#registry_name").val();
       $(".preview-text .preview-name").text(eventName);
     }
-    var date = new Date($("#registry_event_date").val());
+    var date = new Date(($("#registry_event_date").val() + " 00:00:00").replace('-','/'));
     if(!isNaN(date)) {
-      var displayDate = date.toUTCString().toLocaleString("en-us", {month: "long", day: "numeric", year: "numeric"})
+      var displayDate = date.toLocaleString("en-us", {month: "long", day: "numeric", year: "numeric"})
       $(".preview-text .c-hero__date").text("- " + displayDate + " -");      
     }
   }
@@ -361,8 +361,4 @@ $(document).ready(function() {
       });
     });
   });
-
-  // $(".refresh-slides").click(function(e) {
-  //   refreshSlides();
-  // });
 });
