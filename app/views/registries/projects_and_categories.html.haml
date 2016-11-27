@@ -1,13 +1,10 @@
 .r-flex.test
-  .flex-1
+  .flex-1.mb
     %span.strong Select a project that's meaningful to you.
     %span Your registry will feature information about the project and a gift list of items needed to make it happen.
-    %p About a month after your big day, you and everyone who donated will receive an update that shows the difference you made in the lives of others.
 
 .r-flex.test
   .flex-1
-    .inline{:style => "margin-right: 20px; width: 100%;"}
-      %label.block.mb--small{:style => "text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;"} Search projects
     .input-group
       = text_field_tag 'search', params[:search], class: "form-control", placeholder: "Search by name or keyword"
       %span.input-group-btn
@@ -25,11 +22,11 @@
 
 .r-flex-wrap.mb
   - @projects.each do |project|
-    .c-tiny-project.flex-3.mb
+    .c-tiny-project.flex-3.mb{id: project.url_slug}
       .c-tiny-project__photo{:style => "background-image: #{"url('#{project.photo1_url}') "}"}
       .c-tiny-project__info
         %h3.mb--small= project.name
-        %p.mb--small= project.description
+        %p.mb--small= truncate(project.description, length: 200)
         %ul.c-project-about__meta
           %li
             %svg.c-icon.c-icon--inline{:title => "location"}
@@ -38,7 +35,7 @@
           %li
             %svg.c-icon.c-icon--inline{:title => "location"}
               %use{"xlink:href" => "#icon-link"}
-            %a.c-project-about__link{:href => "#{project.organization.org_url}"}= truncate(project.organization.org_url, length: 30)
+            %a.c-project-about__link{:href => "#{project.organization.org_url}", target: "_blank"}= truncate(project.organization.org_url, length: 30)
         %div{:style => "padding: 20px 0 10px;"}
           = link_to 'Learn More', "/projects/#{project.url_slug}", class: 'c-button c-button--secondary nudge-top--small fetchProjectModal', data: {load_url: project_modal_path(project.url_slug)}
           = link_to 'Select'.html_safe, "#", class: 'c-button c-button--primary nudge-top--small project-select', data: {url_slug: project.url_slug}

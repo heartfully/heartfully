@@ -27,6 +27,8 @@ class Registry < ActiveRecord::Base
   # TODO a format validation on URL slug
   validate :url_slug_restrictions
 
+  before_save :ensure_video_url
+
   def url_slug_restrictions
     if url_slug.match(/^[a-zA-Z0-9]([a-zA-Z0-9\-]*[a-zA-Z0-9])?$/).nil?
       errors.add(:url_slug, "can only contain letters, numbers, and hyphens, and cannot begin or end with a hyphen")
@@ -34,7 +36,7 @@ class Registry < ActiveRecord::Base
   end
 
   def wedding_name
-    name || "#{registrant_first_name} & #{partner_first_name}"
+    "#{registrant_first_name} & #{partner_first_name}"
   end
 
   def reference_name
@@ -43,6 +45,14 @@ class Registry < ActiveRecord::Base
 
   def total_raised
     orders.complete.to_a.sum(&:total_big_decimal).to_i
+  end
+
+  def ensure_video_url
+    if self.video_url.present?
+      regex = Regexp.new "(?<=youtu.be/|watch\\?v=|/videos/|embed\\/)[^#\\&\\?]*"
+      video_id = video_url.match(regex)[0]
+      self.video_url = "https://www.youtube.com/embed/#{video_id}"
+    end
   end
 
 end

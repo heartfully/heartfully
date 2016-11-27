@@ -46,9 +46,10 @@ class RegistriesController < ApplicationController
     if @registry.save
       @registry.projects << Project.find_by(url_slug: project_url_slug)
       current_user.update(registry_id: @registry.id)
+      @registry.update(email: current_user.email)
       respond_to do |format|
         format.html { redirect_to project_registry_form_path(@registry) }
-        format.json { render json: {personalize_url: personalize_registry_path(@registry)}.to_json }
+        format.json { render json: {finished_url: finished_registry_path(@registry)}.to_json }
       end
     else
       render :new
@@ -60,10 +61,7 @@ class RegistriesController < ApplicationController
     if params.has_key?(:done) && @registry.update(registry_params)
       redirect_to registry_admin_path(@registry.url_slug), notice: 'Registry was successfully updated.'
     elsif @registry.update(registry_params)
-      respond_to do |format|
-        format.html { redirect_to project_registry_form_path(@registry) }
-        format.json { render json: {finished_url: finished_registry_path(@registry)}.to_json }
-      end
+      format.html { redirect_to project_registry_form_path(@registry) }
     else
       redirect_to :back, notice: 'There was an error updating your registry. Please try again.'
     end
@@ -111,11 +109,6 @@ class RegistriesController < ApplicationController
     render layout: false
   end
 
-  def personalize
-    @registry = current_user.registry
-    render layout: false
-  end
-
   def finished
     @registry = current_user.registry
     render layout: false
@@ -144,6 +137,7 @@ class RegistriesController < ApplicationController
     def registry_params
       params.require(:registry).permit(
         :name,
+        :type,
         :registrant_first_name,
         :registrant_last_name,
         :partner_first_name,

@@ -136,26 +136,7 @@ $(document).ready(function() {
     $(".goal-heart img").css('background-position-y', backgroundShift);
   });
 
-  $(".slider").slick({
-    swipe: false,
-    infinite: false,
-    arrows: false,
-    adaptiveHeight: true
-  });
-
-  $("#select-project").ready(function() {
-    $.get("/registries/projects_and_categories", function(data) {
-      $("#select-project .project-container").html(data);
-    })
-  });
-
-  $("#select-project").on("click", ".pagination a", function(e) {
-    e.preventDefault();
-    $.get($(this).prop("href"), function(data) {
-      $("#select-project .project-container").html(data);
-      $(".slider").slick("reinit");
-    });
-  });
+  // REGISTRY CREATION STUFF
 
   function triggerSearch(url) {
     $.get(url, {"search": $("#search").val(), "region_category": $("#region-category").val(), "issue_category": $("#issue-category").val(), }, function(data) {
@@ -164,30 +145,116 @@ $(document).ready(function() {
     });
   }
 
+  function refreshSlides() {
+    var currentSlide = $(".slider").slick("slickCurrentSlide");
+    $(".header span").css("color", "#777");
+    $(".header span:eq(" + currentSlide + ")").css("color", "#7272de");
+    $('html, body').animate({scrollTop: 0}, "fast");
+  }
+
+  function refreshPreview() {
+    var registryType = $("#registry_type").val();
+    if(registryType == "") {
+      var first_name = $("#registry_registrant_first_name").val();
+      var second_name = $("#registry_partner_first_name").val();
+      $(".preview-text .preview-name").text(first_name + " & " + second_name);
+    } else {
+      var eventName = $("#registry_name").val();
+      $(".preview-text .preview-name").text(eventName);
+    }
+    var date = new Date($("#registry_event_date").val());
+    if(!isNaN(date)) {
+      var displayDate = date.toUTCString().toLocaleString("en-us", {month: "long", day: "numeric", year: "numeric"})
+      $(".preview-text .c-hero__date").text("- " + displayDate + " -");      
+    }
+  }
+
+  $(".slider").ready(function() {
+    $(".slider").slick({
+      swipe: false,
+      infinite: false,
+      arrows: false,
+      adaptiveHeight: true
+    });
+
+    refreshSlides();
+  });
+
+  $(".header span").click(function(e) {
+    var slideNumber = $(this).index();
+    if (!$(this).hasClass("disabled")) {
+      $(".slider").slick("slickGoTo", slideNumber);
+      refreshSlides();
+    } else {
+      return false;
+    }
+  });
+
+  $(".registry-type").click(function(e){
+    var registryType = $(this).data("type");
+    if(registryType == "wedding") {
+      $(".wedding").css("display", "inline");
+      $(".birthday").css("display", "none");
+      $("#registry_type").val("");
+    } else {
+      $(".birthday").css("display", "inline");
+      $(".wedding").css("display", "none");
+      $("#registry_type").val("Birthday");
+    }
+    $(".fields-container").css("display", "inline");
+    $(".slider").slick("reinit");
+    refreshPreview();
+  });
+
+  $(".flexstuff input").change(function(e) {
+    refreshPreview();
+  })
+
+  // don't allow invalid characters for url_slug
+  $("#registry_url_slug").keypress(function(e) {
+    var chr = String.fromCharCode(e.which);
+    return (/[a-z\d-]/).test(chr);
+  });
+
+  $("#step-1-next").click(function(e) {
+    $(".slider").slick("slickNext");
+    refreshSlides();
+  });
+
+  $("#step-2-previous").click(function(e) {
+    $(".slider").slick("slickPrev");
+    refreshSlides();
+  });
+
+  // ajax call to get project slide
+  $("#select-project").ready(function() {
+    $.get("/registries/projects_and_categories", function(data) {
+      $("#select-project .project-container").html(data);
+    })
+  });
+
+  // ajax pagination for projects
+  $("#select-project").on("click", ".pagination a", function(e) {
+    e.preventDefault();
+    $.get($(this).prop("href"), function(data) {
+      $("#select-project .project-container").html(data);
+      $(".slider").slick("reinit");
+    });
+  });
+
+  // search by text
   $("#select-project").on("click", ".search", function(e) {
     e.preventDefault();
     triggerSearch($(this).data("url"));
   });
 
+  // search by category
   $("#select-project").on("change", "#region-category, #issue-category", function(e) {
     e.preventDefault();
     triggerSearch($(this).data("url"));
   })
 
-  $("#select-project").on("click", ".project-select", function(e) {
-    e.preventDefault();
-    $("#project_url_slug").val($(this).data("url-slug"));
-    $.post($("#new-registry-form").prop("action"), $("#new-registry-form").serialize(), function(data) {
-    }).done(function(data) {
-      $.get(data["personalize_url"], function(personalizeForm) {
-        $("#personalize .personalize-container").html(personalizeForm);
-      }).done(function() {
-        $(".slider").slick("slickNext");
-        $('html, body').animate({scrollTop: 0}, "fast");
-      });
-    });
-  });
-
+  // learn more project modal
   $("#select-project").on("click", ".fetchProjectModal", function(e) {
     e.preventDefault();
     $.get($(this).data("loadUrl"), function(data) {
@@ -196,21 +263,31 @@ $(document).ready(function() {
     $("#projectModalContainer").modal();
   });
 
-  $("#step-1-next").click(function(e) {
-    if((/^[a-z\d-]+$/).test($("#registry_url_slug").val())) {
-      $(".url-container span").css("color", "black");
-      $(".slider").slick("slickNext");
-      $('html, body').animate({scrollTop: 0}, "fast");
+  // choose a project
+  $("#select-project").on("click", ".project-select", function(e) {
+    var urlSlug = $(this).data("url-slug")
+    e.preventDefault();
+    if (urlSlug == $("#project_url_slug").val()) {
+      $("#project_url_slug").val("");
+      $(".c-tiny-project").css("border", "");
     } else {
-      $(".url-container span").css("color", "red");
+      $("#project_url_slug").val(urlSlug);
+      $(".c-tiny-project").css("border", "");
+      $("#" + urlSlug).css("border", "1px solid #7272de");
     }
   });
 
-  $("#step-2-previous").click(function(e) {
-    $(".slider").slick("slickPrev");
-    $('html, body').animate({scrollTop: 0}, "fast");
+  $("#step-2-next").click(function(e) {
+    $(".slider").slick("slickNext");
+    refreshSlides();
   });
 
+  $("#step-3-previous").click(function(e) {
+    $(".slider").slick("slickPrev");
+    refreshSlides();
+  });
+
+  // banner image preview
   $(".personalize-container").on("change", "#registry_banner_image", function(e){
     if(this.files && this.files[0]) {
       var reader = new FileReader();
@@ -223,6 +300,7 @@ $(document).ready(function() {
     }
   });
 
+  // profile image preview
   $(".personalize-container").on("change", "#registry_profile_image", function(e){
     if(this.files && this.files[0]) {
       var reader = new FileReader();
@@ -235,10 +313,11 @@ $(document).ready(function() {
     }
   });
 
+  // submit the form!
   $("#step-3-next").click(function(e) {
-    var formData = new FormData($("#personalize-registry-form")[0]);
+    var formData = new FormData($("#new-registry-form")[0]);
     $.ajax({
-      url: $("#personalize-registry-form").prop("action"),
+      url: $("#new-registry-form").prop("action"),
       data: formData,
       type: 'POST',
       contentType: false,
@@ -248,8 +327,13 @@ $(document).ready(function() {
         $("#finished .finished-container").html(finishedData);
       }).done(function() {
         $(".slider").slick("slickNext");
-        $('html, body').animate({scrollTop: 0}, "fast");
+        $(".header span").addClass("disabled");
+        refreshSlides();
       });
     });
+  });
+
+  $(".refresh-slides").click(function(e) {
+    refreshSlides();
   });
 });

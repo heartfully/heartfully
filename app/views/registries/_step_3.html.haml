@@ -1,4 +1,30 @@
 .personalize-container
+  .preview-container.test
+    .c-hero.registry.preview-hero
+      .c-hero__container.preview-text
+        %h2.preview-name
+        %span.c-hero__date
+    .c-circle.ma.mb{:style => "position: relative; border-radius: 50%; width: 75px; height: 75px; margin-top: -40px; box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.2);"}
 
-.slide-footer.skinny.ma
-  %button#step-3-next.c-button.c-button--primary{type: "button", style: "float: right;"} Finish
+  = f.label :banner_image, 'Cover photo'
+  .help Suggested dimensions: 1200x800 pixels
+  = f.file_field :banner_image, class: 'mb--large stretch'
+  = f.label :profile_image, 'Profile photo'
+  .help Suggested dimensions: 600x350 pixels
+  = f.file_field :profile_image, class: 'mb--large stretch'
+
+  = f.label :registry_story, 'Leave a message for your guests'
+  .help Explain why you’ve created a charitable registry and thank your community for their generosity in helping you reach your fundraising goal.
+  = f.text_area :registry_story, placeholder: "As we begin our lives together, we want to share our joy by supporting people in need. We are inspired by the work that this amazing non-profit is doing and we invite you to choose items on our behalf to support this project. Can’t wait to see you all soon!", class: 'mb--large stretch', rows: 4
+
+  = f.label :goal, 'Fundraising Goal (optional)'
+  .help Setting a fundraising goal inspires action and results in more donations. You can change your goal at any time.
+  = f.number_field :goal, min: 0, class: 'mb--large stretch'
+
+  = f.label :video_url, 'Share a video (optional)'
+  .help Record a short video explaining why you're raising money for this cause, upload the video to YouTube, then paste the link here.
+  = f.text_field :video_url, placeholder: "https://www.youtube.com/watch?v=lmCePnhPpzs", class: 'mb--large stretch'
+
+.slide-footer.ma
+  %button#step-3-previous.refresh-slides.c-button.c-button--primary{type: "button"} Go Back
+  %button#step-3-next.refresh-slides.c-button.c-button--primary{type: "button", style: "float: right;"} Finish

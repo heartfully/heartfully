@@ -1,15 +1,20 @@
 .registry-container
-  .header.test{style: "height: 50px; border: 1px solid purple;"}
-    (The header for what step you're on goes here)
-  .slider.test
-    #create-registry
-      = render "step_1"
-    #select-project
-      = render "step_2"
-    #personalize
-      = render "step_3"
-    #finished
-      = render "step_4"
+  .hero
+  .header.mb--large
+    %span Create Registry
+    %span Select Project
+    %span Personalize
+    %span.disabled Done/Share
+  = form_for(@registry, format: :json, html: {id: "new-registry-form", class: 'stacked skinny ma mb'}) do |f|
+    .slider.test
+      #create-registry
+        = render "step_1", f: f
+      #select-project
+        = render "step_2"
+      #personalize
+        = render "step_3", f: f
+      #finished
+        = render "step_4"
 
 #projectModal
   #projectModalContainer.modal.fade

@@ -1,19 +1,38 @@
 = form_for(@registry, format: :json, html: {id: "new-registry-form", class: 'stacked skinny ma mb'}) do |f|
   = hidden_field_tag :project_url_slug
-  .flexstuff
-    = f.text_field :registrant_first_name, placeholder: "Your first name", class: "flex-2"
-    = f.text_field :registrant_last_name, placeholder: "Your last name", class: "flex-2"
-    = f.text_field :partner_first_name, placeholder: "Partner's first name", class: "flex-2"
-    = f.text_field :partner_last_name, placeholder: "Partner's last name", class: "flex-2"
-  .date-container.mb
-    %span Wedding date:
-    = f.date_field :event_date, placeholder:'mm/dd/yyyy', min: Date.today
-  .url-container
-    %span https://heartful.ly/registry/
-    = f.text_field :url_slug, placeholder: "your-unique-url"
-    .help
-      *can only contain lowercase letters, numbers, and dashes (-)
+  = f.hidden_field :type
+  .test
+    .mb
+      %span.strong What kind of registry are you creating?
+    #registry-types.mb
+      .registry-type.flex-3.ma{data: {type: "wedding"}}
+        .registry-icon
+          %svg.mb
+            %use{"xlink:href" => "#icon-rings"}
+        %h3.c-subhed__info
+          Wedding
+      .registry-type.flex-3.ma{data: {type: "birthday"}}
+        .registry-icon
+          %svg.mb{:viewbox => "0 0 512 512"}
+            %use{"xlink:href" => "#confetti"}
+        %h3.c-subhed__info
+          Birthday
+  .fields-container
+    .flexstuff
+      = f.text_field :name, placeholder: "Registry Title (i.e. Happy Birthday Hannah, I'm Turning 30!)", class: "birthday"
+      = f.text_field :registrant_first_name, placeholder: "Your first name", class: "flex-2"
+      = f.text_field :registrant_last_name, placeholder: "Your last name", class: "flex-2"
+      = f.text_field :partner_first_name, placeholder: "Partner's first name", class: "flex-2 wedding"
+      = f.text_field :partner_last_name, placeholder: "Partner's last name", class: "flex-2 wedding"
+      .date-container.mb
+        %span Event date:
+        = f.date_field :event_date, placeholder:'mm/dd/yyyy', min: Date.today
+      .url-container
+        %span heartful.ly/registry/
+        = f.text_field :url_slug, placeholder: "your-unique-url"
+        .help
+          *can only contain lowercase letters, numbers, and dashes
 
-.slide-footer.skinny.ma
-  %button#step-1-next.c-button.c-button--primary{type: "button", style: "float: right;"}
+.slide-footer.ma
+  %button#step-1-next.refresh-slides.c-button.c-button--primary{type: "button", style: "float: right;"}
     Next

@@ -44,7 +44,9 @@
     <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
     <%= render "shared/facebook" %>
     <%= render "shared/svg" %>
-    <%= render current_user ? "shared/nav" : "shared/nav_guest" %>
+    <% unless controller_name == "registries" %>
+      <%= render current_user ? "shared/nav" : "shared/nav_guest" %>
+    <% end %>
     <div class="page-wrap">
       <%= yield %>
     </div>
