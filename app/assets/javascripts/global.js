@@ -141,6 +141,7 @@ $(document).ready(function() {
   function triggerSearch(url) {
     $.get(url, {"search": $("#search").val(), "region_category": $("#region-category").val(), "issue_category": $("#issue-category").val(), }, function(data) {
       $("#select-project .project-container").html(data);
+      $("#" + $("#project_url_slug").val()).css("background-color", "#F2EFF9");
       $(".slider").slick("reinit");
     });
   }
@@ -267,6 +268,7 @@ $(document).ready(function() {
     e.preventDefault();
     $.get($(this).prop("href"), function(data) {
       $("#select-project .project-container").html(data);
+      $("#" + $("#project_url_slug").val()).css("background-color", "#F2EFF9");
       $(".slider").slick("reinit");
     });
   });
