@@ -5,10 +5,12 @@
 
 .r-flex.test
   .flex-1
-    .input-group
-      = text_field_tag 'search', params[:search], class: "form-control", placeholder: "Search by name or keyword"
+    .input-group{style: "float: left; width: 90%;"}
+      = text_field_tag 'search', params[:search], class: "form-control", placeholder: "Search by name or keyword", data: {url: projects_and_categories_registries_path}
       %span.input-group-btn
         = link_to 'Search', '#', class: "btn c-button c-button--secondary search", data: {url: projects_and_categories_registries_path}
+    %span
+      = link_to 'Reset', '#', class: "btn c-button c-button--secondary reset-search", data: {url: projects_and_categories_registries_path}
 
 .r-flex.test
   .pad.flex-2

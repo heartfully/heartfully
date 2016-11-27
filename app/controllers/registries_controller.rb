@@ -103,7 +103,7 @@ class RegistriesController < ApplicationController
   def projects_and_categories
     @projects = Project.includes(:organization).where(public: true).paginate(page: params[:page], per_page: 3)
     @projects = @projects.filter(filterable_params) if (params[:region_category].present? || params[:issue_category].present?)
-    @projects = @projects.search_by_lots_of_fields(params[:search]) if params[:search].present?
+    @projects = @projects.search_by_lots_of_fields(params[:search]).group("projects.id, #{PgSearch::Configuration.alias('projects')}.rank") if params[:search].present?
     @categories = Category.all.group_by { |category| category.cat_type }
 
     render layout: false

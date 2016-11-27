@@ -10,5 +10,11 @@
   background-position: 95% center;
   background-repeat: no-repeat; }
 
+.ui-state-loading {
+  background-image: image_url('heart.gif');
+  background-position: 95% center;
+  background-repeat: no-repeat;
+}
+
 .ui-error-message {
   color: #bd1a00; }

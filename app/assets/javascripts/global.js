@@ -171,7 +171,7 @@ $(document).ready(function() {
   }
 
   function validateURLSlug() {
-    return (/^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$/).test($("#registry_url_slug").val());
+    return (/^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$/).test($("#registry_url_slug").val()) && $("#registry_url_slug").val().length > 0;
   }
 
   $(".slider").ready(function() {
@@ -224,22 +224,33 @@ $(document).ready(function() {
     return (/[a-z\d-]/).test(chr);
   });
 
-  $("#registry_url_slug").focusout(function(e) {
-    $("#registry_url_slug").removeClass("ui-state-valid");
-    if(validateURLSlug()) {
-      $.get("/registries/check_url_availability", {url_slug: $("#registry_url_slug").val()}, function(data) {
-        if(data["available"]) {
-          $("#registry_url_slug").removeClass("ui-state-invalid");
-          $("#registry_url_slug").addClass("ui-state-valid");
-        } else {
-          $("#registry_url_slug").removeClass("ui-state-valid");
-          $("#registry_url_slug").addClass("ui-state-invalid");
-        }
-      });
-    } else {
-      $("#registry_url_slug").removeClass("ui-state-valid");
-      $("#registry_url_slug").addClass("ui-state-invalid");
-    }
+  var delay = (function(){
+    var timer = 0;
+    return function(callback, ms){
+      clearTimeout (timer);
+      timer = setTimeout(callback, ms);
+    };
+  })();
+
+  $("#registry_url_slug").keydown(function(e) {
+    $("#registry_url_slug").removeClass();
+    $("#registry_url_slug").addClass("ui-state-loading");
+    delay(function() {
+      if(validateURLSlug()) {
+        $.get("/registries/check_url_availability", {url_slug: $("#registry_url_slug").val()}, function(data) {
+          if(data["available"]) {
+            $("#registry_url_slug").removeClass();
+            $("#registry_url_slug").addClass("ui-state-valid");
+          } else {
+            $("#registry_url_slug").removeClass();
+            $("#registry_url_slug").addClass("ui-state-invalid");
+          }
+        });
+      } else {
+        $("#registry_url_slug").removeClass();
+        $("#registry_url_slug").addClass("ui-state-invalid");
+      }
+    }, 500);
   });
 
   $("#step-1-next").click(function(e) {
@@ -279,11 +290,28 @@ $(document).ready(function() {
     triggerSearch($(this).data("url"));
   });
 
+  $("#select-project").on("keypress", "#search", function(e) {
+    if (e.which == '13') {
+      e.preventDefault();
+      triggerSearch($(this).data("url"));
+    }
+  });
+
   // search by category
   $("#select-project").on("change", "#region-category, #issue-category", function(e) {
     e.preventDefault();
     triggerSearch($(this).data("url"));
   })
+
+  // reset search parameters
+  $("#select-project").on("click", ".reset-search", function(e) {
+    e.preventDefault();
+    $.get($(this).data("url"), function(data) {
+      $("#select-project .project-container").html(data);
+      $("#" + $("#project_url_slug").val()).css("background-color", "#F2EFF9");
+      $(".slider").slick("reinit");
+    });
+  });
 
   // learn more project modal
   $("#select-project").on("click", ".fetchProjectModal", function(e) {
