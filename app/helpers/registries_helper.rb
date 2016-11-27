@@ -10,6 +10,10 @@ module RegistriesHelper
     RegistryProject.where(:registry_id => registry.id, :project_id => project.id).first.approved
   end
 
+  def path_for(registry)
+    registry.is_a?(Birthday) ? birthday_home_path(registry.url_slug) : registry_home_path(registry.url_slug)
+  end
+
   def goal_message_for(registry)
     registry.is_a?(Birthday) ? "My fundraising goal" : "Our fundraising goal"
   end
