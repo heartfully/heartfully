@@ -1,4 +1,4 @@
-.test
+.auto-margin
   .mb
     %span.strong What are you celebrating?
   #registry-types.mb
@@ -15,18 +15,18 @@
       %h3.c-subhed__info
         Birthday
 .fields-container
-  .flexstuff
+  .flexstuff.auto-margin
     = f.text_field :name, placeholder: "Registry Title (i.e. Happy Birthday Hannah, I'm Turning 30!)", class: "birthday"
-    = f.text_field :registrant_first_name, placeholder: "Your first name", class: "flex-2"
-    = f.text_field :registrant_last_name, placeholder: "Your last name", class: "flex-2"
-    = f.text_field :partner_first_name, placeholder: "Partner's first name", class: "flex-2 wedding"
-    = f.text_field :partner_last_name, placeholder: "Partner's last name", class: "flex-2 wedding"
-    .date-container.flex-2
+    = f.text_field :registrant_first_name, placeholder: "Your first name", class: "flex-field-2"
+    = f.text_field :registrant_last_name, placeholder: "Your last name", class: "flex-field-2"
+    = f.text_field :partner_first_name, placeholder: "Partner's first name", class: "flex-field-2 wedding"
+    = f.text_field :partner_last_name, placeholder: "Partner's last name", class: "flex-field-2 wedding"
+    .date-container.flex-field-2
       %span Event date:
       = f.date_field :event_date, placeholder:'mm/dd/yyyy', min: Date.today
-    .url-container.flex-2
+    .url-container.flex-field-2
       %span heartful.ly/registry/
-      = f.text_field :url_slug, placeholder: "your-unique-url", required: "required"
+      = f.text_field :url_slug, placeholder: "your-unique-url", autocapitalize: "off", autocomplete: "off", autocorrect: "off", spellcheck: "false"
       .help
         *can only contain lowercase letters, numbers, and dashes
 

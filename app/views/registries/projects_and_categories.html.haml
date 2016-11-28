@@ -1,23 +1,23 @@
-.r-flex.test
-  .flex-1.mb
+.r-flex.auto-margin
+  .flex-field-1.mb
     %span.strong Select a project that's meaningful to you.
     %span Your registry will feature information about the project and a gift list of items needed to make it happen.
 
-.r-flex.test
-  .flex-1
-    .input-group{style: "float: left; width: 90%;"}
+.r-flex.auto-margin.mb
+  .flex-field-1
+    .input-group
       = text_field_tag 'search', params[:search], class: "form-control", placeholder: "Search by name or keyword", data: {url: projects_and_categories_registries_path}
       %span.input-group-btn
         = link_to 'Search', '#', class: "btn c-button c-button--secondary search", data: {url: projects_and_categories_registries_path}
     %span
       = link_to 'Reset', '#', class: "btn c-button c-button--secondary reset-search", data: {url: projects_and_categories_registries_path}
 
-.r-flex.test
-  .pad.flex-2
+.r-flex.auto-margin
+  .mb.flex-field-2
     .inline{:style => "margin-right: 20px; width: 100%;"}
       %label.block.mb--small{:style => "text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;"} Filter by region
       = select_tag "region_category", options_for_select(@categories['region'].sort{|a,b| a.name <=> b.name}.map{|c| [c.name, c.id]}, params[:region_category]), {prompt: "All Regions", id: "region-category", style: "width: 100%", data: {url: projects_and_categories_registries_path}}
-  .pad.flex-2
+  .mb.flex-field-2
     .inline{:style => "margin-right: 20px; width: 100%;"}
       %label.block.mb--small{:style => "text-transform: uppercase; color: gray; font-family:'AvenirNextLTPro-Demi', Helvetica, Arial, sans-serif; font-size: 0.8em; letter-spacing: 0.5pt;"} Filter by issue
       = select_tag "issue_category", options_for_select(@categories['issue'].sort{|a,b| a.name <=> b.name}.map{|c| [c.name, c.id]}, params[:issue_category]), {prompt: "All Issues", id: "issue-category", style: "width: 100%", data: {url: projects_and_categories_registries_path}}

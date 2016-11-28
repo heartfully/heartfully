@@ -1,9 +1,9 @@
-%p.strong.test.mb--large Congratulations, your registry is complete!
+%p.strong.auto-margin.mb--large Congratulations, your registry is complete!
 
 .column-container.mb
-  .column-one.flex-2.ma
+  .flex-field-2.mb
     %p.mb Check out your personalized registry here.
     = link_to "View Registry", path_for(@registry), class: "c-button c-button--primary ma"
-  .column-two.flex-2.ma
+  .flex-field-2
     %p.mb Monitor donations and access sharing and editing tools in your admin panel.
     = link_to "Launch Admin Panel", registry_admin_path(@registry.url_slug), class: "c-button c-button--primary ma"

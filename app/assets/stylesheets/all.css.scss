@@ -187,3 +187,12 @@ label.required:after {
   left: 0;
   z-index: 2;
 }
+
+.auto-margin {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: $break-medium) {
+    padding: 0 10px;
+  }
+}

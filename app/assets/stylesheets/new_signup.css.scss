@@ -18,6 +18,9 @@
     background-image: image_url('registry-hero.jpg');
     background-size: cover;
     background-position: 50% 50%;
+    @media (max-width: $break-medium) {
+      height: 150px;
+    }
   }
 
   .header {
@@ -34,6 +37,9 @@
       color: $color-medium-gray;
       @include avenir-demi;
       cursor: pointer;
+      @media (max-width: $break-medium) {
+        font-size: 0.6em;
+      }
 
       &.disabled {
         cursor: auto;
@@ -46,6 +52,13 @@
       display: flex;
       width: 50%;
       margin: 0 auto;
+      @media (max-width: $break-medium) {
+        width: 100%;
+      }
+
+      .non-selected {
+        opacity: 0.4;
+      }
 
       .registry-type {
         cursor: pointer;
@@ -97,10 +110,23 @@
     }
   }
 
+  .project-container {
+    .input-group {
+      float: left;
+      width: 90%;
+      @media (max-width: $break-medium) {
+        width: 100%;
+      }
+    }
+  }
+
   .preview-container {
     height: 200px;
     width: 500px;
     margin-bottom: 50px;
+    @media (max-width: $break-medium) {
+      width: 300px;
+    }
 
     .preview-hero {
       height: 200px;
@@ -121,10 +147,22 @@
 
   .column-container {
     display: flex;
-    .share-container {
-      img {
-        display: inline !important;
-      }
+    @media (max-width: $break-medium) {
+      display: block;
     }
+  }
+}
+
+.flex-field-1 {
+  width: 95%;
+  @media (max-width: $break-medium) {
+    width: 100%;
+  }
+}
+
+.flex-field-2 {
+  width: 45%;
+  @media (max-width: $break-medium) {
+    width: 90%;
   }
 }

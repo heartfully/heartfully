@@ -197,6 +197,8 @@ $(document).ready(function() {
 
   $(".registry-type").click(function(e){
     var registryType = $(this).data("type");
+    $(this).removeClass("non-selected");
+    $(this).siblings().addClass("non-selected");
     if(registryType == "wedding") {
       $(".url-container span").text("heartful.ly/registry/")
       $(".birthday").css("display", "none");
