@@ -126,6 +126,11 @@
         width: 100%;
       }
     }
+
+    // This should probably be site-wide
+    select {
+      padding: 5px;
+    }
   }
 
   .preview-container {
