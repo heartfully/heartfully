@@ -5,6 +5,14 @@
     .slick-slide, .slick-slide *{ outline: none !important; }
     .slide-footer {
       display: none;
+
+      .finalizing {
+        display: none;
+
+        img {
+          display: inline-block;
+        }
+      }
     }
   }
 

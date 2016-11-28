@@ -204,11 +204,13 @@ $(document).ready(function() {
       $(".birthday").css("display", "none");
       $(".wedding").css("display", "inline");
       $("#registry_type").val("");
+      $("#registry_registry_story").attr("placeholder", "As we begin our lives together, we want to share our joy by supporting people in need. We are inspired by the work that this amazing non-profit is doing and we invite you to choose items on our behalf to support this project. Can’t wait to see you all soon!")
     } else {
       $(".url-container span").text("heartful.ly/birthday/")
       $(".wedding").css("display", "none");
       $(".birthday").css("display", "inline");
       $("#registry_type").val("Birthday");
+      $("#registry_registry_story").attr("placeholder", "I’ve been given so much in life, so to celebrate the big 4-0, I want to give back to those in need. Please help me share the love and make an impact in the lives of others by donating to this amazing organization. Here’s to at least 40 more with all of you amazing people by my side!")
     }
     $(".fields-container").css("display", "inline");
     $(".slide-footer").css("display", "inline");
@@ -378,6 +380,7 @@ $(document).ready(function() {
 
   // submit the form!
   $("#step-3-next").click(function(e) {
+    $(".finalizing").toggle();
     var formData = new FormData($("#new-registry-form")[0]);
     $.ajax({
       url: $("#new-registry-form").prop("action"),
@@ -389,6 +392,7 @@ $(document).ready(function() {
       $.get(data["finished_url"], function(finishedData) {
         $("#finished .finished-container").html(finishedData);
       }).done(function() {
+        $(".finalizing").toggle();
         $(".slider").slick("slickNext");
         $(".header span").addClass("disabled");
         refreshSlides();

@@ -27,4 +27,8 @@
 
 .slide-footer.ma
   %button#step-3-previous.refresh-slides.c-button.c-button--primary{type: "button"} Go Back
-  %button#step-3-next.refresh-slides.c-button.c-button--primary{type: "button", style: "float: right;"} Finish
+  .button-container{style: "float: right;"}
+    %span.help.finalizing
+      = image_tag 'heart.gif'
+      Just a sec!
+    %button#step-3-next.refresh-slides.c-button.c-button--primary{type: "button"} Finish
