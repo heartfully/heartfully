@@ -335,6 +335,8 @@ $(document).ready(function() {
       $("#project_url_slug").val(urlSlug);
       $(".c-tiny-project").css("background-color", "");
       $("#" + urlSlug).css("background-color", "#F2EFF9");
+      $(".slider").slick("slickNext");
+      refreshSlides();
     }
   });
 
