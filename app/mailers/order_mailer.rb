@@ -1,7 +1,8 @@
 class OrderMailer < ActionMailer::Base
   add_template_helper(OrdersHelper)
   default from: "Heartful.ly@heartful.ly"
-  layout 'user_mailer'
+  layout 'user_mailer', except: :birthday_order
+  layout :false, only: :birthday_order
 
   def order_confirmation(order)
     @order = order
@@ -51,7 +52,6 @@ class OrderMailer < ActionMailer::Base
   def birthday_order(order)
     @order = order
     mail to: "#{order.registry.email}, tech@heartul.ly", subject: "#{@order.first_name} #{@order.last_name} just purchased a gift off your Heartful.ly registry!"
-    render layout: false
   end
 
   def birthday_email_kate(order)
