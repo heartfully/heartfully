@@ -399,4 +399,34 @@ $(document).ready(function() {
       });
     });
   });
+
+  // CAMPAIGN STUFF
+
+  $(".project-grid .project-container").click(function(e) {
+    e.preventDefault();
+    var projectUrlSlug = $(this).data("projectUrlSlug");
+    var modalContainer = $(".campaign-modal-container");
+    var projectId = ".project-" + $(this).data("projectId");
+
+    $(".c-registry-card").hide();
+    $(projectId).show();
+
+    $.get($(this).data("loadUrl"), {project_url_slug: projectUrlSlug}, function(data) {
+      modalContainer.find(".left-column").html(data);
+    }).done(function(e) {
+      ReactRailsUJS.mountComponents();
+      modalContainer.modal();
+    });
+  });
+
+  $("#campaign-video").ready(function() {
+    setTimeout(function() {
+      document.getElementById("campaign-video").play();
+    }, 15000);
+  });
+
+  $(".campaign-modal-container").on('click', '.c-registry-card__cart', function() {
+    $(".campaign-modal-container").modal('hide');
+  })
+  
 });

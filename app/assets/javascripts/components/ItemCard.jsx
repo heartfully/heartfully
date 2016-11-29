@@ -20,9 +20,10 @@ class ItemCard extends React.Component {
   render() {
     const purchase = this.state.purchaseMenu ? <PurchaseMenu {...this.props} /> : null;
     const purchaseButton = window.location.href.match("projects") ? null : this.handlePurchase();
+    var classNames = "c-registry-card project-" + this.props.itemType.project_id;
 
     return (
-      <div className="c-registry-card">
+      <div className={classNames}>
         <p className="c-registry-card__title">
           {this.props.itemType.name}
         </p>

@@ -1,0 +1,92 @@
+#campaign-page {
+  header {
+    height: 500px;
+    @media (max-width: $break-large ) {
+      height: 450px;
+    }
+
+    video {
+      @media (min-width: 1200px) {
+        top: -33%;
+        position: absolute;
+        width: 100%;
+      }
+      @media (max-width: 1200px ) {
+        top: -8%;
+        position: absolute;
+        width: 100%;
+      }
+      @media (max-width: $break-large) {
+        top: -12%;
+        position: absolute;
+        width: 100%;
+      }
+      @media (max-width: $break-medium) {
+        top: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+
+  .instructions {
+    span {
+      color: #433e6f;
+    }
+  }
+
+  .project-grid {
+    .project-row {
+      display: flex;
+      justify-content: space-around;
+      @media (max-width: $break-medium) {
+        display: block;
+      }
+
+      .project-container {
+        cursor: pointer;
+
+        .c-tiny-project__photo {
+          border-radius: 5px;
+        }
+      }
+    }
+    p {
+      @include font-meta;
+    }
+  }
+}
+
+.modal-purchase-container {
+  display: flex;
+  @media (max-width: $break-medium) {
+    display: block;
+  }
+  .left-column {
+    width: 50%;
+    @media (max-width: $break-medium) {
+      width: 100%;
+    }
+
+    .project-body {
+      .project-photo {
+        height: 300px;
+        width: 80%;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    
+  }
+  .right-column {
+    width: 40%;
+    @media (max-width: $break-medium) {
+      width: 100%;
+    }
+
+    .c-checkout {
+      display: none;
+    }
+  }
+}

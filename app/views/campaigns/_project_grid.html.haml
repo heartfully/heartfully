@@ -1,0 +1,13 @@
+.project-grid.auto-margin
+  - @registry.projects.each_slice(3) do |project_group|
+    .project-row.mb--large
+      - project_group.each do |project|
+        .project-container.flex-field-3{ data: {load_url: modal_purchase_path(@registry.url_slug), project_url_slug: project.url_slug, project_id: project.id }}
+          .c-tiny-project__photo{style: "background-image: url('#{project.photo1_url}')"}
+          .c-tiny-project__info
+            %p.mb--small= project.name
+            %ul.c-project-about__meta
+              %li
+                %svg.c-icon.c-icon--inline{:title => "location"}
+                  %use{"xlink:href" => "#icon-map"}
+                = project.country

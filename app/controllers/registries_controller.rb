@@ -3,7 +3,7 @@ class RegistriesController < ApplicationController
                                          :admin]
   before_action :set_registry, :only => [:edit, :update, :destroy, :admin]
   before_action :confirm_project, :only => [:admin]
-  before_action :find_by_slug, :only => [:show, :projects]
+  before_action :find_by_slug, :only => [:show, :projects, :modal_purchase]
   before_filter :prevent_caching, :only => [:new]
 
   # GET /registry/:url_slug
@@ -116,6 +116,11 @@ class RegistriesController < ApplicationController
 
   def check_url_availability
     render json: {available: Registry.where(url_slug: params["url_slug"]).count == 0}
+  end
+
+  def modal_purchase
+    @project = Project.find_by(url_slug: params[:project_url_slug])
+    render layout: false
   end
 
   private

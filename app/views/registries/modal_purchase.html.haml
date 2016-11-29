@@ -1,0 +1,21 @@
+.mb
+  %h3.title= @project.name
+.project-body
+  .project-photo.mb{style: "background-image: url(#{@project.photo2_url})"}
+  .project-info
+    .mb
+      = simple_format @project.overview
+  .partner-container
+    .small.quiet.mb--small
+      = @project.organization.name
+      %ul.c-project-about__meta
+        %li
+          %svg.c-icon.c-icon--inline{title: "location"}
+            %use{"xlink:href" => "#icon-map"}
+          = @project.country
+        %li
+          %svg.c-icon.c-icon--inline{title: "location"}
+            %use{"xlink:href" => "#icon-link"}
+          = link_to @project.organization.org_url, @project.organization.org_url, target: "_blank"
+    .partner-image
+      = link_to image_tag(@project.organization.logo_url, style: 'width: 50px; height: 50px; display: inline-block; vertical-align: middle;'), @project.organization.org_url, target: "_blank"

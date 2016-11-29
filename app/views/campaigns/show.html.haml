@@ -1,0 +1,20 @@
+#campaign-page
+  = render 'campaign_hero'
+  = render 'instructions'
+  = render 'project_grid'
+  = render 'callout'
+  = render 'faq'
+  = render 'shared/press_bar'
+
+.campaign-modal
+  .campaign-modal-container.modal.fade
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-header
+          %button.close{type: "button", data: {dismiss: "modal"}, aria: {label: "Close"}}
+            %span{aria: {hidden: "true"}} &times;
+        .modal-body
+          .modal-purchase-container
+            .left-column
+            .right-column
+              = react_component('RegistryItems', {registry_id: @registry.id, items: @registry.all_item_types.sort{|a,b| a.price <=> b.price}})

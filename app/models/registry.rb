@@ -55,6 +55,10 @@ class Registry < ActiveRecord::Base
     end
   end
 
+  def all_item_types
+    projects.map(&:item_types).flatten
+  end
+
 end
 
 # == Schema Information

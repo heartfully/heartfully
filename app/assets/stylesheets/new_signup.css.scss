@@ -176,6 +176,13 @@
 .flex-field-2 {
   width: 45%;
   @media (max-width: $break-medium) {
-    width: 90%;
+    width: 100%;
+  }
+}
+
+.flex-field-3 {
+  width: 30%;
+  @media (max-width: $break-medium) {
+    width: 100%;
   }
 }

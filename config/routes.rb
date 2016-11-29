@@ -62,8 +62,10 @@ Rails.application.routes.draw do
   scope '/registry/:url_slug' do
     root to: 'registries#show', as: 'registry_home'
     get '/admin', to: 'registries#admin', as: 'registry_admin'
+    get '/modal_purchase', to: 'registries#modal_purchase', as: 'modal_purchase'
   end
 
+  get '/holidays', to: 'campaigns#show', url_slug: 'holidays'
   scope '/campaign/:url_slug' do
     root to: 'campaigns#show', as: 'campaign_home'
   end

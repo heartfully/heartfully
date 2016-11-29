@@ -1,4 +1,6 @@
 class Cart extends React.Component {
+  
+
   cartItems() {
     return this.props.cart.map(item => {
       const total = item.quantity * item.price;
@@ -8,6 +10,7 @@ class Cart extends React.Component {
 
   render() {
     return (
+      <RenderInBody>
       <div className="c-checkout">
         <h3>Are you ready to checkout?</h3>
         <h4 className="mb">Your selected items:</h4>
@@ -31,6 +34,7 @@ class Cart extends React.Component {
           Empty Cart
         </button>
       </div>
+      </RenderInBody>
     );
   }
 }
@@ -46,3 +50,35 @@ emptyCartStyles = {
   background: '#FFDADA',
   float: 'left',
 }
+
+var RenderInBody = React.createClass({
+
+    componentDidMount: function() {
+      this.popup = document.createElement("div");
+      document.body.appendChild(this.popup);
+      this._renderLayer();
+    },
+
+
+    componentDidUpdate: function() {
+      this._renderLayer();
+    },
+
+
+    componentWillUnmount: function() {
+      React.unmountComponentAtNode(this.popup);
+      document.body.removeChild(this.popup);
+    },
+
+
+    _renderLayer: function() {
+      React.render(this.props.children, this.popup);
+    },
+
+
+    render: function() {
+      // Render a placeholder
+      return React.DOM.div(this.props);
+    }
+
+  });
