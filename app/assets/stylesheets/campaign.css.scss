@@ -1,9 +1,6 @@
 #campaign-page {
   header {
-    height: 500px;
-    @media (max-width: $break-large ) {
-      height: 450px;
-    }
+    background-image: image-url('holiday_campaign_hero.jpg');
 
     video {
       @media (min-width: 1200px) {
@@ -30,6 +27,29 @@
   }
 
   .instructions {
+    display: flex;
+    height: 150px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F2EFF9;
+
+    #select {
+      div {
+        width: 40px;
+      }
+    }
+
+    #write {
+      div {
+        width: 40px;
+      }
+    }
+
+    #watch {
+      div {
+        width: 30px;
+      }
+    }
     span {
       color: #433e6f;
     }

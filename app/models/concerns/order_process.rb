@@ -20,7 +20,8 @@ module OrderProcess
     # end
     if self.registry.type && self.registry.type.downcase == 'campaign'
       OrderMailer.campaign_order_sender(self).deliver!
-      OrderMailer.campaign_order_receiver(self).deliver! unless self.recipient_email.empty?
+      # Manually send these until I can implement a background job scheduler
+      # OrderMailer.campaign_order_receiver(self).deliver! unless self.recipient_email.empty?
       OrderMailer.campaign_order_kate(self).deliver!
     elsif self.registry.type && self.registry.type.downcase == 'birthday'
       OrderMailer.birthday_order_confirmation(self).deliver!
