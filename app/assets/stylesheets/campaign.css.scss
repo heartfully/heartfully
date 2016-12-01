@@ -79,6 +79,7 @@
 
 .modal-purchase-container {
   display: flex;
+  justify-content: space-around;
   @media (max-width: $break-medium) {
     display: block;
   }
@@ -91,9 +92,19 @@
     .project-body {
       .project-photo {
         height: 300px;
-        width: 80%;
+        width: 100%;
         background-repeat: no-repeat;
         background-size: cover;
+        border-radius: 5px;
+      }
+
+      .partner-container {
+        display: flex;
+        justify-content: space-between;
+
+        .partner-image {
+          width: 30%;
+        }
       }
     }
 
