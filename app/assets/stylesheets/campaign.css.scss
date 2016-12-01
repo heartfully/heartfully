@@ -1,6 +1,35 @@
 #campaign-page {
   header {
+    background-position: 50% 50%;
+    height: 600px;
+    position: relative;
+    background-size: cover;
+    color: #fff;
+    @media (min-width: $break-large) {
+      overflow: hidden;
+    }
+    @media (max-width: $break-large) {
+      height: 450px;
+    }
     background-image: image-url('holiday_campaign_hero.jpg');
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+
+    h1 {
+      font-size: 5vw;
+    }
+
+    h4 {
+      font-size: 3vw;
+    }
 
     video {
       @media (min-width: 1200px) {
@@ -31,7 +60,7 @@
     height: 150px;
     justify-content: space-around;
     align-items: center;
-    background-color: #F2EFF9;
+    background-color: $color-purple-light;
 
     #select {
       div {
@@ -47,7 +76,7 @@
 
     #watch {
       div {
-        width: 30px;
+        width: 40px;
       }
     }
     span {
@@ -75,6 +104,52 @@
       @include font-meta;
     }
   }
+
+  .faq {
+    background-color: $color-purple-lightest;
+    padding: 40px 0;
+    .faq-header {
+      font-family: 'Roboto Slab';
+      font-weight: 300;
+      font-size: 1.5em;
+      text-align: center;
+      text-transform: uppercase;
+      color: #7D72DE;
+      &:after {
+        content: '';
+        display: block;
+        margin: 10px auto 0 auto;
+        width: 100%;
+        border-bottom: 5px solid $color-purple-deep;
+        // include animation
+        -webkit-animation: line 1.5s forwards;
+      }
+    }
+
+    .faq-questions {
+      .question-row {
+        display: flex;
+        justify-content: space-around;
+        @media (max-width: $break-medium) {
+          display: block;
+        }
+
+        .question {
+          text-align: center;
+          @include avenir-bold;
+          color: $color-purple-deep;
+        }
+        .answer {
+          line-height: 1.5em;
+        }
+
+      }
+    }
+
+    .faq-footer {
+      text-align: center;
+    }
+  }
 }
 
 .modal-purchase-container {
@@ -87,6 +162,19 @@
     width: 50%;
     @media (max-width: $break-medium) {
       width: 100%;
+    }
+
+    .title {
+      text-align: center;
+      &:after {
+        content: '';
+        display: block;
+        margin: 10px auto 0 auto;
+        width: 100%;
+        border-bottom: 5px solid $color-purple-deep;
+        // include animation
+        -webkit-animation: line 1.5s forwards;
+      }
     }
 
     .project-body {
