@@ -67,6 +67,9 @@
     justify-content: space-around;
     align-items: center;
     background-color: $color-purple-light;
+    @media (max-width: $break-large) {
+      font-size: 12px;
+    }
 
     #select {
       div {
