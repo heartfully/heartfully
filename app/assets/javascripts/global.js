@@ -403,6 +403,7 @@ $(document).ready(function() {
   // CAMPAIGN STUFF
 
   $(".holiday-carousel").ready(function() {
+    $(".holiday-carousel-container").css('display', 'inline-block');
     $(".holiday-carousel").slick({
       autoplay: true,
       dots: false,

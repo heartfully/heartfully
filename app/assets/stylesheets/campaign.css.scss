@@ -31,14 +31,18 @@
       }
     }
 
-    .holiday-carousel {
-      display: inline-block;
-      max-width: 332px;
-      @media (max-width: $break-medium) {
-        width: 250px;
-        img {
+    .holiday-carousel-container {
+      display: none; // Ultimately needs to be inline-block
+      vertical-align: middle;
+      .holiday-carousel {
+        display: inline-block;
+        max-width: 332px;
+        @media (max-width: $break-medium) {
           width: 250px;
-          height: 115px;
+          img {
+            width: 250px;
+            height: 115px;
+          }
         }
       }
     }
