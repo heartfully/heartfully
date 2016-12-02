@@ -2,12 +2,15 @@
   %table.c-admin__table.mb
     %thead
       %tr
+        %th Project
         %th Item
         %th Quantity
     %tbody
-      - order_summary(@order.summary).each do |item, quantity|
-        %tr
-          %td= item
-          %td= quantity
+      - order_summary(@order.summary).each do |project_id, item_summary|
+        - item_summary.each do |item, quantity|
+          %tr
+            %td= Project.find(project_id).name
+            %td= item
+            %td= quantity
   %strong
     Order Total: #{@order.total}

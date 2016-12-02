@@ -33,6 +33,6 @@ class OrdersController < ApplicationController
     end
 
     def update_params
-      params.permit(:email, :first_name, :last_name, :recipient_first_name, :recipient_last_name, :recipient_email, :message, :email_subscription)
+      params.permit(:email, :first_name, :last_name, :recipient_first_name, :recipient_last_name, :recipient_email, :message, :email_subscription, :delivery_date)
     end
 end

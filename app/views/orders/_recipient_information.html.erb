@@ -18,4 +18,9 @@
     <br>
     <%= email_field_tag(:recipient_email, '', :placeholder => 'Email') %>
   </div>
+  <div class="mb">
+    <%= label_tag(:delivery_date, 'Delivery Date') %>
+    <br>
+    <%= date_field_tag(:delivery_date, '', placeholder: 'mm/dd/yyyy', min: Date.today) %>
+  </div>
 </div>

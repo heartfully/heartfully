@@ -4,7 +4,13 @@ module OrderProcess
     total = 0.0
     summary = {}
     items.each do |item|
-      summary[item[:name]] = item[:quantity].to_i
+      if summary[item[:project_id]].present?
+        summary[item[:project_id]][item[:name]] = item[:quantity].to_i
+      else
+        item_hash = {}
+        item_hash[item[:name]] = item[:quantity].to_i
+        summary[item[:project_id]] = item_hash
+      end
       total += item[:price].to_f * item[:quantity].to_i
     end
 
