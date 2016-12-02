@@ -54,29 +54,6 @@
         padding: 0 5px;
       }
     }
-
-    video {
-      @media (min-width: 1200px) {
-        top: -33%;
-        position: absolute;
-        width: 100%;
-      }
-      @media (max-width: 1200px ) {
-        top: -8%;
-        position: absolute;
-        width: 100%;
-      }
-      @media (max-width: $break-large) {
-        top: -12%;
-        position: absolute;
-        width: 100%;
-      }
-      @media (max-width: $break-medium) {
-        top: 0;
-        position: absolute;
-        width: 100%;
-      }
-    }
   }
 
   .instructions {
@@ -227,6 +204,7 @@
   }
   .right-column {
     width: 40%;
+    text-align: center;
     @media (max-width: $break-medium) {
       width: 100%;
     }
