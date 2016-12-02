@@ -402,6 +402,15 @@ $(document).ready(function() {
 
   // CAMPAIGN STUFF
 
+  $(".holiday-carousel").ready(function() {
+    $(".holiday-carousel").slick({
+      autoplay: true,
+      dots: false,
+      arrows: false,
+      pauseOnHover: false
+    });
+  });
+
   $(".project-grid .project-container").click(function(e) {
     e.preventDefault();
     var projectUrlSlug = $(this).data("projectUrlSlug");
@@ -417,12 +426,6 @@ $(document).ready(function() {
       ReactRailsUJS.mountComponents();
       modalContainer.modal();
     });
-  });
-
-  $("#campaign-video").ready(function() {
-    setTimeout(function() {
-      document.getElementById("campaign-video").play();
-    }, 15000);
   });
 
   $(".campaign-modal-container").on('click', '.c-registry-card__cart', function() {

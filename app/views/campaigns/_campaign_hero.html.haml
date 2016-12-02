@@ -1,6 +1,19 @@
 %header.c-hero
   .c-hero__container
-    %h1
-      This holiday season, give heartfully
+    .line-one
+      %span
+        This holiday season, give
+      .holiday-carousel-container{style: "display: inline-block; vertical-align: middle;"}
+        .holiday-carousel
+          #shelter
+            = image_tag 'holiday-shelter.png'
+          #health
+            = image_tag 'holiday-health.png'
+          #education
+            = image_tag 'holiday-education.png'
+          #dignity
+            = image_tag 'holiday-dignity.png'
+          #heartfully
+            = image_tag 'holiday-heartfully.png'
     %h4
-      Donate life-changing gifts straight from the heart.
+      Purchase life-changing gifts for people in need and dedicate them to the people you love.
