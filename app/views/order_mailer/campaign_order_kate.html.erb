@@ -21,8 +21,12 @@
             <div>
               <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
                 Just letting you know <strong><%= @order.first_name %> <%= @order.last_name %></strong> got <strong><%= @order.recipient_first_name %> <%= @order.recipient_last_name %></strong> the following items for <%= @order.registry.name %>:
-                <% order_summary(@order.summary).each do |item, quantity| %>
-                <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
+                <% order_summary(@order.summary).each do |project_id, item_summary| %>
+                  <u><%= Project.find(project_id).name %></u><br>
+                  <% item_summary.each do |item, quantity| %>
+                    (<%= quantity %>) <%= item %>: <%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %><br>
+                  <% end %>
+                  <br>
                 <% end %>
               </p>
               <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
