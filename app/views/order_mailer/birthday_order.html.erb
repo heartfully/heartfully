@@ -624,8 +624,12 @@
                         <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
                         
                             <p dir="ltr"><span style="color:#352A5A"><span style="font-size:16px">We're writing to let you know that <%= @order.first_name %> <%= @order.last_name %> has just purchased the following from your birthday wish list:</span></span></p>
-<% order_summary(@order.summary).keys.each do |item| %>
-<span style="color:#7272de"><span style="font-size:16px"><em><%= item %></em></span></span><br>
+<% order_summary(@order.summary).each do |project_id, item_summary| %>
+  <u><%= Project.find(project_id).name %></u><br>
+  <% item_summary.each do |item, quantity| %>
+    (<%= quantity %>) <%= item %>: <%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %><br>
+  <% end %>
+  <br>
 <% end %>
 
 <% if @order.message.present? %>
