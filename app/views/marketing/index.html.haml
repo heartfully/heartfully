@@ -83,7 +83,7 @@
               .c-project-mini__title= project.name
               .c-project-tabbed__header--overlay
           .c-project-mini__info
-            %p= project.description
+            %p= truncate(project.description, length: 200)
             = link_to 'Learn more', "/projects/#{project.url_slug}", class: "c-button c-button--primary block nudge-top stretch", style: "text-align: center; color: white;"
   .line
   .c-how.test.pad.center
