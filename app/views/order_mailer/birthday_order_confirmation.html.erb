@@ -27,8 +27,12 @@
               </p>
               <p style="margin:1em 0;color:#2e2e2e;line-height:24px;font-family:'Nunito', Arial, sans-serif;">
                 For your records, you purchased:
-                <% order_summary(@order.summary).each do |item, quantity| %>
-                <div><%= "#{item} (#{quantity}): " %> $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %></div>
+                <% order_summary(@order.summary).each do |project_id, item_summary| %>
+                  <u><%= Project.find(project_id).name %></u><br>
+                  <% item_summary.each do |item, quantity| %>
+                    (<%= quantity %>) <%= item %>: <%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %><br>
+                  <% end %>
+                  <br>
                 <% end %>
               </p>
               <% if @order.receipt_number %>
