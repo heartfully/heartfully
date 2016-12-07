@@ -41,17 +41,19 @@
             %li= link_to 'Delete registry', registry_path(@registry), method: :delete, data: { confirm: 'Are you sure you want to delete your registry?'}
         .border.mb
           %h2.c-admin__heading.mb.meta Spread The Word
-          %p
+          %p.mb
             Share your registry on your wedding website:
             - if current_user.registry.is_a?(Birthday)
               %input.c-admin__share-link.mb--small{value: birthday_home_url(current_user.registry.url_slug), readonly: true}
             - else
               %input.c-admin__share-link.mb--small{value: registry_home_url(current_user.registry.url_slug), readonly: true}
-          %p
+          %p.mb
             - if current_user.registry.is_a?(Birthday)
               = link_to "Share your registry on Facebook", "#", class: "shareRegistry", data: {registry: birthday_home_url(current_user.registry.url_slug)}
             - else
               = link_to "Share your registry on Facebook", "#", class: "shareRegistry", data: {registry: registry_home_url(current_user.registry.url_slug)}
+          %p.mb
+            = link_to "Create a free video montage with your guests, a gift from Tribute (discount applied at checkout)", "https://www.tribute.co/?utm_campaign=heartfully&utm_medium=referral&utm_source=heartfully_website&promo_code=heartfuly1421", target: "_blank"
         .border
           %h2.c-admin__heading.mb.meta Logos
           %p Download a logo for your wedding website:
