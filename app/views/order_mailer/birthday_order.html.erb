@@ -627,7 +627,7 @@
 <% order_summary(@order.summary).each do |project_id, item_summary| %>
   <u><%= Project.find(project_id).name %></u><br>
   <% item_summary.each do |item, quantity| %>
-    (<%= quantity %>) <%= item %>: <%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %><br>
+    (<%= quantity %>) <%= item %>: $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %><br>
   <% end %>
   <br>
 <% end %>
