@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "concierge@heartful.ly"
+  default from: "hello@heartful.ly"
   layout :false, only: :user_confirmation
 
   def user_confirmation(user)
