@@ -431,6 +431,14 @@ $(document).ready(function() {
 
   $(".campaign-modal-container").on('click', '.c-registry-card__cart', function() {
     $(".campaign-modal-container").modal('hide');
-  })
+  });
+
+  $(".scroll-to-grid").click(function() {
+    var target = $(this).data("target");
+    $('html,body').animate({
+      scrollTop: $(target).offset().top
+    }, 1000);
+    return false;
+  });
   
 });

@@ -1,19 +1,28 @@
-.instructions.mb--large
-  #select
-    .auto-margin
-      %svg{style: "width: 40px; height: 40px;", :viewbox => "0 0 64 64", :preserveaspectratio => "xMinYMax slice"}
-        %use{"xlink:href" => "#gift-large"}
-    %span
-      <strong>Select</strong> a charitable gift
-  #write
-    .auto-margin
-      %svg{style: "width: 40px; height: 40px;", :viewbox => "0 0 512 512", :preserveaspectratio => "xMinYMax slice"}
-        %use{"xlink:href" => "#notepad"}
-    %span
-      <strong>Write</strong> a sweet note
-  #watch
-    .auto-margin
-      %svg{:style => "width: 40px; height: 40px;", :preserveaspectratio => "xMinYMax slice"}
-        %use{"xlink:href" => "#icon-globe-purple"}
-    %span
-      <strong>Watch</strong> the love grow
+.instructions.mb{style: "padding-top: 20px; padding-bottom: 10px;"}
+  .title.heading.mb
+    How It Works
+  .steps{style: "width: 80%; margin-left: auto; margin-right: auto;"}
+    #select
+      .auto-margin
+        %svg{style: "width: 50px; height: 50px;", preserveaspectratio: "xMinYMin meet", viewbox: "0 0 100 125"}
+          %use{"xlink:href" => "#select-pointer"}
+      %span
+        <strong>Select</strong> a cause
+    .arrow
+      %svg{style: "width: 50px; height: 50px;", preserveaspectratio: "xMinYMin meet", viewbox: "0 0 25 8.75", x: "0px", y: "0px"}
+        %use{"xlink:href" => "#right-arrow"}
+    #write
+      .auto-margin
+        %svg{style: "width: 50px; height: 50px;", preserveaspectratio: "xMinYMin meet", viewbox: "0 0 100 125"}
+          %use{"xlink:href" => "#dedicate-gift"}
+      %span
+        <strong>Dedicate</strong> a gift
+    .arrow
+      %svg{style: "width: 50px; height: 50px;", preserveaspectratio: "xMinYMin meet", viewbox: "0 0 25 8.75", x: "0px", y: "0px"}
+        %use{"xlink:href" => "#right-arrow"}
+    #watch
+      .auto-margin
+        %svg{style: "width: 50px; height: 50px;", preserveaspectratio: "xMinYMin meet", viewbox: "0 0 24 30"}
+          %use{"xlink:href" => "#write-note"}
+      %span
+        <strong>Write</strong> a note

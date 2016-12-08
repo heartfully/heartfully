@@ -57,38 +57,49 @@
   }
 
   .instructions {
-    display: flex;
-    height: 150px;
-    justify-content: space-around;
-    align-items: center;
     background-color: $color-purple-light;
+    text-align: center;
     @media (max-width: $break-large) {
       font-size: 12px;
     }
 
-    #select {
-      div {
-        width: 40px;
+    .title {
+      display: inline-block
+    }
+
+    .steps {
+      height: 125px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      @media (max-width: $break-medium) {
+        height: 100%;
+      }
+
+      span {
+        color: #433e6f;
+      }
+
+      .arrow {
+        @media (max-width: $break-medium) {
+          display: none;
+        }
       }
     }
 
-    #write {
-      div {
-        width: 40px;
-      }
-    }
-
-    #watch {
-      div {
-        width: 40px;
-      }
-    }
-    span {
-      color: #433e6f;
-    }
+    
   }
 
-  .project-grid {
+  #project-grid {
+    text-align: center;
+    @media (max-width: $break-large) {
+      font-size: 12px;
+    }
+
+    .title {
+      display: inline-block
+    }
+
     .project-row {
       display: flex;
       justify-content: space-around;
@@ -112,23 +123,6 @@
   .faq {
     background-color: $color-purple-lightest;
     padding: 40px 0;
-    .faq-header {
-      font-family: 'Roboto Slab';
-      font-weight: 300;
-      font-size: 1.5em;
-      text-align: center;
-      text-transform: uppercase;
-      color: #7D72DE;
-      &:after {
-        content: '';
-        display: block;
-        margin: 10px auto 0 auto;
-        width: 100%;
-        border-bottom: 5px solid $color-purple-deep;
-        // include animation
-        -webkit-animation: line 1.5s forwards;
-      }
-    }
 
     .faq-questions {
       .question-row {
@@ -212,5 +206,23 @@
     .c-checkout {
       display: none;
     }
+  }
+}
+
+.heading {
+  font-family: 'Roboto Slab';
+  font-weight: 300;
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #7D72DE;
+  &:after {
+    content: '';
+    display: block;
+    margin: 10px auto 0 auto;
+    width: 100%;
+    border-bottom: 5px solid $color-purple-deep;
+    // include animation
+    -webkit-animation: line 1.5s forwards;
   }
 }

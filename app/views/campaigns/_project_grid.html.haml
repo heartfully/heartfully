@@ -1,4 +1,6 @@
-.project-grid.auto-margin.mb--large
+#project-grid.auto-margin.mb--large
+  .title.heading.mb--large
+    Select a project
   - @registry.projects.each_slice(3) do |project_group|
     .project-row.mb--large
       - project_group.each do |project|
