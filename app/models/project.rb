@@ -55,6 +55,10 @@ class Project < ActiveRecord::Base
   def photo2_url
     photo2.blank? ? project_photo : photo2.url
   end
+
+  def how_it_works
+    [how_it_works_step1, how_it_works_step2, how_it_works_step3, how_it_works_step4, how_it_works_step5].reject(&:blank?).join("\n")
+  end
 end
 
 # == Schema Information

@@ -30,8 +30,13 @@
             .mb
               .meta.quiet.mb--small The Solution
               = simple_format @registry.projects.first.solution
-            .mb
-              .meta.quiet.mb--small Sustainability
-              = simple_format @registry.projects.first.sustainability
+            - if @registry.projects.first.sustainability.present?
+              .mb
+                .meta.quiet.mb--small Sustainability
+                = simple_format @registry.projects.first.sustainability
+            - elsif @registry.projects.first.how_it_works.present?
+              .mb
+                .meta.quiet.mb--small How It Works
+                = simple_format @registry.projects.first.how_it_works
         %button.c-button.c-button--primary{data: {dismiss: "modal"}, aria: {label: "Close"}}
           Back to registry
