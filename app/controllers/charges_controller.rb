@@ -8,8 +8,20 @@ class ChargesController < ApplicationController
 	def create
     unless @order.status == 'complete'
       begin
-        if @order.registry.projects.first.source_id.present?
-          gg_order = process_global_giving_order
+        if @order.registry.projects.count > 1
+          if eval(@order.summary).keys.length > 1
+            process_multiple_global_giving_orders
+            @order.update(status: 'complete')
+          else
+            project_id = eval(@order.summary).keys.first
+            gg_order = process_global_giving_order(Project.find(project_id).source_id)
+            if gg_order["donation"]
+              @order.update(receipt_number: gg_order["donation"]["receipt"]["receiptNumber"], status: 'complete')
+            end
+          end
+          render :create_holiday
+        elsif @order.registry.projects.first.source_id.present?
+          gg_order = process_global_giving_order(@order.registry.projects.first.source_id)
           if gg_order["donation"]
             @order.update(receipt_number: gg_order["donation"]["receipt"]["receiptNumber"], status: 'complete')
             render :create_global_giving
@@ -69,61 +81,90 @@ class ChargesController < ApplicationController
 
   private
 
-  def process_global_giving_order
-    json_params = {"auth_request":{"user":{"email": ENV['GLOBAL_GIVING_EMAIL_ADDRESS'],"password": ENV['GLOBAL_GIVING_PASSWORD']}, "api_key": ENV['GLOBAL_GIVING_API_KEY']}}.to_json
-
+  def process_global_giving_order(source_id)
     conn = Faraday.new('https://api.globalgiving.org') do |conn|
       conn.request :url_encoded
       conn.adapter Faraday.default_adapter
     end
 
-    access_token_response = conn.post do |req|
-      req.url 'api/userservice/tokens'
+    access_token = get_access_token(conn)
+
+    query_params="api_key=#{ENV['GLOBAL_GIVING_API_KEY']}&api_token=#{access_token}"
+    donation_url = "api/secure/givingservice/donations?#{query_params}"
+
+    donation_params = gg_order_params_with_cc(source_id).to_json
+
+    order_confirmation_response = conn.post do |req|
+      req.url donation_url
       req.headers['Accept'] = 'application/json'
       req.headers['Content-Type'] = 'application/json'
-      req.body = json_params
+      req.body = donation_params
     end
-    if access_token_response.status == 200
-      access_token = JSON.parse(access_token_response.body)["auth_response"]["access_token"]
 
-      query_params="api_key=#{ENV['GLOBAL_GIVING_API_KEY']}&api_token=#{access_token}"
-      donation_url = "api/secure/givingservice/donations?#{query_params}"
+    if order_confirmation_response.status == 200
+      return JSON.parse(order_confirmation_response.body)
+    else
+      logger.info "Order #{@order.id} has failed: #{order_confirmation_response.body}"
+      raise "#{JSON.parse(order_confirmation_response.body)["error_response"]["errors"]["error"].first["error_message"]}"
+    end
+  end
 
-      donation_params = {"donation":
-        {"refcode": "DEFAULT",
-          "email": @order.email,
-          "amount": @order.total.match(/\$(\d+)\./)[1],
-          "project": {"id": @order.registry.projects.first.source_id},
-          "payment_detail":
-            {"firstname": @order.first_name,
-              "lastname": @order.last_name,
-              "address": params[:stripe][:address_line1],
-              "address2": params[:stripe][:address_line2],
-              "city": params[:stripe][:address_city],
-              "state": params[:stripe][:address_state],
-              "iso3166CountryCode": "US",
-              "zip": params[:stripe][:address_zip],
-              "creditCardNumber": params[:stripe][:number],
-              "securityCode": params[:stripe][:cvc_check],
-              "expiryDateMonth": params[:stripe][:exp_month],
-              "expiryDateYear": params[:stripe][:exp_year]}}}.to_json
+  def process_multiple_global_giving_orders
+    conn = Faraday.new('https://api.globalgiving.org') do |conn|
+      conn.request :url_encoded
+      conn.adapter Faraday.default_adapter
+    end
 
-      order_confirmation_response = conn.post do |req|
-        req.url donation_url
-        req.headers['Accept'] = 'application/json'
-        req.headers['Content-Type'] = 'application/json'
-        req.body = donation_params
-      end
+    access_token = get_access_token(conn)
 
-      if order_confirmation_response.status == 200
-        return JSON.parse(order_confirmation_response.body)
-      else
-        logger.info "Order #{@order.id} has failed: #{order_confirmation_response.body}"
-        raise "#{JSON.parse(order_confirmation_response.body)["error_response"]["errors"]["error"].first["error_message"]}"
+    query_params="api_key=#{ENV['GLOBAL_GIVING_API_KEY']}&api_token=#{access_token}"
+    donation_url = "api/secure/givingservice/giftcertificates?#{query_params}"
+
+    donation_params = gg_gift_cert_params.to_json
+
+    order_confirmation_response = conn.post do |req|
+      req.url donation_url
+      req.headers['Accept'] = 'application/json'
+      req.headers['Content-Type'] = 'application/json'
+      req.body = donation_params
+    end
+
+    if order_confirmation_response.status == 200
+      resp = JSON.parse(order_confirmation_response.body)
+      gift_cert_num = resp["giftCertificate"]["giftCertificate_detail"]["giftCertificateNumber"]
+      @order.update(receipt_number: resp["giftCertificate"]["receipt"]["receiptNumber"])
+      order_summary = eval(@order.summary)
+
+      order_summary.each do |project_id, item_summary|
+        project = Project.find(project_id)
+        source_id = project.source_id
+        amount = item_summary.map{|item| (project.item_types.where(name: item[0]).first.price * item[1].to_i).to_i}.inject(0,:+)
+        donation_hash = {amount: amount, source_id: source_id, gift_cert_num: gift_cert_num}
+        sub_access_token = get_access_token(conn)
+
+        sub_query_params="api_key=#{ENV['GLOBAL_GIVING_API_KEY']}&api_token=#{access_token}"
+        sub_donation_url = "api/secure/givingservice/donations?#{query_params}"
+
+        sub_donation_params = gg_order_params_with_gift_cert(donation_hash).to_json
+
+        sub_order_confirmation_response = conn.post do |req|
+          req.url sub_donation_url
+          req.headers['Accept'] = 'application/json'
+          req.headers['Content-Type'] = 'application/json'
+          req.body = sub_donation_params
+        end
+
+        if sub_order_confirmation_response.status == 200
+          logger.info "Order #{@order.id} redeemed GC! Donation hash is #{donation_hash}, GC detail is #{sub_order_confirmation_response["donation"]["giftCertificate_detail"]}"
+        else
+          logger.info "Order #{@order.id} has failed: #{sub_order_confirmation_response.body}"
+          logger.info "Donation hash is #{donation_hash}"
+          raise "#{JSON.parse(sub_order_confirmation_response.body)["error_response"]["errors"]["error"].first["error_message"]}"
+        end
       end
     else
-      logger.info "Order #{@order.id} couldn't get an access token!"
-      raise "We're having trouble completing your purchase at this time. Please try again later."
+      logger.info "Order #{@order.id} has failed: #{order_confirmation_response.body}"
+      raise "#{JSON.parse(order_confirmation_response.body)["error_response"]["errors"]["error"].first["error_message"]}"
     end
   end
 
@@ -134,4 +175,85 @@ class ChargesController < ApplicationController
   def set_order
     @order = Order.find(params[:order_id])
   end
+
+  def gg_order_params_with_cc(source_id)
+    {
+      "donation": {
+        "refcode": "DEFAULT",
+        "email": @order.email,
+        "amount": @order.total.match(/\$(\d+)\./)[1],
+        "project": {"id": source_id},
+        "payment_detail": {
+          "firstname": @order.first_name,
+          "lastname": @order.last_name,
+          "address": params[:stripe][:address_line1],
+          "address2": params[:stripe][:address_line2],
+          "city": params[:stripe][:address_city],
+          "state": params[:stripe][:address_state],
+          "iso3166CountryCode": "US",
+          "zip": params[:stripe][:address_zip],
+          "creditCardNumber": params[:stripe][:number],
+          "securityCode": params[:stripe][:cvc_check],
+          "expiryDateMonth": params[:stripe][:exp_month],
+          "expiryDateYear": params[:stripe][:exp_year]
+        }
+      }
+    }
+  end
+
+  def gg_gift_cert_params
+    {
+      "giftCertificate": {
+        "refcode": "DEFAULT",
+        "email": @order.email,
+        "amount": @order.total.match(/\$(\d+)\./)[1],
+        "payment_detail": {
+          "firstname": @order.first_name,
+          "lastname": @order.last_name,
+          "address": params[:stripe][:address_line1],
+          "address2": params[:stripe][:address_line2],
+          "city": params[:stripe][:address_city],
+          "state": params[:stripe][:address_state],
+          "iso3166CountryCode": "US",
+          "zip": params[:stripe][:address_zip],
+          "creditCardNumber": params[:stripe][:number],
+          "securityCode": params[:stripe][:cvc_check],
+          "expiryDateMonth": params[:stripe][:exp_month],
+          "expiryDateYear": params[:stripe][:exp_year]
+        }
+      }
+    }
+  end
+
+  def gg_order_params_with_gift_cert(options = {})
+    {
+      "donation": {
+        "refcode": "DEFAULT",
+        "email": @order.email,
+        "amount": options[:amount],
+        "project": {"id": options[:source_id]},
+        "giftCertificate_detail": {
+          "giftCertificateNumber": options[:gift_cert_num]
+        }
+      }
+    }
+  end
+
+  def get_access_token(conn)
+    json_params = {"auth_request":{"user":{"email": ENV['GLOBAL_GIVING_EMAIL_ADDRESS'],"password": ENV['GLOBAL_GIVING_PASSWORD']}, "api_key": ENV['GLOBAL_GIVING_API_KEY']}}.to_json
+
+    access_token_response = conn.post do |req|
+      req.url 'api/userservice/tokens'
+      req.headers['Accept'] = 'application/json'
+      req.headers['Content-Type'] = 'application/json'
+      req.body = json_params
+    end
+    if access_token_response.status == 200
+      return JSON.parse(access_token_response.body)["auth_response"]["access_token"]
+    else
+      logger.info "Order #{@order.id} couldn't get an access token!"
+      raise "We're having trouble completing your purchase at this time. Please try again later."
+    end
+  end
+
 end
