@@ -412,7 +412,7 @@ $(document).ready(function() {
     });
   });
 
-  $(".project-grid .project-container").click(function(e) {
+  $("#project-grid .project-container").click(function(e) {
     e.preventDefault();
     var projectUrlSlug = $(this).data("projectUrlSlug");
     var modalContainer = $(".campaign-modal-container");
