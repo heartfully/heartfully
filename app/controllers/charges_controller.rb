@@ -155,7 +155,7 @@ class ChargesController < ApplicationController
         end
 
         if sub_order_confirmation_response.status == 200
-          logger.info "Order #{@order.id} redeemed GC! Donation hash is #{donation_hash}, GC detail is #{sub_order_confirmation_response["donation"]["giftCertificate_detail"]}"
+          logger.info "Order #{@order.id} redeemed GC! Donation hash is #{donation_hash}, GC detail is #{sub_order_confirmation_response.body['donation']['giftCertificate_detail']}"
         else
           logger.info "Order #{@order.id} has failed: #{sub_order_confirmation_response.body}"
           logger.info "Donation hash is #{donation_hash}"
