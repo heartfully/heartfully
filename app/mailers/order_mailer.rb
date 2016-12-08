@@ -31,7 +31,7 @@ class OrderMailer < ActionMailer::Base
 
   def campaign_order_receiver(order)
     @order = order
-    mail to: "#{order.recipient_email}", subject: "#{@order.registry.campaign_message}"
+    mail to: "#{order.recipient_email}", subject: "You've received a holiday gift from #{@order.first_name} #{@order.last_name}"
   end
 
   def campaign_order_kate(order)
