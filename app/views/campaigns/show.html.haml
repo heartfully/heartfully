@@ -20,6 +20,6 @@
               - if current_user && current_user.system_admin?
                 = react_component('RegistryItems', {registry_id: @registry.id, items: @registry.all_item_types.sort{|a,b| a.price <=> b.price}})
               - else
-                = react_component('RegistryItems', {registry_id: @registry.id, items: @registry.all_item_types.select{|i| i.price == 25 || i.price == 50 || i.price == 100}.sort{|a,b| a.price <=> b.price}})
+                = react_component('RegistryItems', {registry_id: @registry.id, items: @registry.all_item_types.select{|i| i.price == 15 || i.price == 20 || i.price == 25 || i.price == 50 || i.price == 100}.sort{|a,b| a.price <=> b.price}})
               %button.c-button.c-button--primary{data: {dismiss: "modal"}, aria: {label: "Close"}}
                 View other projects
