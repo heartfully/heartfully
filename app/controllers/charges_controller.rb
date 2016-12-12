@@ -181,7 +181,7 @@ class ChargesController < ApplicationController
       "donation": {
         "refcode": "DEFAULT",
         "email": @order.email,
-        "amount": @order.total.match(/\$(\d+)\./)[1],
+        "amount": @order.total_big_decimal.to_i,
         "project": {"id": source_id},
         "payment_detail": {
           "firstname": @order.first_name,
@@ -206,7 +206,7 @@ class ChargesController < ApplicationController
       "giftCertificate": {
         "refcode": "DEFAULT",
         "email": @order.email,
-        "amount": @order.total.match(/\$(\d+)\./)[1],
+        "amount": @order.total_big_decimal.to_i,
         "payment_detail": {
           "firstname": @order.first_name,
           "lastname": @order.last_name,
