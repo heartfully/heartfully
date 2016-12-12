@@ -5,12 +5,12 @@
     %span Select Project
     %span Personalize
     %span.disabled Done
-  = form_for(@registry, format: :json, html: {class: 'stacked auto-margin mb'}) do |f|
-    = hidden_field_tag :project_url_slug
+  = form_for(@registry, format: :json, html: {id: "edit-registry-form", class: 'stacked auto-margin mb'}) do |f|
+    = hidden_field_tag :project_url_slug, @registry.projects.first.url_slug
     = f.hidden_field :type
     .slider.auto-margin
       #create-registry
-        = render "step_1", f: f, disable_url_slug: false
+        = render "step_1", f: f, disable_url_slug: true
       #select-project
         = render "step_2"
       #personalize

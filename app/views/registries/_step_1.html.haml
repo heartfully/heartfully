@@ -2,13 +2,13 @@
   .mb
     %span.strong What are you celebrating?
   #registry-types.mb
-    .registry-type.flex-3.ma{data: {type: "wedding"}}
+    #wedding-type.registry-type.flex-3.ma{data: {type: "wedding"}}
       .registry-icon
         %svg.mb
           %use{"xlink:href" => "#icon-rings"}
       %h3.c-subhed__info
         Wedding
-    .registry-type.flex-3.ma{data: {type: "birthday"}}
+    #birthday-type.registry-type.flex-3.ma{data: {type: "birthday"}}
       .registry-icon
         %svg.mb{:viewbox => "0 0 512 512"}
           %use{"xlink:href" => "#confetti"}
@@ -26,7 +26,10 @@
       = f.date_field :event_date, placeholder:'mm/dd/yyyy', min: Date.today
     .url-container.flex-field-2
       %span heartful.ly/registry/
-      = f.text_field :url_slug, placeholder: "your-unique-url", autocapitalize: "off", autocomplete: "off", autocorrect: "off", spellcheck: "false"
+      - if disable_url_slug
+        = f.text_field :url_slug, placeholder: "your-unique-url", autocapitalize: "off", autocomplete: "off", autocorrect: "off", spellcheck: "false", disabled: "disabled", class: "ui-state-valid"
+      - else
+        = f.text_field :url_slug, placeholder: "your-unique-url", autocapitalize: "off", autocomplete: "off", autocorrect: "off", spellcheck: "false"
       .help
         This is the link you'll use to share your registry. It can only contain lowercase letters, numbers, and dashes.
 

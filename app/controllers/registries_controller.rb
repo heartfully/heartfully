@@ -32,11 +32,6 @@ class RegistriesController < ApplicationController
 
   # GET /registries/1/edit
   def edit
-    if current_user.partner
-      @partner = current_user.partner
-    else
-      @partner_invite = PartnerInvite.find_or_initialize_by(:registry_id => @registry.id)
-    end
   end
 
   # POST /registries
@@ -58,12 +53,13 @@ class RegistriesController < ApplicationController
 
   # PATCH/PUT /registries/1
   def update
-    if params.has_key?(:done) && @registry.update(registry_params)
-      redirect_to registry_admin_path(@registry.url_slug), notice: 'Registry was successfully updated.'
-    elsif @registry.update(registry_params)
-      format.html { redirect_to project_registry_form_path(@registry) }
+    if @registry.update(registry_params)
+      respond_to do |format|
+        format.html { redirect_to project_registry_form_path(@registry) }
+        format.json { render json: {finished_url: finished_registry_path(@registry)}.to_json }
+      end
     else
-      redirect_to :back, notice: 'There was an error updating your registry. Please try again.'
+      redirect_to :edit, notice: 'There was an error updating your registry. Please try again.'
     end
   end
 

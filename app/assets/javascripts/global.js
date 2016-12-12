@@ -185,7 +185,7 @@ $(document).ready(function() {
     refreshSlides();
   });
 
-  $(".header span").click(function(e) {
+  $(".header span").click(function() {
     var slideNumber = $(this).index();
     if (!$(this).hasClass("disabled")) {
       $(".slider").slick("slickGoTo", slideNumber);
@@ -193,6 +193,16 @@ $(document).ready(function() {
     } else {
       return false;
     }
+  });
+
+  $("#edit-registry-form").ready(function() {
+    $("#registry-types").ready(function() {
+      if($(this).val() == "Birthday") {
+        $("#birthday-type").trigger('click');
+      } else {
+        $("#wedding-type").trigger('click');
+      }
+    });
   });
 
   $(".registry-type").click(function(e){
@@ -381,9 +391,9 @@ $(document).ready(function() {
   // submit the form!
   $("#step-3-next").click(function(e) {
     $(".finalizing").toggle();
-    var formData = new FormData($("#new-registry-form")[0]);
+    var formData = new FormData($(".registry-container form")[0]);
     $.ajax({
-      url: $("#new-registry-form").prop("action"),
+      url: $(".registry-container form").prop("action"),
       data: formData,
       type: 'POST',
       contentType: false,
