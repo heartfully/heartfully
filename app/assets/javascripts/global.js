@@ -199,8 +199,10 @@ $(document).ready(function() {
     $("#registry-types").ready(function() {
       if($(this).val() == "Birthday") {
         $("#birthday-type").trigger('click');
+        $("#birthday-type").siblings().hide();
       } else {
         $("#wedding-type").trigger('click');
+        $("#wedding-type").siblings().hide();
       }
     });
   });
