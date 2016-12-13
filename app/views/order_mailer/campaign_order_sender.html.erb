@@ -624,8 +624,11 @@
                     <tbody><tr>
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
-                        
-                            <span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">You just did something great! On <%= @order.delivery_date.strftime("%m/%d/%Y") %>, <%= @order.recipient_first_name %> <%= @order.recipient_last_name %> will receive an email notifying them of your gift.<br>
+                            <% if @order.delivery_date.present? %>
+                              <span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">You just did something great! On <%= @order.delivery_date.strftime("%m/%d/%Y") %>, <%= @order.recipient_first_name %> <%= @order.recipient_last_name %> will receive an email notifying them of your gift.<br>
+                            <% else %>
+                              <span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">You just did something great! In a moment, <%= @order.recipient_first_name %> <%= @order.recipient_last_name %> will receive an email notifying them of your gift.<br>
+                            <% end %>
 <br>
 As a reminder, here's what you purchased:<br>
 <br>
