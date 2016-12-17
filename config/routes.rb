@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     get 'finished', on: :member
     resources :orders, :only => [:show, :create]
   end
+  resources :birthdays, only: [:update]
 
   resources :orders do
     resources :charges, :only => [:new, :create]

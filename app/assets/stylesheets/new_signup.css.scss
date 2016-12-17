@@ -87,7 +87,7 @@
     .fields-container {
       display: none;
 
-      input:disabled {
+      input:read-only {
         background-color: lightgrey;
       }
     }
@@ -103,6 +103,9 @@
       }
 
       #registry_name {
+        width: 100%;
+      }
+      #birthday_name {
         width: 100%;
       }
     }

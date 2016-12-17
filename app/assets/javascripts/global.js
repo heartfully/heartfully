@@ -154,16 +154,16 @@ $(document).ready(function() {
   }
 
   function refreshPreview() {
-    var registryType = $("#registry_type").val();
+    var registryType = $(".type-of-registry").val();
     if(registryType == "") {
       var first_name = $("#registry_registrant_first_name").val();
       var second_name = $("#registry_partner_first_name").val();
       $(".preview-text .preview-name").text(first_name + " & " + second_name);
     } else {
-      var eventName = $("#registry_name").val();
+      var eventName = $(".registry-name").val();
       $(".preview-text .preview-name").text(eventName);
     }
-    var date = new Date(($("#registry_event_date").val() + " 00:00:00").replace('-','/'));
+    var date = new Date(($(".registry-event-date").val() + " 00:00:00").replace('-','/'));
     if(!isNaN(date)) {
       var displayDate = date.toLocaleString("en-us", {month: "long", day: "numeric", year: "numeric"})
       $(".preview-text .c-hero__date").text("- " + displayDate + " -");      
@@ -171,7 +171,7 @@ $(document).ready(function() {
   }
 
   function validateURLSlug() {
-    return (/^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$/).test($("#registry_url_slug").val()) && $("#registry_url_slug").val().length > 0;
+    return (/^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$/).test($(".url_slug").val()) && $(".url_slug").val().length > 0;
   }
 
   $(".slider").ready(function() {
@@ -197,12 +197,12 @@ $(document).ready(function() {
 
   $("#edit-registry-form").ready(function() {
     $("#registry-types").ready(function() {
-      if($(this).val() == "Birthday") {
-        $("#birthday-type").trigger('click');
-        $("#birthday-type").siblings().hide();
+      if($("#birthday_type").length == 1) {
+        $("#birthday-icon").trigger('click');
+        $("#birthday-icon").siblings().hide();
       } else {
-        $("#wedding-type").trigger('click');
-        $("#wedding-type").siblings().hide();
+        $("#wedding-icon").trigger('click');
+        $("#wedding-icon").siblings().hide();
       }
     });
   });
@@ -215,14 +215,16 @@ $(document).ready(function() {
       $(".url-container span").text("heartful.ly/registry/")
       $(".birthday").css("display", "none");
       $(".wedding").css("display", "inline");
-      $("#registry_type").val("");
+      $(".type-of-registry").val("");
       $("#registry_registry_story").attr("placeholder", "As we begin our lives together, we want to share our joy by supporting people in need. We are inspired by the work that this amazing non-profit is doing and we invite you to choose items on our behalf to support this project. Can’t wait to see you all soon!")
     } else {
       $(".url-container span").text("heartful.ly/birthday/")
       $(".wedding").css("display", "none");
       $(".birthday").css("display", "inline");
-      $("#registry_type").val("Birthday");
+      $(".type-of-registry").val("Birthday");
       $("#registry_registry_story").attr("placeholder", "I’ve been given so much in life, so to celebrate the big 4-0, I want to give back to those in need. Please help me share the love and make an impact in the lives of others by donating to this amazing organization. Here’s to at least 40 more with all of you amazing people by my side!")
+      // fix this hack
+      $("#birthday_registry_story").attr("placeholder", "I’ve been given so much in life, so to celebrate the big 4-0, I want to give back to those in need. Please help me share the love and make an impact in the lives of others by donating to this amazing organization. Here’s to at least 40 more with all of you amazing people by my side!")
     }
     $(".fields-container").css("display", "inline");
     $(".slide-footer").css("display", "inline");
@@ -235,7 +237,7 @@ $(document).ready(function() {
   })
 
   // don't allow invalid characters for url_slug
-  $("#registry_url_slug").keypress(function(e) {
+  $(".url_slug").keypress(function(e) {
     var chr = String.fromCharCode(e.which);
     return (/[a-z\d-]/).test(chr);
   });
@@ -248,33 +250,33 @@ $(document).ready(function() {
     };
   })();
 
-  $("#registry_url_slug").keydown(function(e) {
-    $("#registry_url_slug").removeClass();
-    $("#registry_url_slug").addClass("ui-state-loading");
+  $(".url_slug").keydown(function(e) {
+    $(".url_slug").removeClass("ui-state-valid ui-state-invalid");
+    $(".url_slug").addClass("ui-state-loading");
     delay(function() {
       if(validateURLSlug()) {
-        $.get("/registries/check_url_availability", {url_slug: $("#registry_url_slug").val()}, function(data) {
+        $.get("/registries/check_url_availability", {url_slug: $(".url_slug").val()}, function(data) {
           if(data["available"]) {
-            $("#registry_url_slug").removeClass();
-            $("#registry_url_slug").addClass("ui-state-valid");
+            $(".url_slug").removeClass("ui-state-loading ui-state-invalid");
+            $(".url_slug").addClass("ui-state-valid");
           } else {
-            $("#registry_url_slug").removeClass();
-            $("#registry_url_slug").addClass("ui-state-invalid");
+            $(".url_slug").removeClass("ui-state-loading ui-state-valid");
+            $(".url_slug").addClass("ui-state-invalid");
           }
         });
       } else {
-        $("#registry_url_slug").removeClass();
-        $("#registry_url_slug").addClass("ui-state-invalid");
+        $(".url_slug").removeClass("ui-state-loading ui-state-valid");
+        $(".url_slug").addClass("ui-state-invalid");
       }
     }, 500);
   });
 
   $("#step-1-next").click(function(e) {
-    if($("#registry_url_slug").hasClass("ui-state-valid")) {
+    if($(".url_slug").hasClass("ui-state-valid")) {
       $(".slider").slick("slickNext");
       refreshSlides();
     } else {
-      $("#registry_url_slug").addClass("ui-state-invalid");
+      $(".url_slug").addClass("ui-state-invalid");
     }
   });
 

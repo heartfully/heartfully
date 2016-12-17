@@ -2,13 +2,13 @@
   .mb
     %span.strong What are you celebrating?
   #registry-types.mb
-    #wedding-type.registry-type.flex-3.ma{data: {type: "wedding"}}
+    #wedding-icon.registry-type.flex-3.ma{data: {type: "wedding"}}
       .registry-icon
         %svg.mb
           %use{"xlink:href" => "#icon-rings"}
       %h3.c-subhed__info
         Wedding
-    #birthday-type.registry-type.flex-3.ma{data: {type: "birthday"}}
+    #birthday-icon.registry-type.flex-3.ma{data: {type: "birthday"}}
       .registry-icon
         %svg.mb{:viewbox => "0 0 512 512"}
           %use{"xlink:href" => "#confetti"}
@@ -16,20 +16,21 @@
         Birthday
 .fields-container
   .flexstuff.auto-margin
-    = f.text_field :name, placeholder: "Registry Title (i.e. Happy Birthday Hannah, I'm Turning 30!)", class: "birthday"
+    = f.text_field :name, placeholder: "Registry Title (i.e. Happy Birthday Hannah, I'm Turning 30!)", class: "birthday registry-name"
     = f.text_field :registrant_first_name, placeholder: "Your first name", class: "flex-field-2"
     = f.text_field :registrant_last_name, placeholder: "Your last name", class: "flex-field-2"
     = f.text_field :partner_first_name, placeholder: "Partner's first name", class: "flex-field-2 wedding"
     = f.text_field :partner_last_name, placeholder: "Partner's last name", class: "flex-field-2 wedding"
     .date-container.flex-field-2
       %span Event date:
-      = f.date_field :event_date, placeholder:'mm/dd/yyyy', min: Date.today
+      = f.date_field :event_date, placeholder:'mm/dd/yyyy', min: Date.today, class: "registry-event-date"
     .url-container.flex-field-2
       %span heartful.ly/registry/
       - if disable_url_slug
-        = f.text_field :url_slug, placeholder: "your-unique-url", autocapitalize: "off", autocomplete: "off", autocorrect: "off", spellcheck: "false", disabled: "disabled", class: "ui-state-valid"
+        = f.text_field :url_slug, placeholder: "your-unique-url", autocapitalize: "off", autocomplete: "off", autocorrect: "off", spellcheck: "false", readonly: "true", class: "ui-state-valid url_slug"
       - else
-        = f.text_field :url_slug, placeholder: "your-unique-url", autocapitalize: "off", autocomplete: "off", autocorrect: "off", spellcheck: "false"
+        = f.hidden_field :url_slug
+        = f.text_field :url_slug, placeholder: "your-unique-url", autocapitalize: "off", autocomplete: "off", autocorrect: "off", spellcheck: "false", class: "url_slug"
       .help
         This is the link you'll use to share your registry. It can only contain lowercase letters, numbers, and dashes.
 
