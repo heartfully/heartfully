@@ -670,9 +670,12 @@
   <br>
 <% end %>
 <br>
-Your receipt number is <%= @order.receipt_number %><br>
-<br>
-<em>Your gift is tax-deductible through our partnership with GlobalGiving. GlobalGiving's tax-exempt ID number is 30-0108263. This email serves as evidence of your donation, which, if applicable, may be used for tax purposes.</em></span></span></span>
+<% if @order.receipt_number %>
+  Your receipt number is <%= @order.receipt_number %><br>
+  <br>
+  <em>Your gift is tax-deductible through our partnership with GlobalGiving. GlobalGiving's tax-exempt ID number is 30-0108263. This email serves as evidence of your donation, which, if applicable, may be used for tax purposes.</em>
+<% end %>
+</span></span></span>
                         </td>
                     </tr>
                 </tbody></table>
