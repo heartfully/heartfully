@@ -42,11 +42,7 @@
         %form#mc-embedded-subscribe-form.validate{:action => "//heartful.us9.list-manage.com/subscribe/post?u=ba087ef985b740ee023cb4d34&id=83d8300bce", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
           #mc_embed_signup_scroll
             %label{:for => "mce-EMAIL"} Keep in touch!
-            %input#mce-EMAIL.block{:name => "EMAIL", :placeholder => "Your email address", :required => "", :type => "email", :value => ""}/
-            / real people should not fill this in and expect good things - do not remove this or risk form bot signups
-            %div{"aria-hidden" => "true", :style => "position: absolute; left: -5000px;"}
-              %input{:name => "b_ba087ef985b740ee023cb4d34_83d8300bce", :tabindex => "-1", :type => "text", :value => ""}/
-            %input#mc-embedded-subscribe.c-button.c-button--primary{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
+            %input#mc-embedded-subscribe.c-button.c-button--primary.launchEmailModal{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
   .c-footer__terms.nudge-top
     Copyright 2016 Heartful.ly. All rights reserved.
     %br/

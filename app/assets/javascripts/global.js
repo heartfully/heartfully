@@ -114,6 +114,11 @@ $(document).ready(function() {
     }
   });
 
+  $(".launchEmailModal").click(function(e) {
+    e.preventDefault();
+    $("#emailSubModal").modal();
+  });
+
   $("#emailSubModal form").submit(function(e) {
     e.preventDefault();
     $.post($(this).prop("action"), $(this).serialize(), $("#emailSubModal").modal("hide"));
