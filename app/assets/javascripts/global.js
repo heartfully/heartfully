@@ -459,5 +459,23 @@ $(document).ready(function() {
     }, 1000);
     return false;
   });
+
+  // MULTI-PROJECT REGISTRY STUFF
+
+  $(".project-carousel").ready(function() {
+    $(".project-carousel").slick({
+      swipe: false,
+      infinite: false,
+      arrows: false,
+      adaptiveHeight: true
+    });
+  });
+
+  $(".project-list .project-container").click(function() {
+    $(".project-carousel").slick("slickGoTo", $(this).index());
+    var currentSlide = $(".project-carousel").slick("slickCurrentSlide");
+    $(".project-list .project-container").css("background-color", "");
+    $(".project-list .project-container:eq(" + currentSlide + ")").css("background-color", "#F2EFF9");
+  });
   
 });

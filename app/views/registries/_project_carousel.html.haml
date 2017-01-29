@@ -1,0 +1,55 @@
+.project-carousel
+  - @registry.projects.each do |project|
+    .project-summary
+      .column-container
+        .column-one
+          .about-this-project
+            .meta.mb
+              %svg.c-icon{:style => "width: 20px; height: 20px;"}
+                %use{"xlink:href" => "#icon-globe-purple"}
+              About this project
+            .project-header.mb{style: "background-image: url(#{project.photo1_url})"}
+            %h3.title= project.name
+            %p.mb= project.description
+            = link_to "Learn more", project_path(project.url_slug), class: "c-button c-button--primary launchProjectModal", target: "_blank"
+          .about-this-partner
+            .meta.quiet.mb
+              About this partner
+            .partner-container
+              .partner-info
+                %h4.title= project.organization.name
+                %ul.c-project-about__meta
+                  %li
+                    %svg.c-icon.c-icon--inline{title: "location"}
+                      %use{"xlink:href" => "#icon-map"}
+                    = project.country
+                  %li
+                    %svg.c-icon.c-icon--inline{title: "location"}
+                      %use{"xlink:href" => "#icon-link"}
+                    = link_to project.organization.org_url, project.organization.org_url, target: "_blank"
+              .partner-image
+                = link_to image_tag(project.organization.logo_url, style: 'width: 75px; height: 75px; display: inline-block; vertical-align: middle;'), project.organization.org_url, target: "_blank"
+          .share-container
+            .meta.quiet.mb
+              Share the love
+            = facebook_share_link_for(@registry)
+
+            / BOO HISS
+            - if @registry.url_slug == "hbdheartfully"
+              = link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Join me in celebrating @heartful_ly's 1st birthday with a donation to @marthastableorg&url=#{birthday_home_url(@registry.url_slug)}&hashtags=hbdheartfully"
+            - else
+              = twitter_share_link_for(@registry)
+        .column-two
+          .registry-items
+            - if project.source_id.present?
+              .meta
+                %svg.c-icon{:style => "width: 20px; height: 20px;", :title => "gifts"}
+                  %use{"xlink:href" => "#icon-gift"}
+                = gift_items_display_for(@registry)
+              .quiet.small.mb Your donation is tax-deductible.
+            - else
+              .meta.mb
+                %svg.c-icon{:style => "width: 20px; height: 20px;", :title => "gifts"}
+                  %use{"xlink:href" => "#icon-gift"}
+                = gift_items_display_for(@registry)
+            = react_component('RegistryItems', {registry_id: @registry.id, items: project.item_types.sort{|a,b| a.price <=> b.price}})

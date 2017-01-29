@@ -65,28 +65,7 @@
       margin-bottom: 40px;
     }
 
-    .goal {
-      .goal-info {
-        display: inline-block;
-
-        .goal-heart {
-          width: 100px;
-          margin-left: auto;
-          margin-right: auto;
-          img {
-            background-image: image-url('heart-bg-sprite.png');
-            background-repeat: no-repeat;
-          }
-        }
-
-        .goal-statement {
-          .goal-number {
-            font-family: 'AvenirNextLTPro-Bold', Helvetica, Arial, sans-serif;
-            color: $color-purple-deep;
-          }
-        }
-      }
-    }
+    
   }
 
   .title {
@@ -148,5 +127,77 @@
         font-weight: bold;
       }
     }
+  }
+}
+
+
+.registry-info {
+  @media (min-width: $break-medium) {
+    display: flex;
+  }
+  @media (max-width: $break-medium) {
+    display: block;
+  }
+  .registry-flex-column {
+    @media (min-width: $break-medium) {
+      width: 30%;
+    }
+    @media (max-width: $break-medium) {
+      width: 90%;
+    }
+    margin: 0 auto;
+
+    > div {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.goal {
+  .goal-info {
+    display: inline-block;
+
+    .goal-heart {
+      width: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      img {
+        background-image: image-url('heart-bg-sprite.png');
+        background-repeat: no-repeat;
+      }
+    }
+
+    .goal-statement {
+      .goal-number {
+        font-family: 'AvenirNextLTPro-Bold', Helvetica, Arial, sans-serif;
+        color: $color-purple-deep;
+      }
+    }
+  }
+}
+
+.project-list {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  @media (max-width: $break-medium) {
+    display: block;
+  }
+  @media (max-width: $break-large) {
+    font-size: 12px;
+  }
+
+  .title {
+    display: inline-block
+  }
+  .project-container {
+    cursor: pointer;
+
+    .c-tiny-project__photo {
+      border-radius: 5px;
+    }
+  }
+  p {
+    @include font-meta;
   }
 }

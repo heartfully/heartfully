@@ -1,0 +1,11 @@
+.project-list.mb
+  - @registry.projects.each do |project|
+    .project-container.flex-field-3
+      .c-tiny-project__photo{style: "background-image: url('#{project.photo1_url}')"}
+      .c-tiny-project__info
+        %p.mb--small= project.name
+        %ul.c-project-about__meta
+          %li
+            %svg.c-icon.c-icon--inline{:title => "location"}
+              %use{"xlink:href" => "#icon-map"}
+            = project.country

@@ -1,0 +1,34 @@
+.registry-info
+  - if @registry.registry_story.present?
+    .registry-flex-column
+      .story
+        .meta.mb
+          %svg.c-icon{:style => "width: 20px; height: 20px;", :preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 512 512"}
+            %use{"xlink:href" => "#confetti"}
+          Welcome
+        %p.mb= simple_format @registry.registry_story
+
+  - if @registry.video_url.present?
+    .registry-flex-column
+      .video-container
+        .meta.mb
+          %svg.c-icon{:style => "width: 20px; height: 20px;"}
+            %use{"xlink:href" => "#icon-hearts-purple"}
+          From the heart
+        %iframe{src: @registry.video_url, frameborder: 0, height: 300, width: "100%" }
+
+  - if @registry.goal.present?
+    .registry-flex-column
+      .goal
+        .meta.mb
+          %svg.c-icon{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 512 512", :style => "width: 20px; height: 20px;"}
+            %use{"xlink:href" => "#bullseye"}
+          = goal_message_for(@registry)
+        .goal-info
+          .goal-heart.mb--small
+            = image_tag 'heart-inverted.png', style: 'width: 100px; height: 100px;'
+          %h3.goal-statement
+            %span#total-raised.goal-number= "$#{@registry.total_raised}"
+            raised of
+            %span#registry-goal.goal-number= "$#{@registry.goal}"
+            goal
