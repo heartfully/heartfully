@@ -6,21 +6,21 @@
           %svg.c-icon{:style => "width: 20px; height: 20px;", :preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 512 512"}
             %use{"xlink:href" => "#confetti"}
           Welcome
-        %p.mb= simple_format @registry.registry_story
+        = simple_format @registry.registry_story
     -if @registry.couples_story.present?
       .story
         .meta.mb
           %svg.c-icon{:style => "width: 20px; height: 20px;", :preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 32 32"}
             %use{"xlink:href" => "#icon-hearts-purple"}
           How we met
-        %p.mb= simple_format @registry.couples_story
+        = simple_format @registry.couples_story
     -if @registry.campaign_message.present?
       .story
         .meta.mb
           %svg.c-icon{:style => "width: 20px; height: 20px;", :preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 32 32"}
             %use{"xlink:href" => "#icon-hearts-purple"}
           Welcome
-        %p.mb= simple_format @registry.campaign_message
+        = simple_format @registry.campaign_message
     - if @registry.video_url.present?
       .video-container
         .meta.mb
