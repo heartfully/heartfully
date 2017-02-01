@@ -21,6 +21,6 @@
   <div class="mb">
     <%= label_tag(:delivery_date, 'Delivery Date') %>
     <br>
-    <%= date_field_tag(:delivery_date, Date.new(2017, 2, 14), min: Date.tomorrow, max: Date.new(2017, 2, 14)) %>
+    <%= date_field_tag(:delivery_date, Date.new(2017, 2, 14), min: Date.today, max: Date.new(2017, 2, 14)) %>
   </div>
 </div>
