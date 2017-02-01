@@ -632,7 +632,7 @@
   <span style="background-color: #FFFFFF;"><font color="#352a5a" face="source sans pro, helvetica neue, helvetica, arial, sans-serif"><span style="font-size:16px"> 
   <ul dir="ltr">
   <% item_summary.each do |item, quantity| %>
-    <li><span style="color:#352A5A"><span style="font-size:16px"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><%= item %></span></span></span></li>
+    <li><span style="color:#352A5A"><span style="font-size:16px"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><%= item %><%= "Quantity: #{quantity}" if quantity > 1 %></span></span></span></li>
   <% end %>
   </ul>
 <% end %>
