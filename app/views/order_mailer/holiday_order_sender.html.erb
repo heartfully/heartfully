@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>You've received a Valentine's Day gift from <%= @order.first_name %> <%= @order.last_name %></title>
+    <title>Good news! Your generous donation is on its way!</title>
         
     <style type="text/css">
     p{
@@ -563,7 +563,7 @@
                             <td class="mcnImageContent" valign="top" style="padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                 
                                     <a href="https://www.heartful.ly/holidays" title="" class="" target="_blank">
-                                        <img align="center" alt="" src="https://gallery.mailchimp.com/ba087ef985b740ee023cb4d34/images/926761ba-80c6-41ed-9728-c8c58478f0d6.png" width="200" style="max-width:200px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        <img align="center" alt="" src="https://gallery.mailchimp.com/ba087ef985b740ee023cb4d34/images/5f736ce7-d326-45c0-aed6-59b26604cf8c.png" width="564" style="max-width:800px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                     </a>
                                 
                             </td>
@@ -589,7 +589,7 @@
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
                         
-                            <h1 class="null"><span style="color:#7272DE"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">Hi <%= @order.recipient_first_name %>!</span></span></h1>
+                            <h1 class="null"><span style="color:#7272DE"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">Dear <%= @order.first_name %>,</span></span></h1>
 
                         </td>
                     </tr>
@@ -624,29 +624,56 @@
                     <tbody><tr>
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
-                        
-                            <span style="font-size:16px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><%= @order.first_name %> <%= @order.last_name %> wants to wish you a very happy Valentine's Day and has made a donation in your name to provide relief to Syrian refugee families.</span></span></span>
-
-<p dir="ltr"><span style="color:#352A5A"><span style="font-size:16px"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">The donation <%= @order.first_name %> made reflects:<br>
+                            <% if @order.delivery_date.present? %>
+                              <span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">You just did something great! On <%= @order.delivery_date.strftime("%m/%d/%Y") %>, <%= @order.recipient_first_name %> <%= @order.recipient_last_name %> will receive an email notifying them of your gift.<br>
+                            <% else %>
+                              <span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">You just did something great! In a moment, <%= @order.recipient_first_name %> <%= @order.recipient_last_name %> will receive an email notifying them of your gift.<br>
+                            <% end %>
+<br>
+As a reminder, here's what you purchased:<br>
+<br>
 <% order_summary(@order.summary).each do |project_id, item_summary| %>
-  <% project = Project.find(project_id) %>
-  <span style="background-color: #FFFFFF;"><font color="#352a5a" face="source sans pro, helvetica neue, helvetica, arial, sans-serif"><span style="font-size:16px"><u><%= project.name %></u><br> 
-  <ul dir="ltr">
+  <u><%= Project.find(project_id).name %></u><br>
   <% item_summary.each do |item, quantity| %>
-    <li><span style="color:#352A5A"><span style="font-size:16px"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><%= item %></span></span></span></li>
+    (<%= quantity %>) <%= item %>: $<%= (@order.registry.item_types.where(name: item).first.price * quantity.to_i).to_i %><br>
   <% end %>
-  </ul>
+  <br>
 <% end %>
-<%= @order.first_name %> also wrote this note to you:</span></span></span><br>
+Your receipt number is <%= @order.receipt_number %><br>
 <br>
-<em style="background-color: #E6E6FA;color: #352A5A;font-size: 18px;font-style: italic;"><%= @order.message %></em><br>
-<br>
-<span style="color:#352A5A"><span style="font-size:16px"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">Funds raised through Heartful.ly's Valentine's Day initiative support </span></span></span><span style="font-size:16px"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><a href="https://www.mercycorps.org/home" target="_blank"><span style="color:#7d72de">Mercy Corps</span></a></span></span><span style="color:#352A5A"><span style="font-size:16px"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">, a trusted international nonprofit that connects people to the resources they need to build better, stronger lives.<br>
-<br>
-Happy Valentine's Day!&nbsp;</span></span></span><br>
-<br>
-<img align="none" height="22" src="https://gallery.mailchimp.com/ba087ef985b740ee023cb4d34/images/b59ecf1f-6308-4a1b-995f-4ce828a42abc.png" style="width: 25px; height: 22px; margin: 0px;" width="25">,<br>
-<span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><span style="color:#352A5A"><span style="font-size:16px">&nbsp; &nbsp; &nbsp;Team Heartful.ly</span></span></span></p>
+Your gift is tax-deductible through our partnership with Global Giving. GlobalGiving's tax-exempt ID number is 30-0108263. This email serves as evidence of your donation, which may be used for tax purposes.</span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+        <!--[if mso]>
+        </td>
+        <![endif]-->
+                
+        <!--[if mso]>
+        </tr>
+        </table>
+        <![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                <!--[if mso]>
+        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+        <tr>
+        <![endif]-->
+          
+        <!--[if mso]>
+        <td valign="top" width="600" style="width:600px;">
+        <![endif]-->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+                    <tbody><tr>
+                        
+                        <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                        
+                            <div style="text-align: left;"><em><span style="font-size:16px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">Tag us on </span></span><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><a href="https://www.facebook.com/beheartful" target="_blank"><span style="color:#7272DE">Facebook</span></a></span><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"> or </span></span><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><a href="https://www.twitter.com/heartful_ly" target="_blank"><span style="color:#7272DE">Tweet</span></a></span><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"> at us and tell the world why you decided to share the love this holiday season. (Projects shared to Facebook are 3x more likely to be funded!)</span></span></span></em></div>
 
                         </td>
                     </tr>
@@ -662,7 +689,53 @@ Happy Valentine's Day!&nbsp;</span></span></span><br>
             </td>
         </tr>
     </tbody>
-</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCodeBlock">
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                <!--[if mso]>
+        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+        <tr>
+        <![endif]-->
+          
+        <!--[if mso]>
+        <td valign="top" width="600" style="width:600px;">
+        <![endif]-->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+                    <tbody><tr>
+                        
+                        <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                        
+                            <div style="text-align: left;"><span style="font-size:16px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><em>Happy Holidays! May they&nbsp;be merry and bright!</em></span></span></span><br>
+&nbsp;</div>
+
+<div style="text-align: left;"><span style="font-size:16px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><img align="none" height="22" src="https://gallery.mailchimp.com/ba087ef985b740ee023cb4d34/images/b59ecf1f-6308-4a1b-995f-4ce828a42abc.png" style="float: left;" width="25">,
+</span></span></span></div>
+
+<div style="text-align: left;"><span style="font-size:16px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">&nbsp; &nbsp; Team Heartful.ly</span></span></span></div>
+&nbsp;
+
+<div style="text-align: left;"><br>
+<span style="font-size:14px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">Questions about your gift? Drop us a line at hello@heartful.ly or hit reply to this message.</span></span></span></div>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+        <!--[if mso]>
+        </td>
+        <![endif]-->
+                
+        <!--[if mso]>
+        </tr>
+        </table>
+        <![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                            </tr>
+                            <tr>
+                                <td valign="top" id="templateFooter"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCodeBlock">
     <tbody class="mcnTextBlockOuter">
         <tr>
             <td valign="top" class="mcnTextBlockInner">
@@ -689,8 +762,7 @@ Happy Valentine's Day!&nbsp;</span></span></span><br>
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
                         
-                            <div style="text-align: center;"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><strong><span style="font-size:18px"><font color="#352a5a">Join the movement.<br>
-Provide relief to refugee families in honor of the people you love.</font></span></strong></span></div>
+                            <div style="text-align: center;"><strong><span style="font-size:24px"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><font color="#352a5a">Ready to give another gift?</font></span></span></strong></div>
 
                         </td>
                     </tr>
@@ -714,7 +786,7 @@ Provide relief to refugee families in honor of the people you love.</font></span
                     <tbody>
                         <tr>
                             <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial; font-size: 16px; padding: 15px;">
-                                <a class="mcnButton " title="I WANT TO HELP" href="https://www.heartful.ly/valentinesday" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;">I WANT TO HELP</a>
+                                <a class="mcnButton " title="SHOP GIFTS FOR GOOD" href="https://www.heartful.ly/holidays" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;">SHOP GIFTS FOR GOOD</a>
                             </td>
                         </tr>
                     </tbody>
@@ -722,10 +794,7 @@ Provide relief to refugee families in honor of the people you love.</font></span
             </td>
         </tr>
     </tbody>
-</table></td>
-                            </tr>
-                            <tr>
-                                <td valign="top" id="templateFooter"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCodeBlock">
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCodeBlock">
     <tbody class="mcnTextBlockOuter">
         <tr>
             <td valign="top" class="mcnTextBlockInner">
@@ -779,12 +848,20 @@ Provide relief to refugee families in honor of the people you love.</font></span
               <td width="600" height="20" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">&nbsp;
               </td>
             </tr>
+                        <tr>
+              <td width="600" height="40" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
+                            <center>
+                        
+                        </center>
+              </td>
+                        </tr>
                         <tr style="padding:0">
               <td width="600" height="20" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">&nbsp;
               </td>
             </tr>
           </tbody></table>
 <!-- Footer end -->
+
             </td>
         </tr>
     </tbody>

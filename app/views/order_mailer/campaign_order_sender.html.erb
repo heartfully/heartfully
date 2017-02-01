@@ -563,7 +563,7 @@
                             <td class="mcnImageContent" valign="top" style="padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                 
                                     <a href="https://www.heartful.ly/holidays" title="" class="" target="_blank">
-                                        <img align="center" alt="" src="https://gallery.mailchimp.com/ba087ef985b740ee023cb4d34/images/5f736ce7-d326-45c0-aed6-59b26604cf8c.png" width="564" style="max-width:800px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        <img align="center" alt="" src="https://gallery.mailchimp.com/ba087ef985b740ee023cb4d34/images/02a39e7f-fdc0-4cea-93af-d26a67599a4a.jpg" width="564" style="max-width:1024px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                     </a>
                                 
                             </td>
@@ -624,11 +624,11 @@
                     <tbody><tr>
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
-                            <% if @order.delivery_date.present? %>
-                              <span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">You just did something great! On <%= @order.delivery_date.strftime("%m/%d/%Y") %>, <%= @order.recipient_first_name %> <%= @order.recipient_last_name %> will receive an email notifying them of your gift.<br>
-                            <% else %>
-                              <span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">You just did something great! In a moment, <%= @order.recipient_first_name %> <%= @order.recipient_last_name %> will receive an email notifying them of your gift.<br>
-                            <% end %>
+                          <% if @order.delivery_date.present? %>
+                            <span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">You just did something great! On <%= @order.delivery_date.strftime("%m/%d/%Y") %>, <%= @order.recipient_first_name %> <%= @order.recipient_last_name %> will receive an email notifying them of your gift.<br>
+                          <% else %>
+                            <span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">You just did something great! In a moment, <%= @order.recipient_first_name %> <%= @order.recipient_last_name %> will receive an email notifying them of your gift.<br>
+                          <% end %>
 <br>
 As a reminder, here's what you purchased:<br>
 <br>
@@ -639,84 +639,22 @@ As a reminder, here's what you purchased:<br>
   <% end %>
   <br>
 <% end %>
-Your receipt number is <%= @order.receipt_number %><br>
+Your receipt number is: <%= @order.receipt_number %><br>
 <br>
-Your gift is tax-deductible through our partnership with Global Giving. GlobalGiving's tax-exempt ID number is 30-0108263. This email serves as evidence of your donation, which may be used for tax purposes.</span></span>
-                        </td>
-                    </tr>
-                </tbody></table>
-        <!--[if mso]>
-        </td>
-        <![endif]-->
-                
-        <!--[if mso]>
-        </tr>
-        </table>
-        <![endif]-->
-            </td>
-        </tr>
-    </tbody>
-</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
-    <tbody class="mcnTextBlockOuter">
-        <tr>
-            <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
-                <!--[if mso]>
-        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-        <tr>
-        <![endif]-->
-          
-        <!--[if mso]>
-        <td valign="top" width="600" style="width:600px;">
-        <![endif]-->
-                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
-                    <tbody><tr>
-                        
-                        <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
-                        
-                            <div style="text-align: left;"><em><span style="font-size:16px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">Tag us on </span></span><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><a href="https://www.facebook.com/beheartful" target="_blank"><span style="color:#7272DE">Facebook</span></a></span><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"> or </span></span><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><a href="https://www.twitter.com/heartful_ly" target="_blank"><span style="color:#7272DE">Tweet</span></a></span><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"> at us and tell the world why you decided to share the love this holiday season. (Projects shared to Facebook are 3x more likely to be funded!)</span></span></span></em></div>
-
-                        </td>
-                    </tr>
-                </tbody></table>
-        <!--[if mso]>
-        </td>
-        <![endif]-->
-                
-        <!--[if mso]>
-        </tr>
-        </table>
-        <![endif]-->
-            </td>
-        </tr>
-    </tbody>
-</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
-    <tbody class="mcnTextBlockOuter">
-        <tr>
-            <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
-                <!--[if mso]>
-        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-        <tr>
-        <![endif]-->
-          
-        <!--[if mso]>
-        <td valign="top" width="600" style="width:600px;">
-        <![endif]-->
-                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
-                    <tbody><tr>
-                        
-                        <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
-                        
-                            <div style="text-align: left;"><span style="font-size:16px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><em>Happy Holidays! May they&nbsp;be merry and bright!</em></span></span></span><br>
-&nbsp;</div>
-
-<div style="text-align: left;"><span style="font-size:16px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><img align="none" height="22" src="https://gallery.mailchimp.com/ba087ef985b740ee023cb4d34/images/b59ecf1f-6308-4a1b-995f-4ce828a42abc.png" style="float: left;" width="25">,
-</span></span></span></div>
-
-<div style="text-align: left;"><span style="font-size:16px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">&nbsp; &nbsp; Team Heartful.ly</span></span></span></div>
-&nbsp;
+Funds raised through our Valentine's Day initiative will be sent to </span></span><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><a href="https://www.mercycorps.org/home" target="_blank"><span style="color:#7d72de">Mercy Corps</span></a></span><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">, a trusted international nonprofit that connects people to the resources they need to build better, stronger lives.&nbsp;<br>
+<br>
+<em>Your gift is tax-deductible through our partnership with GlobalGiving. GlobaGiving's tax-exempt ID number is 30-0108263. This email serves as evidence of your donation, which, if applicable, may be used for tax purposes.</em></span></span><br>
+<br>
+<span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">Tag us on </span></span><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><a href="http://www.facebook.com/beheartful" target="_blank"><span style="color:#7d72de">Facebook</span></a></span><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"> or </span></span><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><a href="http://www.twitter.com/heartful_ly" target="_blank"><span style="color:#7d72de">Tweet</span></a></span><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"> at us and tell the world why you decided to share the love this Valentine's Day. (When shared to Facebook, you can inspire donations by a multiple of 3!)&nbsp;</span></span>
 
 <div style="text-align: left;"><br>
-<span style="font-size:14px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">Questions about your gift? Drop us a line at hello@heartful.ly or hit reply to this message.</span></span></span></div>
+<span style="font-size:14px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif"><img align="none" height="22" src="https://gallery.mailchimp.com/ba087ef985b740ee023cb4d34/images/b59ecf1f-6308-4a1b-995f-4ce828a42abc.png" style="float: left;" width="25">,</span></span></span></div>
+
+<div style="text-align: left;"><span style="font-size:15px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">&nbsp; &nbsp; Team Heartful.ly</span></span></span></div>
+<span style="font-size:15px"> &nbsp;</span>
+
+<div style="text-align: left;"><br>
+<span style="font-size:14px"><span style="color:#352A5A"><span style="font-family:source sans pro,helvetica neue,helvetica,arial,sans-serif">Questions about your gift? Hit reply to this message.</span></span></span></div>
 
                         </td>
                     </tr>
@@ -732,10 +670,7 @@ Your gift is tax-deductible through our partnership with Global Giving. GlobalGi
             </td>
         </tr>
     </tbody>
-</table></td>
-                            </tr>
-                            <tr>
-                                <td valign="top" id="templateFooter"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCodeBlock">
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCodeBlock">
     <tbody class="mcnTextBlockOuter">
         <tr>
             <td valign="top" class="mcnTextBlockInner">
@@ -786,7 +721,7 @@ Your gift is tax-deductible through our partnership with Global Giving. GlobalGi
                     <tbody>
                         <tr>
                             <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial; font-size: 16px; padding: 15px;">
-                                <a class="mcnButton " title="SHOP GIFTS FOR GOOD" href="https://www.heartful.ly/holidays" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;">SHOP GIFTS FOR GOOD</a>
+                                <a class="mcnButton " title="OH YEAH!" href="https://www.heartful.ly/sharethelove" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;">OH YEAH!</a>
                             </td>
                         </tr>
                     </tbody>
@@ -851,7 +786,7 @@ Your gift is tax-deductible through our partnership with Global Giving. GlobalGi
                         <tr>
               <td width="600" height="40" style="border-collapse:collapse;color:#787878;line-height:24px;padding:0">
                             <center>
-                        
+                        *|REWARDS|*
                         </center>
               </td>
                         </tr>
@@ -866,6 +801,9 @@ Your gift is tax-deductible through our partnership with Global Giving. GlobalGi
         </tr>
     </tbody>
 </table></td>
+                            </tr>
+                            <tr>
+                                <td valign="top" id="templateFooter"></td>
                             </tr>
                         </table>
             <!--[if gte mso 9]>
