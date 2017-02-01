@@ -67,6 +67,7 @@ Rails.application.routes.draw do
   end
 
   get '/holidays', to: 'campaigns#show', url_slug: 'holidays'
+  get '/valentinesday', to: 'campaigns#show', url_slug: 'valentinesday'
   scope '/campaign/:url_slug' do
     root to: 'campaigns#show', as: 'campaign_home'
   end

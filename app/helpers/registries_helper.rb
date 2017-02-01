@@ -19,7 +19,9 @@ module RegistriesHelper
   end
 
   def facebook_share_link_for(registry)
-    if registry.is_a?(Birthday)
+    if registry.url_slug == "valentinesday"
+      link_to image_tag('facebook.png', width: "50px"), "#", class: "shareRegistry", data: {registry: valentinesday_url}
+    elsif registry.is_a?(Birthday)
       link_to image_tag('facebook.png', width: "50px"), "#", class: "shareRegistry", data: {registry: birthday_home_url(@registry.url_slug)}
     else
       link_to image_tag('facebook.png', width: "50px"), "#", class: "shareRegistry", data: {registry: registry_home_url(@registry.url_slug)}
@@ -27,7 +29,9 @@ module RegistriesHelper
   end
 
   def twitter_share_link_for(registry)
-    if registry.is_a?(Birthday)
+    if registry.url_slug == "valentinesday"
+      link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate %23valentinesday with a donation to @mercycorps and their assistance to %23syrianrefugees&url=#{birthday_home_url(@registry.url_slug)}&via=Heartful_ly"
+    elsif registry.is_a?(Birthday)
       link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate #{@registry.reference_name}'s big day with a donation to #{@registry.projects.first.organization.name}&url=#{birthday_home_url(@registry.url_slug)}&via=Heartful_ly"
     else
       link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate #{CGI.escape @registry.display_name}'s registry with a donation to support #{@registry.projects.first.organization.name}&url=#{registry_home_url(@registry.url_slug)}&via=Heartful_ly"
@@ -35,7 +39,9 @@ module RegistriesHelper
   end
 
   def gift_items_display_for(registry)
-    if registry.is_a?(Birthday)
+    if registry.url_slug == "valentinesday"
+      "Dedicate a Valentine’s Day gift"
+    elsif registry.is_a?(Birthday)
       name = registry.registrant_first_name
       name.present? ? "#{name}'s birthday wishlist" : "birthday wishlist"
     else

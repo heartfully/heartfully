@@ -24,7 +24,11 @@ class ChargesController < ApplicationController
           gg_order = process_global_giving_order(@order.registry.projects.first.source_id)
           if gg_order["donation"]
             @order.update(receipt_number: gg_order["donation"]["receipt"]["receiptNumber"], status: 'complete')
-            render :create_global_giving
+            if @order.registry.url_slug == "valentinesday"
+              render :create_valentine
+            else
+              render :create_global_giving
+            end
           end
         else
           customer = Stripe::Customer.create(

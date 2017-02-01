@@ -3,10 +3,16 @@
         <title>This holiday season, give heartfully</title>
         <meta property="og:title" content="This holiday season, give heartfully.">
         <meta property="og:url" content="https://www.heartful.ly/holidays">
-        <meta property="og:description" content="Purchase life-changing gifts for people in need and dedicate them to the people you love." >
+        <meta property="og:description" content="Click here to donate in honor of your loved ones and support Mercy Corps' life-saving work." >
         <meta property="og:image" content="<%= image_url('holiday_campaign_hero.jpg') %>">
+    <% elsif @registry.url_slug == 'valentinesday' %>
+      <title>This Valentine’s Day, give relief to Syrian refugee families.</title>
+      <meta property="og:title" content="This Valentine’s Day, give relief to Syrian refugee families.">
+      <meta property="og:url" content="https://www.heartful.ly/valentinesday">
+      <meta property="og:description" content="Purchase life-changing gifts for people in need and dedicate them to the people you love." >
+      <meta property="og:image" content="<%= image_url('holiday_campaign_hero.jpg') %>">
     <% else %>
-      <title>Heartful.ly Wedding Registry: <%= @registry.name %></title>
+      <title>Heartful.ly Wedding Registry: <%= @registry.display_name %></title>
       <% if @registry.is_a?(Birthday) %>
         <meta property="og:url" content="https://www.heartful.ly/birthday/<%= @registry.url_slug %>">
         <meta property="og:image" content="<%= @registry.banner_image %>">
@@ -19,7 +25,7 @@
           <meta property="og:description" content="Celebrate <%= @registry.reference_name %>'s big day with a donation to <%= @registry.projects.first.organization.name %>." >
         <% end %>
       <% else %>
-        <meta property="og:title" content="Click here to donate to <%= @registry.name %>'s charitable wedding registry!">
+        <meta property="og:title" content="Click here to donate to <%= @registry.display_name %>'s charitable wedding registry!">
         <meta property="og:url" content="https://www.heartful.ly/registry/<%= @registry.url_slug %>">
         <meta property="og:description" content="Celebrate their big day with a donation in their honor to <%= @registry.projects.first.organization.name %>." >
         <meta property="og:image" content="<%= @registry.banner_image %>">

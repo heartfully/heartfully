@@ -36,7 +36,7 @@ class Registry < ActiveRecord::Base
   end
 
   def display_name
-    "#{registrant_first_name} & #{partner_first_name}"
+    name || "#{registrant_first_name} & #{partner_first_name}"
   end
 
   def reference_name

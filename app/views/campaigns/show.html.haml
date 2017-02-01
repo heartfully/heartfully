@@ -1,25 +1,28 @@
-#campaign-page
-  = render 'campaign_hero'
-  = render 'instructions'
-  = render 'project_grid'
-  = render 'callout'
-  = render 'faq'
-  = render 'shared/press_bar'
+- if @registry.projects.length == 1
+  = render 'single_project'
+- else
+  #campaign-page
+    = render 'campaign_hero'
+    = render 'instructions'
+    = render 'project_grid'
+    = render 'callout'
+    = render 'faq'
+    = render 'shared/press_bar'
 
-.campaign-modal
-  .campaign-modal-container.modal.fade
-    .modal-dialog.modal-lg
-      .modal-content
-        .modal-header
-          %button.close{type: "button", data: {dismiss: "modal"}, aria: {label: "Close"}}
-            %span{aria: {hidden: "true"}} &times;
-        .modal-body
-          .modal-purchase-container
-            .left-column
-            .right-column
-              - if current_user && current_user.system_admin?
-                = react_component('RegistryItems', {registry_id: @registry.id, items: @registry.all_item_types.sort{|a,b| a.price <=> b.price}})
-              - else
-                = react_component('RegistryItems', {registry_id: @registry.id, items: @registry.all_item_types.select{|i| i.price == 15 || i.price == 20 || i.price == 25 || i.price == 50 || i.price == 100}.sort{|a,b| a.price <=> b.price}})
-              %button.c-button.c-button--primary{data: {dismiss: "modal"}, aria: {label: "Close"}}
-                View other projects
+  .campaign-modal
+    .campaign-modal-container.modal.fade
+      .modal-dialog.modal-lg
+        .modal-content
+          .modal-header
+            %button.close{type: "button", data: {dismiss: "modal"}, aria: {label: "Close"}}
+              %span{aria: {hidden: "true"}} &times;
+          .modal-body
+            .modal-purchase-container
+              .left-column
+              .right-column
+                - if current_user && current_user.system_admin?
+                  = react_component('RegistryItems', {registry_id: @registry.id, items: @registry.all_item_types.sort{|a,b| a.price <=> b.price}})
+                - else
+                  = react_component('RegistryItems', {registry_id: @registry.id, items: @registry.all_item_types.select{|i| i.price == 15 || i.price == 20 || i.price == 25 || i.price == 50 || i.price == 100}.sort{|a,b| a.price <=> b.price}})
+                %button.c-button.c-button--primary{data: {dismiss: "modal"}, aria: {label: "Close"}}
+                  View other projects
