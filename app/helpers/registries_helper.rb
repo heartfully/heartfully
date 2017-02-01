@@ -30,7 +30,7 @@ module RegistriesHelper
 
   def twitter_share_link_for(registry)
     if registry.url_slug == "valentinesday"
-      link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate %23valentinesday with a donation to @mercycorps and their assistance to %23syrianrefugees&url=#{birthday_home_url(@registry.url_slug)}&via=Heartful_ly"
+      link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate %23valentinesday with a donation to @mercycorps and their assistance to %23syrianrefugees&url=#{valentinesday_url}&via=Heartful_ly"
     elsif registry.is_a?(Birthday)
       link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate #{@registry.reference_name}'s big day with a donation to #{@registry.projects.first.organization.name}&url=#{birthday_home_url(@registry.url_slug)}&via=Heartful_ly"
     else
