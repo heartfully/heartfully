@@ -1,7 +1,11 @@
 .project-list.mb
   - @registry.projects.each do |project|
     .project-container.flex-field-3
-      .c-tiny-project__photo{style: "background-image: url('#{project.photo1_url}')"}
+      .photo-container
+        .c-tiny-project__photo{style: "background-image: url('#{project.photo1_url}')"}
+        .photo-overlay
+          .photo-overlay-text.c-button.c-button--primary
+            DONATE
       .c-tiny-project__info
         %p.mb--small= project.name
         %ul.c-project-about__meta
