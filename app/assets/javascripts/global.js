@@ -486,7 +486,7 @@ $(document).ready(function() {
     var currentSlide = $(".project-carousel").slick("slickCurrentSlide");
     $(".project-list .project-container").css("background-color", "");
     $(".project-list .project-container:eq(" + currentSlide + ")").css("background-color", "#F2EFF9");
-    $('html, body').animate({scrollTop: $(".project-list").offset().top - $(".c-nav").outerHeight() - 10}, "fast");
+    $('html, body').animate({scrollTop: $(".column-container").offset().top - $(".c-nav").outerHeight() - 10}, "fast");
   });
   
 });

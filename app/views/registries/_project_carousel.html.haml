@@ -1,13 +1,13 @@
 .column-container
   .column-one
+    .meta.mb
+      %svg.c-icon{:style => "width: 20px; height: 20px;"}
+        %use{"xlink:href" => "#icon-globe-purple"}
+      About this project
     .project-carousel
       - @registry.projects.each do |project|
         .project-summary{data: {project_id: project.id}}
           .about-this-project.mb--large
-            .meta.mb
-              %svg.c-icon{:style => "width: 20px; height: 20px;"}
-                %use{"xlink:href" => "#icon-globe-purple"}
-              About this project
             .project-header.mb{style: "background-image: url(#{project.photo1_url})"}
             %h3.title= project.name
             %p.mb= project.description
