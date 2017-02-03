@@ -157,6 +157,19 @@
       margin-bottom: 40px;
     }
   }
+  .registry-flex-column-solo {
+    @media (min-width: $break-medium) {
+      width: 50%;
+    }
+    @media (max-width: $break-medium) {
+      width: 90%;
+    }
+    margin: 0 auto;
+
+    > div {
+      margin-bottom: 40px;
+    }
+  }
 }
 
 .goal {

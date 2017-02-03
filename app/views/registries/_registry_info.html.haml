@@ -1,12 +1,21 @@
 .registry-info
   - if @registry.registry_story.present?
-    .registry-flex-column
-      .story
-        .meta.mb
-          %svg.c-icon{:style => "width: 20px; height: 20px;", :preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 512 512"}
-            %use{"xlink:href" => "#confetti"}
-          Welcome
-        %p.mb= simple_format @registry.registry_story
+    - if (@registry.video_url.present? || @registry.goal.present?)
+      .registry-flex-column
+        .story
+          .meta.mb
+            %svg.c-icon{:style => "width: 20px; height: 20px;", :preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 512 512"}
+              %use{"xlink:href" => "#confetti"}
+            Welcome
+          = simple_format @registry.registry_story
+    - else
+      .registry-flex-column-solo
+        .story
+          .meta.mb
+            %svg.c-icon{:style => "width: 20px; height: 20px;", :preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 512 512"}
+              %use{"xlink:href" => "#confetti"}
+            Welcome
+          = simple_format @registry.registry_story
 
   - if @registry.video_url.present?
     .registry-flex-column
