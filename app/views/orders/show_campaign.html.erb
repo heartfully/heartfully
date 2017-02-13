@@ -8,11 +8,11 @@
         <%= render 'order_summary' %>
 
       <%= form_tag(orders_finalize_path, class:'order-form') do %>
-        <div class="flex mb">
-          <div class="flex-2">
+        <div class="flex-with-block mb">
+          <div class="flex-field-2">
             <%= render 'your_information' %>
           </div>
-          <div class="flex-2">
+          <div class="flex-field-2">
             <%= render 'recipient_information' %>
           </div>
         </div>

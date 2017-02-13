@@ -354,3 +354,12 @@
     }
   }
 }
+
+.flex-with-block {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  @media (max-width: $break-medium) {
+    display: block;
+  }
+}
