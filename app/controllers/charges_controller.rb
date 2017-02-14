@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
 	before_action :set_order, only: [:new, :create]
-  after_action :fill_order, only: [:create]
+  # Possible to refresh confirmation page and resend emails; need a better solution
+  # after_action :fill_order, only: [:create]
 
   def new
   end
@@ -12,11 +13,13 @@ class ChargesController < ApplicationController
           if eval(@order.summary).keys.length > 1
             process_multiple_global_giving_orders
             @order.update(status: 'complete')
+            fill_order
           else
             project_id = eval(@order.summary).keys.first
             gg_order = process_global_giving_order(Project.find(project_id).source_id)
             if gg_order["donation"]
               @order.update(receipt_number: gg_order["donation"]["receipt"]["receiptNumber"], status: 'complete')
+              fill_order
             end
           end
           render :create_holiday
@@ -24,6 +27,7 @@ class ChargesController < ApplicationController
           gg_order = process_global_giving_order(@order.registry.projects.first.source_id)
           if gg_order["donation"]
             @order.update(receipt_number: gg_order["donation"]["receipt"]["receiptNumber"], status: 'complete')
+            fill_order
             if @order.registry.url_slug == "valentinesday"
               render :create_valentine
             else
@@ -55,6 +59,8 @@ class ChargesController < ApplicationController
           )
 
           @order.complete if charge
+          fill_order
+
           if @order.registry.url_slug == 'sharethelove'
             render :create_valentine
           end
