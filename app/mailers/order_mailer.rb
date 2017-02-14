@@ -11,7 +11,7 @@ class OrderMailer < ActionMailer::Base
 
   def registry_order(order)
     @order = order
-    mail to: "#{order.registry.email}, tech@heartul.ly", subject: "#{@order.first_name} #{@order.last_name} just purchased a gift off your Heartful.ly registry!"
+    mail to: "#{order.registry.email}, tech@heartful.ly", subject: "#{@order.first_name} #{@order.last_name} just purchased a gift off your Heartful.ly registry!"
   end
 
   # def registry_order_valentine_sender(order)
@@ -36,12 +36,12 @@ class OrderMailer < ActionMailer::Base
 
   def campaign_order_kate(order)
     @order = order
-    mail to: 'kate@heartful.ly, tech@heartul.ly', subject: "Order #{@order.id} summary"
+    mail to: 'kate@heartful.ly, tech@heartful.ly', subject: "Order #{@order.id} summary"
   end
 
   def email_kate(order)
     @order = order
-    mail to: 'kate@heartful.ly, tech@heartul.ly', subject: "Order #{@order.id} summary"
+    mail to: 'kate@heartful.ly, tech@heartful.ly', subject: "Order #{@order.id} summary"
   end
 
   def birthday_order_confirmation(order)
@@ -51,11 +51,11 @@ class OrderMailer < ActionMailer::Base
 
   def birthday_order(order)
     @order = order
-    mail to: "#{order.registry.email}, tech@heartul.ly", subject: "#{@order.first_name} #{@order.last_name} just purchased a gift off your Heartful.ly registry!"
+    mail to: "#{order.registry.email}, tech@heartful.ly", subject: "#{@order.first_name} #{@order.last_name} just purchased a gift off your Heartful.ly registry!"
   end
 
   def birthday_email_kate(order)
     @order = order
-    mail to: 'kate@heartful.ly, tech@heartul.ly', subject: "Birthday order #{@order.id} summary"
+    mail to: 'kate@heartful.ly, tech@heartful.ly', subject: "Birthday order #{@order.id} summary"
   end
 end
