@@ -6,7 +6,12 @@ class BirthdaysController < ApplicationController
 
   def update
     @registry = Birthday.find_by(:url_slug => birthday_params[:url_slug].downcase)
+    project_url_slug = params.delete(:project_url_slug)
     if @registry.update(birthday_params)
+      if project_url_slug.present?
+        new_projects = [Project.find_by(url_slug: project_url_slug)]
+        @registry.projects.replace(new_projects)
+      end
       respond_to do |format|
         format.html { redirect_to project_registry_form_path(@registry) }
         format.json { render json: {finished_url: finished_registry_path(@registry)}.to_json }
