@@ -29,6 +29,12 @@ class Registry < ActiveRecord::Base
 
   before_save :ensure_video_url
 
+  rails_admin do
+    object_label_method do
+      :display_name
+    end
+  end
+
   def url_slug_restrictions
     if url_slug.match(/^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$/).nil?
       errors.add(:url_slug, "can only contain letters, numbers, and hyphens, and cannot begin or end with a hyphen")
