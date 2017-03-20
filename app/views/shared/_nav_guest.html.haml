@@ -6,6 +6,7 @@
       %svg.c-nav__logo.c-nav__logo--mark{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 135.4 135.4"}
         %use{"xlink:href" => "#icon-logo-logomark"}
   %ul.c-nav__menu
+    %li.c-nav__menu-item= link_to 'Birthdays', birthdays_path
     %li.c-nav__menu-item= link_to 'About Us', about_us_path
     %li.c-nav__menu-item= link_to 'How It Works', how_it_works_path
     %li.c-nav__menu-item= link_to "Browse Projects", projects_path
@@ -20,6 +21,7 @@
     .c-nav__mobile-menu--close
       %svg.c-icon.c-icon--medium.mb
         %use{"xlink:href" => "#icon-close"}
+    %li.c-nav__menu-item= link_to 'Birthdays', birthdays_path
     %li.c-nav__menu-item
       %a{:href => "/about-us"} About Us
     %li.c-nav__menu-item= link_to "Browse Projects", projects_path

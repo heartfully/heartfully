@@ -1,3 +1,15 @@
+.birthday-hero {
+  @media (max-width: $break-medium) {
+    background-image: image_url('birthday-hero.jpg');
+  }
+
+  video {
+    @media (max-width: $break-medium) {
+      display: none;
+    }
+  }
+}
+
 .birthday-how-it-works {
   .birthday-how-text {
     .birthday-step {
