@@ -1,0 +1,58 @@
+%header.c-hero.home-hero
+  %video.video__player{:autoplay => "", :loop => "", style: "position: relative; width: 100%; height: auto; background-color: #A486C8;"}
+    %source{:src => asset_path("birthday.mp4"), :type => "video/mp4"}
+  .c-hero__container
+    %h1.c-hero__home.ma.mb
+      Have your cake and eat it, too
+    %h4.mb
+      Celebrate your birthday by raising funds for people and places in need
+    %div
+      = link_to "Pledge my birthday", new_registry_path, class: "c-button c-button--primary hero-cta launchSignupModal"
+.c-how.test.pad
+  .birthday-how-it-works.r-flex.mb--large
+    .birthday-how-text.flex-field-2
+      %h3.center.subhed.purple.mb--large How it works
+      .birthday-step
+        .birthday-number 1
+        %p Select a project you love, upload a few photos and let your friends and family know why you're dedicating your birthday to this cause.
+      .birthday-step
+        .birthday-number 2
+        %p Share your wish on social media, by email, and at your party.
+      .birthday-step
+        .birthday-number 3
+        %p We'll take care of the rest, including sending an impact update after your birthday to you and everybody who donated.
+      .center
+        = link_to "Get started", new_registry_path, class: "c-button c-button--primary hero-cta launchSignupModal"
+    .birthday-how-image.flex-field-2
+      = image_tag image_url("birthday-how-it-works.png")
+.line
+.c-how.test.pad
+  %h3.c-how__title.center.subhed.purple.mb--large Celebrate With Us
+  .r-flex.mb--large
+    - @birthdays.first(3).each do |birthday|
+      .birthday-container.flex-field-3
+        = link_to "/birthday/#{birthday.url_slug}" do
+          - if birthday.profile_image.present?
+            .birthday-image{style: "background-image: url('#{birthday.profile_image}')"}
+          - else
+            %svg.birthday-icon.ma{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 512 512"}
+              %use{"xlink:href" => "#confetti"}
+        = link_to "/birthday/#{birthday.url_slug}" do
+          .birthday-info
+            %p.mb--small= birthday.registrant_first_name
+            %p.purple.mb--small View Wishlist
+.line
+.c-how.test.pad.center
+  %h3.c-how__title.subhed.purple.mb--large Support A Project You Love
+  / = render "projects/project_mini"
+  .r-flex.mb--large
+    - @projects.first(3).each do |project|
+      .c-project-mini.c-project-mini__homepage
+        = link_to "/projects/#{project.url_slug}" do
+          .c-project-mini__header{style: "background-image: url('#{project.photo1_url}')"}
+            .c-project-mini__title= project.name
+            .c-project-tabbed__header--overlay
+        .c-project-mini__info
+          %p= truncate(project.description, length: 200)
+          = link_to 'Learn more', "/projects/#{project.url_slug}", class: "c-button c-button--primary block nudge-top stretch", style: "text-align: center; color: white;"
+  %button.c-button= link_to 'View all Projects', projects_path

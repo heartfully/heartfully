@@ -9,6 +9,11 @@ class MarketingController < ApplicationController
     @projects = Project.where(public: true).limit(4).order("RANDOM()")
   end
 
+  def birthdays
+    @birthdays = Birthday.where('event_date > ?', Date.today).order("RANDOM()")
+    @projects = Project.where(public: true).limit(3).order("RANDOM()")
+  end
+
   def how_it_works
   end
 

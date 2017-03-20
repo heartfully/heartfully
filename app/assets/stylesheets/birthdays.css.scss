@@ -1,0 +1,60 @@
+.birthday-how-it-works {
+  .birthday-how-text {
+    .birthday-step {
+      display: inline-block;
+      margin-bottom: 20px;
+      @media (max-width: $break-large) {
+        margin-bottom: 0;
+      }
+
+      .birthday-number {
+        float: left;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        padding: 8px;
+      
+        border: 2px solid #7D72DE;
+        color: #7D72DE;
+        text-align: center;
+        @include font-meta;
+      }
+
+      p {
+        width: 80%;
+        float: left;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .birthday-how-image {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.birthday-container {
+  .birthday-image {
+    background-size: cover;
+    height: 250px;
+  }
+
+  .birthday-icon {
+    fill: #777;
+    height: 250px;
+    vertical-align: middle;
+  }
+
+  .birthday-info {
+    display: inline-block;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  p {
+    @include font-meta;
+  }
+}

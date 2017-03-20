@@ -76,6 +76,8 @@ Rails.application.routes.draw do
     root to: 'birthdays#show', as: 'birthday_home'
   end
 
+  get '/birthdays' => 'marketing#birthdays'
+
   # Footer Link Pages
   get '/how-it-works' => 'marketing#how_it_works'
   get '/about-us' => 'marketing#about_us'

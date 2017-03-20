@@ -1,107 +1,106 @@
-%body
-  %header.c-hero.home-hero
-    %video.video__player{:autoplay => "", :loop => ""}
-      %source{:src => "/landing/images/video/video.mp4", :type => "video/mp4"}
-    .c-hero__container
-      %h1.c-hero__home.ma.mb
-        Your wedding can change lives.
-      %div
-        = link_to "Create a registry", new_registry_path, class: "c-button c-button--primary hero-cta launchSignupModal"
-        = link_to "Discover gifts for good", projects_path, class: "c-button c-button--primary hero-cta"
-        %a.c-hero__video.block.ma{:href => "#"}
-          %svg.c-icon.c-icon--white{:style => "margin: -2px 0 0 5px;"}
-            %use{"xlink:href" => "#icon-play"}
-          See how it works
-    .c-video-modal.inline.ma
-      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/mzx4HhHIUx4", :width => "100%"}
-      .center
-        %button#close-video.c-button.c-button--primary.nudge-top--small Close window
-  = render 'shared/press_bar'
-  .c-how.test.pad.center
-    %h3.c-how__title.center.subhed.purple.mb--large Heartful.ly is a wedding registry for charitable giving.
-    .r-flex.mb
-      .c-how__step
-        .c-how__visual{:style => "background-color: transparent; background-image: url('#{image_url('sample-registry-laptop.jpg')}'); background-size: contain; background-repeat: no-repeat;"}
-        %h4.c-how__step-title.purple.mb--small
-          Create and personalize your registry.
-        %a.c-how__step-view.block{:href => "/registry/james-loves-alexis"}
-          %svg.c-icon
-            %use{"xlink:href" => "#icon-preview"}
-          View a sample registry
-      .c-how__step
-        .c-how__visual{:style => "background-color: transparent; background-image: url('#{image_url('steptwo.png')}'); background-size: contain; background-repeat: no-repeat;"}
-        %h4.c-how__step-title.purple.mb--small
-          Select a project to support.
-      .c-how__step
-        .c-how__visual{:style => "background-color: transparent; background-image: url('#{image_url('homepage-step-three.jpg')}'); background-size: contain; background-repeat: no-repeat; height: 250px;"}
-        %h4.c-how__step-title.purple.mb--small
-          See the impact.
-    %button.c-button.c-button--primary= link_to 'Learn more', how_it_works_path
-  .line
-  .c-test.test.pad.mb{:style => "position: relative;"}
-    %h3.c-test__title.center.subhed.purple.mb--xl What our couples are saying about Heartful.ly
-    #testimonials.mb--large.c-test__content
-      .r-flex
-        .flex-2.c-test__text
-          %p.c-test__quote
-            "Heartful.ly was an incredible way to share our love with others and encourage our guests to make a lasting gift to people who really need it."
-          .c-test__names
-            %h2 Danielle and Alec
-            %em Distributed clean cookstoves to families
-        .flex-2
-          .c-test__photo{:style => "background-image: url('#{image_url('testimonial-one.jpg')}'); background-position: center; background-size: cover; background-repeat: no-repeat"}
-      .r-flex
-        .flex-2.c-test__text
-          %p.c-test__quote
-            "Heartful.ly was a smooth and personal way for us to support a cause we care about."
-          .c-test__names
-            %h2 Lindsey &amp; Matt
-            %em Supported an HIV/AIDS caregiver training
-        .flex-2
-          .c-test__photo{:style => "background-image: url('#{image_url('testimonial-two.png')}'); background-position: center; background-size: cover; background-repeat: no-repeat"}
-      .r-flex
-        .flex-2.c-test__text
-          %p.c-test__quote
-            "Our guests were thrilled to donate to our Heartful.ly wedding registry as they know it means so much to us as a couple."
-          .c-test__names
-            %h2 Katelyn and Brandon
-            %em Built a community health clinic
-        .flex-2
-          .c-test__photo{:style => "background-image: url('#{image_url('testimonial-three.png')}'); background-position: 50% 20%; background-size: cover; background-repeat: no-repeat"}
-    %svg#next-testimonial.c-icon.c-icon--gray.c-test__next{:style => "position: absolute;"}
-      %use{"xlink:href" => "#icon-right-chevron"}
-    = render 'testimonial_hearts'
-  .line
-  .c-how.test.pad
-    %h3.c-how__title.center.subhed.purple.mb--large Projects We Love
-    / = render "projects/project_mini"
-    .r-flex.mb--large
-      - @projects.first(3).each do |project|
-        .c-project-mini.c-project-mini__homepage
-          = link_to "/projects/#{project.url_slug}" do
-            .c-project-mini__header{style: "background-image: url('#{project.photo1_url}')"}
-              .c-project-mini__title= project.name
-              .c-project-tabbed__header--overlay
-          .c-project-mini__info
-            %p= truncate(project.description, length: 200)
-            = link_to 'Learn more', "/projects/#{project.url_slug}", class: "c-button c-button--primary block nudge-top stretch", style: "text-align: center; color: white;"
-  .line
-  .c-how.test.pad.center
-    %h3.c-how__title.center.subhed.purple.mb Our Partners
-    .mb--large.center Heartful.ly is proud to support diverse and innovative organizations around the world.
-    .c-partners.r-flex.mb
-      %img.c-partners__logo{:src => "#{image_url('partners/logo-futbol.png')}"}/
-      %img.c-partners__logo{:src => "#{image_url('partners/logo-mh.png')}"}/
-      %img.c-partners__logo{:src => "#{image_url('partners/logo-olivebranch.png')}"}/
-      %img.c-partners__logo{:src => "#{image_url('partners/logo-solaraid.png')}"}/
-      %img.c-partners__logo{:src => "#{image_url('partners/logo-streetsense.jpg')}"}/
-    %button.c-button.c-button--primary= link_to 'View all partners', our_partners_path
-  .line
-  / make this into a cta component
-  .c-breaker.center
-    %svg.c-icon.c-icon--status{:style => "width: 25px; height: 25px;"}
-      %use{"xlink:href" => "#icon-hearts-purple"}
-    %h3.roboto.large.mb
-      Are you ready to
-      %span{:style => "border-bottom: 2px solid #7D72DE;"} share the love?
-    %button.c-button.c-button--primary.launchSignupModal= link_to 'Create a registry', new_registry_path
+%header.c-hero.home-hero
+  %video.video__player{:autoplay => "", :loop => ""}
+    %source{:src => "/landing/images/video/video.mp4", :type => "video/mp4"}
+  .c-hero__container
+    %h1.c-hero__home.ma.mb
+      Your wedding can change lives.
+    %div
+      = link_to "Create a registry", new_registry_path, class: "c-button c-button--primary hero-cta launchSignupModal"
+      = link_to "Discover gifts for good", projects_path, class: "c-button c-button--primary hero-cta"
+      %a.c-hero__video.block.ma{:href => "#"}
+        %svg.c-icon.c-icon--white{:style => "margin: -2px 0 0 5px;"}
+          %use{"xlink:href" => "#icon-play"}
+        See how it works
+  .c-video-modal.inline.ma
+    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/mzx4HhHIUx4", :width => "100%"}
+    .center
+      %button#close-video.c-button.c-button--primary.nudge-top--small Close window
+= render 'shared/press_bar'
+.c-how.test.pad.center
+  %h3.c-how__title.center.subhed.purple.mb--large Heartful.ly is a wedding registry for charitable giving.
+  .r-flex.mb
+    .c-how__step
+      .c-how__visual{:style => "background-color: transparent; background-image: url('#{image_url('sample-registry-laptop.jpg')}'); background-size: contain; background-repeat: no-repeat;"}
+      %h4.c-how__step-title.purple.mb--small
+        Create and personalize your registry.
+      %a.c-how__step-view.block{:href => "/registry/james-loves-alexis"}
+        %svg.c-icon
+          %use{"xlink:href" => "#icon-preview"}
+        View a sample registry
+    .c-how__step
+      .c-how__visual{:style => "background-color: transparent; background-image: url('#{image_url('steptwo.png')}'); background-size: contain; background-repeat: no-repeat;"}
+      %h4.c-how__step-title.purple.mb--small
+        Select a project to support.
+    .c-how__step
+      .c-how__visual{:style => "background-color: transparent; background-image: url('#{image_url('homepage-step-three.jpg')}'); background-size: contain; background-repeat: no-repeat; height: 250px;"}
+      %h4.c-how__step-title.purple.mb--small
+        See the impact.
+  %button.c-button.c-button--primary= link_to 'Learn more', how_it_works_path
+.line
+.c-test.test.pad.mb{:style => "position: relative;"}
+  %h3.c-test__title.center.subhed.purple.mb--xl What our couples are saying about Heartful.ly
+  #testimonials.mb--large.c-test__content
+    .r-flex
+      .flex-2.c-test__text
+        %p.c-test__quote
+          "Heartful.ly was an incredible way to share our love with others and encourage our guests to make a lasting gift to people who really need it."
+        .c-test__names
+          %h2 Danielle and Alec
+          %em Distributed clean cookstoves to families
+      .flex-2
+        .c-test__photo{:style => "background-image: url('#{image_url('testimonial-one.jpg')}'); background-position: center; background-size: cover; background-repeat: no-repeat"}
+    .r-flex
+      .flex-2.c-test__text
+        %p.c-test__quote
+          "Heartful.ly was a smooth and personal way for us to support a cause we care about."
+        .c-test__names
+          %h2 Lindsey &amp; Matt
+          %em Supported an HIV/AIDS caregiver training
+      .flex-2
+        .c-test__photo{:style => "background-image: url('#{image_url('testimonial-two.png')}'); background-position: center; background-size: cover; background-repeat: no-repeat"}
+    .r-flex
+      .flex-2.c-test__text
+        %p.c-test__quote
+          "Our guests were thrilled to donate to our Heartful.ly wedding registry as they know it means so much to us as a couple."
+        .c-test__names
+          %h2 Katelyn and Brandon
+          %em Built a community health clinic
+      .flex-2
+        .c-test__photo{:style => "background-image: url('#{image_url('testimonial-three.png')}'); background-position: 50% 20%; background-size: cover; background-repeat: no-repeat"}
+  %svg#next-testimonial.c-icon.c-icon--gray.c-test__next{:style => "position: absolute;"}
+    %use{"xlink:href" => "#icon-right-chevron"}
+  = render 'testimonial_hearts'
+.line
+.c-how.test.pad
+  %h3.c-how__title.center.subhed.purple.mb--large Projects We Love
+  / = render "projects/project_mini"
+  .r-flex.mb--large
+    - @projects.first(3).each do |project|
+      .c-project-mini.c-project-mini__homepage
+        = link_to "/projects/#{project.url_slug}" do
+          .c-project-mini__header{style: "background-image: url('#{project.photo1_url}')"}
+            .c-project-mini__title= project.name
+            .c-project-tabbed__header--overlay
+        .c-project-mini__info
+          %p= truncate(project.description, length: 200)
+          = link_to 'Learn more', "/projects/#{project.url_slug}", class: "c-button c-button--primary block nudge-top stretch", style: "text-align: center; color: white;"
+.line
+.c-how.test.pad.center
+  %h3.c-how__title.center.subhed.purple.mb Our Partners
+  .mb--large.center Heartful.ly is proud to support diverse and innovative organizations around the world.
+  .c-partners.r-flex.mb
+    %img.c-partners__logo{:src => "#{image_url('partners/logo-futbol.png')}"}/
+    %img.c-partners__logo{:src => "#{image_url('partners/logo-mh.png')}"}/
+    %img.c-partners__logo{:src => "#{image_url('partners/logo-olivebranch.png')}"}/
+    %img.c-partners__logo{:src => "#{image_url('partners/logo-solaraid.png')}"}/
+    %img.c-partners__logo{:src => "#{image_url('partners/logo-streetsense.jpg')}"}/
+  %button.c-button.c-button--primary= link_to 'View all partners', our_partners_path
+.line
+/ make this into a cta component
+.c-breaker.center
+  %svg.c-icon.c-icon--status{:style => "width: 25px; height: 25px;"}
+    %use{"xlink:href" => "#icon-hearts-purple"}
+  %h3.roboto.large.mb
+    Are you ready to
+    %span{:style => "border-bottom: 2px solid #7D72DE;"} share the love?
+  %button.c-button.c-button--primary.launchSignupModal= link_to 'Create a registry', new_registry_path
