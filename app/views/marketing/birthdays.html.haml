@@ -43,8 +43,8 @@
             %p.mb--small= birthday.registrant_first_name
             %p.purple.mb--small View Wishlist
 .line
-.c-how.test.pad.center
-  %h3.c-how__title.subhed.purple.mb--large Support A Project You Love
+.c-how.test.pad
+  %h3.c-how__title.center.subhed.purple.mb--large Support A Project You Love
   / = render "projects/project_mini"
   .r-flex.mb--large
     - @projects.first(3).each do |project|
@@ -56,4 +56,5 @@
         .c-project-mini__info
           %p= truncate(project.description, length: 200)
           = link_to 'Learn more', "/projects/#{project.url_slug}", class: "c-button c-button--primary block nudge-top stretch", style: "text-align: center; color: white;"
-  %button.c-button= link_to 'View all Projects', projects_path
+  .test.center
+    %button.c-button.center= link_to 'View all Projects', projects_path
