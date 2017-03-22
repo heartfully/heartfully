@@ -15,6 +15,9 @@
     %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/mzx4HhHIUx4", :width => "100%"}
     .center
       %button#close-video.c-button.c-button--primary.nudge-top--small Close window
+= link_to birthdays_path do
+  .c-hero__infobar
+    Introducing Heartful.ly birthdays! Click here to learn more.
 = render 'shared/press_bar'
 .c-how.test.pad.center
   %h3.c-how__title.center.subhed.purple.mb--large Heartful.ly is a gift registry for charitable giving.
@@ -103,9 +106,6 @@
           %p= truncate(project.description, length: 200)
           = link_to 'Learn more', "/projects/#{project.url_slug}", class: "c-button c-button--primary block nudge-top stretch", style: "text-align: center; color: white;"
 .line
-.c-breaker.dark-purple.center.mb
-  %h3.mb Introducing Heartful.ly Birthdays!
-  = link_to "Dedicate my birthday", birthdays_path, class: "c-button c-button--primary hero-cta"
 .c-how.test.pad.center
   %h3.c-how__title.center.subhed.purple.mb Our Partners
   .mb--large.center Heartful.ly is proud to support diverse and innovative organizations around the world.
