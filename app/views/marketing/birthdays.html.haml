@@ -3,29 +3,30 @@
     %source{:src => asset_path("birthday.mp4"), :type => "video/mp4"}
   .c-hero__container
     %h1.c-hero__home.ma.mb
-      Have your cake and eat it, too
+      Celebrate your big day by making someone else’s
     %h4.mb
-      Celebrate your birthday by raising funds for people and places in need
+      This year, raise money for a cause close to your heart.
     %div
-      = link_to "Pledge my birthday", new_registry_path, class: "c-button c-button--primary hero-cta launchSignupModal"
+      = link_to "Dedicate my birthday", new_registry_path, class: "c-button c-button--primary hero-cta launchSignupModal"
 .c-how.test.pad
   .birthday-how-it-works.r-flex.mb--large
     .birthday-how-text.flex-field-2
       %h3.center.subhed.purple.mb--large How it works
       .birthday-step
         .birthday-number 1
-        %p Select a project you love, upload a few photos and let your friends and family know why you're dedicating your birthday to this cause.
+        %p Browse our gallery of nonprofit partners and select the project you want to support.
       .birthday-step
         .birthday-number 2
-        %p Share your wish on social media, by email, and at your party.
+        %p Upload a few photos and let your friends and family know why you’re passionate about the cause.
       .birthday-step
         .birthday-number 3
-        %p We'll take care of the rest, including sending an impact update after your birthday to you and everybody who donated.
-      .center
-        = link_to "Get started", new_registry_path, class: "c-button c-button--primary hero-cta launchSignupModal"
+        %p We’ll take care of the rest, including sending an impact update to everyone who donated in your honor.
     .birthday-how-image.flex-field-2
       = image_tag image_url("birthday-how-it-works.png")
 .line
+.c-breaker.dark-purple.center.mb
+  %h3.mb Your birthday can change lives. Now that is something to celebrate!
+  = link_to "Dedicate my birthday", new_registry_path, class: "c-button c-button--primary hero-cta launchSignupModal"
 .c-how.test.pad
   %h3.c-how__title.center.subhed.purple.mb--large Celebrate With Us
   .r-flex.mb--large

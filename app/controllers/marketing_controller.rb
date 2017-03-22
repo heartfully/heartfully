@@ -10,7 +10,8 @@ class MarketingController < ApplicationController
   end
 
   def birthdays
-    @birthdays = Birthday.where('event_date > ?', Date.today).order("RANDOM()")
+    @birthdays = Birthday.where(url_slug: ["jasonnellis", "carols-turning-70", "nickiandnadav31"])
+    @birthdays += Birthday.where('event_date > ?', Date.today).order("RANDOM()").limit(3 - @birthdays.length)
     @projects = Project.where(public: true).limit(3).order("RANDOM()")
   end
 

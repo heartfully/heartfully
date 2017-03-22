@@ -17,7 +17,7 @@
       %button#close-video.c-button.c-button--primary.nudge-top--small Close window
 = render 'shared/press_bar'
 .c-how.test.pad.center
-  %h3.c-how__title.center.subhed.purple.mb--large Heartful.ly is a wedding registry for charitable giving.
+  %h3.c-how__title.center.subhed.purple.mb--large Heartful.ly is a gift registry for charitable giving.
   .r-flex.mb
     .c-how__step
       .c-how__visual{:style => "background-color: transparent; background-image: url('#{image_url('sample-registry-laptop.jpg')}'); background-size: contain; background-repeat: no-repeat;"}
@@ -52,12 +52,30 @@
     .r-flex
       .flex-2.c-test__text
         %p.c-test__quote
+          "I love that the simplicity and ease of the Heartfully platform allowed me to celebrate my birthday, while at the same time supporting a cause that's important to me."
+        .c-test__names
+          %h2 Jason Nellis
+          %em Empowered the homeless with job skills
+      .flex-2
+        .c-test__photo{:style => "background-image: url('#{image_url('testimonial-birthday-one.jpg')}'); background-position: 50% 20%; background-size: cover; background-repeat: no-repeat"}
+    .r-flex
+      .flex-2.c-test__text
+        %p.c-test__quote
           "Heartful.ly was a smooth and personal way for us to support a cause we care about."
         .c-test__names
           %h2 Lindsey &amp; Matt
           %em Supported an HIV/AIDS caregiver training
       .flex-2
         .c-test__photo{:style => "background-image: url('#{image_url('testimonial-two.png')}'); background-position: center; background-size: cover; background-repeat: no-repeat"}
+    .r-flex
+      .flex-2.c-test__text
+        %p.c-test__quote
+          "I loved using heartful.ly. I have lived such a wonderful life so all I wanted for my birthday was a way to give back to people in need. Witnessing the generosity of my friends and family was the greatest gift I could ask for."
+        .c-test__names
+          %h2 Carol
+          %em Provided aid for Syrian refugee children
+      .flex-2
+        .c-test__photo{:style => "background-image: url('#{image_url('testimonial-birthday-two.jpg')}'); background-position: 50% 20%; background-size: cover; background-repeat: no-repeat"}
     .r-flex
       .flex-2.c-test__text
         %p.c-test__quote
@@ -85,6 +103,9 @@
           %p= truncate(project.description, length: 200)
           = link_to 'Learn more', "/projects/#{project.url_slug}", class: "c-button c-button--primary block nudge-top stretch", style: "text-align: center; color: white;"
 .line
+.c-breaker.dark-purple.center.mb
+  %h3.mb Introducing Heartful.ly Birthdays!
+  = link_to "Dedicate my birthday", birthdays_path, class: "c-button c-button--primary hero-cta"
 .c-how.test.pad.center
   %h3.c-how__title.center.subhed.purple.mb Our Partners
   .mb--large.center Heartful.ly is proud to support diverse and innovative organizations around the world.
