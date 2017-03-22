@@ -1,3 +1,7 @@
+.birthday-button {
+  display: inline-block;
+}
+
 .birthday-hero {
   @media (max-width: $break-medium) {
     background-image: image_url('birthday-hero.jpg');

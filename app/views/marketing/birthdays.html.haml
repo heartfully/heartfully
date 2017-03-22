@@ -26,7 +26,7 @@
 .line
 .c-breaker.dark-purple.center.mb
   %h3.mb Your birthday can change lives. Now that is something to celebrate!
-  = link_to "Dedicate my birthday", new_registry_path, class: "c-button c-button--primary hero-cta launchSignupModal"
+  = link_to "Dedicate my birthday", new_registry_path, class: "c-button c-button--primary birthday-button launchSignupModal"
 .c-how.test.pad
   %h3.c-how__title.center.subhed.purple.mb--large Celebrate With Us
   .r-flex.mb--large
@@ -34,7 +34,7 @@
       .birthday-container.flex-field-3
         = link_to "/birthday/#{birthday.url_slug}" do
           - if birthday.profile_image.present?
-            .birthday-image{style: "background-image: url('#{birthday.profile_image}')"}
+            .birthday-image{style: "background-image: url('#{birthday.profile_image}'); border-radius: 50%;"}
           - else
             %svg.birthday-icon.ma{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 512 512"}
               %use{"xlink:href" => "#confetti"}
