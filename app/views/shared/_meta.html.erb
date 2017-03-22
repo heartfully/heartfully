@@ -27,23 +27,34 @@
       <% else %>
         <meta property="og:title" content="Click here to donate to <%= @registry.display_name %>'s charitable wedding registry!">
         <meta property="og:url" content="https://www.heartful.ly/registry/<%= @registry.url_slug %>">
-        <meta property="og:description" content="Celebrate their big day with a donation in their honor to <%= @registry.projects.first.organization.name %>." >
+        <meta property="og:description" content="Celebrate their big day with a donation to <%= @registry.projects.first.organization.name %>." >
         <meta property="og:image" content="<%= @registry.banner_image %>">
       <% end %>
     <% end %>
-
+<% elsif @project.present? %>
+  <title>This holiday season, give heartfully</title>
+  <meta property="og:title" content="Heartful.ly | The Gift Registry for Giving Back ">
+  <meta property="og:url" content="<%= project_url(@project.url_slug)%>">
+  <meta property="og:description" content="<%= truncate(@project.description, length: 200) %>" >
+  <meta property="og:image" content="<%= @project.photo1_url %>">
+<% elsif controller_name == "marketing" && action_name == "birthdays" %>
+  <title>Heartful.ly | The Gift Registry for Giving Back</title>
+  <meta property="og:title" content="Heartful.ly | The Gift Registry for Giving Back">
+  <meta property="og:url" content="https://www.heartful.ly/birthdays">
+  <meta property="og:description" content="This year, dedicate your birthday to a cause close to your heart." >
+  <meta property="og:image" content="<%= image_url('birthday-hero.jpg') %>">
 <% else %>
   <title>Heartful.ly | The Wedding Registry for Charitable Giving</title>
-  <meta name="description" content="Heartful.ly is a wedding registry that empowers couples and their wedding guests to support and fund charitable  projects in the U.S. and around the world." >
+  <meta name="description" content="Heartful.ly is a gift registry for celebrating life’s biggest moments by giving back to those in need." >
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content="Heartful.ly">
-  <meta itemprop="description" content="Heartful.ly empowers couples and their wedding guests to fund charitable projects around the world.">
+  <meta itemprop="description" content="Heartful.ly is a gift registry for celebrating life’s biggest moments by giving back to those in need.">
   <meta itemprop="image" content=<%=image_path("heartfully-home.jpg")%>>
   <!-- Twitter Card data -->
   <meta name="twitter:card" content=<%=image_path("heartfully-home.jpg")%>>
   <meta name="twitter:site" content="@heartful_ly">
   <meta name="twitter:title" content="Heartful.ly wedding registry">
-  <meta name="twitter:description" content="Heartful.ly empowers couples and their wedding guests to fund charitable projects around the world.">
+  <meta name="twitter:description" content="Heartful.ly is a gift registry for celebrating life’s biggest moments by giving back to those in need.">
   <meta name="twitter:creator" content="@heartful_ly">
   <!-- Twitter summary card with large image must be at least 280x150px -->
   <meta name="twitter:image:src" content=<%=image_path("heartfully-home.jpg")%>>
@@ -52,7 +63,7 @@
   <meta property="og:type" content="article" >
   <meta property="og:url" content="https://www.heartful.ly/" >
   <meta property="og:image" content=<%=image_path("heartfully-home.jpg")%> >
-  <meta property="og:description" content="Heartful.ly empowers couples and their wedding guests to fund charitable projects around the world." >
+  <meta property="og:description" content="Heartful.ly is a gift registry for celebrating life’s biggest moments by giving back to those in need." >
   <meta property="og:site_name" content="Heartful.ly" >
 
 <% end %>
