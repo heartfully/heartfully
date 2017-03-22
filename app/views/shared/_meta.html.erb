@@ -32,8 +32,8 @@
       <% end %>
     <% end %>
 <% elsif @project.present? %>
-  <title>This holiday season, give heartfully</title>
-  <meta property="og:title" content="Heartful.ly | <%= @project.name %> ">
+  <title><%= @project.name %> - Heartful.ly</title>
+  <meta property="og:title" content="<%= @project.name %> - Heartful.ly">
   <meta property="og:url" content="<%= project_url(@project.url_slug)%>">
   <meta property="og:description" content="<%= truncate(@project.description, length: 200) %>" >
   <meta property="og:image" content="<%= @project.photo1_url %>">
