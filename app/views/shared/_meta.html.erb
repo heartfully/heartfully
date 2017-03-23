@@ -31,7 +31,7 @@
         <meta property="og:image" content="<%= @registry.banner_image %>">
       <% end %>
     <% end %>
-<% elsif @project.present? %>
+<% elsif controller_name == "projects" && action_name == "show" && @project.present? %>
   <title><%= @project.name %> - Heartful.ly</title>
   <meta property="og:title" content="<%= @project.name %> - Heartful.ly">
   <meta property="og:url" content="<%= project_url(@project.url_slug)%>">
