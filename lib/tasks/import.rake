@@ -119,13 +119,11 @@ namespace :import do
   end
 
   # if it's not a project, has less than 1500 remaining in the funding goal,
-  # has fewer than 4 item types, has fewer than 3 item types 100 or under,
-  # or has any item type over 1000
+  # has fewer than 4 item types, or has fewer than 3 item types 100 or under
   def we_dont_want_this_project(project_json)
     project_json["type"] != "project" ||
     project_json["remaining"].to_f < 1500 ||
     project_json["donationOptions"]["donationOption"].length < 4 ||
-    project_json["donationOptions"]["donationOption"].select{|option| option["amount"].to_i <= 100}.length < 3 ||
-    project_json["donationOptions"]["donationOption"].select{|option| option["amount"].to_i > 1000}.length > 0
+    project_json["donationOptions"]["donationOption"].select{|option| option["amount"].to_i <= 100}.length < 3
   end
 end
