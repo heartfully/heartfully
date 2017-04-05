@@ -507,5 +507,12 @@ $(document).ready(function() {
     $(".project-list .project-container:eq(" + currentSlide + ")").css("background-color", "#F2EFF9");
     $('html, body').animate({scrollTop: $(".column-container").offset().top - $(".c-nav").outerHeight() - 10}, "fast");
   });
+
+  // BIRTHDAY PAGE
+
+  $(".birthday-reminder form").submit(function(e) {
+    e.preventDefault();
+    $.post($(this).prop("action"), $(this).serialize(), $("#birthdayReminderModal").modal());
+  });
   
 });

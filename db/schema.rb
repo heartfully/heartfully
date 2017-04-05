@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324194351) do
+ActiveRecord::Schema.define(version: 20170405024012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -277,6 +277,12 @@ ActiveRecord::Schema.define(version: 20170324194351) do
 
   add_index "registry_projects", ["project_id"], name: "index_registry_projects_on_project_id", using: :btree
   add_index "registry_projects", ["registry_id"], name: "index_registry_projects_on_registry_id", using: :btree
+
+  create_table "reminders", force: true do |t|
+    t.string "name"
+    t.string "email"
+    t.date   "reminder_date"
+  end
 
   create_table "reports", force: true do |t|
     t.integer  "number_of_benefitters"

@@ -53,3 +53,17 @@
             = link_to "Privacy Policy", privacy_policy_path
         %p.small
           %a{href: "#", data: {dismiss: "modal"}} No thanks, maybe later.
+
+#birthdayReminderModal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{type: "button", data: {dismiss: "modal"}, aria: {label: "Close"}}
+          %span{aria: {hidden: "true"}} &times;
+        .c-nav__logo--modal.center-block.mb
+          %svg{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 135.4 135.4"}
+            %use{"xlink:href" => "#icon-logo-logomark"}
+        %span.center.center-block.purple.subhed
+          Thanks for signing up! We'll send you a reminder a couple weeks before your big event.
+      .modal-body.center.center-block
+        %button.c-button.c-button--primary{data: {dismiss: "modal"}} Got it!

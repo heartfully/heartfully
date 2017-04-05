@@ -58,3 +58,10 @@
           = link_to 'Learn more', "/projects/#{project.url_slug}", class: "c-button c-button--primary block nudge-top stretch", style: "text-align: center; color: white;"
   .test.center
     %button.c-button.center= link_to 'View all Projects', projects_path
+.c-how.pad.birthday-reminder
+  %h3.c-how__title.center.subhed.mb--large Let's Get This Party Started
+  = form_for @reminder, url: reminders_path, html: {class: "ma"} do |f|
+    = f.text_field :name, placeholder: "Your name", class: "input-sm mb"
+    = f.text_field :email, placeholder: "Your email address", class: "input-sm mb"
+    = f.date_field :reminder_date, placeholder:'mm/dd/yyyy', min: Date.today, class: "input-sm mb"
+    = f.submit "Create Birthday", class: "c-button c-button--primary input-sm"
