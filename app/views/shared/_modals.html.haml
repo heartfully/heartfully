@@ -64,6 +64,9 @@
           %svg{:preserveaspectratio => "xMinYMax meet", :viewbox => "0 0 135.4 135.4"}
             %use{"xlink:href" => "#icon-logo-logomark"}
         %span.center.center-block.purple.subhed
-          Thanks for signing up! We'll send you a reminder a couple weeks before your big event.
+          Thanks for signing up! We'll send you information a couple weeks before your birthday on how you can use your big day to give back.
       .modal-body.center.center-block
-        %button.c-button.c-button--primary{data: {dismiss: "modal"}} Got it!
+        %button.c-button.c-button--primary.mb{data: {dismiss: "modal"}} Got it!
+        %p.mb.small
+          Questions? Email
+          = link_to "birthdays@heartful.ly", "mailto:birthdays@heartful.ly"
