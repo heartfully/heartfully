@@ -232,8 +232,10 @@ $(document).ready(function() {
       $(".celebration").css("display", "none");
       $(".birthday").css("display", "inline");
       $(".type-of-registry").val("Birthday");
+      $("#registry_name").attr("placeholder", "Registry Title (i.e. Happy Birthday Hannah, I'm Turning 30!)")
       $("#registry_registry_story").attr("placeholder", "I’ve been given so much in life, so to celebrate the big 4-0, I want to give back to those in need. Please help me share the love and make an impact in the lives of others by donating to this amazing organization. Here’s to at least 40 more with all of you amazing people by my side!")
       // fix this hack
+      $("#birthday_name").attr("placeholder", "Registry Title (i.e. Happy Birthday Hannah, I'm Turning 30!)")
       $("#birthday_registry_story").attr("placeholder", "I’ve been given so much in life, so to celebrate the big 4-0, I want to give back to those in need. Please help me share the love and make an impact in the lives of others by donating to this amazing organization. Here’s to at least 40 more with all of you amazing people by my side!")
     } else if(registryType == "celebration") {
       $(".url-container span").text("heartful.ly/celebration/")
@@ -241,8 +243,10 @@ $(document).ready(function() {
       $(".birthday").css("display", "none");
       $(".celebration").css("display", "inline");
       $(".type-of-registry").val("Celebration");
+      $("#registry_name").attr("placeholder", "Registry Title (i.e. Olivia’s Graduating College, We’re Having a Baby!)")
       $("#registry_registry_story").attr("placeholder", "I’ve been given so much in life, so to celebrate, I want to give back to those in need. Please help me share the love and make an impact in the lives of others by donating to this amazing organization.")
       // fix this hack
+      $("#celebration_name").attr("placeholder", "Registry Title (i.e. Olivia’s Graduating College, We’re Having a Baby!)")
       $("#celebration_registry_story").attr("placeholder", "I’ve been given so much in life, so to celebrate, I want to give back to those in need. Please help me share the love and make an impact in the lives of others by donating to this amazing organization.")
  
     }
