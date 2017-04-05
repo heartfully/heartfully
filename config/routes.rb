@@ -76,6 +76,10 @@ Rails.application.routes.draw do
     root to: 'birthdays#show', as: 'birthday_home'
   end
 
+  scope '/celebration/:url_slug' do
+    root to: 'celebrations#show', as: 'celebration_home'
+  end
+
   get '/birthdays' => 'marketing#birthdays'
 
   # Footer Link Pages

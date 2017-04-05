@@ -11,11 +11,23 @@ module RegistriesHelper
   end
 
   def path_for(registry)
-    registry.is_a?(Birthday) ? birthday_home_path(registry.url_slug) : registry_home_path(registry.url_slug)
+    if registry.is_a?(Birthday)
+      birthday_home_path(registry.url_slug)
+    elsif registry.is_a?(Celebration)
+      celebration_home_path(registry.url_slug)
+    else
+      registry_home_path(registry.url_slug)
+    end
   end
 
   def goal_message_for(registry)
-    registry.is_a?(Birthday) ? "My fundraising goal" : "Our fundraising goal"
+    if registry.is_a?(Birthday)
+      "My fundraising goal"
+    elsif registry.is_a?(Celebration)
+      "Fundraising goal"
+    else
+      "Our fundraising goal"
+    end
   end
 
   def facebook_share_link_for(registry)
@@ -23,6 +35,8 @@ module RegistriesHelper
       link_to image_tag('facebook.png', width: "50px"), "#", class: "shareRegistry", data: {registry: valentinesday_url}
     elsif registry.is_a?(Birthday)
       link_to image_tag('facebook.png', width: "50px"), "#", class: "shareRegistry", data: {registry: birthday_home_url(@registry.url_slug)}
+    elsif registry.is_a?(Celebration)
+      link_to image_tag('facebook.png', width: "50px"), "#", class: "shareRegistry", data: {registry: celebration_home_url(@registry.url_slug)}
     else
       link_to image_tag('facebook.png', width: "50px"), "#", class: "shareRegistry", data: {registry: registry_home_url(@registry.url_slug)}
     end
@@ -33,8 +47,10 @@ module RegistriesHelper
       link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate %23valentinesday with a donation to @mercycorps and their assistance to %23syrianrefugees&url=#{valentinesday_url}&via=Heartful_ly"
     elsif registry.is_a?(Birthday)
       link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate #{@registry.reference_name}'s big day with a donation to #{@registry.projects.first.organization.name}&url=#{birthday_home_url(@registry.url_slug)}&via=Heartful_ly"
+    elsif registry.is_a?(Celebration)
+      link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate #{@registry.reference_name} with a donation to #{@registry.projects.first.organization.name}&url=#{birthday_home_url(@registry.url_slug)}&via=Heartful_ly"
     else
-      link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate #{CGI.escape @registry.display_name}'s registry with a donation to support #{@registry.projects.first.organization.name}&url=#{registry_home_url(@registry.url_slug)}&via=Heartful_ly"
+      link_to image_tag('twitter.png', width: "50px"), "https://twitter.com/intent/tweet?text=Celebrate #{CGI.escape @registry.display_name}'s registry with a donation to #{@registry.projects.first.organization.name}&url=#{registry_home_url(@registry.url_slug)}&via=Heartful_ly"
     end
   end
 

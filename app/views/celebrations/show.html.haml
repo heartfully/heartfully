@@ -1,0 +1,9 @@
+= render 'registries/hero_new'
+- if @registry.projects.length <= 1
+  = render 'registries/two_columns'
+- else
+  = render 'registries/registry_info'
+  = render 'registries/project_list'
+  = render 'registries/project_carousel'
+= render 'registries/thank_you'
+= render 'registries/project_modal' if @registry.projects.first.present?

@@ -14,9 +14,16 @@
           %use{"xlink:href" => "#confetti"}
       %h3.c-subhed__info
         Birthday
+    #celebration-icon.registry-type.flex-3.ma{data: {type: "celebration"}}
+      .registry-icon
+        %svg.mb{:viewbox => "0 0 512 512"}
+          %use{"xlink:href" => "#icon-champagne"}
+      %h3.c-subhed__info
+        Celebration
 .fields-container
   .flexstuff.auto-margin
-    = f.text_field :name, placeholder: "Registry Title (i.e. Happy Birthday Hannah, I'm Turning 30!)", class: "birthday registry-name"
+    = f.text_field :name, placeholder: "Registry Title (i.e. Happy Birthday Hannah, I'm Turning 30!)", class: "birthday celebration registry-name"
+    = f.text_field :event_type, placeholder: "What are you celebrating? (Graduation, Bar/Bat Mitzvah, etc.)", class: "celebration"
     = f.text_field :registrant_first_name, placeholder: "Your first name", class: "flex-field-2"
     = f.text_field :registrant_last_name, placeholder: "Your last name", class: "flex-field-2"
     = f.text_field :partner_first_name, placeholder: "Partner's first name", class: "flex-field-2 wedding"

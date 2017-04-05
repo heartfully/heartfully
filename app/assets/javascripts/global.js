@@ -205,9 +205,12 @@ $(document).ready(function() {
       if($("#birthday_type").length == 1) {
         $("#birthday-icon").trigger('click');
         $("#birthday-icon").siblings().hide();
-      } else {
+      } else if($("#wedding_type").length == 1) {
         $("#wedding-icon").trigger('click');
         $("#wedding-icon").siblings().hide();
+      } else {
+        $("#celebration-icon").trigger('click');
+        $("#celebration-icon").siblings().hide();
       }
     });
   });
@@ -219,17 +222,29 @@ $(document).ready(function() {
     if(registryType == "wedding") {
       $(".url-container span").text("heartful.ly/registry/")
       $(".birthday").css("display", "none");
+      $(".celebration").css("display", "none");
       $(".wedding").css("display", "inline");
       $(".type-of-registry").val("");
       $("#registry_registry_story").attr("placeholder", "As we begin our lives together, we want to share our joy by supporting people in need. We are inspired by the work that this amazing non-profit is doing and we invite you to choose items on our behalf to support this project. Can’t wait to see you all soon!")
-    } else {
+    } else if(registryType == "birthday") {
       $(".url-container span").text("heartful.ly/birthday/")
       $(".wedding").css("display", "none");
+      $(".celebration").css("display", "none");
       $(".birthday").css("display", "inline");
       $(".type-of-registry").val("Birthday");
       $("#registry_registry_story").attr("placeholder", "I’ve been given so much in life, so to celebrate the big 4-0, I want to give back to those in need. Please help me share the love and make an impact in the lives of others by donating to this amazing organization. Here’s to at least 40 more with all of you amazing people by my side!")
       // fix this hack
       $("#birthday_registry_story").attr("placeholder", "I’ve been given so much in life, so to celebrate the big 4-0, I want to give back to those in need. Please help me share the love and make an impact in the lives of others by donating to this amazing organization. Here’s to at least 40 more with all of you amazing people by my side!")
+    } else if(registryType == "celebration") {
+      $(".url-container span").text("heartful.ly/celebration/")
+      $(".wedding").css("display", "none");
+      $(".birthday").css("display", "none");
+      $(".celebration").css("display", "inline");
+      $(".type-of-registry").val("Celebration");
+      $("#registry_registry_story").attr("placeholder", "I’ve been given so much in life, so to celebrate, I want to give back to those in need. Please help me share the love and make an impact in the lives of others by donating to this amazing organization.")
+      // fix this hack
+      $("#celebration_registry_story").attr("placeholder", "I’ve been given so much in life, so to celebrate, I want to give back to those in need. Please help me share the love and make an impact in the lives of others by donating to this amazing organization.")
+ 
     }
     $(".fields-container").css("display", "inline");
     $(".slide-footer").css("display", "inline");
