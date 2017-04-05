@@ -34,6 +34,10 @@ module OrderProcess
       OrderMailer.birthday_order_confirmation(self).deliver!
       OrderMailer.birthday_order(self).deliver!
       OrderMailer.birthday_email_kate(self).deliver!
+    elsif self.registry.type && self.registry.type.downcase == 'celebration'
+      OrderMailer.celebration_order_confirmation(self).deliver!
+      OrderMailer.celebration_order(self).deliver!
+      OrderMailer.celebration_email_kate(self).deliver!
     else
       OrderMailer.order_confirmation(self).deliver!
       OrderMailer.registry_order(self).deliver!

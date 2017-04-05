@@ -158,7 +158,8 @@ class RegistriesController < ApplicationController
         :couples_story,
         :registry_story,
         :goal,
-        :video_url
+        :video_url,
+        :event_type
       )
     end
 

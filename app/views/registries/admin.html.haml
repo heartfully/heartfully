@@ -45,11 +45,15 @@
             Share your registry on your wedding website:
             - if current_user.registry.is_a?(Birthday)
               %input.c-admin__share-link.mb--small{value: birthday_home_url(current_user.registry.url_slug), readonly: true}
+            - elsif current_user.registry.is_a?(Celebration)
+              %input.c-admin__share-link.mb--small{value: celebration_home_url(current_user.registry.url_slug), readonly: true}
             - else
               %input.c-admin__share-link.mb--small{value: registry_home_url(current_user.registry.url_slug), readonly: true}
           %p.mb
             - if current_user.registry.is_a?(Birthday)
               = link_to "Share your registry on Facebook", "#", class: "shareRegistry", data: {registry: birthday_home_url(current_user.registry.url_slug)}
+            - elsif current_user.registry.is_a?(Celebration)
+              = link_to "Share your registry on Facebook", "#", class: "shareRegistry", data: {registry: celebration_home_url(current_user.registry.url_slug)}
             - else
               = link_to "Share your registry on Facebook", "#", class: "shareRegistry", data: {registry: registry_home_url(current_user.registry.url_slug)}
           %p.mb

@@ -49,6 +49,7 @@ Rails.application.routes.draw do
     resources :orders, :only => [:show, :create]
   end
   resources :birthdays, only: [:update]
+  resources :celebrations, only: [:update]
 
   resources :orders do
     resources :charges, :only => [:new, :create]
