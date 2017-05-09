@@ -1,12 +1,13 @@
 class RemindersController < ApplicationController
 
    def create
-    if Reminder.create(reminder_params)
+    reminder = Reminder.new(reminder_params)
+    if reminder.save
       respond_to do |format|
         format.json { head :ok }
       end
     else
-      render text: "There was an error signing you up."
+      head :unprocessable_entity
     end
   end
 
