@@ -11,6 +11,12 @@
       <meta property="og:url" content="https://www.heartful.ly/valentinesday">
       <meta property="og:description" content="Purchase life-changing gifts for people in need and dedicate them to the people you love." >
       <meta property="og:image" content="<%= image_url('facebook-valentine.jpg') %>">
+    <% elsif @registry.url_slug == 'mothersday' %>
+      <title>This Mother's Day, give back in honor of the women who have always had your back.</title>
+      <meta property="og:title" content="This Mother's Day, give back in honor of the women who have always had your back.">
+      <meta property="og:url" content="https://www.heartful.ly/mothersday">
+      <meta property="og:description" content="Purchase life-changing gifts for people in need and dedicate them to the people you love." >
+      <meta property="og:image" content="<%= image_url('facebook-mothersday.jpg') %>">
     <% else %>
       <title>Heartful.ly Wedding Registry: <%= @registry.display_name %></title>
       <% if @registry.is_a?(Birthday) %>

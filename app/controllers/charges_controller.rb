@@ -30,6 +30,8 @@ class ChargesController < ApplicationController
             fill_order
             if @order.registry.url_slug == "valentinesday"
               render :create_valentine
+            elsif @order.registry.url_slug == "mothersday"
+              render :create_mothersday
             else
               render :create_global_giving
             end

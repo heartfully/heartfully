@@ -1,0 +1,14 @@
+.test
+  %h2.c-subhed__text Your order has been processed!
+  %div
+    - if @order.delivery_date.present?
+      %p
+        You just did something great! On #{@order.delivery_date.strftime("%m/%d/%Y") }, #{@order.recipient_first_name} #{@order.recipient_last_name} will receive an email notifying them of your gift.
+    - else
+      %p
+        You just did something great! In a moment, #{@order.recipient_first_name} #{@order.recipient_last_name} will receive an email notifying them of your gift.
+    %p
+      Here's what you bought:
+      = render 'orders/order_summary'
+    %p
+      Your receipt number is #{@order.receipt_number}. Your gift is tax-deductible through our partnership with GlobalGiving. GlobalGiving's tax-exempt ID number is 30-0108263.
