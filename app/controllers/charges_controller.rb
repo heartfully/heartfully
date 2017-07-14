@@ -101,8 +101,8 @@ class ChargesController < ApplicationController
 
     access_token = get_access_token(conn)
 
-    query_params="api_key=#{ENV['GLOBAL_GIVING_API_KEY']}&api_token=#{access_token}"
-    donation_url = "api/secure/givingservice/donations?#{query_params}"
+    query_params = "api_key=#{ENV['GLOBAL_GIVING_API_KEY']}&api_token=#{access_token}"
+    donation_url = "api/secure/givingservice/donationsclient?#{query_params}"
 
     donation_params = gg_order_params_with_cc(source_id).to_json
 
@@ -198,16 +198,14 @@ class ChargesController < ApplicationController
         "payment_detail": {
           "firstname": @order.first_name,
           "lastname": @order.last_name,
-          "address": params[:stripe][:address_line1],
-          "address2": params[:stripe][:address_line2],
-          "city": params[:stripe][:address_city],
-          "state": params[:stripe][:address_state],
+          "address": params[:gg][:address_line1],
+          "address2": params[:gg][:address_line2],
+          "city": params[:gg][:address_city],
+          "state": params[:gg][:address_state],
           "iso3166CountryCode": "US",
-          "zip": params[:stripe][:address_zip],
-          "creditCardNumber": params[:stripe][:number],
-          "securityCode": params[:stripe][:cvc_check],
-          "expiryDateMonth": params[:stripe][:exp_month],
-          "expiryDateYear": params[:stripe][:exp_year]
+          "paymentGateway": "braintree",
+          "paymentGatewayKey": ENV["GLOBAL_GIVING_PAYMENT_KEY"],
+          "paymentGatewayNonce": params[:gg][:payment_nonce]
         }
       }
     }

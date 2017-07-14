@@ -196,3 +196,50 @@ label.required:after {
     padding: 0 10px;
   }
 }
+
+/* braintree */
+.payment-field {
+	height: 50px;
+  box-sizing: border-box;
+  padding: 12px;
+  display: block;
+  box-shadow: none;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  line-height: 20px;
+  background: #fcfcfc;
+  margin-bottom: 12px;
+  background: linear-gradient(to right,#fff 50%,#fcfcfc 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .3s ease-in-out;
+}
+
+.payment-field-big {
+  width: 50%;
+	@media (max-width: $break-large) {
+		width: 100%;
+	}
+}
+
+.payment-field-normal {
+	width: 25%;
+	@media (max-width: $break-large) {
+		width: 50%;
+	}
+}
+
+.payment-field-small {
+  width: 10%;
+	@media (max-width: $break-large) {
+		width: 20%;
+	}
+}
+
+.braintree-hosted-fields-focused {
+  outline: 0;
+	border: 1px solid $color-purple-deep;
+  box-shadow: 0 0 0 2px lighten($color-purple-deep, 10%);
+}
