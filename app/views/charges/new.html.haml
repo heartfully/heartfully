@@ -16,10 +16,109 @@
         Your total comes to:
         %strong= @order.total
     .mb--large
-      - if @order.registry.projects.first.source_id
-        We are so sorry for the inconvenience, but our payment system is temporarily offline. We will notify you by email as soon as we're up and running! Thank you so much for your patience. Please email
-        %a{href: "mailto:kate@heartful.ly", style: "text-decoration: underline; color: -webkit-link;"} kate@heartful.ly
-        if you have any questions.
+      - if @order.registry.projects.length == 1 && @order.registry.projects.first.source_id
+        %script{src: "https://js.braintreegateway.com/web/3.6.2/js/client.js"}
+        %script{src: "https://js.braintreegateway.com/web/3.6.2/js/hosted-fields.js"}
+        :javascript
+          var paymentGatewayKey = "#{ENV["GLOBAL_GIVING_PAYMENT_KEY"]}"
+          var braintreeConfig = {
+               styles: {
+                  'input': {
+                    'font-size': '16px',
+                    'font-family': 'AvenirNextLTPro',
+                    'color': '#ccc'
+                  },
+                  ':focus': {
+                    'color': 'black'
+                  },
+                  '.valid': {
+                    'color': '#7D72DE'
+                  },
+                  '.invalid': {
+                    'color': 'red'
+                  }
+                },
+                fields: {
+                  number: {
+                    selector: '#gg_number'
+                  },
+                  cvv: {
+                    selector: '#gg_cvv'
+                  },
+                  expirationDate: {
+                    selector: '#gg_expiration'
+                  },
+                  postalCode: {
+                    selector: '#gg_address_zip'
+                  }
+                }
+           };
+          braintree.client.create({
+            authorization: paymentGatewayKey
+          }, function(err, clientInstance) {
+            if (err) {
+              alert('error initializing payment gateway');
+              return;
+            }
+
+                braintree.hostedFields.create({
+                    client: clientInstance,
+                    styles: braintreeConfig.styles,
+                    fields: braintreeConfig.fields
+                  }, function (hostedFieldsErr, hostedFieldsInstance) {
+
+                      if (hostedFieldsErr) {
+                         alert('error creating hosted fields');
+                         return;
+                       }
+
+                      var formElement = document.getElementById('gg_payment_form');
+
+                      formElement.addEventListener('submit', function (event) {
+                         event.preventDefault();
+
+                         hostedFieldsInstance.tokenize(function (tokenizeErr, payload) {
+                           if (tokenizeErr) {
+                             alert('error tokenizing hosted fields');
+                             return;
+                           }
+
+                           $('#gg_payment_nonce').val(payload.nonce);
+
+                            if (typeof beforeSubmitCallback === 'function')
+                            {
+                               if (!beforeSubmitCallback(event,thisGGPayment))
+                               {
+                                  return;
+                               }
+                            }
+
+                           formElement.submit();
+
+                         }); //end hostedFieldsInstance.tokenize
+                    }, false); //end submit event
+            });//end  braintree.hostedFields.create
+          });  //end  braintree.client.create
+        = form_tag(order_charges_path(@order), {id: "gg_payment_form"}) do
+          = fields_for :gg do |ff|
+            = ff.hidden_field(:payment_nonce)
+            = label_tag(:number, "Card number")
+            #gg_number.payment-field.payment-field-normal
+            = label_tag(:expiration, "Expiration date")
+            #gg_expiration.payment-field.payment-field-small
+            = label_tag(:cvv, "CVV2/CVC")
+            #gg_cvv.payment-field.payment-field-small
+            = label_tag(:address_line1, "Address line 1")
+            = ff.text_field(:address_line1, class: "payment-field payment-field-big")
+            = label_tag(:address_line2, "Address line2")
+            = ff.text_field(:address_line2, class: "payment-field payment-field-big")
+            = label_tag(:address_city, "City")
+            = ff.text_field(:address_city, class: "payment-field payment-field-normal")
+            = label_tag(:address_state, "State")
+            = ff.text_field(:address_state, class: "payment-field payment-field-small")
+            = label_tag(:address_zip, "Zipcode")
+            #gg_address_zip.payment-field.payment-field-small
+          = submit_tag("Submit", class:'c-button c-button--primary')
       - else
         = form_tag order_charges_path @order do
           = fields_for :stripe do |ff|
@@ -52,10 +151,10 @@
               = label_tag(:address_zip, "Zip")
               = ff.text_field(:address_zip, placeholder: "Zip")
           = submit_tag("Submit", class:'c-button c-button--primary')
-        .help
-          By Clicking the Submit Button You Agree to Our
-          = succeed "." do
-            = link_to "Terms and Conditions", terms_of_use_path, {class: 'underline_link'}
-          Transaction Fees Apply.
+      .help
+        By Clicking the Submit Button You Agree to Our
+        = succeed "." do
+          = link_to "Terms and Conditions", terms_of_use_path, {class: 'underline_link'}
+        Transaction Fees Apply.
   - else
     There was an error loading this page
