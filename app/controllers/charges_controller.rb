@@ -12,6 +12,7 @@ class ChargesController < ApplicationController
         if @order.is_global_giving?
           if @order.registry.projects.count > 1
             if eval(@order.summary).keys.length > 1
+              raise "We're having trouble fulfilling your order. Please contact kate@heartful.ly for assistance."
               process_multiple_global_giving_orders
               @order.update(status: 'complete')
               fill_order
