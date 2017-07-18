@@ -16,7 +16,7 @@
         Your total comes to:
         %strong= @order.total
     .mb--large
-      - if @order.registry.projects.length == 1 && @order.registry.projects.first.source_id
+      - if @order.is_global_giving?
         %script{src: "https://js.braintreegateway.com/web/3.6.2/js/client.js"}
         %script{src: "https://js.braintreegateway.com/web/3.6.2/js/hosted-fields.js"}
         :javascript

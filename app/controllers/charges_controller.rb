@@ -9,31 +9,33 @@ class ChargesController < ApplicationController
 	def create
     unless @order.status == 'complete'
       begin
-        if @order.registry.projects.count > 1
-          if eval(@order.summary).keys.length > 1
-            process_multiple_global_giving_orders
-            @order.update(status: 'complete')
-            fill_order
+        if @order.is_global_giving?
+          if @order.registry.projects.count > 1
+            if eval(@order.summary).keys.length > 1
+              process_multiple_global_giving_orders
+              @order.update(status: 'complete')
+              fill_order
+            else
+              project_id = eval(@order.summary).keys.first
+              gg_order = process_global_giving_order(Project.find(project_id).source_id)
+              if gg_order["donation"]
+                @order.update(receipt_number: gg_order["donation"]["receipt"]["receiptNumber"], status: 'complete')
+                fill_order
+              end
+            end
+            render :create_holiday
           else
-            project_id = eval(@order.summary).keys.first
-            gg_order = process_global_giving_order(Project.find(project_id).source_id)
+            gg_order = process_global_giving_order(@order.registry.projects.first.source_id)
             if gg_order["donation"]
               @order.update(receipt_number: gg_order["donation"]["receipt"]["receiptNumber"], status: 'complete')
               fill_order
-            end
-          end
-          render :create_holiday
-        elsif @order.registry.projects.first.source_id.present?
-          gg_order = process_global_giving_order(@order.registry.projects.first.source_id)
-          if gg_order["donation"]
-            @order.update(receipt_number: gg_order["donation"]["receipt"]["receiptNumber"], status: 'complete')
-            fill_order
-            if @order.registry.url_slug == "valentinesday"
-              render :create_valentine
-            elsif @order.registry.url_slug == "mothersday"
-              render :create_mothersday
-            else
-              render :create_global_giving
+              if @order.registry.url_slug == "valentinesday"
+                render :create_valentine
+              elsif @order.registry.url_slug == "mothersday"
+                render :create_mothersday
+              else
+                render :create_global_giving
+              end
             end
           end
         else

@@ -27,6 +27,10 @@ class Order < ActiveRecord::Base
     total && BigDecimal(total.gsub(/[^\d.]/, ''))
   end
 
+  def is_global_giving?
+    (eval summary).keys.map {|project_id| Project.find(project_id)}.map(&:source_id).compact.present?
+  end
+
   private
 
   def subscribe_user
